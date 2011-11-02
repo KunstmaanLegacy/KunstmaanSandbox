@@ -2,9 +2,9 @@
 
 <project name="symblog" default="build">
 
-    <target name="build" depends="prepare,vendors,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpunit,phpcb"/>
+    <target name="build" depends="prepare,decodeParam,vendors,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpunit,phpcb"/>
 
-    <target name="build-parallel" depends="prepare,vendors, lint,tools-parallel,phpunit,phpcb"/>
+    <target name="build-parallel" depends="prepare,decodeParam,vendors,lint,tools-parallel,phpunit,phpcb"/>
 
     <target name="tools-parallel" description="Run tools in parallel">
         <parallel threadCount="2">
@@ -126,10 +126,14 @@
         </exec>
     </target>
 
-    <target name="vendors"
-            description="Update vendors">
+    <target name="vendors" description="Update vendors">
         <exec executable="bin/vendors" failonerror="true">
             <arg value="update"/>
         </exec>
     </target>
+
+    <target name="decodeParam" description="Extract the parameters.ini">
+        <exec executable="${basedir}/paramDecode" failonerror="true" />
+    </target>
+
 </project>
