@@ -8,3 +8,8 @@ vendor/
 app/config/parameters.ini
 .idea
 .DS_Store
+build/code-browser
+build/logs
+build/api
+build/pdepend
+build/coverage
