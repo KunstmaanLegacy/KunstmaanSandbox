@@ -16,7 +16,7 @@
  <rule ref="Generic.Files.LineEndings"/>
 
  <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
- <rule ref="Generic.Formatting.MultipleStatementAlignment"/>
+<!-- <rule ref="Generic.Formatting.MultipleStatementAlignment"/> -->
  <rule ref="Generic.Formatting.NoSpaceAfterCast"/>
 
  <rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
@@ -30,7 +30,7 @@
  <rule ref="Generic.PHP.NoSilencedErrors"/>
  <rule ref="Generic.PHP.UpperCaseConstant"/>
 
- <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+    <!-- <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
  <rule ref="Generic.WhiteSpace.ScopeIndent"/>
- <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
+ <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/> -->
 </ruleset>
