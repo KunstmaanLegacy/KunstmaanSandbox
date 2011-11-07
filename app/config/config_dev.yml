@@ -21,3 +21,9 @@ monolog:
 
 assetic:
     use_controller: true
+
+web_profiler_extra:
+    routing:    true
+    container:  true
+    assetic:    true
+    twig:       true
