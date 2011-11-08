@@ -7,12 +7,31 @@ security:
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
+        main:
+          entity: { class: KunstmaanKAdminBundle:User, property: username}
+
         in_memory:
             users:
                 user:  { password: userpass, roles: [ 'ROLE_USER' ] }
                 admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
 
+        fos_userbundle:
+                id: fos_user.user_manager
+
+
     firewalls:
+        main:
+            pattern: ^/
+            form_login:
+                provider: fos_userbundle
+            logout:       true
+            anonymous:    true
+            remember_me:
+                key:      aSecretKey
+                lifetime: 604800
+                path:     /
+                domain:   kunstmaan.be
+
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
@@ -34,5 +53,9 @@ security:
             #    realm: "Secured Demo Area"
 
     access_control:
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/edit/, role: ROLE_ADMIN }
+        - { path: ^/edit, role: ROLE_ADMIN }
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
         #- { path: ^/_internal, roles: IS_AUTHENTICATED_ANONYMOUSLY, ip: 127.0.0.1 }
