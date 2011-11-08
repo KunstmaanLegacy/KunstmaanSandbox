@@ -4,6 +4,7 @@
 namespace Kunstmaan\KAdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Annotations\Annotation;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -15,13 +16,14 @@ class Page
 {
     /**
      * @ORM\Id
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="bigint")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="Page", inversedBy="children")
+     * @ORM\JoinColumn(name="parent", referencedColumnName="id")
      */
     protected $parent;
 
@@ -30,6 +32,9 @@ class Page
      */
     protected $sequencenumber;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Page", mappedBy="parent")
+     */
     protected $children;
 
     /**
@@ -38,7 +43,7 @@ class Page
     protected $title;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     protected $slug;
 
@@ -55,7 +60,7 @@ class Page
 
     public function __construct()
     {
-        $this->children = array();
+        $this->children = new \Doctrine\Common\Collections\ArrayCollection();
         $this->comments = new ArrayCollection();
         $this->setCreated(new \DateTime());
         $this->setUpdated(new \DateTime());
@@ -79,26 +84,6 @@ class Page
     public function setId($num)
     {
         $this->id = $num;
-    }
-
-    /**
-     * Get sequencenumber
-     *
-     * @return integer
-     */
-    public function getSequenceNumber()
-    {
-        return $this->sequencenumber;
-    }
-
-    /**
-     * Set sequencenumber
-     *
-     * @param string $sequencenumber
-     */
-    public function setSequenceNumber($num)
-    {
-        $this->sequencenumber = $num;
     }
 
     /**
@@ -179,20 +164,16 @@ class Page
     /**
      * Add children
      *
-     * @param \Sonata\PageBundle\Model\PageInterface $children
+     * @param \Kunstmaan\KAdminBundle\Entity\Page $children
      */
-    public function addChildren(PageInterface $children)
+    public function addChild(Page $child)
     {
-        $this->children[] = $children;
+        $this->children[] = $child;
 
-        $children->setParent($this);
+        $child->setParent($this);
     }
 
-    /**
-     * Get children
-     *
-     * @return Doctrine\Common\Collections\Collection $children
-     */
+
     public function getChildren()
     {
         return $this->children;
@@ -208,5 +189,65 @@ class Page
         if (is_object($this->children)) {
             $this->children->setInitialized(true);
         }
+    }
+
+    /**
+     * Set parent
+     *
+     * @param integer $parent
+     */
+    public function setParent($parent)
+    {
+        $this->parent = $parent;
+    }
+
+    /**
+     * Get parent
+     *
+     * @return integer 
+     */
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    /**
+     * Set sequencenumber
+     *
+     * @param integer $sequencenumber
+     */
+    public function setSequencenumber($sequencenumber)
+    {
+        $this->sequencenumber = $sequencenumber;
+    }
+
+    /**
+     * Get sequencenumber
+     *
+     * @return integer 
+     */
+    public function getSequencenumber()
+    {
+        return $this->sequencenumber;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

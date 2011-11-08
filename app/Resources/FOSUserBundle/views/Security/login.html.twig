@@ -2,7 +2,11 @@
 
 {% block fos_user_content %}
 {% if error %}
-    <div>{{ error }}</div>
+    <div class="alert-message error">
+        <a class="close" href="{{ path('fos_user_security_login') }}">×</a>
+        <strong>Error: </strong>
+        {{ error }}
+    </div>
 {% endif %}
 
 <form action="{{ path("fos_user_security_check") }}" method="post">

@@ -47,7 +47,10 @@
               </ul>
             </li>
           </ul>
-          <p class="pull-right">Logged in as <a href="#">Kris Pypen</a></p>
+          <p class="pull-right">Logged in as
+              <a href="{{ path('fos_user_profile_show') }}">{{ app.user.username }}</a> |
+              <a href="{{ path('fos_user_security_logout') }}">log out</a>
+          </p>
         </div>
       </div>
     </div>
