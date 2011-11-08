@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+        <style type="text/css">
+             body {
+                margin: 0;
+                padding: 0;
+                text-align: center;
+             }
+
+             div#wrapper{
+                margin:  50px auto;
+                padding-top: 25px;
+                width: 500px;
+                text-align: left;
+                border:2px solid #ddd;
+                background-color: #fff;
+             }
+
+             div.actions{
+                padding: 10;
+                margin: 0;
+             }
+        </style>
+
+    </head>
+    <body>
+        <div id="wrapper">
+        <div>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                <a href="{{ path('fos_user_security_logout') }}">
+                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a>
+            {% else %}
+                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            {% endif %}
+        </div>
+
+        {% for key, message in app.session.getFlashes() %}
+        <div class="{{ key }}">
+            {{ message|trans({}, 'FOSUserBundle') }}
+        </div>
+        {% endfor %}
+
+        <div>
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}
+        </div>
+        </div>
+    </body>
+</html>
