@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}OpenMercury.NEXT{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Le styles -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script src="{{ asset('js/bootstrap-dropdown.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-tabs.js') }}"></script>
+    <link href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/backend.css') }}" type="text/css">
+    
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+    </style>
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ asset('assets/images/apple-touch-icon.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/images/apple-touch-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/images/apple-touch-icon-114x114.png') }}">
+  </head>
+  <body>
+    <div class="topbar" data-dropdown="dropdown">
+      <div class="topbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="{{ path('KunstmaanKAdminBundle_homepage') }}">OpenMercury.NEXT</a>
+          <ul class="nav">
+            <li><a href="{{ path('KunstmaanKAdminBundle_pages') }}">Pages</a></li>
+            <li><a href="{{ path('KunstmaanKAdminBundle_media') }}">Media</a></li>
+            <li><a href="{{ path('KunstmaanKAdminBundle_modules') }}">Modules</a></li>
+            <li><a href="{{ path('KunstmaanKAdminBundle_settings') }}">Settings</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle">Tools</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Clear frontend cache</a></li>
+                <li><a href="#">Clear all cached</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Shutdown</a></li>
+              </ul>
+            </li>
+          </ul>
+          <p class="pull-right">Logged in as <a href="#">Kris Pypen</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="sidebar">
+	      {% block sidebar %}
+	           <div class="well">
+	          <h5>Sidebar</h5>
+	          <ul>
+	            <li><a href="#">Link</a></li>
+	            <li><a href="#">Link</a></li>
+	            <li><a href="#">Link</a></li>
+	            <li><a href="#">Link</a></li>
+	          </ul>
+	          <h5>Sidebar</h5>
+	          <ul>
+	            <li><a href="#">Link</a></li>
+	            <li><a href="#">Link</a></li>
+	            <li><a href="#">Link</a></li>
+	            <li><a href="#">Link</a></li>
+	            <li><a href="#">Link</a></li>
+	            <li><a href="#">Link</a></li>
+	          </ul>
+	          <h5>Sidebar</h5>
+	          <ul>
+	            <li><a href="#">Link</a></li>
+	            <li><a href="#">Link</a></li>
+	          </ul>
+	        </div>
+	      {% endblock %} 
+      </div>
+      <div class="content">
+      	{% block breadcrumb %}
+          
+		  {% endblock %}
+        {% block content %} {% endblock %}
+        <footer>
+          <p>&copy; Kunstmaan 2011</p>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
