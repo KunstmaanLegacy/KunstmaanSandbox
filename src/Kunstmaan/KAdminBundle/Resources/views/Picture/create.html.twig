@@ -1,0 +1,8 @@
+{% extends 'KunstmaanKAdminBundle:Default:layout.html.twig' %}
+
+{% block title %}Add Picture{% endblock%}
+
+{% block content %}
+    <h1>Add Picture</h1>
+    {% include 'KunstmaanKAdminBundle:Picture:form.html.twig' with { 'form': form } %}
+{% endblock %}

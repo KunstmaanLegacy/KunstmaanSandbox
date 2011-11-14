@@ -17,3 +17,37 @@ KunstmaanKAdminBundle_modules:
 KunstmaanKAdminBundle_settings:
     pattern:  /edit/settings
     defaults: { _controller: KunstmaanKAdminBundle:Settings:index }
+
+KunstmaanKAdminBundle_picture_new:
+    pattern:  /edit/media/picture/{gallery_id}
+    defaults: { _controller: KunstmaanKAdminBundle:Picture:new }
+    requirements:
+        _method: GET
+
+KunstmaanKAdminBundle_picture_create:
+    pattern:  /edit/media/picture/create/{gallery_id}
+    defaults: { _controller: KunstmaanKAdminBundle:Picture:create }
+    requirements:
+        _method: POST
+        id: \d
+
+KunstmaanKAdminBundle_imagegallery_new:
+    pattern:  /edit/media/gallery
+    defaults: { _controller: KunstmaanKAdminBundle:ImageGallery:new }
+    requirements:
+        _method:  GET
+        id: \d+
+
+KunstmaanKAdminBundle_imagegallery_create:
+    pattern:  /edit/media/gallery/create
+    defaults: { _controller: KunstmaanKAdminBundle:ImageGallery:create }
+    requirements:
+        _method: POST
+        id: \d
+
+KunstmaanKAdminBundle_imagegallery_show:
+    pattern:  /edit/media/gallery/{id}/{slug}
+    defaults: { _controller: KunstmaanKAdminBundle:ImageGallery:show }
+    requirements:
+        _method:  GET
+        id: \d+

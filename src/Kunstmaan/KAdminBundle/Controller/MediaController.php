@@ -10,7 +10,15 @@ class MediaController extends Controller
     
     public function indexAction()
     {
-        return $this->render('KunstmaanKAdminBundle:Media:index.html.twig');
+        $em = $this->getDoctrine()
+                           ->getEntityManager();
+
+        $galleries = $em->getRepository('KunstmaanKAdminBundle:ImageGallery')
+                        ->getAllGalleries();
+
+        return $this->render('KunstmaanKAdminBundle:Media:index.html.twig', array(
+                    'galleries' => $galleries
+        ));
     }
 	
 }

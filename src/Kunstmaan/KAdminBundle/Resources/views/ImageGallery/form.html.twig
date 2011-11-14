@@ -1,0 +1,11 @@
+<form action="{{ path('KunstmaanKAdminBundle_imagegallery_create' ) }}" method="post" {{ form_enctype(form) }}>
+    <fieldset>
+        <legend>Add Gallery</legend>
+        <div class="clearfix">
+            {{ form_widget(form) }}
+        </div>
+        <div class="actions">
+            <input class="btn primary type" type="submit" value="Upload">
+        </div>
+    </fieldset>
+</form>

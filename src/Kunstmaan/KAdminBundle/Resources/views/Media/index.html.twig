@@ -1,5 +1,19 @@
 {% extends 'KunstmaanKAdminBundle:Default:layout.html.twig' %}
 
+{% block sidebar %}
+<div class="sidebar">
+    <ul>
+        <li class="header">Galleries</li>
+        {% for gallery in galleries %}
+            <li><a href="{{ path('KunstmaanKAdminBundle_imagegallery_show', { 'id': gallery.id, 'slug': gallery.slug }) }}">{{gallery.name }}</a></li>
+        {% else %}
+            <li>No galleries</li>
+        {% endfor %}
+        <li class="header"><a href="{{ path('KunstmaanKAdminBundle_imagegallery_new') }}">add gallery</a></li>
+    </ul>
+</div>
+{% endblock %}
+
 {% block breadcrumb %}
 	<ul class="breadcrumb">
 		<li><a href="{{ path('KunstmaanKAdminBundle_homepage') }}">Home</a> <span class="divider">/</span></li>

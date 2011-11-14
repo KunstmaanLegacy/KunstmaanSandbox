@@ -13,3 +13,7 @@ fos_user_security:
 fos_user_profile:
     resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
     prefix: /profile
+
+_imagine:
+    resource: .
+    type:     imagine

@@ -1,0 +1,50 @@
+{% extends 'KunstmaanKAdminBundle:Default:layout.html.twig' %}
+
+{% block sidebar %}
+<div class="sidebar">
+    <ul>
+        <li class="header">Galleries</li>
+        {% for gallery in galleries %}
+            <li><a href="{{ path('KunstmaanKAdminBundle_imagegallery_show', { 'id': gallery.id, 'slug': gallery.slug }) }}">{{gallery.name }}</a></li>
+        {% else %}
+            <li>No galleries</li>
+        {% endfor %}
+        <li class="header"><a href="{{ path('KunstmaanKAdminBundle_imagegallery_new') }}">add gallery</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block breadcrumb %}
+	<ul class="breadcrumb">
+		<li><a href="{{ path('KunstmaanKAdminBundle_homepage') }}">Home</a> <span class="divider">/</span></li>
+        <li><a href="{{ path('KunstmaanKAdminBundle_media') }}">Media</a> <span class="divider">/</span></li>
+		<li class="active">Gallery</li>
+	</ul>
+{% endblock %}
+
+{% block content %}
+    <div class="page-header">
+        <h1>Gallery <small>{{ gallery.name }}</small></h1>
+    </div>
+    <div>
+        <p><a href="{{ path('KunstmaanKAdminBundle_picture_new', { 'gallery_id' : gallery.id }) }}">add image</a></p>
+    </div>
+    <div>
+        <ul>
+        {% for image in gallery.images %}
+            <li>
+                {{ image.id }}
+                {{ image.name }}
+                {{ image.contentType }}
+                <ul>
+                {% for item in image.metadata %}
+                            <li>{{ item }}</li>
+                {% endfor %}
+                </ul>
+            </li>
+        {% else %}
+            <li>No images in this gallery yet.</li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
