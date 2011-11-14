@@ -8,7 +8,7 @@ use Doctrine\Common\Annotations\Annotation;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @ORM\Entity(repositoryClass="Kunstmaan\KadminBundle\Repository\PageRepository")
+ * @ORM\Entity(repositoryClass="Kunstmaan\KAdminBundle\Repository\PageRepository")
  * @ORM\Table(name="page")
  * @ORM\HasLifecycleCallbacks()
  */
