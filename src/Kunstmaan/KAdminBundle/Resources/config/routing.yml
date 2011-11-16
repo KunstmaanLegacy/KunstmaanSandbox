@@ -9,6 +9,22 @@ KunstmaanKAdminBundle_pages:
 KunstmaanKAdminBundle_media:
     pattern:  /edit/media
     defaults: { _controller: KunstmaanKAdminBundle:Media:index }
+
+KunstmaanKAdminBundle_media_images:
+    pattern:  /edit/media/images
+    defaults: { _controller: KunstmaanKAdminBundle:Media:index }
+
+KunstmaanKAdminBundle_media_videos:
+    pattern:  /edit/media/videos
+    defaults: { _controller: KunstmaanKAdminBundle:Media:index }
+
+KunstmaanKAdminBundle_media_slides:
+    pattern:  /edit/media/slides
+    defaults: { _controller: KunstmaanKAdminBundle:Media:index }
+
+KunstmaanKAdminBundle_media_files:
+    pattern:  /edit/media/files
+    defaults: { _controller: KunstmaanKAdminBundle:Media:index }
     
 KunstmaanKAdminBundle_modules:
     pattern:  /edit/modules
