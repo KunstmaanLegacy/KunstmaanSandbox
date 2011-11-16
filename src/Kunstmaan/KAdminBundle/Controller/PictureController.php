@@ -17,18 +17,27 @@ class PictureController extends Controller
     {
         $gallery = $this->getImageGallery($gallery_id);
 
+        $em = $this->getDoctrine()->getEntityManager();
+        $galleries = $em->getRepository('KunstmaanKAdminBundle:ImageGallery')
+                        ->getAllGalleries();
+
         $picturehelper = new PictureHelper();
         $form = $this->createForm(new \Kunstmaan\KAdminBundle\Form\PictureType(), $picturehelper);
 
         return $this->render('KunstmaanKAdminBundle:Picture:create.html.twig', array(
             'form'   => $form->createView(),
-            'gallery' => $gallery
+            'gallery' => $gallery,
+            'galleries' => $galleries
         ));
     }
 
     public function createAction($gallery_id)
     {
         $gallery = $this->getImageGallery($gallery_id);
+
+        $em = $this->getDoctrine()->getEntityManager();
+        $galleries = $em->getRepository('KunstmaanKAdminBundle:ImageGallery')
+                         ->getAllGalleries();
 
         $request = $this->getRequest();
         $picturehelper = new PictureHelper();
@@ -47,10 +56,6 @@ class PictureController extends Controller
                     $em->persist($picture);
                     $em->flush();
 
-                    $em = $this->getDoctrine()->getEntityManager();
-                           $galleries = $em->getRepository('KunstmaanKAdminBundle:ImageGallery')
-                                                  ->getAllGalleries();
-
                     //$picturehelp = $this->getPicture($picture->getId());
                     return $this->render('KunstmaanKAdminBundle:ImageGallery:show.html.twig', array(
                                    'gallery' => $gallery,
@@ -62,7 +67,8 @@ class PictureController extends Controller
         }
         return $this->render('KunstmaanKAdminBundle:Picture:create.html.twig', array(
             'form' => $form->createView(),
-            'gallery' => $gallery
+            'gallery' => $gallery,
+            'galleries' => $galleries
         ));
     }
 

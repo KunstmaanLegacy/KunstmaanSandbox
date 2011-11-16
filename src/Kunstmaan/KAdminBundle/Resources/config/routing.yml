@@ -12,19 +12,19 @@ KunstmaanKAdminBundle_media:
 
 KunstmaanKAdminBundle_media_images:
     pattern:  /edit/media/images
-    defaults: { _controller: KunstmaanKAdminBundle:Media:index }
+    defaults: { _controller: KunstmaanKAdminBundle:Media:images }
 
 KunstmaanKAdminBundle_media_videos:
     pattern:  /edit/media/videos
-    defaults: { _controller: KunstmaanKAdminBundle:Media:index }
+    defaults: { _controller: KunstmaanKAdminBundle:Media:videos }
 
 KunstmaanKAdminBundle_media_slides:
     pattern:  /edit/media/slides
-    defaults: { _controller: KunstmaanKAdminBundle:Media:index }
+    defaults: { _controller: KunstmaanKAdminBundle:Media:slides }
 
 KunstmaanKAdminBundle_media_files:
     pattern:  /edit/media/files
-    defaults: { _controller: KunstmaanKAdminBundle:Media:index }
+    defaults: { _controller: KunstmaanKAdminBundle:Media:files }
     
 KunstmaanKAdminBundle_modules:
     pattern:  /edit/modules

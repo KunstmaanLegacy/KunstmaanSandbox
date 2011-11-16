@@ -1,11 +1,16 @@
 <form action="{{ path('KunstmaanKAdminBundle_imagegallery_create' ) }}" method="post" {{ form_enctype(form) }}>
     <fieldset>
-        <legend>Add Gallery</legend>
         <div class="clearfix">
-            {{ form_widget(form) }}
-        </div>
+            {{ form_errors(form) }}
+            <label for="xlInput3">Name</label>
+            <div class="input">
+                {{ form_widget(form.name) }}
+            </div>
+            {{ form_rest(form) }}
+                </div>
         <div class="actions">
-            <input class="btn primary type" type="submit" value="Upload">
+            <input class="btn primary type" type="submit" value="Create gallery">
+            <input onclick="window.location = '{{ path('KunstmaanKAdminBundle_media_images' ) }}'" type="reset" class="btn" value="cancel" />
         </div>
     </fieldset>
 </form>

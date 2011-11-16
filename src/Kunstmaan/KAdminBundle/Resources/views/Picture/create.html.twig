@@ -1,8 +1,22 @@
 {% extends 'KunstmaanKAdminBundle:Default:layout.html.twig' %}
 
-{% block title %}Add Picture{% endblock%}
+{% block sidebar %}
+    {% include 'KunstmaanKAdminBundle:ImageGallery:sidebar.html.twig' %}
+{% endblock %}
+
+{% block breadcrumb %}
+	<ul class="breadcrumb">
+		<li><a href="{{ path('KunstmaanKAdminBundle_homepage') }}">Home</a> <span class="divider">/</span></li>
+        <li><a href="{{ path('KunstmaanKAdminBundle_media') }}">Media</a> <span class="divider">/</span></li>
+        <li><a href="{{ path('KunstmaanKAdminBundle_media_images') }}">Image Galleries</a> <span class="divider">/</span></li>
+        <li><a href="{{ path('KunstmaanKAdminBundle_imagegallery_show', { 'id' : gallery.id, 'slug' : gallery.slug } ) }}">{{ gallery.name }}</a> <span class="divider">/</span></li>
+		<li class="active">Add new picture to "{{ gallery.name }}"</li>
+	</ul>
+{% endblock %}
+
+{% block title %}New picture{% endblock%}
 
 {% block content %}
-    <h1>Add Picture</h1>
+    <h1>Add new picture <small>to "{{ gallery.name }}"</small></h1>
     {% include 'KunstmaanKAdminBundle:Picture:form.html.twig' with { 'form': form } %}
 {% endblock %}
