@@ -78,4 +78,14 @@ class ImageGalleryController extends Controller
         ));
     }
 
+    public function ckeditorAction(){
+        $em = $this->getDoctrine()->getEntityManager();
+        $galleries = $em->getRepository('KunstmaanKAdminBundle:ImageGallery')
+                        ->getAllGalleries();
+
+        return $this->render('KunstmaanKAdminBundle:ImageGallery:ckeditor.html.twig', array(
+            'galleries'     => $galleries
+        ));
+    }
+
 }

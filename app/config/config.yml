@@ -54,7 +54,6 @@ doctrine:
                     KunstmaanKAdminBundle: ~
                     KunstmaanKCoreBundle: ~
                     FOSUserBundle: ~
-                    AnoMediaBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:

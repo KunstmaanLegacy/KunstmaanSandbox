@@ -51,3 +51,30 @@ KunstmaanKAdminBundle_imagegallery_show:
     requirements:
         _method:  GET
         id: \d+
+
+KunstmaanKAdminBundle_imagegallery_ckeditor:
+    pattern:  /edit/media/ckeditor
+    defaults: { _controller: KunstmaanKAdminBundle:ImageGallery:ckeditor }
+    requirements:
+        _method:  GET
+
+KunstmaanKAdminBundle_textpart_new:
+    pattern:  /edit/pages/textpart
+    defaults: { _controller: KunstmaanKAdminBundle:TextPart:new }
+    requirements:
+        _method:  GET
+        id: \d+
+
+KunstmaanKAdminBundle_textpart_create:
+    pattern:  /edit/pages/textpart/create
+    defaults: { _controller: KunstmaanKAdminBundle:TextPart:create }
+    requirements:
+        _method: POST
+        id: \d
+
+KunstmaanKAdminBundle_textpart_show:
+    pattern:  /edit/pages/textpart/{id}
+    defaults: { _controller: KunstmaanKAdminBundle:TextPart:show }
+    requirements:
+        _method:  GET
+        id: \d+

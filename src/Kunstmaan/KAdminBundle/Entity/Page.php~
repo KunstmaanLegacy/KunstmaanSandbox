@@ -250,4 +250,14 @@ class Page
     {
         return $this->slug;
     }
+
+    /**
+     * Add children
+     *
+     * @param Kunstmaan\KAdminBundle\Entity\Page $children
+     */
+    public function addPage(\Kunstmaan\KAdminBundle\Entity\Page $children)
+    {
+        $this->children[] = $children;
+    }
 }

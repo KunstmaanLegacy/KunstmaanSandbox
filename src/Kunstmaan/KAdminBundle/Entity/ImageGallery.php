@@ -31,6 +31,22 @@ class ImageGallery{
     }
 
     /**
+     * @ORM\ManyToOne(targetEntity="ImageGallery", inversedBy="children")
+     * @ORM\JoinColumn(name="parent", referencedColumnName="id")
+     */
+    protected $parent;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $sequencenumber;
+
+    /**
+     * @ORM\OneToMany(targetEntity="ImageGallery", mappedBy="parent")
+     */
+    protected $children;
+
+    /**
      * @ORM\Column(type="datetime")
      */
     protected $created;
@@ -96,6 +112,7 @@ class ImageGallery{
 
     public function __construct()
     {
+        $this->children = new \Doctrine\Common\Collections\ArrayCollection();
         $this->images = new \Doctrine\Common\Collections\ArrayCollection();
         $this->setCreated(new \DateTime());
         $this->setUpdated(new \DateTime());
@@ -185,5 +202,86 @@ class ImageGallery{
     public function addPicture(\Kunstmaan\KAdminBundle\Entity\Picture $images)
     {
         $this->images[] = $images;
+    }
+
+    /**
+     * Add children
+     *
+     * @param \Kunstmaan\KAdminBundle\Entity\Page $children
+     */
+    public function addChild(Page $child)
+    {
+        $this->children[] = $child;
+
+        $child->setParent($this);
+    }
+
+
+    public function getChildren()
+    {
+        return $this->children;
+    }
+
+    public function setChildren($children)
+    {
+        $this->children = $children;
+    }
+
+    public function disableChildrenLazyLoading()
+    {
+        if (is_object($this->children)) {
+            $this->children->setInitialized(true);
+        }
+    }
+
+    /**
+     * Set parent
+     *
+     * @param integer $parent
+     */
+    public function setParent($parent)
+    {
+        $this->parent = $parent;
+    }
+
+    /**
+     * Get parent
+     *
+     * @return integer
+     */
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    /**
+     * Set sequencenumber
+     *
+     * @param integer $sequencenumber
+     */
+    public function setSequencenumber($sequencenumber)
+    {
+        $this->sequencenumber = $sequencenumber;
+    }
+
+    /**
+     * Get sequencenumber
+     *
+     * @return integer
+     */
+    public function getSequencenumber()
+    {
+        return $this->sequencenumber;
+    }
+
+
+    /**
+     * Add children
+     *
+     * @param Kunstmaan\KAdminBundle\Entity\ImageGallery $children
+     */
+    public function addImageGallery(\Kunstmaan\KAdminBundle\Entity\ImageGallery $children)
+    {
+        $this->children[] = $children;
     }
 }
