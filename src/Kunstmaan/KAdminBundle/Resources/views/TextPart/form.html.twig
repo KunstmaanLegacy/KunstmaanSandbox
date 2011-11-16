@@ -6,12 +6,15 @@
 <form action="{{ path('KunstmaanKAdminBundle_textpart_create' ) }}" method="post" {{ form_enctype(form) }}>
     <fieldset>
         <div class="clearfix">
-            {{ form_widget(form._token) }}
+            {{ form_errors(form) }}
+
             {{ form_widget(form.content) }}
+
+            {{ form_rest(form) }}
         </div>
         <div class="actions">
-            <input class="btn primary type" type="submit" value="add textpart">
-            <input type="reset" class="btn" value="cancel" />
+            <input class="btn primary type" type="submit" value="create TextPart">
+            <input onclick="window.location = '{{ path('KunstmaanKAdminBundle_pages' ) }}'" type="reset" class="btn" value="cancel" />
         </div>
     </fieldset>
 </form>

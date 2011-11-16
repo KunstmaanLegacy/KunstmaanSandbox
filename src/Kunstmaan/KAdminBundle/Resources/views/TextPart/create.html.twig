@@ -4,14 +4,14 @@
 	<ul class="breadcrumb">
 		<li><a href="{{ path('KunstmaanKAdminBundle_homepage') }}">Home</a> <span class="divider">/</span></li>
         <li><a href="{{ path('KunstmaanKAdminBundle_pages') }}">Pages</a> <span class="divider">/</span></li>
-		<li class="active">add textpart</li>
+		<li class="active">create a new TextPart</li>
 	</ul>
 {% endblock %}
 
 {% block content %}
 
 <div class="page-header">
-    <h1>Add textpart</h1>
+    <h1>Create a new TextPart</h1>
   </div>
    {% include 'KunstmaanKAdminBundle:TextPart:form.html.twig' with { 'form': form } %}
 {% endblock %}
