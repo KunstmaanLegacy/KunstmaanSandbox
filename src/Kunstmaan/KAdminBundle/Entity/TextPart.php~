@@ -94,18 +94,18 @@ class TextPart{
     /**
      * Set content
      *
-     * @param text $content
+     * @param string $content
      */
-    public function setContent(string $content)
+    public function setContent($content)
     {
         $this->content = $content;
-        $this->setUpdated(new \DateTime());
+        $this->setUpdatedAt(new \DateTime());
     }
 
     /**
      * Get content
      *
-     * @return mixed
+     * @return string
      */
     public function getContent()
     {

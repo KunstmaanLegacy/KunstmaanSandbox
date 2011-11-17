@@ -32,14 +32,9 @@ class ImageGallery{
 
     /**
      * @ORM\ManyToOne(targetEntity="ImageGallery", inversedBy="children")
-     * @ORM\JoinColumn(name="parent", referencedColumnName="id")
+     * @ORM\JoinColumn(name="parent", referencedColumnName="id", nullable=true)
      */
     protected $parent;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    protected $sequencenumber;
 
     /**
      * @ORM\OneToMany(targetEntity="ImageGallery", mappedBy="parent")
@@ -173,11 +168,11 @@ class ImageGallery{
     }
 
     /**
-     * @ORM\OneToMany(targetEntity="Picture", mappedBy="imagegallery")
+     * @ORM\OneToMany(targetEntity="Image", mappedBy="imagegallery")
      */
     protected $images;
 
-    public function addImage(Picture $child)
+    public function addImage(Image $child)
     {
         $this->images[] = $child;
         $child->setImageGallery($this);
@@ -199,7 +194,7 @@ class ImageGallery{
      *
      * @param Kunstmaan\KAdminBundle\Entity\Picture $images
      */
-    public function addPicture(\Kunstmaan\KAdminBundle\Entity\Picture $images)
+    public function addPicture(\Kunstmaan\KAdminBundle\Entity\Image $images)
     {
         $this->images[] = $images;
     }
@@ -207,9 +202,9 @@ class ImageGallery{
     /**
      * Add children
      *
-     * @param \Kunstmaan\KAdminBundle\Entity\Page $children
+     * @param \Kunstmaan\KAdminBundle\Entity\ImageGallery $children
      */
-    public function addChild(Page $child)
+    public function addChild(ImageGallery $child)
     {
         $this->children[] = $child;
 
@@ -255,27 +250,6 @@ class ImageGallery{
     }
 
     /**
-     * Set sequencenumber
-     *
-     * @param integer $sequencenumber
-     */
-    public function setSequencenumber($sequencenumber)
-    {
-        $this->sequencenumber = $sequencenumber;
-    }
-
-    /**
-     * Get sequencenumber
-     *
-     * @return integer
-     */
-    public function getSequencenumber()
-    {
-        return $this->sequencenumber;
-    }
-
-
-    /**
      * Add children
      *
      * @param Kunstmaan\KAdminBundle\Entity\ImageGallery $children
@@ -284,4 +258,10 @@ class ImageGallery{
     {
         $this->children[] = $children;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
 }

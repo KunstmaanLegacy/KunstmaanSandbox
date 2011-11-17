@@ -18,10 +18,16 @@
         <h1>Gallery <small>{{ gallery.name }}</small></h1>
     </div>
     <div>
-        <p><a href="{{ path('KunstmaanKAdminBundle_picture_new', { 'gallery_id' : gallery.id }) }}">add image to this gallery</a></p>
+        <p><a href="{{ path('KunstmaanKAdminBundle_image_new', { 'gallery_id' : gallery.id }) }}">add image to this gallery</a> | <a href="{{ path('KunstmaanKAdminBundle_imagegallery_subnew', { 'id' : gallery.id }) }}">add an image gallery to this gallery</a></p>
     </div>
     <div>
-        <h2>Images in this gallery</h2>
+        <ul>
+        {% for child in gallery.children %}
+            <li>{% include 'KunstmaanKAdminBundle:ImageGallery:showgallery.html.twig' %}</li>
+        {% endfor %}
+        </ul>
+
+        <h2>Images in {{ gallery.name }}</h2>
         <ul>
         {% for image in gallery.images %}
             <li>

@@ -10,10 +10,10 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @author Kristof Van Cauwenbergh
  *
- * @ORM\Table("picture")
+ * @ORM\Table("image")
  * @ORM\Entity
  */
-class Picture extends Media
+class Image extends Media
 {
     /**
      * @var integer $id

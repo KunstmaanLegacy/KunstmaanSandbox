@@ -34,15 +34,15 @@ KunstmaanKAdminBundle_settings:
     pattern:  /edit/settings
     defaults: { _controller: KunstmaanKAdminBundle:Settings:index }
 
-KunstmaanKAdminBundle_picture_new:
-    pattern:  /edit/media/picture/{gallery_id}
-    defaults: { _controller: KunstmaanKAdminBundle:Picture:new }
+KunstmaanKAdminBundle_image_new:
+    pattern:  /edit/media/image/{gallery_id}
+    defaults: { _controller: KunstmaanKAdminBundle:Image:new }
     requirements:
         _method: GET
 
-KunstmaanKAdminBundle_picture_create:
-    pattern:  /edit/media/picture/create/{gallery_id}
-    defaults: { _controller: KunstmaanKAdminBundle:Picture:create }
+KunstmaanKAdminBundle_image_create:
+    pattern:  /edit/media/image/create/{gallery_id}
+    defaults: { _controller: KunstmaanKAdminBundle:Image:create }
     requirements:
         _method: POST
         id: \d
@@ -60,6 +60,20 @@ KunstmaanKAdminBundle_imagegallery_create:
     requirements:
         _method: POST
         id: \d
+
+KunstmaanKAdminBundle_imagegallery_subnew:
+    pattern:  /edit/media/gallery/sub/{id}
+    defaults: { _controller: KunstmaanKAdminBundle:ImageGallery:subnew }
+    requirements:
+        _method:  GET
+        id: \d+
+
+KunstmaanKAdminBundle_imagegallery_subcreate:
+    pattern:  /edit/media/gallery/sub/create/{id}
+    defaults: { _controller: KunstmaanKAdminBundle:ImageGallery:subcreate }
+    requirements:
+        _method: POST
+        id: \d+
 
 KunstmaanKAdminBundle_imagegallery_show:
     pattern:  /edit/media/gallery/{id}/{slug}

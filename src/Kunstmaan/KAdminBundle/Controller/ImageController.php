@@ -4,14 +4,14 @@
 namespace Kunstmaan\KAdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Kunstmaan\KAdminBundle\Helper\PictureHelper;
+use Kunstmaan\KAdminBundle\Helper\ImageHelper;
 
 /**
  * picture controller.
  *
  * @author Kristof Van Cauwenbergh
  */
-class PictureController extends Controller
+class ImageController extends Controller
 {
     public function newAction($gallery_id)
     {
@@ -21,10 +21,10 @@ class PictureController extends Controller
         $galleries = $em->getRepository('KunstmaanKAdminBundle:ImageGallery')
                         ->getAllGalleries();
 
-        $picturehelper = new PictureHelper();
-        $form = $this->createForm(new \Kunstmaan\KAdminBundle\Form\PictureType(), $picturehelper);
+        $picturehelper = new ImageHelper();
+        $form = $this->createForm(new \Kunstmaan\KAdminBundle\Form\ImageType(), $picturehelper);
 
-        return $this->render('KunstmaanKAdminBundle:Picture:create.html.twig', array(
+        return $this->render('KunstmaanKAdminBundle:Image:create.html.twig', array(
             'form'   => $form->createView(),
             'gallery' => $gallery,
             'galleries' => $galleries
@@ -40,14 +40,14 @@ class PictureController extends Controller
                          ->getAllGalleries();
 
         $request = $this->getRequest();
-        $picturehelper = new PictureHelper();
-        $form = $this->createForm(new \Kunstmaan\KAdminBundle\Form\PictureType(), $picturehelper);
+        $picturehelper = new ImageHelper();
+        $form = $this->createForm(new \Kunstmaan\KAdminBundle\Form\ImageType(), $picturehelper);
 
         if ('POST' == $request->getMethod()) {
             $form->bindRequest($request);
             if ($form->isValid()){
                 if ($picturehelper->getPicture()!=null) {
-                    $picture = new \Kunstmaan\KAdminBundle\Entity\Picture();
+                    $picture = new \Kunstmaan\KAdminBundle\Entity\Image();
                     $picture->setName($picturehelper->getPicture()->getClientOriginalName());
                     $picture->setContent($picturehelper->getPicture());
                     $picture->setImagegallery($gallery);
@@ -65,7 +65,7 @@ class PictureController extends Controller
                 }
             }
         }
-        return $this->render('KunstmaanKAdminBundle:Picture:create.html.twig', array(
+        return $this->render('KunstmaanKAdminBundle:Image:create.html.twig', array(
             'form' => $form->createView(),
             'gallery' => $gallery,
             'galleries' => $galleries
@@ -76,7 +76,7 @@ class PictureController extends Controller
         $em = $this->getDoctrine()
                    ->getEntityManager();
 
-        $picture = $em->getRepository('KunstmaanKAdminBundle:Picture')->find($picture_id);
+        $picture = $em->getRepository('KunstmaanKAdminBundle:Image')->find($picture_id);
 
         if (!$picture) {
             throw $this->createNotFoundException('Unable to find picture.');

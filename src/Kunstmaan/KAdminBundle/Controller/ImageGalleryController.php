@@ -46,6 +46,26 @@ class ImageGalleryController extends Controller
         ));
     }
 
+    public function subnewAction($id){
+           $gallery = new \Kunstmaan\KAdminBundle\Entity\ImageGallery();
+
+           $em = $this->getDoctrine()->getEntityManager();
+           $parent = $em->find('\Kunstmaan\KAdminBundle\Entity\ImageGallery', $id);
+
+           $gallery->setParent($parent);
+           $form = $this->createForm(new \Kunstmaan\KAdminBundle\Form\SubImageGalleryType(), $gallery);
+
+           $em = $this->getDoctrine()->getEntityManager();
+           $galleries = $em->getRepository('KunstmaanKAdminBundle:ImageGallery')
+                                  ->getAllGalleries();
+
+           return $this->render('KunstmaanKAdminBundle:ImageGallery:subcreate.html.twig', array(
+               'form'   => $form->createView(),
+               'galleries'     => $galleries,
+               'parent' => $parent
+           ));
+       }
+
     public function createAction(){
         $request = $this->getRequest();
         $gallery = new \Kunstmaan\KAdminBundle\Entity\ImageGallery();
@@ -63,7 +83,7 @@ class ImageGalleryController extends Controller
 
                 return $this->render('KunstmaanKAdminBundle:ImageGallery:show.html.twig', array(
                           'gallery' => $gallery,
-                          'galleries'     => $galleries
+                          'galleries'     => $galleries,
                 ));
             }
         }
@@ -77,6 +97,44 @@ class ImageGalleryController extends Controller
             'galleries'     => $galleries
         ));
     }
+
+    public function subcreateAction($id){
+            $request = $this->getRequest();
+
+            $em = $this->getDoctrine()->getEntityManager();
+            $parent = $em->find('\Kunstmaan\KAdminBundle\Entity\ImageGallery', $id);
+
+            $gallery = new \Kunstmaan\KAdminBundle\Entity\ImageGallery();
+            $gallery->setParent($parent);
+            $form = $this->createForm(new \Kunstmaan\KAdminBundle\Form\SubImageGalleryType(), $gallery);
+
+            if ('POST' == $request->getMethod()) {
+                $form->bindRequest($request);
+                if ($form->isValid()){
+                    $em = $this->getDoctrine()->getEntityManager();
+                    $em->persist($gallery);
+                    $em->flush();
+
+                    $galleries = $em->getRepository('KunstmaanKAdminBundle:ImageGallery')
+                                                   ->getAllGalleries();
+
+                    return $this->render('KunstmaanKAdminBundle:ImageGallery:show.html.twig', array(
+                              'gallery' => $gallery,
+                              'galleries'     => $galleries,
+                    ));
+                }
+            }
+
+            $em = $this->getDoctrine()->getEntityManager();
+            $galleries = $em->getRepository('KunstmaanKAdminBundle:ImageGallery')
+                                           ->getAllGalleries();
+
+            return $this->render('KunstmaanKAdminBundle:ImageGallery:subcreate.html.twig', array(
+                'form' => $form->createView(),
+                'galleries'     => $galleries,
+                'parent' => $parent
+            ));
+        }
 
     public function ckeditorAction(){
         $em = $this->getDoctrine()->getEntityManager();

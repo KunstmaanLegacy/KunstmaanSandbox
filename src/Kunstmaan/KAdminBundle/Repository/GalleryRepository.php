@@ -17,6 +17,7 @@ class GalleryRepository extends EntityRepository
         {
             $qb = $this->createQueryBuilder('imagegallery')
                        ->select('imagegallery')
+                       ->where('imagegallery.parent is null')
                        ->addOrderBy('imagegallery.created', 'ASC');
 
             if (false === is_null($limit))

@@ -5,7 +5,7 @@ namespace Kunstmaan\KAdminBundle\Helper;
 /**
  * Comment controller.
  */
-class PictureHelper{
+class ImageHelper{
 
     protected $picture;
 
