@@ -10,7 +10,7 @@ class SettingsController extends Controller
     
     public function indexAction()
     {
-        return $this->render('KunstmaanKAdminBundle:Settings:index.html.twig');
+        return $this->redirect($this->generateUrl('KunstmaanKAdminBundle_settings_users'));
     }
 
     public function usersAction()

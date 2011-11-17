@@ -10,7 +10,7 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <!-- Le styles -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script src="{{ asset('js/jquery-1.7.js') }}"></script>
     <script src="{{ asset('js/bootstrap-dropdown.js') }}"></script>
     <script src="{{ asset('js/bootstrap-tabs.js') }}"></script>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
@@ -19,6 +19,9 @@
       body {
         padding-top: 60px;
       }
+      .container-fluid > .sidebar {
+            top:auto;
+        }
     </style>
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
@@ -62,6 +65,9 @@
       </div>
     </div>
     <div class="container-fluid">
+        {% block breadcrumb %}
+
+        {% endblock %}
       <div class="sidebar">
 	      {% block sidebar %}
 	           <div class="well">
@@ -90,9 +96,7 @@
 	      {% endblock %} 
       </div>
       <div class="content">
-      	{% block breadcrumb %}
-          
-		  {% endblock %}
+
         {% block content %} {% endblock %}
       </div>
         <footer>

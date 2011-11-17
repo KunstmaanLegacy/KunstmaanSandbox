@@ -5,6 +5,7 @@ namespace Kunstmaan\KAdminBundle\Controller;
 use \Kunstmaan\KAdminBundle\Form\PageAdminType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Kunstmaan\KAdminBundle\Entity\Page;
+use Kunstmaan\KAdminBundle\AdminList\PageAdminListConfigurator;
 
 class PagesController extends Controller
 {
@@ -15,8 +16,13 @@ class PagesController extends Controller
 
         $topnodes = $em->getRepository('KunstmaanKAdminBundle:Node')->getTopNodes();
 
+        $request = $this->getRequest();
+        $adminlist    = $this->get("adminlist.factory")->createList(new PageAdminListConfigurator(), $em);
+        $adminlist->bindRequest($request);
+
         return $this->render('KunstmaanKAdminBundle:Pages:index.html.twig', array(
-            'topnodes'      => $topnodes
+            'topnodes'      => $topnodes,
+            'pageadminlist'    => $adminlist,
         ));
     }
 
