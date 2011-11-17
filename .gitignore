@@ -13,3 +13,4 @@ build/logs
 build/api
 build/pdepend
 build/coverage
+web/uploads/*

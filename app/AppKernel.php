@@ -2,12 +2,17 @@
 
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Gaufrette\Filesystem;
 
 class AppKernel extends Kernel
 {
     public function registerBundles()
     {
         $bundles = array(
+            new FOS\UserBundle\FOSUserBundle(),
+            new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
+            new Ano\Bundle\SystemBundle\AnoSystemBundle(),
+            new Ano\Bundle\MediaBundle\AnoMediaBundle(),
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
@@ -18,7 +23,6 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
-            new FOS\UserBundle\FOSUserBundle(),
             new Kunstmaan\KAdminBundle\KunstmaanKAdminBundle(),
             new Kunstmaan\KCoreBundle\KunstmaanKCoreBundle(),
             new Kunstmaan\KMenuBundle\KunstmaanKMenuBundle(),

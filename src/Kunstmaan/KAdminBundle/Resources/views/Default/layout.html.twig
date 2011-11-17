@@ -33,7 +33,15 @@
           <a class="brand" href="{{ path('KunstmaanKAdminBundle_homepage') }}">OpenMercury.NEXT</a>
           <ul class="nav">
             <li><a href="{{ path('KunstmaanKAdminBundle_pages') }}">Pages</a></li>
-            <li><a href="{{ path('KunstmaanKAdminBundle_media') }}">Media</a></li>
+            <li class="dropdown">
+                <a href="{{ path('KunstmaanKAdminBundle_media') }}" class="dropdown-toggle">Media</a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ path('KunstmaanKAdminBundle_media_images') }}">Images</a></li>
+                    <li><a href="{{ path('KunstmaanKAdminBundle_media_videos') }}">Videos</a></li>
+                    <li><a href="{{ path('KunstmaanKAdminBundle_media_slides') }}">Slides</a></li>
+                    <li><a href="{{ path('KunstmaanKAdminBundle_media_files') }}">Files</a></li>
+                </ul>
+            </li>
             <li><a href="{{ path('KunstmaanKAdminBundle_modules') }}">Modules</a></li>
             <li><a href="{{ path('KunstmaanKAdminBundle_settings') }}">Settings</a></li>
             <li class="dropdown">
@@ -86,10 +94,13 @@
           
 		  {% endblock %}
         {% block content %} {% endblock %}
-        <footer>
-          <p>&copy; Kunstmaan 2011</p>
-        </footer>
       </div>
+        <footer>
+                <div class="container-fluid">
+                    <p class="pull-right"><a target="_blank" href="http://www.kunstmaan.be"><img src="{{ asset('images/general/kunstmaan.png') }}" width="83" height="16" alt="Kunstmaan" class="kunstmaan-logo" /></a></p>
+                </div>
+            </footer>
     </div>
+
   </body>
 </html>

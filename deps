@@ -44,6 +44,18 @@
     git=http://github.com/schmittjoh/metadata.git
     version=1.0.0
 
+[Imagine]
+    git=git://github.com/avalanche123/Imagine.git
+    target=/Imagine
+
+[AvalancheImagineBundle]
+    git=http://github.com/avalanche123/AvalancheImagineBundle.git
+    target=bundles/Avalanche/Bundle/ImagineBundle
+
+[gaufrette]
+    git=git://github.com/knplabs/Gaufrette.git
+    target=/gaufrette
+
 [SensioFrameworkExtraBundle]
     git=http://github.com/sensio/SensioFrameworkExtraBundle.git
     target=/bundles/Sensio/Bundle/FrameworkExtraBundle
@@ -70,3 +82,15 @@
 [FOSUserBundle]
     git=git://github.com/FriendsOfSymfony/FOSUserBundle.git
     target=bundles/FOS/UserBundle
+
+[KnpGaufretteBundle]
+    git=http://github.com/knplabs/KnpGaufretteBundle.git
+    target=/bundles/Knp/GaufretteBundle
+
+[AnoSystemBundle]
+    git=https://github.com/benjamindulau/AnoSystemBundle.git
+    target=/bundles/Ano/Bundle/SystemBundle
+
+[AnoMediaBundle]
+    git=https://github.com/benjamindulau/AnoMediaBundle.git
+    target=/bundles/Ano/Bundle/MediaBundle
