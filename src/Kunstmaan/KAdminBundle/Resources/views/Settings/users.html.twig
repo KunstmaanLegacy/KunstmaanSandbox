@@ -1,0 +1,19 @@
+{% extends 'KunstmaanKAdminBundle:Settings:index.html.twig' %}
+
+{% block breadcrumb %}
+	<ul class="breadcrumb">
+		<li><a href="{{ path('KunstmaanKAdminBundle_homepage') }}">Home</a> <span class="divider">/</span></li>
+        <li><a href="{{ path('KunstmaanKAdminBundle_settings') }}">Settings</a> <span class="divider">/</span></li>
+		<li class="active">Users</li>
+	</ul>
+{% endblock %}
+
+{% block content %}
+
+    <div class="page-header">
+        <h1>Users</h1>
+    </div>
+
+    {{ adminlist_widget(useradminlist, 'KunstmaanKAdminBundle_settings_users') }}
+
+{% endblock %}

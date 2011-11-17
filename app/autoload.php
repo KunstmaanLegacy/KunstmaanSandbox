@@ -5,6 +5,12 @@ use Doctrine\Common\Annotations\AnnotationRegistry;
 
 $loader = new UniversalClassLoader();
 $loader->registerNamespaces(array(
+    'FOS'              => __DIR__.'/../vendor/bundles',
+    'Imagine'          => __DIR__.'/../vendor/imagine/lib',
+    'Avalanche'        => __DIR__.'/../vendor/bundles',
+    'Gaufrette'        => __DIR__.'/../vendor/gaufrette/src',
+    'Knp'              => __DIR__.'/../vendor/bundles',
+    'Ano'              => __DIR__.'/../vendor/bundles',
     'Symfony'          => array(__DIR__.'/../vendor/symfony/src', __DIR__.'/../vendor/bundles'),
     'Sensio'           => __DIR__.'/../vendor/bundles',
     'JMS'              => __DIR__.'/../vendor/bundles',
@@ -16,6 +22,8 @@ $loader->registerNamespaces(array(
     'Metadata'         => __DIR__.'/../vendor/metadata/src',
     'Elao'             => __DIR__.'/../vendor/bundles',
     'Airbrake'         => __DIR__.'/../vendor/bundles',
+	'Doctrine\\Common\\DataFixtures'    => __DIR__.'/../vendor/doctrine-fixtures/lib',
+    'Doctrine\\Common'                  => __DIR__.'/../vendor/doctrine-common/lib',
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',

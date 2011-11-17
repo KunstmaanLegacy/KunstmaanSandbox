@@ -1,0 +1,55 @@
+{% extends 'KunstmaanKAdminBundle:Default:layout.html.twig' %}
+
+{% block sidebar %}
+    {% include 'KunstmaanKAdminBundle:ImageGallery:sidebar.html.twig' %}
+{% endblock %}
+
+{% block breadcrumb %}
+	<ul class="breadcrumb">
+		<li><a href="{{ path('KunstmaanKAdminBundle_homepage') }}">Home</a> <span class="divider">/</span></li>
+        <li><a href="{{ path('KunstmaanKAdminBundle_media') }}">Media</a> <span class="divider">/</span></li>
+        <li><a href="{{ path('KunstmaanKAdminBundle_media_images') }}">Images</a> <span class="divider">/</span></li>
+        {% for parent in gallery.parents %}
+            <li><a href="{{ path('KunstmaanKAdminBundle_imagegallery_show', { 'id': parent.id, 'slug': parent.slug }) }}">{{ parent.name}}</a><span class="divider">/</span></li>
+        {% endfor %}
+		<li class="active">{{ gallery.name }}</li>
+	</ul>
+{% endblock %}
+
+{% block content %}
+    <div class="page-header">
+        <h1>Image Gallery <small>{{ gallery.name }}
+        {% if gallery.parent %}
+            | in <a href="{{ path('KunstmaanKAdminBundle_imagegallery_show', { 'id': gallery.parent.id, 'slug': gallery.parent.slug }) }}">{{ gallery.parent.name}}</a>
+        {% endif %}
+        </small></h1>
+    </div>
+    <div>
+        <p><a href="{{ path('KunstmaanKAdminBundle_image_new', { 'gallery_id' : gallery.id }) }}">add image to this gallery</a> | <a href="{{ path('KunstmaanKAdminBundle_imagegallery_subnew', { 'id' : gallery.id }) }}">add an image gallery to this gallery</a></p>
+    </div>
+    <div>
+        <ul>
+        {% for child in gallery.children %}
+            <li>{% include 'KunstmaanKAdminBundle:ImageGallery:showgallery.html.twig' %}</li>
+        {% endfor %}
+        </ul>
+
+        <h2>Images in {{ gallery.name }}</h2>
+        <ul>
+        {% for image in gallery.images %}
+            <li>
+                {{ image.id }}
+                {{ image.name }}
+                {{ image.contentType }}
+                <ul>
+                {% for item in image.metadata %}
+                            <li>{{ item }}</li>
+                {% endfor %}
+                </ul>
+            </li>
+        {% else %}
+            <li>No images in this gallery yet.</li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
