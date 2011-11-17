@@ -19,7 +19,7 @@ role(:db, :primary => true) { domain } # This is where the migrations will run
 # Git config
 set :repository, `git config remote.origin.url`.strip # fetch the repository from git
 set :scm, :git
-set :deploy_via, :rsync_with_remote_cache # gem install capistrano_rsync_with_remote_cache
+# set :deploy_via, :rsync_with_remote_cache # gem install capistrano_rsync_with_remote_cache
 
 # Symfony 2 config
 set :model_manager, "doctrine"
@@ -30,3 +30,5 @@ set :update_vendors, true
 
 # Kumastrano config
 set :campfire_room, "OpenMercury.NEXT"
+
+# Airbrake
