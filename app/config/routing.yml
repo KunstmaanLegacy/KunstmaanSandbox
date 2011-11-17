@@ -1,4 +1,35 @@
+KunstmaanKAdminNodeBundle:
+    resource: "@KunstmaanKAdminNodeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+KunstmaanKAdminListBundle:
+    resource: "@KunstmaanKAdminListBundle/Resources/config/routing.yml"
+    prefix:   /
+
+KunstmaanKMenuBundle:
+    resource: "@KunstmaanKMenuBundle/Resources/config/routing.yml"
+    prefix:   /
+
+KunstmaanKAdminBundle:
+    resource: "@KunstmaanKAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
 # Internal routing configuration to handle ESI
 #_internal:
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
 #   prefix:   /_internal
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+_imagine:
+    resource: .
+    type:     imagine

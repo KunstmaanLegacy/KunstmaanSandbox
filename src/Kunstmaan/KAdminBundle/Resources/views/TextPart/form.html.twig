@@ -1,0 +1,20 @@
+<script src="{{ asset('js/ckeditor/ckeditor.js') }}" type="text/javascript"></script>
+<script type=text/javascript>
+    CKEDITOR.replaceClass = 'rich_editor';
+</script>
+
+<form action="{{ path('KunstmaanKAdminBundle_textpart_create' ) }}" method="post" {{ form_enctype(form) }}>
+    <fieldset>
+        <div class="clearfix">
+            {{ form_errors(form) }}
+
+            {{ form_widget(form.content) }}
+
+            {{ form_rest(form) }}
+        </div>
+        <div class="actions">
+            <input class="btn primary type" type="submit" value="create TextPart">
+            <input onclick="window.location = '{{ path('KunstmaanKAdminBundle_pages' ) }}'" type="reset" class="btn" value="cancel" />
+        </div>
+    </fieldset>
+</form>
