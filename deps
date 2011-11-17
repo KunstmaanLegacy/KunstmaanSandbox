@@ -94,3 +94,7 @@
 [AnoMediaBundle]
     git=https://github.com/benjamindulau/AnoMediaBundle.git
     target=/bundles/Ano/Bundle/MediaBundle
+
+[WebProfilerExtraBundle]
+    git=https://github.com/Elao/WebProfilerExtraBundle.git
+    target=/bundles/Elao/WebProfilerExtraBundle
