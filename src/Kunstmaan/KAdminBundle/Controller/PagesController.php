@@ -14,7 +14,7 @@ class PagesController extends Controller
     {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $topnodes = $em->getRepository('KunstmaanKAdminBundle:Node')->getTopNodes();
+        $topnodes = $em->getRepository('KunstmaanKAdminNodeBundle:Node')->getTopNodes();
 
         $request = $this->getRequest();
         $adminlist    = $this->get("adminlist.factory")->createList(new PageAdminListConfigurator(), $em);
@@ -29,7 +29,7 @@ class PagesController extends Controller
     public function editAction($id, $entityname)
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $topnodes = $em->getRepository('KunstmaanKAdminBundle:Node')->getTopNodes();
+        $topnodes = $em->getRepository('KunstmaanKAdminNodeBundle:Node')->getTopNodes();
 
         $page = $em->getRepository($entityname)->find($id);  //'KunstmaanKAdminBundle:Page'
 

@@ -7,10 +7,10 @@
  * To change this template use File | Settings | File Templates.
  */
 
-namespace Kunstmaan\KAdminBundle\Listener;
+namespace Kunstmaan\KAdminNodeBundle\Listener;
 
 use Doctrine\ORM\Event\LifecycleEventArgs;
-use Kunstmaan\KAdminBundle\Entity\Node;
+use Kunstmaan\KAdminNodeBundle\Entity\Node;
 // see http://inchoo.net/tools-frameworks/symfony2-event-listeners/
 
 class NodeGenerator {

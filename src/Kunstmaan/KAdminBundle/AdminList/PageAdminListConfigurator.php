@@ -26,7 +26,7 @@ class PageAdminListConfigurator extends AbstractAdminListConfigurator{
     }
 
     public function getRepositoryName(){
-        return 'KunstmaanKAdminBundle:Node';
+        return 'KunstmaanKAdminNodeBundle:Node';
     }
 
     function adaptQueryBuilder($querybuilder){
