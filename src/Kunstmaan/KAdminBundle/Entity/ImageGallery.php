@@ -249,6 +249,17 @@ class ImageGallery{
         return $this->parent;
     }
 
+    public function getParents()
+    {
+        $parent = $this->getParent();
+        $parents=array();
+        while($parent!=null){
+            $parents[] = $parent;
+            $parent = $parent->getParent();
+        }
+        return array_reverse($parents);
+    }
+
     /**
      * Add children
      *
