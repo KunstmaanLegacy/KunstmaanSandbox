@@ -9,7 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Kunstmaan\KAdminBundle\Form\PageAdminType;
 
 /**
- * @ORM\Entity(repositoryClass="Kunstmaan\KadminBundle\Repository\PageRepository")
+ * @ORM\Entity(repositoryClass="Kunstmaan\KAdminBundle\Repository\PageRepository")
  * @ORM\Table(name="page")
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="discr", type="string")
