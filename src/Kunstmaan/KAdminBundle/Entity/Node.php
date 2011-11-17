@@ -9,7 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Kunstmaan\KAdminBundle\Form\PageAdminType;
 
 /**
- * @ORM\Entity(repositoryClass="Kunstmaan\KadminBundle\Repository\NodeRepository")
+ * @ORM\Entity(repositoryClass="Kunstmaan\KAdminBundle\Repository\NodeRepository")
  * @ORM\Table(name="node")
  * @ORM\HasLifecycleCallbacks()
  */
