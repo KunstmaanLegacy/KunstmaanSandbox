@@ -1,119 +1,119 @@
 KunstmaanKAdminBundle_homepage:
-    pattern:  /edit
+    pattern:  /admin
     defaults: { _controller: KunstmaanKAdminBundle:Default:index }
 
 KunstmaanKAdminBundle_pages:
-    pattern:  /edit/pages
+    pattern:  /admin/pages
     defaults: { _controller: KunstmaanKAdminBundle:Pages:index }
 
 KunstmaanKAdminBundle_pages_edit:
-    pattern:  /edit/pages/{entityname}/{id}
+    pattern:  /admin/pages/{entityname}/{id}
     defaults: { _controller: KunstmaanKAdminBundle:Pages:edit }
     requirements:
         _method:  GET|POST
         id: \d+
 KunstmaanKAdminBundle_media:
-    pattern:  /edit/media
+    pattern:  /admin/media
     defaults: { _controller: KunstmaanKAdminBundle:Media:index }
 
 KunstmaanKAdminBundle_media_images:
-    pattern:  /edit/media/images
+    pattern:  /admin/media/images
     defaults: { _controller: KunstmaanKAdminBundle:Media:images }
 
 KunstmaanKAdminBundle_media_videos:
-    pattern:  /edit/media/videos
+    pattern:  /admin/media/videos
     defaults: { _controller: KunstmaanKAdminBundle:Media:videos }
 
 KunstmaanKAdminBundle_media_slides:
-    pattern:  /edit/media/slides
+    pattern:  /admin/media/slides
     defaults: { _controller: KunstmaanKAdminBundle:Media:slides }
 
 KunstmaanKAdminBundle_media_files:
-    pattern:  /edit/media/files
+    pattern:  /admin/media/files
     defaults: { _controller: KunstmaanKAdminBundle:Media:files }
     
 KunstmaanKAdminBundle_modules:
-    pattern:  /edit/modules
+    pattern:  /admin/modules
     defaults: { _controller: KunstmaanKAdminBundle:Modules:index }
     
 KunstmaanKAdminBundle_settings:
-    pattern:  /edit/settings
+    pattern:  /admin/settings
     defaults: { _controller: KunstmaanKAdminBundle:Settings:index }
 
 KunstmaanKAdminBundle_settings_users:
-    pattern:  /edit/settings/users
+    pattern:  /admin/settings/users
     defaults: { _controller: KunstmaanKAdminBundle:Settings:users }
 
 KunstmaanKAdminBundle_image_new:
-    pattern:  /edit/media/image/{gallery_id}
+    pattern:  /admin/media/image/{gallery_id}
     defaults: { _controller: KunstmaanKAdminBundle:Image:new }
     requirements:
         _method: GET
 
 KunstmaanKAdminBundle_image_create:
-    pattern:  /edit/media/image/create/{gallery_id}
+    pattern:  /admin/media/image/create/{gallery_id}
     defaults: { _controller: KunstmaanKAdminBundle:Image:create }
     requirements:
         _method: POST
         id: \d
 
 KunstmaanKAdminBundle_imagegallery_new:
-    pattern:  /edit/media/gallery
+    pattern:  /admin/media/gallery
     defaults: { _controller: KunstmaanKAdminBundle:ImageGallery:new }
     requirements:
         _method:  GET
         id: \d+
 
 KunstmaanKAdminBundle_imagegallery_create:
-    pattern:  /edit/media/gallery/create
+    pattern:  /admin/media/gallery/create
     defaults: { _controller: KunstmaanKAdminBundle:ImageGallery:create }
     requirements:
         _method: POST
         id: \d
 
 KunstmaanKAdminBundle_imagegallery_subnew:
-    pattern:  /edit/media/gallery/sub/{id}
+    pattern:  /admin/media/gallery/sub/{id}
     defaults: { _controller: KunstmaanKAdminBundle:ImageGallery:subnew }
     requirements:
         _method:  GET
         id: \d+
 
 KunstmaanKAdminBundle_imagegallery_subcreate:
-    pattern:  /edit/media/gallery/sub/create/{id}
+    pattern:  /admin/media/gallery/sub/create/{id}
     defaults: { _controller: KunstmaanKAdminBundle:ImageGallery:subcreate }
     requirements:
         _method: POST
         id: \d+
 
 KunstmaanKAdminBundle_imagegallery_show:
-    pattern:  /edit/media/gallery/{id}/{slug}
+    pattern:  /admin/media/gallery/{id}/{slug}
     defaults: { _controller: KunstmaanKAdminBundle:ImageGallery:show }
     requirements:
         _method:  GET
         id: \d+
 
 KunstmaanKAdminBundle_imagegallery_ckeditor:
-    pattern:  /edit/media/ckeditor
+    pattern:  /admin/media/ckeditor
     defaults: { _controller: KunstmaanKAdminBundle:ImageGallery:ckeditor }
     requirements:
         _method:  GET
 
 KunstmaanKAdminBundle_textpart_new:
-    pattern:  /edit/pages/textpart
+    pattern:  /admin/pages/textpart
     defaults: { _controller: KunstmaanKAdminBundle:TextPart:new }
     requirements:
         _method:  GET
         id: \d+
 
 KunstmaanKAdminBundle_textpart_create:
-    pattern:  /edit/pages/textpart/create
+    pattern:  /admin/pages/textpart/create
     defaults: { _controller: KunstmaanKAdminBundle:TextPart:create }
     requirements:
         _method: POST
         id: \d
 
 KunstmaanKAdminBundle_textpart_show:
-    pattern:  /edit/pages/textpart/{id}
+    pattern:  /admin/pages/textpart/{id}
     defaults: { _controller: KunstmaanKAdminBundle:TextPart:show }
     requirements:
         _method:  GET
