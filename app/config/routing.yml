@@ -1,3 +1,7 @@
+KunstmaanKAdminNodeBundle:
+    resource: "@KunstmaanKAdminNodeBundle/Resources/config/routing.yml"
+    prefix:   /
+
 KunstmaanKAdminListBundle:
     resource: "@KunstmaanKAdminListBundle/Resources/config/routing.yml"
     prefix:   /

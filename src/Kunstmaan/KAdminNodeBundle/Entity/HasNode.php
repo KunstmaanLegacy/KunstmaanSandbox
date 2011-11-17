@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-namespace Kunstmaan\KAdminBundle\Entity;
+namespace Kunstmaan\KAdminNodeBundle\Entity;
 
 interface HasNode {
 

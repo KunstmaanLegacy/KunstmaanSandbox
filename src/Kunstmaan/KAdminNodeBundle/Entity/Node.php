@@ -1,15 +1,15 @@
 <?php
 // src/Blogger/BlogBundle/Entity/Blog.php
 
-namespace Kunstmaan\KAdminBundle\Entity;
+namespace Kunstmaan\KAdminNodeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Annotations\Annotation;
 use Doctrine\Common\Collections\ArrayCollection;
-use Kunstmaan\KAdminBundle\Form\PageAdminType;
+use Kunstmaan\KAdminNodeBundle\Form\NodeAdminType;
 
 /**
- * @ORM\Entity(repositoryClass="Kunstmaan\KAdminBundle\Repository\NodeRepository")
+ * @ORM\Entity(repositoryClass="Kunstmaan\KAdminNodeBundle\Repository\NodeRepository")
  * @ORM\Table(name="node")
  * @ORM\HasLifecycleCallbacks()
  */

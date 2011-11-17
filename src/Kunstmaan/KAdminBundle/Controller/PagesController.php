@@ -5,6 +5,7 @@ namespace Kunstmaan\KAdminBundle\Controller;
 use \Kunstmaan\KAdminBundle\Form\PageAdminType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Kunstmaan\KAdminBundle\Entity\Page;
+use Kunstmaan\KAdminBundle\AdminList\PageAdminListConfigurator;
 
 class PagesController extends Controller
 {
@@ -13,17 +14,22 @@ class PagesController extends Controller
     {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $topnodes = $em->getRepository('KunstmaanKAdminBundle:Node')->getTopNodes();
+        $topnodes = $em->getRepository('KunstmaanKAdminNodeBundle:Node')->getTopNodes();
+
+        $request = $this->getRequest();
+        $adminlist    = $this->get("adminlist.factory")->createList(new PageAdminListConfigurator(), $em);
+        $adminlist->bindRequest($request);
 
         return $this->render('KunstmaanKAdminBundle:Pages:index.html.twig', array(
-            'topnodes'      => $topnodes
+            'topnodes'      => $topnodes,
+            'pageadminlist'    => $adminlist,
         ));
     }
 
     public function editAction($id, $entityname)
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $topnodes = $em->getRepository('KunstmaanKAdminBundle:Node')->getTopNodes();
+        $topnodes = $em->getRepository('KunstmaanKAdminNodeBundle:Node')->getTopNodes();
 
         $page = $em->getRepository($entityname)->find($id);  //'KunstmaanKAdminBundle:Page'
 

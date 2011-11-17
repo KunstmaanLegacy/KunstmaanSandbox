@@ -16,7 +16,7 @@ use Kunstmaan\KAdminBundle\Form\PageAdminType;
  * @ORM\DiscriminatorMap({ "page" = "Page" , "mypage" = "MyPage" })
  * @ORM\HasLifecycleCallbacks()
  */
-class Page implements HasNode
+class Page implements PageIFace
 {
     /**
      * @ORM\Id

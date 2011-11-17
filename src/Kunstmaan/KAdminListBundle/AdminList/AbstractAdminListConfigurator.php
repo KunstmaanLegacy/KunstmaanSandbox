@@ -19,7 +19,12 @@ abstract class AbstractAdminListConfigurator {
 
     function getValue($item, $columnName){
         $var = "get".$columnName;
-        return $item->$var();
+        $result = $item->$var();
+        if($result instanceof \DateTime){
+            return $result->format('Y-m-d H:i:s');
+        } else {
+            return $result;
+        }
     }
 
     function getLimit(){
