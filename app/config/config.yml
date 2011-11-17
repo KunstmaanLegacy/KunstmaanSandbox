@@ -67,6 +67,13 @@ jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
 
+#Airbrake configuration
+airbrake:
+    key: %airbrake_apikey%
+    config: %airbrake_transport%
+
+airbrake.config: ~
+
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb'
     firewall_name: main
