@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- JNLP File for yED graph editor application. -->
+<jnlp
+  spec="1.0+"
+  codebase="http://www.yworks.com/products/yed/demo"
+  href="yed.jnlp">
+  <information>
+    <title>yEd Graph Editor</title>
+    <vendor>yWorks GmbH</vendor>
+    <homepage href="http://www.yworks.com"/>
+    <description>yEd Graph Editor</description>
+    <description kind="short">An editor for graphs and diagrams that uses the capabilities of the graph visualization library yFiles.</description>
+    <icon href="yball64x64.gif" width="64" height="64"/>
+    <icon href="yball32x32.gif" width="32" height="32"/>
+    <offline-allowed/>
+  </information>
+  <security>
+      <all-permissions/>
+  </security>
+  <resources>
+    <j2se version="1.5+" initial-heap-size="32m" max-heap-size="512m"/>
+    <j2se version="1.6+" initial-heap-size="32m" max-heap-size="512m"/>
+    <jar href="yed.jar"/>
+  </resources>
+  <application-desc main-class="B.A.A.B">
+    <argument>http://omnext.amos.kunstmaan.be/yed/pages.graphml</argument>
+  </application-desc>
+</jnlp>

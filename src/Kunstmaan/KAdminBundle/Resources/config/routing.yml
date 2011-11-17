@@ -5,7 +5,13 @@ KunstmaanKAdminBundle_homepage:
 KunstmaanKAdminBundle_pages:
     pattern:  /edit/pages
     defaults: { _controller: KunstmaanKAdminBundle:Pages:index }
-    
+
+KunstmaanKAdminBundle_pages_edit:
+    pattern:  /edit/pages/{entityname}/{id}
+    defaults: { _controller: KunstmaanKAdminBundle:Pages:edit }
+    requirements:
+        _method:  GET|POST
+        id: \d+
 KunstmaanKAdminBundle_media:
     pattern:  /edit/media
     defaults: { _controller: KunstmaanKAdminBundle:Media:index }
@@ -17,3 +23,7 @@ KunstmaanKAdminBundle_modules:
 KunstmaanKAdminBundle_settings:
     pattern:  /edit/settings
     defaults: { _controller: KunstmaanKAdminBundle:Settings:index }
+
+KunstmaanKAdminBundle_settings_users:
+    pattern:  /edit/settings/users
+    defaults: { _controller: KunstmaanKAdminBundle:Settings:users }

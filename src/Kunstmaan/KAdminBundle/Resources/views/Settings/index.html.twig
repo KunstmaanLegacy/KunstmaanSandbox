@@ -7,6 +7,15 @@
 	</ul>
 {% endblock %}
 
+{% block sidebar %}
+    <ul>
+        <li class="header">Settings</li>
+        <li><a href="{{ path('KunstmaanKAdminBundle_settings_users') }}">Users</a></li>
+        <li><a href="#">Maintenance</a></li>
+        <li><a href="#">Scheduled jobs</a></li>
+    </ul>
+{% endblock %}
+
 {% block content %}
 
 <div class="page-header">

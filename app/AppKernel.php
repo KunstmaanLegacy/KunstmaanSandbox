@@ -21,6 +21,8 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Kunstmaan\KAdminBundle\KunstmaanKAdminBundle(),
             new Kunstmaan\KCoreBundle\KunstmaanKCoreBundle(),
+            new Kunstmaan\KMenuBundle\KunstmaanKMenuBundle(),
+            new Kunstmaan\KAdminListBundle\KunstmaanKAdminListBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

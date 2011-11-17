@@ -9,14 +9,11 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Kunstmaan\KAdminBundle\Form\PageAdminType;
 
 /**
- * @ORM\Entity(repositoryClass="Kunstmaan\KadminBundle\Repository\PageRepository")
- * @ORM\Table(name="page")
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="discr", type="string")
- * @ORM\DiscriminatorMap({ "page" = "Page" , "mypage" = "MyPage" })
+ * @ORM\Entity(repositoryClass="Kunstmaan\KadminBundle\Repository\MenuRepository")
+ * @ORM\Table(name="menu")
  * @ORM\HasLifecycleCallbacks()
  */
-class Page implements HasNode
+class Menu
 {
     /**
      * @ORM\Id
@@ -26,13 +23,22 @@ class Page implements HasNode
     protected $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="MenuItem")
+     * @ORM\JoinColumn(name="root", referencedColumnName="id")
+     */
+    protected $root;
+
+
+    /**
      * @ORM\Column(type="string")
      */
-    protected $title;
+    protected $type;
+
 
 
     public function __construct()
     {
+
     }
 
     /**
@@ -60,9 +66,9 @@ class Page implements HasNode
      *
      * @param string $title
      */
-    public function setTitle($title)
+    public function setType($type)
     {
-        $this->title = $title;
+        $this->type = $type;
     }
 
     /**
@@ -70,18 +76,37 @@ class Page implements HasNode
      *
      * @return string
      */
-    public function getTitle()
+    public function getType()
     {
-        return $this->title;
+        return $this->type;
     }
 
     public function __toString()
     {
-        return $this->getTitle();
+        return $this->getType(). " menu";
     }
 
-    public function getDefaultAdminType()
+    /**
+     * Set parent
+     *
+     * @param integer $parent
+     */
+    public function setRoot($root)
     {
-        return new PageAdminType();
+        $this->root = $root;
+    }
+
+    /**
+     * Get parent
+     *
+     * @return integer
+     */
+    public function getRoot()
+    {
+        return $this->root;
+    }
+
+    public function getDefaultAdminType(){
+        return new MenuAdminType();
     }
 }
