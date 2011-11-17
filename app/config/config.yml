@@ -52,6 +52,7 @@ doctrine:
             default:
                 mappings:
                     KunstmaanKAdminBundle: ~
+                    KunstmaanKAdminNodeBundle: ~
                     KunstmaanKCoreBundle: ~
                     FOSUserBundle: ~
                     #AnoMediaBundle: ~
