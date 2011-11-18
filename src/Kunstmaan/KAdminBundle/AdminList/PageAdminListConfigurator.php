@@ -22,6 +22,7 @@ class PageAdminListConfigurator extends AbstractAdminListConfigurator{
         $array[] = "title";
         $array[] = "created";
         $array[] = "updated";
+        $array[] = "online";
         return $array;
     }
 

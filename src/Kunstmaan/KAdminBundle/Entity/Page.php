@@ -84,4 +84,9 @@ class Page implements PageIFace
     {
         return new PageAdminType();
     }
+
+    public function isOnline()
+    {
+        return true;
+    }
 }
