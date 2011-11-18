@@ -68,6 +68,11 @@ class Node
      */
     protected $updated;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $online;
+
 
     public function __construct()
     {
@@ -293,9 +298,29 @@ class Node
     }
 
     /**
+     * Is online
+     *
+     * @return boolean
+     */
+    public function isOnline()
+    {
+        return $this->online;
+    }
+
+    /**
+     * Set online
+     *
+     * @param boolean $online
+     */
+    public function setOnline($online)
+    {
+        $this->online = $online;
+    }
+
+    /**
      * Get slug
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {
