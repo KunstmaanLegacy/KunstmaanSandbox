@@ -1,23 +1,7 @@
 {% extends 'KunstmaanKAdminBundle:Default:layout.html.twig' %}
 
 {% block sidebar %}
-<div class="sidebar">
-    <ul>
-                <li class="header">Media</li>
-                <li><a href="{{ path('KunstmaanKAdminBundle_media_videos') }}">Videos</a></li>
-                <li><a href="{{ path('KunstmaanKAdminBundle_media_slides') }}">Slides</a></li>
-                <li><a href="{{ path('KunstmaanKAdminBundle_media_files') }}">Files</a></li>
-    </ul>
-    <ul>
-        <li class="header">Image Galleries</li>
-        {% for gallery in galleries %}
-            <li><a href="{{ path('KunstmaanKAdminBundle_imagegallery_show', { 'id': gallery.id, 'slug': gallery.slug }) }}">{{gallery.name }}</a></li>
-        {% else %}
-            <li>No galleries</li>
-        {% endfor %}
-        <li class="header"><a href="{{ path('KunstmaanKAdminBundle_imagegallery_new') }}">add image gallery</a></li>
-    </ul>
-</div>
+    {% include 'KunstmaanKAdminBundle:ImageGallery:sidebar.html.twig' %}
 {% endblock %}
 
 {% block breadcrumb %}
@@ -26,8 +10,4 @@
 		<li><a href="{{ path('KunstmaanKAdminBundle_media') }}">Media</a> <span class="divider">/</span></li>
 		<li class="active">Images</li>
 	</ul>
-{% endblock %}
-
-{% block content %}
-
 {% endblock %}
