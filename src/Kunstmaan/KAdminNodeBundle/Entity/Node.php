@@ -1,15 +1,15 @@
 <?php
 // src/Blogger/BlogBundle/Entity/Blog.php
 
-namespace Kunstmaan\KAdminBundle\Entity;
+namespace Kunstmaan\KAdminNodeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Annotations\Annotation;
 use Doctrine\Common\Collections\ArrayCollection;
-use Kunstmaan\KAdminBundle\Form\PageAdminType;
+use Kunstmaan\KAdminNodeBundle\Form\NodeAdminType;
 
 /**
- * @ORM\Entity(repositoryClass="Kunstmaan\KAdminBundle\Repository\NodeRepository")
+ * @ORM\Entity(repositoryClass="Kunstmaan\KAdminNodeBundle\Repository\NodeRepository")
  * @ORM\Table(name="node")
  * @ORM\HasLifecycleCallbacks()
  */
@@ -67,6 +67,11 @@ class Node
      * @ORM\Column(type="datetime")
      */
     protected $updated;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $online;
 
 
     public function __construct()
@@ -293,9 +298,29 @@ class Node
     }
 
     /**
+     * Is online
+     *
+     * @return boolean
+     */
+    public function isOnline()
+    {
+        return $this->online;
+    }
+
+    /**
+     * Set online
+     *
+     * @param boolean $online
+     */
+    public function setOnline($online)
+    {
+        $this->online = $online;
+    }
+
+    /**
      * Get slug
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {

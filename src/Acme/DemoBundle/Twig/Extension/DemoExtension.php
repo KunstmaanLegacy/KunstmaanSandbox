@@ -33,7 +33,7 @@ class DemoExtension extends \Twig_Extension
     public function getCode($template)
     {
         $controller = htmlspecialchars($this->getControllerCode(), ENT_QUOTES, 'UTF-8');
-        $template = htmlspecialchars($this->getTemplateCode($template), ENT_QUOTES, 'UTF-8');
+        $template   = htmlspecialchars($this->getTemplateCode($template), ENT_QUOTES, 'UTF-8');
 
         // remove the code block
         $template = str_replace('{% set code = code(_self) %}', '', $template);

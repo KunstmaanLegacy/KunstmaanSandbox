@@ -16,7 +16,7 @@ use Kunstmaan\KAdminBundle\Form\PageAdminType;
  * @ORM\DiscriminatorMap({ "page" = "Page" , "mypage" = "MyPage" })
  * @ORM\HasLifecycleCallbacks()
  */
-class Page implements HasNode
+class Page implements PageIFace
 {
     /**
      * @ORM\Id
@@ -83,5 +83,10 @@ class Page implements HasNode
     public function getDefaultAdminType()
     {
         return new PageAdminType();
+    }
+
+    public function isOnline()
+    {
+        return true;
     }
 }

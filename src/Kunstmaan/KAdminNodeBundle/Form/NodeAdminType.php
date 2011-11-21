@@ -1,12 +1,12 @@
 <?php
 // src/Blogger/BlogBundle/Form/EnquiryType.php
 
-namespace Kunstmaan\KAdminBundle\Form;
+namespace Kunstmaan\KAdminNodeBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
 
-class PageAdminType extends AbstractType
+class NodeAdminType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {

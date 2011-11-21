@@ -1,6 +1,6 @@
 <?php
 
-namespace Kunstmaan\KAdminBundle\Repository;
+namespace Kunstmaan\KAdminNodeBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 

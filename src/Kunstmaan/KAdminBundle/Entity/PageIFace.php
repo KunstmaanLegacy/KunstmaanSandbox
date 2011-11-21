@@ -2,15 +2,17 @@
 /**
  * Created by JetBrains PhpStorm.
  * User: kris
- * Date: 14/11/11
- * Time: 16:29
+ * Date: 17/11/11
+ * Time: 16:26
  * To change this template use File | Settings | File Templates.
  */
 
 namespace Kunstmaan\KAdminBundle\Entity;
 
-interface HasNode {
+use Kunstmaan\KAdminNodeBundle\Entity\HasNode;
 
-    public function getId();
+interface PageIFace extends HasNode
+{
+
 
 }
