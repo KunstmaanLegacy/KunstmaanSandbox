@@ -4,7 +4,7 @@
 namespace Kunstmaan\KMediaBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Kunstmaan\KMediaBundle\Form\ImageGalleryType;
+use Kunstmaan\KMediaBundle\Form\GalleryType;
 use Kunstmaan\KMediaBundle\Entity\ImageGallery;
 use Kunstmaan\KMediaBundle\Form\SubGalleryType;
 
@@ -36,7 +36,7 @@ class ImageGalleryController extends Controller
 
     public function newAction(){
         $gallery = new ImageGallery();
-        $form = $this->createForm(new ImageGalleryType(), $gallery);
+        $form = $this->createForm(new GalleryType('Kunstmaan\KMediaBundle\Entity\ImageGallery'), $gallery);
 
         $em = $this->getDoctrine()->getEntityManager();
         $galleries = $em->getRepository('KunstmaanKMediaBundle:ImageGallery')
@@ -71,7 +71,7 @@ class ImageGalleryController extends Controller
     public function createAction(){
         $request = $this->getRequest();
         $gallery = new ImageGallery();
-        $form = $this->createForm(new ImageGalleryType(), $gallery);
+        $form = $this->createForm(new GalleryType('Kunstmaan\KMediaBundle\Entity\ImageGallery'), $gallery);
 
         if ('POST' == $request->getMethod()) {
             $form->bindRequest($request);

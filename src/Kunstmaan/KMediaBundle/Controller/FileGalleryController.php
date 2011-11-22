@@ -4,10 +4,9 @@
 namespace Kunstmaan\KMediaBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Kunstmaan\KMediaBundle\Form\ImageGalleryType;
 use Kunstmaan\KMediaBundle\Entity\ImageGallery;
 use Kunstmaan\KMediaBundle\Form\SubGalleryType;
-use Kunstmaan\KMediaBundle\Form\FileGalleryType;
+use Kunstmaan\KMediaBundle\Form\GalleryType;
 use Kunstmaan\KMediaBundle\Entity\FileGallery;
 
 /**
@@ -27,7 +26,7 @@ class FileGalleryController extends Controller
                         ->getAllGalleries();
 
         if (!$gallery) {
-            throw $this->createNotFoundException('Unable to find image gallery.');
+            throw $this->createNotFoundException('Unable to find file gallery.');
         }
 
         return $this->render('KunstmaanKMediaBundle:FileGallery:show.html.twig', array(
@@ -37,8 +36,8 @@ class FileGalleryController extends Controller
     }
 
     public function newAction(){
-        $gallery = new ImageGallery();
-        $form = $this->createForm(new FileGalleryType(), $gallery);
+        $gallery = new FileGallery();
+        $form = $this->createForm(new GalleryType('Kunstmaan\KMediaBundle\Entity\FileGallery'), $gallery);
 
         $em = $this->getDoctrine()->getEntityManager();
         $galleries = $em->getRepository('KunstmaanKMediaBundle:FileGallery')
@@ -73,7 +72,7 @@ class FileGalleryController extends Controller
     public function createAction(){
         $request = $this->getRequest();
         $gallery = new FileGallery();
-        $form = $this->createForm(new FileGalleryType(), $gallery);
+        $form = $this->createForm(new GalleryType('Kunstmaan\KMediaBundle\Entity\FileGallery'), $gallery);
 
         if ('POST' == $request->getMethod()) {
             $form->bindRequest($request);
