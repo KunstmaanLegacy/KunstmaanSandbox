@@ -6,7 +6,7 @@ namespace Kunstmaan\KAdminBundle\DataFixtures\ORM;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Kunstmaan\KAdminBundle\Entity\Page;
-use Kunstmaan\KAdminBundle\Entity\ImageGallery;
+use Kunstmaan\KMediaBundle\Entity\ImageGallery;
 
 class ImageGalleryFixtures extends AbstractFixture implements OrderedFixtureInterface
 {

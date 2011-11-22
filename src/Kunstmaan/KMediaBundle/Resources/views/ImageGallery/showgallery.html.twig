@@ -1,0 +1,20 @@
+<div>
+   <h3>Subgallery: <a href="{{ path('KunstmaanKMediaBundle_imagegallery_show', { 'id' :child.id, 'slug' : child.slug }) }}">{{ child.name }}</a></h3>
+
+   <ul>
+        {% for image in child.images %}
+            <li>
+                {{ image.id }}
+                {{ image.name }}
+                {{ image.contentType }}
+            </li>
+        {% else %}
+            <li>No images in this gallery yet.</li>
+        {% endfor %}
+   </ul>
+    <ul>
+    {% for child in child.children %}
+        <li>{% include 'KunstmaanKMediaBundle:ImageGallery:showgallery.html.twig' %}</li>
+    {% endfor %}
+    </ul>
+</div>

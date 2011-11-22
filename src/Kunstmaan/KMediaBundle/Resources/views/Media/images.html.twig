@@ -1,0 +1,13 @@
+{% extends 'KunstmaanKAdminBundle:Default:layout.html.twig' %}
+
+{% block sidebar %}
+    {% include 'KunstmaanKMediaBundle:ImageGallery:sidebar.html.twig' %}
+{% endblock %}
+
+{% block breadcrumb %}
+	<ul class="breadcrumb">
+		<li><a href="{{ path('KunstmaanKAdminBundle_homepage') }}">Home</a> <span class="divider">/</span></li>
+		<li><a href="{{ path('KunstmaanKMediaBundle_media') }}">Media</a> <span class="divider">/</span></li>
+		<li class="active">Images</li>
+	</ul>
+{% endblock %}

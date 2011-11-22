@@ -1,6 +1,8 @@
 imports:
     - { resource: parameters.ini }
     - { resource: security.yml }
+    KunstmaanKMediaBundle:
+        resource: @KunstmaanKMediaBundle/Resources/config/config.yml
 
 framework:
     #esi:             ~
@@ -53,6 +55,7 @@ doctrine:
                 mappings:
                     KunstmaanKAdminBundle: ~
                     KunstmaanKCoreBundle: ~
+                    KunstmaanKMediaBundle: ~
                     FOSUserBundle: ~
                     #AnoMediaBundle: ~
 
@@ -83,41 +86,3 @@ fos_user:
             handler:            fos_user.resetting.form.handler.default
             name:               fos_user_resetting_form
             validation_groups:  [ResetPassword]
-
-ano_media:
-    cdn:
-        local:
-            default: true
-            id: ano_media.cdn.remote_server
-            options:
-                base_url: "http://omnext.echo.kunstmaan.be/" # instellen in parameters.ini?
-
-    provider:
-        image:  # So we need the image provider here
-            default: true
-            id: ano_media.provider.image
-        file:  # So we need the image provider here
-            default: false
-            id: ano_media.provider.file
-
-
-    filesystem:
-            local:
-                default: true
-                id: ano_media.filesystem.local
-                options:
-                    base_path: %kernel.root_dir%/../web/uploads/media
-                    create: true  #creates the directory if it doesn't exist yet
-
-    contexts:
-        omnext_picture:
-            provider: image
-            formats:
-                small: { width: 90, height: 90 }
-                medium: { width: 210, height: 150 }
-                large: { width: 330, height: 230 }
-
-        omnext_file:
-            provider: file
-
-
