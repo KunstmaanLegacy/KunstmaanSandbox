@@ -1,19 +1,15 @@
-{% extends 'KunstmaanKAdminBundle:Default:layout.html.twig' %}
+{% extends 'KunstmaanKMediaBundle:Default:layout.html.twig' %}
 
-{% block sidebar %}
+{% block subsidebar %}
     {% include 'KunstmaanKMediaBundle:FileGallery:sidebar.html.twig' %}
 {% endblock %}
 
-{% block breadcrumb %}
-	<ul class="breadcrumb">
-		<li><a href="{{ path('KunstmaanKAdminBundle_homepage') }}">Home</a> <span class="divider">/</span></li>
-        <li><a href="{{ path('KunstmaanKMediaBundle_media') }}">Media</a> <span class="divider">/</span></li>
-        <li><a href="{{ path('KunstmaanKMediaBundle_media_files') }}">Files</a> <span class="divider">/</span></li>
+{% block subbreadcrumb %}
+    <li><a href="{{ path('KunstmaanKMediaBundle_media_files') }}">Files</a> <span class="divider">/</span></li>
         {% for parent in gallery.parents %}
             <li><a href="{{ path('KunstmaanKMediaBundle_filegallery_show', { 'id': parent.id, 'slug': parent.slug }) }}">{{ parent.name}}</a><span class="divider">/</span></li>
         {% endfor %}
 		<li class="active">{{ gallery.name }}</li>
-	</ul>
 {% endblock %}
 
 {% block content %}

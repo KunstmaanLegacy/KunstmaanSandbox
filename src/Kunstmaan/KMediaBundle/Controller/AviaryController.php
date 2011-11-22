@@ -4,10 +4,10 @@ namespace Kunstmaan\KMediaBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Kunstmaan\KMediaBundle\Entity\Image;
-use Kunstmaan\KMediaBundle\Helper\ImageHelper;
+use Kunstmaan\KMediaBundle\Helper\MediaHelper;
 use Symfony\Component\HttpFoundation\File\File;
 
-class AmazonController extends Controller
+class AviaryController extends Controller
 {
 
     public function indexAction($gallery_id, $image_id)
@@ -17,10 +17,7 @@ class AmazonController extends Controller
         $url = parse_url($_GET['url']);
         $info = pathinfo($url['path']);
         $filename = $info['filename'].".".$info['extension'];
-
         $path = sys_get_temp_dir()."/".$filename;
-
-
         $savefile = fopen($path, 'w');
 
         curl_setopt($ch, CURLOPT_FILE, $savefile);
@@ -35,16 +32,16 @@ class AmazonController extends Controller
 
         $gallery = $this->getImageGallery($gallery_id);
 
-        $picturehelper = new ImageHelper();
-        $picturehelper->setPicture( $upload );
+        $picturehelper = new MediaHelper();
+        $picturehelper->setMedia( $upload );
 
-        if ($picturehelper->getPicture()!=null) {
+        if ($picturehelper->getMedia()!=null) {
             $hulp = $this->getPicture($image_id);
             $picture = new Image();
             $picture->setName($hulp->getName()."-edited");
-            $picture->setContent($picturehelper->getPicture());
+            $picture->setContent($picturehelper->getMedia());
             $picture->setOriginal($hulp);
-            $picture->setImagegallery($gallery);
+            $picture->setGallery($gallery);
 
             $em = $this->getDoctrine()->getEntityManager();
             $em->persist($picture);
@@ -70,7 +67,6 @@ class AmazonController extends Controller
     protected function getPicture($picture_id){
         $em = $this->getDoctrine()
                    ->getEntityManager();
-
         $picture = $em->getRepository('KunstmaanKMediaBundle:Image')->find($picture_id);
 
         if (!$picture) {
@@ -84,7 +80,6 @@ class AmazonController extends Controller
     {
         $em = $this->getDoctrine()
                     ->getEntityManager();
-
         $imagegallery = $em->getRepository('KunstmaanKMediaBundle:ImageGallery')->find($gallery_id);
 
         if (!$imagegallery) {

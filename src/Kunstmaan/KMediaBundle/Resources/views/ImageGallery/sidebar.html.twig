@@ -1,13 +1,5 @@
 
-<div class="sidebar">
-    <ul>
-            <li class="header">Media</li>
-            <li><a href="{{ path('KunstmaanKMediaBundle_media_videos') }}">Videos</a></li>
-            <li><a href="{{ path('KunstmaanKMediaBundle_media_slides') }}">Slides</a></li>
-            <li><a href="{{ path('KunstmaanKMediaBundle_media_files') }}">Files</a></li>
-    </ul>
-
-    <ul>
+<ul>
         <li class="header">Image Galleries</li>
         {% for gallery in galleries %}
             <li><a href="{{ path('KunstmaanKMediaBundle_imagegallery_show', { 'id': gallery.id, 'slug': gallery.slug }) }}">{{gallery.name }}</a></li>
@@ -19,5 +11,4 @@
             <li>No image galleries</li>
         {% endfor %}
         <li class="header"><a href="{{ path('KunstmaanKMediaBundle_imagegallery_new') }}">create new image gallery</a></li>
-    </ul>
-</div>
+</ul>

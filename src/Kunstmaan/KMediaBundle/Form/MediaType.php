@@ -9,18 +9,18 @@ use Symfony\Component\Form\FormBuilder;
  * class to define the form to upload a picture
  *
  */
-class ImageType extends AbstractType
+class MediaType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder
-            ->add('picture', 'file')
+            ->add('media', 'file')
         ;
     }
 
     public function getName()
     {
-        return 'kunstmaan_kmediabundle_picturetype';
+        return 'kunstmaan_kmediabundle_filetype';
     }
 }
 

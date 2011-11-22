@@ -1,20 +1,16 @@
-{% extends 'KunstmaanKAdminBundle:Default:layout.html.twig' %}
+{% extends 'KunstmaanKMediaBundle:Default:layout.html.twig' %}
 
-{% block sidebar %}
+{% block subsidebar %}
     {% include 'KunstmaanKMediaBundle:ImageGallery:sidebar.html.twig' %}
 {% endblock %}
 
-{% block breadcrumb %}
-	<ul class="breadcrumb">
-		<li><a href="{{ path('KunstmaanKAdminBundle_homepage') }}">Home</a> <span class="divider">/</span></li>
-        <li><a href="{{ path('KunstmaanKMediaBundle_media') }}">Media</a> <span class="divider">/</span></li>
-        <li><a href="{{ path('KunstmaanKMediaBundle_media_images') }}">Images</a> <span class="divider">/</span></li>
+{% block subbreadcrumb %}
+    <li><a href="{{ path('KunstmaanKMediaBundle_media_images') }}">Images</a> <span class="divider">/</span></li>
         {% for parent in gallery.parents %}
             <li><a href="{{ path('KunstmaanKMediaBundle_imagegallery_show', { 'id': parent.id, 'slug': parent.slug }) }}">{{ parent.name}}</a><span class="divider">/</span></li>
         {% endfor %}
         <li><a href="{{ path('KunstmaanKMediaBundle_imagegallery_show', { 'id': gallery.id, 'slug': gallery.slug }) }}">{{ gallery.name}}</a><span class="divider">/</span></li>
         <li class="active">{{ media.name }}</li>
-	</ul>
 {% endblock %}
 
 {% block content %}
@@ -65,7 +61,7 @@
                     var img = document.getElementById(imageID);
                     img.src = newURL;
 
-                   window.location = '{{ url('KunstmaanKMediaBundle_amazon', { 'gallery_id' : gallery.id, 'image_id' : media.id }) }}?url='+newURL;
+                   window.location = '{{ url('KunstmaanKMediaBundle_aviary', { 'gallery_id' : gallery.id, 'image_id' : media.id }) }}?url='+newURL;
 
                     //this.close;
                 }

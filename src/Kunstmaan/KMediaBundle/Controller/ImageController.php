@@ -4,9 +4,9 @@
 namespace Kunstmaan\KMediaBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Kunstmaan\KMediaBundle\Helper\ImageHelper;
+use Kunstmaan\KMediaBundle\Helper\MediaHelper;
 use Kunstmaan\KMediaBundle\Entity\Image;
-use Kunstmaan\KMediaBundle\Form\ImageType;
+use Kunstmaan\KMediaBundle\Form\MediaType;
 
 /**
  * picture controller.
@@ -20,12 +20,12 @@ class ImageController extends Controller
     {
         $em = $this->getDoctrine()->getEntityManager();
         $media = $em->find('\Kunstmaan\KMediaBundle\Entity\Image', $media_id);
-        $gallery = $media->getImagegallery();
+        $gallery = $media->getGallery();
         $galleries = $em->getRepository('KunstmaanKMediaBundle:ImageGallery')
                                 ->getAllGalleries();
 
-        $picturehelper = new ImageHelper();
-        $form = $this->createForm(new ImageType(), $picturehelper);
+        $picturehelper = new MediaHelper();
+        $form = $this->createForm(new MediaType(), $picturehelper);
 
         return $this->render('KunstmaanKMediaBundle:Image:show.html.twig', array(
                     'form' => $form->createView(),
@@ -44,8 +44,8 @@ class ImageController extends Controller
         $galleries = $em->getRepository('KunstmaanKMediaBundle:ImageGallery')
                         ->getAllGalleries();
 
-        $picturehelper = new ImageHelper();
-        $form = $this->createForm(new ImageType(), $picturehelper);
+        $picturehelper = new MediaHelper();
+        $form = $this->createForm(new MediaType(), $picturehelper);
 
         return $this->render('KunstmaanKMediaBundle:Image:create.html.twig', array(
             'form'   => $form->createView(),
@@ -63,17 +63,17 @@ class ImageController extends Controller
                          ->getAllGalleries();
 
         $request = $this->getRequest();
-        $picturehelper = new ImageHelper();
-        $form = $this->createForm(new ImageType(), $picturehelper);
+        $picturehelper = new MediaHelper();
+        $form = $this->createForm(new MediaType(), $picturehelper);
 
         if ('POST' == $request->getMethod()) {
             $form->bindRequest($request);
             if ($form->isValid()){
-                if ($picturehelper->getPicture()!=null) {
+                if ($picturehelper->getMedia()!=null) {
                     $picture = new Image();
-                    $picture->setName($picturehelper->getPicture()->getClientOriginalName());
-                    $picture->setContent($picturehelper->getPicture());
-                    $picture->setImagegallery($gallery);
+                    $picture->setName($picturehelper->getMedia()->getClientOriginalName());
+                    $picture->setContent($picturehelper->getMedia());
+                    $picture->setGallery($gallery);
 
                     $em = $this->getDoctrine()->getEntityManager();
                     $em->persist($picture);
@@ -98,7 +98,6 @@ class ImageController extends Controller
     protected function getPicture($picture_id){
         $em = $this->getDoctrine()
                    ->getEntityManager();
-
         $picture = $em->getRepository('KunstmaanKMediaBundle:Image')->find($picture_id);
 
         if (!$picture) {
@@ -112,7 +111,6 @@ class ImageController extends Controller
     {
         $em = $this->getDoctrine()
                     ->getEntityManager();
-
         $imagegallery = $em->getRepository('KunstmaanKMediaBundle:ImageGallery')->find($gallery_id);
 
         if (!$imagegallery) {

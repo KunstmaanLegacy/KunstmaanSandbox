@@ -4,8 +4,8 @@
 namespace Kunstmaan\KMediaBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Kunstmaan\KMediaBundle\Helper\ImageHelper;
-use Kunstmaan\KMediaBundle\Form\ImageType;
+use Kunstmaan\KMediaBundle\Helper\MediaHelper;
+use Kunstmaan\KMediaBundle\Form\MediaType;
 use Kunstmaan\KMediaBundle\Entity\File;
 
 /**
@@ -20,12 +20,12 @@ class FileController extends Controller
     {
         $em = $this->getDoctrine()->getEntityManager();
         $media = $em->find('\Kunstmaan\KMediaBundle\Entity\File', $media_id);
-        $gallery = $media->getFilegallery();
+        $gallery = $media->getGallery();
         $galleries = $em->getRepository('KunstmaanKMediaBundle:FileGallery')
                                 ->getAllGalleries();
 
-        $picturehelper = new ImageHelper();
-        $form = $this->createForm(new ImageType(), $picturehelper);
+        $picturehelper = new MediaHelper();
+        $form = $this->createForm(new MediaType(), $picturehelper);
 
         return $this->render('KunstmaanKMediaBundle:File:show.html.twig', array(
                     'form' => $form->createView(),
@@ -44,8 +44,8 @@ class FileController extends Controller
         $galleries = $em->getRepository('KunstmaanKMediaBundle:FileGallery')
                         ->getAllGalleries();
 
-        $picturehelper = new ImageHelper();
-        $form = $this->createForm(new ImageType(), $picturehelper);
+        $picturehelper = new MediaHelper();
+        $form = $this->createForm(new MediaType(), $picturehelper);
 
         return $this->render('KunstmaanKMediaBundle:File:create.html.twig', array(
             'form'   => $form->createView(),
@@ -63,17 +63,17 @@ class FileController extends Controller
                          ->getAllGalleries();
 
         $request = $this->getRequest();
-        $picturehelper = new ImageHelper();
-        $form = $this->createForm(new ImageType(), $picturehelper);
+        $picturehelper = new MediaHelper();
+        $form = $this->createForm(new MediaType(), $picturehelper);
 
         if ('POST' == $request->getMethod()) {
             $form->bindRequest($request);
             if ($form->isValid()){
-                if ($picturehelper->getPicture()!=null) {
+                if ($picturehelper->getMedia()!=null) {
                     $picture = new File();
-                    $picture->setName($picturehelper->getPicture()->getClientOriginalName());
-                    $picture->setContent($picturehelper->getPicture());
-                    $picture->setFilegallery($gallery);
+                    $picture->setName($picturehelper->getMedia()->getClientOriginalName());
+                    $picture->setContent($picturehelper->getMedia());
+                    $picture->setGallery($gallery);
 
                     $em = $this->getDoctrine()->getEntityManager();
                     $em->persist($picture);
@@ -98,7 +98,6 @@ class FileController extends Controller
     protected function getFile($picture_id){
         $em = $this->getDoctrine()
                    ->getEntityManager();
-
         $picture = $em->getRepository('KunstmaanKMediaBundle:File')->find($picture_id);
 
         if (!$picture) {
@@ -112,7 +111,6 @@ class FileController extends Controller
     {
         $em = $this->getDoctrine()
                     ->getEntityManager();
-
         $imagegallery = $em->getRepository('KunstmaanKMediaBundle:FileGallery')->find($gallery_id);
 
         if (!$imagegallery) {

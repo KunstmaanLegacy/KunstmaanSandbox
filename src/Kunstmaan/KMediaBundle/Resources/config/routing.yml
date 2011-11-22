@@ -132,9 +132,9 @@ KunstmaanKMediaBundle_filegallery_show:
         _method:  GET
         id: \d+
 
-KunstmaanKMediaBundle_amazon:
-    pattern:  /amazon/{gallery_id}/{image_id}
-    defaults: { _controller: KunstmaanKMediaBundle:Amazon:index }
+KunstmaanKMediaBundle_aviary:
+    pattern:  /aviary/{gallery_id}/{image_id}
+    defaults: { _controller: KunstmaanKMediaBundle:Aviary:index }
     requirements:
         _method:  GET|POST
         image_id: \d+
@@ -142,4 +142,4 @@ KunstmaanKMediaBundle_amazon:
 
 KunstmaanKMediaBundle_uploads:
     pattern: ../uploads/media/
-    defaults:  { _controller: KunstmaanKMediaBundle:Default:index }
+    defaults:  { _controller: KunstmaanKMediaBundle:Media:index }

@@ -15,7 +15,7 @@ class ImageGalleryType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('parent', 'entity', array( 'class' => '\Kunstmaan\KMediaBundle\Entity\ImageGallery', 'required' => false ))
+            ->add('parent', 'entity', array( 'class' => 'Kunstmaan\KMediaBundle\Entity\ImageGallery', 'required' => false ))
         ;
     }
 
