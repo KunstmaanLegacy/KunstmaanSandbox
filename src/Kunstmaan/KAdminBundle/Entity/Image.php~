@@ -119,46 +119,6 @@ class Image extends Media
     }
 
     /**
-     * Set width
-     *
-     * @param integer $width
-     */
-    public function setWidth($width)
-    {
-        $this->width = $width;
-    }
-
-    /**
-     * Get width
-     *
-     * @return integer 
-     */
-    public function getWidth()
-    {
-        return $this->width;
-    }
-
-    /**
-     * Set height
-     *
-     * @param integer $height
-     */
-    public function setHeight($height)
-    {
-        $this->height = $height;
-    }
-
-    /**
-     * Get height
-     *
-     * @return integer 
-     */
-    public function getHeight()
-    {
-        return $this->height;
-    }
-
-    /**
      * Set createdAt
      *
      * @param datetime $createdAt
@@ -327,5 +287,32 @@ class Image extends Media
     public function getOriginal()
     {
         return $this->original;
+    }
+
+    public function __construct()
+    {
+        $this->edits = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->setCreatedAt(new \DateTime());
+        $this->setUpdatedAt(new \DateTime());
+    }
+    
+    /**
+     * Add edits
+     *
+     * @param Kunstmaan\KAdminBundle\Entity\Image $edits
+     */
+    public function addImage(\Kunstmaan\KAdminBundle\Entity\Image $edits)
+    {
+        $this->edits[] = $edits;
+    }
+
+    /**
+     * Get edits
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getEdits()
+    {
+        return $this->edits;
     }
 }

@@ -1,17 +1,7 @@
 {% extends 'KunstmaanKAdminBundle:Default:layout.html.twig' %}
 
 {% block sidebar %}
-<div class="sidebar">
-    <ul>
-                <li class="header">Media</li>
-                <li><a href="{{ path('KunstmaanKAdminBundle_media_images') }}">Images</a></li>
-                <li><a href="{{ path('KunstmaanKAdminBundle_media_videos') }}">Videos</a></li>
-                <li><a href="{{ path('KunstmaanKAdminBundle_media_slides') }}">Slides</a></li>
-    </ul>
-    <ul>
-        <li class="header">File galleries</li>
-    </ul>
-</div>
+    {% include 'KunstmaanKAdminBundle:FileGallery:sidebar.html.twig' %}
 {% endblock %}
 
 {% block breadcrumb %}

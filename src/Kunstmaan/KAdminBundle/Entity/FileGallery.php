@@ -9,11 +9,11 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @author Kristof Van Cauwenbergh
  *
- * @ORM\Entity(repositoryClass="Kunstmaan\KAdminBundle\Repository\GalleryRepository")
- * @ORM\Table(name="image_gallery")
+ * @ORM\Entity(repositoryClass="Kunstmaan\KAdminBundle\Repository\FileGalleryRepository")
+ * @ORM\Table(name="file_gallery")
  * @ORM\HasLifecycleCallbacks
  */
-class ImageGallery extends Gallery{
+class FileGallery extends Gallery{
 
     /**
      * @ORM\Id
@@ -32,13 +32,13 @@ class ImageGallery extends Gallery{
     }
 
     /**
-     * @ORM\ManyToOne(targetEntity="ImageGallery", inversedBy="children")
+     * @ORM\ManyToOne(targetEntity="FileGallery", inversedBy="children")
      * @ORM\JoinColumn(name="parent", referencedColumnName="id", nullable=true)
      */
     protected $parent;
 
     /**
-     * @ORM\OneToMany(targetEntity="ImageGallery", mappedBy="parent")
+     * @ORM\OneToMany(targetEntity="FileGallery", mappedBy="parent")
      */
     protected $children;
 
@@ -100,6 +100,8 @@ class ImageGallery extends Gallery{
     {
         $this->children = new \Doctrine\Common\Collections\ArrayCollection();
         $this->images = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->setCreated(new \DateTime());
+        $this->setUpdated(new \DateTime());
     }
 
     /**
@@ -167,35 +169,35 @@ class ImageGallery extends Gallery{
     }
 
     /**
-     * @ORM\OneToMany(targetEntity="Image", mappedBy="imagegallery")
+     * @ORM\OneToMany(targetEntity="File", mappedBy="filegallery")
      */
-    protected $images;
+    protected $files;
 
-    public function addImage(Image $child)
+    public function addFile(File $child)
     {
-        $this->images[] = $child;
-        $child->setImageGallery($this);
+        $this->files[] = $child;
+        $child->setFileGallery($this);
     }
 
 
-    public function getImages()
+    public function getFiles()
     {
-        return $this->images;
+        return $this->files;
     }
 
-    public function setImages($children)
+    public function setFiles($children)
     {
-        $this->images = $children;
+        $this->files = $children;
     }
 
     /**
      * Add images
      *
-     * @param Kunstmaan\KAdminBundle\Entity\Picture $images
+     * @param Kunstmaan\KAdminBundle\Entity\File $images
      */
-    public function addPicture(\Kunstmaan\KAdminBundle\Entity\Image $images)
+    public function addFiles(\Kunstmaan\KAdminBundle\Entity\File $images)
     {
-        $this->images[] = $images;
+        $this->files[] = $images;
     }
 
     /**
@@ -203,7 +205,7 @@ class ImageGallery extends Gallery{
      *
      * @param \Kunstmaan\KAdminBundle\Entity\ImageGallery $children
      */
-    public function addChild(ImageGallery $child)
+    public function addChild(FileGallery $child)
     {
         $this->children[] = $child;
 
@@ -264,7 +266,7 @@ class ImageGallery extends Gallery{
      *
      * @param Kunstmaan\KAdminBundle\Entity\ImageGallery $children
      */
-    public function addImageGallery(\Kunstmaan\KAdminBundle\Entity\ImageGallery $children)
+    public function addFileGallery(\Kunstmaan\KAdminBundle\Entity\FileGallery $children)
     {
         $this->children[] = $children;
     }
@@ -273,5 +275,4 @@ class ImageGallery extends Gallery{
     {
         return $this->getName();
     }
-
 }

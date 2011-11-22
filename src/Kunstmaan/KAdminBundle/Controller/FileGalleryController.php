@@ -11,22 +11,22 @@ use Kunstmaan\KAdminBundle\Helper\PictureHelper;
  *
  * @author Kristof Van Cauwenbergh
  */
-class ImageGalleryController extends Controller
+class FileGalleryController extends Controller
 {
 
     public function showAction($id, $slug)
     {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $gallery = $em->getRepository('KunstmaanKAdminBundle:ImageGallery')->find($id);
-        $galleries = $em->getRepository('KunstmaanKAdminBundle:Gallery')
+        $gallery = $em->getRepository('KunstmaanKAdminBundle:FileGallery')->find($id);
+        $galleries = $em->getRepository('KunstmaanKAdminBundle:FileGallery')
                         ->getAllGalleries();
 
         if (!$gallery) {
             throw $this->createNotFoundException('Unable to find image gallery.');
         }
 
-        return $this->render('KunstmaanKAdminBundle:ImageGallery:show.html.twig', array(
+        return $this->render('KunstmaanKAdminBundle:FileGallery:show.html.twig', array(
             'gallery'       => $gallery,
             'galleries'     => $galleries
          ));
@@ -37,29 +37,29 @@ class ImageGalleryController extends Controller
         $form = $this->createForm(new \Kunstmaan\KAdminBundle\Form\ImageGalleryType(), $gallery);
 
         $em = $this->getDoctrine()->getEntityManager();
-        $galleries = $em->getRepository('KunstmaanKAdminBundle:Gallery')
+        $galleries = $em->getRepository('KunstmaanKAdminBundle:FileGallery')
                                ->getAllGalleries();
 
-        return $this->render('KunstmaanKAdminBundle:ImageGallery:create.html.twig', array(
+        return $this->render('KunstmaanKAdminBundle:FileGallery:create.html.twig', array(
             'form'   => $form->createView(),
             'galleries'     => $galleries
         ));
     }
 
     public function subnewAction($id){
-           $gallery = new \Kunstmaan\KAdminBundle\Entity\ImageGallery();
+           $gallery = new \Kunstmaan\KAdminBundle\Entity\FileGallery();
 
            $em = $this->getDoctrine()->getEntityManager();
-           $parent = $em->find('\Kunstmaan\KAdminBundle\Entity\ImageGallery', $id);
+           $parent = $em->find('\Kunstmaan\KAdminBundle\Entity\FileGallery', $id);
 
            $gallery->setParent($parent);
-           $form = $this->createForm(new \Kunstmaan\KAdminBundle\Form\SubImageGalleryType(), $gallery);
+           $form = $this->createForm(new \Kunstmaan\KAdminBundle\Form\SubFileGalleryType(), $gallery);
 
            $em = $this->getDoctrine()->getEntityManager();
-           $galleries = $em->getRepository('KunstmaanKAdminBundle:Gallery')
+           $galleries = $em->getRepository('KunstmaanKAdminBundle:FileGallery')
                                   ->getAllGalleries();
 
-           return $this->render('KunstmaanKAdminBundle:ImageGallery:subcreate.html.twig', array(
+           return $this->render('KunstmaanKAdminBundle:FileGallery:subcreate.html.twig', array(
                'form'   => $form->createView(),
                'galleries'     => $galleries,
                'parent' => $parent
@@ -68,8 +68,8 @@ class ImageGalleryController extends Controller
 
     public function createAction(){
         $request = $this->getRequest();
-        $gallery = new \Kunstmaan\KAdminBundle\Entity\ImageGallery();
-        $form = $this->createForm(new \Kunstmaan\KAdminBundle\Form\ImageGalleryType(), $gallery);
+        $gallery = new \Kunstmaan\KAdminBundle\Entity\FileGallery();
+        $form = $this->createForm(new \Kunstmaan\KAdminBundle\Form\FileGalleryType(), $gallery);
 
         if ('POST' == $request->getMethod()) {
             $form->bindRequest($request);
@@ -78,10 +78,10 @@ class ImageGalleryController extends Controller
                 $em->persist($gallery);
                 $em->flush();
 
-                $galleries = $em->getRepository('KunstmaanKAdminBundle:Gallery')
+                $galleries = $em->getRepository('KunstmaanKAdminBundle:FileGallery')
                                                ->getAllGalleries();
 
-                return $this->render('KunstmaanKAdminBundle:ImageGallery:show.html.twig', array(
+                return $this->render('KunstmaanKAdminBundle:FileGallery:show.html.twig', array(
                           'gallery' => $gallery,
                           'galleries'     => $galleries,
                 ));
@@ -89,12 +89,12 @@ class ImageGalleryController extends Controller
         }
 
         $em = $this->getDoctrine()->getEntityManager();
-        $galleries = $em->getRepository('KunstmaanKAdminBundle:Gallery')
+        $galleries = $em->getRepository('KunstmaanKAdminBundle:FileGallery')
                                        ->getAllGalleries();
 
-        return $this->render('KunstmaanKAdminBundle:ImageGallery:create.html.twig', array(
+        return $this->render('KunstmaanKAdminBundle:FileGallery:create.html.twig', array(
             'form' => $form->createView(),
-            'galleries'     => $galleries
+            'galleries' => $galleries
         ));
     }
 
@@ -102,11 +102,11 @@ class ImageGalleryController extends Controller
             $request = $this->getRequest();
 
             $em = $this->getDoctrine()->getEntityManager();
-            $parent = $em->find('\Kunstmaan\KAdminBundle\Entity\ImageGallery', $id);
+            $parent = $em->find('\Kunstmaan\KAdminBundle\Entity\FileGallery', $id);
 
-            $gallery = new \Kunstmaan\KAdminBundle\Entity\ImageGallery();
+            $gallery = new \Kunstmaan\KAdminBundle\Entity\FileGallery();
             $gallery->setParent($parent);
-            $form = $this->createForm(new \Kunstmaan\KAdminBundle\Form\SubImageGalleryType(), $gallery);
+            $form = $this->createForm(new \Kunstmaan\KAdminBundle\Form\SubFileGalleryType(), $gallery);
 
             if ('POST' == $request->getMethod()) {
                 $form->bindRequest($request);
@@ -115,10 +115,10 @@ class ImageGalleryController extends Controller
                     $em->persist($gallery);
                     $em->flush();
 
-                    $galleries = $em->getRepository('KunstmaanKAdminBundle:Gallery')
+                    $galleries = $em->getRepository('KunstmaanKAdminBundle:FileGallery')
                                                    ->getAllGalleries();
 
-                    return $this->render('KunstmaanKAdminBundle:ImageGallery:show.html.twig', array(
+                    return $this->render('KunstmaanKAdminBundle:FileGallery:show.html.twig', array(
                               'gallery' => $gallery,
                               'galleries'     => $galleries,
                     ));
@@ -126,24 +126,13 @@ class ImageGalleryController extends Controller
             }
 
             $em = $this->getDoctrine()->getEntityManager();
-            $galleries = $em->getRepository('KunstmaanKAdminBundle:Gallery')
+            $galleries = $em->getRepository('KunstmaanKAdminBundle:FileGallery')
                                            ->getAllGalleries();
 
-            return $this->render('KunstmaanKAdminBundle:ImageGallery:subcreate.html.twig', array(
+            return $this->render('KunstmaanKAdminBundle:FileGallery:subcreate.html.twig', array(
                 'form' => $form->createView(),
                 'galleries'     => $galleries,
                 'parent' => $parent
             ));
         }
-
-    public function ckeditorAction(){
-        $em = $this->getDoctrine()->getEntityManager();
-        $galleries = $em->getRepository('KunstmaanKAdminBundle:Gallery')
-                        ->getAllGalleries();
-
-        return $this->render('KunstmaanKAdminBundle:ImageGallery:ckeditor.html.twig', array(
-            'galleries'     => $galleries
-        ));
-    }
-
 }

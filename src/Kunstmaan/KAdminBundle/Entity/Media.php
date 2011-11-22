@@ -14,7 +14,8 @@ use Ano\Bundle\MediaBundle\Model\Media as BaseMedia;
  * @ORM\Table(name="media")
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="discr", type="string")
- * @ORM\DiscriminatorMap({"media" = "Media", "image" = "Image"})
+ * @ORM\DiscriminatorMap({"media" = "Media", "image" = "Image", "file" = "File" })
+ * @ORM\HasLifecycleCallbacks
  */
 abstract class Media extends BaseMedia{
 
@@ -120,7 +121,7 @@ abstract class Media extends BaseMedia{
     /**
      * Get createdAt
      *
-     * @return datetime 
+     * @return datetime
      */
     public function getCreatedAt()
     {
@@ -140,7 +141,7 @@ abstract class Media extends BaseMedia{
     /**
      * Get updatedAt
      *
-     * @return datetime 
+     * @return datetime
      */
     public function getUpdatedAt()
     {

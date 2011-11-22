@@ -2,14 +2,14 @@
     <fieldset>
         <div class="clearfix">
             {{ form_errors(form) }}
-            <label for="xlInput3">Picture</label>
+            <label for="xlInput3">Image</label>
             <div class="input">
                 {{ form_widget(form.picture) }}
             </div>
             {{ form_rest(form) }}
         </div>
         <div class="actions">
-            <input class="btn primary type" type="submit" value="add new picture">
+            <input class="btn primary type" type="submit" value="add new image">
             <input onclick="window.location = '{{ path('KunstmaanKAdminBundle_imagegallery_show', { 'id' : gallery.id, 'slug' : gallery.slug } ) }}'" type="reset" class="btn" value="cancel" />
         </div>
     </fieldset>

@@ -17,7 +17,6 @@ class MediaController extends Controller
     {
         $em = $this->getDoctrine()
                    ->getEntityManager();
-
         $galleries = $em->getRepository('KunstmaanKAdminBundle:ImageGallery')
                         ->getAllGalleries();
 
@@ -38,6 +37,13 @@ class MediaController extends Controller
 
     public function filesAction()
     {
-        return $this->render('KunstmaanKAdminBundle:Media:files.html.twig', array());
+        $em = $this->getDoctrine()
+                           ->getEntityManager();
+        $galleries = $em->getRepository('KunstmaanKAdminBundle:FileGallery')
+                                ->getAllGalleries();
+
+        return $this->render('KunstmaanKAdminBundle:Media:files.html.twig', array(
+            'galleries' => $galleries
+        ));
     }
 }

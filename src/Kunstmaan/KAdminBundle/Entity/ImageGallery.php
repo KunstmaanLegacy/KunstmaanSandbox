@@ -9,10 +9,11 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @author Kristof Van Cauwenbergh
  *
- * @ORM\Entity(repositoryClass="Kunstmaan\KAdminBundle\Repository\GalleryRepository")
- * @ORM\Table(name="gallery")
+ * @ORM\Entity(repositoryClass="Kunstmaan\KAdminBundle\Repository\ImageGalleryRepository")
+ * @ORM\Table(name="image_gallery")
+ * @ORM\HasLifecycleCallbacks
  */
-class ImageGallery{
+class ImageGallery extends Gallery{
 
     /**
      * @ORM\Id
@@ -29,27 +30,6 @@ class ImageGallery{
     public function getId(){
         return $this->id;
     }
-
-    /**
-     * @ORM\ManyToOne(targetEntity="ImageGallery", inversedBy="children")
-     * @ORM\JoinColumn(name="parent", referencedColumnName="id", nullable=true)
-     */
-    protected $parent;
-
-    /**
-     * @ORM\OneToMany(targetEntity="ImageGallery", mappedBy="parent")
-     */
-    protected $children;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    protected $created;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    protected $updated;
 
     /**
      * @ORM\Column(type="string")
@@ -112,6 +92,16 @@ class ImageGallery{
         $this->setCreated(new \DateTime());
         $this->setUpdated(new \DateTime());
     }
+
+    /**
+         * @ORM\Column(type="datetime")
+         */
+        protected $created;
+
+        /**
+         * @ORM\Column(type="datetime")
+         */
+        protected $updated;
 
     /**
      * Set created

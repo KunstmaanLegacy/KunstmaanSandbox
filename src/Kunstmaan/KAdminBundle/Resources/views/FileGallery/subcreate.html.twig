@@ -1,0 +1,22 @@
+{% extends 'KunstmaanKAdminBundle:Default:layout.html.twig' %}
+
+{% block sidebar %}
+    {% include 'KunstmaanKAdminBundle:FileGallery:sidebar.html.twig' %}
+{% endblock %}
+
+{% block breadcrumb %}
+	<ul class="breadcrumb">
+		<li><a href="{{ path('KunstmaanKAdminBundle_homepage') }}">Home</a> <span class="divider">/</span></li>
+        <li><a href="{{ path('KunstmaanKAdminBundle_media') }}">Media</a> <span class="divider">/</span></li>
+        <li><a href="{{ path('KunstmaanKAdminBundle_media_files') }}">Files</a> <span class="divider">/</span></li>
+		<li class="active">create new file gallery in {{ parent.name }}</li>
+	</ul>
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1>Create a new file gallery in {{ parent.name }}</h1>
+  </div>
+   {% include 'KunstmaanKAdminBundle:FileGallery:subform.html.twig' with { 'form': form, 'id' : parent.id } %}
+{% endblock %}

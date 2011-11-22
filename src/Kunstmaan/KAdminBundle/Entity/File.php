@@ -1,27 +1,23 @@
 <?php
 
-namespace  Kunstmaan\KAdminBundle\Entity;
+namespace Kunstmaan\KAdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Ano\Bundle\MediaBundle\Model\Media as BaseMedia;
 
 /**
- * Class that defines a Media object from the AnoBundle in the database
+ * Kunstmaan\KAdminBundle\Entity\Image
+ * Class that defines a picture in the system
  *
  * @author Kristof Van Cauwenbergh
  *
- * @ORM\Entity(repositoryClass="Kunstmaan\KAdminBundle\Repository\MediaRepository")
- * @ORM\Table(name="media")
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="discr", type="string")
- * @ORM\DiscriminatorMap({"media" = "Media", "image" = "Image"})
- * @ORM\HasLifecycleCallbacks
+ * @ORM\Table("file")
+ * @ORM\Entity
  */
-abstract class Media extends BaseMedia{
-
+class File extends Media
+{
     /**
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
@@ -32,41 +28,44 @@ abstract class Media extends BaseMedia{
      */
     protected $uuid;
 
-    public function setId($id){
-        $this->id = $id;
-    }
-
-    public function getId(){
-        return $this->id;
-    }
+    /**
+     * @var string $context
+     *
+     */
+    protected $context = "omnext_file";
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\ManyToOne(targetEntity="FileGallery", inversedBy="files")
+     * @ORM\JoinColumn(name="filegallery_id", referencedColumnName="id")
+     */
+    protected $filegallery;
+
+    /**
+     * @var string $name
      */
     protected $name;
 
     /**
-     * @ORM\Column(type="string")
+     * @var string $contentType
      */
     protected $contentType;
 
     /**
-     * @ORM\Column(type="array")
-     */
-    protected $metadata;
-
-    /**
-     * @ORM\Column(type="datetime")
+     * @var datetime $createdAt
      */
     protected $createdAt;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @var datetime $updatedAt
      */
     protected $updatedAt;
 
     protected $content;
 
+    /**
+     * @var array $metadata
+     */
+    protected $metadata;
 
     /**
      * Set name
@@ -81,7 +80,7 @@ abstract class Media extends BaseMedia{
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -101,7 +100,7 @@ abstract class Media extends BaseMedia{
     /**
      * Get contentType
      *
-     * @return string 
+     * @return string
      */
     public function getContentType()
     {
@@ -161,11 +160,51 @@ abstract class Media extends BaseMedia{
     /**
      * Get content
      *
-     * @return mixed 
+     * @return mixed
      */
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * Set imagegallery
+     *
+     * @param Kunstmaan\KAdminBundle\Entity\ImageGallery $imagegallery
+     */
+    public function setFilegallery(\Kunstmaan\KAdminBundle\Entity\FileGallery $imagegallery)
+    {
+        $this->filegallery = $imagegallery;
+    }
+
+    /**
+     * Get imagegallery
+     *
+     * @return Kunstmaan\KAdminBundle\Entity\ImageGallery
+     */
+    public function getFilegallery()
+    {
+        return $this->filegallery;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Get context
+     *
+     * @return string
+     */
+    public function getContext()
+    {
+        return $this->context;
     }
 
     /**
@@ -181,7 +220,7 @@ abstract class Media extends BaseMedia{
     /**
      * Get metadata
      *
-     * @return array 
+     * @return array
      */
     public function getMetadata()
     {
@@ -201,10 +240,26 @@ abstract class Media extends BaseMedia{
     /**
      * Get uuid
      *
-     * @return string 
+     * @return string
      */
     public function getUuid()
     {
         return $this->uuid;
+    }
+
+    public function show($format=null, $options = array()){
+        $path = $this->getContext()."/";
+        $path = $path.$this->getUuid();
+        if(isset($format)){
+            $path = $path."_".$format;
+        }
+        $path = $path.".".\Ano\Bundle\SystemBundle\HttpFoundation\File\MimeType\ExtensionGuesser::guess($this->getContentType());
+        return $path;
+    }
+
+    public function __construct()
+    {
+        $this->setCreatedAt(new \DateTime());
+        $this->setUpdatedAt(new \DateTime());
     }
 }
