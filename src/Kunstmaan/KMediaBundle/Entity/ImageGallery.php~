@@ -57,6 +57,8 @@ class ImageGallery extends Gallery{
      */
     protected $files;
 
+    protected $strategy;
+
     public function setId($id){
         $this->id = $id;
     }
@@ -68,6 +70,7 @@ class ImageGallery extends Gallery{
     public function __construct()
     {
         parent::__construct();
+        $this->setStrategy(new \Kunstmaan\KMediaBundle\Helper\ImageGalleryStrategy());
     }
 
     public function addImage(File $child)

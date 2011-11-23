@@ -80,7 +80,7 @@ class FileController extends Controller
                     $em->flush();
 
                     //$picturehelp = $this->getPicture($picture->getId());
-                    return $this->render('KunstmaanKMediaBundle:FileGallery:show.html.twig', array(
+                    return $this->render('KunstmaanKMediaBundle:Gallery:show.html.twig', array(
                                    'gallery' => $gallery,
                                    'galleries' => $galleries
                                    // 'picture' => $picturehelp

@@ -27,7 +27,7 @@ class FileGalleryController extends GalleryController
             throw $this->createNotFoundException('Unable to find file gallery.');
         }
 
-        return $this->render('KunstmaanKMediaBundle:FileGallery:show.html.twig', array(
+        return $this->render('KunstmaanKMediaBundle:Gallery:show.html.twig', array(
             'gallery'       => $gallery,
             'galleries'     => $galleries
          ));

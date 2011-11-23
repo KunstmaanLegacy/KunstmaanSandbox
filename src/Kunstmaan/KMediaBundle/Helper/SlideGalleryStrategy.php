@@ -5,26 +5,26 @@ namespace Kunstmaan\KMediaBundle\Helper;
 /**
  * Comment controller.
  */
-class ImageGalleryStrategy implements GalleryStrategyInterface{
+class SlideGalleryStrategy implements GalleryStrategyInterface{
 
     public function getName()
     {
-        return 'ImageGallery';
+        return 'SlideGallery';
     }
 
     public function getType()
     {
-        return 'image';
+        return 'slide';
     }
 
     public function getNewGallery()
     {
-        return new \Kunstmaan\KMediaBundle\Entity\ImageGallery();
+        return new \Kunstmaan\KMediaBundle\Entity\SlideGallery();
     }
 
     public function getGalleryClassName()
     {
-        return 'Kunstmaan\KMediaBundle\Entity\ImageGallery';
+        return 'Kunstmaan\KMediaBundle\Entity\SlideGallery';
     }
 }
 

@@ -13,10 +13,10 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="gallery")
  * @ORM\InheritanceType("JOINED")
  * @ORM\DiscriminatorColumn(name="discr", type="string")
- * @ORM\DiscriminatorMap({ "gallery" = "Gallery" , "imagegallery" = "ImageGallery", "filegallery" = "FileGallery" })
+ * @ORM\DiscriminatorMap({ "gallery" = "Gallery" , "imagegallery" = "ImageGallery", "filegallery" = "FileGallery", "slidegallery" = "SlideGallery" })
  * @ORM\HasLifecycleCallbacks
  */
-class Gallery{
+abstract class Gallery{
 
     /**
      * @ORM\Id
@@ -60,8 +60,6 @@ class Gallery{
      * @ORM\Column(type="datetime")
      */
     protected $updated;
-
-    protected $strategy;
 
     public function __construct()
     {
@@ -273,20 +271,17 @@ class Gallery{
         return $this->files;
     }
 
-    public function setStrategy($strategy)
-    {
-        $this->strategy = $strategy;
-    }
-
-    public function getStrategy()
-    {
-        return $this->strategy;
-    }
+    abstract function getStrategy();
 
     public function getFormType()
     {
         return new \Kunstmaan\KMediaBundle\Form\GalleryType($this->getStrategy()->getGalleryClassName());
     }
+
+    public function getType()
+        {
+            return $this->getStrategy()->getType();
+        }
 
     /**
      * @ORM\PrePersist

@@ -11,4 +11,6 @@ interface GalleryStrategyInterface
 
     function getGalleryClassName();
 
+    function getType();
+
 }

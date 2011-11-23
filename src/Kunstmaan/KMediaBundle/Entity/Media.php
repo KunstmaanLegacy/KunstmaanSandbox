@@ -14,7 +14,7 @@ use Ano\Bundle\MediaBundle\Model\Media as BaseMedia;
  * @ORM\Table(name="media")
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="discr", type="string")
- * @ORM\DiscriminatorMap({"media" = "Media", "image" = "Image", "file" = "File" })
+ * @ORM\DiscriminatorMap({"media" = "Media", "image" = "Image", "file" = "File", "slide" = "Slide" })
  * @ORM\HasLifecycleCallbacks
  */
 abstract class Media extends BaseMedia{

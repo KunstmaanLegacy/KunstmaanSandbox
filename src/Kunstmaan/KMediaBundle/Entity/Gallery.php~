@@ -61,6 +61,8 @@ class Gallery{
      */
     protected $updated;
 
+    protected $strategy;
+
     public function __construct()
     {
         $this->children = new \Doctrine\Common\Collections\ArrayCollection();
@@ -269,6 +271,21 @@ class Gallery{
     public function getFiles()
     {
         return $this->files;
+    }
+
+    public function setStrategy($strategy)
+    {
+        $this->strategy = $strategy;
+    }
+
+    public function getStrategy()
+    {
+        return $this->strategy;
+    }
+
+    public function getFormType()
+    {
+        return new \Kunstmaan\KMediaBundle\Form\GalleryType($this->getStrategy()->getGalleryClassName());
     }
 
     /**

@@ -12,6 +12,11 @@ class FileGalleryStrategy implements GalleryStrategyInterface{
         return 'FileGallery';
     }
 
+    public function getType()
+    {
+        return 'file';
+    }
+
     public function getNewGallery()
     {
         return new \Kunstmaan\KMediaBundle\Entity\FileGallery();

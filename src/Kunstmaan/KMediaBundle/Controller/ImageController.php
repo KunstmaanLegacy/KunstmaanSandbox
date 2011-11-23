@@ -80,7 +80,7 @@ class ImageController extends Controller
                     $em->flush();
 
                     //$picturehelp = $this->getPicture($picture->getId());
-                    return $this->render('KunstmaanKMediaBundle:ImageGallery:show.html.twig', array(
+                    return $this->render('KunstmaanKMediaBundle:Gallery:show.html.twig', array(
                                    'gallery' => $gallery,
                                    'galleries' => $galleries
                                    // 'picture' => $picturehelp
