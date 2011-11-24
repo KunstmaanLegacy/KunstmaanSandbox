@@ -1,3 +1,15 @@
+KunstmaanKAdminBundle_amazon:
+    pattern:  /amazon/{gallery_id}/{image_id}
+    defaults: { _controller: KunstmaanKAdminBundle:Amazon:index }
+    requirements:
+        _method:  GET|POST
+        image_id: \d+
+        gallery_id: \d+
+
+KunstmaanKAdminBundle_uploads:
+    pattern: ../uploads/media/
+    defaults:  { _controller: KunstmaanKAdminBundle:Default:index }
+
 KunstmaanKAdminBundle_homepage:
     pattern:  /admin
     defaults: { _controller: KunstmaanKAdminBundle:Default:index }
@@ -12,6 +24,7 @@ KunstmaanKAdminBundle_pages_edit:
     requirements:
         _method:  GET|POST
         id: \d+
+
 KunstmaanKAdminBundle_media:
     pattern:  /admin/media
     defaults: { _controller: KunstmaanKAdminBundle:Media:index }
@@ -44,32 +57,38 @@ KunstmaanKAdminBundle_settings_users:
     pattern:  /admin/settings/users
     defaults: { _controller: KunstmaanKAdminBundle:Settings:users }
 
+KunstmaanKAdminBundle_image_show:
+    pattern:  /admin/media/image/{media_id}
+    defaults: { _controller: KunstmaanKAdminBundle:Image:show }
+    requirements:
+        _method: GET
+        media_id: \d+
+
 KunstmaanKAdminBundle_image_new:
-    pattern:  /admin/media/image/{gallery_id}
+    pattern:  /admin/media/image/add/{gallery_id}
     defaults: { _controller: KunstmaanKAdminBundle:Image:new }
     requirements:
         _method: GET
+        gallery_id: \d+
 
 KunstmaanKAdminBundle_image_create:
     pattern:  /admin/media/image/create/{gallery_id}
     defaults: { _controller: KunstmaanKAdminBundle:Image:create }
     requirements:
         _method: POST
-        id: \d
+        gallery_id: \d+
 
 KunstmaanKAdminBundle_imagegallery_new:
     pattern:  /admin/media/gallery
     defaults: { _controller: KunstmaanKAdminBundle:ImageGallery:new }
     requirements:
         _method:  GET
-        id: \d+
 
 KunstmaanKAdminBundle_imagegallery_create:
     pattern:  /admin/media/gallery/create
     defaults: { _controller: KunstmaanKAdminBundle:ImageGallery:create }
     requirements:
         _method: POST
-        id: \d
 
 KunstmaanKAdminBundle_imagegallery_subnew:
     pattern:  /admin/media/gallery/sub/{id}
@@ -103,14 +122,12 @@ KunstmaanKAdminBundle_textpart_new:
     defaults: { _controller: KunstmaanKAdminBundle:TextPart:new }
     requirements:
         _method:  GET
-        id: \d+
 
 KunstmaanKAdminBundle_textpart_create:
     pattern:  /admin/pages/textpart/create
     defaults: { _controller: KunstmaanKAdminBundle:TextPart:create }
     requirements:
         _method: POST
-        id: \d
 
 KunstmaanKAdminBundle_textpart_show:
     pattern:  /admin/pages/textpart/{id}

@@ -11,6 +11,7 @@ namespace Kunstmaan\KAdminNodeBundle\Listener;
 
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Kunstmaan\KAdminNodeBundle\Entity\Node;
+use Kunstmaan\KAdminNodeBundle\Entity\HasNode;
 // see http://inchoo.net/tools-frameworks/symfony2-event-listeners/
 
 class NodeGenerator {
@@ -27,7 +28,7 @@ class NodeGenerator {
         $entity = $args->getEntity();
         $em = $args->getEntityManager();
         $classname = get_class($entity);
-        if($entity instanceof \Kunstmaan\KAdminBundle\Entity\HasNode){
+        if($entity instanceof HasNode){
             $entityrepo = $em->getRepository($classname);
             $node = $this->getNode($em, $entity->getId(), $classname);
             if($node==null){
@@ -37,6 +38,7 @@ class NodeGenerator {
                 $node->setSequencenumber(1);
             }
             $node->setTitle($entity->__toString());
+            $node->setOnline($entity->isOnline());
             $em->persist($node);
             $em->flush();
         }
@@ -47,7 +49,7 @@ class NodeGenerator {
     }
 
     public function getNode($em, $id, $entityName){
-        return $em->getRepository('KunstmaanKAdminBundle:Node')
+        return $em->getRepository('KunstmaanKAdminNodeBundle:Node')
             ->findOneBy(array('refId' => $id, 'refEntityname' => $entityName));
     }
 }

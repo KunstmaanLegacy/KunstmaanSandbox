@@ -14,4 +14,5 @@ use Kunstmaan\KAdminNodeBundle\Entity\HasNode;
 interface PageIFace extends HasNode
 {
 
+
 }

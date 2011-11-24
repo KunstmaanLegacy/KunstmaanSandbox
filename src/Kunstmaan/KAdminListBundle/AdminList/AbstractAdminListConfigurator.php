@@ -18,8 +18,17 @@ abstract class AbstractAdminListConfigurator {
     }
 
     function getValue($item, $columnName){
-        $var = "get".$columnName;
-        $result = $item->$var();
+        $methodName = "get".$columnName;
+        if(method_exists($item, $methodName)){
+            $result = $item->$methodName();
+        } else {
+            $methodName = "is".$columnName;
+            if(method_exists($item, $methodName)){
+                $result = $item->$methodName();
+            } else {
+                return "undefined function";
+            }
+        }
         if($result instanceof \DateTime){
             return $result->format('Y-m-d H:i:s');
         } else {

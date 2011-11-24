@@ -13,4 +13,8 @@ interface HasNode {
 
     public function getId();
 
+    public function getTitle();
+
+    public function isOnline();
+
 }

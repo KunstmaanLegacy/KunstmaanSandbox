@@ -13,6 +13,27 @@ use Kunstmaan\KAdminBundle\Helper\ImageHelper;
  */
 class ImageController extends Controller
 {
+
+    public function showAction($media_id, $format = null, array $options = array())
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+        $media = $em->find('\Kunstmaan\KAdminBundle\Entity\Image', $media_id);
+        $gallery = $media->getImagegallery();
+        $galleries = $em->getRepository('KunstmaanKAdminBundle:ImageGallery')
+                                ->getAllGalleries();
+
+        $picturehelper = new ImageHelper();
+        $form = $this->createForm(new \Kunstmaan\KAdminBundle\Form\ImageType(), $picturehelper);
+
+        return $this->render('KunstmaanKAdminBundle:Image:show.html.twig', array(
+                    'form' => $form->createView(),
+                    'media' => $media,
+                    'format' => $format,
+                    'gallery' => $gallery,
+                    'galleries' => $galleries
+                ));
+    }
+
     public function newAction($gallery_id)
     {
         $gallery = $this->getImageGallery($gallery_id);
@@ -98,5 +119,7 @@ class ImageController extends Controller
 
         return $imagegallery;
     }
+
+
 
 }

@@ -32,14 +32,9 @@ class ImageGallery{
 
     /**
      * @ORM\ManyToOne(targetEntity="ImageGallery", inversedBy="children")
-     * @ORM\JoinColumn(name="parent", referencedColumnName="id")
+     * @ORM\JoinColumn(name="parent", referencedColumnName="id", nullable=true)
      */
     protected $parent;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    protected $sequencenumber;
 
     /**
      * @ORM\OneToMany(targetEntity="ImageGallery", mappedBy="parent")
@@ -254,26 +249,16 @@ class ImageGallery{
         return $this->parent;
     }
 
-    /**
-     * Set sequencenumber
-     *
-     * @param integer $sequencenumber
-     */
-    public function setSequencenumber($sequencenumber)
+    public function getParents()
     {
-        $this->sequencenumber = $sequencenumber;
+        $parent = $this->getParent();
+        $parents=array();
+        while($parent!=null){
+            $parents[] = $parent;
+            $parent = $parent->getParent();
+        }
+        return array_reverse($parents);
     }
-
-    /**
-     * Get sequencenumber
-     *
-     * @return integer
-     */
-    public function getSequencenumber()
-    {
-        return $this->sequencenumber;
-    }
-
 
     /**
      * Add children
@@ -284,4 +269,10 @@ class ImageGallery{
     {
         $this->children[] = $children;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
 }
