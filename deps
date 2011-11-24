@@ -91,6 +91,10 @@
     git=https://github.com/Elao/WebProfilerExtraBundle.git
     target=/bundles/Elao/WebProfilerExtraBundle
 
+[AirbrakeBundle]
+    git=https://github.com/danielknell/AirbrakeBundle.git
+    target=/bundles/Airbrake/AirbrakeBundle
+
 [KunstmaanMediaBundle]
     git=git@github.com:Kunstmaan/KunstmaanMediaBundle.git
     target=bundles/Kunstmaan/MediaBundle
@@ -102,4 +106,3 @@
 [KunstmaanAdminListBundle]
     git=git@github.com:Kunstmaan/KunstmaanAdminListBundle.git
     target=/bundles/Kunstmaan/AdminListBundle
-
