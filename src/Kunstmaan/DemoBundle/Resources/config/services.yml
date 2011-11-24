@@ -1,0 +1,7 @@
+parameters:
+#    kunstmaan_demo.example.class: Kunstmaan\DemoBundle\Example
+
+services:
+#    kunstmaan_demo.example:
+#        class: %kunstmaan_demo.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

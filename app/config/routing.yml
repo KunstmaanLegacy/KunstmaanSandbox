@@ -1,5 +1,9 @@
+KunstmaanDemoBundle:
+    resource: "@KunstmaanDemoBundle/Resources/config/routing.yml"
+    prefix:   /
+
 KunstmaanKMediaBundle:
-    resource: "@KunstmaanKMediaBundle/Resources/config/routing.yml"
+    resource: "@KunstmaanMediaBundle/Resources/config/routing.yml"
     prefix:   /
 
 KunstmaanKAdminListBundle:

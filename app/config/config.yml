@@ -2,7 +2,7 @@ imports:
     - { resource: parameters.ini }
     - { resource: security.yml }
     KunstmaanKMediaBundle:
-        resource: @KunstmaanKMediaBundle/Resources/config/config.yml
+        resource: @KunstmaanMediaBundle/Resources/config/config.yml
 
 framework:
     #esi:             ~
@@ -55,7 +55,7 @@ doctrine:
                 mappings:
                     KunstmaanKAdminBundle: ~
                     KunstmaanKCoreBundle: ~
-                    KunstmaanKMediaBundle: ~
+                    KunstmaanMediaBundle: ~
                     FOSUserBundle: ~
 
 
