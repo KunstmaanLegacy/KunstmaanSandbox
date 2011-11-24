@@ -1,7 +1,0 @@
-parameters:
-#    kunstmaan_k_menu.example.class: Kunstmaan\KMenuBundle\Example
-
-services:
-#    kunstmaan_k_menu.example:
-#        class: %kunstmaan_k_menu.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]

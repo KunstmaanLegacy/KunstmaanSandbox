@@ -22,15 +22,14 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
             new Kunstmaan\KAdminBundle\KunstmaanKAdminBundle(),
-            new Kunstmaan\KCoreBundle\KunstmaanKCoreBundle(),
-            new Kunstmaan\KMenuBundle\KunstmaanKMenuBundle(),
-            new Kunstmaan\KAdminListBundle\KunstmaanKAdminListBundle(),
+            new Kunstmaan\AdminListBundle\KunstmaanAdminListBundle(),
             new Kunstmaan\MediaBundle\KunstmaanMediaBundle(),
             new Kunstmaan\DemoBundle\KunstmaanDemoBundle(),
+	        new Kunstmaan\PagePartBundle\KunstmaanPagePartBundle(),
+            new Kunstmaan\KAdminNodeBundle\KunstmaanKAdminNodeBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
-            $bundles[] = new Acme\DemoBundle\AcmeDemoBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Elao\WebProfilerExtraBundle\WebProfilerExtraBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();

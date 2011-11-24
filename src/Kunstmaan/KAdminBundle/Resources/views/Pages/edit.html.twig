@@ -11,13 +11,14 @@
 {% endblock %}
 
 {% block content %}
-    <form action="{{ path('KunstmaanKAdminBundle_pages_edit', { 'id': page.id, 'entityname': 'KunstmaanKAdminBundle:Page' }) }}" method="post" {{ form_enctype(form) }}>
+    <form action="{{ path('KunstmaanKAdminBundle_pages_edit', { 'id': page.id, 'entityname': entityname}) }}" method="post" {{ form_enctype(form) }}>
     <div class="well" style="float:right;padding: 14px 19px;">
         <button class="btn">Preview</button>
     </div>
     <h1>{{ page.title }}</h1>
         <ul class="tabs" data-tabs="tabs">
-            <li class="active"><a href="#home">Properties</a></li>
+            <li class="active"><a href="#pageparts">PageParts</a></li>
+            <li><a href="#home">Properties</a></li>
             {#<li><a href="#children">Children</a></li>
             <li><a href="#slug">Slug</a></li>
             <li class="dropdown" data-dropdown="dropdown">
@@ -35,8 +36,15 @@
             #}
         </ul>
         <div id="my-tab-content" class="tab-content">
-            <div class="active tab-pane" id="home">
-                {{ form_widget(form) }}
+            <div class="active tab-pane" id="pageparts">
+
+                {{ pagepartadmin_widget(pagepartadmin, form) }}
+                <div class="actions">
+                    <input type="submit" class="btn primary" value="Save">
+                </div>
+            </div>
+            <div class="tab-pane" id="home">
+                {{ form_widget(form.main) }}
                 <div class="actions">
                     <input type="submit" class="btn primary" value="Save">
                 </div>

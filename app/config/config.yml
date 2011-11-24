@@ -54,9 +54,11 @@ doctrine:
             default:
                 mappings:
                     KunstmaanKAdminBundle: ~
-                    KunstmaanKCoreBundle: ~
                     KunstmaanMediaBundle: ~
+                    KunstmaanKAdminNodeBundle: ~
                     FOSUserBundle: ~
+                    KunstmaanPagePartBundle: ~
+                    KunstmaanDemoBundle: ~
 
 
 # Swiftmailer Configuration

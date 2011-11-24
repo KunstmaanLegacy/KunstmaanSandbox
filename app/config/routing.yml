@@ -2,16 +2,20 @@ KunstmaanDemoBundle:
     resource: "@KunstmaanDemoBundle/Resources/config/routing.yml"
     prefix:   /
 
-KunstmaanKMediaBundle:
+KunstmaanPagePartBundle:
+    resource: "@KunstmaanPagePartBundle/Resources/config/routing.yml"
+    prefix:   /
+
+KunstmaanMediaBundle:
     resource: "@KunstmaanMediaBundle/Resources/config/routing.yml"
     prefix:   /
 
-KunstmaanKAdminListBundle:
-    resource: "@KunstmaanKAdminListBundle/Resources/config/routing.yml"
+KunstmaanAdminListBundle:
+    resource: "@KunstmaanAdminListBundle/Resources/config/routing.yml"
     prefix:   /
 
-KunstmaanKMenuBundle:
-    resource: "@KunstmaanKMenuBundle/Resources/config/routing.yml"
+KunstmaanKAdminNodeBundle:
+    resource: "@KunstmaanKAdminNodeBundle/Resources/config/routing.yml"
     prefix:   /
 
 KunstmaanKAdminBundle:

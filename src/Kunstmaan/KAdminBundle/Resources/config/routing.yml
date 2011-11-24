@@ -24,22 +24,3 @@ KunstmaanKAdminBundle_settings:
 KunstmaanKAdminBundle_settings_users:
     pattern:  /admin/settings/users
     defaults: { _controller: KunstmaanKAdminBundle:Settings:users }
-
-KunstmaanKAdminBundle_textpart_new:
-    pattern:  /admin/pages/textpart
-    defaults: { _controller: KunstmaanKAdminBundle:TextPart:new }
-    requirements:
-        _method:  GET
-
-KunstmaanKAdminBundle_textpart_create:
-    pattern:  /admin/pages/textpart/create
-    defaults: { _controller: KunstmaanKAdminBundle:TextPart:create }
-    requirements:
-        _method: POST
-
-KunstmaanKAdminBundle_textpart_show:
-    pattern:  /admin/pages/textpart/{id}
-    defaults: { _controller: KunstmaanKAdminBundle:TextPart:show }
-    requirements:
-        _method:  GET
-        id: \d+
