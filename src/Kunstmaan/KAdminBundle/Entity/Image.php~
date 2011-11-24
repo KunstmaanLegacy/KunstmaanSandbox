@@ -5,7 +5,7 @@ namespace Kunstmaan\KAdminBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Kunstmaan\KAdminBundle\Entity\Picture
+ * Kunstmaan\KAdminBundle\Entity\Image
  * Class that defines a picture in the system
  *
  * @author Kristof Van Cauwenbergh
@@ -16,8 +16,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Image extends Media
 {
     /**
-     * @var integer $id
-     *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -25,57 +23,33 @@ class Image extends Media
     protected $id;
 
     /**
+     * @ORM\Column(type="string", unique=true, length=255)
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $uuid;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Image", inversedBy="edits")
+     * @ORM\JoinColumn(name="original", referencedColumnName="id", nullable=true)
+     */
+    protected $original;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Image", mappedBy="original")
+     */
+    protected $edits;
+
+    /**
      * @var string $context
      *
      */
     protected $context = "omnext_picture";
-
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Get context
-     *
-     * @return string
-     */
-    public function getContext()
-    {
-        return $this->context;
-    }
 
     /**
      * @ORM\ManyToOne(targetEntity="ImageGallery", inversedBy="images")
      * @ORM\JoinColumn(name="imagegallery_id", referencedColumnName="id")
      */
     protected $imagegallery;
-
-    /**
-     * Set imagegallery
-     *
-     * @param Kunstmaan\KAdminBundle\Entity\ImageGallery $imagegallery
-     */
-    public function setImagegallery(\Kunstmaan\KAdminBundle\Entity\ImageGallery $imagegallery)
-    {
-        $this->imagegallery = $imagegallery;
-    }
-
-    /**
-     * Get imagegallery
-     *
-     * @return Kunstmaan\KAdminBundle\Entity\ImageGallery 
-     */
-    public function getImagegallery()
-    {
-        return $this->imagegallery;
-    }
 
     /**
      * @var string $name
@@ -86,16 +60,6 @@ class Image extends Media
      * @var string $contentType
      */
     protected $contentType;
-
-    /**
-     * @var integer $width
-     */
-    protected $width;
-
-    /**
-     * @var integer $height
-     */
-    protected $height;
 
     /**
      * @var datetime $createdAt
@@ -109,6 +73,10 @@ class Image extends Media
 
     protected $content;
 
+    /**
+     * @var array $metadata
+     */
+    protected $metadata;
 
     /**
      * Set name
@@ -249,11 +217,46 @@ class Image extends Media
     {
         return $this->content;
     }
-    /**
-     * @var array $metadata
-     */
-    protected $metadata;
 
+    /**
+     * Set imagegallery
+     *
+     * @param Kunstmaan\KAdminBundle\Entity\ImageGallery $imagegallery
+     */
+    public function setImagegallery(\Kunstmaan\KAdminBundle\Entity\ImageGallery $imagegallery)
+    {
+        $this->imagegallery = $imagegallery;
+    }
+
+    /**
+     * Get imagegallery
+     *
+     * @return Kunstmaan\KAdminBundle\Entity\ImageGallery
+     */
+    public function getImagegallery()
+    {
+        return $this->imagegallery;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Get context
+     *
+     * @return string
+     */
+    public function getContext()
+    {
+        return $this->context;
+    }
 
     /**
      * Set metadata
@@ -273,5 +276,56 @@ class Image extends Media
     public function getMetadata()
     {
         return $this->metadata;
+    }
+
+    /**
+     * Set uuid
+     *
+     * @param string $uuid
+     */
+    public function setUuid($uuid)
+    {
+        $this->uuid = $uuid;
+    }
+
+    /**
+     * Get uuid
+     *
+     * @return string 
+     */
+    public function getUuid()
+    {
+        return $this->uuid;
+    }
+
+    public function show($format=null, $options = array()){
+        $path = $this->getContext()."/";
+        $path = $path.$this->getUuid();
+        if(isset($format)){
+            $path = $path."_".$format;
+        }
+        $path = $path.".".\Ano\Bundle\SystemBundle\HttpFoundation\File\MimeType\ExtensionGuesser::guess($this->getContentType());
+        return $path;
+    }
+
+
+    /**
+     * Set original
+     *
+     * @param Kunstmaan\KAdminBundle\Entity\Image $original
+     */
+    public function setOriginal(\Kunstmaan\KAdminBundle\Entity\Image $original)
+    {
+        $this->original = $original;
+    }
+
+    /**
+     * Get original
+     *
+     * @return Kunstmaan\KAdminBundle\Entity\Image 
+     */
+    public function getOriginal()
+    {
+        return $this->original;
     }
 }

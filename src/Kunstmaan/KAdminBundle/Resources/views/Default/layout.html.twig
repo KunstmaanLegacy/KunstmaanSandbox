@@ -35,9 +35,9 @@
         <div class="container-fluid">
           <a class="brand" href="{{ path('KunstmaanKAdminBundle_homepage') }}">OpenMercury.NEXT</a>
           <ul class="nav">
-            <li><a href="{{ path('KunstmaanKAdminBundle_pages') }}">Pages</a></li>
+            <li><a href="{{ path('KunstmaanKAdminBundle_pages') }}">{{ 'pages.title'|trans({}, 'KAdminBundle') }}</a></li>
             <li class="dropdown">
-                <a href="{{ path('KunstmaanKAdminBundle_media') }}" class="dropdown-toggle">Media</a>
+                <a href="{{ path('KunstmaanKAdminBundle_media') }}" class="dropdown-toggle">{{ 'media.title'|trans({}, 'KAdminBundle') }}</a>
                 <ul class="dropdown-menu">
                     <li><a href="{{ path('KunstmaanKAdminBundle_media_images') }}">Images</a></li>
                     <li><a href="{{ path('KunstmaanKAdminBundle_media_videos') }}">Videos</a></li>
@@ -45,13 +45,13 @@
                     <li><a href="{{ path('KunstmaanKAdminBundle_media_files') }}">Files</a></li>
                 </ul>
             </li>
-            <li><a href="{{ path('KunstmaanKAdminBundle_modules') }}">Modules</a></li>
-            <li><a href="{{ path('KunstmaanKAdminBundle_settings') }}">Settings</a></li>
+            <li><a href="{{ path('KunstmaanKAdminBundle_modules') }}">{{ 'modules.title'|trans({}, 'KAdminBundle') }}</a></li>
+            <li><a href="{{ path('KunstmaanKAdminBundle_settings') }}">{{ 'settings.title'|trans({}, 'KAdminBundle') }}</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle">Tools</a>
+              <a href="#" class="dropdown-toggle">{{ 'tools.title'|trans({}, 'KAdminBundle') }}</a>
               <ul class="dropdown-menu">
-                <li><a href="#">Clear frontend cache</a></li>
-                <li><a href="#">Clear all cached</a></li>
+                <li><a href="#">{{ 'tools.clear_frontend_cache'|trans({}, 'KAdminBundle') }}</a></li>
+                <li><a href="#">{{ 'tools.clear_all_caches'|trans({}, 'KAdminBundle') }}</a></li>
                 <li class="divider"></li>
                 <li><a href="#">Shutdown</a></li>
               </ul>

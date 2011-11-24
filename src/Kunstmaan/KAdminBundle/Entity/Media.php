@@ -19,12 +19,17 @@ use Ano\Bundle\MediaBundle\Model\Media as BaseMedia;
 abstract class Media extends BaseMedia{
 
     /**
-         * @ORM\Id
-         * @ORM\Column(type="integer")
-         * @ORM\GeneratedValue(strategy="AUTO")
-    */
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
     protected $id;
 
+    /**
+     * @ORM\Column(type="string", unique=true, length=255)
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $uuid;
 
     public function setId($id){
         $this->id = $id;
@@ -34,42 +39,32 @@ abstract class Media extends BaseMedia{
         return $this->id;
     }
 
-        /**
-         * @ORM\Column(type="string")
-         */
-        protected $name;
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $name;
 
-        /**
-         * @ORM\Column(type="string")
-         */
-        protected $contentType;
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $contentType;
 
-        /**
-         * @ORM\Column(type="array")
-         */
-        protected $metadata;
+    /**
+     * @ORM\Column(type="array")
+     */
+    protected $metadata;
 
-        /**
-         * @ORM\Column(type="integer")
-         */
-       // protected $width;
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $createdAt;
 
-        /**
-         * @ORM\Column(type="integer")
-         */
-        //protected $height;
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $updatedAt;
 
-        /**
-         * @ORM\Column(type="datetime")
-         */
-        protected $createdAt;
-
-        /**
-         * @ORM\Column(type="datetime")
-         */
-        protected $updatedAt;
-
-        protected $content;
+    protected $content;
 
 
     /**
@@ -190,5 +185,25 @@ abstract class Media extends BaseMedia{
     public function getMetadata()
     {
         return $this->metadata;
+    }
+
+    /**
+     * Set uuid
+     *
+     * @param string $uuid
+     */
+    public function setUuid($uuid)
+    {
+        $this->uuid = $uuid;
+    }
+
+    /**
+     * Get uuid
+     *
+     * @return string 
+     */
+    public function getUuid()
+    {
+        return $this->uuid;
     }
 }
