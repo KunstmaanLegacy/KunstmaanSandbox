@@ -18,7 +18,7 @@ class SlideGalleryFixtures extends AbstractFixture implements OrderedFixtureInte
 
             $subgal = new SlideGallery();
             $subgal->setParent($gal);
-            $subgal->setName('Sub of first file Gallery');
+            $subgal->setName('Sub of first slide Gallery');
             $manager->persist($subgal);
             $manager->flush();
 
@@ -30,13 +30,13 @@ class SlideGalleryFixtures extends AbstractFixture implements OrderedFixtureInte
 
             $subgal2 = new SlideGallery();
             $subgal2->setParent($gal);
-            $subgal2->setName('Second sub of first file Gallery');
+            $subgal2->setName('Second sub of first slide Gallery');
             $manager->persist($subgal2);
 
         $manager->flush();
 
         $gal2 = new SlideGallery();
-        $gal2->setName('Second file Gallery');
+        $gal2->setName('Second slide Gallery');
         $manager->persist($gal2);
         $manager->flush();
 
