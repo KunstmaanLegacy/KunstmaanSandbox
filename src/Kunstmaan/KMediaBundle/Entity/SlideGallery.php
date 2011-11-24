@@ -102,4 +102,29 @@ class SlideGallery extends Gallery{
         return new SlideGalleryStrategy();
     }
 
+    /**
+     * @var string $content
+     */
+    protected $content;
+
+
+    /**
+     * Set content
+     *
+     * @param string $content
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+    }
+
+    /**
+     * Get content
+     *
+     * @return string 
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
 }

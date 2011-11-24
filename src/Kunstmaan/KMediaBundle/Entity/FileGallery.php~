@@ -57,8 +57,6 @@ class FileGallery extends Gallery{
      */
     protected $files;
 
-    protected $strategy;
-
     public function setId($id){
         $this->id = $id;
     }
@@ -70,7 +68,6 @@ class FileGallery extends Gallery{
     public function __construct()
     {
         parent::__construct();
-        $this->setStrategy(new \Kunstmaan\KMediaBundle\Helper\FileGalleryStrategy());
     }
 
     public function addFile(File $child)
@@ -100,4 +97,32 @@ class FileGallery extends Gallery{
         $this->files[] = $images;
     }
 
+    public function getStrategy(){
+        return new \Kunstmaan\KMediaBundle\Helper\FileGalleryStrategy();
+    }
+    /**
+     * @var string $content
+     */
+    protected $content;
+
+
+    /**
+     * Set content
+     *
+     * @param string $content
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+    }
+
+    /**
+     * Get content
+     *
+     * @return string 
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
 }

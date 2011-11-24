@@ -5,8 +5,6 @@ namespace Kunstmaan\KMediaBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Kunstmaan\KMediaBundle\Form\GalleryType;
-use Kunstmaan\KMediaBundle\Entity\ImageGallery;
-use Kunstmaan\KMediaBundle\Entity\FileGallery;
 use Kunstmaan\KMediaBundle\Form\SubGalleryType;
 
 /**
@@ -45,7 +43,6 @@ abstract class GalleryController extends Controller
                                   ->getAllGalleries();
 
            return $this->render('KunstmaanKMediaBundle:Gallery:subcreate.html.twig', array(
-               'gallery' => $gallery,
                'form'   => $form->createView(),
                'galleries'     => $galleries,
                'parent' => $parent
@@ -115,7 +112,6 @@ abstract class GalleryController extends Controller
                                            ->getAllGalleries();
 
             return $this->render('KunstmaanKMediaBundle:Gallery:subcreate.html.twig', array(
-                'gallery' => $gallery,
                 'form' => $form->createView(),
                 'galleries'     => $galleries,
                 'parent' => $parent

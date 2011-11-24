@@ -74,6 +74,28 @@ KunstmaanKMediaBundle_media_slides:
     pattern:  /admin/media/slides
     defaults: { _controller: KunstmaanKMediaBundle:Media:slides }
 
+KunstmaanKMediaBundle_slide_show:
+    pattern:  /admin/media/slides/{media_id}
+    defaults: { _controller: KunstmaanKMediaBundle:Slide:show }
+    requirements:
+        _method: GET
+        media_id: \d+
+
+KunstmaanKMediaBundle_slide_new:
+    pattern:  /admin/media/slides/add/{gallery_id}
+    defaults: { _controller: KunstmaanKMediaBundle:Slide:new }
+    requirements:
+        _method: GET
+        gallery_id: \d+
+
+KunstmaanKMediaBundle_slide_create:
+    pattern:  /admin/media/slides/create/{gallery_id}
+    defaults: { _controller: KunstmaanKMediaBundle:Slide:create }
+    requirements:
+        _method: POST
+        gallery_id: \d+
+
+
 KunstmaanKMediaBundle_slidegallery_new:
     pattern:  /admin/media/slides/gallery
     defaults: { _controller: KunstmaanKMediaBundle:SlideGallery:new }

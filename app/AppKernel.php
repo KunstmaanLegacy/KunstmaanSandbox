@@ -11,8 +11,6 @@ class AppKernel extends Kernel
         $bundles = array(
             new FOS\UserBundle\FOSUserBundle(),
             new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
-            new Ano\Bundle\SystemBundle\AnoSystemBundle(),
-            new Ano\Bundle\MediaBundle\AnoMediaBundle(),
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),

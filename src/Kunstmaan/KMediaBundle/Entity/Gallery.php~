@@ -11,12 +11,12 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Entity(repositoryClass="Kunstmaan\KMediaBundle\Repository\GalleryRepository")
  * @ORM\Table(name="gallery")
- * @ORM\InheritanceType("JOINED")
+ * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="discr", type="string")
- * @ORM\DiscriminatorMap({ "gallery" = "Gallery" , "imagegallery" = "ImageGallery", "filegallery" = "FileGallery" })
+ * @ORM\DiscriminatorMap({ "gallery" = "Gallery" , "imagegallery" = "ImageGallery", "filegallery" = "FileGallery", "slidegallery" = "SlideGallery" })
  * @ORM\HasLifecycleCallbacks
  */
-class Gallery{
+abstract class Gallery{
 
     /**
      * @ORM\Id
@@ -61,7 +61,10 @@ class Gallery{
      */
     protected $updated;
 
-    protected $strategy;
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $content;
 
     public function __construct()
     {
@@ -273,20 +276,17 @@ class Gallery{
         return $this->files;
     }
 
-    public function setStrategy($strategy)
-    {
-        $this->strategy = $strategy;
-    }
-
-    public function getStrategy()
-    {
-        return $this->strategy;
-    }
+    abstract function getStrategy();
 
     public function getFormType()
     {
         return new \Kunstmaan\KMediaBundle\Form\GalleryType($this->getStrategy()->getGalleryClassName());
     }
+
+    public function getType()
+        {
+            return $this->getStrategy()->getType();
+        }
 
     /**
      * @ORM\PrePersist
@@ -302,5 +302,25 @@ class Gallery{
     public function preUpdate()
     {
         $this->setUpdated(new \DateTime());
+    }
+
+    /**
+     * Set content
+     *
+     * @param string $content
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+    }
+
+    /**
+     * Get content
+     *
+     * @return string 
+     */
+    public function getContent()
+    {
+        return $this->content;
     }
 }

@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Entity(repositoryClass="Kunstmaan\KMediaBundle\Repository\GalleryRepository")
  * @ORM\Table(name="gallery")
- * @ORM\InheritanceType("JOINED")
+ * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="discr", type="string")
  * @ORM\DiscriminatorMap({ "gallery" = "Gallery" , "imagegallery" = "ImageGallery", "filegallery" = "FileGallery", "slidegallery" = "SlideGallery" })
  * @ORM\HasLifecycleCallbacks
@@ -60,6 +60,11 @@ abstract class Gallery{
      * @ORM\Column(type="datetime")
      */
     protected $updated;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $content;
 
     public function __construct()
     {
@@ -297,5 +302,25 @@ abstract class Gallery{
     public function preUpdate()
     {
         $this->setUpdated(new \DateTime());
+    }
+
+    /**
+     * Set content
+     *
+     * @param string $content
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+    }
+
+    /**
+     * Get content
+     *
+     * @return string 
+     */
+    public function getContent()
+    {
+        return $this->content;
     }
 }

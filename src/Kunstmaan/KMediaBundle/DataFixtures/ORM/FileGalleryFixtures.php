@@ -1,11 +1,10 @@
 <?php
 // src/Kunstmaan/KAdminBundle/DataFixtures/ORM/BlogFixtures.php
 
-namespace Kunstmaan\KAdminBundle\DataFixtures\ORM;
+namespace Kunstmaan\KMediaBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
-use Kunstmaan\KAdminBundle\Entity\Page;
 use Kunstmaan\KMediaBundle\Entity\FileGallery;
 
 class FileGalleryFixtures extends AbstractFixture implements OrderedFixtureInterface

@@ -5,7 +5,6 @@ namespace Kunstmaan\KMediaBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Kunstmaan\KMediaBundle\Form\GalleryType;
-use Kunstmaan\KMediaBundle\Entity\FileGallery;
 use Kunstmaan\KMediaBundle\Form\SubGalleryType;
 use Kunstmaan\KMediaBundle\Entity\SlideGallery;
 

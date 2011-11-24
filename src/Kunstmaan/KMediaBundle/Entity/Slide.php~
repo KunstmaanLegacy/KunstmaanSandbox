@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @author Kristof Van Cauwenbergh
  *
- * @ORM\Table("file")
+ * @ORM\Table("slide")
  * @ORM\Entity
  */
 class Slide extends Media
@@ -54,6 +54,9 @@ class Slide extends Media
      */
     protected $updatedAt;
 
+    /**
+     * @var string $content
+     */
     protected $content;
 
     /**
@@ -65,6 +68,11 @@ class Slide extends Media
      * @var Kunstmaan\KMediaBundle\Entity\Gallery
      */
     protected $gallery;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $slidetype;
 
     public function __construct()
     {
@@ -99,5 +107,14 @@ class Slide extends Media
     public function getUuid()
     {
         return $this->uuid;
+    }
+
+    public function show($format=null, $options = array())
+    {
+        return '<script src="http://speakerdeck.com/embed/'. $this->metadata['uuid'] .'.js"></script>';
+    }
+
+    public function getCode(){
+        return $this->metadata['uuid'];
     }
 }

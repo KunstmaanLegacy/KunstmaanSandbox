@@ -5,16 +5,16 @@
 {% endblock %}
 
 {% block subbreadcrumb %}
-    <li><a href="{{ path('KunstmaanKMediaBundle_media_' ~ gallery.type ~ 's') }}">{{ gallery.type }}s</a> <span class="divider">/</span></li>
+    <li><a href="{{ path('KunstmaanKMediaBundle_media_' ~ gallery.type ~ 's') }}">{{ gallery.type|capitalize }}s</a> <span class="divider">/</span></li>
         {% for parent in gallery.parents %}
             <li><a href="{{ path('KunstmaanKMediaBundle_' ~ gallery.type ~ 'gallery_show', { 'id': parent.id, 'slug': parent.slug }) }}">{{ parent.name}}</a><span class="divider">/</span></li>
         {% endfor %}
-		<li class="active">{{ gallery.name }}</li>
+	<li class="active">{{ gallery.name }}</li>
 {% endblock %}
 
 {% block content %}
     <div class="page-header">
-        <h1>File Gallery <small>{{ gallery.name }}
+        <h1>{{ gallery.type|capitalize }} Gallery <small>{{ gallery.name }}
         {% if gallery.parent %}
             | in <a href="{{ path('KunstmaanKMediaBundle_' ~ gallery.type ~ 'gallery_show', { 'id': gallery.parent.id, 'slug': gallery.parent.slug }) }}">{{ gallery.parent.name}}</a>
         {% endif %}
@@ -29,18 +29,9 @@
             <li>{% include 'KunstmaanKMediaBundle:Gallery:showgallery.html.twig' %}</li>
         {% endfor %}
         </ul>
-
-        <h2>Files in {{ gallery.name }}</h2>
-        <ul class="media-grid">
-        {% for image in gallery.files %}
-            <li>
-                <a href="{{ path('KunstmaanKMediaBundle_' ~ gallery.type ~ '_show',  { 'media_id' : image.id }) }}">
-                    {{ image.name }}
-                </a>
-             </li>
-        {% else %}
-            <ul><li>No files in this gallery yet.</li></ul>
-        {% endfor %}
-        </ul>
+    </div>
+    <div>
+        <h2>{{ gallery.type|capitalize }}s in {{ gallery.name }}</h2>
+       {% include 'KunstmaanKMediaBundle:' ~ gallery.type|capitalize ~ ':tableview.html.twig' %}
     </div>
 {% endblock %}

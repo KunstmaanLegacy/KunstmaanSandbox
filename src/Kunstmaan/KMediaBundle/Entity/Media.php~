@@ -3,7 +3,6 @@
 namespace  Kunstmaan\KMediaBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Ano\Bundle\MediaBundle\Model\Media as BaseMedia;
 
 /**
  * Class that defines a Media object from the AnoBundle in the database
@@ -12,12 +11,12 @@ use Ano\Bundle\MediaBundle\Model\Media as BaseMedia;
  *
  * @ORM\Entity
  * @ORM\Table(name="media")
- * @ORM\InheritanceType("SINGLE_TABLE")
+ * @ORM\InheritanceType("JOINED")
  * @ORM\DiscriminatorColumn(name="discr", type="string")
- * @ORM\DiscriminatorMap({"media" = "Media", "image" = "Image", "file" = "File" })
+ * @ORM\DiscriminatorMap({"media" = "Media", "image" = "Image", "file" = "File", "slide" = "Slide" })
  * @ORM\HasLifecycleCallbacks
  */
-abstract class Media extends BaseMedia{
+abstract class Media{
 
     /**
      * @ORM\Id
@@ -66,8 +65,11 @@ abstract class Media extends BaseMedia{
     protected $content;
     protected $context = "omnext_media";
 
-    public function __construct()
+    public function __construct($context = null)
     {
+        if (null !== $context) {
+            $this->setContext($context);
+        }
         $this->setCreatedAt(new \DateTime());
         $this->setUpdatedAt(new \DateTime());
     }
@@ -210,6 +212,7 @@ abstract class Media extends BaseMedia{
     public function setContent($content)
     {
         $this->content = $content;
+        $this->setUpdatedAt(new \DateTime());
     }
 
     /**
@@ -259,7 +262,7 @@ abstract class Media extends BaseMedia{
         if(isset($format)){
             $path = $path."_".$format;
         }
-        $path = $path.".".\Ano\Bundle\SystemBundle\HttpFoundation\File\MimeType\ExtensionGuesser::guess($this->getContentType());
+        $path = $path.".".\Kunstmaan\KMediaBundle\Helper\Generator\ExtensionGuesser::guess($this->getContentType());
         return $path;
     }
 

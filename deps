@@ -87,14 +87,6 @@
     git=http://github.com/knplabs/KnpGaufretteBundle.git
     target=/bundles/Knp/GaufretteBundle
 
-[AnoSystemBundle]
-    git=https://github.com/benjamindulau/AnoSystemBundle.git
-    target=/bundles/Ano/Bundle/SystemBundle
-
-[AnoMediaBundle]
-    git=https://github.com/benjamindulau/AnoMediaBundle.git
-    target=/bundles/Ano/Bundle/MediaBundle
-
 [WebProfilerExtraBundle]
     git=https://github.com/Elao/WebProfilerExtraBundle.git
     target=/bundles/Elao/WebProfilerExtraBundle

@@ -3,6 +3,7 @@
 namespace  Kunstmaan\KMediaBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Kunstmaan\KMediaBundle\Helper\SlideGalleryStrategy;
 
 /**
  * Class that defines a Media object from the AnoBundle in the database
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @author Kristof Van Cauwenbergh
  *
  * @ORM\Entity(repositoryClass="Kunstmaan\KMediaBundle\Repository\SlideGalleryRepository")
- * @ORM\Table(name="file_gallery")
+ * @ORM\Table(name="slide_gallery")
  * @ORM\HasLifecycleCallbacks
  */
 class SlideGallery extends Gallery{
@@ -57,8 +58,6 @@ class SlideGallery extends Gallery{
      */
     protected $files;
 
-    protected $strategy;
-
     public function setId($id){
         $this->id = $id;
     }
@@ -70,7 +69,6 @@ class SlideGallery extends Gallery{
     public function __construct()
     {
         parent::__construct();
-        $this->setStrategy(new \Kunstmaan\KMediaBundle\Helper\SlideGalleryStrategy());
     }
 
     public function addSlide(Slide $child)
@@ -100,4 +98,33 @@ class SlideGallery extends Gallery{
         $this->files[] = $images;
     }
 
+    public function getStrategy(){
+        return new SlideGalleryStrategy();
+    }
+
+    /**
+     * @var string $content
+     */
+    protected $content;
+
+
+    /**
+     * Set content
+     *
+     * @param string $content
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+    }
+
+    /**
+     * Get content
+     *
+     * @return string 
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
 }
