@@ -5,7 +5,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 
 CKEDITOR.editorConfig = function( config )
 {
-    config.skin = 'kama';
+    config.skin = 'kCK';
     config.startupFocus = false;
     config.height = 500;
     config.filebrowserImageBrowseUrl = '../../edit/media/ckeditor';
