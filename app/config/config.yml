@@ -1,7 +1,7 @@
 imports:
     - { resource: parameters.ini }
     - { resource: security.yml }
-    KunstmaanKMediaBundle:
+    KunstmaanMediaBundle:
         resource: @KunstmaanMediaBundle/Resources/config/config.yml
 
 framework:
@@ -53,9 +53,9 @@ doctrine:
         entity_managers:
             default:
                 mappings:
-                    KunstmaanKAdminBundle: ~
+                    KunstmaanAdminBundle: ~
                     KunstmaanMediaBundle: ~
-                    KunstmaanKAdminNodeBundle: ~
+                    KunstmaanAdminNodeBundle: ~
                     FOSUserBundle: ~
                     KunstmaanPagePartBundle: ~
                     KunstmaanDemoBundle: ~
@@ -82,7 +82,7 @@ airbrake.config: ~
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb'
     firewall_name: main
-    user_class: Kunstmaan\KAdminBundle\Entity\User
+    user_class: Kunstmaan\AdminBundle\Entity\User
     resetting:
         token_ttl: 86400
         email:

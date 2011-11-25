@@ -5,13 +5,13 @@ namespace Kunstmaan\DemoBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
-use Kunstmaan\KAdminBundle\Entity\User;
+use Kunstmaan\AdminBundle\Entity\User;
 
 class UserFixtures extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load($manager)
     {
-        $user1 = new \Kunstmaan\KAdminBundle\Entity\User();
+        $user1 = new User();
         $user1->setUsername("admin");
         $user1->setPlainPassword("admin");
         $user1->setRoles(array("ROLE_SUPER_ADMIN"));
@@ -20,7 +20,7 @@ class UserFixtures extends AbstractFixture implements OrderedFixtureInterface
         $manager->persist($user1);
         $manager->flush();
 
-        $user2 = new \Kunstmaan\KAdminBundle\Entity\User();
+        $user2 = new User();
         $user2->setUsername("kris");
         $user2->setPlainPassword("test");
         $user2->setRoles(array("ROLE_ADMIN"));
@@ -29,7 +29,7 @@ class UserFixtures extends AbstractFixture implements OrderedFixtureInterface
         $manager->persist($user2);
         $manager->flush();
 
-        $user3 = new \Kunstmaan\KAdminBundle\Entity\User();
+        $user3 = new User();
         $user3->setUsername("kristof");
         $user3->setPlainPassword("test");
         $user3->setRoles(array("ROLE_ADMIN"));

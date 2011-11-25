@@ -14,12 +14,12 @@ KunstmaanAdminListBundle:
     resource: "@KunstmaanAdminListBundle/Resources/config/routing.yml"
     prefix:   /
 
-KunstmaanKAdminNodeBundle:
-    resource: "@KunstmaanKAdminNodeBundle/Resources/config/routing.yml"
+KunstmaanAdminNodeBundle:
+    resource: "@KunstmaanAdminNodeBundle/Resources/config/routing.yml"
     prefix:   /
 
-KunstmaanKAdminBundle:
-    resource: "@KunstmaanKAdminBundle/Resources/config/routing.yml"
+KunstmaanAdminBundle:
+    resource: "@KunstmaanAdminBundle/Resources/config/routing.yml"
     prefix:   /
 
 # Internal routing configuration to handle ESI

@@ -1,0 +1,26 @@
+KunstmaanAdminBundle_homepage:
+    pattern:  /admin
+    defaults: { _controller: KunstmaanAdminBundle:Default:index }
+
+KunstmaanAdminBundle_pages:
+    pattern:  /admin/pages
+    defaults: { _controller: KunstmaanAdminBundle:Pages:index }
+
+KunstmaanAdminBundle_pages_edit:
+    pattern:  /admin/pages/{entityname}/{id}
+    defaults: { _controller: KunstmaanAdminBundle:Pages:edit }
+    requirements:
+        _method:  GET|POST
+        id: \d+
+    
+KunstmaanAdminBundle_modules:
+    pattern:  /admin/modules
+    defaults: { _controller: KunstmaanAdminBundle:Modules:index }
+    
+KunstmaanAdminBundle_settings:
+    pattern:  /admin/settings
+    defaults: { _controller: KunstmaanAdminBundle:Settings:index }
+
+KunstmaanAdminBundle_settings_users:
+    pattern:  /admin/settings/users
+    defaults: { _controller: KunstmaanAdminBundle:Settings:users }

@@ -22,12 +22,12 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Airbrake\AirbrakeBundle\AirbrakeBundle(),
 			new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
-            new Kunstmaan\KAdminBundle\KunstmaanKAdminBundle(),
+            new Kunstmaan\AdminBundle\KunstmaanAdminBundle(),
             new Kunstmaan\AdminListBundle\KunstmaanAdminListBundle(),
             new Kunstmaan\MediaBundle\KunstmaanMediaBundle(),
             new Kunstmaan\DemoBundle\KunstmaanDemoBundle(),
 	        new Kunstmaan\PagePartBundle\KunstmaanPagePartBundle(),
-            new Kunstmaan\KAdminNodeBundle\KunstmaanKAdminNodeBundle(),
+            new Kunstmaan\AdminNodeBundle\KunstmaanAdminNodeBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

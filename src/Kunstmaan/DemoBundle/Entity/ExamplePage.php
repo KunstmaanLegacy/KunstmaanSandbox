@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Annotations\Annotation;
 use Doctrine\Common\Collections\ArrayCollection;
 use Kunstmaan\DemoBundle\Form\ExamplePageAdminType;
-use Kunstmaan\KAdminBundle\Entity\PageIFace;
+use Kunstmaan\AdminBundle\Entity\PageIFace;
 
 /**
  * @ORM\Entity(repositoryClass="Kunstmaan\DemoBundle\Repository\ExamplePageRepository")

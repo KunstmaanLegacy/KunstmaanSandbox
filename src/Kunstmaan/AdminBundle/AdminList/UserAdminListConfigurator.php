@@ -7,11 +7,11 @@
  * To change this template use File | Settings | File Templates.
  */
 
-namespace Kunstmaan\DemoBundle\AdminList;
+namespace Kunstmaan\AdminBundle\AdminList;
 
 use Kunstmaan\AdminListBundle\AdminList\AbstractAdminListConfigurator;
 
-class PageAdminListConfigurator extends AbstractAdminListConfigurator{
+class UserAdminListConfigurator extends AbstractAdminListConfigurator{
 
     /**
      *
@@ -19,15 +19,15 @@ class PageAdminListConfigurator extends AbstractAdminListConfigurator{
      */
     public function configureListFields($array)
     {
-        $array[] = "title";
-        $array[] = "created";
-        $array[] = "updated";
-        $array[] = "online";
+        $array[] = "username";
+        $array[] = "email";
+        $array[] = "lastLogin";
+        $array[] = "groups";
         return $array;
     }
 
     public function getRepositoryName(){
-        return 'KunstmaanAdminNodeBundle:Node';
+        return 'KunstmaanAdminBundle:User';
     }
 
     function adaptQueryBuilder($querybuilder){
