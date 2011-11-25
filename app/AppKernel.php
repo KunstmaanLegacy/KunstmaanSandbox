@@ -21,7 +21,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Airbrake\AirbrakeBundle\AirbrakeBundle(),
-			new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
+            new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
             new Kunstmaan\AdminBundle\KunstmaanAdminBundle(),
             new Kunstmaan\AdminListBundle\KunstmaanAdminListBundle(),
             new Kunstmaan\MediaBundle\KunstmaanMediaBundle(),

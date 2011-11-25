@@ -12,14 +12,5 @@ use Doctrine\ORM\EntityRepository;
  */
 class PageRepository extends EntityRepository
 {
-	public function getTopNode()
-	{
-	    $qb = $this->createQueryBuilder('b')
-	               ->select('b')
-                   ->where('b.parent is null')
-	               ->addOrderBy('b.sequencenumber', 'DESC');
 
-	    return $qb->getQuery()
-	              ->getSingleResult();
-	}
 }
