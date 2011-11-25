@@ -1,17 +1,25 @@
-KunstmaanKAdminNodeBundle:
-    resource: "@KunstmaanKAdminNodeBundle/Resources/config/routing.yml"
+KunstmaanDemoBundle:
+    resource: "@KunstmaanDemoBundle/Resources/config/routing.yml"
     prefix:   /
 
-KunstmaanKAdminListBundle:
-    resource: "@KunstmaanKAdminListBundle/Resources/config/routing.yml"
+KunstmaanPagePartBundle:
+    resource: "@KunstmaanPagePartBundle/Resources/config/routing.yml"
     prefix:   /
 
-KunstmaanKMenuBundle:
-    resource: "@KunstmaanKMenuBundle/Resources/config/routing.yml"
+KunstmaanMediaBundle:
+    resource: "@KunstmaanMediaBundle/Resources/config/routing.yml"
     prefix:   /
 
-KunstmaanKAdminBundle:
-    resource: "@KunstmaanKAdminBundle/Resources/config/routing.yml"
+KunstmaanAdminListBundle:
+    resource: "@KunstmaanAdminListBundle/Resources/config/routing.yml"
+    prefix:   /
+
+KunstmaanAdminNodeBundle:
+    resource: "@KunstmaanAdminNodeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+KunstmaanAdminBundle:
+    resource: "@KunstmaanAdminBundle/Resources/config/routing.yml"
     prefix:   /
 
 # Internal routing configuration to handle ESI

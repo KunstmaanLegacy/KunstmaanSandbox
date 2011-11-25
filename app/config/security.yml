@@ -8,7 +8,7 @@ security:
 
     providers:
         main:
-          entity: { class: KunstmaanKAdminBundle:User, property: username}
+          entity: { class: KunstmaanAdminBundle:User, property: username}
 
         in_memory:
             users:
