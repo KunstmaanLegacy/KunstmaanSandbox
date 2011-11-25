@@ -1,3 +1,0 @@
-KunstmaanKAdminNodeBundle_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: KunstmaanKAdminNodeBundle:Default:index }
