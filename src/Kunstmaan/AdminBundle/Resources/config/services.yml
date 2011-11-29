@@ -3,7 +3,7 @@ parameters:
 
 services:
     kunstmaan_media.media_menu:
-        class: Kunstmaan\MediaBundle\Menu\MediaMenu
+        class: Kunstmaan\MediaBundle\Menu\MediaMenuAdaptor
         arguments: ["@knp_menu.factory"]
 
     kunstmaan_admin.menu_builder:

@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\ContainerAware;
 class MenuBuilder
 {
     private $factory;
-    protected $children = array();
+    private $rootItem;
 
     /**
      * @param FactoryInterface $factory
@@ -16,41 +16,33 @@ class MenuBuilder
     public function __construct(FactoryInterface $factory, $extra = array())
     {
         $this->factory = $factory;
-        $this->addChild("pages", new MenuItem('Pages', array( 'route' => 'KunstmaanAdminBundle_pages' )));
-        $this->addChild("modules", new MenuItem('Modules', array( 'route' => 'KunstmaanAdminBundle_modules')));
-        $this->addChild("settings", new MenuItem('Settings', array( 'route' => 'KunstmaanAdminBundle_settings')));
-        $this->addChild('tools', new MenuItem('Tools', array('uri' => '#', 'attributes' => array('class' => 'dropdown'), 'linkAttributes' => array('class' => 'dropdown-toggle'), 'childrenAttributes' => array('class' => 'dropdown-menu'))));
+        $this->rootItem = $this->populateMenu();
 
-        $this->children['tools']->addChild('clearfc', new MenuItem('Clear Frontend Cache', array( 'uri' => '#')));
-        $this->children['tools']->addChild('clearbc', new MenuItem('Clear Backend Cache', array( 'uri' => '#')));
-        $this->children['tools']->addChild('divider', new MenuItem('', array('attributes' => array('class' => 'divider'))));
-        $this->children['tools']->addChild('shutdown', new MenuItem('Shutdown', array( 'uri' => '#')));
-
-        foreach($extra as  $menuitem){
-            if($menuitem->getParent()!=null) $this->children[$menuitem->getParent()]->addChild($menuitem->getName(), $menuitem);
-            else $this->addChild($menuitem->getName(), $menuitem);
+        foreach($extra as  $menuadaptor){
+            $menuadaptor->adaptMenu($this->rootItem);
         }
     }
 
     public function mainMenu(\Symfony\Component\HttpFoundation\Request $request)
     {
-        $menu = $this->factory->createItem('root');
-        $menu->setCurrentUri($request->getRequestUri());
-
-        $menu->getRoot()->setAttribute('class', 'nav');
-
-        foreach($this->getChildren() as  $menuitem){
-            $menuitem->menu($request, $menu);
-        }
-
-        return $menu;
+        $this->rootItem->setCurrentUri($request->getRequestUri());
+        return $this->rootItem;
     }
 
-    public function addChild($name, MenuPartInterface $child){
-        $this->children[$name] = $child;
-    }
+    public function populateMenu(){
+        $rootItem = $this->factory->createItem('root');
+        $rootItem->getRoot()->setAttribute('class', 'nav');
 
-    public function getChildren(){
-        return $this->children;
+        $rootItem->addChild('Pages', array( 'route' => 'KunstmaanAdminBundle_pages' ));
+        $rootItem->addChild('Modules', array( 'route' => 'KunstmaanAdminBundle_modules'));
+        $rootItem->addChild('Settings', array( 'route' => 'KunstmaanAdminBundle_settings'));
+        $rootItem->addChild('Tools', array('uri' => '#', 'attributes' => array('class' => 'dropdown'), 'linkAttributes' => array('class' => 'dropdown-toggle'), 'childrenAttributes' => array('class' => 'dropdown-menu')));
+
+            $rootItem['Tools']->addChild('Clear Frontend Cache', array( 'uri' => '#'));
+            $rootItem['Tools']->addChild('Clear Backend Cache', array( 'uri' => '#'));
+            $rootItem['Tools']->addChild('', array('attributes' => array('class' => 'divider')));
+            $rootItem['Tools']->addChild('Shutdown', array( 'uri' => '#'));
+
+        return $rootItem;
     }
 }
