@@ -2,8 +2,20 @@ parameters:
 #    kunstmaan_admin.example.class: Kunstmaan\AdminBundle\Example
 
 services:
-#    kunstmaan_admin.example:
-#        class: %kunstmaan_admin.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    kunstmaan_media.media_menu:
+        class: Kunstmaan\MediaBundle\Menu\MediaMenuAdaptor
+        arguments: ["@knp_menu.factory"]
 
+    kunstmaan_admin.menu_builder:
+        class: Kunstmaan\AdminBundle\Menu\MenuBuilder
+        arguments: ["@knp_menu.factory", [@kunstmaan_media.media_menu]]
+
+    kunstmaan_admin.menu.main:
+        class: Knp\Menu\MenuItem # the service definition requires setting the class
+        factory_service: kunstmaan_admin.menu_builder
+        factory_method: mainMenu
+        arguments: ["@request"]
+        scope: request # needed as we have the request as a dependency here
+        tags:
+            - { name: knp_menu.menu, alias: main } # The alias is what is used to retrieve the menu
 
