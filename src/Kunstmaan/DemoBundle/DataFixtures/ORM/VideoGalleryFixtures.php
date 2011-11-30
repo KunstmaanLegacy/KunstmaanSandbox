@@ -44,7 +44,7 @@ class VideoGalleryFixtures extends AbstractFixture implements OrderedFixtureInte
         $Video = new Video();
         $Video->setName('Template Override');
         $Video->setContent('eumgRULsR3g');
-        $Video->setVideotype('youtube');
+        $Video->setType('youtube');
         $Video->setGallery($gal);
         $manager->persist($Video);
         $manager->flush();
@@ -52,7 +52,7 @@ class VideoGalleryFixtures extends AbstractFixture implements OrderedFixtureInte
         $Video = new Video();
         $Video->setName('The Denali Experiment ');
         $Video->setContent('32718192');
-        $Video->setVideotype('vimeo');
+        $Video->setType('vimeo');
         $Video->setGallery($gal);
         $manager->persist($Video);
         $manager->flush();
@@ -60,7 +60,7 @@ class VideoGalleryFixtures extends AbstractFixture implements OrderedFixtureInte
         $Video = new Video();
         $Video->setName('The Nord - extended trailer');
         $Video->setContent('xmdian');
-        $Video->setVideotype('dailymotion');
+        $Video->setType('dailymotion');
         $Video->setGallery($gal);
         $manager->persist($Video);
         $manager->flush();
