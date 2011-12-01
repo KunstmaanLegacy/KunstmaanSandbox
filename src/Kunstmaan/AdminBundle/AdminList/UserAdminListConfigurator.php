@@ -13,12 +13,15 @@ use Kunstmaan\AdminListBundle\AdminList\AbstractAdminListConfigurator;
 
 class UserAdminListConfigurator extends AbstractAdminListConfigurator{
 
-    /**
-     *
-     * @return void
-     */
-    public function configureListFields($array)
-    {
+    public function configureListFields(&$array) {
+        $array[] = "username";
+        $array[] = "email";
+        $array[] = "lastLogin";
+        $array[] = "groups";
+    }
+
+    public function getSortFields() {
+        $array = array();
         $array[] = "username";
         $array[] = "email";
         $array[] = "lastLogin";
@@ -26,11 +29,27 @@ class UserAdminListConfigurator extends AbstractAdminListConfigurator{
         return $array;
     }
 
-    public function getRepositoryName(){
+    public function canEdit($item) {
+        return true;
+    }
+
+    public function getEditUrlFor($item) {
+        return "";
+    }
+
+    public function canDelete($item) {
+        return true;
+    }
+
+    public function getAdminType($item) {
+        return null;
+    }
+
+    public function getRepositoryName() {
         return 'KunstmaanAdminBundle:User';
     }
 
-    function adaptQueryBuilder($querybuilder){
+    function adaptQueryBuilder($querybuilder) {
         parent::adaptQueryBuilder($querybuilder);
         //not needed to change something here yet but already
     }
