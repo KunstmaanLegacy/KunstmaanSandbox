@@ -1,0 +1,168 @@
+/* ============================================================================= NORMALIZER ========================================================================== */
+* { margin: 0; padding: 0; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+
+audio:not([controls]) { display: none; }
+
+[hidden] { display: none; }
+
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body { margin: 0; }
+
+::-moz-selection { background: #2491DF; color: #fff; text-shadow: none; }
+
+::selection { background: #2491DF; color: #fff; text-shadow: none; }
+
+a { color: #00e; }
+a:visited { color: #551a8b; }
+a:hover { color: #06e; }
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: bold; }
+
+blockquote { margin: 0 40px; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 0; padding: 0; }
+
+pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
+
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+
+small { font-size: 85%; }
+
+ul, ol { margin: 0; padding: 0; }
+
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+figure { margin: 0; }
+
+form { margin: 0; }
+
+fieldset { border: 0; margin: 0; padding: 0; }
+
+label { cursor: pointer; }
+
+legend { border: 0; *margin-left: -7px; padding: 0; }
+
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+
+button, input { line-height: normal; *overflow: visible; }
+
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+table td { vertical-align: top; }
+
+body { color: #404040; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 18px; background-color: #F5F5F5; }
+
+h1, h2, h3, h4, h5, h6 { color: #404040; font-weight: bold; line-height: 36px; }
+
+h1 { font-size: 54px; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); margin-top: 100px; line-height: 54px; }
+
+h2 { font-size: 24px; }
+
+h3 { font-size: 18px; }
+
+h4 { font-size: 16px; }
+
+h5 { font-size: 14px; }
+
+h6 { font-size: 13px; }
+
+/* ==|== primary styles ===================================================== Author: Indri & Ibe ========================================================================== */
+#main { width: 900px; margin: 0 auto; }
+
+/* ==|========================================== DATEPICKER ============================================= */
+section { overflow: hidden; }
+
+section.datepicker h1 { margin-bottom: 20px; }
+section.datepicker form { height: 300px; margin: 0 0 100px 0; border-radius: 5px; float: left; }
+section.datepicker form label { width: auto; }
+section.datepicker legend { margin: 0 0 15px 0; padding: 0 0 0 3px; font-size: 22px; font-weight: bold; text-shadow: 0 1px 2px rgba(3, 3, 3, 0.5); float: left; width: 100%; }
+section.datepicker ul { margin: 0 0 0 7px; list-style: none; }
+section.datepicker ul li { margin: 0 0 10px 0; }
+section.datepicker ul li label { float: left; margin: 0 7px 0 0; padding: 4px 0 0 0; text-shadow: 0 1px 0 #FFF; }
+section.datepicker ul li input { float: left; height: 18px; padding: 4px; border: 1px solid #CCCCCC; border-radius: 3px; color: #808080; -moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset; }
+section.datepicker ul li input:focus { border-color: rgba(82, 168, 236, 0.8); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset, 0 0 8px rgba(82, 168, 236, 0.6); outline: none; }
+
+a.dp-choose-date { float: left; width: 16px; height: 15px; padding: 0; margin: 6px 0 0 7px; display: block; text-indent: -9999px; overflow: hidden; background: url(../img/icons/datepicker/IconDatePicker-16.gif) no-repeat; }
+a.dp-choose-date.dp-disabled { background-position: 0 -20px; cursor: default; }
+
+table.jCalendar { border: none; background: #e4e4e4; border-collapse: separate; border-spacing: 2px; padding: 5px; margin: 5px 0 0 0; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset; border-radius: 3px; }
+table.jCalendar th { background: #333; color: #fff; font-weight: bold; padding: 3px 5px; }
+table.jCalendar td { background: #ccc; color: #000; padding: 3px 5px; text-align: center; }
+table.jCalendar td.other-month { background: #eee; color: #bbb; }
+table.jCalendar td.today { background: #666; color: #fff; }
+table.jCalendar td.selected { background: #049CD9; color: #fff; }
+table.jCalendar td.selected.dp-hover { background: #03AEF4; color: #fff; }
+table.jCalendar td.disabled, table.jCalendar td.disabled.dp-hover { background: #bbb; color: #888; }
+table.jCalendar td.unselectable, table.jCalendar td.unselectable:hover, table.jCalendar td.unselectable.dp-hover { background: #bbb; color: #888; }
+table.jCalendar td.dp-hover, table.jCalendar tr.activeWeekHover td { background: #fff; color: #000; }
+table.jCalendar tr.selectedWeek td { background: #f66; color: #fff; }
+
+div.dp-popup { position: relative; background: #f5f5f5; font-size: 10px; font-family: arial, sans-serif; padding: 10px; width: 174px; line-height: 1.2em; margin-left: 25px; border-radius: 5px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset; }
+div.dp-popup h2 { font-size: 12px; line-height: 16px; text-align: center; margin: 2px 0; padding: 0; }
+div.dp-popup a { color: #000; text-decoration: none; padding: 3px 2px 0; }
+div.dp-popup div.dp-nav-prev { position: absolute; top: 10px; left: 10px; width: 100px; }
+div.dp-popup div.dp-nav-prev a { float: left; }
+
+div#dp-popup { position: absolute; z-index: 199; }
+
+a#dp-close { font-size: 11px; padding: 4px 0; text-align: center; display: block; }
+a#dp-close:hover { text-decoration: underline; }
+
+div.dp-popup div.dp-nav-prev a, div.dp-popup div.dp-nav-next a { cursor: pointer; }
+div.dp-popup div.dp-nav-prev a.disabled, div.dp-popup div.dp-nav-next a.disabled { cursor: default; }
+div.dp-popup div.dp-nav-next { position: absolute; top: 10px; right: 10px; width: 100px; }
+div.dp-popup div.dp-nav-next a { float: right; }
+div.dp-popup a.disabled { cursor: default; color: #aaa; }
+div.dp-popup td { cursor: pointer; }
+div.dp-popup td.disabled { cursor: default; }
+
+/* ==|== non-semantic helper classes ======================================== Please define your styles before this section. ========================================================================== */
+.hidden { display: none !important; visibility: hidden; }
+
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+.clearfix { zoom: 1; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+
+/* ==|== media queries ====================================================== ========================================================================== */
+/* ==|== print styles ======================================================= ========================================================================== */
+@media print { * { background: transparent !important; color: black !important; text-shadow: none !important; filter: none !important; -ms-filter: none !important; }
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; } }
