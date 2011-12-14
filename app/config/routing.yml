@@ -1,3 +1,4 @@
+
 KunstmaanDemoBundle:
     resource: "@KunstmaanDemoBundle/Resources/config/routing.yml"
     prefix:   /
@@ -41,3 +42,9 @@ fos_user_resetting:
 _imagine:
     resource: .
     type:     imagine
+    
+KunstmaanViewBundle:
+    resource: "@KunstmaanViewBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

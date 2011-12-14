@@ -339,4 +339,8 @@ class Node
     public function getDefaultAdminType(){
         return new NodeAdminType();
     }
+    
+    public function getRef($em){
+    	return $em->getRepository($this->getRefEntityname())->find($this->getRefId());
+    }
 }

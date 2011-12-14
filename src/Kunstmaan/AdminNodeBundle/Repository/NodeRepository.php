@@ -2,6 +2,8 @@
 
 namespace Kunstmaan\AdminNodeBundle\Repository;
 
+use Kunstmaan\AdminBundle\Entity\PageIFace;
+
 use Doctrine\ORM\EntityRepository;
 
 /**
@@ -21,5 +23,16 @@ class NodeRepository extends EntityRepository
 
 	    return $qb->getQuery()
 	              ->getResult();
+	}
+	
+	public function getNodeFor(PageIFace $page) {
+		return $this->findOneBy(array('refId' => $page->getId(), 'refEntityname' => get_class($page)));
+	}
+	
+	public function getNodeForSlug($parentNode, $slug){
+		if($parentNode){
+			return $this->findOneBy(array('slug' => $slug, 'parent' => $parentNode->getId()));
+		}
+		return $this->findOneBy(array('slug' => $slug));
 	}
 }
