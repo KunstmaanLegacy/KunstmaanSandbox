@@ -49,17 +49,7 @@ doctrine:
 
     orm:
         auto_generate_proxy_classes: %kernel.debug%
-        #auto_mapping: true
-        entity_managers:
-            default:
-                mappings:
-                    KunstmaanAdminBundle: ~
-                    KunstmaanMediaBundle: ~
-                    KunstmaanAdminNodeBundle: ~
-                    FOSUserBundle: ~
-                    KunstmaanPagePartBundle: ~
-                    KunstmaanDemoBundle: ~
-
+        auto_mapping: true
 
 # Swiftmailer Configuration
 swiftmailer:
