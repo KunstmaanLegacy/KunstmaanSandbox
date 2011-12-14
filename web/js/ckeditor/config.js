@@ -8,8 +8,8 @@ CKEDITOR.editorConfig = function( config )
     config.skin = 'kCK';
     config.startupFocus = false;
     config.height = 500;
-    config.filebrowserImageBrowseUrl = '../../media/images/ckeditor';
-    config.filebrowserImageBrowseLinkUrl = '../../media/images/ckeditor';
+    config.filebrowserImageBrowseUrl = '../../media/gallery/ckeditor';
+    config.filebrowserImageBrowseLinkUrl = '../../media/gallery/ckeditor';
     config.filebrowserImageUploadUrl = '';
     config.toolbar_Full =
             [

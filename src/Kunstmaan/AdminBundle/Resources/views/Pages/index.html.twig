@@ -2,14 +2,13 @@
 
 {% block sidebar %}
 <div class="sidebar">
-    {% for topnode in topnodes %}
-        <h5><a href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': topnode.id, 'entityname': topnode.refEntityname }) }}">{{ topnode }}</a></h5>
+    <div id="tree">
         <ul>
-            {% for child in topnode.children %}
-            <li><a href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': child.id, 'entityname': child.refEntityname }) }}">{{ child }}</a></li>
+            {% for topnode in topnodes %}
+                {% include 'KunstmaanAdminBundle:Pages:rectreeview.html.twig' %}
             {% endfor %}
         </ul>
-    {% endfor %}
+    </div>
 </div>
 {% endblock %}
 
