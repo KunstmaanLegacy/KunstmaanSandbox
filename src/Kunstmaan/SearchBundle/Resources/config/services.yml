@@ -1,0 +1,8 @@
+parameters:
+    kunstmaan_search.transformers.nodetransformerclass: Kunstmaan\SearchBundle\Transformers\NodeTransformer
+
+services:
+    kunstmaan_search.transformers.nodetransformer:
+        class: %kunstmaan_search.transformers.nodetransformerclass%
+        arguments:
+            - { container: @service_container }

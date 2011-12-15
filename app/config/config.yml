@@ -95,13 +95,11 @@ foq_elastica:
             types:
                 page:
                     mappings:
-                        id:
-                        title:
-                        online:
-                        pagecontent:
                     doctrine:
                         driver: orm
-                        model: Kunstmaan\AdminNodeBundle\Entity\Node
                         provider:
+                        model: Kunstmaan\AdminNodeBundle\Entity\Node
+                        model_to_elastica_transformer:
+                            service: kunstmaan_search.transformers.nodetransformer
                         listener:
                         finder:
