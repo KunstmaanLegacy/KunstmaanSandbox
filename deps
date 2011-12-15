@@ -106,3 +106,12 @@
 [KunstmaanAdminListBundle]
     git=git@github.com:Kunstmaan/KunstmaanAdminListBundle.git
     target=/bundles/Kunstmaan/AdminListBundle
+
+[Elastica]
+    git=git://github.com/ruflin/Elastica.git
+    target=elastica
+
+[FOQElasticaBundle]
+    git=git://github.com/Exercise/FOQElasticaBundle.git
+    target=bundles/FOQ/ElasticaBundle
+    version=origin/2.0

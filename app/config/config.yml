@@ -85,3 +85,23 @@ fos_user:
             handler:            fos_user.resetting.form.handler.default
             name:               fos_user_resetting_form
             validation_groups:  [ResetPassword]
+
+foq_elastica:
+    clients:
+        default: { host: localhost, port: 9200 }
+    indexes:
+        website:
+            client: default
+            types:
+                page:
+                    mappings:
+                        id:
+                        title:
+                        online:
+                        pagecontent:
+                    doctrine:
+                        driver: orm
+                        model: Kunstmaan\AdminNodeBundle\Entity\Node
+                        provider:
+                        listener:
+                        finder:
