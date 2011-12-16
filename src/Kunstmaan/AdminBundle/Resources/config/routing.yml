@@ -1,26 +1,65 @@
 KunstmaanAdminBundle_homepage:
-    pattern:  /admin
+    pattern:  /{_locale}/admin
     defaults: { _controller: KunstmaanAdminBundle:Default:index }
+    requirements:
+        _locale: en|nl|fr
 
 KunstmaanAdminBundle_pages:
-    pattern:  /admin/pages
+    pattern:  /{_locale}/admin/pages
     defaults: { _controller: KunstmaanAdminBundle:Pages:index }
+    requirements:
+        _locale: en|nl|fr
 
 KunstmaanAdminBundle_pages_edit:
-    pattern:  /admin/pages/{entityname}/{id}
+    pattern:  /{_locale}/admin/pages/{entityname}/{id}
     defaults: { _controller: KunstmaanAdminBundle:Pages:edit }
     requirements:
         _method:  GET|POST
         id: \d+
+        _locale: en|nl|fr
     
 KunstmaanAdminBundle_modules:
-    pattern:  /admin/modules
+    pattern:  /{_locale}/admin/modules
     defaults: { _controller: KunstmaanAdminBundle:Modules:index }
+    requirements:
+        _locale: en|nl|fr
     
 KunstmaanAdminBundle_settings:
-    pattern:  /admin/settings
+    pattern:  /{_locale}/admin/settings
     defaults: { _controller: KunstmaanAdminBundle:Settings:index }
+    requirements:
+        _locale: en|nl|fr
 
 KunstmaanAdminBundle_settings_users:
-    pattern:  /admin/settings/users
+    pattern:  /{_locale}/admin/settings/users
     defaults: { _controller: KunstmaanAdminBundle:Settings:users }
+    requirements:
+        _locale: en|nl|fr
+ 
+fos_user_security_login:
+    pattern: /{_locale}/login
+    defaults: { _controller: FOSUserBundle:Security:login }
+    requirements:
+        _locale: en|nl|fr
+
+fos_user_security_check:
+    pattern: /login_check
+    defaults: { _controller: FOSUserBundle:Security:check }
+        
+fos_user_security_logout:
+    pattern: /{_locale}/logout
+    defaults: { _controller: FOSUserBundle:Security:logout }
+    requirements:
+        _locale: en|nl|fr
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /{_locale}/profile
+    requirements:
+        _locale: en|nl|fr
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /{_locale}/resetting  
+    requirements:
+        _locale: en|nl|fr       
