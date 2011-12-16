@@ -17,6 +17,11 @@ class SearchPageController extends Controller
     public function searchAction()
     {
     	$query = $this->getRequest()->get("query");
-    	return array('query' => $query);
+
+        //use the elasitica service to search for results
+        $finder = $this->get('foq_elastica.finder.website.page');
+        $pages = $finder->find($query);
+
+    	return array('query' => $query, 'results' => $pages);
     }
 }
