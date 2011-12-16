@@ -1,0 +1,27 @@
+# Pages
+pages:
+  title: Pages
+
+# Modules
+modules:
+  title: Modules
+
+# Settings
+settings:
+  title: Settings
+
+# Tools
+tools:
+  title: Tools
+tools:
+  clear_frontend_cache: Clear frontend cache
+tools:
+  clear_all_caches: Clear all caches
+
+# Forms
+form:
+  cancel: Cancel
+  delete: Delete
+  edit: Edit
+  name: Name
+  type: Type
