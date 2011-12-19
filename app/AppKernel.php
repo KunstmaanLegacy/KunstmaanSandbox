@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Airbrake\AirbrakeBundle\AirbrakeBundle(),
             new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Kunstmaan\AdminBundle\KunstmaanAdminBundle(),
             new Kunstmaan\AdminListBundle\KunstmaanAdminListBundle(),
             new Kunstmaan\MediaBundle\KunstmaanMediaBundle(),
