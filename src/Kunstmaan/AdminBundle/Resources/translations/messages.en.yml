@@ -27,5 +27,11 @@ form:
   type: Type
   error: Error
   warning: Warning
+  headsup: Heads up
   forgot:
     password: Forgot my password.
+    
+omnext:
+  title: OpenMercury.NEXT
+  welcome: Welcome.<small> OpenMercury.NEXT application administration....</small>
+  information: <strong>Information. </strong> There are no new notifications.
