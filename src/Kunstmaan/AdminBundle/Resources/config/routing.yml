@@ -3,6 +3,10 @@ KunstmaanAdminBundle_homepage:
     defaults: { _controller: KunstmaanAdminBundle:Default:index }
     requirements:
         _locale: en|nl|fr
+        
+KunstmaanAdminBundle_setlocale:
+    pattern:  /admin/setlocale/{locale}
+    defaults: { _controller: KunstmaanAdminBundle:Default:setLocale }   
 
 KunstmaanAdminBundle_pages:
     pattern:  /{_locale}/admin/pages

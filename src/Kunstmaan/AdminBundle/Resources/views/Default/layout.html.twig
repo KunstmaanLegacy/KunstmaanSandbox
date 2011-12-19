@@ -41,7 +41,12 @@
         <div class="container-fluid">
           <a class="brand" href="{{ path('KunstmaanAdminBundle_homepage') }}">{{ 'omnext.title' | trans }}</a>
           {{ knp_menu_render('main') }}
-          <p class="pull-right">Logged in as
+          <p class="pull-right">
+          	  
+          	  <a {% if app.request.attributes.get('_locale') == "en" %}style="color: #049CDB"{% endif %} href="{{ path(app.request.attributes.get('_route'),  app.request.attributes.all|merge({ '_locale': 'en' })) }}">en</a>
+          	  | <a {% if app.request.attributes.get('_locale') == "nl" %}style="color: #049CDB"{% endif %} href="{{ path(app.request.attributes.get('_route'), app.request.attributes.all|merge({ '_locale': 'nl' })) }}">nl</a>
+          	  | <a {% if app.request.attributes.get('_locale') == "fr" %}style="color: #049CDB"{% endif %} href="{{ path(app.request.attributes.get('_route'), app.request.attributes.all|merge({ '_locale': 'fr' })) }}">fr</a>
+          	  | Logged in as
               <a href="{{ path('fos_user_profile_show') }}">{{ app.user.username }}</a> |
               <a href="{{ path('fos_user_security_logout') }}">log out</a>
           </p>
