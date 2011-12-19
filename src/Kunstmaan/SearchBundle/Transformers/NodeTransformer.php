@@ -3,6 +3,7 @@
 namespace Kunstmaan\SearchBundle\Transformers;
 
 use Elastica_Document;
+use RuntimeException;
 use FOQ\ElasticaBundle\Transformer\ModelToElasticaAutoTransformer;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
