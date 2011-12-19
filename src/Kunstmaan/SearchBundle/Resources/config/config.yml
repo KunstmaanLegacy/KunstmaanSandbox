@@ -6,7 +6,7 @@ parameters:
         content:
             handler:
                 handlerclass: Kunstmaan\AdminNodeBundle\Entity\Node
-                handlermethod: getContentForNode
+                handlermethod: getSearchContentForNode
 
 
 foq_elastica:

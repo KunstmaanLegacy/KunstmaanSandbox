@@ -8,6 +8,7 @@ use Doctrine\Common\Annotations\Annotation;
 use Doctrine\Common\Collections\ArrayCollection;
 use Kunstmaan\DemoBundle\Form\ExamplePageAdminType;
 use Kunstmaan\AdminBundle\Entity\PageIFace;
+use Kunstmaan\SearchBundle\Entity\Indexable;
 
 /**
  * @ORM\Entity(repositoryClass="Kunstmaan\DemoBundle\Repository\ExamplePageRepository")
@@ -18,7 +19,7 @@ use Kunstmaan\AdminBundle\Entity\PageIFace;
  * @ORM\DiscriminatorMap({ "examplepage" = "ExamplePage" , "myexamplepage" = "MyExamplePage" })
  * @ORM\HasLifecycleCallbacks()
  */
-class ExamplePage implements PageIFace
+class ExamplePage implements PageIFace, Indexable
 {
     /**
      * @ORM\Id
@@ -91,4 +92,23 @@ class ExamplePage implements PageIFace
     {
         return true;
     }
+
+    public function getContentForIndexing($container, $entity)
+    {
+        $renderer = $container->get('templating');
+        $em = $container->get('doctrine')->getEntityManager();
+
+        $node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeForSlug($entity->getParent(), $entity->getSlug());
+        $page = $node->getRef($em);
+
+        $pageparts = $em->getRepository('KunstmaanPagePartBundle:PagePartRef')->getPageParts($em, $page);
+
+        $classname = explode('\\', get_class($this));
+        $classname = array_pop($classname);
+
+        $view = 'KunstmaanDemoBundle:Elastica:'.$classname.'.elastica.twig';
+
+        return $renderer->render($view, array('page' => $entity, 'pageparts' => $pageparts));
+    }
+
 }

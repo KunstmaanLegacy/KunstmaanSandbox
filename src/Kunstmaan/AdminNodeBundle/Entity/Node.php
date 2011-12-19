@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Annotations\Annotation;
 use Doctrine\Common\Collections\ArrayCollection;
 use Kunstmaan\AdminNodeBundle\Form\NodeAdminType;
+use Kunstmaan\SearchBundle\Entity\Indexable;
 
 /**
  * @ORM\Entity(repositoryClass="Kunstmaan\AdminNodeBundle\Repository\NodeRepository")
@@ -352,22 +353,15 @@ class Node
      * @param $field
      * @return string
      */
-    public function getContentForNode($container, $object, $field)
+    public function getSearchContentForNode($container, $entity, $field)
     {
-        $em = $container->get('doctrine')->getEntityManager();
 
-        $node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeForSlug($object->getParent(), $object->getSlug());
-        $page = $node->getRef($em);
+        $page = $entity->getRef($container->get('doctrine')->getEntityManager());
 
-        $pageparts = $em->getRepository('KunstmaanPagePartBundle:PagePartRef')->getPageParts($em, $page);
-        $output = '';
-
-        if(count($pageparts)) {
-            foreach($pageparts as $pagepart) {
-                $output .= $container->get('templating')->render($pagepart->getDefaultView(), array('resource' => $pagepart));
-            }
+        if($page instanceof Indexable) {
+            return $page;
         }
 
-        return $output;
+        return null;
     }
 }
