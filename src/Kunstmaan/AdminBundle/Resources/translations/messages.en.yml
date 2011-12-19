@@ -13,10 +13,10 @@ settings:
 # Tools
 tools:
   title: Tools
-tools:
   clear_frontend_cache: Clear frontend cache
-tools:
+  clear_backend_cache: Clear backend cache
   clear_all_caches: Clear all caches
+  shutdown: Shutdown
 
 # Forms
 form:

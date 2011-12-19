@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{% block title %}OpenMercury.NEXT{% endblock %}</title>
+    <title>{% block title %}{{ 'omnext.title' | trans }}{% endblock %}</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -39,7 +39,7 @@
     <div class="topbar" data-dropdown="dropdown">
       <div class="topbar-inner">
         <div class="container-fluid">
-          <a class="brand" href="{{ path('KunstmaanAdminBundle_homepage') }}">OpenMercury.NEXT</a>
+          <a class="brand" href="{{ path('KunstmaanAdminBundle_homepage') }}">{{ 'omnext.title' | trans }}</a>
           {{ knp_menu_render('main') }}
           <p class="pull-right">Logged in as
               <a href="{{ path('fos_user_profile_show') }}">{{ app.user.username }}</a> |

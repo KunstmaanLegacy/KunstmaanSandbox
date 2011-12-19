@@ -1,6 +1,6 @@
 # Pages
 pages:
-  title: Pages
+  title: Pagina's
 
 # Modules
 modules:
@@ -8,15 +8,20 @@ modules:
 
 # Settings
 settings:
-  title: Settings
+  title: Instellingen
 
 # Tools
 tools:
-  title: Tools
-tools:
-  clear_frontend_cache: Clear frontend cache
-tools:
-  clear_all_caches: Clear all caches
+  title: Gereedschap
+  clear_frontend_cache: Maak de frontend cache leeg
+  clear_backend_cache: Maak de backend cache leeg
+  clear_all_caches: Maak alle caches leeg
+  shutdown: Sluit af
+    
+omnext:
+  title: OpenMercury.NEXT
+  welcome: Welkom.<small> OpenMercury.NEXT website administratie....</small>
+  information: <strong>Informatie. </strong> Er zijn geen nieuwe meldingen.
 
 # Forms
 form:
@@ -25,5 +30,8 @@ form:
   edit: Pas aan
   name: Naam
   type: Soort
+  error: Fout
+  warning: Let op
+  headsup: Hoofd omhoog
   forgot:
     password: Paswoord vergeten?
