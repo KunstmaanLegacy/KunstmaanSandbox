@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>{% block title %}OpenMercury.NEXT{% endblock %}</title>
+        <title>{% block title %}{{ 'omnext.title' | trans }}{% endblock %}</title>
         <meta name="description" content="">
         <meta name="author" content="">
         <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -53,14 +53,14 @@
         <div class="topbar" data-dropdown="dropdown">
            <div class="topbar-inner">
                <div class="container-fluid">
-                  <a class="brand" href="{{ path('KunstmaanAdminBundle_homepage') }}">OpenMercury.NEXT</a>
+                  <a class="brand" href="{{ path('KunstmaanAdminBundle_homepage') }}">{{ 'omnext.title' | trans }}</a>
                </div>
            </div>
         </div>
         <div id="wrapper">
               {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                  <div class="alert-message warning">
-                     <strong>Warning: </strong>
+                     <strong>{{ 'form.warning' | trans }}: </strong>
                      {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
                      <a href="{{ path('fos_user_security_logout') }}">
                         {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
@@ -71,7 +71,7 @@
               {% for key, message in app.session.getFlashes() %}
                 <div class="alert-message info {{ key }}">
                      <a class="close" href="{{ path('fos_user_security_login') }}">×</a>
-                     <strong>Heads up! </strong>
+                     <strong>{{ 'form.headsup' | trans }}! </strong>
                      {{ message|trans({}, 'FOSUserBundle') }}
                 </div>
               {% endfor %}

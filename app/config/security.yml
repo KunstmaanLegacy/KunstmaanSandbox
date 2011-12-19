@@ -18,13 +18,15 @@ security:
         fos_userbundle:
                 id: fos_user.user_manager
 
-
     firewalls:
         main:
             pattern: ^/
             form_login:
+                login_path: fos_user_security_login
                 provider: fos_userbundle
-            logout:       true
+            logout:
+              path:   fos_user_security_logout
+              target: KunstmaanAdminBundle_homepage
             anonymous:    true
             remember_me:
                 key:      aSecretKey
@@ -53,9 +55,9 @@ security:
             #    realm: "Secured Demo Area"
 
     access_control:
-        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/, role: ROLE_ADMIN }
-        - { path: ^/admin, role: ROLE_ADMIN }
+        - { path: ^/(nl|fr|en)/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/(nl|fr|en)/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/(nl|fr|en)/admin/, role: ROLE_ADMIN }
+        - { path: ^/(nl|fr|en)/admin, role: ROLE_ADMIN }
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
         #- { path: ^/_internal, roles: IS_AUTHENTICATED_ANONYMOUSLY, ip: 127.0.0.1 }

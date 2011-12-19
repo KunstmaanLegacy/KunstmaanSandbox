@@ -1,0 +1,29 @@
+# Pages
+pages:
+  title: Pages
+
+# Modules
+modules:
+  title: Modules
+
+# Settings
+settings:
+  title: Settings
+
+# Tools
+tools:
+  title: Tools
+tools:
+  clear_frontend_cache: Clear frontend cache
+tools:
+  clear_all_caches: Clear all caches
+
+# Forms
+form:
+  cancel: Annuleer
+  delete: Verwijder
+  edit: Pas aan
+  name: Naam
+  type: Soort
+  forgot:
+    password: Paswoord vergeten?
