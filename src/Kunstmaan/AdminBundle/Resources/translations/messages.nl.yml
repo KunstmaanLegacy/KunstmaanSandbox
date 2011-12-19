@@ -1,6 +1,7 @@
 # Pages
 pages:
   title: Pagina's
+  parts: Delen van de pagina
 
 # Modules
 modules:
@@ -9,6 +10,9 @@ modules:
 # Settings
 settings:
   title: Instellingen
+  users: Gebruikers
+  maintanance: Onderhoud
+  scheduled: Geplande jobs
 
 # Tools
 tools:
@@ -19,6 +23,7 @@ tools:
   shutdown: Sluit af
     
 omnext:
+  home: Startpagina
   title: OpenMercury.NEXT
   welcome: Welkom.<small> OpenMercury.NEXT website administratie....</small>
   information: <strong>Informatie. </strong> Er zijn geen nieuwe meldingen.
@@ -28,6 +33,7 @@ form:
   cancel: Annuleer
   delete: Verwijder
   edit: Pas aan
+  save: Bewaar
   name: Naam
   type: Soort
   error: Fout
@@ -35,3 +41,4 @@ form:
   headsup: Hoofd omhoog
   forgot:
     password: Paswoord vergeten?
+  properties: Eigenschappen

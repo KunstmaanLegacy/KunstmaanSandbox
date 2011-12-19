@@ -2,17 +2,17 @@
 
 {% block breadcrumb %}
 	<ul class="breadcrumb">
-		<li><a href="{{ path('KunstmaanAdminBundle_homepage') }}">Home</a> <span class="divider">/</span></li>
-		<li class="active">Settings</li>
+		<li><a href="{{ path('KunstmaanAdminBundle_homepage') }}">{{ 'omnext.home' | trans }}</a> <span class="divider">/</span></li>
+		<li class="active">{{ 'settings.title' | trans }}</li>
 	</ul>
 {% endblock %}
 
 {% block sidebar %}
     <ul>
-        <li class="header">Settings</li>
-        <li><a href="{{ path('KunstmaanAdminBundle_settings_users') }}">Users</a></li>
-        <li><a href="#">Maintenance</a></li>
-        <li><a href="#">Scheduled jobs</a></li>
+        <li class="header">{{ 'settings.title' | trans }}</li>
+        <li><a href="{{ path('KunstmaanAdminBundle_settings_users') }}">{{ 'settings.users' | trans }}</a></li>
+        <li><a href="#">{{ 'settings.maintanance' | trans }}</a></li>
+        <li><a href="#">{{ 'settings.scheduled' | trans }}</a></li>
     </ul>
 {% endblock %}
 

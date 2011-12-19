@@ -4,8 +4,8 @@
 
 {% block breadcrumb %}
 <ul class="breadcrumb">
-    <li><a href="{{ path('KunstmaanAdminBundle_homepage') }}">Home</a> <span class="divider">/</span></li>
-    <li><a href="{{ path('KunstmaanAdminBundle_pages') }}">Pages</a> <span class="divider">/</span></li>
+    <li><a href="{{ path('KunstmaanAdminBundle_homepage') }}">{{ 'omnext.home' | trans }}</a> <span class="divider">/</span></li>
+    <li><a href="{{ path('KunstmaanAdminBundle_pages') }}">{{ 'pages.title' | trans }}</a> <span class="divider">/</span></li>
     <li class="active">{{page.title}}</li>
 </ul>
 {% endblock %}
@@ -17,8 +17,8 @@
     </div>
     <h1>{{ page.title }}</h1>
         <ul class="tabs" data-tabs="tabs">
-            <li class="active"><a href="#pageparts">PageParts</a></li>
-            <li><a href="#home">Properties</a></li>
+            <li class="active"><a href="#pageparts">{{ 'pages.parts' | trans }}</a></li>
+            <li><a href="#home">{{ 'form.properties' | trans }}</a></li>
             {#<li><a href="#children">Children</a></li>
             <li><a href="#slug">Slug</a></li>
             <li class="dropdown" data-dropdown="dropdown">
@@ -40,13 +40,13 @@
 
                 {{ pagepartadmin_widget(pagepartadmin, form) }}
                 <div class="actions">
-                    <input type="submit" class="btn primary" value="Save">
+                    <input type="submit" class="btn primary" value="{{ 'form.save' | trans }}">
                 </div>
             </div>
             <div class="tab-pane" id="home">
                 {{ form_widget(form.main) }}
                 <div class="actions">
-                    <input type="submit" class="btn primary" value="Save">
+                    <input type="submit" class="btn primary" value="{{ 'form.save' | trans }}">
                 </div>
             </div>
 

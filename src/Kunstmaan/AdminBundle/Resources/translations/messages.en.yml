@@ -1,6 +1,7 @@
 # Pages
 pages:
   title: Pages
+  parts: PageParts
 
 # Modules
 modules:
@@ -9,6 +10,9 @@ modules:
 # Settings
 settings:
   title: Settings
+  users: Users
+  maintanance: Maintenance
+  scheduled: Scheduled Jobs
 
 # Tools
 tools:
@@ -23,6 +27,7 @@ form:
   cancel: Cancel
   delete: Delete
   edit: Edit
+  save: Save
   name: Name
   type: Type
   error: Error
@@ -30,8 +35,10 @@ form:
   headsup: Heads up
   forgot:
     password: Forgot my password.
+  properties: Properties 
     
 omnext:
+  home: Home
   title: OpenMercury.NEXT
   welcome: Welcome.<small> OpenMercury.NEXT application administration....</small>
   information: <strong>Information. </strong> There are no new notifications.
