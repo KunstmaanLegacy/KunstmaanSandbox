@@ -6,6 +6,7 @@ use Elastica_Document;
 use RuntimeException;
 use FOQ\ElasticaBundle\Transformer\ModelToElasticaAutoTransformer;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Kunstmaan\SearchBundle\Entity\Indexable;
 
 
 class NodeTransformer extends ModelToElasticaAutoTransformer
@@ -103,7 +104,11 @@ class NodeTransformer extends ModelToElasticaAutoTransformer
         $class = new $mappingSettings['handler']['handlerclass']();
         $searchable = $class->$mappingSettings['handler']['handlermethod']($container, $object, $field);
 
-        $output = $searchable->getContentForIndexing($container, $object);
+        //gets the output from the getContentForIndexing method, but only if it's an instance of Indexable
+        $output = '';
+        if($searchable instanceof Indexable) {
+            $output = $searchable->getContentForIndexing($container, $object);
+        }
 
         return $output;
     }
