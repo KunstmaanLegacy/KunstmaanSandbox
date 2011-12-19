@@ -1,0 +1,29 @@
+parameters:
+    kunstmaan_search.transformers.nodetransformerclass: Kunstmaan\SearchBundle\Transformers\NodeTransformer
+    kunstmaan_search.website_mapping:
+        title:
+        id:
+        content:
+            handler:
+                handlerclass: Kunstmaan\AdminNodeBundle\Entity\Node
+                handlermethod: getContentForNode
+
+
+foq_elastica:
+    clients:
+        default: { host: localhost, port: 9200 }
+    indexes:
+        website:
+            client: default
+            types:
+                page:
+                    mappings:
+                        %kunstmaan_search.website_mapping%
+                    doctrine:
+                        driver: orm
+                        provider:
+                        model: Kunstmaan\AdminNodeBundle\Entity\Node
+                        model_to_elastica_transformer:
+                            service: kunstmaan_search.transformers.nodetransformer
+                        listener:
+                        finder:

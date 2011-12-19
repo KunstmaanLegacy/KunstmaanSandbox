@@ -3,6 +3,8 @@ imports:
     - { resource: security.yml }
     KunstmaanMediaBundle:
         resource: @KunstmaanMediaBundle/Resources/config/config.yml
+    KunstmaanSearchBundle:
+        resource: @KunstmaanSearchBundle/Resources/config/config.yml
 
 framework:
     #esi:             ~
@@ -85,21 +87,3 @@ fos_user:
             handler:            fos_user.resetting.form.handler.default
             name:               fos_user_resetting_form
             validation_groups:  [ResetPassword]
-
-foq_elastica:
-    clients:
-        default: { host: localhost, port: 9200 }
-    indexes:
-        website:
-            client: default
-            types:
-                page:
-                    mappings:
-                    doctrine:
-                        driver: orm
-                        provider:
-                        model: Kunstmaan\AdminNodeBundle\Entity\Node
-                        model_to_elastica_transformer:
-                            service: kunstmaan_search.transformers.nodetransformer
-                        listener:
-                        finder:

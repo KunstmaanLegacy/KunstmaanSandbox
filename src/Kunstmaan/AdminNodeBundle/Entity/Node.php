@@ -343,4 +343,31 @@ class Node
     public function getRef($em){
     	return $em->getRepository($this->getRefEntityname())->find($this->getRefId());
     }
+
+    /**
+     * Returns the rendered output of the given page/pageParts
+     *
+     * @param $container
+     * @param $object
+     * @param $field
+     * @return string
+     */
+    public function getContentForNode($container, $object, $field)
+    {
+        $em = $container->get('doctrine')->getEntityManager();
+
+        $node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeForSlug($object->getParent(), $object->getSlug());
+        $page = $node->getRef($em);
+
+        $pageparts = $em->getRepository('KunstmaanPagePartBundle:PagePartRef')->getPageParts($em, $page);
+        $output = '';
+
+        if(count($pageparts)) {
+            foreach($pageparts as $pagepart) {
+                $output .= $container->get('templating')->render($pagepart->getDefaultView(), array('resource' => $pagepart));
+            }
+        }
+
+        return $output;
+    }
 }
