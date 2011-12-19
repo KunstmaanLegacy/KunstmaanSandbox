@@ -25,3 +25,5 @@ form:
   edit: Pas aan
   name: Naam
   type: Soort
+  forgot:
+    password: Paswoord vergeten?

@@ -25,3 +25,7 @@ form:
   edit: Edit
   name: Name
   type: Type
+  error: Error
+  warning: Warning
+  forgot:
+    password: Forgot my password.
