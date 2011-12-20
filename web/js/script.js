@@ -49,9 +49,7 @@ function init_tree() {
 
 // DATEPICKER
 function init_datePicker() {
-	//$('.date-pick').datePicker();
-
-
+	$('.date-pick').datePicker();
 }
 
 
