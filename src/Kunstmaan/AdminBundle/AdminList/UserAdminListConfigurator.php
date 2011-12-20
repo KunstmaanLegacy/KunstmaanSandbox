@@ -19,15 +19,15 @@ class UserAdminListConfigurator extends AbstractAdminListConfigurator{
 
 	public function buildFilters(AdminListFilter $builder){
         $builder->add('username', new StringFilterType("username"));
-        $builder->add('lastlogin', new DateFilterType("lastlogin"));
+        $builder->add('email', new StringFilterType("email"));
     }
     
 	public function buildFields()
     {
     	$this->addField("username", "Username", true);
     	$this->addField("email", "E-Mail", true);
-    	$this->addField("lastlogin", "Last Login", true);
-    	$this->addField("groups", "Groups", true); 	
+    	$this->addField("lastlogin", "Last Login", false);
+    	$this->addField("groups", "Groups", false); 	
     }
 
 	public function canAdd() {
