@@ -115,3 +115,10 @@
     git=git://github.com/Exercise/FOQElasticaBundle.git
     target=bundles/FOQ/ElasticaBundle
     version=origin/2.0
+
+[Pagerfanta]
+    git=http://github.com/whiteoctober/Pagerfanta.git
+
+[WhiteOctoberPagerfantaBundle]
+    git=https://github.com/KnpLabs/KnpMenuBundle.git
+    target=bundles/WhiteOctober/PagerfantaBundle

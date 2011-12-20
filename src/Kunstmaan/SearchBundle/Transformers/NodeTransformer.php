@@ -31,12 +31,12 @@ class NodeTransformer extends ModelToElasticaAutoTransformer
      */
     public function transform($object, array $fields)
     {
-        $mappings = $this->container->getParameter('kunstmaan_search.website_mapping');
+        $customMappings = $this->container->getParameter('kunstmaan_search.website_custom_mappings');
         $array = array();
 
-        foreach($mappings as $field => $mappingSettings) {
-            if( isset($mappingSettings['handler']) && (isset($mappingSettings['handler']['handlerclass']) && isset($mappingSettings['handler']['handlermethod'])) ) {
-                $array[$field] = $this->getHandlerField($this->container, $object, $field, $mappingSettings);
+        foreach($fields as $field) {
+            if( isset($customMappings[$field]) && (isset($customMappings[$field]['handlerclass']) && isset($customMappings[$field]['handlermethod']) )) {
+                $array[$field] = $this->getHandlerField($this->container, $object, $field, $customMappings[$field]);
             } else {
                 $array[$field] = $this->getNormalField($this->container, $object, $field);
             }
@@ -46,8 +46,8 @@ class NodeTransformer extends ModelToElasticaAutoTransformer
         // if the identifier field is already fetched, use that, don't recompute
         if(isset($array[$this->options['identifier']])) {
             //the identifier field was empty, so use either the normal or handler method
-            if( isset($mappings[$this->options['identifier']]['handler']) && (isset($mappings[$this->options['identifier']]['handler']['handlerclass']) && isset($mappings[$this->options['identifier']]['handler']['handlermethod'])) ) {
-                $identifier = $this->getHandlerField($this->container, $object, $field, $mappingSettings);
+            if( isset($customMappings[$field]) && (isset($customMappings[$this->options['identifier']]['handlerclass']) && isset($customMappings[$this->options['identifier']]['handlermethod']) )) {
+                $identifier = $this->getHandlerField($this->container, $object, $field, $customMappings[$field]);
             } else {
                 $identifier = $this->getNormalField($this->container, $object, $this->options['identifier']);
             }
@@ -92,17 +92,17 @@ class NodeTransformer extends ModelToElasticaAutoTransformer
     protected function getHandlerField($container, $object, $field, $mappingSettings)
     {
         //basic checks
-        if(!class_exists($mappingSettings['handler']['handlerclass'])) {
-            throw new RuntimeException(sprintf('The handlerclass %s does not exist', $mappingSettings['handler']['handlerclass']));
+        if(!class_exists($mappingSettings['handlerclass'])) {
+            throw new RuntimeException(sprintf('The handlerclass %s does not exist', $mappingSettings['handlerclass']));
         }
 
-        if (!method_exists($mappingSettings['handler']['handlerclass'], $mappingSettings['handler']['handlermethod'])) {
-            throw new RuntimeException(sprintf('The handlermethod %s::%s does not exist', $mappingSettings['handler']['handlerclass'], $mappingSettings['handler']['handlermethod']));
+        if (!method_exists($mappingSettings['handlerclass'], $mappingSettings['handlermethod'])) {
+            throw new RuntimeException(sprintf('The handlermethod %s::%s does not exist', $mappingSettings['handlerclass'], $mappingSettings['handlermethod']));
         }
 
         //instanciate the class, call the method and return the output
-        $class = new $mappingSettings['handler']['handlerclass']();
-        $searchable = $class->$mappingSettings['handler']['handlermethod']($container, $object, $field);
+        $class = new $mappingSettings['handlerclass']();
+        $searchable = $class->$mappingSettings['handlermethod']($container, $object, $field);
 
         //gets the output from the getContentForIndexing method, but only if it's an instance of Indexable
         $output = '';

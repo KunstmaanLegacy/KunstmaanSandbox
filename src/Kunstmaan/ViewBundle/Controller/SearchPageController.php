@@ -20,7 +20,7 @@ class SearchPageController extends Controller
 
         //use the elasitica service to search for results
         $finder = $this->get('foq_elastica.finder.website.page');
-        $pages = $finder->find($query);
+        $pages = $finder->findPaginated($query);
 
     	return array('query' => $query, 'results' => $pages);
     }

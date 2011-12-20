@@ -1,12 +1,9 @@
 parameters:
     kunstmaan_search.transformers.nodetransformerclass: Kunstmaan\SearchBundle\Transformers\NodeTransformer
-    kunstmaan_search.website_mapping:
-        title:
-        id:
+    kunstmaan_search.website_custom_mappings:
         content:
-            handler:
-                handlerclass: Kunstmaan\AdminNodeBundle\Entity\Node
-                handlermethod: getSearchContentForNode
+            handlerclass: Kunstmaan\AdminNodeBundle\Entity\Node
+            handlermethod: getSearchContentForNode
 
 
 foq_elastica:
@@ -18,7 +15,9 @@ foq_elastica:
             types:
                 page:
                     mappings:
-                        %kunstmaan_search.website_mapping%
+                        title:
+                        id:
+                        content: { analyzer: snowball }
                     doctrine:
                         driver: orm
                         provider:
