@@ -31,19 +31,19 @@ class UserAdminListConfigurator extends AbstractAdminListConfigurator{
     }
 
 	public function canAdd() {
-        return false;
+        return true;
     }
 
     public function getAddUrlFor() {
-    	return "";
+    	return "KunstmaanAdminBundle_settings_users_add";
     }
 
     public function canEdit() {
-    	return false;
+    	return true;
     }
     
     public function getEditUrlFor($item) {
-    	return array();
+    	return array('path' => 'KunstmaanAdminBundle_settings_users_edit', 'params' => array( 'user_id' => $item->getId()));
     }
 
     public function canDelete($item) {

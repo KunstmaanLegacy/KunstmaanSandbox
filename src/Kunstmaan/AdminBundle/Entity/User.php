@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @author Kristof Van Cauwenbergh
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Kunstmaan\AdminBundle\Repository\UserRepository")
  * @ORM\Table(name="user")
  */
 class User extends BaseUser
