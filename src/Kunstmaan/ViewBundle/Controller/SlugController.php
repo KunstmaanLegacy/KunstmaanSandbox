@@ -31,7 +31,11 @@ class SlugController extends Controller
     		}*/
     	} else {
     		$node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeForSlug(null, $url);
-    		$page = $node->getRef($em);
+    		if($node){
+    			$page = $node->getRef($em);
+    		} else {
+    			throw $this->createNotFoundException('No page found for slug ' . $url);
+    		}
     	}
     	//3. render page
     	$pageparts = $em->getRepository('KunstmaanPagePartBundle:PagePartRef')->getPageParts($em, $page);

@@ -88,3 +88,13 @@ fos_user:
             handler:            fos_user.resetting.form.handler.default
             name:               fos_user_resetting_form
             validation_groups:  [ResetPassword]
+            
+stof_doctrine_extensions:
+    default_locale: nl
+    translation_fallback: true
+    orm:
+        default:
+           loggable: true
+           translatable: true
+
+        

@@ -38,4 +38,14 @@ class User extends BaseUser
     {
         return $this->id;
     }
+    
+    /**
+     * Set id
+     *
+     * @param id integer
+     */
+    public function setId($id)
+    {
+    	$this->id = $id;
+    }
 }
