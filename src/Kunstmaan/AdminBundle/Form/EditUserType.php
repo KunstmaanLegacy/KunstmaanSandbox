@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
 
-class UserType extends AbstractType
+class EditUserType extends AbstractType
 {
 	private $container;
 	
@@ -35,6 +35,7 @@ class UserType extends AbstractType
         $builder->add('username');
         $builder->add('plainPassword', 'repeated', array(
         		'type' => 'password', 
+        		'required' => false,
             	'invalid_message' => "The passwords don't match!"));
         $builder->add('email');
         $builder->add('enabled');
@@ -43,6 +44,6 @@ class UserType extends AbstractType
 
     public function getName()
     {
-        return 'user';
+        return 'edituser';
     }
 }

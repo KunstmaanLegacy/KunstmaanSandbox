@@ -50,6 +50,8 @@ KunstmaanAdminBundle_settings_users_edit:
     pattern:  /{_locale}/admin/settings/users/edit/{user_id}
     defaults: { _controller: KunstmaanAdminBundle:Settings:edituser }
     requirements:
+        _method:  GET|POST
+        user_id: \d+
         _locale: en|nl|fr     
  
 fos_user_security_login:

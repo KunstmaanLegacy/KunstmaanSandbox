@@ -12,7 +12,7 @@
 {% block content %}
 
     <div class="page-header">
-        <h1>Add User</h1>
+        <h1>{{ 'settings.users.add' | trans }}</h1>
     </div>
 
     <form action="{{ path('KunstmaanAdminBundle_settings_users_add') }}" method="post" {{ form_enctype(form) }}>
