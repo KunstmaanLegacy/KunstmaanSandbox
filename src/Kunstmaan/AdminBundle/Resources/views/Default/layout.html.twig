@@ -36,29 +36,7 @@
       <div class="topbar-inner">
         <div class="container-fluid">
           <a class="brand" href="{{ path('KunstmaanAdminBundle_homepage') }}">OpenMercury.NEXT</a>
-          <ul class="nav">
-            <li><a href="{{ path('KunstmaanAdminBundle_pages') }}">Pages</a></li>
-            <li class="dropdown">
-                <a href="{{ path('KunstmaanMediaBundle_media') }}" class="dropdown-toggle">Media</a>
-                <ul class="dropdown-menu">
-                    <li><a href="{{ path('KunstmaanMediaBundle_media_images') }}">Images</a></li>
-                    <li><a href="{{ path('KunstmaanMediaBundle_media_videos') }}">Videos</a></li>
-                    <li><a href="{{ path('KunstmaanMediaBundle_media_slides') }}">Slides</a></li>
-                    <li><a href="{{ path('KunstmaanMediaBundle_media_files') }}">Files</a></li>
-                </ul>
-            </li>
-            <li><a href="{{ path('KunstmaanAdminBundle_modules') }}">Modules</a></li>
-            <li><a href="{{ path('KunstmaanAdminBundle_settings') }}">Settings</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle">Tools</a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Clear frontend cache</a></li>
-                <li><a href="#">Clear all cached</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Shutdown</a></li>
-              </ul>
-            </li>
-          </ul>
+          {{ knp_menu_render('main') }}
           <p class="pull-right">Logged in as
               <a href="{{ path('fos_user_profile_show') }}">{{ app.user.username }}</a> |
               <a href="{{ path('fos_user_security_logout') }}">log out</a>
