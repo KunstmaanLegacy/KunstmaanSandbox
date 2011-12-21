@@ -45,11 +45,19 @@
             </div>
             <div class="tab-pane" id="home">
                 {{ form_widget(form.main) }}
+
+                {% form_theme form 'KunstmaanAdminBundle:Form:userroles.html.twig' %}
+                {{ form_widget(form.node) }}
                 <div class="actions">
                     <input type="submit" class="btn primary" value="{{ 'form.save' | trans }}">
                 </div>
             </div>
+            <div class="tab-pane" id="roles">
 
+                <div class="actions">
+                    <input type="submit" class="btn primary" value="{{ 'form.save' | trans }}">
+                </div>
+            </div>
             <div class="tab-pane" id="children">
                 <table class="bordered-table zebra-striped">
                     <thead>

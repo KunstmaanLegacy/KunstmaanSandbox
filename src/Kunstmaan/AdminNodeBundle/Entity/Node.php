@@ -336,8 +336,8 @@ class Node
         $this->children[] = $children;
     }
 
-    public function getDefaultAdminType(){
-        return new NodeAdminType();
+    public function getDefaultAdminType($container){
+        return new NodeAdminType($container);
     }
     
     public function getRef($em){
