@@ -16490,21 +16490,21 @@ function init_tree() {
 				//Page
 				"page" : {
 					"icon" : {
-						"image" : "js/libs/themes/OMNext/d.png",
+						"image" : "libs/themes/OMNext/d.png",
 						"position" : "-57px -57px" 
 					}
 				},				
 				//Site
 				"site" : {
 					"icon" : {
-						"image" : "js/libs/themes/OMNext/d.png",
+						"image" : "libs/themes/OMNext/d.png",
 						"position" : "-75px -38px" 
 					}
 				},
 				//Settings
 				"settings" : {
 					"icon" : {
-						"image" : "js/libs/themes/OMNext/d.png",
+						"image" : "libs/themes/OMNext/d.png",
 						"position" : "-57px -37px" 
 					}
 				}
