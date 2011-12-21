@@ -10,12 +10,22 @@
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
         <!-- Le styles -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-        <script src="{{ asset('js/bootstrap-dropdown.js') }}"></script>
-        <script src="{{ asset('js/bootstrap-tabs.js') }}"></script>
-        <link href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('css/backend.css') }}" type="text/css">
+    {% stylesheets
+    	'bundles/kunstmaanadmin/css/bootstrap.min.css'
+    	'bundles/kunstmaanadmin/css/backend.css'
+        output='style.css'
+        filter='cssrewrite'
+    %}
+    <link rel="stylesheet"  media="screen" type="text/css" href="{{ asset_url }}" />
+    {% endstylesheets %}
 
+    {% javascripts
+        '@KunstmaanAdminBundle/Resources/public/js/libs/*'
+        '@KunstmaanAdminBundle/Resources/public/js/ckeditor/ckeditor.js'
+    	'@KunstmaanAdminBundle/Resources/public/js/*'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
         <style type="text/css">
              body {
                 margin: 0;
@@ -44,10 +54,10 @@
              }
         </style>
         <!-- Le fav and touch icons -->
-        <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
-        <link rel="apple-touch-icon" href="{{ asset('assets/images/apple-touch-icon.png') }}">
-        <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/images/apple-touch-icon-72x72.png') }}">
-        <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/images/apple-touch-icon-114x114.png') }}">
+    <link rel="shortcut icon" href="{{ asset('bundles/kunstmaanadmin/img/favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ asset('bundles/kunstmaanadmin/img/apple-touch-icon.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('bundles/kunstmaanadmin/img/apple-touch-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('bundles/kunstmaanadmin/img/apple-touch-icon-114x114.png') }}">
     </head>
     <body>
         <div class="topbar" data-dropdown="dropdown">
