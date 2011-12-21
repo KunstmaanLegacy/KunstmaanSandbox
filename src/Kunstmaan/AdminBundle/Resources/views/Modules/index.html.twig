@@ -24,15 +24,15 @@
                 
 {% block breadcrumb %}
 	<ul class="breadcrumb">
-		<li><a href="{{ path('KunstmaanAdminBundle_homepage') }}">Home</a> <span class="divider">/</span></li>
-		<li class="active">Modules</li>
+		<li><a href="{{ path('KunstmaanAdminBundle_homepage') }}">{{ 'omnext.home' | trans }}</a> <span class="divider">/</span></li>
+		<li class="active">{{ 'modules.title' | trans }}</li>
 	</ul>
 {% endblock %}
 
 {% block content %}
 
 <div class="page-header">
-    <h1>Modules.</h1>
+    <h1>{{ 'modules.title' | trans }}</h1>
 </div>
     
 {% endblock %}

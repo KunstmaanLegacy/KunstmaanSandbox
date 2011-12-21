@@ -44,7 +44,7 @@ class SlideGalleryFixtures extends AbstractFixture implements OrderedFixtureInte
         $slide = new Slide();
         $slide->setName('Optimizing for happiness');
         $slide->setContent('4ebaea7763912f032300cbe8');
-        $slide->setSlidetype('speakerdeck');
+        $slide->setType('speakerdeck');
         $slide->setGallery($gal);
         $manager->persist($slide);
         $manager->flush();
@@ -52,7 +52,7 @@ class SlideGalleryFixtures extends AbstractFixture implements OrderedFixtureInte
         $slide = new Slide();
         $slide->setName('Introduction to Speakerdeck');
         $slide->setContent('4d0bcd025753086fc2000002');
-        $slide->setSlidetype('speakerdeck');
+        $slide->setType('speakerdeck');
         $slide->setGallery($gal);
         $manager->persist($slide);
         $manager->flush();
@@ -60,7 +60,7 @@ class SlideGalleryFixtures extends AbstractFixture implements OrderedFixtureInte
         $slide = new Slide();
         $slide->setName('Why social media is shit');
         $slide->setContent('10285826');
-        $slide->setSlidetype('slideshare');
+        $slide->setType('slideshare');
         $slide->setGallery($gal);
         $manager->persist($slide);
         $manager->flush();

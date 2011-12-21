@@ -38,6 +38,7 @@ class NodeGenerator {
                 $node->setSequencenumber(1);
             }
             $node->setTitle($entity->__toString());
+            $node->setSlug(str_replace(" ", "", $entity->__toString()));
             $node->setOnline($entity->isOnline());
             $em->persist($node);
             $em->flush();

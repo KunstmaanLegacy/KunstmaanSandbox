@@ -9,28 +9,56 @@
 
 namespace Kunstmaan\AdminBundle\AdminList;
 
+use Kunstmaan\AdminListBundle\AdminList\AdminListFilter;
+
+use Kunstmaan\AdminListBundle\AdminList\FilterDefinitions\DateFilterType;
+use Kunstmaan\AdminListBundle\AdminList\FilterDefinitions\StringFilterType;
 use Kunstmaan\AdminListBundle\AdminList\AbstractAdminListConfigurator;
 
 class UserAdminListConfigurator extends AbstractAdminListConfigurator{
 
-    /**
-     *
-     * @return void
-     */
-    public function configureListFields($array)
+	public function buildFilters(AdminListFilter $builder){
+        $builder->add('username', new StringFilterType("username"));
+        $builder->add('email', new StringFilterType("email"));
+    }
+    
+	public function buildFields()
     {
-        $array[] = "username";
-        $array[] = "email";
-        $array[] = "lastLogin";
-        $array[] = "groups";
-        return $array;
+    	$this->addField("username", "Username", true);
+    	$this->addField("email", "E-Mail", true);
+    	$this->addField("lastlogin", "Last Login", false);
+    	$this->addField("groups", "Groups", false); 	
     }
 
-    public function getRepositoryName(){
+	public function canAdd() {
+        return false;
+    }
+
+    public function getAddUrlFor() {
+    	return "";
+    }
+
+    public function canEdit() {
+    	return false;
+    }
+    
+    public function getEditUrlFor($item) {
+    	return array();
+    }
+
+    public function canDelete($item) {
+        return true;
+    }
+
+    public function getAdminType($item) {
+        return null;
+    }
+
+    public function getRepositoryName() {
         return 'KunstmaanAdminBundle:User';
     }
 
-    function adaptQueryBuilder($querybuilder){
+    function adaptQueryBuilder($querybuilder) {
         parent::adaptQueryBuilder($querybuilder);
         //not needed to change something here yet but already
     }

@@ -29,6 +29,8 @@ class AppKernel extends Kernel
             new Kunstmaan\DemoBundle\KunstmaanDemoBundle(),
 	        new Kunstmaan\PagePartBundle\KunstmaanPagePartBundle(),
             new Kunstmaan\AdminNodeBundle\KunstmaanAdminNodeBundle(),
+            new Kunstmaan\ViewBundle\KunstmaanViewBundle(),
+        	new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

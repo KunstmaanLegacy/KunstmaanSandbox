@@ -1,0 +1,13 @@
+{% extends "KunstmaanViewBundle::layout.html.twig" %}
+{% block intro %}
+<div class="welcome">
+    			<p><strong>I am rendering page "{{ page }}"!</p>
+    		</div>
+	    		{% endblock %}
+    		
+{% block content %}
+	{% for pagepart in pageparts %}
+		{% include pagepart.defaultview with {'resource': pagepart} %}
+	{% endfor %}
+{% endblock %}
+				

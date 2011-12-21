@@ -2,20 +2,30 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>{% block title %}OpenMercury.NEXT{% endblock %}</title>
+        <title>{% block title %}{{ 'omnext.title' | trans }}{% endblock %}</title>
         <meta name="description" content="">
         <meta name="author" content="">
         <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
         <!--[if lt IE 9]>
-             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
         <!-- Le styles -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-        <script src="{{ asset('js/bootstrap-dropdown.js') }}"></script>
-        <script src="{{ asset('js/bootstrap-tabs.js') }}"></script>
-        <link href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('css/backend.css') }}" type="text/css">
+    {% stylesheets
+    	'bundles/kunstmaanadmin/css/bootstrap.min.css'
+    	'bundles/kunstmaanadmin/css/backend.css'
+        output='style.css'
+        filter='cssrewrite'
+    %}
+    <link rel="stylesheet"  media="screen" type="text/css" href="{{ asset_url }}" />
+    {% endstylesheets %}
 
+    {% javascripts
+        '@KunstmaanAdminBundle/Resources/public/js/libs/*'
+        '@KunstmaanAdminBundle/Resources/public/js/ckeditor/ckeditor.js'
+    	'@KunstmaanAdminBundle/Resources/public/js/*'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
         <style type="text/css">
              body {
                 margin: 0;
@@ -24,7 +34,7 @@
              }
 
              div#wrapper{
-                margin:  100px auto;
+                margin: 100px auto;
                 padding-top: 25px;
                 width: 500px;
                 text-align: left;
@@ -44,23 +54,31 @@
              }
         </style>
         <!-- Le fav and touch icons -->
-        <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
-        <link rel="apple-touch-icon" href="{{ asset('assets/images/apple-touch-icon.png') }}">
-        <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/images/apple-touch-icon-72x72.png') }}">
-        <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/images/apple-touch-icon-114x114.png') }}">
+    <link rel="shortcut icon" href="{{ asset('bundles/kunstmaanadmin/img/favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ asset('bundles/kunstmaanadmin/img/apple-touch-icon.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('bundles/kunstmaanadmin/img/apple-touch-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('bundles/kunstmaanadmin/img/apple-touch-icon-114x114.png') }}">
     </head>
     <body>
         <div class="topbar" data-dropdown="dropdown">
            <div class="topbar-inner">
                <div class="container-fluid">
-                  <a class="brand" href="{{ path('KunstmaanAdminBundle_homepage') }}">OpenMercury.NEXT</a>
+                  <a class="brand" href="{{ path('KunstmaanAdminBundle_homepage') }}">{{ 'omnext.title' | trans }}</a>
+                  <ul class="nav secondary-nav"> 
+			          	{% set route = app.request.attributes.get('_route') %}
+			            {{ app.request.attributes.remove('_route') }}
+			            {% set attribs = app.request.attributes.all %}
+			          	<li {% if app.request.attributes.get('_locale') == "en" %}class="active"{% endif %}><a {% if app.request.attributes.get('_locale') == "en" %}style="color: #049CDB"{% endif %} href="{{ path(route,  attribs|merge({ '_locale': 'en' })) }}">en</a></li>
+			          	<li {% if app.request.attributes.get('_locale') == "nl" %}class="active"{% endif %}><a {% if app.request.attributes.get('_locale') == "nl" %}style="color: #049CDB"{% endif %} href="{{ path(route,  attribs|merge({ '_locale': 'nl' })) }}">nl</a></li>
+			          	<li {% if app.request.attributes.get('_locale') == "fr" %}class="active"{% endif %}><a {% if app.request.attributes.get('_locale') == "fr" %}style="color: #049CDB"{% endif %} href="{{ path(route,  attribs|merge({ '_locale': 'fr' })) }}">fr</a></li>
+          			</ul>
                </div>
            </div>
         </div>
         <div id="wrapper">
               {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                  <div class="alert-message warning">
-                     <strong>Warning: </strong>
+                     <strong>{{ 'form.warning' | trans }}: </strong>
                      {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
                      <a href="{{ path('fos_user_security_logout') }}">
                         {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
@@ -71,7 +89,7 @@
               {% for key, message in app.session.getFlashes() %}
                 <div class="alert-message info {{ key }}">
                      <a class="close" href="{{ path('fos_user_security_login') }}">×</a>
-                     <strong>Heads up! </strong>
+                     <strong>{{ 'form.headsup' | trans }}! </strong>
                      {{ message|trans({}, 'FOSUserBundle') }}
                 </div>
               {% endfor %}

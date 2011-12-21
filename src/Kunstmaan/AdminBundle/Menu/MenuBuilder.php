@@ -2,6 +2,8 @@
 // src/Acme/DemoBundle/Menu/Builder.php
 namespace Kunstmaan\AdminBundle\Menu;
 
+use Symfony\Component\Translation\Translator;
+
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\DependencyInjection\ContainerAware;
 
@@ -13,13 +15,13 @@ class MenuBuilder
     /**
      * @param FactoryInterface $factory
      */
-    public function __construct(FactoryInterface $factory, $extra = array())
+    public function __construct(FactoryInterface $factory, Translator $translator, $extra = array())
     {
         $this->factory = $factory;
-        $this->rootItem = $this->populateMenu();
+        $this->rootItem = $this->populateMenu($translator);
 
         foreach($extra as  $menuadaptor){
-            $menuadaptor->adaptMenu($this->rootItem);
+            $menuadaptor->adaptMenu($this->rootItem, $translator);
         }
     }
 
@@ -29,19 +31,20 @@ class MenuBuilder
         return $this->rootItem;
     }
 
-    public function populateMenu(){
+    public function populateMenu(Translator $translator){
         $rootItem = $this->factory->createItem('root');
         $rootItem->getRoot()->setAttribute('class', 'nav');
 
-        $rootItem->addChild('Pages', array( 'route' => 'KunstmaanAdminBundle_pages' ));
-        $rootItem->addChild('Modules', array( 'route' => 'KunstmaanAdminBundle_modules'));
-        $rootItem->addChild('Settings', array( 'route' => 'KunstmaanAdminBundle_settings'));
-        $rootItem->addChild('Tools', array('uri' => '#', 'attributes' => array('class' => 'dropdown'), 'linkAttributes' => array('class' => 'dropdown-toggle'), 'childrenAttributes' => array('class' => 'dropdown-menu')));
+        $rootItem->addChild($translator->trans('pages.title'), array( 'route' => 'KunstmaanAdminBundle_pages' ));
+        $rootItem->addChild($translator->trans('modules.title'), array( 'route' => 'KunstmaanAdminBundle_modules'));
+        $rootItem->addChild($translator->trans('settings.title'), array( 'route' => 'KunstmaanAdminBundle_settings'));
+        $rootItem->addChild($translator->trans('tools.title'), array('uri' => '#', 'attributes' => array('class' => 'dropdown'), 'linkAttributes' => array('class' => 'dropdown-toggle'), 'childrenAttributes' => array('class' => 'dropdown-menu')));
 
-            $rootItem['Tools']->addChild('Clear Frontend Cache', array( 'uri' => '#'));
-            $rootItem['Tools']->addChild('Clear Backend Cache', array( 'uri' => '#'));
-            $rootItem['Tools']->addChild('', array('attributes' => array('class' => 'divider')));
-            $rootItem['Tools']->addChild('Shutdown', array( 'uri' => '#'));
+            $rootItem[$translator->trans('tools.title')]->addChild($translator->trans('tools.clear_frontend_cache'), array( 'uri' => '#'));
+            $rootItem[$translator->trans('tools.title')]->addChild($translator->trans('tools.clear_backend_cache'), array( 'uri' => '#'));
+            $rootItem[$translator->trans('tools.title')]->addChild($translator->trans('tools.clear_all_caches'), array( 'uri' => '#'));
+            $rootItem[$translator->trans('tools.title')]->addChild('', array('attributes' => array('class' => 'divider')));
+            $rootItem[$translator->trans('tools.title')]->addChild($translator->trans('tools.shutdown'), array( 'uri' => '#'));
 
         return $rootItem;
     }

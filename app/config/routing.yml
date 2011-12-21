@@ -1,6 +1,9 @@
+
 KunstmaanDemoBundle:
     resource: "@KunstmaanDemoBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}/
+    requirements: 
+      _locale: nl|fr|en
 
 KunstmaanPagePartBundle:
     resource: "@KunstmaanPagePartBundle/Resources/config/routing.yml"
@@ -27,17 +30,20 @@ KunstmaanAdminBundle:
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
 #   prefix:   /_internal
 
-fos_user_security:
-    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
-
-fos_user_profile:
-    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
-    prefix: /profile
-
-fos_user_resetting:
-    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
-    prefix: /resetting
-
 _imagine:
     resource: .
     type:     imagine
+    
+KunstmaanViewBundle_searchpage:
+    resource: "@KunstmaanViewBundle/Controller/SearchPageController.php"
+    type:     annotation
+    prefix:   /{_locale}/
+    requirements: 
+      _locale: nl|en|fr
+
+KunstmaanViewBundle_slug:
+    resource: "@KunstmaanViewBundle/Controller/SlugController.php"
+    type:     annotation
+    prefix:   /{_locale}/
+    requirements: 
+      _locale: nl|en|fr

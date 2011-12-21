@@ -3,6 +3,8 @@
 
 namespace Kunstmaan\DemoBundle\Entity;
 
+use Gedmo\Mapping\Annotation as Gedmo;
+use Gedmo\Translatable\Translatable;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Annotations\Annotation;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -17,8 +19,9 @@ use Kunstmaan\AdminBundle\Entity\PageIFace;
  *
  * @ORM\DiscriminatorMap({ "examplepage" = "ExamplePage" , "myexamplepage" = "MyExamplePage" })
  * @ORM\HasLifecycleCallbacks()
+ * @Gedmo\Loggable
  */
-class ExamplePage implements PageIFace
+class ExamplePage implements PageIFace, Translatable
 {
     /**
      * @ORM\Id
@@ -28,10 +31,18 @@ class ExamplePage implements PageIFace
     protected $id;
 
     /**
+     * @Gedmo\Versioned
+     * @Gedmo\Translatable
      * @ORM\Column(type="string")
      */
     protected $title;
-
+    
+    /**
+     * @Gedmo\Locale
+     * Used locale to override Translation listener`s locale
+     * this is not a mapped field of entity metadata, just a simple property
+     */
+    protected $locale;
 
     public function __construct()
     {
@@ -90,5 +101,10 @@ class ExamplePage implements PageIFace
     public function isOnline()
     {
         return true;
+    }
+    
+    public function setTranslatableLocale($locale)
+    {
+    	$this->locale = $locale;
     }
 }

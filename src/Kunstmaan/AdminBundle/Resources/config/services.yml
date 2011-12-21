@@ -8,7 +8,7 @@ services:
 
     kunstmaan_admin.menu_builder:
         class: Kunstmaan\AdminBundle\Menu\MenuBuilder
-        arguments: ["@knp_menu.factory", [@kunstmaan_media.media_menu]]
+        arguments: ["@knp_menu.factory", "@translator", [@kunstmaan_media.media_menu]]
 
     kunstmaan_admin.menu.main:
         class: Knp\Menu\MenuItem # the service definition requires setting the class

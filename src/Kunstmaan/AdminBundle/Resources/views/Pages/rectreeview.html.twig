@@ -1,0 +1,8 @@
+<li>
+    <a href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': topnode.id, 'entityname': topnode.refEntityname }) }}">{{ topnode }}</a>
+    <ul>
+        {% for topnode in topnode.children %}
+            {% include 'KunstmaanAdminBundle:Pages:rectreeview.html.twig' %}
+        {% endfor %}
+    </ul>
+</li>
