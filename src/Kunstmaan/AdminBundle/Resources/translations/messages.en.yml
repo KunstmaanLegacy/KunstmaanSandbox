@@ -27,6 +27,7 @@ form:
   cancel: Cancel
   delete: Delete
   edit: Edit
+  add: Add New
   save: Save
   name: Name
   type: Type
