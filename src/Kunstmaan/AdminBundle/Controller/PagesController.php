@@ -35,6 +35,14 @@ class PagesController extends Controller
         $request = $this->getRequest();
 
         $page = $em->getRepository($entityname)->find($id);  //'KunstmaanAdminBundle:Page'
+        $locale = $request->getSession()->getLocale();
+        $page->setTranslatableLocale($locale);
+        $em->refresh($page);
+        $repo = $em->getRepository('StofDoctrineExtensionsBundle:LogEntry');
+        $logs = $repo->getLogEntries($page);
+        if(!is_null($this->getRequest()->get('version'))){
+        	$repo->revert($page, $this->getRequest()->get('version'));
+        }
 
         $topnodes   = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes();
         $node       = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($page);
@@ -62,7 +70,7 @@ class PagesController extends Controller
             $pagepartadmin->bindRequest($request);
 
             if ($form->isValid()) {
-                $em = $this->getEntityManager();
+                $em = $this->getDoctrine()->getEntityManager();
                 $em->persist($page);
                 $em->flush();
 
@@ -72,12 +80,14 @@ class PagesController extends Controller
                 )));
             }
         }
+
         return $this->render('KunstmaanAdminBundle:Pages:edit.html.twig', array(
             'topnodes'      => $topnodes,
             'page'          => $page,
             'entityname'    => get_class($page),
             'form'          => $form->createView(),
             'pagepartadmin' => $pagepartadmin,
+        	'logs'          => $logs,
         ));
     }
 	
