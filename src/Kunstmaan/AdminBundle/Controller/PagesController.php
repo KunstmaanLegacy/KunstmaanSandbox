@@ -47,17 +47,15 @@ class PagesController extends Controller
         $topnodes   = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes();
         $node       = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($page);
 
-
         $formfactory = $this->container->get('form.factory');
         $formbuilder = $this->createFormBuilder();
 
         //add the specific data from the custom page
         $formbuilder->add('main', $page->getDefaultAdminType());
-        $formbuilder->setData(array('main' => $page));
-
-        //contains the roles and online/offline data that belongs to the node
         $formbuilder->add('node', $node->getDefaultAdminType($this->container));
-        //$formbuilder->setData(array('node' => $node));
+
+        $formbuilder->setData(array('node' => $node, 'main' => $page));
+
 
         //handle the pagepart functions (fetching, change form to reflect all fields, assigning data, etc...)
         $pagepartadmin = $this->get("pagepartadmin.factory")->createList(new PagePartAdminConfigurator(), $em, $page);
@@ -65,12 +63,21 @@ class PagesController extends Controller
         $pagepartadmin->adaptForm($formbuilder, $formfactory);
 
         $form = $formbuilder->getForm();
+
         if ($request->getMethod() == 'POST') {
             $form->bindRequest($request);
             $pagepartadmin->bindRequest($request);
 
             if ($form->isValid()) {
                 $em = $this->getDoctrine()->getEntityManager();
+
+                $formValues = $request->request->get('form');
+                $formValues = array_keys($formValues['node']['roles']);
+
+                //var_dump(array_keys($formValues['node']['roles']));die;
+                $node->setRoles($formValues);
+
+                $em->persist($node);
                 $em->persist($page);
                 $em->flush();
 
@@ -78,6 +85,8 @@ class PagesController extends Controller
                     'id' => $page->getId(),
                     'entityname' => get_class($page)
                 )));
+            } else {
+                var_dump($form->getErrors());die('error.');
             }
         }
 
