@@ -105,14 +105,45 @@ div.formErrors li {
 }
 
 /* EXTRA STYLES FOR CLOSE BUTTON ON HOVER*/
-.content .media-grid li { position:relative; margin:0 0 18px 20px; float:left; }
-.content .media-grid a { margin:0; float:none; display:block; }
-.content .media-grid li .close-btn { position:absolute; top:10px; right:10px; background:#fff url(../bundles/kunstmaanadmin/img/general/delete.png) 2px 2px no-repeat; display:none; width:16px; height:16px; padding:2px; text-indent:-9999px; overflow:hidden; border:none; box-shadow:none; }
-.content .media-grid li:hover .close-btn { display:block; }
+.media-grid li { position: relative; float: left; }
+.media-grid li .del { opacity: 0; }
+.media-grid li:hover .del { opacity: 1; }
+.media-grid li:hover .helper { opacity: 1; }
+.media-grid li a.warning { border: 1px solid #BD1522; box-shadow: 0 1px 4px rgba(189, 21, 34, 0.25); }
+.media-grid a { width: 210px; height: 150px; }
+.media-grid img { max-width: 210px; max-height: 150px; }
+.media-grid .add-new a { width: 210px; line-height: 150px; background: #EEE; box-shadow: inset 0 0px 5px rgba(0, 0, 0, 0.1); color: #DDD; font-size: 40px; text-align: center; border: 1px solid #DDD; -webkit-transition: border linear 0.2s, box-shadow linear 0.2s; -moz-transition: border linear 0.2s, box-shadow linear 0.2s; -ms-transition: border linear 0.2s, box-shadow linear 0.2s; -o-transition: border linear 0.2s, box-shadow linear 0.2s; transition: border linear 0.2s, box-shadow linear 0.2s; }
+.media-grid .add-new a:hover { text-decoration: none; color: #CCC; border-color: #DDD; }
+.media-grid .add-new a.inside-glow { border-color: rgba(82, 168, 236, 0.8); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), inset 0 0 8px rgba(82, 168, 236, 0.6); }
+.media-grid .del { background: url("../bundles/kunstmaanadmin/img/icons/remove.png") no-repeat; display: block; text-indent: -9999px; width: 19px; height: 19px; position: absolute; top: -5px; right: -5px; border: none; box-shadow: none; margin: 0; padding: 0; }
+.media-grid .del:hover { border: none; box-shadow: none; }
 
 clearfix{zoom:1}.clearfix:before,.clearfix:after{content:"";display:table}.clearfix:after{clear:both}
 
+.list-block ul, .modal-body ul { margin: 0 0 18px 17px; }
+.list-block ul ul, .modal-body ul ul { margin-bottom: 0; }
 
+.list-block h3 { line-height: 100%; margin-bottom: 10px; }
+
+.helper { position: absolute; bottom: 0px; font-size: 9px; right: 5px; opacity: 0; color: #0069D6; -webkit-transition: opacity 0.3s ease-in-out; -moz-transition: opacity 0.3s ease-in-out; -o-transition: opacity 0.3s ease-in-out; transition: opacity 0.3s ease-in-out; }
+.helper.warning { color: #BD1522; }
+
+.modal form { margin-bottom: 0; }
+.modal label { width: auto; text-align: left; margin-right: 10px; }
+
+.loader { position: absolute; top: 50px; left: 100px; }
+.loader .loadbullet { display: inline-block; background: #2C6ECD; width: 4px; height: 4px; border-radius: 100%; margin: 12px 2px; position: relative; -webkit-animation: winmobile 4s infinite; -webkit-animation-timing-function: cubic-bezier(0.03, 0.615, 0.995, 0.415); -webkit-animation-fill-mode: both; }
+.loader .a-1 { -webkit-animation-delay: 1s; }
+.loader .a-2 { -webkit-animation-delay: 0.8s; }
+.loader .a-3 { -webkit-animation-delay: 0.6s; }
+.loader .a-4 { -webkit-animation-delay: 0.4s; }
+.loader .a-5 { -webkit-animation-delay: 0.2s; }
+
+@-webkit-keyframes winmobile { 0% { -webkit-transform: translateX(-30px); opacity: 0; }
+  25% { opacity: 1; }
+  50% { -webkit-transform: translateX(30px); opacity: 0; }
+  100% { opacity: 0; } }
+  
 /* ==|========================================== DATEPICKER ============================================= */
 section.datepicker h1 { margin-bottom: 20px; }
 section.datepicker form { height: 300px; margin: 0 0 100px 0; border-radius: 5px; float: left; }

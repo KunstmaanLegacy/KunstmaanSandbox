@@ -1,4 +1,4 @@
-<li>
+<li {% if page.id is defined and topnode.id == page.id  %} class="active" {% endif %}>
     <a href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': topnode.id, 'entityname': topnode.refEntityname }) }}">{{ topnode }}</a>
     <ul>
         {% for topnode in topnode.children %}
