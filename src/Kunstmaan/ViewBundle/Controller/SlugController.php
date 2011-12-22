@@ -7,7 +7,6 @@ use Kunstmaan\AdminBundle\Entity\PageIFace;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class SlugController extends Controller
@@ -68,6 +67,6 @@ class SlugController extends Controller
                     'pageparts' => $pageparts
             );
         }
-        throw new AccessDeniedHttpException('You do not have suffucient rights to access this page.');
+        throw new createNotFoundException('You do not have suffucient rights to access this page.');
     }
 }
