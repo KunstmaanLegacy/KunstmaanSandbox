@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title></title>
+  <title>{% block title %}{% endblock %}</title>
   
   <meta name="description" content="">
 
@@ -32,28 +32,27 @@
   <!-- RSS -->
   <link rel="alternate" title="Nieuws" type="application/rss+xml" href="" />
 
-  <link rel="stylesheet" href="css/style.css">
-
   <!-- use a custom Modernizr build: www.modernizr.com/download/ -->
   {% stylesheets
                     'bundles/kunstmaanview/css/style.css'
                     output='style.css'
                     filter='cssrewrite'
                 %}
-    <link rel="stylesheet"  media="screen" type="text/css" href="{{ asset_url }}" />
-    {% endstylesheets %}
+   <link rel="stylesheet"  media="screen" type="text/css" href="{{ asset_url }}" />
+   {% endstylesheets %}
 
-    {% javascripts
+   {% javascripts
+                    '@KunstmaanViewBundle/Resources/public/js/libs/jquery-1.6.2.min.js'
                     '@KunstmaanViewBundle/Resources/public/js/libs/*'
                     '@KunstmaanViewBundle/Resources/public/js/*'
                 %}
-    <script src="{{ asset_url }}"></script>
-    {% endjavascripts %}
+   <script src="{{ asset_url }}"></script>
+   {% endjavascripts %}
 </head>
 
 <body>
 
-  <div id="container">
+  <div id="container" class="sub">
     <header>
 
     <div class="full-width topNav">
@@ -95,97 +94,46 @@
 	<div class="full-width mainNav">
 		<div class="wrapper">
 			<ul class="clearfix">
-				<li><a href="#">Blog</a></li>
-				<li><a href="#">Calendar</a>
-					<!-- MEGAMENU -->
-
+				{% for node in nodemenu.topnodes %}
+					<li><a href="{{ path('_slug', { 'slug': node.slug }) }}">{{ node.title }}</a>
 					<div class="megamenu">
 						<div class="top">
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+							<p>Dit is het submenu van {{ node.title }}</p>
 						</div>
 						<div class="middle clearfix">
 							<div class="col col01">
 								<ul class="clearfix">
-									<li><a href="#">Niveau 2 lorem ipsum dolores sit amet</a>
-
-										<ul>
-											<li><a href="#">- Niveau 3</a></li>
-											<li><a href="#">- Niveau 3 lorem ipsum dolores sit amet </a></li>
-											<li><a href="#">- Niveau 3</a></li>
-											<li><a href="#">- Niveau 3 lorem ipsum dolores sit amet </a></li>
-											<li><a href="#">- Niveau 3</a></li>
-
-											<li><a href="#">- Niveau 3 lorem ipsum dolores sit amet </a></li>
-										</ul>
-									</li>
-									<li><a href="#" class="active">Niveau 2 lorem ipsum dolores sit amet</a>
-										<ul>
-											<li><a href="#">- Niveau 3</a></li>
-											<li><a href="#">- Niveau 3 lorem ipsum dolores sit amet </a></li>
-
-											<li><a href="#">- Niveau 3</a></li>
-											<li><a href="#">- Niveau 3 lorem ipsum dolores sit amet </a></li>
-											<li><a href="#">- Niveau 3</a></li>
-											<li><a href="#">- Niveau 3 lorem ipsum dolores sit amet </a></li>
-										</ul>
-									</li>
-									<li><a href="#">Niveau 2 lorem ipsum dolores sit amet</a>
-
-										<ul>
-											<li><a href="#">- Niveau 3</a></li>
-											<li><a href="#">- Niveau 3 lorem ipsum dolores sit amet </a></li>
-											<li><a href="#">- Niveau 3</a></li>
-											<li><a href="#">- Niveau 3 lorem ipsum dolores sit amet </a></li>
-											<li><a href="#">- Niveau 3</a></li>
-
-											<li><a href="#">- Niveau 3 lorem ipsum dolores sit amet </a></li>
-										</ul>
-									</li>
-									<li><a href="#">Niveau 2 lorem ipsum dolores sit amet</a>
-										<ul>
-											<li><a href="#">- Niveau 3</a></li>
-											<li><a href="#">- Niveau 3 lorem ipsum dolores sit amet </a></li>
-
-											<li><a href="#">- Niveau 3</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Niveau 2 lorem ipsum dolores sit amet</a>
-										<ul>
-											<li><a href="#">- Niveau 3</a></li>
-											<li><a href="#">- Niveau 3 lorem ipsum dolores sit amet </a></li>
-
-											<li><a href="#">- Niveau 3</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Niveau 2 lorem ipsum dolores sit amet</a>
-										<ul>
-											<li><a href="#">- Niveau 3</a></li>
-											<li><a href="#">- Niveau 3 lorem ipsum dolores sit amet </a></li>
-
-											<li><a href="#">- Niveau 3</a></li>
-										</ul>
-									</li>
+									{% for node in node.children %}
+										<li><a href="{{ path('_slug', { 'slug': node.slug }) }}">{{ node.title }}</a>
+											<ul>
+												{% for node in node.children %}
+													<li><a href="{{ path('_slug', { 'slug': node.slug }) }}">{{ node.title }}</a></li>
+												{% endfor %}
+											</ul>
+										</li>
+									{% endfor %}
 								</ul>
 							</div>
+							{#
 							<div class="col col02">
-								<a href="#" class="largeImg"><img src="img/dummy/nav-img-large" width="322" height="88" alt="" /></a>
+								<a href="#" class="largeImg"><img src="{{ asset('bundles/kunstmaanview/img/dummy/nav-img-large.jpg') }}" width="322" height="88" alt="" /></a>
 								<div class="imgText clearfix">
-
-									<a href="#" class="left"><img src="img/dummy/nav-img-small" width="64" height="64" alt="" /></a>
+									<a href="#" class="left"><img src="{{ asset('bundles/kunstmaanview/img/dummy/nav-img-small.jpg') }}" width="64" height="64" alt="" /></a>
 									<p>Ut wisi enim ad minim veniam, quis <a href="#">tation ullamcorper</a> suscipit lobortis nostrud exerci.</p>
 								</div>
 								<div class="imgText clearfix">
-									<a href="#" class="left"><img src="img/dummy/nav-img-small" width="64" height="64" alt="" /></a>
+									<a href="#" class="left"><img src="{{ asset('bundles/kunstmaanview/img/dummy/nav-img-small.jpg') }}" width="64" height="64" alt="" /></a>
 									<p>Ut wisi enim ad minim veniam, quis <a href="#">tation ullamcorper</a> suscipit lobortis nostrud exerci.</p>
-
 								</div>
 								<div class="imgText clearfix">
-									<a href="#" class="left"><img src="img/dummy/nav-img-small" width="64" height="64" alt="" /></a>
+									<a href="#" class="left"><img src="{{ asset('bundles/kunstmaanview/img/dummy/nav-img-small.jpg') }}" width="64" height="64" alt="" /></a>
 									<p>Ut wisi enim ad minim veniam, quis <a href="#">tation ullamcorper</a> suscipit lobortis nostrud exerci.</p>
 								</div>
 							</div>
+							#}
+							
 						</div><!-- end middle -->
-
+						{#
 						<div class="bottom">
 							<ul class="clearfix">
 								<li><a href="#">Upcoming events</a></li>
@@ -193,18 +141,14 @@
 								<li><a href="#">Lorem ipsum</a></li>
 								<li><a href="#">Lorem ipsum</a></li>
 								<li><a href="#">Lorem ipsum</a></li>
-
 								<li><a href="#">Lorem ipsum</a></li>
 								<li><a href="#">Lorem ipsum</a></li>
 							</ul>
 						</div>
+						#}
 					</div><!-- end megamenu -->
-				</li>
-				<li><a href="#">Lorem ipsum</a></li>
-
-				<li class="sub"><a href="#">Forum</a></li>
-				<li class="sub"><a href="#">Lorem ipsum</a></li>
-				<li class="sub"><a href="#">Page parts</a></li>
+					</li>
+				{% endfor %}
 			</ul>
 		</div>
 	</div>
@@ -225,7 +169,33 @@
     </div>
     <div class="full-width content">
     	<div class="wrapper clearfix">
+    		{% set activeSubnode = nodemenu.getActiveForDepth(1) %}
+    		{% if activeSubnode is not null %}
+	    		<div class="subnav">
+	    			<ul>
+	    			{% for node in activeSubnode.children %}
+	    				<li><a href="{{ path('_slug', { 'slug': node.slug }) }}" {% if(node.active) %} class="active" {% endif %}>{{ node.title }}</a>
+	    				{% if(node.active) %}
+							<ul>
+								{% for node in node.children %}
+									<li><a href="{{ path('_slug', { 'slug': node.slug }) }}" {% if(node.active) %} class="active" {% endif %} >{{ node.title }}</a></li>
+								{% endfor %}
+							</ul>
+							{% endif %}
+						</li>
+					{% endfor %}
+					</ul>
+	    		</div>
+    		{% endif %}
 	    	<div class="contentSide">
+	    		<div class="breadcrumb">
+	    			<ul class="clearfix">
+	    				<li><a href="/">Home</a></li>
+		    			{% for node in nodemenu.breadCrumb %}
+		    				<li><a href="{{ path('_slug', { 'slug': node.slug }) }}">{{ node.title }}</a></li>
+		    			{% endfor %}
+	    			</ul>
+	    		</div>
 	    		{% block content %}
 	    		{% endblock %}
 			</div><!-- end content -->
@@ -240,7 +210,6 @@
     <footer>
     <div class="full-width topfooter">
     	<div class="wrapper clearfix">
-
     		<div class="col">
     			<h5 class="logo">OpenMercury</h5>
     		</div>
@@ -248,7 +217,6 @@
     			<ul class="clearfix">
     				<li><a href="#" class="soc-twitter">Twitter</a></li>
     				<li><a href="#" class="soc-vimeo">Vimeo</a></li>
-
     				<li><a href="#" class="soc-flickr">Flickr</a></li>
     				<li><a href="#" class="soc-linkedin">Linkedin</a></li>
     				<li><a href="#" class="soc-youtube">Youtube</a></li>
@@ -256,7 +224,6 @@
     			</ul>
     		</div>
     		<div class="col search">
-
     			<!-- FORM WITH PLACEHOLDER -->
     			<form id="#" action="" method="post">
     				<input type="text" id="#" name="#" placeholder="Search here" value="" />
@@ -270,6 +237,7 @@
 
 		<div class="wrapper">
 			<div class="inner">
+			{#
 				<section class="clearfix">
 					<div class="col">
 						<h5 class="arrow">Titel Lorem ipsum</h5>
@@ -312,12 +280,12 @@
 						</ul>
 					</div>
 				</section>
+				#}
 				
 				<section class="clearfix">
 					<div class="col">
 						<div class="imgBlock topOfCol"> <!-- ! topOfCol: when an image in the footer stands on the top of its column-->
-							<img src="img/dummy/img-footer.jpg" width="200" height="145" alt="" />
-
+							<img src="{{ asset('bundles/kunstmaanview/img/dummy/img-footer.jpg') }}" width="200" height="145" alt="" />
 						</div>
 						<h5>Titel Lorem ipsum</h5>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper nibh sed est tristique vitae bibendum dui vulputate. Suspendisse justo mi, congue ac euismod et, congue in risus. Pellentesque id mauris nunc. Nunc sit amet turpis sit amet sem viverra blandit at a nisi. </p>
@@ -387,7 +355,7 @@
 				<p>&copy; 2011 <a href="#">disclaimer</a> <a href="#">contact</a></p>
 			</div>
 			<div class="col right">
-				<p>Webdesign <a href="http://www.kunstmaan.be/"><img src="img/general/kunstmaan.png" width="83" height="16" alt="Kunstmaan" class="kunstmaan-logo" /></p>
+				<p>Webdesign <a href="http://www.kunstmaan.be/"><img src="{{ asset('bundles/kunstmaanview/img/general/kunstmaan.png') }}" width="83" height="16" alt="Kunstmaan" class="kunstmaan-logo" /></p>
 			</div>
 
 		</div>
@@ -396,14 +364,7 @@
   </div> <!-- end container -->
 
 
-  <!-- latest jQuery -->
-  <script src="js/libs/jquery-1.6.2.min.js"></script>
   
-  <!-- Scripts concatenated and minified via ant build script-->
-
-  <script src="js/plugins.js"></script>
-  <script src="js/script.js"></script>
-  <script src="js/optionals/jquery.placeholder.js"></script>
   
   <!-- Site Pinning IE9: http://www.pinmywebsite.com/ -->
   

@@ -261,8 +261,7 @@ class Node
      *
      * @return integer 
      */
-    public function getParent()
-    {
+    public function getParent() {
         return $this->parent;
     }
 
@@ -271,8 +270,7 @@ class Node
      *
      * @param integer $sequencenumber
      */
-    public function setSequencenumber($sequencenumber)
-    {
+    public function setSequencenumber($sequencenumber) {
         $this->sequencenumber = $sequencenumber;
     }
 
@@ -281,8 +279,7 @@ class Node
      *
      * @return integer 
      */
-    public function getSequencenumber()
-    {
+    public function getSequencenumber() {
         return $this->sequencenumber;
     }
 
@@ -291,8 +288,7 @@ class Node
      *
      * @param string $slug
      */
-    public function setSlug($slug)
-    {
+    public function setSlug($slug) {
         $this->slug = $slug;
     }
 
@@ -301,8 +297,7 @@ class Node
      *
      * @return boolean
      */
-    public function isOnline()
-    {
+    public function isOnline() {
         return $this->online;
     }
 
@@ -311,8 +306,7 @@ class Node
      *
      * @param boolean $online
      */
-    public function setOnline($online)
-    {
+    public function setOnline($online) {
         $this->online = $online;
     }
 
@@ -321,8 +315,7 @@ class Node
      *
      * @return string
      */
-    public function getSlug()
-    {
+    public function getSlug() {
         return $this->slug;
     }
 
@@ -336,11 +329,11 @@ class Node
         $this->children[] = $children;
     }
 
-    public function getDefaultAdminType(){
+    public function getDefaultAdminType() {
         return new NodeAdminType();
     }
     
-    public function getRef($em){
+    public function getRef($em) {
     	return $em->getRepository($this->getRefEntityname())->find($this->getRefId());
     }
 }

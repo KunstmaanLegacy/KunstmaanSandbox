@@ -33,21 +33,24 @@ class ExamplePageFixtures extends AbstractFixture implements OrderedFixtureInter
         $nodeparent = $manager->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($page1);
 
         $page2 = new ExamplePage();
-        $page2->setTitle('2 weeks with Symfony2 sub 1');
+        $page2->setTitle('Niveau 2');
         $manager->persist($page2);
+        $manager->flush();
 
         $page3 = new ExamplePage();
-        $page3->setTitle('2 weeks with Symfony2 sub 2');
+        $page3->setTitle('Niveau 3');
         $manager->persist($page3);
 
-        $manager->flush();
+        
         
         $node2 = $manager->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($page2);
         $node2->setParent($nodeparent);
         $manager->persist($node2);
         
+        $manager->flush();
+        
         $node3 = $manager->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($page3);
-        $node3->setParent($nodeparent);
+        $node3->setParent($node2);
         $manager->persist($node3);
         
         $manager->flush();

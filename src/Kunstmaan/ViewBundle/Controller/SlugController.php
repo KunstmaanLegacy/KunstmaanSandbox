@@ -2,6 +2,8 @@
 
 namespace Kunstmaan\ViewBundle\Controller;
 
+use Kunstmaan\AdminNodeBundle\Modules\NodeMenu;
+
 use Kunstmaan\AdminBundle\Entity\PageIFace;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -11,34 +13,26 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class SlugController extends Controller
 {
     /**
-     * @Route("/{url}")
+     * @Route("/{slug}", requirements={"slug" = ".+"}, name="_slug")
      * @Template()
      */
-    public function slugAction($url)
+    public function slugAction($slug)
     {
     	$em = $this->getDoctrine()->getEntityManager();
-    	
-    	//1. convert url to slug parts
-    	$slugparts = explode("/", $url);
-    	$page = null;
-    	//2. lookup page by node slug
-    	if(1!=1){
-    		/*foreach ($slugparts as $slugpart ){
-    		 $node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeForSlug($page, $slugpart);
-    		if($node){
-    		$page = $node->getPage($em);
-    		}
-    		}*/
+    	$topnodes = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes();
+    	$node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeForSlug(null, $slug);
+    	if($node){
+    		$page = $node->getRef($em);
+    		$nodeMenu = new NodeMenu($em, $node);
+    		//3. render page
+    		$pageparts = $em->getRepository('KunstmaanPagePartBundle:PagePartRef')->getPageParts($em, $page);
+    		return array(
+    				'page' => $page,
+    				'node' => $node,
+    				'pageparts' => $pageparts,
+    				'nodemenu' => $nodeMenu);
     	} else {
-    		$node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeForSlug(null, $url);
-    		if($node){
-    			$page = $node->getRef($em);
-    		} else {
-    			throw $this->createNotFoundException('No page found for slug ' . $url);
-    		}
+    		throw $this->createNotFoundException('No page found for slug ' . $slug);
     	}
-    	//3. render page
-    	$pageparts = $em->getRepository('KunstmaanPagePartBundle:PagePartRef')->getPageParts($em, $page);
-        return array('page' => $page, 'pageparts' => $pageparts);
     }
 }
