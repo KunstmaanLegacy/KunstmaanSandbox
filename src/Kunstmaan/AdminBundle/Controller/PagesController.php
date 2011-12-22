@@ -72,10 +72,13 @@ class PagesController extends Controller
                 $em = $this->getDoctrine()->getEntityManager();
 
                 $formValues = $request->request->get('form');
-                $formValues = array_keys($formValues['node']['roles']);
+                if(isset($formValues['node']['roles'])) {
+                    $roles = array_keys($formValues['node']['roles']);
+                } else {
+                    $roles = array();
+                }
 
-                //var_dump(array_keys($formValues['node']['roles']));die;
-                $node->setRoles($formValues);
+                $node->setRoles($roles);
 
                 $em->persist($node);
                 $em->persist($page);

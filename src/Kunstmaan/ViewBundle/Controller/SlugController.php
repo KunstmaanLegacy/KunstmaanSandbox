@@ -7,6 +7,8 @@ use Kunstmaan\AdminBundle\Entity\PageIFace;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class SlugController extends Controller
 {
@@ -18,10 +20,11 @@ class SlugController extends Controller
     {
     	$em = $this->getDoctrine()->getEntityManager();
     	
-    	//1. convert url to slug parts
+    	//convert url to slug parts
     	$slugparts = explode("/", $url);
     	$page = null;
-    	//2. lookup page by node slug
+
+    	//lookup page by node slug
     	if(1!=1){
     		/*foreach ($slugparts as $slugpart ){
     		 $node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeForSlug($page, $slugpart);
@@ -37,8 +40,34 @@ class SlugController extends Controller
     			throw $this->createNotFoundException('No page found for slug ' . $url);
     		}
     	}
-    	//3. render page
-    	$pageparts = $em->getRepository('KunstmaanPagePartBundle:PagePartRef')->getPageParts($em, $page);
-        return array('page' => $page, 'pageparts' => $pageparts);
+
+        //check if the requested node is online, else throw a 404 exception
+        if(!$node->isOnline()){
+            throw new NotFoundHttpException();
+        }
+
+        $nodeRoles = $node->getRoles();
+        $currentUser = $this->container->get('security.context')->getToken()->getUser();
+
+        $canViewPage = true;
+        if(count($nodeRoles) > 0) {
+            $canViewPage = false; //there are roles, so not viewable unless specifically allowed
+            foreach($nodeRoles as $nodeRole){
+                if($currentUser->hasRole($nodeRole)){
+                    $canViewPage = true;
+                    break;
+                }
+            }
+        }
+
+        if($canViewPage) {
+        	//render page
+        	$pageparts = $em->getRepository('KunstmaanPagePartBundle:PagePartRef')->getPageParts($em, $page);
+            return array(
+                    'page' => $page,
+                    'pageparts' => $pageparts
+            );
+        }
+        throw new AccessDeniedHttpException('You do not have suffucient rights to access this page.');
     }
 }
