@@ -1,4 +1,4 @@
-<li {% if page.id is defined and topnode.id == page.id  %} class="active" {% endif %}>
+<li class="{% if nodemenus[topnode.id].getCurrent.getActive %}jstree-open{% endif %} {% if page.id is defined and topnode.id == page.id  %}active{% endif %}" rel="page">
     <a href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': topnode.id, 'entityname': topnode.refEntityname }) }}">{{ topnode }}</a>
     <ul>
         {% for topnode in topnode.children %}

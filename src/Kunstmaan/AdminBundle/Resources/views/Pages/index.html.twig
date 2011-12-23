@@ -1,7 +1,11 @@
 {% extends 'KunstmaanAdminBundle:Default:layout.html.twig' %}
 
 {% block sidebar %}
-<div class="sidebar">
+ <aside class="sidebar"> 
+	    	<div class="search_wrp"> 
+	    		<input type="text" id="searchVal" value="" /> 
+	    		<button id="search" class="btn search"><img src="{{ asset('bundles/kunstmaanadmin/img/icons/search.png') }}" alt="Search" /></button> 
+	    	</div> 
     <div id="tree">
         <ul>
             {% for topnode in topnodes %}
@@ -9,7 +13,7 @@
             {% endfor %}
         </ul>
     </div>
-</div>
+</aside>
 {% endblock %}
 
 {% block breadcrumb %}

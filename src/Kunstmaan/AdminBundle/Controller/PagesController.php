@@ -2,6 +2,8 @@
 
 namespace Kunstmaan\AdminBundle\Controller;
 
+use Kunstmaan\AdminNodeBundle\Modules\NodeMenu;
+
 use \Kunstmaan\AdminBundle\Form\PageAdminType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Kunstmaan\AdminBundle\Entity\PageIFace;
@@ -17,6 +19,11 @@ class PagesController extends Controller
         $em = $this->getDoctrine()->getEntityManager();
 
         $topnodes = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes();
+        $nodemenus = array();
+        foreach($topnodes as $node){
+        	$nodemenus[$node->getId()] = new NodeMenu($em, $node);
+        	foreach($node->getChildren() as $node) $nodemenus[$node->getId()] = new NodeMenu($em, $node);
+        }
 
         $request = $this->getRequest();
         $adminlist    = $this->get("adminlist.factory")->createList(new PageAdminListConfigurator(), $em);
@@ -24,6 +31,7 @@ class PagesController extends Controller
 
         return $this->render('KunstmaanAdminBundle:Pages:index.html.twig', array(
             'topnodes'      => $topnodes,
+        	'nodemenus' 	=> $nodemenus,
             'pageadminlist'    => $adminlist,
         ));
     }
@@ -34,6 +42,11 @@ class PagesController extends Controller
         $request = $this->getRequest();
 
         $topnodes = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes();
+        $nodemenus = array();
+        foreach($topnodes as $node){
+        	$nodemenus[$node->getId()] = new NodeMenu($em, $node);
+        	foreach($node->getChildren() as $node) $nodemenus[$node->getId()] = new NodeMenu($em, $node);
+        }
 
         $page = $em->getRepository($entityname)->find($id);  //'KunstmaanAdminBundle:Page'
         $locale = $request->getSession()->getLocale();
@@ -76,6 +89,7 @@ class PagesController extends Controller
             'form'    => $form->createView(),
             'pagepartadmin'    => $pagepartadmin,
         	'logs' => $logs,
+        	'nodemenus' => $nodemenus
             //'topnode'      => $topnode
         ));
     }
