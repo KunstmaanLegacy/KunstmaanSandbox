@@ -48,7 +48,7 @@ class SlugController extends Controller
         $currentUser = $this->container->get('security.context')->getToken()->getUser();
 
         $permissionManager = $this->get('kunstmaan_admin.permissionmanager');
-        $canViewPage = $permissionManager->hasPermision($node, $currentUser, 'read', $em);
+        $canViewPage = $permissionManager->hasPermision($page, $currentUser, 'read', $em);
 
         if($canViewPage) {
         	//render page
