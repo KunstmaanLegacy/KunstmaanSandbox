@@ -18,6 +18,11 @@ class PagesController extends Controller
         $em = $this->getDoctrine()->getEntityManager();
 
         $topnodes = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes();
+        $nodemenus = array();
+        foreach($topnodes as $node){
+        	$nodemenus[$node->getId()] = new NodeMenu($em, $node);
+        	foreach($node->getChildren() as $node) $nodemenus[$node->getId()] = new NodeMenu($em, $node);
+        }
 
         $request = $this->getRequest();
         $adminlist    = $this->get("adminlist.factory")->createList(new PageAdminListConfigurator(), $em);
@@ -25,6 +30,7 @@ class PagesController extends Controller
 
         return $this->render('KunstmaanAdminBundle:Pages:index.html.twig', array(
             'topnodes'      => $topnodes,
+        	'nodemenus' 	=> $nodemenus,
             'pageadminlist'    => $adminlist,
         ));
     }
@@ -66,7 +72,12 @@ class PagesController extends Controller
         }
 
         $topnodes = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes();
-        
+        $nodemenus = array();
+        foreach($topnodes as $node){
+        	$nodemenus[$node->getId()] = new NodeMenu($em, $node);
+        	foreach($node->getChildren() as $node) $nodemenus[$node->getId()] = new NodeMenu($em, $node);
+        }
+
         $locale = $request->getSession()->getLocale();
         $page->setTranslatableLocale($locale);
         $em->refresh($page);
@@ -75,7 +86,6 @@ class PagesController extends Controller
         if(!is_null($this->getRequest()->get('version'))){
         	$repo->revert($page, $this->getRequest()->get('version'));
         }
-        $node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($page);
 
         $formfactory = $this->container->get('form.factory');
         $formbuilder = $this->createFormBuilder();
@@ -110,6 +120,7 @@ class PagesController extends Controller
             'pagepartadmin'    => $pagepartadmin,
         	'logs' => $logs,
         	'nodemenu' => $nodeMenu,
+			'nodemenus' => $nodemenus
             //'topnode'      => $topnode
         ));
     }

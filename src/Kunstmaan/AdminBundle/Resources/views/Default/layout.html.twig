@@ -11,8 +11,9 @@
     <![endif]-->
     <!-- Le styles -->
     {% stylesheets
-    	'bundles/kunstmaanadmin/css/bootstrap.min.css'
-    	'bundles/kunstmaanadmin/css/backend.css'
+    	'bundles/kunstmaanadmin/css/bootstrap.css'
+    	'bundles/kunstmaanadmin/css/style.css'
+    	'bundles/kunstmaanadmin/js/libs/themes/OMNext/style.css'
         output='style.css'
         filter='cssrewrite'
     %}
@@ -20,11 +21,12 @@
     {% endstylesheets %}
 
     {% javascripts
-    	'@KunstmaanAdminBundle/Resources/public/js/jquery-1.7.js'
-    	'@KunstmaanAdminBundle/Resources/public/js/jquery-swapsies.js'
+    	'@KunstmaanAdminBundle/Resources/public/js/libs/modernizr-2.0.6.min.js'
+    	'@KunstmaanAdminBundle/Resources/public/js/libs/jquery-1.7.1.min.js'
+    	'@KunstmaanAdminBundle/Resources/public/js/libs/jquery-ui-1.8.16.custom.min.js'
+    	'@KunstmaanAdminBundle/Resources/public/js/libs/bootstrap-twipsy.js'
         '@KunstmaanAdminBundle/Resources/public/js/libs/*'
         '@KunstmaanAdminBundle/Resources/public/js/ckeditor/ckeditor.js'
-        '@KunstmaanAdminBundle/Resources/public/js/bootstrap-twipsy.js'
     	'@KunstmaanAdminBundle/Resources/public/js/*'
     %}
     <script src="{{ asset_url }}"></script>
