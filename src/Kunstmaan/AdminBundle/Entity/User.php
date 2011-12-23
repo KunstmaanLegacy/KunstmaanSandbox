@@ -23,6 +23,16 @@ class User extends BaseUser
      */
     protected $id;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Kunstmaan\AdminBundle\Entity\Group")
+     * @ORM\JoinTable(name="fos_user_user_group",
+     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
+     * )
+     */
+    protected $groups;
+
+
     public function __construct()
     {
         parent::__construct();
@@ -47,5 +57,24 @@ class User extends BaseUser
     public function setId($id)
     {
     	$this->id = $id;
+    }
+
+    /**
+     * Gets the groupIds for the user.
+     *
+     * @return array
+     */
+    public function getGroupIds()
+    {
+        $groups = $this->groups ?: $this->groups = new ArrayCollection();
+
+        $groupIds = array();
+        if(count($groups) > 0) {
+            foreach($groups as $group) {
+                $groupIds[] = $group->getId();
+            }
+        }
+
+        return $groupIds;
     }
 }

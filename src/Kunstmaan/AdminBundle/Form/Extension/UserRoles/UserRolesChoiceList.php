@@ -27,4 +27,14 @@ class UserRolesChoiceList implements ChoiceListInterface
         }
         return $roles;
     }
+
+    public function getChoicesForData()
+    {
+        $roles = array();
+        foreach ($this->definedRoles as $name => $rolesHierarchy) {
+            $roles[$name] = $rolesHierarchy;
+        }
+
+        return $roles;
+    }
 }

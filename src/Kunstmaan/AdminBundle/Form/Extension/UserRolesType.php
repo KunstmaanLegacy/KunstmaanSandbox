@@ -17,10 +17,12 @@ class UserRolesType extends AbstractType
 
     public function getDefaultOptions(array $options)
     {
+        $choiceList = new UserRolesChoiceList($this->roles);
         return array(
-            'choice_list'   => new UserRolesChoiceList($this->roles),
+            'choice_list'   => $choiceList,
             'multiple'      => true,
             'expanded'      => true,
+            'displaydata'   => $choiceList->getChoicesForData()
         );
     }
 

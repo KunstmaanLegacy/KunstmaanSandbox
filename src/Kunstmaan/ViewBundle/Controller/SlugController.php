@@ -42,22 +42,13 @@ class SlugController extends Controller
 
         //check if the requested node is online, else throw a 404 exception
         if(!$node->isOnline()){
-            throw new NotFoundHttpException();
+            throw $this->createNotFoundException();
         }
 
-        $nodeRoles = $node->getRoles();
         $currentUser = $this->container->get('security.context')->getToken()->getUser();
 
-        $canViewPage = true;
-        if(count($nodeRoles) > 0) {
-            $canViewPage = false; //there are roles, so not viewable unless specifically allowed
-            foreach($nodeRoles as $nodeRole){
-                if($currentUser->hasRole($nodeRole)){
-                    $canViewPage = true;
-                    break;
-                }
-            }
-        }
+        $permissionManager = $this->get('kunstmaan_admin.permissionmanager');
+        $canViewPage = $permissionManager->hasPermision($node, $currentUser, 'read', $em);
 
         if($canViewPage) {
         	//render page
@@ -67,6 +58,6 @@ class SlugController extends Controller
                     'pageparts' => $pageparts
             );
         }
-        throw new createNotFoundException('You do not have suffucient rights to access this page.');
+        throw $this->createNotFoundException('You do not have suffucient rights to access this page.');
     }
 }

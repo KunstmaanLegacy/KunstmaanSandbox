@@ -16,6 +16,9 @@ services:
         tags:
             - { name: form.type, alias: userroles }
 
+    kunstmaan_admin.permissionmanager:
+        class: Kunstmaan\AdminBundle\Permission\Manager
+
 
     kunstmaan_admin.menu.main:
         class: Knp\Menu\MenuItem # the service definition requires setting the class
