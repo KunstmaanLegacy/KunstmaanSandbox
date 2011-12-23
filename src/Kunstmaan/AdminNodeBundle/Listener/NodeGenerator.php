@@ -48,6 +48,17 @@ class NodeGenerator {
     public function prePersist(LifecycleEventArgs $args) {
 
     }
+    
+    public function preRemove(LifecycleEventArgs $args) {
+    	$entity = $args->getEntity();
+    	$em = $args->getEntityManager();
+    	$classname = get_class($entity);
+    	if($entity instanceof HasNode){
+    		$entityrepo = $em->getRepository($classname);
+    		$node = $this->getNode($em, $entity->getId(), $classname);
+    		$em->remove($node);
+    	}
+    }
 
     public function getNode($em, $id, $entityName){
         return $em->getRepository('KunstmaanAdminNodeBundle:Node')

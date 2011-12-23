@@ -2,6 +2,7 @@
 
 namespace Kunstmaan\AdminBundle\Controller;
 
+use Kunstmaan\AdminNodeBundle\Modules\NodeMenu;
 use \Kunstmaan\AdminBundle\Form\PageAdminType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Kunstmaan\AdminBundle\Entity\PageIFace;
@@ -32,10 +33,40 @@ class PagesController extends Controller
     {
         $em = $this->getDoctrine()->getEntityManager();
         $request = $this->getRequest();
+        
+        $page = $em->getRepository($entityname)->find($id);  //'KunstmaanAdminBundle:Page'
+        
+        $addpage = $request->get("addpage");
+        $addpagetitle = $request->get("title");
+        if(is_string($addpage) && $addpage != ''){
+        	$newpage = new $addpage();
+        	$newpage->setTitle('New page');
+        	if(is_string($addpagetitle) && $addpagetitle != ''){
+        		$newpage->setTitle($addpagetitle);
+        	}
+        	$newpage->setTranslatableLocale('en');
+        	$em->persist($newpage);
+        	$em->flush();
+        	$nodeparent = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($page);
+        	$nodenewpage = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($newpage);
+        	$nodenewpage->setParent($nodeparent);
+        	$em->persist($nodenewpage);
+        	$em->flush();
+        	return $this->redirect($this->generateUrl("KunstmaanAdminBundle_pages_edit", array('id'=>$newpage->getId(), 'entityname' => $addpage)));
+        }
+        
+        $delete = $request->get("delete");
+        if(is_string($delete) && $delete == 'true'){
+        	//remove node and page
+        	$node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($page);
+        	$nodeparent = $node->getParent();
+        	$em->remove($page);
+        	$em->flush();
+        	return $this->redirect($this->generateUrl("KunstmaanAdminBundle_pages_edit", array('id'=>$nodeparent->getRefId(), 'entityname' => $nodeparent->getRefEntityname())));
+        }
 
         $topnodes = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes();
-
-        $page = $em->getRepository($entityname)->find($id);  //'KunstmaanAdminBundle:Page'
+        
         $locale = $request->getSession()->getLocale();
         $page->setTranslatableLocale($locale);
         $em->refresh($page);
@@ -44,6 +75,7 @@ class PagesController extends Controller
         if(!is_null($this->getRequest()->get('version'))){
         	$repo->revert($page, $this->getRequest()->get('version'));
         }
+        $node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($page);
 
         $formfactory = $this->container->get('form.factory');
         $formbuilder = $this->createFormBuilder();
@@ -68,6 +100,7 @@ class PagesController extends Controller
                 )));
             }
         }
+        $nodeMenu = new NodeMenu($em, $node);
         
         return $this->render('KunstmaanAdminBundle:Pages:edit.html.twig', array(
             'topnodes' => $topnodes,
@@ -76,6 +109,7 @@ class PagesController extends Controller
             'form'    => $form->createView(),
             'pagepartadmin'    => $pagepartadmin,
         	'logs' => $logs,
+        	'nodemenu' => $nodeMenu,
             //'topnode'      => $topnode
         ));
     }

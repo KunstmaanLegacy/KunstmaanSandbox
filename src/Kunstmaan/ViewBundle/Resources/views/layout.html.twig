@@ -225,10 +225,10 @@
     		</div>
     		<div class="col search">
     			<!-- FORM WITH PLACEHOLDER -->
-    			<form id="#" action="" method="post">
-    				<input type="text" id="#" name="#" placeholder="Search here" value="" />
-    			    <input type="submit" value="►" />
-    			</form>
+    			<form id="#" action="{{ path('_search') }}" method="post">
+					<input type="text" id="#" name="query" placeholder="Search here" value="" />
+				    <input type="submit" value="►" />
+				</form>
     		</div>
     	</div>
     </div><!-- end topfooter -->

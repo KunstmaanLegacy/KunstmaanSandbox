@@ -13,12 +13,65 @@
 {% block content %}
     <form action="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': page.id, 'entityname': entityname}) }}" method="post" {{ form_enctype(form) }}>
     <div class="well" style="float:right;padding: 14px 19px;">
-        <button class="btn">Preview</button>
+        <a class="btn" href="{{ path('_slug', { 'slug': nodemenu.current.slug }) }}" target="_blank">Preview</a>
+        <button data-controls-modal="add-subpage-modal" data-backdrop="true" class="btn info">Add subpage</button>
+		<div id="add-subpage-modal" class="modal hide fade">
+			<div class="modal-header">
+              <a href="#" class="close">&times;</a>
+              <h3>Add subpage</h3>
+            </div>
+            <div class="modal-body">
+			    <script type="text/javascript">
+			        function doAddpage(link){
+				        link.href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': page.id, 'entityname': entityname}) }}" + "?addpage="+jQuery('#addpage').val() + "&title=" + jQuery('#addpagetitle').val();
+			            return true;
+			        }
+			    </script>
+			    <div class="input_prop">
+					<label for="form-add-gallery">Title</label>
+					<input id="addpage_title" type="text" required="required" id="form-add-gallery" name="addpagetitle_disabled">
+				</div>
+				<div class="input_prop">
+					<label for="form-add-gallery">Type</label>
+					<select id="addpage_type" name="addpage_disabled">
+				        {% for pageType in page.possibleChildPageTypes %}
+				            <option value="{{pageType.class}}">{{pageType.name}}</option>
+				        {% endfor %}
+				    </select>
+				</div>
+		    </div>
+            <div class="modal-footer">
+              <a onclick="return doAddpage(this)" href="#" class="btn primary">Add</a>
+              <a onclick="$('#add-subpage-modal').modal('hide')" href="#" class="btn secondary">Cancel</a>
+            </div>
+		</div>
+		<button data-controls-modal="delete-page-modal" data-backdrop="true" class="btn danger">Delete</button>
+		<div id="delete-page-modal" class="modal hide fade">
+			<div class="modal-header">
+              <a href="#" class="close">&times;</a>
+              <h3>Delete page '{{page.title}}'</h3>
+            </div>
+            <div class="modal-body">
+			    <script type="text/javascript">
+		        function doDeletepage(link){
+			        link.href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': page.id, 'entityname': entityname}) }}" + "?delete=true";
+		            return true;
+		        }
+		    </script>
+		    <p>This will remove the page completely! Are you really sure about this?</p>
+		    </div>
+            <div class="modal-footer">
+              <a onclick="return doDeletepage(this)" href="#" class="btn primary">Delete</a>
+              <a onclick="$('#add-subpage-modal').modal('hide')" href="#" class="btn secondary">Cancel</a>
+            </div>
+		</div>
     </div>
-    <h1>{{ page.title }}</h1>
+    <h1>{{ page.title }} <small>Online</small></h1>
+    	<div id="properties" class="alert-message block-message warning">
+            {{ form_widget(form.main) }}
+        </div>
         <ul class="tabs" data-tabs="tabs">
             <li class="active"><a href="#pageparts">{{ 'pages.parts' | trans }}</a></li>
-            <li><a href="#home">{{ 'form.properties' | trans }}</a></li>
             <li><a href="#versions">Versions</a></li>
             {#<li><a href="#children">Children</a></li>
             <li><a href="#slug">Slug</a></li>
@@ -38,19 +91,11 @@
         </ul>
         <div id="my-tab-content" class="tab-content">
             <div class="active tab-pane" id="pageparts">
-
                 {{ pagepartadmin_widget(pagepartadmin, form) }}
                 <div class="actions">
                     <input type="submit" class="btn primary" value="{{ 'form.save' | trans }}">
                 </div>
             </div>
-            <div class="tab-pane" id="home">
-                {{ form_widget(form.main) }}
-                <div class="actions">
-                    <input type="submit" class="btn primary" value="{{ 'form.save' | trans }}">
-                </div>
-            </div>
-
             <div class="tab-pane" id="children">
                 <table class="bordered-table zebra-striped">
                     <thead>
@@ -108,8 +153,6 @@
                 </div>
             </div>
         </div>
-
-
     </form>
 
 {% endblock %}
