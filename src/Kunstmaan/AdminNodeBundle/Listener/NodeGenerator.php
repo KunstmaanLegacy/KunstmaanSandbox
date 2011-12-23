@@ -12,6 +12,7 @@ namespace Kunstmaan\AdminNodeBundle\Listener;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Kunstmaan\AdminNodeBundle\Entity\Node;
 use Kunstmaan\AdminNodeBundle\Entity\HasNode;
+use Kunstmaan\AdminBundle\Modules\ClassLookup;
 // see http://inchoo.net/tools-frameworks/symfony2-event-listeners/
 
 class NodeGenerator {
@@ -27,7 +28,7 @@ class NodeGenerator {
     public function updateOrCreateNode(LifecycleEventArgs $args){
         $entity = $args->getEntity();
         $em = $args->getEntityManager();
-        $classname = get_class($entity);
+        $classname = ClassLookup::getClass($entity);
         if($entity instanceof HasNode){
             $entityrepo = $em->getRepository($classname);
             $node = $this->getNode($em, $entity->getId(), $classname);
