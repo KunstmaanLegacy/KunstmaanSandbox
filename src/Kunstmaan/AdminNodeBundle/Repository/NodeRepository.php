@@ -26,6 +26,8 @@ class NodeRepository extends EntityRepository
 	}
 	
 	public function getNodeFor(PageIFace $page) {
+        var_dump($page->getId());
+        var_dump(get_class($page));
 		return $this->findOneBy(array('refId' => $page->getId(), 'refEntityname' => get_class($page)));
 	}
 	
