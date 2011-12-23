@@ -9,6 +9,7 @@ use Kunstmaan\DemoBundle\AdminList\PageAdminListConfigurator;
 use Kunstmaan\DemoBundle\PagePartAdmin\PagePartAdminConfigurator;
 use Kunstmaan\PagePartBundle\Form\TextPagePartAdminType;
 use Kunstmaan\AdminBundle\Form\NodeInfoAdminType;
+use Kunstmaan\AdminBundle\Modules\ClassLookup;
 
 class PagesController extends Controller
 {
@@ -86,7 +87,7 @@ class PagesController extends Controller
 
                 return $this->redirect($this->generateUrl('KunstmaanAdminBundle_pages_edit', array(
                     'id' => $page->getId(),
-                    'entityname' => get_class($page)
+                    'entityname' => ClassLookup::getClass($page)
                 )));
             } else {
                 var_dump($form->getErrors());die('error.');
@@ -96,7 +97,7 @@ class PagesController extends Controller
         return $this->render('KunstmaanAdminBundle:Pages:edit.html.twig', array(
             'topnodes'      => $topnodes,
             'page'          => $page,
-            'entityname'    => get_class($page),
+            'entityname'    => ClassLookup::getClass($page),
             'form'          => $form->createView(),
             'pagepartadmin' => $pagepartadmin,
         	'logs'          => $logs,

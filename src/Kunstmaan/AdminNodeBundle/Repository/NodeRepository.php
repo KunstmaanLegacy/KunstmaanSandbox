@@ -3,7 +3,7 @@
 namespace Kunstmaan\AdminNodeBundle\Repository;
 
 use Kunstmaan\AdminBundle\Entity\PageIFace;
-
+use Kunstmaan\AdminBundle\Modules\ClassLookup;
 use Doctrine\ORM\EntityRepository;
 
 /**
@@ -26,9 +26,7 @@ class NodeRepository extends EntityRepository
 	}
 	
 	public function getNodeFor(PageIFace $page) {
-        var_dump($page->getId());
-        var_dump(get_class($page));
-		return $this->findOneBy(array('refId' => $page->getId(), 'refEntityname' => get_class($page)));
+		return $this->findOneBy(array('refId' => $page->getId(), 'refEntityname' => ClassLookup::getClass($page)));
 	}
 	
 	public function getNodeForSlug($parentNode, $slug){
