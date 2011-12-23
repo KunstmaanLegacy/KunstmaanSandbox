@@ -10,6 +10,7 @@ use Kunstmaan\AdminBundle\Entity\PageIFace;
 use Kunstmaan\DemoBundle\AdminList\PageAdminListConfigurator;
 use Kunstmaan\DemoBundle\PagePartAdmin\PagePartAdminConfigurator;
 use Kunstmaan\PagePartBundle\Form\TextPagePartAdminType;
+use Kunstmaan\AdminBundle\Modules\ClassLookup;
 
 class PagesController extends Controller
 {
@@ -77,7 +78,7 @@ class PagesController extends Controller
                 $em->flush();
                 return $this->redirect($this->generateUrl('KunstmaanAdminBundle_pages_edit', array(
                     'id' => $page->getId(),
-                    'entityname' => get_class($page)
+                    'entityname' => ClassLookup::getClass($page)
                 )));
             }
         }
@@ -85,7 +86,7 @@ class PagesController extends Controller
         return $this->render('KunstmaanAdminBundle:Pages:edit.html.twig', array(
             'topnodes' => $topnodes,
             'page' => $page,
-            'entityname' => get_class($page),
+            'entityname' => ClassLookup::getClass($page),
             'form'    => $form->createView(),
             'pagepartadmin'    => $pagepartadmin,
         	'logs' => $logs,
