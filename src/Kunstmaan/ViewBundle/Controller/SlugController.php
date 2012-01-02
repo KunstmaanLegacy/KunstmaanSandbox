@@ -42,7 +42,7 @@ class SlugController extends Controller
 
         //check if the requested node is online, else throw a 404 exception
         if(!$node->isOnline()){
-            throw $this->createNotFoundException();
+            throw $this->createNotFoundException("The requested page is not online");
         }
 
         $currentUser = $this->container->get('security.context')->getToken()->getUser();
