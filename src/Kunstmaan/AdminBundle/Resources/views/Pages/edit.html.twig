@@ -18,66 +18,85 @@
 
 {% block content %}
     <form action="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': node.id}) }}" method="post" {{ form_enctype(form) }}>
-    <div class="well" style="float:right;padding: 14px 19px;">
-        <a class="btn" href="{{ path('_slug', { 'slug': nodemenu.current.slug }) }}" target="_blank">Preview</a>
-        <button data-controls-modal="add-subpage-modal" data-backdrop="true" class="btn info">Add subpage</button>
-		<div id="add-subpage-modal" class="modal hide fade">
-			<div class="modal-header">
-              <a href="#" class="close">&times;</a>
-              <h3>Add subpage</h3>
-            </div>
-            <div class="modal-body">
-			    <script type="text/javascript">
-			        function doAddpage(link){
-				        link.href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': node.id}) }}" + "?addpage="+jQuery('#addpage_type').val() + "&title=" + jQuery('#addpage_title').val();
-			            return true;
-			        }
-			    </script>
-			    <div class="input_prop">
-					<label for="form-add-gallery">Title</label>
-					<input id="addpage_title" type="text" id="form-add-gallery" name="addpagetitle_disabled">
-				</div>
-				<div class="input_prop">
-					<label for="form-add-gallery">Type</label>
-					<select id="addpage_type" name="addpage_disabled">
-				        {% for pageType in page.possibleChildPageTypes %}
-				            <option value="{{pageType.class}}">{{pageType.name}}</option>
-				        {% endfor %}
-				    </select>
-				</div>
-		    </div>
-            <div class="modal-footer">
-              <a onclick="return doAddpage(this)" href="#" class="btn primary">Add</a>
-              <a onclick="$('#add-subpage-modal').modal('hide')" href="#" class="btn secondary">Cancel</a>
-            </div>
-		</div>
-		<button data-controls-modal="delete-page-modal" data-backdrop="true" class="btn danger">Delete</button>
-		<div id="delete-page-modal" class="modal hide fade">
-			<div class="modal-header">
-              <a href="#" class="close">&times;</a>
-              <h3>Delete page '{{page.title}}'</h3>
-            </div>
-            <div class="modal-body">
-			    <script type="text/javascript">
-		        function doDeletepage(link){
-			        link.href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': node.id}) }}" + "?delete=true";
-		            return true;
-		        }
-		    </script>
-		    <p>This will remove the page completely! Are you really sure about this?</p>
-		    </div>
-            <div class="modal-footer">
-              <a onclick="return doDeletepage(this)" href="#" class="btn primary">Delete</a>
-              <a onclick="$('#add-subpage-modal').modal('hide')" href="#" class="btn secondary">Cancel</a>
-            </div>
-		</div>
-    </div>
     <h1>{{ page.title }} <small>Online</small></h1>
-    	<div id="properties" class="alert-message block-message warning">
-            {{ form_widget(form.main) }}
+    <div class="sub_actions">
+      <a href="#" data-controls-modal="unpub" data-backdrop="true" data-keyboard="true">Unpublish</a>
+      <a href="#">Versions</a>
+    </div>
+    <!--Main-->
+	<div class="main_actions">
+      <input type="submit" class="btn primary" value="{{ 'form.publish' | trans }}">
+      <input type="submit" class="btn" value="{{ 'form.saveasdraft' | trans }}">
+      <a class="btn" href="{{ path('_slug', { 'slug': nodemenu.current.slug }) }}" target="_blank">Preview</a>
+      <button data-controls-modal="add-subpage-modal" data-backdrop="true" class="btn">Add subpage</button>
+      <button data-controls-modal="delete-page-modal" data-backdrop="true" class="btn danger">Delete</button>
+      {#<button class="btn" data-controls-modal="cancel" data-backdrop="true" data-keyboard="true">Cancel</button>#}
+    </div>
+    <!--Scroll-->
+    <div class="main_actions top" id="main_actions_top">
+      <div class="pull-right">
+        <input type="submit" class="btn primary" value="{{ 'form.publish' | trans }}">
+        <input type="submit" class="btn" value="{{ 'form.saveasdraft' | trans }}">
+        <a class="btn" href="{{ path('_slug', { 'slug': nodemenu.current.slug }) }}" target="_blank">Preview</a>
+        <button data-controls-modal="add-subpage-modal" data-backdrop="true" class="btn">Add subpage</button>
+        <button data-controls-modal="delete-page-modal" data-backdrop="true" class="btn danger">Delete</button>
+        {#<button class="btn" data-controls-modal="cancel" data-backdrop="true" data-keyboard="true">Cancel</button>#}
+        <a class="btn up">&#9650;</a>
+      </div>
+    </div>
+    
+    <div id="add-subpage-modal" class="modal hide fade">
+      <div class="modal-header">
+        <a href="#" class="close">&times;</a>
+        <h3>Add subpage</h3>
+      </div>
+      <div class="modal-body">
+        <script type="text/javascript">
+	        function doAddpage(link){
+		        link.href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': node.id}) }}" + "?addpage="+jQuery('#addpage_type').val() + "&title=" + jQuery('#addpage_title').val();
+	            return true;
+	        }
+	    </script>
+        <div class="input_prop">
+          <label for="form-add-gallery">Title</label>
+          <input id="addpage_title" type="text" id="form-add-gallery" name="addpagetitle_disabled">
         </div>
+        <div class="input_prop">
+          <label for="form-add-gallery">Type</label>
+          <select id="addpage_type" name="addpage_disabled">
+            {% for pageType in page.possibleChildPageTypes %}
+              <option value="{{pageType.class}}">{{pageType.name}}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a onclick="return doAddpage(this)" href="#" class="btn primary">Add</a>
+        <a onclick="$('#add-subpage-modal').modal('hide')" href="#" class="btn secondary">Cancel</a>
+      </div>
+    </div>
+    <div id="delete-page-modal" class="modal hide fade">
+      <div class="modal-header">
+        <a href="#" class="close">&times;</a>
+        <h3>Delete page '{{page.title}}'</h3>
+      </div>
+      <div class="modal-body">
+        <script type="text/javascript">
+          function doDeletepage(link){
+            link.href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': node.id}) }}" + "?delete=true";
+            return true;
+          }
+        </script>
+        <p>This will remove the page completely! Are you really sure about this?</p>
+       </div>
+      <div class="modal-footer">
+        <a onclick="return doDeletepage(this)" href="#" class="btn primary">Delete</a>
+        <a onclick="$('#add-subpage-modal').modal('hide')" href="#" class="btn secondary">Cancel</a>
+      </div>
+    </div>
         <ul class="tabs" data-tabs="tabs">
             <li class="active"><a href="#pageparts">{{ 'pages.parts' | trans }}</a></li>
+            <li><a href="#seo">SEO</a></li>
             <li><a href="#versions">Versions</a></li>
             {#<li><a href="#children">Children</a></li>
             <li><a href="#slug">Slug</a></li>
@@ -97,10 +116,15 @@
         </ul>
         <div id="my-tab-content" class="tab-content">
             <div class="active tab-pane" id="pageparts">
-                {{ pagepartadmin_widget(pagepartadmin, form) }}
-                <div class="actions">
-                    <input type="submit" class="btn primary" value="{{ 'form.save' | trans }}">
-                </div>
+              <div id="properties">
+              	<div id="prop_wrp" style="padding-top:18px">
+	              {{ form_widget(form.main) }}
+	            </div>
+	          </div>
+              {{ pagepartadmin_widget(pagepartadmin, form) }}
+              <div class="actions">
+                <input type="submit" class="btn primary" value="{{ 'form.save' | trans }}">
+              </div>
             </div>
             <div class="tab-pane" id="children">
                 <table class="bordered-table zebra-striped">
@@ -146,17 +170,8 @@
                     </tbody>
                 </table>
             </div>
-            <div class="tab-pane" id="fat">
+            <div class="tab-pane" id="seo">
               <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-                <div class="actions">
-                    <input type="submit" class="btn primary" value="Save changes">
-                </div>
-            </div>
-            <div class="tab-pane" id="mdo">
-              <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
-                <div class="actions">
-                    <input type="submit" class="btn primary" value="Save changes">
-                </div>
             </div>
         </div>
     </form>

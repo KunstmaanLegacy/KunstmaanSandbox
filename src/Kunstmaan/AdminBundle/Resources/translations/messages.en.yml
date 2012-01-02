@@ -29,6 +29,8 @@ form:
   edit: Edit
   add: Add New
   save: Save
+  publish: Publish
+  saveasdraft: Save as draft
   name: Name
   type: Type
   error: Error
