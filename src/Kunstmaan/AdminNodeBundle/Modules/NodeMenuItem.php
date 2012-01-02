@@ -28,6 +28,10 @@ class NodeMenuItem
         $this->menu = $menu;
     }
     
+    public function getId(){
+    	return $this->node->getId();
+    }
+    
     public function getNode(){
     	return $this->node;
     }

@@ -51,7 +51,10 @@ class NodeMenu
     }
     
     public function getCurrent(){
-    	return $this->breadCrumb[sizeof($this->breadCrumb)-1];
+    	if(sizeof($this->breadCrumb)>0){
+    		return $this->breadCrumb[sizeof($this->breadCrumb)-1];
+    	}
+    	return null;
     }
     
     public function getActiveForDepth($depth){

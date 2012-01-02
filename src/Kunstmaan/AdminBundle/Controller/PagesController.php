@@ -18,11 +18,7 @@ class PagesController extends Controller
         $em = $this->getDoctrine()->getEntityManager();
 
         $topnodes = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes();
-        $nodemenus = array();
-        foreach($topnodes as $node){
-        	$nodemenus[$node->getId()] = new NodeMenu($em, $node);
-        	foreach($node->getChildren() as $node) $nodemenus[$node->getId()] = new NodeMenu($em, $node);
-        }
+        $nodeMenu = new NodeMenu($em, null);
 
         $request = $this->getRequest();
         $adminlist    = $this->get("adminlist.factory")->createList(new PageAdminListConfigurator(), $em);
@@ -30,17 +26,18 @@ class PagesController extends Controller
 
         return $this->render('KunstmaanAdminBundle:Pages:index.html.twig', array(
             'topnodes'      => $topnodes,
-        	'nodemenus' 	=> $nodemenus,
+        	'nodemenu' 	=> $nodeMenu,
             'pageadminlist'    => $adminlist,
         ));
     }
 
-    public function editAction($id, $entityname)
+    public function editAction($id)
     {
         $em = $this->getDoctrine()->getEntityManager();
         $request = $this->getRequest();
         
-        $page = $em->getRepository($entityname)->find($id);  //'KunstmaanAdminBundle:Page'
+        $node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->find($id);
+        $page = $em->getRepository($node->getRefEntityname())->find($node->getRefId());
         
         $addpage = $request->get("addpage");
         $addpagetitle = $request->get("title");
@@ -58,25 +55,19 @@ class PagesController extends Controller
         	$nodenewpage->setParent($nodeparent);
         	$em->persist($nodenewpage);
         	$em->flush();
-        	return $this->redirect($this->generateUrl("KunstmaanAdminBundle_pages_edit", array('id'=>$newpage->getId(), 'entityname' => $addpage)));
+        	return $this->redirect($this->generateUrl("KunstmaanAdminBundle_pages_edit", array('id'=>$nodenewpage->getId())));
         }
         
         $delete = $request->get("delete");
         if(is_string($delete) && $delete == 'true'){
         	//remove node and page
-        	$node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($page);
         	$nodeparent = $node->getParent();
         	$em->remove($page);
         	$em->flush();
-        	return $this->redirect($this->generateUrl("KunstmaanAdminBundle_pages_edit", array('id'=>$nodeparent->getRefId(), 'entityname' => $nodeparent->getRefEntityname())));
+        	return $this->redirect($this->generateUrl("KunstmaanAdminBundle_pages_edit", array('id'=>$nodeparent->getId())));
         }
 
         $topnodes = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes();
-        $nodemenus = array();
-        foreach($topnodes as $node){
-        	$nodemenus[$node->getId()] = new NodeMenu($em, $node);
-        	foreach($node->getChildren() as $node) $nodemenus[$node->getId()] = new NodeMenu($em, $node);
-        }
 
         $locale = $request->getSession()->getLocale();
         $page->setTranslatableLocale($locale);
@@ -105,8 +96,7 @@ class PagesController extends Controller
                 $em->persist($page);
                 $em->flush();
                 return $this->redirect($this->generateUrl('KunstmaanAdminBundle_pages_edit', array(
-                    'id' => $page->getId(),
-                    'entityname' => get_class($page)
+                    'id' => $node->getId()
                 )));
             }
         }
@@ -114,13 +104,13 @@ class PagesController extends Controller
         
         return $this->render('KunstmaanAdminBundle:Pages:edit.html.twig', array(
             'topnodes' => $topnodes,
+        	'node' => $node,
             'page' => $page,
-            'entityname' => get_class($page),
+            'entityname' => $node->getRefEntityname(),
             'form'    => $form->createView(),
             'pagepartadmin'    => $pagepartadmin,
         	'logs' => $logs,
         	'nodemenu' => $nodeMenu,
-			'nodemenus' => $nodemenus
             //'topnode'      => $topnode
         ));
     }

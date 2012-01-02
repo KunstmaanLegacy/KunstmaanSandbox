@@ -15,7 +15,7 @@ KunstmaanAdminBundle_pages:
         _locale: en|nl|fr
 
 KunstmaanAdminBundle_pages_edit:
-    pattern:  /{_locale}/admin/pages/{entityname}/{id}
+    pattern:  /{_locale}/admin/pages/{id}
     defaults: { _controller: KunstmaanAdminBundle:Pages:edit }
     requirements:
         _method:  GET|POST
