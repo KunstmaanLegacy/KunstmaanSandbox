@@ -30,7 +30,8 @@ class Permission
     protected $refEntityname;
 
     /**
-     * @ORM\Column(type="bigint")
+     * @ORM\ManyToOne(targetEntity="Group")
+     * @ORM\JoinColumn(name="refGroup", referencedColumnName="id")
      */
     protected $refGroup;
 
@@ -140,4 +141,63 @@ class Permission
         return $this->permissions;
     }
 
+
+    public function setPermission($permission, $allow)
+    {
+        $permissions = $this->getPermissionsAsArray();
+        $permissions[$permission] = (int)$allow;
+
+        $this->setPermissions($this->getPermissionsByArray($permissions));
+    }
+
+    public function hasPermission($permission)
+    {
+        return (isset($this->permissions) && stripos($this->permissions, '|'.$permission.':1|') !== false);
+    }
+
+
+    public function canRead()
+    {
+        return $this->hasPermission('read');
+    }
+
+
+    public function canWrite()
+    {
+        return $this->hasPermission('write');
+    }
+
+
+    public function canDelete()
+    {
+        return $this->hasPermission('delete');
+    }
+
+
+    public function getPermissionsAsArray()
+    {
+        $permissionsArray = array();
+
+        if(isset($this->permissions)) {
+            $permissions = trim($this->permissions, '|');
+            $permissions = explode('|', $permissions);
+            foreach($permissions as &$permission) {
+                list($key, $value) = explode(':', $permission);
+                $permissionsArray[$key] = $value;
+            }
+        }
+
+        return $permissionsArray;
+    }
+
+    public function getPermissionsByArray($permissionsArray)
+    {
+        $permissions = array();
+        foreach($permissionsArray as $permission => $value) {
+            $permissions[] = $permission.':'.$value;
+        }
+        $permissions = '|'.implode('|', $permissions).'|';
+
+        return $permissions;
+    }
 }

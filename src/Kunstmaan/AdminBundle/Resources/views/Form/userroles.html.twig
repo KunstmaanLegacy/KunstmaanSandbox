@@ -1,9 +1,0 @@
-{% block userroles_widget %}
-{% spaceless %}
-    {{ form.all }}}
-    {% for child in form %}
-            {{ form_label(child) }}
-            {{ form_widget(child) }}
-    {% endfor %}
-{% endspaceless %}
-{% endblock %}

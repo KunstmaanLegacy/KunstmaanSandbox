@@ -63,11 +63,14 @@ class PagesController extends Controller
         $pagepartadmin->preBindRequest($request);
         $pagepartadmin->adaptForm($formbuilder, $formfactory);
 
-        $form = $formbuilder->getForm();
+        $permissionadmin = $this->get("kunstmaan_admin.permissionadmin");
+        $permissionadmin->initialize($page, $em);
 
+        $form = $formbuilder->getForm();
         if ($request->getMethod() == 'POST') {
-            $form->bindRequest($request);
-            $pagepartadmin->bindRequest($request);
+            $form           ->bindRequest($request);
+            $pagepartadmin  ->bindRequest($request);
+            $permissionadmin->bindRequest($request);
 
             if ($form->isValid()) {
                 $em = $this->getDoctrine()->getEntityManager();
@@ -89,18 +92,17 @@ class PagesController extends Controller
                     'id' => $page->getId(),
                     'entityname' => ClassLookup::getClass($page)
                 )));
-            } else {
-                var_dump($form->getErrors());die('error.');
             }
         }
 
         return $this->render('KunstmaanAdminBundle:Pages:edit.html.twig', array(
-            'topnodes'      => $topnodes,
-            'page'          => $page,
-            'entityname'    => ClassLookup::getClass($page),
-            'form'          => $form->createView(),
-            'pagepartadmin' => $pagepartadmin,
-        	'logs'          => $logs,
+            'topnodes'          => $topnodes,
+            'page'              => $page,
+            'entityname'        => ClassLookup::getClass($page),
+            'form'              => $form->createView(),
+            'pagepartadmin'     => $pagepartadmin,
+            'logs'              => $logs,
+            'permissionadmin'   => $permissionadmin
         ));
     }
 	
