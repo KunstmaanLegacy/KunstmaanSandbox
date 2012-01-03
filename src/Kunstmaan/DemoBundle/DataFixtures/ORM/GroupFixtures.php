@@ -13,19 +13,19 @@ class GroupFixtures extends AbstractFixture implements OrderedFixtureInterface
 
         $group1 = new Group("Kunstmaan");
         $group1->setName("Kunstmaan");
-        $group1->setRoles(array("ROLE_SUPER_ADMIN", "ROLE_PERMISSIONMANAGAER"));
+        $group1->setRoles(array("ROLE_SUPER_ADMIN", "ROLE_PERMISSIONMANAGER"));
         $manager->persist($group1);
         $manager->flush();
 
         $group2 = new Group("Admin");
         $group2->setName("Admin");
-        $group2->setRoles(array("ROLE_ADMIN", "ROLE_PERMISSIONMANAGAER"));
+        $group2->setRoles(array("ROLE_ADMIN", "ROLE_PERMISSIONMANAGER"));
         $manager->persist($group2);
         $manager->flush();
 
         $group3 = new Group('Guest');
         $group3->setName("Guest");
-        $group3->setRoles(array("ROLE_GUEST", "ROLE_PERMISSIONMANAGAER"));
+        $group3->setRoles(array("ROLE_GUEST", "ROLE_PERMISSIONMANAGER"));
         $manager->persist($group3);
         $manager->flush();
 
