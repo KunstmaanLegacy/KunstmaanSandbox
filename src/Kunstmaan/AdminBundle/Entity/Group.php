@@ -28,28 +28,19 @@ class Group extends BaseGroup
     {
         return $this->permissions;
     }
+
     public function __construct()
     {
         $this->permissions = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Add permissions
-     *
-     * @param Kunstmaan\AdminBundle\Entity\Permission $permissions
-     */
-    public function addPermission(\Kunstmaan\AdminBundle\Entity\Permission $permissions)
-    {
-        $this->permissions[] = $permissions;
     }
 }
