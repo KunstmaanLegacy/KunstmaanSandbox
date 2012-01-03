@@ -53,7 +53,7 @@ class UserFixtures extends AbstractFixture implements OrderedFixtureInterface
         $user4->setRoles(array("ROLE_ADMIN"));
         $user4->setEmail("kim.ausloos@kunstmaan.be");
         $user4->setEnabled(true);
-        $user4->addGroup($manager->merge($this->getReference('kunstmaan-group')));
+        $user4->addGroup($manager->merge($this->getReference('guest-group')));
 
         $manager->persist($user4);
         $manager->flush();

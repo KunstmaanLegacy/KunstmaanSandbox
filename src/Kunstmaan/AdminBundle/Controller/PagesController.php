@@ -63,14 +63,19 @@ class PagesController extends Controller
         $pagepartadmin->preBindRequest($request);
         $pagepartadmin->adaptForm($formbuilder, $formfactory);
 
-        $permissionadmin = $this->get("kunstmaan_admin.permissionadmin");
-        $permissionadmin->initialize($page, $em);
+        if ($this->get('security.context')->isGranted('ROLE_PERMISSIONMANAGER')) {
+            $permissionadmin = $this->get("kunstmaan_admin.permissionadmin");
+            $permissionadmin->initialize($page, $em);
+        }
 
         $form = $formbuilder->getForm();
         if ($request->getMethod() == 'POST') {
             $form           ->bindRequest($request);
             $pagepartadmin  ->bindRequest($request);
-            $permissionadmin->bindRequest($request);
+
+            if ($this->get('security.context')->isGranted('ROLE_PERMISSIONMANAGER')) {
+                $permissionadmin->bindRequest($request);
+            }
 
             if ($form->isValid()) {
                 $em = $this->getDoctrine()->getEntityManager();
@@ -95,15 +100,18 @@ class PagesController extends Controller
             }
         }
 
-        return $this->render('KunstmaanAdminBundle:Pages:edit.html.twig', array(
+        $viewVariables = array(
             'topnodes'          => $topnodes,
             'page'              => $page,
             'entityname'        => ClassLookup::getClass($page),
             'form'              => $form->createView(),
             'pagepartadmin'     => $pagepartadmin,
             'logs'              => $logs,
-            'permissionadmin'   => $permissionadmin
-        ));
+        );
+        if($this->get('security.context')->isGranted('ROLE_PERMISSIONMANAGER')){
+            $viewVariables['permissionadmin'] = $permissionadmin;
+        }
+        return $this->render('KunstmaanAdminBundle:Pages:edit.html.twig', $viewVariables);
     }
 	
 }
