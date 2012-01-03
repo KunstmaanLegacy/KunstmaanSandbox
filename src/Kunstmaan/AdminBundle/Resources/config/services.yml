@@ -2,10 +2,6 @@ parameters:
 #    kunstmaan_admin.example.class: Kunstmaan\AdminBundle\Example
 
 services:
-    kunstmaan_media.media_menu:
-        class: Kunstmaan\MediaBundle\Menu\MediaMenuAdaptor
-        arguments: ["@knp_menu.factory"]
-
     kunstmaan_admin.menu_builder:
         class: Kunstmaan\AdminBundle\Menu\MenuBuilder
         arguments: ["@knp_menu.factory", "@translator", [@kunstmaan_media.media_menu]]
