@@ -219,9 +219,9 @@ class Node
     /**
      * Add children
      *
-     * @param \Kunstmaan\AdminBundle\Entity\Page $children
+     * @param Node $children
      */
-    public function addChild(Page $child)
+    public function addChild(Node $child)
     {
         $this->children[] = $child;
 
@@ -329,8 +329,13 @@ class Node
         $this->children[] = $children;
     }
 
+<<<<<<< HEAD
+    public function getDefaultAdminType() {
+        return new NodeAdminType();
+=======
     public function getDefaultAdminType($container){
         return new NodeAdminType($container);
+>>>>>>> feature/user
     }
     
     public function getRef($em) {

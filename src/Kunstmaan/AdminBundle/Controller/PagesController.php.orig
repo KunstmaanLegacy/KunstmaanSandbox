@@ -27,9 +27,14 @@ class PagesController extends Controller
         $adminlist->bindRequest($request);
 
         return $this->render('KunstmaanAdminBundle:Pages:index.html.twig', array(
-			'topnodes'      => $topnodes,
+<<<<<<< HEAD
+            'topnodes'      => $topnodes,
         	'nodemenu' 	=> $nodeMenu,
             'pageadminlist'    => $adminlist,
+=======
+            'topnodes'          => $topnodes,
+            'pageadminlist'     => $adminlist,
+>>>>>>> feature/user
         ));
     }
 
@@ -69,9 +74,12 @@ class PagesController extends Controller
         	return $this->redirect($this->generateUrl("KunstmaanAdminBundle_pages_edit", array('id'=>$nodeparent->getId())));
         }
 
-		$topnodes = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes();
-		
-		$page = $em->getRepository($entityname)->find($id);  //'KunstmaanAdminBundle:Page'
+<<<<<<< HEAD
+        $topnodes = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes();
+
+=======
+        $page = $em->getRepository($entityname)->find($id);  //'KunstmaanAdminBundle:Page'
+>>>>>>> feature/user
         $locale = $request->getSession()->getLocale();
         $page->setTranslatableLocale($locale);
         $em->refresh($page);
@@ -116,7 +124,8 @@ class PagesController extends Controller
                 )));
             }
         }
-		$nodeMenu = new NodeMenu($em, $node);
+<<<<<<< HEAD
+        $nodeMenu = new NodeMenu($em, $node);
         
         return $this->render('KunstmaanAdminBundle:Pages:edit.html.twig', array(
             'topnodes' => $topnodes,
@@ -128,6 +137,16 @@ class PagesController extends Controller
         	'logs' => $logs,
         	'nodemenu' => $nodeMenu,
             //'topnode'      => $topnode
+=======
+
+        return $this->render('KunstmaanAdminBundle:Pages:edit.html.twig', array(
+            'topnodes'      => $topnodes,
+            'page'          => $page,
+            'entityname'    => get_class($page),
+            'form'          => $form->createView(),
+            'pagepartadmin' => $pagepartadmin,
+        	'logs'          => $logs,
+>>>>>>> feature/user
         ));
     }
 	

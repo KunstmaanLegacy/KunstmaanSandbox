@@ -8,13 +8,20 @@ use Symfony\Component\Form\FormBuilder;
 
 class NodeAdminType extends AbstractType
 {
+    protected $container;
+
+    public function __construct($container)
+    {
+        $this->container = $container;
+    }
+
     public function buildForm(FormBuilder $builder, array $options)
     {
-        $builder->add('title');
+        $builder->add('roles', 'userroles');
     }
 
     public function getName()
     {
-        return 'page';
+        return 'node';
     }
 }
