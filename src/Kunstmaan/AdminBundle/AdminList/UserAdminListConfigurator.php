@@ -35,7 +35,9 @@ class UserAdminListConfigurator extends AbstractAdminListConfigurator{
     }
 
     public function getAddUrlFor($params=array()) {
-    	return array('user' => array('path'=>KunstmaanAdminBundle_settings_users_add, 'params'=> $params));
+    	return array(
+    			'user' => array('path' => 'KunstmaanAdminBundle_settings_users_add', 'params'=> $params)
+    	);
 
     }
 
