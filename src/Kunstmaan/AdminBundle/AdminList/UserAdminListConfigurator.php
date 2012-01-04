@@ -34,7 +34,7 @@ class UserAdminListConfigurator extends AbstractAdminListConfigurator{
         return false;
     }
 
-    public function getAddUrlFor() {
+    public function getAddUrlFor($params=array()) {
     	return "";
     }
 
@@ -58,7 +58,7 @@ class UserAdminListConfigurator extends AbstractAdminListConfigurator{
         return 'KunstmaanAdminBundle:User';
     }
 
-    function adaptQueryBuilder($querybuilder) {
+    function adaptQueryBuilder($querybuilder, $params=array()) {
         parent::adaptQueryBuilder($querybuilder);
         //not needed to change something here yet but already
     }
