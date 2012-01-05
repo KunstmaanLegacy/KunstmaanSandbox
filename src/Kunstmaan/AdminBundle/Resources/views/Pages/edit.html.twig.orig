@@ -1,0 +1,203 @@
+{% extends 'KunstmaanAdminBundle:Pages:index.html.twig' %}
+
+{% form_theme form 'KunstmaanAdminBundle:Form:fields.html.twig' %}
+
+{% block breadcrumb %}
+<ul class="breadcrumb">
+    <li><a href="{{ path('KunstmaanAdminBundle_homepage') }}">{{ 'omnext.home' | trans }}</a></li>
+    <li><a href="{{ path('KunstmaanAdminBundle_pages') }}">{{ 'pages.title' | trans }}</a></li>
+    {% for node in nodemenu.breadCrumb %}
+    	{% if nodemenu.current.id == node.id %}
+    		<li>{{ node.title }}</li>
+    	{% else %}
+    		<li><a href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': node.id}) }}">{{ node.title }}</a></li>
+    	{% endif %}
+    {% endfor %}
+</ul>
+{% endblock %}
+
+{% block content %}
+    <form action="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': node.id}) }}" method="post" {{ form_enctype(form) }}>
+    <h1>{{ page.title }} <small>Online</small></h1>
+    <div class="sub_actions">
+      <a href="#" data-controls-modal="unpub" data-backdrop="true" data-keyboard="true">Unpublish</a>
+      <a href="#">Versions</a>
+    </div>
+    <!--Main-->
+	<div class="main_actions">
+      <input type="submit" class="btn primary" value="{{ 'form.publish' | trans }}">
+      <input type="submit" class="btn" value="{{ 'form.saveasdraft' | trans }}">
+      <a class="btn" href="{{ path('_slug', { 'slug': nodemenu.current.slug }) }}" target="_blank">Preview</a>
+      <button data-controls-modal="add-subpage-modal" data-backdrop="true" class="btn">Add subpage</button>
+      <button data-controls-modal="delete-page-modal" data-backdrop="true" class="btn danger">Delete</button>
+      {#<button class="btn" data-controls-modal="cancel" data-backdrop="true" data-keyboard="true">Cancel</button>#}
+    </div>
+    <!--Scroll-->
+    <div class="main_actions top" id="main_actions_top">
+      <div class="pull-right">
+        <input type="submit" class="btn primary" value="{{ 'form.publish' | trans }}">
+        <input type="submit" class="btn" value="{{ 'form.saveasdraft' | trans }}">
+        <a class="btn" href="{{ path('_slug', { 'slug': nodemenu.current.slug }) }}" target="_blank">Preview</a>
+        <button data-controls-modal="add-subpage-modal" data-backdrop="true" class="btn">Add subpage</button>
+        <button data-controls-modal="delete-page-modal" data-backdrop="true" class="btn danger">Delete</button>
+        {#<button class="btn" data-controls-modal="cancel" data-backdrop="true" data-keyboard="true">Cancel</button>#}
+        <a class="btn up">&#9650;</a>
+      </div>
+    </div>
+    
+    <div id="add-subpage-modal" class="modal hide fade">
+      <div class="modal-header">
+        <a href="#" class="close">&times;</a>
+        <h3>Add subpage</h3>
+      </div>
+      <div class="modal-body">
+        <script type="text/javascript">
+	        function doAddpage(link){
+		        link.href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': node.id}) }}" + "?addpage="+jQuery('#addpage_type').val() + "&title=" + jQuery('#addpage_title').val();
+	            return true;
+	        }
+	    </script>
+        <div class="input_prop">
+          <label for="form-add-gallery">Title</label>
+          <input id="addpage_title" type="text" id="form-add-gallery" name="addpagetitle_disabled">
+        </div>
+        <div class="input_prop">
+          <label for="form-add-gallery">Type</label>
+          <select id="addpage_type" name="addpage_disabled">
+            {% for pageType in page.possibleChildPageTypes %}
+              <option value="{{pageType.class}}">{{pageType.name}}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a onclick="return doAddpage(this)" href="#" class="btn primary">Add</a>
+        <a onclick="$('#add-subpage-modal').modal('hide')" href="#" class="btn secondary">Cancel</a>
+      </div>
+    </div>
+    <div id="delete-page-modal" class="modal hide fade">
+      <div class="modal-header">
+        <a href="#" class="close">&times;</a>
+        <h3>Delete page '{{page.title}}'</h3>
+      </div>
+      <div class="modal-body">
+        <script type="text/javascript">
+          function doDeletepage(link){
+            link.href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': node.id}) }}" + "?delete=true";
+            return true;
+          }
+        </script>
+        <p>This will remove the page completely! Are you really sure about this?</p>
+       </div>
+      <div class="modal-footer">
+        <a onclick="return doDeletepage(this)" href="#" class="btn primary">Delete</a>
+        <a onclick="$('#add-subpage-modal').modal('hide')" href="#" class="btn secondary">Cancel</a>
+      </div>
+    </div>
+        <ul class="tabs" data-tabs="tabs">
+            <li class="active"><a href="#pageparts">{{ 'pages.parts' | trans }}</a></li>
+            <li><a href="#seo">SEO</a></li>
+            <li><a href="#versions">Versions</a></li>
+            {#<li><a href="#children">Children</a></li>
+            <li><a href="#slug">Slug</a></li>
+            <li class="dropdown" data-dropdown="dropdown">
+              <a href="#" class="dropdown-toggle">Versions</a>
+              <ul class="dropdown-menu">
+                <li><a href="#fat">1.9 (current)</a></li>
+                <li><a href="#mdo">1.8 (2011-10-11)</a></li>
+                <li><a href="#mdo">1.7 (2011-10-10)</a></li>
+                <li><a href="#mdo">1.6 (2011-10-10)</a></li>
+                <li><a href="#mdo">1.5 (2011-10-9)</a></li>
+                <li class="divider"></li>
+                <li><a href="#mdo">All versions</a></li>
+              </ul>
+            </li>
+            #}
+        </ul>
+        <div id="my-tab-content" class="tab-content">
+            <div class="active tab-pane" id="pageparts">
+<<<<<<< HEAD
+              <div id="properties">
+              	<div id="prop_wrp" style="padding-top:18px">
+	              {{ form_widget(form.main) }}
+	            </div>
+	          </div>
+              {{ pagepartadmin_widget(pagepartadmin, form) }}
+              <div class="actions">
+                <input type="submit" class="btn primary" value="{{ 'form.save' | trans }}">
+              </div>
+            </div>
+=======
+
+                {{ pagepartadmin_widget(pagepartadmin, form) }}
+                <div class="actions">
+                    <input type="submit" class="btn primary" value="{{ 'form.save' | trans }}">
+                </div>
+            </div>
+            <div class="tab-pane" id="home">
+                {{ form_widget(form.main) }}
+
+                {% form_theme form 'KunstmaanAdminBundle:Form:userroles.html.twig' %}
+                {{ form_widget(form.node) }}
+                <div class="actions">
+                    <input type="submit" class="btn primary" value="{{ 'form.save' | trans }}">
+                </div>
+            </div>
+            <div class="tab-pane" id="roles">
+
+                <div class="actions">
+                    <input type="submit" class="btn primary" value="{{ 'form.save' | trans }}">
+                </div>
+            </div>
+>>>>>>> feature/user
+            <div class="tab-pane" id="children">
+                <table class="bordered-table zebra-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Type</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {#
+                        {% for child in page.children %}
+                            <tr>
+                                <td>{{ child.sequencenumber }}</td>
+                                <td><a href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': child.id, 'entityname': 'KunstmaanAdminBundle:Page' }) }}">{{ child.title }}</a></td>
+                                <td>Page</td>
+                            </tr>
+                        {% endfor %}
+                    #}
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane" id="versions">
+              <table class="bordered-table zebra-striped">
+                    <thead>
+                    <tr>
+                    	<th>Action</th>
+                        <th>Action</th>
+                        <th>Date</th>
+                        <th>User</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for log in logs %}
+                            <tr>
+                            	<td><a href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': node.id, 'version': log.version }) }}">{{ log.version }}</a></td>
+                                <td>{{ log.action }}</td>
+                                <td>{{ log.loggedat | date('Y-m-d H:i:s') }}</td>
+                                <td>{{ log.username }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane" id="seo">
+              <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

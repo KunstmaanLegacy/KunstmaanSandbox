@@ -57,9 +57,8 @@ class PageAdminListConfigurator extends AbstractAdminListConfigurator{
     {
     	return false;
     }
-    
-    public function getAddUrlFor()
-    {
+
+    public function getAddUrlFor($params=array()) {
     	return "";
     }
 
@@ -73,8 +72,7 @@ class PageAdminListConfigurator extends AbstractAdminListConfigurator{
         return 'KunstmaanAdminNodeBundle:Node';
     }
 
-    function adaptQueryBuilder($querybuilder)
-    {
+    function adaptQueryBuilder($querybuilder, $params=array()){
         parent::adaptQueryBuilder($querybuilder);
 
         $querybuilder->andWhere('b.id IN (

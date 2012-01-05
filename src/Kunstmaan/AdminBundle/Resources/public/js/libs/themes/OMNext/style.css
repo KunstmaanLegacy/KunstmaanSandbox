@@ -4,6 +4,10 @@
 
 .jstree-OMNext a{
 	text-shadow: 0 1px 0 #FFF;
+	color: #404040;
+}
+.jstree-OMNext a:hover, .jstree-OMNext .active > a{
+	color: #0069D6;
 }
 .jstree-OMNext li, 
 .jstree-OMNext ins { background-image:url("d.png"); background-repeat:no-repeat; background-color:transparent; }
@@ -27,7 +31,6 @@
 
 
 .jstree-OMNext a.jstree-loading .jstree-icon { background:url("throbber.gif") center center no-repeat !important; }
-
 .jstree-OMNext .jstree-no-dots li, 
 .jstree-OMNext .jstree-no-dots .jstree-leaf > ins { background:transparent; }
 .jstree-OMNext .jstree-no-dots .jstree-open > ins { background-position:-18px 0; }

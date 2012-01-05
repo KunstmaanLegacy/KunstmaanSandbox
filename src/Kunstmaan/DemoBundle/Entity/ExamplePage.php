@@ -117,4 +117,12 @@ class ExamplePage implements PageIFace, Translatable
     {
         return $this->possiblePermissions;
     }
+
+    
+    public function getPossibleChildPageTypes()
+    {
+    	$array[] = array('name' => 'ExamplePage', 'class'=>"Kunstmaan\DemoBundle\Entity\ExamplePage");
+    	$array[] = array('name' => 'MyExamplePage', 'class'=>"Kunstmaan\DemoBundle\Entity\MyExamplePage");
+    	return $array;
+    }
 }

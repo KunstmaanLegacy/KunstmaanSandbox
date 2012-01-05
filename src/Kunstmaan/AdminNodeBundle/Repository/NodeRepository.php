@@ -2,7 +2,7 @@
 
 namespace Kunstmaan\AdminNodeBundle\Repository;
 
-
+use Kunstmaan\AdminNodeBundle\Entity\Node;
 use Kunstmaan\AdminBundle\Entity\PageIFace;
 use Kunstmaan\AdminBundle\Modules\ClassLookup;
 use Doctrine\ORM\EntityRepository;
@@ -32,14 +32,30 @@ class NodeRepository extends EntityRepository
 	              ->getResult();
 	}
 	
+	public function getChildren(Node $node){
+		return $this->findBy(array("parent"=>$node->getId()));
+	}
+	
 	public function getNodeFor(PageIFace $page) {
 		return $this->findOneBy(array('refId' => $page->getId(), 'refEntityname' => ClassLookup::getClass($page)));
 	}
 	
 	public function getNodeForSlug($parentNode, $slug){
-		if($parentNode){
-			return $this->findOneBy(array('slug' => $slug, 'parent' => $parentNode->getId()));
+		$slugparts = explode("/", $slug);
+		$result = null;
+		foreach($slugparts as $slugpart){
+			if($parentNode){
+				//$result = $this->findOneBy(array('slug' => $slugpart, 'parent' => $parentNode->getId())) or $result;
+				if($r = $this->findOneBy(array('slug' => $slugpart, 'parent' => $parentNode->getId()))){
+					$result = $r;
+				}
+			} else {
+				//$result = $this->findOneBy(array('slug' => $slugpart)) or $result;
+				if($r = $this->findOneBy(array('slug' => $slugpart))){
+					$result = $r;
+				}
+			}
 		}
-		return $this->findOneBy(array('slug' => $slug));
+		return $result;
 	}
 }

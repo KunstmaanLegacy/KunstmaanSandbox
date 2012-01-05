@@ -34,6 +34,8 @@ form:
   delete: Verwijder
   edit: Pas aan
   save: Bewaar
+  publish: Publiceer
+  saveasdraft: Opslaan als draft
   name: Naam
   type: Soort
   error: Fout

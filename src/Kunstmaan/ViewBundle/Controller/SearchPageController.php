@@ -17,6 +17,10 @@ class SearchPageController extends Controller
     public function searchAction()
     {
     	$query = $this->getRequest()->get("query");
-    	return array('query' => $query);
+    	$request = $this->getRequest();
+    	$locale = $request->getSession()->getLocale();
+    	$node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeForSlug(null, '_search', $locale);
+    	$nodeMenu = new NodeMenu($em, $node);
+    	return array('query' => $query, 'nodemenu' => $nodeMenu);
     }
 }

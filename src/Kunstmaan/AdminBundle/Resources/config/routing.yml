@@ -15,7 +15,7 @@ KunstmaanAdminBundle_pages:
         _locale: en|nl|fr
 
 KunstmaanAdminBundle_pages_edit:
-    pattern:  /{_locale}/admin/pages/{entityname}/{id}
+    pattern:  /{_locale}/admin/pages/{id}
     defaults: { _controller: KunstmaanAdminBundle:Pages:edit }
     requirements:
         _method:  GET|POST
@@ -50,6 +50,8 @@ KunstmaanAdminBundle_settings_users_edit:
     pattern:  /{_locale}/admin/settings/users/edit/{user_id}
     defaults: { _controller: KunstmaanAdminBundle:Settings:edituser }
     requirements:
+        _method:  GET|POST
+        user_id: \d+
         _locale: en|nl|fr     
  
 fos_user_security_login:

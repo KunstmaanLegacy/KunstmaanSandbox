@@ -2,8 +2,10 @@
 
 namespace Kunstmaan\AdminBundle\Controller;
 
-use \Kunstmaan\AdminBundle\Form\PageAdminType;
+use Kunstmaan\AdminNodeBundle\Modules\NodeMenu;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Kunstmaan\AdminBundle\Form\PageAdminType;
 use Kunstmaan\AdminBundle\Entity\PageIFace;
 use Kunstmaan\DemoBundle\AdminList\PageAdminListConfigurator;
 use Kunstmaan\DemoBundle\PagePartAdmin\PagePartAdminConfigurator;
@@ -20,23 +22,56 @@ class PagesController extends Controller
 
         $user = $this->container->get('security.context')->getToken()->getUser();
         $topnodes = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes($user, 'write');
+        $nodeMenu = new NodeMenu($this->container, null);
 
         $request    = $this->getRequest();
         $adminlist  = $this->get("adminlist.factory")->createList(new PageAdminListConfigurator($user, 'write'), $em);
         $adminlist->bindRequest($request);
 
         return $this->render('KunstmaanAdminBundle:Pages:index.html.twig', array(
-            'topnodes'          => $topnodes,
-            'pageadminlist'     => $adminlist,
+			'topnodes'      => $topnodes,
+        	'nodemenu' 	    => $nodeMenu,
+            'pageadminlist' => $adminlist,
         ));
     }
 
-    public function editAction($id, $entityname)
+    public function editAction($id)
     {
         $em = $this->getDoctrine()->getEntityManager();
         $request = $this->getRequest();
+        
+        $node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->find($id);
+        $page = $em->getRepository($node->getRefEntityname())->find($node->getRefId());
+        
+        $addpage = $request->get("addpage");
+        $addpagetitle = $request->get("title");
+        if(is_string($addpage) && $addpage != ''){
+        	$newpage = new $addpage();
+        	$newpage->setTitle('New page');
+        	if(is_string($addpagetitle) && $addpagetitle != ''){
+        		$newpage->setTitle($addpagetitle);
+        	}
+        	$newpage->setTranslatableLocale('en');
+        	$em->persist($newpage);
+        	$em->flush();
+        	$nodeparent = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($page);
+        	$nodenewpage = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($newpage);
+        	$nodenewpage->setParent($nodeparent);
+        	$em->persist($nodenewpage);
+        	$em->flush();
+        	return $this->redirect($this->generateUrl("KunstmaanAdminBundle_pages_edit", array('id'=>$nodenewpage->getId())));
+        }
+        
+        $delete = $request->get("delete");
+        if(is_string($delete) && $delete == 'true'){
+        	//remove node and page
+        	$nodeparent = $node->getParent();
+        	$em->remove($page);
+        	$em->flush();
+        	return $this->redirect($this->generateUrl("KunstmaanAdminBundle_pages_edit", array('id'=>$nodeparent->getId())));
+        }
 
-        $page = $em->getRepository($entityname)->find($id);  //'KunstmaanAdminBundle:Page'
+		$page = $em->getRepository(ClassLookup::getClass($page))->find($id);  //'KunstmaanAdminBundle:Page'
         $locale = $request->getSession()->getLocale();
         $page->setTranslatableLocale($locale);
         $em->refresh($page);
@@ -95,11 +130,12 @@ class PagesController extends Controller
                 $em->flush();
 
                 return $this->redirect($this->generateUrl('KunstmaanAdminBundle_pages_edit', array(
-                    'id' => $page->getId(),
-                    'entityname' => ClassLookup::getClass($page)
+                    'id' => $node->getId()
                 )));
             }
         }
+
+        $nodeMenu = new NodeMenu($this->container, $node);
 
         $viewVariables = array(
             'topnodes'          => $topnodes,
@@ -108,6 +144,8 @@ class PagesController extends Controller
             'form'              => $form->createView(),
             'pagepartadmin'     => $pagepartadmin,
             'logs'              => $logs,
+            'nodemenu'          => $nodeMenu,
+            'node'              => $node,
         );
         if($this->get('security.context')->isGranted('ROLE_PERMISSIONMANAGER')){
             $viewVariables['permissionadmin'] = $permissionadmin;

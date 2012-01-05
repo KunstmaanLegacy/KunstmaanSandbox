@@ -38,7 +38,7 @@ class UserType extends AbstractType
             	'invalid_message' => "The passwords don't match!"));
         $builder->add('email');
         $builder->add('enabled');
-        $builder->add('roles', "choice", array('multiple' => true, 'choices' => $roles, 'expanded' => true));
+        $builder->add('roles', 'userroles');
     }
 
     public function getName()

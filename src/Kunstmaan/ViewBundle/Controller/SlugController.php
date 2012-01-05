@@ -2,6 +2,8 @@
 
 namespace Kunstmaan\ViewBundle\Controller;
 
+use Kunstmaan\AdminNodeBundle\Modules\NodeMenu;
+
 use Kunstmaan\AdminBundle\Entity\PageIFace;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -12,32 +14,17 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class SlugController extends Controller
 {
     /**
-     * @Route("/{url}")
+     * @Route("/{slug}", requirements={"slug" = ".+"}, name="_slug")
      * @Template()
      */
-    public function slugAction($url)
+    public function slugAction($slug)
     {
     	$em = $this->getDoctrine()->getEntityManager();
-    	
-    	//convert url to slug parts
-    	$slugparts = explode("/", $url);
-    	$page = null;
-
-    	//lookup page by node slug
-    	if(1!=1){
-    		/*foreach ($slugparts as $slugpart ){
-    		 $node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeForSlug($page, $slugpart);
-    		if($node){
-    		$page = $node->getPage($em);
-    		}
-    		}*/
+    	$node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeForSlug(null, $slug);
+    	if($node){
+            $page = $node->getRef($em);
     	} else {
-    		$node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeForSlug(null, $url);
-    		if($node){
-    			$page = $node->getRef($em);
-    		} else {
-    			throw $this->createNotFoundException('No page found for slug ' . $url);
-    		}
+    		throw $this->createNotFoundException('No page found for slug ' . $slug);
     	}
 
         //check if the requested node is online, else throw a 404 exception
@@ -51,12 +38,14 @@ class SlugController extends Controller
         $canViewPage = $permissionManager->hasPermision($page, $currentUser, 'read', $em);
 
         if($canViewPage) {
+            $nodeMenu = new NodeMenu($em, $node);
+
         	//render page
         	$pageparts = $em->getRepository('KunstmaanPagePartBundle:PagePartRef')->getPageParts($em, $page);
             return array(
-                    'page' => $page,
-                    'pageparts' => $pageparts
-            );
+                'page'      => $page,
+                'pageparts' => $pageparts,
+                'nodemenu'  => $nodeMenu);
         }
         throw $this->createNotFoundException('You do not have suffucient rights to access this page.');
     }

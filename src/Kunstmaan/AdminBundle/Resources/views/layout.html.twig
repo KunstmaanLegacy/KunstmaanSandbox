@@ -11,7 +11,7 @@
 <![endif]-->
         <!-- Le styles -->
     {% stylesheets
-    	'bundles/kunstmaanadmin/css/bootstrap.min.css'
+    	'bundles/kunstmaanadmin/css/bootstrap.css'
     	'bundles/kunstmaanadmin/css/backend.css'
         output='style.css'
         filter='cssrewrite'
@@ -94,7 +94,7 @@
                 </div>
               {% endfor %}
 
-              <div>
+              <div class="formBox">
                  {% block fos_user_content %}
                  {% endblock fos_user_content %}
               </div>

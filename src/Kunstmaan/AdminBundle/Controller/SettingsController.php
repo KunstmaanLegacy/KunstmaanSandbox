@@ -2,6 +2,8 @@
 
 namespace Kunstmaan\AdminBundle\Controller;
 
+use Kunstmaan\AdminBundle\Form\EditUserType;
+
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 use Kunstmaan\AdminBundle\Entity\User;
@@ -49,7 +51,6 @@ class SettingsController extends Controller
     	    	
     	return $this->render('KunstmaanAdminBundle:Settings:adduser.html.twig', array(
     			'form' => $form->createView(),
-    			
     	));
     }
     
@@ -59,7 +60,7 @@ class SettingsController extends Controller
     
     	$request = $this->getRequest();
     	$helper = $em->getRepository('KunstmaanAdminBundle:User')->getUser($user_id, $em);
-    	$form = $this->createForm(new UserType($this->container), $helper);
+    	$form = $this->createForm(new EditUserType($this->container), $helper);
     	
     	if ('POST' == $request->getMethod()) {
     		$form->bindRequest($request);
@@ -72,7 +73,7 @@ class SettingsController extends Controller
     
     	return $this->render('KunstmaanAdminBundle:Settings:edituser.html.twig', array(
     			'form' => $form->createView(),
-    
+    			'user' => $helper
     	));
     }
 }

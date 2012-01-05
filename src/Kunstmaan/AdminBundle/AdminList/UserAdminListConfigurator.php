@@ -34,8 +34,11 @@ class UserAdminListConfigurator extends AbstractAdminListConfigurator{
         return true;
     }
 
-    public function getAddUrlFor() {
-    	return "KunstmaanAdminBundle_settings_users_add";
+    public function getAddUrlFor($params=array()) {
+    	return array(
+    			'user' => array('path' => 'KunstmaanAdminBundle_settings_users_add', 'params'=> $params)
+    	);
+
     }
 
     public function canEdit() {
@@ -58,7 +61,7 @@ class UserAdminListConfigurator extends AbstractAdminListConfigurator{
         return 'KunstmaanAdminBundle:User';
     }
 
-    function adaptQueryBuilder($querybuilder) {
+    function adaptQueryBuilder($querybuilder, $params=array()) {
         parent::adaptQueryBuilder($querybuilder);
         //not needed to change something here yet but already
     }
