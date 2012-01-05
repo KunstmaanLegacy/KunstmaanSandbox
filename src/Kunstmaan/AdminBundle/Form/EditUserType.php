@@ -19,7 +19,7 @@ class EditUserType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {
     	// get roles from the service container
-    	$definedRoles = $this->container->getParameter('security.role_hierarchy.roles');
+    	/*$definedRoles = $this->container->getParameter('security.role_hierarchy.roles');
     	
     	$roles = array();
     	foreach ($definedRoles as $name => $rolesHierarchy) {
@@ -30,7 +30,7 @@ class EditUserType extends AbstractType
     				$roles[$role] = $role;
     			}
     		}
-    	}
+    	}*/
     	    	
         $builder->add('username');
         $builder->add('plainPassword', 'repeated', array(

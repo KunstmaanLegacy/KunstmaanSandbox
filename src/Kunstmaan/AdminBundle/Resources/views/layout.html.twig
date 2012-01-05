@@ -12,7 +12,7 @@
         <!-- Le styles -->
     {% stylesheets
     	'bundles/kunstmaanadmin/css/bootstrap.css'
-    	'bundles/kunstmaanadmin/css/backend.css'
+    	'bundles/kunstmaanadmin/css/style.css'
         output='style.css'
         filter='cssrewrite'
     %}
@@ -60,10 +60,12 @@
     <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('bundles/kunstmaanadmin/img/apple-touch-icon-114x114.png') }}">
     </head>
     <body>
+        <header>
         <div class="topbar" data-dropdown="dropdown">
            <div class="topbar-inner">
                <div class="container-fluid">
                   <a class="brand" href="{{ path('KunstmaanAdminBundle_homepage') }}">{{ 'omnext.title' | trans }}</a>
+                  <nav>
                   <ul class="nav secondary-nav"> 
 			          	{% set route = app.request.attributes.get('_route') %}
 			            {{ app.request.attributes.remove('_route') }}
@@ -72,9 +74,11 @@
 			          	<li {% if app.request.attributes.get('_locale') == "nl" %}class="active"{% endif %}><a {% if app.request.attributes.get('_locale') == "nl" %}style="color: #049CDB"{% endif %} href="{{ path(route,  attribs|merge({ '_locale': 'nl' })) }}">nl</a></li>
 			          	<li {% if app.request.attributes.get('_locale') == "fr" %}class="active"{% endif %}><a {% if app.request.attributes.get('_locale') == "fr" %}style="color: #049CDB"{% endif %} href="{{ path(route,  attribs|merge({ '_locale': 'fr' })) }}">fr</a></li>
           			</ul>
+          			</nav>
                </div>
            </div>
         </div>
+        </header>
         <div id="wrapper">
               {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                  <div class="alert-message warning">

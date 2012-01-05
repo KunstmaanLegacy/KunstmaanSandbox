@@ -1,12 +1,9 @@
 {% extends 'KunstmaanAdminBundle:Settings:index.html.twig' %}
 
-{% block breadcrumb %}
-	<ul class="breadcrumb">
-		<li><a href="{{ path('KunstmaanAdminBundle_homepage') }}">Home</a> <span class="divider">/</span></li>
-        <li><a href="{{ path('KunstmaanAdminBundle_settings') }}">Settings</a> <span class="divider">/</span></li>
-        <li><a href="{{ path('KunstmaanAdminBundle_settings_users') }}">Users</a> <span class="divider">/</span></li>
-		<li class="active">{{ 'settings.users.add' | trans }}</li>
-	</ul>
+{% block subbreadcrumb %}
+	<li><a href="{{ path('KunstmaanAdminBundle_settings') }}">Settings</a> </li>
+    <li><a href="{{ path('KunstmaanAdminBundle_settings_users') }}">Users</a> </li>
+	<li class="active">{{ 'settings.users.add' | trans }}</li>
 {% endblock %}
 
 {% block content %}
@@ -51,7 +48,7 @@
         <div class="clearfix">
             <label for="xlInput3">{{ 'settings.user.roles' | trans }}</label>
             <div class="input">
-                {{ form_widget(form.roles) }}
+                {{ form_widget(form.groups) }}
             </div>
         </div>
         {{ form_rest(form) }}

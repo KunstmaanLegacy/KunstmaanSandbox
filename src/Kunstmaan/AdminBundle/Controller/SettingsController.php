@@ -13,7 +13,14 @@ class SettingsController extends Controller
 {
     public function indexAction()
     {
-        return $this->redirect($this->generateUrl('KunstmaanAdminBundle_settings_users'));
+    	$em = $this->getDoctrine()->getEntityManager();
+    	$request = $this->getRequest();
+    	$adminlist = $this->get("adminlist.factory")->createList(new UserAdminListConfigurator(), $em);
+    	$adminlist->bindRequest($request);
+    	
+    	return $this->render('KunstmaanAdminBundle:Settings:index.html.twig', array(
+    			'useradminlist' => $adminlist
+    	));
     }
 
     public function usersAction()
