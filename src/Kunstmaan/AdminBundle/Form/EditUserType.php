@@ -39,7 +39,11 @@ class EditUserType extends AbstractType
             	'invalid_message' => "The passwords don't match!"));
         $builder->add('email');
         $builder->add('enabled');
-        $builder->add('roles', 'userroles');
+
+        $builder->add('groups', null, array(
+            'expanded'  => true
+        ));
+
     }
 
     public function getName()
