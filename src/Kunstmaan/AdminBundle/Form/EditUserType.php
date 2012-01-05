@@ -41,7 +41,7 @@ class EditUserType extends AbstractType
         $builder->add('enabled');
 
         $builder->add('groups', null, array(
-            'expanded'  => true
+            'expanded'  => false //change to true to expand to checkboxes
         ));
 
     }
