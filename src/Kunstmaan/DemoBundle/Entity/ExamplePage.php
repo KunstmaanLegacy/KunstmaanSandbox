@@ -44,6 +44,11 @@ class ExamplePage implements PageIFace, Translatable
      */
     protected $locale;
 
+
+    protected $possiblePermissions = array(
+        'read', 'write', 'delete'
+    );
+
     public function __construct()
     {
     }
@@ -106,5 +111,10 @@ class ExamplePage implements PageIFace, Translatable
     public function setTranslatableLocale($locale)
     {
     	$this->locale = $locale;
+    }
+
+    public function getPossiblePermissions()
+    {
+        return $this->possiblePermissions;
     }
 }

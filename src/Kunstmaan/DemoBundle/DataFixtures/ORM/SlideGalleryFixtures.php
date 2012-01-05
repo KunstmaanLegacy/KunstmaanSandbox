@@ -69,7 +69,7 @@ class SlideGalleryFixtures extends AbstractFixture implements OrderedFixtureInte
 
     public function getOrder()
     {
-        return 1;
+        return 100;
     }
 
 }

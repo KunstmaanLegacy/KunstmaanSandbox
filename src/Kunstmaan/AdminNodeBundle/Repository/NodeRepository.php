@@ -2,9 +2,11 @@
 
 namespace Kunstmaan\AdminNodeBundle\Repository;
 
+
 use Kunstmaan\AdminBundle\Entity\PageIFace;
 use Kunstmaan\AdminBundle\Modules\ClassLookup;
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Query\ResultSetMapping;
 
 /**
  * NodeRepository
@@ -14,12 +16,17 @@ use Doctrine\ORM\EntityRepository;
  */
 class NodeRepository extends EntityRepository
 {
-	public function getTopNodes()
+	public function getTopNodes($user, $permission)
 	{
 	    $qb = $this->createQueryBuilder('b')
 	               ->select('b')
                    ->where('b.parent is null')
-	               ->addOrderBy('b.sequencenumber', 'DESC');
+                   ->andWhere('b.id IN (
+                        SELECT p.refId FROM Kunstmaan\AdminBundle\Entity\Permission p WHERE p.refEntityname = b.refEntityname AND p.permissions LIKE ?1 AND p.refGroup IN(?2)
+                   )')
+	               ->addOrderBy('b.sequencenumber', 'DESC')
+                   ->setParameter(1, '%|'.$permission.':1|%')
+                   ->setParameter(2, $user->getGroupIds());
 
 	    return $qb->getQuery()
 	              ->getResult();

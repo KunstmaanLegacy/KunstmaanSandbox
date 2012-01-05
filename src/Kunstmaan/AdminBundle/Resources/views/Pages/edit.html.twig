@@ -1,7 +1,5 @@
 {% extends 'KunstmaanAdminBundle:Pages:index.html.twig' %}
 
-{% form_theme form 'KunstmaanAdminBundle:Form:fields.html.twig' %}
-
 {% block breadcrumb %}
 <ul class="breadcrumb">
     <li><a href="{{ path('KunstmaanAdminBundle_homepage') }}">{{ 'omnext.home' | trans }}</a> <span class="divider">/</span></li>
@@ -19,6 +17,9 @@
         <ul class="tabs" data-tabs="tabs">
             <li class="active"><a href="#pageparts">{{ 'pages.parts' | trans }}</a></li>
             <li><a href="#home">{{ 'form.properties' | trans }}</a></li>
+            {% if is_granted('ROLE_PERMISSIONMANAGER') %}
+            <li><a href="#permissions">{{ 'form.permissions' | trans }}</a></li>
+            {% endif %}
             <li><a href="#versions">Versions</a></li>
             {#<li><a href="#children">Children</a></li>
             <li><a href="#slug">Slug</a></li>
@@ -46,10 +47,20 @@
             </div>
             <div class="tab-pane" id="home">
                 {{ form_widget(form.main) }}
+                {{ form_widget(form.node) }}
                 <div class="actions">
                     <input type="submit" class="btn primary" value="{{ 'form.save' | trans }}">
                 </div>
             </div>
+
+            {% if is_granted('ROLE_PERMISSIONMANAGER') %}
+            <div class="tab-pane" id="permissions">
+                {{ permissionsadmin_widget(permissionadmin, form) }}
+                <div class="actions">
+                    <input type="submit" class="btn primary" value="{{ 'form.save' | trans }}">
+                </div>
+            </div>
+            {% endif %}
 
             <div class="tab-pane" id="children">
                 <table class="bordered-table zebra-striped">
@@ -109,7 +120,7 @@
             </div>
         </div>
 
-
+        {{ form_rest(form) }}
     </form>
 
 {% endblock %}
