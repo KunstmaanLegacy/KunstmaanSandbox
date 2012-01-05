@@ -39,6 +39,10 @@ form:
   forgot:
     password: Forgot my password.
   properties: Properties 
+  createdat: Created At
+  updatedat: Updated At
+  actions: Actions
+  addfilter: Add filter
     
 omnext:
   home: Home
