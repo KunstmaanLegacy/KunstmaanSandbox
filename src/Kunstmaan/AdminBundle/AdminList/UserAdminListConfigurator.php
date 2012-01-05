@@ -10,7 +10,6 @@
 namespace Kunstmaan\AdminBundle\AdminList;
 
 use Kunstmaan\AdminListBundle\AdminList\AdminListFilter;
-
 use Kunstmaan\AdminListBundle\AdminList\FilterDefinitions\DateFilterType;
 use Kunstmaan\AdminListBundle\AdminList\FilterDefinitions\StringFilterType;
 use Kunstmaan\AdminListBundle\AdminList\AbstractAdminListConfigurator;
@@ -61,8 +60,24 @@ class UserAdminListConfigurator extends AbstractAdminListConfigurator{
         return 'KunstmaanAdminBundle:User';
     }
 
-    function adaptQueryBuilder($querybuilder, $params=array()) {
+    public function adaptQueryBuilder($querybuilder, $params=array()) {
         parent::adaptQueryBuilder($querybuilder);
         //not needed to change something here yet but already
+    }
+
+
+    public function getValue($item, $columnName) {
+        $result = parent::getValue($item, $columnName);
+
+        if($result instanceof \Doctrine\ORM\PersistentCollection) {
+            $results = "";
+            foreach($result as $entry) {
+                $results[] = $entry->getName();
+            }
+
+            return implode(', ', $results);
+        }
+
+        return $result;
     }
 }
