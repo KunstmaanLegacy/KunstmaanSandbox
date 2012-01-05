@@ -13,6 +13,11 @@ settings:
   users: Users
   maintanance: Maintenance
   scheduled: Scheduled Jobs
+  group: Groups
+  groups:
+      name: Name
+      edit: Edit
+      add: Add
 
 # Tools
 tools:

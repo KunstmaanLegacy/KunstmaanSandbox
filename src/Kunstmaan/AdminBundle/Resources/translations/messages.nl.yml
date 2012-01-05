@@ -13,6 +13,11 @@ settings:
   users: Gebruikers
   maintanance: Onderhoud
   scheduled: Geplande jobs
+  group: Groepen
+  groups:
+    name: Naam
+    edit: Pas aan
+    add: Toevoegen
 
 # Tools
 tools:

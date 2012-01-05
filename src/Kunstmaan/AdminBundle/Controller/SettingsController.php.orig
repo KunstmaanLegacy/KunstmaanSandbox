@@ -13,6 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Kunstmaan\AdminBundle\AdminList\UserAdminListConfigurator;
 use Kunstmaan\AdminBundle\AdminList\GroupAdminListConfigurator;
 
+<<<<<<< HEAD
 class SettingsController extends Controller
 {
     public function indexAction()
@@ -25,6 +26,11 @@ class SettingsController extends Controller
     	return $this->render('KunstmaanAdminBundle:Settings:index.html.twig', array(
     			'useradminlist' => $adminlist
     	));
+=======
+class SettingsController extends Controller {
+    public function indexAction() {
+        return $this->redirect($this->generateUrl('KunstmaanAdminBundle_settings_users'));
+>>>>>>> feature/roles
     }
 
     public function usersAction() {

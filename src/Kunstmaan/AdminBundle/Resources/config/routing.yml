@@ -52,8 +52,28 @@ KunstmaanAdminBundle_settings_users_edit:
     requirements:
         _method:  GET|POST
         user_id: \d+
-        _locale: en|nl|fr     
- 
+        _locale: en|nl|fr
+
+KunstmaanAdminBundle_settings_groups:
+    pattern:  /{_locale}/admin/settings/groups
+    defaults: { _controller: KunstmaanAdminBundle:Settings:groups }
+    requirements:
+        _locale: en|nl|fr
+
+KunstmaanAdminBundle_settings_groups_add:
+    pattern:  /{_locale}/admin/settings/groups/add
+    defaults: { _controller: KunstmaanAdminBundle:Settings:addgroup }
+    requirements:
+        _locale: en|nl|fr
+
+KunstmaanAdminBundle_settings_groups_edit:
+    pattern:  /{_locale}/admin/settings/groups/edit/{group_id}
+    defaults: { _controller: KunstmaanAdminBundle:Settings:editgroup }
+    requirements:
+        _method:  GET|POST
+        group_id: \d+
+        _locale: en|nl|fr
+
 fos_user_security_login:
     pattern: /{_locale}/login
     defaults: { _controller: FOSUserBundle:Security:login }
