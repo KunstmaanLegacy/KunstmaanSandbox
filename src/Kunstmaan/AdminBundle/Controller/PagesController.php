@@ -18,10 +18,11 @@ class PagesController extends Controller
     {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $topnodes = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes();
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        $topnodes = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes($user, 'write');
 
         $request    = $this->getRequest();
-        $adminlist  = $this->get("adminlist.factory")->createList(new PageAdminListConfigurator(), $em);
+        $adminlist  = $this->get("adminlist.factory")->createList(new PageAdminListConfigurator($user, 'write'), $em);
         $adminlist->bindRequest($request);
 
         return $this->render('KunstmaanAdminBundle:Pages:index.html.twig', array(
@@ -41,11 +42,12 @@ class PagesController extends Controller
         $em->refresh($page);
         $repo = $em->getRepository('StofDoctrineExtensionsBundle:LogEntry');
         $logs = $repo->getLogEntries($page);
-        if(!is_null($this->getRequest()->get('version'))){
+        if(!is_null($this->getRequest()->get('version'))) {
         	$repo->revert($page, $this->getRequest()->get('version'));
         }
 
-        $topnodes   = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes();
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        $topnodes   = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes($user, 'write');
         $node       = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($page);
 
         $formfactory = $this->container->get('form.factory');
@@ -56,7 +58,6 @@ class PagesController extends Controller
         $formbuilder->add('node', $node->getDefaultAdminType($this->container));
 
         $formbuilder->setData(array('node' => $node, 'main' => $page));
-
 
         //handle the pagepart functions (fetching, change form to reflect all fields, assigning data, etc...)
         $pagepartadmin = $this->get("pagepartadmin.factory")->createList(new PagePartAdminConfigurator(), $em, $page);
