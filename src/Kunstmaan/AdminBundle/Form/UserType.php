@@ -20,18 +20,18 @@ class UserType extends AbstractType
     {
     	// get roles from the service container
     	$definedRoles = $this->container->getParameter('security.role_hierarchy.roles');
-    	
+
     	$roles = array();
     	foreach ($definedRoles as $name => $rolesHierarchy) {
     		$roles[$name] = $name . ': ' . implode(', ', $rolesHierarchy);
-    	
+
     		foreach ($rolesHierarchy as $role) {
     			if (!isset($roles[$role])) {
     				$roles[$role] = $role;
     			}
     		}
     	}
-    	    	
+
         $builder->add('username');
         $builder->add('plainPassword', 'repeated', array(
         		'type' => 'password', 
