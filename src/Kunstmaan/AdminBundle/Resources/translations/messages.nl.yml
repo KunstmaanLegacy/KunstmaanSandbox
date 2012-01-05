@@ -42,3 +42,4 @@ form:
   forgot:
     password: Paswoord vergeten?
   properties: Eigenschappen
+  permissions: Rechten

@@ -36,7 +36,8 @@ form:
   headsup: Heads up
   forgot:
     password: Forgot my password.
-  properties: Properties 
+  properties: Properties
+  permissions: Permissions
     
 omnext:
   home: Home
