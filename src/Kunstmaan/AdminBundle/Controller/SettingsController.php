@@ -13,15 +13,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Kunstmaan\AdminBundle\AdminList\UserAdminListConfigurator;
 use Kunstmaan\AdminBundle\AdminList\GroupAdminListConfigurator;
 
-class SettingsController extends Controller
-{
-    public function indexAction()
-    {
+class SettingsController extends Controller {
+    public function indexAction() {
         return $this->redirect($this->generateUrl('KunstmaanAdminBundle_settings_users'));
     }
 
-    public function usersAction()
-    {
+    public function usersAction() {
         $em = $this->getDoctrine()->getEntityManager();
         $request = $this->getRequest();
         $adminlist = $this->get("adminlist.factory")->createList(new UserAdminListConfigurator(), $em);
@@ -33,8 +30,7 @@ class SettingsController extends Controller
         ));
     }
     
-    public function adduserAction()
-    {
+    public function adduserAction() {
     	$em = $this->getDoctrine()->getEntityManager();
     	
     	$request = $this->getRequest();
@@ -55,8 +51,7 @@ class SettingsController extends Controller
     	));
     }
     
-    public function edituserAction($user_id)
-    {
+    public function edituserAction($user_id) {
     	$em = $this->getDoctrine()->getEntityManager();
     
     	$request = $this->getRequest();
@@ -78,16 +73,7 @@ class SettingsController extends Controller
     	));
     }
 
-
-
-
-
-
-
-
-
-    public function groupsAction()
-    {
+    public function groupsAction() {
         $em = $this->getDoctrine()->getEntityManager();
         $request = $this->getRequest();
         $adminlist = $this->get("adminlist.factory")->createList(new GroupAdminListConfigurator(), $em);
@@ -99,8 +85,7 @@ class SettingsController extends Controller
         ));
     }
 
-    public function addgroupAction()
-    {
+    public function addgroupAction() {
         $em = $this->getDoctrine()->getEntityManager();
 
         $request = $this->getRequest();
@@ -121,8 +106,7 @@ class SettingsController extends Controller
         ));
     }
 
-    public function editgroupAction($group_id)
-    {
+    public function editgroupAction($group_id) {
         $em = $this->getDoctrine()->getEntityManager();
 
         $request = $this->getRequest();
@@ -143,6 +127,4 @@ class SettingsController extends Controller
             'group' => $helper
         ));
     }
-
-
 }
