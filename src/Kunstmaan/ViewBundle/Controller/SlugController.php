@@ -9,6 +9,7 @@ use Kunstmaan\AdminBundle\Entity\PageIFace;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class SlugController extends Controller
 {
@@ -19,19 +20,33 @@ class SlugController extends Controller
     public function slugAction($slug)
     {
     	$em = $this->getDoctrine()->getEntityManager();
-    	$topnodes = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes();
     	$node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeForSlug(null, $slug);
     	if($node){
-    		$page = $node->getRef($em);
-    		$nodeMenu = new NodeMenu($em, $node);
-    		//3. render page
-    		$pageparts = $em->getRepository('KunstmaanPagePartBundle:PagePartRef')->getPageParts($em, $page);
-    		return array(
-    				'page' => $page,
-    				'pageparts' => $pageparts,
-    				'nodemenu' => $nodeMenu);
+            $page = $node->getRef($em);
     	} else {
     		throw $this->createNotFoundException('No page found for slug ' . $slug);
     	}
+
+        //check if the requested node is online, else throw a 404 exception
+        if(!$node->isOnline()){
+            throw $this->createNotFoundException("The requested page is not online");
+        }
+
+        $currentUser = $this->container->get('security.context')->getToken()->getUser();
+
+        $permissionManager = $this->get('kunstmaan_admin.permissionmanager');
+        $canViewPage = $permissionManager->hasPermision($page, $currentUser, 'read', $em);
+
+        if($canViewPage) {
+            $nodeMenu = new NodeMenu($em, $node);
+
+        	//render page
+        	$pageparts = $em->getRepository('KunstmaanPagePartBundle:PagePartRef')->getPageParts($em, $page);
+            return array(
+                'page'      => $page,
+                'pageparts' => $pageparts,
+                'nodemenu'  => $nodeMenu);
+        }
+        throw $this->createNotFoundException('You do not have suffucient rights to access this page.');
     }
 }

@@ -3,19 +3,14 @@
 namespace Kunstmaan\AdminBundle\Controller;
 
 use Kunstmaan\AdminBundle\Form\EditUserType;
-
 use Symfony\Component\HttpFoundation\RedirectResponse;
-
 use Kunstmaan\AdminBundle\Entity\User;
-
 use Kunstmaan\AdminBundle\Form\UserType;
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Kunstmaan\AdminBundle\AdminList\UserAdminListConfigurator;
 
 class SettingsController extends Controller
 {
-    
     public function indexAction()
     {
         return $this->redirect($this->generateUrl('KunstmaanAdminBundle_settings_users'));
@@ -25,10 +20,12 @@ class SettingsController extends Controller
     {
         $em = $this->getDoctrine()->getEntityManager();
         $request = $this->getRequest();
-        $adminlist    = $this->get("adminlist.factory")->createList(new UserAdminListConfigurator(), $em);
+        $adminlist = $this->get("adminlist.factory")->createList(new UserAdminListConfigurator(), $em);
         $adminlist->bindRequest($request);
+
         return $this->render('KunstmaanAdminBundle:Settings:users.html.twig', array(
-            'useradminlist'    => $adminlist,
+            'useradminlist' => $adminlist,
+            'addparams'     => array()
         ));
     }
     

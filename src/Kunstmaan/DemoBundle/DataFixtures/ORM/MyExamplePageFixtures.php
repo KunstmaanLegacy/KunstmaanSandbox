@@ -15,13 +15,14 @@ class MyPageFixtures extends AbstractFixture implements OrderedFixtureInterface
         $mypage->setTitle('My custom page');
         $mypage->setCustomfield('My custom page custom title');
         $manager->persist($mypage);
-
         $manager->flush();
+
+        $this->addReference('page4', $mypage);
     }
 
     public function getOrder()
     {
-        return 2;
+        return 100;
     }
 
 }

@@ -38,6 +38,7 @@ form:
   headsup: Heads up
   forgot:
     password: Forgot my password.
+  permissions: Permissions
   properties: Properties 
   createdat: Created At
   updatedat: Updated At

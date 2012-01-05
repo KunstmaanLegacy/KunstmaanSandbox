@@ -17,7 +17,18 @@ use Kunstmaan\AdminListBundle\AdminList\FilterDefinitions\BooleanFilterType;
 
 class PageAdminListConfigurator extends AbstractAdminListConfigurator{
 
-    public function buildFilters(AdminListFilter $builder){
+    protected $permission;
+    protected $user;
+
+    public function __construct($user, $permission)
+    {
+        $this->permission   = $permission;
+        $this->user         = $user;
+    }
+
+
+    public function buildFilters(AdminListFilter $builder)
+    {
         $builder->add('title', new StringFilterType("title"));
         $builder->add('online', new BooleanFilterType("online"));
         $builder->add('created', new DateFilterType("created"));
@@ -32,31 +43,54 @@ class PageAdminListConfigurator extends AbstractAdminListConfigurator{
     	$this->addField("online", "Online", true);
     }
 
-    public function canEdit() {
+    public function canEdit()
+    {
         return false;
     }
 
-    public function getEditUrlFor($item) {
+    public function getEditUrlFor($item)
+    {
         return "";
     }
     
-    public function canAdd() {
+    public function canAdd()
+    {
     	return false;
     }
-    
+
     public function getAddUrlFor($params=array()) {
     	return "";
     }
 
-    public function canDelete($item) {
+    public function canDelete($item)
+    {
         return true;
     }
 
-    public function getRepositoryName(){
+    public function getRepositoryName()
+    {
         return 'KunstmaanAdminNodeBundle:Node';
     }
 
     function adaptQueryBuilder($querybuilder, $params=array()){
         parent::adaptQueryBuilder($querybuilder);
+
+        $querybuilder->andWhere('b.id IN (
+            SELECT
+                p.refId
+            FROM
+                Kunstmaan\AdminBundle\Entity\Permission p
+            WHERE
+                    p.refEntityname = b.refEntityname
+                AND
+                    p.permissions LIKE :permissions
+                AND
+                    p.refGroup IN(:groups)
+        )');
+
+        $querybuilder->setParameter('permissions', '%|'.$this->permission.':1|%');
+        $querybuilder->setParameter('groups', $this->user->getGroupIds());
+
+        return $querybuilder;
     }
 }

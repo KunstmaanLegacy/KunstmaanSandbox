@@ -76,6 +76,8 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb'
     firewall_name: main
     user_class: Kunstmaan\AdminBundle\Entity\User
+    group:
+        group_class: Kunstmaan\AdminBundle\Entity\Group
     resetting:
         token_ttl: 86400
         email:

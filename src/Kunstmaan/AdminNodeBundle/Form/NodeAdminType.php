@@ -17,7 +17,7 @@ class NodeAdminType extends AbstractType
 
     public function buildForm(FormBuilder $builder, array $options)
     {
-        $builder->add('roles', 'userroles');
+        $builder->add('online', 'checkbox', array('required' => false));
     }
 
     public function getName()
