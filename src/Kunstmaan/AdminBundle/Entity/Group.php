@@ -41,7 +41,6 @@ class Group implements RoleInterface, GroupInterface
 
     /**
      * @ORM\ManyToMany(targetEntity="Role")
-     * @ORM\JoinTable(name="user_user_group_roles_buh")
      */
     protected $rolescollection;
 
