@@ -19,7 +19,9 @@ class EditGroupType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder->add('name');
-
+        $builder->add('rolescollection', null, array(
+            'expanded'  => false, //change to true to expand to checkboxes
+        ));
     }
 
     public function getName()

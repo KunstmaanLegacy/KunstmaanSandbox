@@ -16,6 +16,9 @@ class GroupType extends AbstractType
 
     public function buildForm(FormBuilder $builder, array $options) {
         $builder->add('name');
+        $builder->add('rolescollection', 'choice', array(
+            'expanded'  => false, //change to true to expand to checkboxes
+        ));
     }
 
     public function getName()
