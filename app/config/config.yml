@@ -1,11 +1,8 @@
 imports:
     - { resource: parameters.ini }
     - { resource: security.yml }
-    KunstmaanMediaBundle:
-        resource: @KunstmaanMediaBundle/Resources/config/config.yml
     KunstmaanAdminBundle:
-        resource: @KunstmaanAdminBundle/Resources/config/config.yml
-
+        resource: @KunstmaanDemoBundle/Resources/config/config.yml
 
 framework:
     #esi:             ~
@@ -72,25 +69,6 @@ airbrake:
 
 airbrake.config: ~
 
-fos_user:
-    db_driver: orm # other valid values are 'mongodb', 'couchdb'
-    firewall_name: main
-    user_class: Kunstmaan\AdminBundle\Entity\User
-    group:
-        group_class: Kunstmaan\AdminBundle\Entity\Group
-    resetting:
-        token_ttl: 86400
-        email:
-            from_email: # Use this node only if you don't want the global email address for the resetting email
-                address:        admin@kunstmaan.be
-                sender_name:    admin
-            template:   FOSUserBundle:Resetting:email.txt.twig
-        form:
-            type:               fos_user_resetting
-            handler:            fos_user.resetting.form.handler.default
-            name:               fos_user_resetting_form
-            validation_groups:  [ResetPassword]
-            
 stof_doctrine_extensions:
     default_locale: nl
     translation_fallback: true

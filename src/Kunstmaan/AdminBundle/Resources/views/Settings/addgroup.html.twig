@@ -1,12 +1,9 @@
 {% extends 'KunstmaanAdminBundle:Settings:index.html.twig' %}
 
-{% block breadcrumb %}
-	<ul class="breadcrumb">
-		<li><a href="{{ path('KunstmaanAdminBundle_homepage') }}">Home</a> <span class="divider">/</span></li>
-        <li><a href="{{ path('KunstmaanAdminBundle_settings') }}">Settings</a> <span class="divider">/</span></li>
-        <li><a href="{{ path('KunstmaanAdminBundle_settings_groups') }}">Groups</a> <span class="divider">/</span></li>
-		<li class="active">{{ 'settings.groups.add' | trans }}</li>
-	</ul>
+{% block subbreadcrumb %}
+	<li><a href="{{ path('KunstmaanAdminBundle_settings') }}">Settings</a></li>
+    <li><a href="{{ path('KunstmaanAdminBundle_settings_groups') }}">Groups</a></li>
+	<li class="active">{{ 'settings.groups.add' | trans }}</li>
 {% endblock %}
 
 {% block content %}
