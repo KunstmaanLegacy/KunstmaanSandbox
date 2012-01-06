@@ -28,7 +28,7 @@ class PagesController extends Controller
 
         $user = $this->container->get('security.context')->getToken()->getUser();
         $topnodes = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes($user, 'write');
-        $nodeMenu = new NodeMenu($this->container, null);
+        $nodeMenu = new NodeMenu($this->container, null, 'write');
 
         $request    = $this->getRequest();
         $adminlist  = $this->get("adminlist.factory")->createList(new PageAdminListConfigurator($user, 'write'), $em);
@@ -146,7 +146,7 @@ class PagesController extends Controller
             }
         }
 
-        $nodeMenu = new NodeMenu($this->container, $node);
+        $nodeMenu = new NodeMenu($this->container, $node, 'write');
 
         $viewVariables = array(
             'topnodes'          => $topnodes,

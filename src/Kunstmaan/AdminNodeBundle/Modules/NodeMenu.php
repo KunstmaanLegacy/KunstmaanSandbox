@@ -16,7 +16,7 @@ class NodeMenu
     /**
      * @param FactoryInterface $factory
      */
-    public function __construct($container, $currentNode)
+    public function __construct($container, $currentNode, $permission = 'read')
     {
         $this->container = $container;
         $this->em = $this->container->get('doctrine.orm.entity_manager');
@@ -34,10 +34,13 @@ class NodeMenu
         	$parentNode = $nodeBreadCrumbItem;
         }
 
+        $permissionManager = $container->get('kunstmaan_admin.permissionmanager');
         $user = $this->container->get('security.context')->getToken()->getUser();
 
+        $user = $permissionManager->getCurrentUser($user, $this->em);
+
         //topNodes
-        $topNodes = $this->em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes($user, 'write');
+        $topNodes = $this->em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes($user, $permission);
         foreach($topNodes as $topNode){
         	if(sizeof($this->breadCrumb)>0 && $this->breadCrumb[0]->getNode()->getId() == $topNode->getId()){
         		$this->topNodeMenuItems[] = $this->breadCrumb[0];
