@@ -12,10 +12,16 @@ use Kunstmaan\DemoBundle\PagePartAdmin\PagePartAdminConfigurator;
 use Kunstmaan\PagePartBundle\Form\TextPagePartAdminType;
 use Kunstmaan\AdminBundle\Form\NodeInfoAdminType;
 use Kunstmaan\AdminBundle\Modules\ClassLookup;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 class PagesController extends Controller
 {
-    
+	/**
+	 * @Route("/", name="KunstmaanAdminBundle_pages")
+	 * @Template()
+	 */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getEntityManager();
@@ -28,13 +34,18 @@ class PagesController extends Controller
         $adminlist  = $this->get("adminlist.factory")->createList(new PageAdminListConfigurator($user, 'write'), $em);
         $adminlist->bindRequest($request);
 
-        return $this->render('KunstmaanAdminBundle:Pages:index.html.twig', array(
+        return array(
 			'topnodes'      => $topnodes,
         	'nodemenu' 	    => $nodeMenu,
             'pageadminlist' => $adminlist,
-        ));
+        );
     }
-
+    
+    /**
+     * @Route("/{id}/edit", requirements={"id" = "\d+"}, name="KunstmaanAdminBundle_pages_edit")
+     * @Method({"GET", "POST"})
+     * @Template()
+     */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getEntityManager();
@@ -150,7 +161,7 @@ class PagesController extends Controller
         if($this->get('security.context')->isGranted('ROLE_PERMISSIONMANAGER')){
             $viewVariables['permissionadmin'] = $permissionadmin;
         }
-        return $this->render('KunstmaanAdminBundle:Pages:edit.html.twig', $viewVariables);
+        return $viewVariables;
     }
 	
 }

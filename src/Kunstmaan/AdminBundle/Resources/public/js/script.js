@@ -22,49 +22,49 @@ function init_tree() {
 				//Page
 				"page" : {
 					"icon" : {
-						"image" : "js/libs/themes/OMNext/d.png",
+						"image" : "/bundles/kunstmaanadmin/js/libs/themes/OMNext/d.png",
 						"position" : "-57px -57px" 
 					}
 				},				
 				//Site
 				"site" : {
 					"icon" : {
-						"image" : "js/libs/themes/OMNext/d.png",
+						"image" : "/bundles/kunstmaanadmin/js/libs/themes/OMNext/d.png",
 						"position" : "-75px -38px" 
 					}
 				},
 				//Settings
 				"settings" : {
 					"icon" : {
-						"image" : "js/libs/themes/OMNext/d.png",
+						"image" : "/bundles/kunstmaanadmin/js/libs/themes/OMNext/d.png",
 						"position" : "-57px -37px" 
 					}
 				},
 				//Image
 				"image" : {
 					"icon" : {
-						"image" : "js/libs/themes/OMNext/d.png",
+						"image" : "/bundles/kunstmaanadmin/js/libs/themes/OMNext/d.png",
 						"position" : "-20px -74px" 
 					}
 				},
 				//Video
 				"video" : {
 					"icon" : {
-						"image" : "js/libs/themes/OMNext/d.png",
+						"image" : "/bundles/kunstmaanadmin/js/libs/themes/OMNext/d.png",
 						"position" : "-75px -55px" 
 					}
 				},
 				//Slideshow
 				"slideshow" : {
 					"icon" : {
-						"image" : "js/libs/themes/OMNext/d.png",
+						"image" : "/bundles/kunstmaanadmin/js/libs/themes/OMNext/d.png",
 						"position" : "-2px -72px" 
 					}
 				},
 				//Files
 				"files" : {
 					"icon" : {
-						"image" : "js/libs/themes/OMNext/d.png",
+						"image" : "/bundles/kunstmaanadmin/js/libs/themes/OMNext/d.png",
 						"position" : "-38px -72px" 
 					}
 				}

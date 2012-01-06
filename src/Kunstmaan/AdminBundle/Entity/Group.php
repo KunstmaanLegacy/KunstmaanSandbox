@@ -9,9 +9,8 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
- * @ORM\Table(name="user_group")
  * @ORM\Entity(repositoryClass="Kunstmaan\AdminBundle\Repository\GroupRepository")
+ * @ORM\Table(name="user_group")
  */
 class Group implements RoleInterface, GroupInterface
 {
