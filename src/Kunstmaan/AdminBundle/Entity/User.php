@@ -1,5 +1,4 @@
 <?php
-// src/AdminBundle/Entity/User.php
 
 namespace Kunstmaan\AdminBundle\Entity;
 

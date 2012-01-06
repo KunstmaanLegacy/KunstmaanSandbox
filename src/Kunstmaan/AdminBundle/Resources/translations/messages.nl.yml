@@ -2,6 +2,7 @@
 pages:
   title: Pagina's
   parts: Delen van de pagina
+  draft: Klad
 
 # Modules
 modules:

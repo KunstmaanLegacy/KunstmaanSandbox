@@ -2,10 +2,16 @@
 
 namespace Kunstmaan\AdminBundle\Controller;
 
+use Kunstmaan\AdminBundle\Modules\PrepersistListener;
+
+use Doctrine\ORM\Events;
+
 use Kunstmaan\AdminNodeBundle\Modules\NodeMenu;
 
 use \Kunstmaan\AdminBundle\Form\PageAdminType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Kunstmaan\AdminBundle\Entity\PageIFace;
 use Kunstmaan\DemoBundle\AdminList\PageAdminListConfigurator;
 use Kunstmaan\DemoBundle\PagePartAdmin\PagePartAdminConfigurator;
@@ -31,14 +37,57 @@ class PagesController extends Controller
             'pageadminlist'    => $adminlist,
         ));
     }
-
-    public function editAction($id)
+    
+    /**
+     * @Route("/admin/pages/{id}/publish", requirements={"_method" = "GET|POST", "id" = "\d+"}, name="KunstmaanAdminBundle_pages_edit_publish")
+     * @Template()
+     */
+    public function publishAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
-        $request = $this->getRequest();
+    	$em = $this->getDoctrine()->getEntityManager();
+    	$node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->find($id);
+    	$node->setOnline(true);
+    	$em->persist($node);
+    	$em->flush();
+    	return $this->redirect($this->generateUrl("KunstmaanAdminBundle_pages_edit", array('id'=>$node->getId())));
+    }
+    
+    /**
+     * @Route("/admin/pages/{id}/unpublish", requirements={"_method" = "GET|POST", "id" = "\d+"}, name="KunstmaanAdminBundle_pages_edit_unpublish")
+     * @Template()
+     */
+    public function unpublishAction($id)
+    {
+    	$em = $this->getDoctrine()->getEntityManager();
+    	$node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->find($id);
+    	$node->setOnline(false);
+    	$em->persist($node);
+    	$em->flush();
+    	return $this->redirect($this->generateUrl("KunstmaanAdminBundle_pages_edit", array('id'=>$node->getId())));
+    }
+
+    /**
+     * @Route("/admin/pages/{id}/{subaction}", requirements={"_method" = "GET|POST", "id" = "\d+"}, defaults={"subaction" = "public"}, name="KunstmaanAdminBundle_pages_edit")
+     * @Template()
+     */
+    public function editAction($id, $subaction)
+    {
+    	$em = $this->getDoctrine()->getEntityManager();
+    	$request = $this->getRequest();
+    	$saveasdraft = $request->get("saveasdraft");
+    	$saveandpublish = $request->get("saveandpublish");
+    	$draft = ($subaction == "draft");
         
         $node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->find($id);
         $page = $em->getRepository($node->getRefEntityname())->find($node->getRefId());
+        
+        if($draft){
+        	$page = $em->getRepository('KunstmaanAdminBundle:DraftConnector')->getDraft($page);
+        } else if(is_string($saveasdraft) && $saveasdraft != ''){
+        	$newpublicpage = $em->getRepository('KunstmaanAdminBundle:DraftConnector')->saveAsDraftAndReturnPublish($page);
+        	$draft = true;
+        	$subaction = "draft";
+        }
         
         $addpage = $request->get("addpage");
         $addpagetitle = $request->get("title");
@@ -79,6 +128,7 @@ class PagesController extends Controller
         	$repo->revert($page, $this->getRequest()->get('version'));
         }
 
+        
         $formfactory = $this->container->get('form.factory');
         $formbuilder = $this->createFormBuilder();
         $formbuilder->add('main', $page->getDefaultAdminType());
@@ -93,11 +143,15 @@ class PagesController extends Controller
             $form->bindRequest($request);
             $pagepartadmin->bindRequest($request);
             if ($form->isValid()) {
-                $em = $this->getDoctrine()->getEntityManager();
-                $em->persist($page);
                 $em->flush();
+                if(is_string($saveandpublish) && $saveandpublish != ''){
+                	$newpublicpage = $em->getRepository('KunstmaanAdminBundle:DraftConnector')->copyDraftToPublishedReturnPublished($page);
+                	$draft = false;
+                	$subaction = "public";
+                }
                 return $this->redirect($this->generateUrl('KunstmaanAdminBundle_pages_edit', array(
-                    'id' => $node->getId()
+                    'id' => $node->getId(),
+                	'subaction' => $subaction
                 )));
             }
         }
@@ -112,7 +166,8 @@ class PagesController extends Controller
             'pagepartadmin'    => $pagepartadmin,
         	'logs' => $logs,
         	'nodemenu' => $nodeMenu,
-            //'topnode'      => $topnode
+        	'draft' => $draft,
+        	'subaction' => $subaction
         ));
     }
 	

@@ -33,13 +33,24 @@ class NodeGenerator {
             $entityrepo = $em->getRepository($classname);
             $node = $this->getNode($em, $entity->getId(), $classname);
             if($node==null){
+            	error_log("node is null for entity with id ".$entity->getId());
+            	return;
+            	/*
+            	error_log("node is null for entity with id ".$entity->getId());
                 $node = new Node();
                 $node->setRefId($entity->getId());
                 $node->setRefEntityname($classname);
                 $node->setSequencenumber(1);
+                */
+            }
+            error_log("node is not null for entity with id ".$entity->getId());
+            $parent = $entity->getParent();
+            if($parent){
+            	$parentNode = $em->getRepository('KunstmaanAdminNodeBundle:Node')->findOneBy(array('refId' => $parent->getId(), 'refEntityname' => ClassLookup::getClass($parent)));
+            	$node->setParent($parentNode);
             }
             $node->setTitle($entity->__toString());
-            $node->setSlug(str_replace(" ", "", $entity->__toString()));
+            $node->setSlug(strtolower(str_replace(" ", "-", $entity->__toString())));
             $node->setOnline($entity->isOnline());
             $em->persist($node);
             $em->flush();
@@ -51,13 +62,29 @@ class NodeGenerator {
     }
     
     public function preRemove(LifecycleEventArgs $args) {
-    	$entity = $args->getEntity();
+    	/*$entity = $args->getEntity();
     	$em = $args->getEntityManager();
     	$classname = get_class($entity);
     	if($entity instanceof HasNode){
     		$entityrepo = $em->getRepository($classname);
     		$node = $this->getNode($em, $entity->getId(), $classname);
     		$em->remove($node);
+    	}*/
+    }
+    
+    public function postLoad(LifecycleEventArgs $args) {
+    	$entity = $args->getEntity();
+    	$em = $args->getEntityManager();
+    	$classname = ClassLookup::getClass($entity);
+    	if($entity instanceof HasNode){
+    		$node = $this->getNode($em, $entity->getId(), $classname);
+    		if($node){
+    			$parentNode = $node->getParent();
+    			if($parentNode){
+    				$parent = $em->getRepository($parentNode->getRefEntityname())->find($parentNode->getRefId());
+    				$entity->setParent($parent);
+    			}
+    		}
     	}
     }
 

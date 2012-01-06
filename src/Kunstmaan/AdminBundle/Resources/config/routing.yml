@@ -14,14 +14,6 @@ KunstmaanAdminBundle_pages:
     requirements:
         _locale: en|nl|fr
 
-KunstmaanAdminBundle_pages_edit:
-    pattern:  /{_locale}/admin/pages/{id}
-    defaults: { _controller: KunstmaanAdminBundle:Pages:edit }
-    requirements:
-        _method:  GET|POST
-        id: \d+
-        _locale: en|nl|fr
-    
 KunstmaanAdminBundle_modules:
     pattern:  /{_locale}/admin/modules
     defaults: { _controller: KunstmaanAdminBundle:Modules:index }

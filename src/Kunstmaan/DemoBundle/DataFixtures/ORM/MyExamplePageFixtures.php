@@ -15,8 +15,8 @@ class MyPageFixtures extends AbstractFixture implements OrderedFixtureInterface
         $mypage->setTitle('My custom page');
         $mypage->setCustomfield('My custom page custom title');
         $manager->persist($mypage);
-
         $manager->flush();
+        $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($mypage);
     }
 
     public function getOrder()

@@ -16,5 +16,9 @@ interface HasNode {
     public function getTitle();
 
     public function isOnline();
+    
+    public function getParent();
+    
+    public function setParent(HasNode $hasNode);
 
 }

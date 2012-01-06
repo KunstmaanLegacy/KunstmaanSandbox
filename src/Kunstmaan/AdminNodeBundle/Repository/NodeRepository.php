@@ -2,6 +2,8 @@
 
 namespace Kunstmaan\AdminNodeBundle\Repository;
 
+use Kunstmaan\AdminNodeBundle\Entity\HasNode;
+
 use Kunstmaan\AdminNodeBundle\Entity\Node;
 
 use Kunstmaan\AdminBundle\Entity\PageIFace;
@@ -31,8 +33,8 @@ class NodeRepository extends EntityRepository
 		return $this->findBy(array("parent"=>$node->getId()));
 	}
 	
-	public function getNodeFor(PageIFace $page) {
-		return $this->findOneBy(array('refId' => $page->getId(), 'refEntityname' => ClassLookup::getClass($page)));
+	public function getNodeFor(HasNode $hasNode) {
+		return $this->findOneBy(array('refId' => $hasNode->getId(), 'refEntityname' => ClassLookup::getClass($hasNode)));
 	}
 	
 	public function getNodeForSlug($parentNode, $slug){
@@ -52,5 +54,31 @@ class NodeRepository extends EntityRepository
 			}
 		}
 		return $result;
+	}
+	
+	public function createNodeFor(HasNode $hasNode){
+		$em = $this->getEntityManager();
+		$classname = ClassLookup::getClass($hasNode);
+		if(!$hasNode->getId()>0){
+			throw new \Exception("the entity of class ". $classname . " has no id, maybe you forgot to flush first");
+		}
+		$entityrepo = $em->getRepository($classname);
+		$node = $this->findOneBy(array('refId' => $hasNode->getId(), 'refEntityname' => $classname));
+		if($node==null){
+		  $node = new Node();
+		  $node->setRefId($hasNode->getId());
+		  $node->setRefEntityname($classname);
+		  $node->setSequencenumber(1);
+		  $parent = $hasNode->getParent();
+		  if($parent){
+		  	$parentNode = $em->getRepository('KunstmaanAdminNodeBundle:Node')->findOneBy(array('refId' => $parent->getId(), 'refEntityname' => ClassLookup::getClass($parent)));
+		  	$node->setParent($parentNode);
+		  }
+		  $node->setTitle($hasNode->__toString());
+		  $node->setSlug(strtolower(str_replace(" ", "-", $hasNode->__toString())));
+		  $node->setOnline($hasNode->isOnline());
+		  $em->persist($node);
+		  $em->flush();
+		}
 	}
 }

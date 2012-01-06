@@ -34,6 +34,13 @@ _imagine:
     resource: .
     type:     imagine
     
+KunstmaanAdminBundle_annotations:
+    resource: "@KunstmaanAdminBundle/Controller/PagesController.php"
+    type:     annotation
+    prefix:   /{_locale}/
+    requirements: 
+      _locale: nl|en|fr
+      
 KunstmaanViewBundle_searchpage:
     resource: "@KunstmaanViewBundle/Controller/SearchPageController.php"
     type:     annotation

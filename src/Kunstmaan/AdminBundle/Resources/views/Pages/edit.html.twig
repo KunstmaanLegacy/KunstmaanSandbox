@@ -7,39 +7,86 @@
     <li><a href="{{ path('KunstmaanAdminBundle_homepage') }}">{{ 'omnext.home' | trans }}</a></li>
     <li><a href="{{ path('KunstmaanAdminBundle_pages') }}">{{ 'pages.title' | trans }}</a></li>
     {% for node in nodemenu.breadCrumb %}
-    	{% if nodemenu.current.id == node.id %}
+    	{% if nodemenu.current.id == node.id and not draft %}
     		<li>{{ node.title }}</li>
     	{% else %}
     		<li><a href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': node.id}) }}">{{ node.title }}</a></li>
     	{% endif %}
     {% endfor %}
+    {% if draft %}
+   		<li>{{ 'pages.draft' | trans }}</li>
+   	{% endif %}
 </ul>
 {% endblock %}
 
 {% block content %}
-    <form action="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': node.id}) }}" method="post" {{ form_enctype(form) }}>
-    <h1>{{ page.title }} <small>Online</small></h1>
+    <form action="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': node.id, 'subaction': subaction}) }}" method="post" {{ form_enctype(form) }}>
+    <h1>{{ page.title }} {% if draft %} <small>Draft version (Go to <a href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': node.id, 'subaction': ''}) }}">public version</a>)</small> {% else %} <small>Public version (Go to <a href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': node.id, 'subaction': 'draft'}) }}">draft version</a>)</small> {% endif %} </h1>
     <div class="sub_actions">
-      <a href="#" data-controls-modal="unpub" data-backdrop="true" data-keyboard="true">Unpublish</a>
+      {% if not draft %}
+        {% if node.online %}
+          <a href="#" data-controls-modal="unpub" data-backdrop="true" data-keyboard="true">Unpublish</a>
+          <div id="unpub" class="modal hide fade">
+				<div class="modal-header">
+					<a href="#" class="close">×</a>
+					<h3>Are you sure you want to unpublish this page?</h3>
+				</div>
+				<div class="modal-body">
+					<p>If you do this, the page will be offline!</p>
+				</div>
+				<div class="modal-footer">
+					<a href="{{ path('KunstmaanAdminBundle_pages_edit_unpublish', { 'id': node.id}) }}" class="btn danger">Unpublish</a>
+					<a href="#" class="btn cancel">Cancel</a>			
+				</div>
+			</div>
+        {% else %}
+          <a href="#" data-controls-modal="pub" data-backdrop="true" data-keyboard="true">Publish</a>
+		  <div id="pub" class="modal hide fade">
+				<div class="modal-header">
+					<a href="#" class="close">×</a>
+					<h3>Are you sure you want to publish this page?</h3>
+				</div>
+				<div class="modal-body">
+					<p>If you do this, the page will be online!</p>
+				</div>
+				<div class="modal-footer">
+					<a href="{{ path('KunstmaanAdminBundle_pages_edit_publish', { 'id': node.id}) }}" class="btn danger">Publish</a>
+					<a href="#" class="btn cancel">Cancel</a>			
+				</div>
+			</div>
+        {% endif %}
+      {% endif %}
       <a href="#">Versions</a>
     </div>
     <!--Main-->
 	<div class="main_actions">
-      <input type="submit" class="btn primary" value="{{ 'form.publish' | trans }}">
-      <input type="submit" class="btn" value="{{ 'form.saveasdraft' | trans }}">
-      <a class="btn" href="{{ path('_slug', { 'slug': nodemenu.current.slug }) }}" target="_blank">Preview</a>
-      <button data-controls-modal="add-subpage-modal" data-backdrop="true" class="btn">Add subpage</button>
-      <button data-controls-modal="delete-page-modal" data-backdrop="true" class="btn danger">Delete</button>
+	  {% if draft %}
+	    <input type="submit" class="btn primary" name="save" value="{{ 'form.saveasdraft' | trans }}">
+	    <input type="submit" class="btn" name="saveandpublish" value="{{ 'form.publish' | trans }}">
+	    <a class="btn" href="{{ path('_slug_draft', { 'slug': nodemenu.current.slug }) }}" target="_blank">Preview</a>
+	  {% else %}
+		  <input type="submit" class="btn primary" name="save" value="{{ 'form.save' | trans }}">
+	      <input type="submit" class="btn" name="saveasdraft" value="{{ 'form.saveasdraft' | trans }}">
+	      <a class="btn" href="{{ path('_slug', { 'slug': nodemenu.current.slug }) }}" target="_blank">Preview</a>
+	      <button data-controls-modal="add-subpage-modal" data-backdrop="true" class="btn">Add subpage</button>
+	      <button data-controls-modal="delete-page-modal" data-backdrop="true" class="btn danger">Delete</button>
+	  {% endif %}
       {#<button class="btn" data-controls-modal="cancel" data-backdrop="true" data-keyboard="true">Cancel</button>#}
     </div>
     <!--Scroll-->
     <div class="main_actions top" id="main_actions_top">
       <div class="pull-right">
-        <input type="submit" class="btn primary" value="{{ 'form.publish' | trans }}">
-        <input type="submit" class="btn" value="{{ 'form.saveasdraft' | trans }}">
-        <a class="btn" href="{{ path('_slug', { 'slug': nodemenu.current.slug }) }}" target="_blank">Preview</a>
-        <button data-controls-modal="add-subpage-modal" data-backdrop="true" class="btn">Add subpage</button>
-        <button data-controls-modal="delete-page-modal" data-backdrop="true" class="btn danger">Delete</button>
+        {% if draft %}
+	      <input type="submit" class="btn primary" name="save" value="{{ 'form.saveasdraft' | trans }}">
+	      <input type="submit" class="btn" name="saveandpublish" value="{{ 'form.publish' | trans }}">
+          <a class="btn" href="{{ path('_slug', { 'slug': nodemenu.current.slug }) }}" target="_blank">Preview</a>
+	    {% else %}
+		  <input type="submit" class="btn primary" name="save" value="{{ 'form.save' | trans }}">
+	      <input type="submit" class="btn" name="saveasdraft" value="{{ 'form.saveasdraft' | trans }}">
+	      <a class="btn" href="{{ path('_slug', { 'slug': nodemenu.current.slug }) }}" target="_blank">Preview</a>
+	      <button data-controls-modal="add-subpage-modal" data-backdrop="true" class="btn">Add subpage</button>
+	      <button data-controls-modal="delete-page-modal" data-backdrop="true" class="btn danger">Delete</button>
+	    {% endif %}
         {#<button class="btn" data-controls-modal="cancel" data-backdrop="true" data-keyboard="true">Cancel</button>#}
         <a class="btn up">&#9650;</a>
       </div>
@@ -53,7 +100,7 @@
       <div class="modal-body">
         <script type="text/javascript">
 	        function doAddpage(link){
-		        link.href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': node.id}) }}" + "?addpage="+jQuery('#addpage_type').val() + "&title=" + jQuery('#addpage_title').val();
+		        link.href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': node.id, 'subaction': subaction}) }}" + "?addpage="+jQuery('#addpage_type').val() + "&title=" + jQuery('#addpage_title').val();
 	            return true;
 	        }
 	    </script>
@@ -119,12 +166,10 @@
               <div id="properties">
               	<div id="prop_wrp" style="padding-top:18px">
 	              {{ form_widget(form.main) }}
+	              
 	            </div>
 	          </div>
               {{ pagepartadmin_widget(pagepartadmin, form) }}
-              <div class="actions">
-                <input type="submit" class="btn primary" value="{{ 'form.save' | trans }}">
-              </div>
             </div>
             <div class="tab-pane" id="children">
                 <table class="bordered-table zebra-striped">
@@ -152,7 +197,7 @@
               <table class="bordered-table zebra-striped">
                     <thead>
                     <tr>
-                    	<th>Action</th>
+                    	<th>Nr</th>
                         <th>Action</th>
                         <th>Date</th>
                         <th>User</th>
@@ -161,7 +206,7 @@
                     <tbody>
                         {% for log in logs %}
                             <tr>
-                            	<td><a href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': node.id, 'version': log.version }) }}">{{ log.version }}</a></td>
+                            	<td><a href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': node.id, 'version': log.version, 'subaction': subaction }) }}">{{ log.version }}</a></td>
                                 <td>{{ log.action }}</td>
                                 <td>{{ log.loggedat | date('Y-m-d H:i:s') }}</td>
                                 <td>{{ log.username }}</td>
@@ -174,6 +219,7 @@
               <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
             </div>
         </div>
+        {{ form_rest(form) }}
     </form>
 
 {% endblock %}

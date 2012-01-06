@@ -12,3 +12,4 @@ services:
                 - { name: doctrine.event_listener, event: postPersist, method: postPersist }
                 - { name: doctrine.event_listener, event: prePersist, method: prePersist }
                 - { name: doctrine.event_listener, event: preRemove, method: preRemove }
+                - { name: doctrine.event_listener, event: postLoad, method: postLoad }
