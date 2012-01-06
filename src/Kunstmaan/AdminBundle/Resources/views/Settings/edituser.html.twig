@@ -1,15 +1,15 @@
 {% extends 'KunstmaanAdminBundle:Settings:index.html.twig' %}
 
 {% block subbreadcrumb %}
-	<li><a href="{{ path('KunstmaanAdminBundle_settings') }}">Settings</a></li>
-    <li><a href="{{ path('KunstmaanAdminBundle_settings_users') }}">Users</a></li>
-	<li class="active">{{ 'settings.users.edit' | trans }}</li>
+	<li><a href="{{ path('KunstmaanAdminBundle_settings') }}">{{ 'settings.title' | trans }}</a></li>
+    <li><a href="{{ path('KunstmaanAdminBundle_settings_users') }}">{{ 'settings.users' | trans }}</a></li>
+	<li class="active">{{ 'settings.user.edit' | trans }}</li>
 {% endblock %}
 
 {% block content %}
 
     <div class="page-header">
-        <h1>{{ 'settings.users.edit' | trans }}</h1>
+        <h1>{{ 'settings.user.edit' | trans }}</h1>
     </div>
 
     <form action="{{ path('KunstmaanAdminBundle_settings_users_edit', { 'user_id' : user.id }) }}" method="post" {{ form_enctype(form) }}>
@@ -53,7 +53,7 @@
         </div>
         {{ form_rest(form) }}
         <div class="actions">
-            <input class="btn primary type" type="submit" value="{{ 'settings.user.add' | trans }}">
+            <input class="btn primary type" type="submit" value="{{ 'settings.user.edit' | trans }}">
             <input onclick="window.location = '{{ path('KunstmaanAdminBundle_settings_users') }}'" type="reset" class="btn" value="{{ 'form.cancel' | trans }}" />
         </div>
     </fieldset>
