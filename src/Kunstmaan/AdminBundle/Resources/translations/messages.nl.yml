@@ -18,6 +18,7 @@ settings:
     name: Naam
     edit: Pas aan
     add: Toevoegen
+    roles: Rollen
 
 # Tools
 tools:

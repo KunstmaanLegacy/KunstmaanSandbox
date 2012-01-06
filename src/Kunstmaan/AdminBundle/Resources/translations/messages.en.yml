@@ -18,6 +18,7 @@ settings:
       name: Name
       edit: Edit
       add: Add
+      roles: Roles
 
 # Tools
 tools:
