@@ -14,6 +14,21 @@ settings:
   users: Gebruikers
   maintanance: Onderhoud
   scheduled: Geplande jobs
+  group: Groepen
+  groups:
+    name: Naam
+    edit: Pas aan
+    add: Toevoegen
+  users: Gebruikers
+  user:
+    username: Gebruikersnaam
+    password: Paswoord
+    repeatedpassword: Herhaal paswoord
+    email: E-mail
+    enabled: Geactiveerd
+    roles: Groepen
+    add: Voeg gebruiker toe
+    edit: Pas gebruiker aan
 
 # Tools
 tools:
@@ -45,3 +60,13 @@ form:
   forgot:
     password: Paswoord vergeten?
   properties: Eigenschappen
+  permissions: Rechten
+  addfilter: Voeg filter toe
+  actions: Acties
+  
+omnext:
+  home: Startpagina
+  title: OpenMercury.NEXT
+  welcome: Welkom.<small> OpenMercury.NEXT applicatie administratie....</small>
+  information: <strong>Informatie. </strong> Er zijn geen nieuwe notificaties.
+

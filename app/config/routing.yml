@@ -1,6 +1,7 @@
 
 KunstmaanDemoBundle:
     resource: "@KunstmaanDemoBundle/Resources/config/routing.yml"
+<<<<<<< HEAD
     prefix:   /{_locale}/
     requirements: 
       _locale: nl|fr|en
@@ -54,3 +55,6 @@ KunstmaanViewBundle_slug:
     prefix:   /{_locale}/
     requirements: 
       _locale: nl|en|fr
+=======
+    prefix:   /
+>>>>>>> e5b627059ae5683d59d6b42056bff85237adc165

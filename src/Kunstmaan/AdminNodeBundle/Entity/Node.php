@@ -59,6 +59,11 @@ class Node
     protected $slug;
 
     /**
+     * @ORM\Column(type="array", nullable=false)
+     */
+    protected $roles;
+
+    /**
      * @ORM\Column(type="datetime")
      */
     protected $created;
@@ -219,9 +224,9 @@ class Node
     /**
      * Add children
      *
-     * @param Node $children
+     * @param \Kunstmaan\AdminBundle\Entity\Page $children
      */
-    public function addChild(Node $child)
+    public function addChild(Page $child)
     {
         $this->children[] = $child;
 
@@ -320,6 +325,27 @@ class Node
     }
 
     /**
+     * Set the roles
+     *
+     * @param $roles
+     */
+    public function setRoles($roles)
+    {
+        $this->roles = $roles;
+    }
+
+    /**
+     * Get the roles
+     *
+     * @return mixed
+     */
+    public function getRoles()
+    {
+        return $this->roles;
+    }
+
+
+    /**
      * Add children
      *
      * @param Node $children
@@ -329,8 +355,8 @@ class Node
         $this->children[] = $children;
     }
 
-    public function getDefaultAdminType() {
-        return new NodeAdminType();
+    public function getDefaultAdminType($container){
+        return new NodeAdminType($container);
     }
     
     public function getRef($em) {

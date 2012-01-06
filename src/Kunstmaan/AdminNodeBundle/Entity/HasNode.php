@@ -21,4 +21,10 @@ interface HasNode {
     
     public function setParent(HasNode $hasNode);
 
+    /**
+     * Return an array containing all possible permissions for the page
+     * @abstract
+     * @return array
+     */
+    public function getPossiblePermissions();
 }

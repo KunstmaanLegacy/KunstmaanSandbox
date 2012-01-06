@@ -14,6 +14,21 @@ settings:
   users: Users
   maintanance: Maintenance
   scheduled: Scheduled Jobs
+  group: Groups
+  groups:
+      name: Name
+      edit: Edit
+      add: Add
+  users: Users
+  user:
+      username: Username
+      password: Password
+      repeatedpassword: Repeat password
+      email: E-mail
+      enabled: Enabled
+      roles: Groups
+      add: Add User
+      edit: Edit User   
 
 # Tools
 tools:
@@ -39,7 +54,12 @@ form:
   headsup: Heads up
   forgot:
     password: Forgot my password.
+  permissions: Permissions
   properties: Properties 
+  createdat: Created At
+  updatedat: Updated At
+  actions: Actions
+  addfilter: Add filter
     
 omnext:
   home: Home

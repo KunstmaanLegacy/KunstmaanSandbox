@@ -2,13 +2,12 @@ parameters:
 #    kunstmaan_admin.example.class: Kunstmaan\AdminBundle\Example
 
 services:
-    kunstmaan_media.media_menu:
-        class: Kunstmaan\MediaBundle\Menu\MediaMenuAdaptor
-        arguments: ["@knp_menu.factory"]
-
     kunstmaan_admin.menu_builder:
         class: Kunstmaan\AdminBundle\Menu\MenuBuilder
         arguments: ["@knp_menu.factory", "@translator", [@kunstmaan_media.media_menu]]
+
+    kunstmaan_admin.permissionmanager:
+        class: Kunstmaan\AdminBundle\Permission\Manager
 
     kunstmaan_admin.menu.main:
         class: Knp\Menu\MenuItem # the service definition requires setting the class
@@ -19,3 +18,10 @@ services:
         tags:
             - { name: knp_menu.menu, alias: main } # The alias is what is used to retrieve the menu
 
+    kunstmaan_admin.permissionadmin:
+        class: Kunstmaan\AdminBundle\Permission\PermissionAdmin
+
+    permissionsadmin.twig.extension:
+        class: Kunstmaan\AdminBundle\Twig\Extension\AdminPermissionsTwigExtension
+        tags:
+            -  { name: twig.extension }

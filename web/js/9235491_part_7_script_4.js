@@ -1,10 +1,10 @@
 // Author: Indri & Ibe
+
+// Init functions needed on every page
 $(document).ready(function () {
 	init_tree();
-	init_DragDrop();
 	init_main_functions();
 	initTop();
-	initDel();
 	initCancel();
 });
 
@@ -22,49 +22,49 @@ function init_tree() {
 				//Page
 				"page" : {
 					"icon" : {
-						"image" : "/bundles/kunstmaanadmin/js/libs/themes/OMNext/d.png",
+						"image" : "js/libs/themes/OMNext/d.png",
 						"position" : "-57px -57px" 
 					}
 				},				
 				//Site
 				"site" : {
 					"icon" : {
-						"image" : "/bundles/kunstmaanadmin/js/libs/themes/OMNext/d.png",
+						"image" : "js/libs/themes/OMNext/d.png",
 						"position" : "-75px -38px" 
 					}
 				},
 				//Settings
 				"settings" : {
 					"icon" : {
-						"image" : "/bundles/kunstmaanadmin/js/libs/themes/OMNext/d.png",
+						"image" : "js/libs/themes/OMNext/d.png",
 						"position" : "-57px -37px" 
 					}
 				},
 				//Image
 				"image" : {
 					"icon" : {
-						"image" : "/bundles/kunstmaanadmin/js/libs/themes/OMNext/d.png",
+						"image" : "js/libs/themes/OMNext/d.png",
 						"position" : "-20px -74px" 
 					}
 				},
 				//Video
 				"video" : {
 					"icon" : {
-						"image" : "/bundles/kunstmaanadmin/js/libs/themes/OMNext/d.png",
+						"image" : "js/libs/themes/OMNext/d.png",
 						"position" : "-75px -55px" 
 					}
 				},
 				//Slideshow
-				"slide" : {
+				"slideshow" : {
 					"icon" : {
-						"image" : "/bundles/kunstmaanadmin/js/libs/themes/OMNext/d.png",
+						"image" : "js/libs/themes/OMNext/d.png",
 						"position" : "-2px -72px" 
 					}
 				},
 				//Files
 				"files" : {
 					"icon" : {
-						"image" : "/bundles/kunstmaanadmin/js/libs/themes/OMNext/d.png",
+						"image" : "js/libs/themes/OMNext/d.png",
 						"position" : "-38px -72px" 
 					}
 				}
@@ -92,9 +92,9 @@ function init_tree() {
 	
 }
 
-//Drag and Drop
+// Drag and Drop
 function init_DragDrop() {
-	$('#pageparts').sortable({  
+	$('#parts').sortable({  
 	    handle: '.prop_bar',  
 	    cursor: 'move',  
 	    placeholder: 'placeholder',  
@@ -104,6 +104,7 @@ function init_DragDrop() {
 	    opacity: 1,
 		start: function(e, ui) {
 			$('.draggable').css('opacity', ".4");
+			$('.ui-sortable-helper .new_pagepart').slideUp("fast");
 		},
 		stop: function(e, ui) {
 			$('.draggable').css('opacity', "1");
@@ -115,23 +116,23 @@ function init_DragDrop() {
 
  
 
-//Drop down main_actions
+// Drop down main_actions
 function init_main_functions() {
 	$(window).scroll(
 		function() {
 			var scrollTop = $(this).scrollTop();
 			if(scrollTop >= 180){
-				$('.main_actions_top').addClass('slideDown');
+				$('#main_actions_top').addClass('slideDown');
 			}
 			
 			if(scrollTop < 180){
-				$('.main_actions_top').removeClass('slideDown');
+				$('#main_actions_top').removeClass('slideDown');
 			}		
 		}
 	);
 }
 
-///// Toplink /////
+// Toplink
 function initTop() {
 	$(".up").click(function(e) {
 		e.preventDefault();
@@ -139,7 +140,7 @@ function initTop() {
 	});
 }
 
-///// Media-Grid Helper /////
+// Media-Grid Helper
 function initDel() {
 	$('.media-grid .del').live("mouseover mouseout", function(e) {
 		if (e.type == "mouseover") {
@@ -163,26 +164,32 @@ function initCancel() {
 	});
 }
 
+// Datepicker
+function init_datePicker() {
+	$('.date-pick').datePicker();
+}
 
+// Toggle Properties
+function init_toggleProp() {
+	$("#toggle-properties").click(function(e){
+		e.preventDefault();
+		if ($(this).hasClass('big')) {
+			$("#prop_wrp").slideUp("slow").animate({opacity: 0},{queue: false, duration: "slow"}).addClass('small_prop').removeClass('big_prop');
+			$(this).removeClass('big').addClass('small').html('Show Properties');
+			
+			
+					
+		}
+		else {
+			$("#prop_wrp").slideDown("slow").animate({opacity: 1},{queue: false, duration: "slow"}).addClass('small_prop').removeClass('big_prop');
+			$(this).removeClass('small').addClass('big').html('Hide Properties');
+		}
+	});
+}
 
+//Twipsy
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function init_twipsy() {
+	$("a[rel=twipsy]").twipsy({live:true});
+};
 

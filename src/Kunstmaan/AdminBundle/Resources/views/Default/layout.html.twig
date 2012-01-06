@@ -26,8 +26,9 @@
     	'@KunstmaanAdminBundle/Resources/public/js/libs/jquery-ui-1.8.16.custom.min.js'
     	'@KunstmaanAdminBundle/Resources/public/js/libs/bootstrap-twipsy.js'
         '@KunstmaanAdminBundle/Resources/public/js/libs/*'
-    	'@KunstmaanAdminBundle/Resources/public/js/plugins.js'
-    	'@KunstmaanAdminBundle/Resources/public/js/upload.js'
+        '@KunstmaanAdminBundle/Resources/public/js/ckeditor/ckeditor.js'
+		'@KunstmaanAdminBundle/Resources/public/js/plugins.js'
+    	'@KunstmaanAdminBundle/Resources/public/js/script.js'
     %}
     <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
@@ -67,37 +68,47 @@
     <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('bundles/kunstmaanadmin/img/apple-touch-icon-114x114.png') }}">
   </head>
   <body>
+  <header>
     <div class="topbar" data-dropdown="dropdown">
       <div class="topbar-inner">
         <div class="container-fluid">
           <a class="brand" href="{{ path('KunstmaanAdminBundle_homepage') }}">{{ 'omnext.title' | trans }}</a>
+          <nav>
           {{ knp_menu_render('main', { 'currentClass': 'active' }) }}
           <ul class="nav secondary-nav"> 
+          	<!-- <li class="dropdown"> 
+				<a href="#" class="dropdown-toggle">Tooltips On</a> 
+				<ul class="dropdown-menu"> 
+					<li><a href="#">Tooltips Off</a></li> 
+				</ul> 
+			</li>-->
           	{% set route = app.request.attributes.get('_route') %}
             {{ app.request.attributes.remove('_route') }}
             {% set attribs = app.request.attributes.all %}
-          	<li {% if app.request.attributes.get('_locale') == "en" %}class="active"{% endif %}><a {% if app.request.attributes.get('_locale') == "en" %}style="color: #049CDB"{% endif %} href="{{ path(route,  attribs|merge({ '_locale': 'en' })) }}">en</a></li>
-          	<li {% if app.request.attributes.get('_locale') == "nl" %}class="active"{% endif %}><a {% if app.request.attributes.get('_locale') == "nl" %}style="color: #049CDB"{% endif %} href="{{ path(route,  attribs|merge({ '_locale': 'nl' })) }}">nl</a></li>
-          	<li {% if app.request.attributes.get('_locale') == "fr" %}class="active"{% endif %}><a {% if app.request.attributes.get('_locale') == "fr" %}style="color: #049CDB"{% endif %} href="{{ path(route,  attribs|merge({ '_locale': 'fr' })) }}">fr</a></li>
-          	<li {% if route == 'fos_user_profile_show' %}class="active"{% endif %}><a href="{{ path('fos_user_profile_show') }}">{{ 'layout.logged_in_as'|trans({'%username%':app.user.username}, 'FOSUserBundle') }}</a></li>
+            <li class="dropdown language">
+          		{% include 'KunstmaanAdminBundle:Default:'~ app.request.attributes.get('_locale') ~'languagechooser.html.twig' %}
+          	</li>	
+          	<li {% if route == 'KunstmaanAdminBundle_settings_users_edit' %}class="active"{% endif %}><a href="{{ path('KunstmaanAdminBundle_settings_users_edit', { 'user_id' : app.user.id }) }}">{{ 'layout.logged_in_as'|trans({'%username%':app.user.username}, 'FOSUserBundle') }}</a></li>
           	<li><a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></li>
           </ul>
+          </nav>
         </div>
       </div>
     </div>
+    </header>
     <div class="container-fluid">
-      <div class="sidebar">
+      <aside class="sidebar">
 	      {% block sidebar %} {% endblock %} 
-      </div>
+      </aside>
       <div class="content">
       	{% block breadcrumb %} {% endblock %}
         {% block content %} {% endblock %}
       </div>
+    </div>
       <footer>
         <div class="container-fluid">
           <p class="pull-right"><a target="_blank" href="http://www.kunstmaan.be"><img src="{{ asset('bundles/kunstmaanadmin/img/general/kunstmaan.png') }}" width="83" height="16" alt="Kunstmaan" class="kunstmaan-logo" /></a></p>
         </div>
       </footer>
-    </div>
   </body>
 </html>

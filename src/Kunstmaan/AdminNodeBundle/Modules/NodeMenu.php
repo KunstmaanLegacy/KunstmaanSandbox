@@ -1,26 +1,25 @@
 <?php
-// src/Acme/DemoBundle/Menu/Builder.php
+
 namespace Kunstmaan\AdminNodeBundle\Modules;
 
 use Kunstmaan\AdminNodeBundle\Entity\Node;
-
 use Symfony\Component\Translation\Translator;
-
 use Knp\Menu\FactoryInterface;
-use Symfony\Component\DependencyInjection\ContainerAware;
 
 class NodeMenu
 {
     private $em;
     private $topNodeMenuItems = array();
     private $breadCrumb = array();
+    private $container = null;
 
     /**
      * @param FactoryInterface $factory
      */
-    public function __construct($em, $currentNode)
+    public function __construct($container, $currentNode)
     {
-        $this->em = $em;
+        $this->container = $container;
+        $this->em = $this->container->get('doctrine.orm.entity_manager');
         $tempNode = $currentNode;
         
         //Breadcrumb
@@ -31,17 +30,19 @@ class NodeMenu
         }
         $parentNode = null;
         foreach($nodeBreadCrumb as $nodeBreadCrumbItem){
-        	$this->breadCrumb[] = new NodeMenuItem($em, $nodeBreadCrumbItem, $parentNode, $this);
+        	$this->breadCrumb[] = new NodeMenuItem($this->em, $nodeBreadCrumbItem, $parentNode, $this);
         	$parentNode = $nodeBreadCrumbItem;
         }
-        
+
+        $user = $this->container->get('security.context')->getToken()->getUser();
+
         //topNodes
-        $topNodes = $this->em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes();
+        $topNodes = $this->em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes($user, 'write');
         foreach($topNodes as $topNode){
         	if(sizeof($this->breadCrumb)>0 && $this->breadCrumb[0]->getNode()->getId() == $topNode->getId()){
         		$this->topNodeMenuItems[] = $this->breadCrumb[0];
         	} else {
-        		$this->topNodeMenuItems[] = new NodeMenuItem($em, $topNode, null, $this);
+        		$this->topNodeMenuItems[] = new NodeMenuItem($this->em, $topNode, null, $this);
         	}
         }
     }

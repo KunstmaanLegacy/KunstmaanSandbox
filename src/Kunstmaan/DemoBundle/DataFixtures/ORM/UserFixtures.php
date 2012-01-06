@@ -17,8 +17,11 @@ class UserFixtures extends AbstractFixture implements OrderedFixtureInterface
         $user1->setRoles(array("ROLE_SUPER_ADMIN"));
         $user1->setEmail("test@example.be");
         $user1->setEnabled(true);
+        $user1->addGroup($manager->merge($this->getReference('kunstmaan-group')));
+
         $manager->persist($user1);
         $manager->flush();
+
 
         $user2 = new User();
         $user2->setUsername("kris");
@@ -26,8 +29,11 @@ class UserFixtures extends AbstractFixture implements OrderedFixtureInterface
         $user2->setRoles(array("ROLE_ADMIN"));
         $user2->setEmail("kris.pypen@kunstmaan.be");
         $user2->setEnabled(true);
+        $user2->addGroup($manager->merge($this->getReference('kunstmaan-group')));
+
         $manager->persist($user2);
         $manager->flush();
+
 
         $user3 = new User();
         $user3->setUsername("kristof");
@@ -35,13 +41,27 @@ class UserFixtures extends AbstractFixture implements OrderedFixtureInterface
         $user3->setRoles(array("ROLE_ADMIN"));
         $user3->setEmail("kristof.van.cauwenbergh@kunstmaan.be");
         $user3->setEnabled(true);
+        $user3->addGroup($manager->merge($this->getReference('kunstmaan-group')));
+
         $manager->persist($user3);
+        $manager->flush();
+
+
+        $user4 = new User();
+        $user4->setUsername("kim");
+        $user4->setPlainPassword("test");
+        $user4->setRoles(array("ROLE_ADMIN"));
+        $user4->setEmail("kim.ausloos@kunstmaan.be");
+        $user4->setEnabled(true);
+        $user4->addGroup($manager->merge($this->getReference('guest-group')));
+
+        $manager->persist($user4);
         $manager->flush();
     }
 
     public function getOrder()
     {
-        return 1;
+        return 2;
     }
 
 }

@@ -1,11 +1,7 @@
 {% extends 'KunstmaanAdminBundle:Pages:index.html.twig' %}
 
-{% form_theme form 'KunstmaanAdminBundle:Form:fields.html.twig' %}
-
-{% block breadcrumb %}
-<ul class="breadcrumb">
-    <li><a href="{{ path('KunstmaanAdminBundle_homepage') }}">{{ 'omnext.home' | trans }}</a></li>
-    <li><a href="{{ path('KunstmaanAdminBundle_pages') }}">{{ 'pages.title' | trans }}</a></li>
+{% block subbreadcrumb %}
+	<li><a href="{{ path('KunstmaanAdminBundle_pages') }}">{{ 'pages.title' | trans }}</a></li>
     {% for node in nodemenu.breadCrumb %}
     	{% if nodemenu.current.id == node.id and not draft %}
     		<li>{{ node.title }}</li>
@@ -13,10 +9,9 @@
     		<li><a href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': node.id}) }}">{{ node.title }}</a></li>
     	{% endif %}
     {% endfor %}
-    {% if draft %}
+	{% if draft %}
    		<li>{{ 'pages.draft' | trans }}</li>
    	{% endif %}
-</ul>
 {% endblock %}
 
 {% block content %}
@@ -143,6 +138,10 @@
     </div>
         <ul class="tabs" data-tabs="tabs">
             <li class="active"><a href="#pageparts">{{ 'pages.parts' | trans }}</a></li>
+            <li><a href="#home">{{ 'form.properties' | trans }}</a></li>
+            {% if is_granted('ROLE_PERMISSIONMANAGER') %}
+            <li><a href="#permissions">{{ 'form.permissions' | trans }}</a></li>
+            {% endif %}
             <li><a href="#seo">SEO</a></li>
             <li><a href="#versions">Versions</a></li>
             {#<li><a href="#children">Children</a></li>
@@ -163,14 +162,29 @@
         </ul>
         <div id="my-tab-content" class="tab-content">
             <div class="active tab-pane" id="pageparts">
-              <div id="properties">
-              	<div id="prop_wrp" style="padding-top:18px">
-	              {{ form_widget(form.main) }}
-	              
-	            </div>
-	          </div>
-              {{ pagepartadmin_widget(pagepartadmin, form) }}
+
+                {{ pagepartadmin_widget(pagepartadmin, form) }}
+                <div class="actions">
+                    <input type="submit" class="btn primary" value="{{ 'form.save' | trans }}">
+                </div>
             </div>
+            <div class="tab-pane" id="home">
+                {{ form_widget(form.main) }}
+                {{ form_widget(form.node) }}
+                <div class="actions">
+                    <input type="submit" class="btn primary" value="{{ 'form.save' | trans }}">
+                </div>
+            </div>
+
+            {% if is_granted('ROLE_PERMISSIONMANAGER') %}
+            <div class="tab-pane" id="permissions">
+                {{ permissionsadmin_widget(permissionadmin, form) }}
+                <div class="actions">
+                    <input type="submit" class="btn primary" value="{{ 'form.save' | trans }}">
+                </div>
+            </div>
+            {% endif %}
+
             <div class="tab-pane" id="children">
                 <table class="bordered-table zebra-striped">
                     <thead>
@@ -217,6 +231,15 @@
             </div>
             <div class="tab-pane" id="seo">
               <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+                <div class="actions">
+                    <input type="submit" class="btn primary" value="Save changes">
+                </div>
+            </div>
+            <div class="tab-pane" id="mdo">
+              <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+                <div class="actions">
+                    <input type="submit" class="btn primary" value="Save changes">
+                </div>
             </div>
         </div>
         {{ form_rest(form) }}
