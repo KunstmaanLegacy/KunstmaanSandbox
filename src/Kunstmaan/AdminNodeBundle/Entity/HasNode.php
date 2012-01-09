@@ -16,6 +16,10 @@ interface HasNode {
     public function getTitle();
 
     public function isOnline();
+    
+    public function getParent();
+    
+    public function setParent(HasNode $hasNode);
 
     /**
      * Return an array containing all possible permissions for the page

@@ -2,6 +2,7 @@
 pages:
   title: Pagina's
   parts: Delen van de pagina
+  draft: Klad
 
 # Modules
 modules:
@@ -50,7 +51,7 @@ form:
   edit: Pas aan
   save: Bewaar
   publish: Publiceer
-  saveasdraft: Opslaan als draft
+  saveasdraft: Opslaan als klad
   name: Naam
   type: Soort
   error: Fout

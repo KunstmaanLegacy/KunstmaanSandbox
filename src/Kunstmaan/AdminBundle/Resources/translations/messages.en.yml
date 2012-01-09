@@ -2,6 +2,7 @@
 pages:
   title: Pages
   parts: PageParts
+  draft: Draft
 
 # Modules
 modules:
