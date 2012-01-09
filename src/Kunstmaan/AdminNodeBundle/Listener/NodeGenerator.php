@@ -33,14 +33,10 @@ class NodeGenerator {
             $entityrepo = $em->getRepository($classname);
             $node = $this->getNode($em, $entity->getId(), $classname);
             if($node==null){
-            	return;
-            	/*
-            	error_log("node is null for entity with id ".$entity->getId());
                 $node = new Node();
                 $node->setRefId($entity->getId());
                 $node->setRefEntityname($classname);
                 $node->setSequencenumber(1);
-                */
             }
             $parent = $entity->getParent();
             if($parent){
