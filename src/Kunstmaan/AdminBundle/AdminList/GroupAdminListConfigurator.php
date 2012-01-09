@@ -23,7 +23,7 @@ class GroupAdminListConfigurator extends AbstractAdminListConfigurator{
 	public function buildFields()
     {
     	$this->addField("name", "Name", true);
-    	$this->addField("roles", "Roles", true);
+    	$this->addField("roles", "Roles", false);
     }
 
 	public function canAdd() {

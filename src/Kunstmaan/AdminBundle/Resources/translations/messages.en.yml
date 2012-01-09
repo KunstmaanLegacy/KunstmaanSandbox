@@ -11,7 +11,6 @@ modules:
 # Settings
 settings:
   title: Settings
-  users: Users
   maintanance: Maintenance
   scheduled: Scheduled Jobs
   group: Groups
@@ -19,6 +18,7 @@ settings:
       name: Name
       edit: Edit
       add: Add
+      roles: Roles
   users: Users
   user:
       username: Username
@@ -28,7 +28,7 @@ settings:
       enabled: Enabled
       roles: Groups
       add: Add User
-      edit: Edit User   
+      edit: Edit User
 
 # Tools
 tools:

@@ -57,11 +57,23 @@ class UserFixtures extends AbstractFixture implements OrderedFixtureInterface
 
         $manager->persist($user4);
         $manager->flush();
+
+
+        $user5 = new User();
+        $user5->setUsername("guest");
+        $user5->setPlainPassword("guest");
+        $user5->setRoles(array("ROLE_GUEST"));
+        $user5->setEmail("guest@kunstmaan.be");
+        $user5->setEnabled(false);
+        $user5->addGroup($manager->merge($this->getReference('guest-group')));
+
+        $manager->persist($user5);
+        $manager->flush();
     }
 
     public function getOrder()
     {
-        return 2;
+        return 3;
     }
 
 }

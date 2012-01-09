@@ -56,7 +56,7 @@ class SlugController extends Controller
             throw $this->createNotFoundException("The requested page is not online");
         }
 
-        $currentUser = $this->container->get('security.context')->getToken()->getUser();
+        $currentUser = $this->get('security.context')->getToken()->getUser();
 
         $permissionManager = $this->get('kunstmaan_admin.permissionmanager');
         $canViewPage = $permissionManager->hasPermision($page, $currentUser, 'read', $em);
