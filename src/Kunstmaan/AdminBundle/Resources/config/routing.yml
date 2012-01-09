@@ -10,13 +10,8 @@ KunstmaanAdminBundle_pages:
     type:     annotation
     prefix:   /{_locale}/admin/pages
     requirements:
-<<<<<<< HEAD
-        _locale: en|nl|fr
-
-=======
         _locale: en|nl|fr 
-    
->>>>>>> e5b627059ae5683d59d6b42056bff85237adc165
+
 KunstmaanAdminBundle_modules:
     resource: "@KunstmaanAdminBundle/Controller/ModulesController.php"
     type:     annotation

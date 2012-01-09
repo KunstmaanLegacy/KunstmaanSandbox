@@ -224,9 +224,9 @@ class Node
     /**
      * Add children
      *
-     * @param \Kunstmaan\AdminBundle\Entity\Page $children
+     * @param \Kunstmaan\AdminNodeBundle\Entity\Node $children
      */
-    public function addChild(Page $child)
+    public function addChild(Node $child)
     {
         $this->children[] = $child;
 

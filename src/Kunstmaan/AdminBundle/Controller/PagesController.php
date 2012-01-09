@@ -10,8 +10,6 @@ use Kunstmaan\AdminNodeBundle\Modules\NodeMenu;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Kunstmaan\AdminBundle\Form\PageAdminType;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Kunstmaan\AdminBundle\Entity\PageIFace;
 use Kunstmaan\DemoBundle\AdminList\PageAdminListConfigurator;
 use Kunstmaan\DemoBundle\PagePartAdmin\PagePartAdminConfigurator;
@@ -208,6 +206,8 @@ class PagesController extends Controller
             'logs'              => $logs,
             'nodemenu'          => $nodeMenu,
             'node'              => $node,
+        	'draft'             => $draft,
+        	'subaction'         => $subaction
         );
         if($this->get('security.context')->isGranted('ROLE_PERMISSIONMANAGER')){
             $viewVariables['permissionadmin'] = $permissionadmin;

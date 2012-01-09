@@ -33,7 +33,6 @@ class NodeGenerator {
             $entityrepo = $em->getRepository($classname);
             $node = $this->getNode($em, $entity->getId(), $classname);
             if($node==null){
-            	error_log("node is null for entity with id ".$entity->getId());
             	return;
             	/*
             	error_log("node is null for entity with id ".$entity->getId());
@@ -43,7 +42,6 @@ class NodeGenerator {
                 $node->setSequencenumber(1);
                 */
             }
-            error_log("node is not null for entity with id ".$entity->getId());
             $parent = $entity->getParent();
             if($parent){
             	$parentNode = $em->getRepository('KunstmaanAdminNodeBundle:Node')->findOneBy(array('refId' => $parent->getId(), 'refEntityname' => ClassLookup::getClass($parent)));

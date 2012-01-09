@@ -25,7 +25,7 @@ class SlugController extends Controller
 		if($node){
 			$page = $node->getRef($em);
 			$page = $page = $em->getRepository('KunstmaanAdminBundle:DraftConnector')->getDraft($page);
-			$nodeMenu = new NodeMenu($em, $node);
+			$nodeMenu = new NodeMenu($this->container, $node);
 			//3. render page
 			$pageparts = $em->getRepository('KunstmaanPagePartBundle:PagePartRef')->getPageParts($page);
 			return array(
@@ -62,7 +62,7 @@ class SlugController extends Controller
         $canViewPage = $permissionManager->hasPermision($page, $currentUser, 'read', $em);
 
         if($canViewPage) {
-            $nodeMenu = new NodeMenu($em, $node);
+            $nodeMenu = new NodeMenu($this->container, $node);
 
         	//render page
         	$pageparts = $em->getRepository('KunstmaanPagePartBundle:PagePartRef')->getPageParts($page);
