@@ -1,10 +1,11 @@
+; Symfony bundles
 [symfony]
     git=http://github.com/symfony/symfony.git
-    version=v2.0.7
+    version=v2.0.9
 
 [twig]
     git=http://github.com/fabpot/Twig.git
-    version=v1.4.0
+    version=v1.5.1
 
 [monolog]
     git=http://github.com/Seldaek/monolog.git
@@ -20,18 +21,11 @@
 
 [doctrine]
     git=http://github.com/doctrine/doctrine2.git
-    version=2.1.4
-
-[doctrine-fixtures]
-    git=http://github.com/doctrine/data-fixtures.git
-
-[DoctrineFixturesBundle]
-    git=http://github.com/symfony/DoctrineFixturesBundle.git
-    target=/bundles/Symfony/Bundle/DoctrineFixturesBundle
+    version=2.1.5
 
 [swiftmailer]
     git=http://github.com/swiftmailer/swiftmailer.git
-    version=v4.1.3
+    version=v4.1.5
 
 [assetic]
     git=http://github.com/kriswallsmith/assetic.git
@@ -43,18 +37,6 @@
 [metadata]
     git=http://github.com/schmittjoh/metadata.git
     version=1.0.0
-
-[Imagine]
-    git=git://github.com/avalanche123/Imagine.git
-    target=/Imagine
-
-[AvalancheImagineBundle]
-    git=http://github.com/avalanche123/AvalancheImagineBundle.git
-    target=bundles/Avalanche/Bundle/ImagineBundle
-
-[gaufrette]
-    git=git://github.com/KnpLabs/Gaufrette.git
-    target=/gaufrette
 
 [SensioFrameworkExtraBundle]
     git=http://github.com/sensio/SensioFrameworkExtraBundle.git
@@ -80,6 +62,27 @@
     git=http://github.com/symfony/AsseticBundle.git
     target=/bundles/Symfony/Bundle/AsseticBundle
     version=v1.0.1
+
+
+; Extra bundles
+[doctrine-fixtures]
+    git=http://github.com/doctrine/data-fixtures.git
+
+[DoctrineFixturesBundle]
+    git=http://github.com/symfony/DoctrineFixturesBundle.git
+    target=/bundles/Symfony/Bundle/DoctrineFixturesBundle
+
+[Imagine]
+    git=git://github.com/avalanche123/Imagine.git
+    target=/Imagine
+
+[AvalancheImagineBundle]
+    git=http://github.com/avalanche123/AvalancheImagineBundle.git
+    target=bundles/Avalanche/Bundle/ImagineBundle
+
+[gaufrette]
+    git=git://github.com/KnpLabs/Gaufrette.git
+    target=/gaufrette
 
 [FOSUserBundle]
     git=git://github.com/FriendsOfSymfony/FOSUserBundle.git
