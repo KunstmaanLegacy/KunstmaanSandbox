@@ -6,8 +6,7 @@ use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
 
-class GroupType extends AbstractType
-{
+class GroupType extends AbstractType {
     private $container;
 
     public function __construct(Container $container){
@@ -16,13 +15,12 @@ class GroupType extends AbstractType
 
     public function buildForm(FormBuilder $builder, array $options) {
         $builder->add('name');
-        $builder->add('rolescollection', 'choice', array(
+        $builder->add('rolescollection', null, array(
             'expanded'  => false, //change to true to expand to checkboxes
         ));
     }
 
-    public function getName()
-    {
+    public function getName() {
         return 'group';
     }
 }

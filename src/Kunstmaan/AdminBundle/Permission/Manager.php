@@ -10,8 +10,17 @@ use Doctrine\ORM\NoResultException;
 class Manager
 {
 
-    public function hasPermision($entity, User $user, $permission, EntityManager $em)
+    public function getCurrentUser($user, $em) {
+        if(! $user instanceof User) {
+            $user = $em->getRepository('KunstmaanAdminBundle:User')->findOneBy(array('username' => 'guest'));
+        }
+
+        return $user;
+    }
+
+    public function hasPermision($entity, $user, $permission, EntityManager $em)
     {
+        $user = $this->getCurrentUser($user, $em);
         try {
             $result = $em->getRepository('KunstmaanAdminBundle:Permission')->getPermission(
                 get_class($entity),

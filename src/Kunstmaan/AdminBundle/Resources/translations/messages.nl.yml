@@ -10,7 +10,6 @@ modules:
 # Settings
 settings:
   title: Instellingen
-  users: Gebruikers
   maintanance: Onderhoud
   scheduled: Geplande jobs
   group: Groepen
@@ -18,6 +17,7 @@ settings:
     name: Naam
     edit: Pas aan
     add: Toevoegen
+    roles: Rollen
   users: Gebruikers
   user:
     username: Gebruikersnaam

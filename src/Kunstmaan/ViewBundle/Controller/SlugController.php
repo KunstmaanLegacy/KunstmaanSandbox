@@ -32,16 +32,16 @@ class SlugController extends Controller
             throw $this->createNotFoundException("The requested page is not online");
         }
 
-        $currentUser = $this->container->get('security.context')->getToken()->getUser();
+        $currentUser = $this->get('security.context')->getToken()->getUser();
 
         $permissionManager = $this->get('kunstmaan_admin.permissionmanager');
         $canViewPage = $permissionManager->hasPermision($page, $currentUser, 'read', $em);
 
         if($canViewPage) {
-            $nodeMenu = new NodeMenu($em, $node);
+            $nodeMenu = new NodeMenu($this->container, $node);
 
         	//render page
-        	$pageparts = $em->getRepository('KunstmaanPagePartBundle:PagePartRef')->getPageParts($em, $page);
+        	$pageparts = $em->getRepository('KunstmaanPagePartBundle:PagePartRef')->getPageParts($page);
             return array(
                 'page'      => $page,
                 'pageparts' => $pageparts,
