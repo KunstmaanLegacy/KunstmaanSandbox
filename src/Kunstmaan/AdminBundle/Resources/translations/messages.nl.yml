@@ -17,7 +17,7 @@ settings:
   groups:
     name: Naam
     edit: Pas aan
-    add: Toevoegen
+    add: Groep toevoegen
     roles: Rollen
   users: Gebruikers
   user:
@@ -63,6 +63,7 @@ form:
   permissions: Rechten
   addfilter: Voeg filter toe
   actions: Acties
+  add: Voeg toe
   
 omnext:
   home: Startpagina
