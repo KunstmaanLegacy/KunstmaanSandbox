@@ -7,7 +7,7 @@ use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Kunstmaan\DemoBundle\Entity\MyExamplePage;
 
-class MyPageFixtures extends AbstractFixture implements OrderedFixtureInterface
+class MyExamplePageFixtures extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load($manager)
     {
