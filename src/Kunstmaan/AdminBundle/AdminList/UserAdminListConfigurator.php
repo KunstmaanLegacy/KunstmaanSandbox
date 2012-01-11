@@ -9,6 +9,8 @@
 
 namespace Kunstmaan\AdminBundle\AdminList;
 
+use Kunstmaan\AdminListBundle\AdminList\FilterDefinitions\BooleanFilterType;
+
 use Kunstmaan\AdminListBundle\AdminList\AdminListFilter;
 use Kunstmaan\AdminListBundle\AdminList\FilterDefinitions\DateFilterType;
 use Kunstmaan\AdminListBundle\AdminList\FilterDefinitions\StringFilterType;
@@ -19,12 +21,14 @@ class UserAdminListConfigurator extends AbstractAdminListConfigurator{
 	public function buildFilters(AdminListFilter $builder){
         $builder->add('username', new StringFilterType("username"));
         $builder->add('email', new StringFilterType("email"));
+        $builder->add('enabled', new BooleanFilterType("email"));
     }
     
 	public function buildFields()
     {
     	$this->addField("username", "Username", true);
     	$this->addField("email", "E-Mail", true);
+    	$this->addField("enabled", "Enabled", true);
     	$this->addField("lastlogin", "Last Login", false);
     	$this->addField("groups", "Groups", false); 	
     }

@@ -37,7 +37,7 @@ class UserType extends AbstractType
         		'type' => 'password', 
             	'invalid_message' => "The passwords don't match!"));
         $builder->add('email');
-        $builder->add('enabled');
+        $builder->add('enabled', 'checkbox', array('required' => false));
         $builder->add('groups', null, array(
             'expanded'  => false //change to true to expand to checkboxes
         ));
