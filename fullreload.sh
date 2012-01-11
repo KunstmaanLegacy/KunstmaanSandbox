@@ -1,3 +1,4 @@
+#!/bin/sh
 sudo chmod -R 777 app/cache/
 sudo chmod -R 777 app/logs/
 rm -R app/cache/*
