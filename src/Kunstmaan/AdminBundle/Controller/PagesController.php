@@ -11,7 +11,7 @@ use Kunstmaan\AdminNodeBundle\Modules\NodeMenu;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Kunstmaan\AdminBundle\Form\PageAdminType;
 use Kunstmaan\AdminBundle\Entity\PageIFace;
-use Kunstmaan\DemoBundle\AdminList\PageAdminListConfigurator;
+use Kunstmaan\AdminBundle\AdminList\PageAdminListConfigurator;
 use Kunstmaan\DemoBundle\PagePartAdmin\PagePartAdminConfigurator;
 use Kunstmaan\PagePartBundle\Form\TextPagePartAdminType;
 use Kunstmaan\AdminBundle\Form\NodeInfoAdminType;
@@ -81,6 +81,7 @@ class PagesController extends Controller
     {
     	$em = $this->getDoctrine()->getEntityManager();
     	$request = $this->getRequest();
+    	$locale = $request->getSession()->getLocale();
     	$saveasdraft = $request->get("saveasdraft");
     	$saveandpublish = $request->get("saveandpublish");
     	$draft = ($subaction == "draft");
@@ -97,14 +98,14 @@ class PagesController extends Controller
         }
         
         $addpage = $request->get("addpage");
-        $addpagetitle = $request->get("title");
         if(is_string($addpage) && $addpage != ''){
         	$newpage = new $addpage();
-        	$newpage->setTitle('New page');
         	if(is_string($addpagetitle) && $addpagetitle != ''){
         		$newpage->setTitle($addpagetitle);
+        	} else {
+        		$newpage->setTitle('New page');
         	}
-        	$newpage->setTranslatableLocale('en');
+        	$newpage->setTranslatableLocale($locale);
         	$em->persist($newpage);
         	$em->flush();
         	$nodeparent = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($page);
@@ -125,7 +126,6 @@ class PagesController extends Controller
         }
 
 		$page = $em->getRepository(ClassLookup::getClass($page))->find($id);  //'KunstmaanAdminBundle:Page'
-        $locale = $request->getSession()->getLocale();
         $page->setTranslatableLocale($locale);
         $em->refresh($page);
         $repo = $em->getRepository('StofDoctrineExtensionsBundle:LogEntry');
