@@ -3,6 +3,12 @@
 
 namespace Kunstmaan\DemoBundle\Entity;
 
+use Kunstmaan\AdminNodeBundle\Entity\HasNode;
+
+use Doctrine\ORM\EntityManager;
+
+use Kunstmaan\AdminBundle\Entity\DeepCloneableIFace;
+
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Translatable\Translatable;
 use Doctrine\ORM\Mapping as ORM;
@@ -23,7 +29,7 @@ use Kunstmaan\SearchBundle\Entity\Indexable;
  * @Gedmo\Loggable
  */
 
-class ExamplePage implements PageIFace, Translatable, Indexable
+class ExamplePage implements PageIFace, Translatable, Indexable, DeepCloneableIFace
 {
     /**
      * @ORM\Id
@@ -45,6 +51,21 @@ class ExamplePage implements PageIFace, Translatable, Indexable
      * this is not a mapped field of entity metadata, just a simple property
      */
     protected $locale;
+    
+    protected $parent;
+    
+    public function getParent(){
+    	return $this->parent;
+    }
+    
+    public function setParent(HasNode $parent){
+    	$this->parent = $parent;
+    }
+
+
+    protected $possiblePermissions = array(
+        'read', 'write', 'delete'
+    );
 
     public function __construct()
     {
@@ -126,5 +147,27 @@ class ExamplePage implements PageIFace, Translatable, Indexable
     public function setTranslatableLocale($locale)
     {
     	$this->locale = $locale;
+    }
+
+    public function getPossiblePermissions()
+    {
+        return $this->possiblePermissions;
+    }
+
+    
+    public function getPossibleChildPageTypes()
+    {
+    	$array[] = array('name' => 'ExamplePage', 'class'=>"Kunstmaan\DemoBundle\Entity\ExamplePage");
+    	$array[] = array('name' => 'MyExamplePage', 'class'=>"Kunstmaan\DemoBundle\Entity\MyExamplePage");
+    	return $array;
+    }
+    
+    public function deepClone(EntityManager $em){
+    	$newpage = new ExamplePage();
+    	$newpage->setTitle($this->getTitle());
+    	$em->persist($newpage);
+    	$em->flush();
+    	$em->getRepository('KunstmaanPagePartBundle:PagePartRef')->copyPageParts($em, $this, $newpage, $context = "main");
+    	return $newpage;
     }
 }

@@ -135,6 +135,10 @@
     git=https://github.com/KnpLabs/KnpMenuBundle.git
     target=bundles/WhiteOctober/PagerfantaBundle
 
+[KunstmaanAdminNodeBundle]
+    git=git@github.com:Kunstmaan/KunstmaanAdminNodeBundle.git
+    target=/bundles/Kunstmaan/AdminNodeBundle
+
 [DoctrineExtensions]
     git=git://github.com/l3pp4rd/DoctrineExtensions.git
     target=/gedmo-doctrine-extensions

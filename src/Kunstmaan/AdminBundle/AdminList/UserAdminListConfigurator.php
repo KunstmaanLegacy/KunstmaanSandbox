@@ -9,8 +9,9 @@
 
 namespace Kunstmaan\AdminBundle\AdminList;
 
-use Kunstmaan\AdminListBundle\AdminList\AdminListFilter;
+use Kunstmaan\AdminListBundle\AdminList\FilterDefinitions\BooleanFilterType;
 
+use Kunstmaan\AdminListBundle\AdminList\AdminListFilter;
 use Kunstmaan\AdminListBundle\AdminList\FilterDefinitions\DateFilterType;
 use Kunstmaan\AdminListBundle\AdminList\FilterDefinitions\StringFilterType;
 use Kunstmaan\AdminListBundle\AdminList\AbstractAdminListConfigurator;
@@ -20,30 +21,35 @@ class UserAdminListConfigurator extends AbstractAdminListConfigurator{
 	public function buildFilters(AdminListFilter $builder){
         $builder->add('username', new StringFilterType("username"));
         $builder->add('email', new StringFilterType("email"));
+        $builder->add('enabled', new BooleanFilterType("email"));
     }
     
 	public function buildFields()
     {
     	$this->addField("username", "Username", true);
     	$this->addField("email", "E-Mail", true);
+    	$this->addField("enabled", "Enabled", true);
     	$this->addField("lastlogin", "Last Login", false);
     	$this->addField("groups", "Groups", false); 	
     }
 
 	public function canAdd() {
-        return false;
+        return true;
     }
 
-    public function getAddUrlFor() {
-    	return "";
+    public function getAddUrlFor($params=array()) {
+    	return array(
+    			'user' => array('path' => 'KunstmaanAdminBundle_settings_users_add', 'params'=> $params)
+    	);
+
     }
 
     public function canEdit() {
-    	return false;
+    	return true;
     }
     
     public function getEditUrlFor($item) {
-    	return array();
+    	return array('path' => 'KunstmaanAdminBundle_settings_users_edit', 'params' => array( 'user_id' => $item->getId()));
     }
 
     public function canDelete($item) {
@@ -58,8 +64,24 @@ class UserAdminListConfigurator extends AbstractAdminListConfigurator{
         return 'KunstmaanAdminBundle:User';
     }
 
-    function adaptQueryBuilder($querybuilder) {
+    public function adaptQueryBuilder($querybuilder, $params=array()) {
         parent::adaptQueryBuilder($querybuilder);
         //not needed to change something here yet but already
+    }
+
+
+    public function getValue($item, $columnName) {
+        $result = parent::getValue($item, $columnName);
+
+        if($result instanceof \Doctrine\ORM\PersistentCollection) {
+            $results = "";
+            foreach($result as $entry) {
+                $results[] = $entry->getName();
+            }
+
+            return implode(', ', $results);
+        }
+
+        return $result;
     }
 }

@@ -1,3 +1,15 @@
-KunstmaanDemoBundle_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: KunstmaanDemoBundle:Default:index }
+KunstmaanMediaBundle:
+    resource: "@KunstmaanMediaBundle/Resources/config/routing.yml"
+    prefix:   /
+
+KunstmaanAdminBundle:
+    resource: "@KunstmaanAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+    
+KunstmaanViewBundle:
+    resource: "@KunstmaanViewBundle/Resources/config/routing.yml"
+    prefix:   /    
+      
+_imagine:
+    resource: .
+    type:     imagine

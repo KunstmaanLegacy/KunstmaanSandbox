@@ -17,7 +17,6 @@ class SearchPageController extends Controller
     public function searchAction()
     {
     	$query = $this->getRequest()->get("query");
-
         //use the elasitica service to search for results
         $finder = $this->get('foq_elastica.finder.website.page');
         $pages = $finder->findPaginated($query);
