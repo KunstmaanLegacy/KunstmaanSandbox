@@ -1,45 +1,35 @@
-KunstmaanAdminBundle_homepage:
-    pattern:  /{_locale}/admin
-    defaults: { _controller: KunstmaanAdminBundle:Default:index }
+KunstmaanAdminBundle_default:
+    resource: "@KunstmaanAdminBundle/Controller/DefaultController.php"
+    type:     annotation
+    prefix:   /{_locale}/admin
     requirements:
-        _locale: en|nl|fr
-        
-KunstmaanAdminBundle_setlocale:
-    pattern:  /admin/setlocale/{locale}
-    defaults: { _controller: KunstmaanAdminBundle:Default:setLocale }   
+        _locale: en|nl|fr  
 
 KunstmaanAdminBundle_pages:
-    pattern:  /{_locale}/admin/pages
-    defaults: { _controller: KunstmaanAdminBundle:Pages:index }
+    resource: "@KunstmaanAdminBundle/Controller/PagesController.php"
+    type:     annotation
+    prefix:   /{_locale}/admin/pages
     requirements:
-        _locale: en|nl|fr
+        _locale: en|nl|fr 
 
-KunstmaanAdminBundle_pages_edit:
-    pattern:  /{_locale}/admin/pages/{entityname}/{id}
-    defaults: { _controller: KunstmaanAdminBundle:Pages:edit }
-    requirements:
-        _method:  GET|POST
-        id: \d+
-        _locale: en|nl|fr
-    
 KunstmaanAdminBundle_modules:
-    pattern:  /{_locale}/admin/modules
-    defaults: { _controller: KunstmaanAdminBundle:Modules:index }
+    resource: "@KunstmaanAdminBundle/Controller/ModulesController.php"
+    type:     annotation
+    prefix:   /{_locale}/admin/modules
     requirements:
-        _locale: en|nl|fr
-    
+        _locale: en|nl|fr 
+        
 KunstmaanAdminBundle_settings:
-    pattern:  /{_locale}/admin/settings
-    defaults: { _controller: KunstmaanAdminBundle:Settings:index }
+    resource: "@KunstmaanAdminBundle/Controller/SettingsController.php"
+    type:     annotation
+    prefix:   /{_locale}/admin/settings
     requirements:
-        _locale: en|nl|fr
+        _locale: en|nl|fr         
+    
+###########################
+## fos_userbundle routes ##
+###########################
 
-KunstmaanAdminBundle_settings_users:
-    pattern:  /{_locale}/admin/settings/users
-    defaults: { _controller: KunstmaanAdminBundle:Settings:users }
-    requirements:
-        _locale: en|nl|fr
- 
 fos_user_security_login:
     pattern: /{_locale}/login
     defaults: { _controller: FOSUserBundle:Security:login }

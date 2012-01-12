@@ -11,48 +11,45 @@ class PagePartFixtures extends AbstractFixture implements OrderedFixtureInterfac
 {
     public function load($manager)
     {
-    	{
-    		$headerpagepart = new \Kunstmaan\PagePartBundle\Entity\HeaderPagePart();
-    		$headerpagepart->setNiv(1);
-    		$headerpagepart->setTitle("Header 1");
-    		$manager->persist($headerpagepart);
-    		$page1 = $this->getReference('page1');
-    		$manager->flush();
-    		$manager->getRepository('KunstmaanPagePartBundle:PagePartRef')->addPagePart($page1, $headerpagepart, 1);
+    	{ // Text page
+	    	{
+	    		$headerpagepart = new \Kunstmaan\PagePartBundle\Entity\HeaderPagePart();
+	    		$headerpagepart->setNiv(1);
+	    		$headerpagepart->setTitle("Text");
+	    		$manager->persist($headerpagepart);
+	    		$page1 = $this->getReference('page2');
+	    		$manager->flush();
+	    		$manager->getRepository('KunstmaanPagePartBundle:PagePartRef')->addPagePart($page1, $headerpagepart, 1);
+	    	}
+	    	{
+	    		$textpagepart = new \Kunstmaan\PagePartBundle\Entity\TextPagePart();
+	    		$textpagepart->setContent("<strong>Lorem ipsum dolor sit amet</strong>, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci <a href=\"#\">textlink</a> tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim.</p>");
+	    		$manager->persist($textpagepart);
+	    		$page1 = $this->getReference('page2');
+	    		$manager->flush();
+	    		$manager->getRepository('KunstmaanPagePartBundle:PagePartRef')->addPagePart($page1, $textpagepart, 2);
+	    	}
     	}
-        {
-            $textpagepart = new \Kunstmaan\PagePartBundle\Entity\TextPagePart();
-            $textpagepart->setContent("<p>whoele whoele 1</p>");
-            $manager->persist($textpagepart);
-            $page1 = $this->getReference('page1');
-            $manager->flush();
-            $manager->getRepository('KunstmaanPagePartBundle:PagePartRef')->addPagePart($page1, $textpagepart, 2);
-        }
-        {
-            $textpagepart = new \Kunstmaan\PagePartBundle\Entity\TextPagePart();
-            $textpagepart->setContent("<p>whoele whoele 2</p>");
-            $manager->persist($textpagepart);
-            $page1 = $this->getReference('page1');
-            $manager->flush();
-            $manager->getRepository('KunstmaanPagePartBundle:PagePartRef')->addPagePart($page1, $textpagepart, 3);
-        }
-        {
-            $textpagepart = new \Kunstmaan\PagePartBundle\Entity\TextPagePart();
-            $textpagepart->setContent("<p>whoele whoele 3</p>");
-            $manager->persist($textpagepart);
-            $page1 = $this->getReference('page1');
-            $manager->flush();
-            $manager->getRepository('KunstmaanPagePartBundle:PagePartRef')->addPagePart($page1, $textpagepart, 4);
-        }
+    	{ // Header page
+    		for ($i = 1; $i <= 6; $i++) {
+    			$headerpagepart = new \Kunstmaan\PagePartBundle\Entity\HeaderPagePart();
+    			$headerpagepart->setNiv($i);
+    			$headerpagepart->setTitle("Header ".$i);
+    			$manager->persist($headerpagepart);
+    			$page1 = $this->getReference('page3');
+    			$manager->flush();
+    			$manager->getRepository('KunstmaanPagePartBundle:PagePartRef')->addPagePart($page1, $headerpagepart, $i);
+    		}
+    	}
+    	
         $manager->flush();
-
     }
 
 
 
     public function getOrder()
     {
-        return 3;
+        return 200;
     }
 
 }
