@@ -107,10 +107,6 @@
     git=https://github.com/KnpLabs/KnpMenuBundle.git
     target=bundles/Knp/Bundle/MenuBundle
 
-[KunstmaanAdminNodeBundle]
-    git=git@github.com:Kunstmaan/KunstmaanAdminNodeBundle.git
-    target=bundles/Kunstmaan/AdminNodeBundle
-
 [KunstmaanMediaBundle]
     git=git@github.com:Kunstmaan/KunstmaanMediaBundle.git
     target=bundles/Kunstmaan/MediaBundle

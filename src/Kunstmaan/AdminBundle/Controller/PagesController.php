@@ -16,6 +16,7 @@ use Kunstmaan\DemoBundle\PagePartAdmin\PagePartAdminConfigurator;
 use Kunstmaan\PagePartBundle\Form\TextPagePartAdminType;
 use Kunstmaan\AdminBundle\Form\NodeInfoAdminType;
 use Kunstmaan\AdminBundle\Modules\ClassLookup;
+use Kunstmaan\AdminBundle\Entity\Permission;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -108,14 +109,37 @@ class PagesController extends Controller
         	$newpage->setTranslatableLocale($locale);
         	$em->persist($newpage);
         	$em->flush();
+
         	$nodeparent = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($page);
-        	$nodenewpage = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($newpage);
-        	$nodenewpage->setParent($nodeparent);
+            $nodenewpage = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($newpage);
+            $nodenewpage->setParent($nodeparent);
+
+            //get permissions of the parent and apply them on the new child
+            $parentPermissions = $em->getRepository('KunstmaanAdminBundle:Permission')->findBy(array(
+                'refId'             => $nodeparent->getId(),
+                'refEntityname'     => $nodeparent->getRefEntityname(),
+            ));
+
+            if(count($parentPermissions)) {
+                foreach($parentPermissions as $parentPermission) {
+                    $permission = new Permission();
+
+                    $permission->setRefId($nodenewpage->getId());
+                    $permission->setPermissions($parentPermission->getPermissions());
+                    $permission->setRefEntityname($nodenewpage->getRefEntityname());
+                    $permission->setRefGroup($parentPermission->getRefGroup());
+
+                    $em->persist($permission);
+                    $em->flush();
+                }
+            }
+
         	$em->persist($nodenewpage);
         	$em->flush();
+
         	return $this->redirect($this->generateUrl("KunstmaanAdminBundle_pages_edit", array('id'=>$nodenewpage->getId())));
         }
-        
+
         $delete = $request->get("delete");
         if(is_string($delete) && $delete == 'true'){
         	//remove node and page
@@ -147,8 +171,7 @@ class PagesController extends Controller
         $formbuilder->setData(array('node' => $node, 'main' => $page));
 
         //handle the pagepart functions (fetching, change form to reflect all fields, assigning data, etc...)
-
-        $pagepartadmin = $this->get("pagepartadmin.factory")->createList(new PagePartAdminConfigurator(), $em, $page);
+        $pagepartadmin = $this->get("pagepartadmin.factory")->createList(new PagePartAdminConfigurator(), $em, $page, 'main', $this->container);
         $pagepartadmin->preBindRequest($request);
         $pagepartadmin->adaptForm($formbuilder, $formfactory);
 
