@@ -143,10 +143,11 @@ class ExamplePage implements PageIFace, Translatable, DeepCloneableIFace
     }
     
     public function deepClone(EntityManager $em){
-    	$page = new ExamplePage();
-    	$page->setTitle($this->getTitle());
-    	$em->persist($page);
+    	$newpage = new ExamplePage();
+    	$newpage->setTitle($this->getTitle());
+    	$em->persist($newpage);
     	$em->flush();
-    	return $page;
+    	$em->getRepository('KunstmaanPagePartBundle:PagePartRef')->copyPageParts($em, $this, $newpage, $context = "main");
+    	return $newpage;
     }
 }
