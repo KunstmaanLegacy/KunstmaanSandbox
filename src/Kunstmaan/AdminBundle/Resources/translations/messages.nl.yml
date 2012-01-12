@@ -2,6 +2,7 @@
 pages:
   title: Pagina's
   parts: Delen van de pagina
+  draft: Klad
 
 # Modules
 modules:
@@ -16,7 +17,7 @@ settings:
   groups:
     name: Naam
     edit: Pas aan
-    add: Toevoegen
+    add: Groep toevoegen
     roles: Rollen
   users: Gebruikers
   user:
@@ -50,7 +51,7 @@ form:
   edit: Pas aan
   save: Bewaar
   publish: Publiceer
-  saveasdraft: Opslaan als draft
+  saveasdraft: Opslaan als klad
   name: Naam
   type: Soort
   error: Fout
@@ -62,6 +63,7 @@ form:
   permissions: Rechten
   addfilter: Voeg filter toe
   actions: Acties
+  add: Voeg toe
   
 omnext:
   home: Startpagina

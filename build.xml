@@ -96,6 +96,7 @@
             <arg value="--report-file=${basedir}/build/logs/checkstyle.xml"/>
             <arg value="--standard=${basedir}/build/phpcs.xml"/>
             <arg value="--ignore=autoload.php"/>
+            <arg value="--ignore=*.js"/>
             <arg path="${basedir}/src"/>
         </exec>
     </target>

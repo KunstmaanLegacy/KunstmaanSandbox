@@ -7,7 +7,7 @@ use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Kunstmaan\DemoBundle\Entity\MyExamplePage;
 
-class MyPageFixtures extends AbstractFixture implements OrderedFixtureInterface
+class MyExamplePageFixtures extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load($manager)
     {
@@ -16,6 +16,7 @@ class MyPageFixtures extends AbstractFixture implements OrderedFixtureInterface
         $mypage->setCustomfield('My custom page custom title');
         $manager->persist($mypage);
         $manager->flush();
+		$manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($mypage);
 
         $this->addReference('page4', $mypage);
     }

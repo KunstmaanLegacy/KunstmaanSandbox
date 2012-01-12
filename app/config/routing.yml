@@ -2,3 +2,4 @@
 KunstmaanDemoBundle:
     resource: "@KunstmaanDemoBundle/Resources/config/routing.yml"
     prefix:   /
+    

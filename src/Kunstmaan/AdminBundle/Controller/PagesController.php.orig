@@ -3,8 +3,11 @@
 namespace Kunstmaan\AdminBundle\Controller;
 
 use Kunstmaan\AdminBundle\Modules\PrepersistListener;
+
 use Doctrine\ORM\Events;
+
 use Kunstmaan\AdminNodeBundle\Modules\NodeMenu;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Kunstmaan\AdminBundle\Form\PageAdminType;
 use Kunstmaan\AdminBundle\Entity\PageIFace;
@@ -13,10 +16,13 @@ use Kunstmaan\DemoBundle\PagePartAdmin\PagePartAdminConfigurator;
 use Kunstmaan\PagePartBundle\Form\TextPagePartAdminType;
 use Kunstmaan\AdminBundle\Form\NodeInfoAdminType;
 use Kunstmaan\AdminBundle\Modules\ClassLookup;
+<<<<<<< HEAD
+=======
 use Kunstmaan\AdminBundle\Entity\Permission;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+>>>>>>> feature/demo
 
 class PagesController extends Controller
 {
@@ -215,6 +221,16 @@ class PagesController extends Controller
             }
         }
 
+<<<<<<< HEAD
+        return $this->render('KunstmaanAdminBundle:Pages:edit.html.twig', array(
+            'topnodes'      => $topnodes,
+            'page'          => $page,
+            'entityname'    => ClassLookup::getClass($page),
+            'form'          => $form->createView(),
+            'pagepartadmin' => $pagepartadmin,
+        	'logs'          => $logs,
+        ));
+=======
         $nodeMenu = new NodeMenu($this->container, $node, 'write');
 
         $viewVariables = array(
@@ -233,6 +249,7 @@ class PagesController extends Controller
             $viewVariables['permissionadmin'] = $permissionadmin;
         }
         return $viewVariables;
+>>>>>>> feature/demo
     }
 	
 }

@@ -20,7 +20,7 @@ class SearchPageController extends Controller
     	$request = $this->getRequest();
     	$locale = $request->getSession()->getLocale();
     	$node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeForSlug(null, '_search', $locale);
-    	$nodeMenu = new NodeMenu($em, $node);
+    	$nodeMenu = new NodeMenu($this->container, $node);
     	return array('query' => $query, 'nodemenu' => $nodeMenu);
     }
 }

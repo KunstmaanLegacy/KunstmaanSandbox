@@ -11,7 +11,7 @@ KunstmaanAdminBundle_pages:
     prefix:   /{_locale}/admin/pages
     requirements:
         _locale: en|nl|fr 
-    
+
 KunstmaanAdminBundle_modules:
     resource: "@KunstmaanAdminBundle/Controller/ModulesController.php"
     type:     annotation
