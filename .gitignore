@@ -14,6 +14,4 @@ build/api
 build/pdepend
 build/coverage
 web/uploads/*
-
-
 *.php~
