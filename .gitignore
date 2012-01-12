@@ -15,5 +15,5 @@ build/pdepend
 build/coverage
 web/uploads/*
 web/bundles/*
-web/*
+web/generated-css/*
 *.php~
