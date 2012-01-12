@@ -1,6 +1,13 @@
 imports:
     - { resource: parameters.ini }
     - { resource: security.yml }
+
+    KunstmaanMediaBundle:
+        resource: @KunstmaanMediaBundle/Resources/config/config.yml
+    KunstmaanSearchBundle:
+        resource: @KunstmaanSearchBundle/Resources/config/config.yml
+    KunstmaanAdminBundle:
+        resource: @KunstmaanAdminBundle/Resources/config/config.yml
     KunstmaanAdminBundle:
         resource: @KunstmaanDemoBundle/Resources/config/config.yml
 
@@ -76,5 +83,3 @@ stof_doctrine_extensions:
         default:
            loggable: true
            translatable: true
-
-        
