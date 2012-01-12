@@ -3,14 +3,10 @@ imports:
     - { resource: security.yml }
     KunstmaanMediaBundle:
         resource: @KunstmaanMediaBundle/Resources/config/config.yml
-<<<<<<< HEAD
     KunstmaanSearchBundle:
         resource: @KunstmaanSearchBundle/Resources/config/config.yml
-=======
     KunstmaanAdminBundle:
         resource: @KunstmaanAdminBundle/Resources/config/config.yml
-
->>>>>>> master
 
 framework:
     #esi:             ~
