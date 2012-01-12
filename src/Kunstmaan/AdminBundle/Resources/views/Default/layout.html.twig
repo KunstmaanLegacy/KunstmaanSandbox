@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{% block title %}OpenMercury.NEXT{% endblock %}</title>
+    <title>{% block title %}{{ 'omnext.title' | trans }}{% endblock %}</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -10,63 +10,52 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <!-- Le styles -->
-      <script src="{{ asset('js/jquery-1.7.js') }}"></script>
-    <script src="{{ asset('js/bootstrap-dropdown.js') }}"></script>
-    <script src="{{ asset('js/bootstrap-tabs.js') }}"></script>
-    <script src="{{ asset('js/bootstrap-modal.js') }}"></script>
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-      <script src="{{ asset('js/jquery-swapsies.js') }}"></script>
-      <script src="{{ asset('js/libs/jquery.jstree.js') }}"></script>
-      <script src="{{ asset('js/plugins.js') }}"></script>
-      <script src="{{ asset('js/script.js') }}"></script>
-      <script src="{{ asset('js/ckeditor/ckeditor.js') }}" type="text/javascript"></script>
-      <script type=text/javascript>
-          CKEDITOR.replaceClass = 'rich_editor';
-      </script>
-    <link rel="stylesheet" href="{{ asset('css/backend.css') }}" type="text/css">
+    {% stylesheets
+    	'bundles/kunstmaanadmin/css/bootstrap.min.css'
+    	'bundles/kunstmaanadmin/css/backend.css'
+        output='generated-css/style.css'
+        filter='cssrewrite'
+    %}
+    <link rel="stylesheet"  media="screen" type="text/css" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    {% javascripts
+    	'@KunstmaanAdminBundle/Resources/public/js/jquery-1.7.js'
+    	'@KunstmaanAdminBundle/Resources/public/js/jquery-swapsies.js'
+        '@KunstmaanAdminBundle/Resources/public/js/libs/*'
+        '@KunstmaanAdminBundle/Resources/public/js/ckeditor/ckeditor.js'
+    	'@KunstmaanAdminBundle/Resources/public/js/*'
+    	output='generated-js/scripts.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
     <style type="text/css">
       body {
         padding-top: 60px;
       }
     </style>
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
-    <link rel="apple-touch-icon" href="{{ asset('assets/images/apple-touch-icon.png') }}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/images/apple-touch-icon-72x72.png') }}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/images/apple-touch-icon-114x114.png') }}">
+    <link rel="shortcut icon" href="{{ asset('bundles/kunstmaanadmin/img/favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ asset('bundles/kunstmaanadmin/img/apple-touch-icon.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('bundles/kunstmaanadmin/img/apple-touch-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('bundles/kunstmaanadmin/img/apple-touch-icon-114x114.png') }}">
   </head>
   <body>
     <div class="topbar" data-dropdown="dropdown">
       <div class="topbar-inner">
         <div class="container-fluid">
-          <a class="brand" href="{{ path('KunstmaanAdminBundle_homepage') }}">OpenMercury.NEXT</a>
-          <ul class="nav">
-            <li><a href="{{ path('KunstmaanAdminBundle_pages') }}">Pages</a></li>
-            <li class="dropdown">
-                <a href="{{ path('KunstmaanMediaBundle_media') }}" class="dropdown-toggle">Media</a>
-                <ul class="dropdown-menu">
-                    <li><a href="{{ path('KunstmaanMediaBundle_media_images') }}">Images</a></li>
-                    <li><a href="{{ path('KunstmaanMediaBundle_media_videos') }}">Videos</a></li>
-                    <li><a href="{{ path('KunstmaanMediaBundle_media_slides') }}">Slides</a></li>
-                    <li><a href="{{ path('KunstmaanMediaBundle_media_files') }}">Files</a></li>
-                </ul>
-            </li>
-            <li><a href="{{ path('KunstmaanAdminBundle_modules') }}">Modules</a></li>
-            <li><a href="{{ path('KunstmaanAdminBundle_settings') }}">Settings</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle">Tools</a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Clear frontend cache</a></li>
-                <li><a href="#">Clear all cached</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Shutdown</a></li>
-              </ul>
-            </li>
+          <a class="brand" href="{{ path('KunstmaanAdminBundle_homepage') }}">{{ 'omnext.title' | trans }}</a>
+          {{ knp_menu_render('main', { 'currentClass': 'active' }) }}
+          <ul class="nav secondary-nav"> 
+          	{% set route = app.request.attributes.get('_route') %}
+            {{ app.request.attributes.remove('_route') }}
+            {% set attribs = app.request.attributes.all %}
+          	<li {% if app.request.attributes.get('_locale') == "en" %}class="active"{% endif %}><a {% if app.request.attributes.get('_locale') == "en" %}style="color: #049CDB"{% endif %} href="{{ path(route,  attribs|merge({ '_locale': 'en' })) }}">en</a></li>
+          	<li {% if app.request.attributes.get('_locale') == "nl" %}class="active"{% endif %}><a {% if app.request.attributes.get('_locale') == "nl" %}style="color: #049CDB"{% endif %} href="{{ path(route,  attribs|merge({ '_locale': 'nl' })) }}">nl</a></li>
+          	<li {% if app.request.attributes.get('_locale') == "fr" %}class="active"{% endif %}><a {% if app.request.attributes.get('_locale') == "fr" %}style="color: #049CDB"{% endif %} href="{{ path(route,  attribs|merge({ '_locale': 'fr' })) }}">fr</a></li>
+          	<li {% if route == 'fos_user_profile_show' %}class="active"{% endif %}><a href="{{ path('fos_user_profile_show') }}">{{ 'layout.logged_in_as'|trans({'%username%':app.user.username}, 'FOSUserBundle') }}</a></li>
+          	<li><a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></li>
           </ul>
-          <p class="pull-right">Logged in as
-              <a href="{{ path('fos_user_profile_show') }}">{{ app.user.username }}</a> |
-              <a href="{{ path('fos_user_security_logout') }}">log out</a>
-          </p>
         </div>
       </div>
     </div>
@@ -106,7 +95,7 @@
       </div>
             <footer>
                 <div class="container-fluid">
-                    <p class="pull-right"><a target="_blank" href="http://www.kunstmaan.be"><img src="{{ asset('images/general/kunstmaan.png') }}" width="83" height="16" alt="Kunstmaan" class="kunstmaan-logo" /></a></p>
+                    <p class="pull-right"><a target="_blank" href="http://www.kunstmaan.be"><img src="{{ asset('bundles/kunstmaanadmin/img/general/kunstmaan.png') }}" width="83" height="16" alt="Kunstmaan" class="kunstmaan-logo" /></a></p>
                 </div>
             </footer>
     </div>

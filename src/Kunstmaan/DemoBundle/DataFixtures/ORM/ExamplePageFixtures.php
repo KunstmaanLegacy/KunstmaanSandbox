@@ -12,7 +12,20 @@ class ExamplePageFixtures extends AbstractFixture implements OrderedFixtureInter
     public function load($manager)
     {
         $page1 = new ExamplePage();
-        $page1->setTitle('2 weeks with Symfony2');
+        $page1->setTitle('8 weeks with Symfony2');
+        $page1->setTranslatableLocale('en');
+        $manager->persist($page1);
+        $manager->flush();
+        
+        $page1->setTranslatableLocale('nl');
+        $manager->refresh($page1);
+        $page1->setTitle("8 weken met Symfony2");
+        $manager->persist($page1);
+        $manager->flush();
+        
+        $page1->setTranslatableLocale('fr');
+        $manager->refresh($page1);
+        $page1->setTitle("8 semaines avec Symfony2");
         $manager->persist($page1);
 
         $manager->flush();

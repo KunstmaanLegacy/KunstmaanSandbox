@@ -20,30 +20,32 @@ class PageAdminListConfigurator extends AbstractAdminListConfigurator{
     public function buildFilters(AdminListFilter $builder){
         $builder->add('title', new StringFilterType("title"));
         $builder->add('online', new BooleanFilterType("online"));
+        $builder->add('created', new DateFilterType("created"));
+        $builder->add('updated', new DateFilterType("updated"));
     }
 
-    public function getSortFields() {
-        $array = array();
-        $array[] = "title";
-        $array[] = "updated";
-        $array[] = "online";
-        return $array;
-    }
-
-    public function configureListFields(&$array)
+    public function buildFields()
     {
-        $array[] = "title";
-        $array[] = "created";
-        $array[] = "updated";
-        $array[] = "online";
+    	$this->addField("title", "Title", true);
+    	$this->addField("created", "Created At", true);
+    	$this->addField("updated", "Updated At", true);
+    	$this->addField("online", "Online", true);
     }
 
-    public function canEdit($item) {
-        return true;
+    public function canEdit() {
+        return false;
     }
 
     public function getEditUrlFor($item) {
         return "";
+    }
+    
+    public function canAdd() {
+    	return false;
+    }
+    
+    public function getAddUrlFor() {
+    	return "";
     }
 
     public function canDelete($item) {

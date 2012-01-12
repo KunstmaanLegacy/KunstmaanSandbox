@@ -8,6 +8,7 @@ use Kunstmaan\AdminBundle\Entity\PageIFace;
 use Kunstmaan\DemoBundle\AdminList\PageAdminListConfigurator;
 use Kunstmaan\DemoBundle\PagePartAdmin\PagePartAdminConfigurator;
 use Kunstmaan\PagePartBundle\Form\TextPagePartAdminType;
+use Kunstmaan\AdminBundle\Modules\ClassLookup;
 
 class PagesController extends Controller
 {
@@ -36,6 +37,14 @@ class PagesController extends Controller
         $topnodes = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes();
 
         $page = $em->getRepository($entityname)->find($id);  //'KunstmaanAdminBundle:Page'
+        $locale = $request->getSession()->getLocale();
+        $page->setTranslatableLocale($locale);
+        $em->refresh($page);
+        $repo = $em->getRepository('StofDoctrineExtensionsBundle:LogEntry');
+        $logs = $repo->getLogEntries($page);
+        if(!is_null($this->getRequest()->get('version'))){
+        	$repo->revert($page, $this->getRequest()->get('version'));
+        }
 
         $formfactory = $this->container->get('form.factory');
         $formbuilder = $this->createFormBuilder();
@@ -51,22 +60,23 @@ class PagesController extends Controller
             $form->bindRequest($request);
             $pagepartadmin->bindRequest($request);
             if ($form->isValid()) {
-                $em = $this->getDoctrine()
-                    ->getEntityManager();
+                $em = $this->getDoctrine()->getEntityManager();
                 $em->persist($page);
                 $em->flush();
                 return $this->redirect($this->generateUrl('KunstmaanAdminBundle_pages_edit', array(
                     'id' => $page->getId(),
-                    'entityname' => get_class($page)
+                    'entityname' => ClassLookup::getClass($page)
                 )));
             }
         }
+        
         return $this->render('KunstmaanAdminBundle:Pages:edit.html.twig', array(
             'topnodes' => $topnodes,
             'page' => $page,
-            'entityname' => get_class($page),
+            'entityname' => ClassLookup::getClass($page),
             'form'    => $form->createView(),
             'pagepartadmin'    => $pagepartadmin,
+        	'logs' => $logs,
             //'topnode'      => $topnode
         ));
     }

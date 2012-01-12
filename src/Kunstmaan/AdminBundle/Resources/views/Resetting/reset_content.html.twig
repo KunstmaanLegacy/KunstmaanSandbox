@@ -3,6 +3,6 @@
     {{ form_widget(form) }}
     <div class="actions">
         <input class="btn primary type" type="submit" value="{{ 'resetting.reset.submit'|trans({}, 'FOSUserBundle') }}" />
-        <input onclick="window.location = '{{ path('fos_user_security_login' ) }}'" type="reset" class="btn" value="cancel" />
+        <input onclick="window.location = '{{ path('fos_user_security_login' ) }}'" type="reset" class="btn" value="{{ 'form.cancel' | trans }}" />
     </div>
 </form>

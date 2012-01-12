@@ -4,8 +4,8 @@
 
 {% block breadcrumb %}
 <ul class="breadcrumb">
-    <li><a href="{{ path('KunstmaanAdminBundle_homepage') }}">Home</a> <span class="divider">/</span></li>
-    <li><a href="{{ path('KunstmaanAdminBundle_pages') }}">Pages</a> <span class="divider">/</span></li>
+    <li><a href="{{ path('KunstmaanAdminBundle_homepage') }}">{{ 'omnext.home' | trans }}</a> <span class="divider">/</span></li>
+    <li><a href="{{ path('KunstmaanAdminBundle_pages') }}">{{ 'pages.title' | trans }}</a> <span class="divider">/</span></li>
     <li class="active">{{page.title}}</li>
 </ul>
 {% endblock %}
@@ -17,8 +17,9 @@
     </div>
     <h1>{{ page.title }}</h1>
         <ul class="tabs" data-tabs="tabs">
-            <li class="active"><a href="#pageparts">PageParts</a></li>
-            <li><a href="#home">Properties</a></li>
+            <li class="active"><a href="#pageparts">{{ 'pages.parts' | trans }}</a></li>
+            <li><a href="#home">{{ 'form.properties' | trans }}</a></li>
+            <li><a href="#versions">Versions</a></li>
             {#<li><a href="#children">Children</a></li>
             <li><a href="#slug">Slug</a></li>
             <li class="dropdown" data-dropdown="dropdown">
@@ -40,13 +41,13 @@
 
                 {{ pagepartadmin_widget(pagepartadmin, form) }}
                 <div class="actions">
-                    <input type="submit" class="btn primary" value="Save">
+                    <input type="submit" class="btn primary" value="{{ 'form.save' | trans }}">
                 </div>
             </div>
             <div class="tab-pane" id="home">
                 {{ form_widget(form.main) }}
                 <div class="actions">
-                    <input type="submit" class="btn primary" value="Save">
+                    <input type="submit" class="btn primary" value="{{ 'form.save' | trans }}">
                 </div>
             </div>
 
@@ -72,11 +73,27 @@
                     </tbody>
                 </table>
             </div>
-            <div class="tab-pane" id="slug">
-              <p>Banksy do proident, brooklyn photo booth delectus sunt artisan sed organic exercitation eiusmod four loko. Quis tattooed iphone esse aliqua. Master cleanse vero fixie mcsweeney's. Ethical portland aute, irony food truck pitchfork lomo eu anim. Aesthetic blog DIY, ethical beard leggings tofu consequat whatever cardigan nostrud. Helvetica you probably haven't heard of them carles, marfa veniam occaecat lomo before they sold out in shoreditch scenester sustainable thundercats. Consectetur tofu craft beer, mollit brunch fap echo park pitchfork mustache dolor.</p>
-                <div class="actions">
-                    <input type="submit" class="btn primary" value="Save changes">
-                </div>
+            <div class="tab-pane" id="versions">
+              <table class="bordered-table zebra-striped">
+                    <thead>
+                    <tr>
+                    	<th>Action</th>
+                        <th>Action</th>
+                        <th>Date</th>
+                        <th>User</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for log in logs %}
+                            <tr>
+                            	<td><a href="{{ path('KunstmaanAdminBundle_pages_edit', { 'id': page.id, 'entityname': entityname, 'version': log.version }) }}">{{ log.version }}</a></td>
+                                <td>{{ log.action }}</td>
+                                <td>{{ log.loggedat | date('Y-m-d H:i:s') }}</td>
+                                <td>{{ log.username }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
             <div class="tab-pane" id="fat">
               <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>

@@ -3,13 +3,19 @@ imports:
     - { resource: security.yml }
     KunstmaanMediaBundle:
         resource: @KunstmaanMediaBundle/Resources/config/config.yml
+<<<<<<< HEAD
     KunstmaanSearchBundle:
         resource: @KunstmaanSearchBundle/Resources/config/config.yml
+=======
+    KunstmaanAdminBundle:
+        resource: @KunstmaanAdminBundle/Resources/config/config.yml
+
+>>>>>>> master
 
 framework:
     #esi:             ~
-    #translator:      { fallback: %locale% }
-    translator:       ~
+    translator:      { fallback: %locale% }
+    #translator:       ~
     secret:          %secret%
     charset:         UTF-8
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
@@ -18,7 +24,7 @@ framework:
     validation:      { enable_annotations: true }
     templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
     session:
-        default_locale: %locale%
+        #default_locale: %locale%
         auto_start:     true
 
 # Twig Configuration
@@ -87,3 +93,11 @@ fos_user:
             handler:            fos_user.resetting.form.handler.default
             name:               fos_user_resetting_form
             validation_groups:  [ResetPassword]
+            
+stof_doctrine_extensions:
+    default_locale: nl
+    translation_fallback: true
+    orm:
+        default:
+           loggable: true
+           translatable: true

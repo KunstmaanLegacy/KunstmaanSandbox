@@ -8,7 +8,7 @@
 
 <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request form-stacked">
     <fieldset>
-        <legend>Reset password</legend>
+        <legend>{{ 'resetting.request.submit'|trans({}, 'FOSUserBundle') }}</legend>
         <div class="clearfix">
             <div class="input">
             <label for="xlInput3">{{ 'resetting.request.username'|trans({}, 'FOSUserBundle') }}</label>
@@ -18,7 +18,7 @@
         <br />
         <div class="actions">
             <input class="btn primary type" type="submit" value="{{ 'resetting.request.submit'|trans({}, 'FOSUserBundle') }}" />
-            <input onclick="window.location = '{{ path('fos_user_security_login' ) }}'" type="reset" class="btn" value="cancel" />
+            <input onclick="window.location = '{{ path('fos_user_security_login' ) }}'" type="reset" class="btn" value="{{ 'form.cancel' | trans }}" />
         </div>
     </fieldset>
 </form>

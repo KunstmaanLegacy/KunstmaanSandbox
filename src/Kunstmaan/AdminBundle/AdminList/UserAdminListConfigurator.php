@@ -9,32 +9,41 @@
 
 namespace Kunstmaan\AdminBundle\AdminList;
 
+use Kunstmaan\AdminListBundle\AdminList\AdminListFilter;
+
+use Kunstmaan\AdminListBundle\AdminList\FilterDefinitions\DateFilterType;
+use Kunstmaan\AdminListBundle\AdminList\FilterDefinitions\StringFilterType;
 use Kunstmaan\AdminListBundle\AdminList\AbstractAdminListConfigurator;
 
 class UserAdminListConfigurator extends AbstractAdminListConfigurator{
 
-    public function configureListFields(&$array) {
-        $array[] = "username";
-        $array[] = "email";
-        $array[] = "lastLogin";
-        $array[] = "groups";
+	public function buildFilters(AdminListFilter $builder){
+        $builder->add('username', new StringFilterType("username"));
+        $builder->add('email', new StringFilterType("email"));
+    }
+    
+	public function buildFields()
+    {
+    	$this->addField("username", "Username", true);
+    	$this->addField("email", "E-Mail", true);
+    	$this->addField("lastlogin", "Last Login", false);
+    	$this->addField("groups", "Groups", false); 	
     }
 
-    public function getSortFields() {
-        $array = array();
-        $array[] = "username";
-        $array[] = "email";
-        $array[] = "lastLogin";
-        $array[] = "groups";
-        return $array;
+	public function canAdd() {
+        return false;
     }
 
-    public function canEdit($item) {
-        return true;
+    public function getAddUrlFor() {
+    	return "";
     }
 
+    public function canEdit() {
+    	return false;
+    }
+    
     public function getEditUrlFor($item) {
-        return "";
+    	return array();
     }
 
     public function canDelete($item) {

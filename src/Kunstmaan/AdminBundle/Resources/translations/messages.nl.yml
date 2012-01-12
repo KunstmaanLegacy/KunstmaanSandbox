@@ -1,0 +1,44 @@
+# Pages
+pages:
+  title: Pagina's
+  parts: Delen van de pagina
+
+# Modules
+modules:
+  title: Modules
+
+# Settings
+settings:
+  title: Instellingen
+  users: Gebruikers
+  maintanance: Onderhoud
+  scheduled: Geplande jobs
+
+# Tools
+tools:
+  title: Gereedschap
+  clear_frontend_cache: Maak de frontend cache leeg
+  clear_backend_cache: Maak de backend cache leeg
+  clear_all_caches: Maak alle caches leeg
+  shutdown: Sluit af
+    
+omnext:
+  home: Startpagina
+  title: OpenMercury.NEXT
+  welcome: Welkom.<small> OpenMercury.NEXT website administratie....</small>
+  information: <strong>Informatie. </strong> Er zijn geen nieuwe meldingen.
+
+# Forms
+form:
+  cancel: Annuleer
+  delete: Verwijder
+  edit: Pas aan
+  save: Bewaar
+  name: Naam
+  type: Soort
+  error: Fout
+  warning: Let op
+  headsup: Hoofd omhoog
+  forgot:
+    password: Paswoord vergeten?
+  properties: Eigenschappen
