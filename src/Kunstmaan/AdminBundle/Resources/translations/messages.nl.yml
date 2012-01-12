@@ -2,6 +2,7 @@
 pages:
   title: Pagina's
   parts: Delen van de pagina
+  draft: Klad
 
 # Modules
 modules:
@@ -10,9 +11,24 @@ modules:
 # Settings
 settings:
   title: Instellingen
-  users: Gebruikers
   maintanance: Onderhoud
   scheduled: Geplande jobs
+  group: Groepen
+  groups:
+    name: Naam
+    edit: Pas aan
+    add: Groep toevoegen
+    roles: Rollen
+  users: Gebruikers
+  user:
+    username: Gebruikersnaam
+    password: Paswoord
+    repeatedpassword: Herhaal paswoord
+    email: E-mail
+    enabled: Geactiveerd
+    roles: Groepen
+    add: Voeg gebruiker toe
+    edit: Pas gebruiker aan
 
 # Tools
 tools:
@@ -34,6 +50,8 @@ form:
   delete: Verwijder
   edit: Pas aan
   save: Bewaar
+  publish: Publiceer
+  saveasdraft: Opslaan als klad
   name: Naam
   type: Soort
   error: Fout
@@ -42,3 +60,14 @@ form:
   forgot:
     password: Paswoord vergeten?
   properties: Eigenschappen
+  permissions: Rechten
+  addfilter: Voeg filter toe
+  actions: Acties
+  add: Voeg toe
+  
+omnext:
+  home: Startpagina
+  title: OpenMercury.NEXT
+  welcome: Welkom.<small> OpenMercury.NEXT applicatie administratie....</small>
+  information: <strong>Informatie. </strong> Er zijn geen nieuwe notificaties.
+

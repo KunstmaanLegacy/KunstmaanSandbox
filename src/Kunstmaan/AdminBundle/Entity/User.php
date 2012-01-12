@@ -1,5 +1,4 @@
 <?php
-// src/AdminBundle/Entity/User.php
 
 namespace Kunstmaan\AdminBundle\Entity;
 
@@ -22,6 +21,16 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Kunstmaan\AdminBundle\Entity\Group")
+     * @ORM\JoinTable(name="user_user_group",
+     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
+     * )
+     */
+    protected $groups;
+
 
     public function __construct()
     {
@@ -47,5 +56,24 @@ class User extends BaseUser
     public function setId($id)
     {
     	$this->id = $id;
+    }
+
+    /**
+     * Gets the groupIds for the user.
+     *
+     * @return array
+     */
+    public function getGroupIds()
+    {
+        $groups = $this->groups ?: $this->groups = new ArrayCollection();
+
+        $groupIds = array();
+        if(count($groups) > 0) {
+            foreach($groups as $group) {
+                $groupIds[] = $group->getId();
+            }
+        }
+
+        return $groupIds;
     }
 }

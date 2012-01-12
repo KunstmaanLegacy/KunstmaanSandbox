@@ -2,6 +2,7 @@
 pages:
   title: Pages
   parts: PageParts
+  draft: Draft
 
 # Modules
 modules:
@@ -10,9 +11,24 @@ modules:
 # Settings
 settings:
   title: Settings
-  users: Users
   maintanance: Maintenance
   scheduled: Scheduled Jobs
+  group: Groups
+  groups:
+      name: Name
+      edit: Edit
+      add: Add group
+      roles: Roles
+  users: Users
+  user:
+      username: Username
+      password: Password
+      repeatedpassword: Repeat password
+      email: E-mail
+      enabled: Enabled
+      roles: Groups
+      add: Add User
+      edit: Edit User
 
 # Tools
 tools:
@@ -29,6 +45,8 @@ form:
   edit: Edit
   add: Add New
   save: Save
+  publish: Publish
+  saveasdraft: Save as draft
   name: Name
   type: Type
   error: Error
@@ -36,7 +54,12 @@ form:
   headsup: Heads up
   forgot:
     password: Forgot my password.
+  permissions: Permissions
   properties: Properties 
+  createdat: Created At
+  updatedat: Updated At
+  actions: Actions
+  addfilter: Add filter
     
 omnext:
   home: Home

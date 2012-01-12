@@ -11,24 +11,51 @@
     <![endif]-->
     <!-- Le styles -->
     {% stylesheets
-    	'bundles/kunstmaanadmin/css/bootstrap.min.css'
-    	'bundles/kunstmaanadmin/css/backend.css'
-        output='style.css'
+    	'bundles/kunstmaanadmin/css/bootstrap.css'
+    	'bundles/kunstmaanadmin/css/style.css'
+    	'bundles/kunstmaanadmin/js/libs/themes/OMNext/style.css'
+        output='generated-css/style.css'
         filter='cssrewrite'
     %}
     <link rel="stylesheet"  media="screen" type="text/css" href="{{ asset_url }}" />
     {% endstylesheets %}
-
+    {#
     {% javascripts
-    	'@KunstmaanAdminBundle/Resources/public/js/jquery-1.7.js'
-    	'@KunstmaanAdminBundle/Resources/public/js/jquery-swapsies.js'
+    	'@KunstmaanAdminBundle/Resources/public/js/libs/modernizr-2.0.6.min.js'
+    	'@KunstmaanAdminBundle/Resources/public/js/libs/jquery-1.7.1.min.js'
+    	'@KunstmaanAdminBundle/Resources/public/js/libs/jquery-ui-1.8.16.custom.min.js'
+    	'@KunstmaanAdminBundle/Resources/public/js/libs/bootstrap-twipsy.js'
         '@KunstmaanAdminBundle/Resources/public/js/libs/*'
         '@KunstmaanAdminBundle/Resources/public/js/ckeditor/ckeditor.js'
-        '@KunstmaanAdminBundle/Resources/public/js/bootstrap-twipsy.js'
-    	'@KunstmaanAdminBundle/Resources/public/js/*'
+		'@KunstmaanAdminBundle/Resources/public/js/plugins.js'
+    	'@KunstmaanAdminBundle/Resources/public/js/script.js'
     %}
     <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
+    #}
+    <script src="{{ asset('bundles/kunstmaanadmin/js/libs/modernizr-2.0.6.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/kunstmaanadmin/js/libs/jquery-1.7.1.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/kunstmaanadmin/js/libs/jquery-ui-1.8.16.custom.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/kunstmaanadmin/js/libs/bootstrap-twipsy.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/kunstmaanadmin/js/libs/bootstrap-tabs.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/kunstmaanadmin/js/libs/bootstrap-popover.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/kunstmaanadmin/js/libs/bootstrap-modal.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/kunstmaanadmin/js/libs/bootstrap-dropdown.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/kunstmaanadmin/js/libs/bootstrap-buttons.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/kunstmaanadmin/js/libs/bootstrap-alerts.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/kunstmaanadmin/js/libs/jquery.easing.1.3.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/kunstmaanadmin/js/libs/jquery.filedrop.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/kunstmaanadmin/js/libs/jquery.fileupload.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/kunstmaanadmin/js/libs/jquery.iframe-transport.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/kunstmaanadmin/js/libs/jquery.jstree.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/kunstmaanadmin/js/libs/jquery.ui.widget.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/kunstmaanadmin/js/plugins.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/kunstmaanadmin/js/script.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/kunstmaanadmin/js/upload.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/kunstmaanadmin/js/ckeditor/ckeditor.js') }}" type="text/javascript"></script>
+    <script type=text/javascript>
+	    CKEDITOR.replaceClass = 'rich_editor';
+	</script>
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -41,64 +68,47 @@
     <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('bundles/kunstmaanadmin/img/apple-touch-icon-114x114.png') }}">
   </head>
   <body>
+  <header>
     <div class="topbar" data-dropdown="dropdown">
       <div class="topbar-inner">
         <div class="container-fluid">
           <a class="brand" href="{{ path('KunstmaanAdminBundle_homepage') }}">{{ 'omnext.title' | trans }}</a>
+          <nav>
           {{ knp_menu_render('main', { 'currentClass': 'active' }) }}
           <ul class="nav secondary-nav"> 
+          	<!-- <li class="dropdown"> 
+				<a href="#" class="dropdown-toggle">Tooltips On</a> 
+				<ul class="dropdown-menu"> 
+					<li><a href="#">Tooltips Off</a></li> 
+				</ul> 
+			</li>-->
           	{% set route = app.request.attributes.get('_route') %}
             {{ app.request.attributes.remove('_route') }}
             {% set attribs = app.request.attributes.all %}
-          	<li {% if app.request.attributes.get('_locale') == "en" %}class="active"{% endif %}><a {% if app.request.attributes.get('_locale') == "en" %}style="color: #049CDB"{% endif %} href="{{ path(route,  attribs|merge({ '_locale': 'en' })) }}">en</a></li>
-          	<li {% if app.request.attributes.get('_locale') == "nl" %}class="active"{% endif %}><a {% if app.request.attributes.get('_locale') == "nl" %}style="color: #049CDB"{% endif %} href="{{ path(route,  attribs|merge({ '_locale': 'nl' })) }}">nl</a></li>
-          	<li {% if app.request.attributes.get('_locale') == "fr" %}class="active"{% endif %}><a {% if app.request.attributes.get('_locale') == "fr" %}style="color: #049CDB"{% endif %} href="{{ path(route,  attribs|merge({ '_locale': 'fr' })) }}">fr</a></li>
-          	<li {% if route == 'fos_user_profile_show' %}class="active"{% endif %}><a href="{{ path('KunstmaanAdminBundle_settings_users_edit', { 'user_id' : app.user.id }) }}">{{ 'layout.logged_in_as'|trans({'%username%':app.user.username}, 'FOSUserBundle') }}</a></li>
+            <li class="dropdown language">
+          		{% include 'KunstmaanAdminBundle:Default:'~ app.request.attributes.get('_locale') ~'languagechooser.html.twig' %}
+          	</li>	
+          	<li {% if route == 'KunstmaanAdminBundle_settings_users_edit' %}class="active"{% endif %}><a href="{{ path('KunstmaanAdminBundle_settings_users_edit', { 'user_id' : app.user.id }) }}">{{ 'layout.logged_in_as'|trans({'%username%':app.user.username}, 'FOSUserBundle') }}</a></li>
           	<li><a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></li>
           </ul>
+          </nav>
         </div>
       </div>
     </div>
+    </header>
     <div class="container-fluid">
-      <div class="sidebar">
-	      {% block sidebar %}
-	           <div class="well">
-	          <h5>Sidebar</h5>
-	          <ul>
-	            <li><a href="#">Link</a></li>
-	            <li><a href="#">Link</a></li>
-	            <li><a href="#">Link</a></li>
-	            <li><a href="#">Link</a></li>
-	          </ul>
-	          <h5>Sidebar</h5>
-	          <ul>
-	            <li><a href="#">Link</a></li>
-	            <li><a href="#">Link</a></li>
-	            <li><a href="#">Link</a></li>
-	            <li><a href="#">Link</a></li>
-	            <li><a href="#">Link</a></li>
-	            <li><a href="#">Link</a></li>
-	          </ul>
-	          <h5>Sidebar</h5>
-	          <ul>
-	            <li><a href="#">Link</a></li>
-	            <li><a href="#">Link</a></li>
-	          </ul>
-	        </div>
-	      {% endblock %} 
-      </div>
+      <aside class="sidebar">
+	      {% block sidebar %} {% endblock %} 
+      </aside>
       <div class="content">
-      	{% block breadcrumb %}
-          
-		  {% endblock %}
+      	{% block breadcrumb %} {% endblock %}
         {% block content %} {% endblock %}
       </div>
-            <footer>
-                <div class="container-fluid">
-                    <p class="pull-right"><a target="_blank" href="http://www.kunstmaan.be"><img src="{{ asset('bundles/kunstmaanadmin/img/general/kunstmaan.png') }}" width="83" height="16" alt="Kunstmaan" class="kunstmaan-logo" /></a></p>
-                </div>
-            </footer>
     </div>
-
+      <footer>
+        <div class="container-fluid">
+          <p class="pull-right"><a target="_blank" href="http://www.kunstmaan.be"><img src="{{ asset('bundles/kunstmaanadmin/img/general/kunstmaan.png') }}" width="83" height="16" alt="Kunstmaan" class="kunstmaan-logo" /></a></p>
+        </div>
+      </footer>
   </body>
 </html>

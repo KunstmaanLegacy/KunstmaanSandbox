@@ -19,26 +19,28 @@ class UserType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {
     	// get roles from the service container
-    	$definedRoles = $this->container->getParameter('security.role_hierarchy.roles');
+    	/*$definedRoles = $this->container->getParameter('security.role_hierarchy.roles');
     	
     	$roles = array();
     	foreach ($definedRoles as $name => $rolesHierarchy) {
     		$roles[$name] = $name . ': ' . implode(', ', $rolesHierarchy);
-    	
+
     		foreach ($rolesHierarchy as $role) {
     			if (!isset($roles[$role])) {
     				$roles[$role] = $role;
     			}
     		}
-    	}
+    	}*/
     	    	
         $builder->add('username');
         $builder->add('plainPassword', 'repeated', array(
         		'type' => 'password', 
             	'invalid_message' => "The passwords don't match!"));
         $builder->add('email');
-        $builder->add('enabled');
-        $builder->add('roles', 'userroles');
+        $builder->add('enabled', 'checkbox', array('required' => false));
+        $builder->add('groups', null, array(
+            'expanded'  => false //change to true to expand to checkboxes
+        ));
     }
 
     public function getName()
