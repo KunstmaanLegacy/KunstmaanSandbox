@@ -13,7 +13,7 @@
     {% stylesheets
     	'bundles/kunstmaanadmin/css/bootstrap.min.css'
     	'bundles/kunstmaanadmin/css/backend.css'
-        output='style.css'
+        output='generated-css/style.css'
         filter='cssrewrite'
     %}
     <link rel="stylesheet"  media="screen" type="text/css" href="{{ asset_url }}" />
@@ -25,6 +25,7 @@
         '@KunstmaanAdminBundle/Resources/public/js/libs/*'
         '@KunstmaanAdminBundle/Resources/public/js/ckeditor/ckeditor.js'
     	'@KunstmaanAdminBundle/Resources/public/js/*'
+    	output='generated-js/scripts.js'
     %}
     <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
