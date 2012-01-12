@@ -27,7 +27,6 @@ class ExamplePageFixtures extends AbstractFixture implements OrderedFixtureInter
         $manager->refresh($page1);
         $page1->setTitle("Blocs");
         $manager->persist($page1);
-        
         $manager->flush();
         $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($page1);
         

@@ -11,7 +11,7 @@ $(document).ready(function () {
 // JS-tree
 function init_tree() {
 	$('#tree').jstree({
-		"plugins" : [ "themes", "html_data", "types", "search" ] ,
+		"plugins" : [ "themes", "html_data", "dnd", "crrm", "types", "search" ] ,
 		"themes" : { 
 			"theme" : "OMNext",
 			"dots" : true,
@@ -72,6 +72,22 @@ function init_tree() {
 		
 		
 		},
+		"crrm" : { 
+			"move" : {
+				"check_move" : function (m) { 
+					var p = this._get_parent(m.o);
+					if(!p) return false;
+					p = p == -1 ? this.get_container() : p;
+					if(p === m.np) return true;
+					if(p[0] && m.np[0] && p[0] === m.np[0]) return true;
+					return false;
+				}
+			}
+		},
+		"dnd" : {
+			"drop_target" : false,
+			"drag_target" : false
+		},
 		// Configuring the search plugin
 		"search" : {
 			"ajax" : {
@@ -84,12 +100,39 @@ function init_tree() {
 			    }
 			}
 		}
+	})
+	.bind("move_node.jstree", function (e, data) {
+		data.rslt.obj.each(function (i) {
+			$.ajax({
+				async : false,
+				type: 'POST',
+				url: "/static/v.1.0pre/_demo/server.php",
+				data : { 
+					"operation" : "move_node", 
+					"id" : $(this).attr("id").replace("node_",""), 
+					"ref" : data.rslt.cr === -1 ? 1 : data.rslt.np.attr("id").replace("node_",""), 
+					"position" : data.rslt.cp + i,
+					"title" : data.rslt.name,
+					"copy" : data.rslt.cy ? 1 : 0
+				},
+				success : function (r) {
+					if(!r.status) {
+						$.jstree.rollback(data.rlbk);
+					}
+					else {
+						$(data.rslt.oc).attr("id", "node_" + r.id);
+						if(data.rslt.cy && $(data.rslt.oc).children("UL").length) {
+							data.inst.refresh(data.inst._get_parent(data.rslt.oc));
+						}
+					}
+					$("#analyze").click();
+				}
+			});
+		});
 	});
 	$("#search").click(function() {
 		$(this).jstree("search", document.getElementById("searchVal").value);
 	});
-	
-	
 }
 
 // Drag and Drop

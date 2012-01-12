@@ -1,13 +1,5 @@
-KunstmaanPagePartBundle:
-    resource: "@KunstmaanPagePartBundle/Resources/config/routing.yml"
-    prefix:   /
-
 KunstmaanMediaBundle:
     resource: "@KunstmaanMediaBundle/Resources/config/routing.yml"
-    prefix:   /
-
-KunstmaanAdminListBundle:
-    resource: "@KunstmaanAdminListBundle/Resources/config/routing.yml"
     prefix:   /
 
 KunstmaanAdminBundle:
