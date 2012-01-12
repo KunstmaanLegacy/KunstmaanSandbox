@@ -107,6 +107,10 @@
     git=https://github.com/KnpLabs/KnpMenuBundle.git
     target=bundles/Knp/Bundle/MenuBundle
 
+[KunstmaanAdminBundle]
+    git=git@github.com:Kunstmaan/KunstmaanAdminBundle.git
+    target=/bundles/Kunstmaan/AdminBundle
+
 [KunstmaanMediaBundle]
     git=git@github.com:Kunstmaan/KunstmaanMediaBundle.git
     target=bundles/Kunstmaan/MediaBundle
@@ -118,10 +122,26 @@
 [KunstmaanAdminListBundle]
     git=git@github.com:Kunstmaan/KunstmaanAdminListBundle.git
     target=/bundles/Kunstmaan/AdminListBundle
-
+    
 [KunstmaanAdminNodeBundle]
     git=git@github.com:Kunstmaan/KunstmaanAdminNodeBundle.git
     target=/bundles/Kunstmaan/AdminNodeBundle
+
+[Elastica]
+    git=git://github.com/ruflin/Elastica.git
+    target=elastica
+
+[FOQElasticaBundle]
+    git=git://github.com/Exercise/FOQElasticaBundle.git
+    target=bundles/FOQ/ElasticaBundle
+    version=origin/2.0
+
+[Pagerfanta]
+    git=http://github.com/whiteoctober/Pagerfanta.git
+
+[WhiteOctoberPagerfantaBundle]
+    git=https://github.com/KnpLabs/KnpMenuBundle.git
+    target=bundles/WhiteOctober/PagerfantaBundle
 
 [DoctrineExtensions]
     git=git://github.com/l3pp4rd/DoctrineExtensions.git
@@ -130,4 +150,5 @@
 [DoctrineExtensionsBundle]
     git=git://github.com/stof/StofDoctrineExtensionsBundle.git
     target=/bundles/Stof/DoctrineExtensionsBundle
-
+    
+    

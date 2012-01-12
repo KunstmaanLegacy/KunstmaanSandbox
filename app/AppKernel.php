@@ -30,6 +30,8 @@ class AppKernel extends Kernel
 	        new Kunstmaan\PagePartBundle\KunstmaanPagePartBundle(),
             new Kunstmaan\AdminNodeBundle\KunstmaanAdminNodeBundle(),
             new Kunstmaan\ViewBundle\KunstmaanViewBundle(),
+            new Kunstmaan\SearchBundle\KunstmaanSearchBundle(),
+            new FOQ\ElasticaBundle\FOQElasticaBundle(),
         	new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
         );
 
