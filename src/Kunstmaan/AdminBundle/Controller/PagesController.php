@@ -47,7 +47,7 @@ class PagesController extends Controller
     }
 
 /**
-     * @Route("/admin/pages/{id}/publish", requirements={"_method" = "GET|POST", "id" = "\d+"}, name="KunstmaanAdminBundle_pages_edit_publish")
+     * @Route("/{id}/publish", requirements={"_method" = "GET|POST", "id" = "\d+"}, name="KunstmaanAdminBundle_pages_edit_publish")
      * @Template()
      */
     public function publishAction($id)
@@ -61,7 +61,7 @@ class PagesController extends Controller
     }
     
     /**
-     * @Route("/admin/pages/{id}/unpublish", requirements={"_method" = "GET|POST", "id" = "\d+"}, name="KunstmaanAdminBundle_pages_edit_unpublish")
+     * @Route("/{id}/unpublish", requirements={"_method" = "GET|POST", "id" = "\d+"}, name="KunstmaanAdminBundle_pages_edit_unpublish")
      * @Template()
      */
     public function unpublishAction($id)
@@ -75,7 +75,7 @@ class PagesController extends Controller
     }
     
     /**
-     * @Route("/admin/pages/{id}/{subaction}", requirements={"_method" = "GET|POST", "id" = "\d+"}, defaults={"subaction" = "public"}, name="KunstmaanAdminBundle_pages_edit")
+     * @Route("/{id}/{subaction}", requirements={"_method" = "GET|POST", "id" = "\d+"}, defaults={"subaction" = "public"}, name="KunstmaanAdminBundle_pages_edit")
      * @Template()
      */
     public function editAction($id, $subaction)
@@ -149,7 +149,7 @@ class PagesController extends Controller
         	return $this->redirect($this->generateUrl("KunstmaanAdminBundle_pages_edit", array('id'=>$nodeparent->getId())));
         }
 
-		$page = $em->getRepository(ClassLookup::getClass($page))->find($id);  //'KunstmaanAdminBundle:Page'
+		//$page = $em->getRepository(ClassLookup::getClass($page))->find($id);  //'KunstmaanAdminBundle:Page'
         $page->setTranslatableLocale($locale);
         $em->refresh($page);
         $repo = $em->getRepository('StofDoctrineExtensionsBundle:LogEntry');
@@ -157,10 +157,9 @@ class PagesController extends Controller
         if(!is_null($this->getRequest()->get('version'))) {
         	$repo->revert($page, $this->getRequest()->get('version'));
         }
-
         $user = $this->container->get('security.context')->getToken()->getUser();
         $topnodes   = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes($user, 'write');
-        $node       = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($page);
+        //$node       = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($page);
 
         $formfactory = $this->container->get('form.factory');
         $formbuilder = $this->createFormBuilder();
