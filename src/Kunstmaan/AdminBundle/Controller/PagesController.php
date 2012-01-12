@@ -11,7 +11,7 @@ use Kunstmaan\AdminNodeBundle\Modules\NodeMenu;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Kunstmaan\AdminBundle\Form\PageAdminType;
 use Kunstmaan\AdminBundle\Entity\PageIFace;
-use Kunstmaan\DemoBundle\AdminList\PageAdminListConfigurator;
+use Kunstmaan\AdminBundle\AdminList\PageAdminListConfigurator;
 use Kunstmaan\DemoBundle\PagePartAdmin\PagePartAdminConfigurator;
 use Kunstmaan\PagePartBundle\Form\TextPagePartAdminType;
 use Kunstmaan\AdminBundle\Form\NodeInfoAdminType;
@@ -46,7 +46,7 @@ class PagesController extends Controller
     }
 
 /**
-     * @Route("/admin/pages/{id}/publish", requirements={"_method" = "GET|POST", "id" = "\d+"}, name="KunstmaanAdminBundle_pages_edit_publish")
+     * @Route("/{id}/publish", requirements={"_method" = "GET|POST", "id" = "\d+"}, name="KunstmaanAdminBundle_pages_edit_publish")
      * @Template()
      */
     public function publishAction($id)
@@ -60,7 +60,7 @@ class PagesController extends Controller
     }
     
     /**
-     * @Route("/admin/pages/{id}/unpublish", requirements={"_method" = "GET|POST", "id" = "\d+"}, name="KunstmaanAdminBundle_pages_edit_unpublish")
+     * @Route("/{id}/unpublish", requirements={"_method" = "GET|POST", "id" = "\d+"}, name="KunstmaanAdminBundle_pages_edit_unpublish")
      * @Template()
      */
     public function unpublishAction($id)
@@ -74,13 +74,14 @@ class PagesController extends Controller
     }
     
     /**
-     * @Route("/admin/pages/{id}/{subaction}", requirements={"_method" = "GET|POST", "id" = "\d+"}, defaults={"subaction" = "public"}, name="KunstmaanAdminBundle_pages_edit")
+     * @Route("/{id}/{subaction}", requirements={"_method" = "GET|POST", "id" = "\d+"}, defaults={"subaction" = "public"}, name="KunstmaanAdminBundle_pages_edit")
      * @Template()
      */
     public function editAction($id, $subaction)
     {
     	$em = $this->getDoctrine()->getEntityManager();
     	$request = $this->getRequest();
+    	$locale = $request->getSession()->getLocale();
     	$saveasdraft = $request->get("saveasdraft");
     	$saveandpublish = $request->get("saveandpublish");
     	$draft = ($subaction == "draft");
@@ -97,14 +98,14 @@ class PagesController extends Controller
         }
         
         $addpage = $request->get("addpage");
-        $addpagetitle = $request->get("title");
         if(is_string($addpage) && $addpage != ''){
         	$newpage = new $addpage();
-        	$newpage->setTitle('New page');
         	if(is_string($addpagetitle) && $addpagetitle != ''){
         		$newpage->setTitle($addpagetitle);
+        	} else {
+        		$newpage->setTitle('New page');
         	}
-        	$newpage->setTranslatableLocale('en');
+        	$newpage->setTranslatableLocale($locale);
         	$em->persist($newpage);
         	$em->flush();
         	$nodeparent = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($page);
@@ -124,8 +125,7 @@ class PagesController extends Controller
         	return $this->redirect($this->generateUrl("KunstmaanAdminBundle_pages_edit", array('id'=>$nodeparent->getId())));
         }
 
-		$page = $em->getRepository(ClassLookup::getClass($page))->find($id);  //'KunstmaanAdminBundle:Page'
-        $locale = $request->getSession()->getLocale();
+		//$page = $em->getRepository(ClassLookup::getClass($page))->find($id);  //'KunstmaanAdminBundle:Page'
         $page->setTranslatableLocale($locale);
         $em->refresh($page);
         $repo = $em->getRepository('StofDoctrineExtensionsBundle:LogEntry');
@@ -133,10 +133,9 @@ class PagesController extends Controller
         if(!is_null($this->getRequest()->get('version'))) {
         	$repo->revert($page, $this->getRequest()->get('version'));
         }
-
         $user = $this->container->get('security.context')->getToken()->getUser();
         $topnodes   = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes($user, 'write');
-        $node       = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($page);
+        //$node       = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeFor($page);
 
         $formfactory = $this->container->get('form.factory');
         $formbuilder = $this->createFormBuilder();
@@ -148,6 +147,7 @@ class PagesController extends Controller
         $formbuilder->setData(array('node' => $node, 'main' => $page));
 
         //handle the pagepart functions (fetching, change form to reflect all fields, assigning data, etc...)
+
         $pagepartadmin = $this->get("pagepartadmin.factory")->createList(new PagePartAdminConfigurator(), $em, $page);
         $pagepartadmin->preBindRequest($request);
         $pagepartadmin->adaptForm($formbuilder, $formfactory);

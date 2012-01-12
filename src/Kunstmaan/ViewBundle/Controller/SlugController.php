@@ -20,7 +20,6 @@ class SlugController extends Controller
 	public function slugDraftAction($slug)
 	{
 		$em = $this->getDoctrine()->getEntityManager();
-		$topnodes = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getTopNodes();
 		$node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeForSlug(null, $slug);
 		if($node){
 			$page = $node->getRef($em);
