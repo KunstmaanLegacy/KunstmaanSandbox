@@ -1,21 +1,26 @@
 {% extends 'KunstmaanAdminBundle:Default:layout.html.twig' %}
 
 {% block sidebar %}
-<div class="sidebar">
+	    	<div class="search_wrp"> 
+	    		<input type="text" id="searchVal" value="" /> 
+	    		<button id="search" class="btn search"><img src="{{ asset('bundles/kunstmaanadmin/img/icons/search.png') }}" alt="Search" /></button> 
+	    	</div> 
     <div id="tree">
         <ul>
-            {% for topnode in topnodes %}
+            {% for node in nodemenu.topnodes %}
                 {% include 'KunstmaanAdminBundle:Pages:rectreeview.html.twig' %}
             {% endfor %}
         </ul>
     </div>
-</div>
+</aside>
 {% endblock %}
 
 {% block breadcrumb %}
 	<ul class="breadcrumb">
-		<li><a href="{{ path('KunstmaanAdminBundle_homepage') }}">{{ 'omnext.home' | trans }}</a> <span class="divider">/</span></li>
+		<li><a href="{{ path('KunstmaanAdminBundle_homepage') }}">{{ 'omnext.home' | trans }}</a></li>
+		{% block subbreadcrumb %}
 		<li class="active">{{ 'pages.title' | trans }}</li>
+		{% endblock %}
 	</ul>
 {% endblock %}
 

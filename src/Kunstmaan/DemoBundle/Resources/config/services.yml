@@ -2,6 +2,10 @@ parameters:
 #    kunstmaan_demo.example.class: Kunstmaan\DemoBundle\Example
 
 services:
-#    kunstmaan_demo.example:
-#        class: %kunstmaan_demo.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    kunstmaan_admin.menu_builder:
+        class: Kunstmaan\AdminBundle\Menu\MenuBuilder
+        arguments: ["@knp_menu.factory", "@translator", [@kunstmaan_media.media_menu]]
+
+    kunstmaan_admin.pageparts_builder:
+        class: Kunstmaan\DemoBundle\PagePartAdmin\PagePartAdminConfigurator
+        arguments: [[@kunstmaan_media.pageparts, @kunstmaan_pagepart.pageparts]]
