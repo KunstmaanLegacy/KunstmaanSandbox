@@ -18,7 +18,7 @@ foq_elastica:
                         title:
                         id:
                         content: { analyzer: snowball }
-                    doctrine:
+                    persistence:
                         driver: orm
                         provider:
                         model: Kunstmaan\AdminNodeBundle\Entity\Node
