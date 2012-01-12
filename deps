@@ -119,6 +119,10 @@
     git=git@github.com:Kunstmaan/KunstmaanAdminListBundle.git
     target=/bundles/Kunstmaan/AdminListBundle
 
+[KunstmaanAdminNodeBundle]
+    git=git@github.com:Kunstmaan/KunstmaanAdminNodeBundle.git
+    target=/bundles/Kunstmaan/AdminNodeBundle
+
 [DoctrineExtensions]
     git=git://github.com/l3pp4rd/DoctrineExtensions.git
     target=/gedmo-doctrine-extensions
