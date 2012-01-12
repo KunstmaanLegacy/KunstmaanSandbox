@@ -28,10 +28,14 @@ $loader->registerNamespaces(array(
     'Airbrake'         => __DIR__.'/../vendor/bundles',
 	'Doctrine\\Common\\DataFixtures'    => __DIR__.'/../vendor/doctrine-fixtures/lib',
     'Doctrine\\Common'                  => __DIR__.'/../vendor/doctrine-common/lib',
+    'FOQ'                               => __DIR__.'/../vendor/bundles',
+    'WhiteOctober\PagerfantaBundle'     => __DIR__.'/../vendor/bundles',
+    'Pagerfanta'                        => __DIR__.'/../vendor/pagerfanta/src',
 ));
 $loader->registerPrefixes(array(
-    'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',
-    'Twig_'            => __DIR__.'/../vendor/twig/lib',
+    'Twig_Extensions_'  => __DIR__.'/../vendor/twig-extensions/lib',
+    'Twig_'             => __DIR__.'/../vendor/twig/lib',
+    'Elastica'          => __DIR__.'/../vendor/elastica/lib',
 ));
 
 // intl
