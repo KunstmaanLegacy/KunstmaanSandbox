@@ -119,6 +119,10 @@
     git=git@github.com:Kunstmaan/KunstmaanAdminListBundle.git
     target=/bundles/Kunstmaan/AdminListBundle
 
+[KunstmaanViewBundle]
+    git=git@github.com:Kunstmaan/KunstmaanViewBundle.git
+    target=/bundles/Kunstmaan/ViewBundle
+
 [Elastica]
     git=git://github.com/ruflin/Elastica.git
     target=elastica
