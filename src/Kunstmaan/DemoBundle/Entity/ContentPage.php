@@ -1,7 +1,10 @@
 <?php
-// src/Blogger/BlogBundle/Entity/Blog.php
 
 namespace Kunstmaan\DemoBundle\Entity;
+
+use Kunstmaan\DemoBundle\PagePartAdmin\BannerPagePartAdminConfigurator;
+
+use Kunstmaan\DemoBundle\PagePartAdmin\ContentPagePagePartAdminConfigurator;
 
 use Kunstmaan\AdminNodeBundle\Entity\HasNode;
 
@@ -10,26 +13,20 @@ use Doctrine\ORM\EntityManager;
 use Kunstmaan\AdminBundle\Entity\DeepCloneableIFace;
 
 use Gedmo\Mapping\Annotation as Gedmo;
-use Gedmo\Translatable\Translatable;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Annotations\Annotation;
 use Doctrine\Common\Collections\ArrayCollection;
-use Kunstmaan\DemoBundle\Form\ExamplePageAdminType;
+use Kunstmaan\DemoBundle\Form\ContentPageAdminType;
 use Kunstmaan\AdminBundle\Entity\PageIFace;
 use Kunstmaan\SearchBundle\Entity\Indexable;
 
 /**
- * @ORM\Entity(repositoryClass="Kunstmaan\DemoBundle\Repository\ExamplePageRepository")
- * @ORM\Table(name="examplepage")
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="discr", type="string")
- *
- * @ORM\DiscriminatorMap({ "examplepage" = "ExamplePage" , "myexamplepage" = "MyExamplePage" })
+ * @ORM\Entity(repositoryClass="Kunstmaan\DemoBundle\Repository\ContentPageRepository")
+ * @ORM\Table(name="democontentpage")
  * @ORM\HasLifecycleCallbacks()
- * @Gedmo\Loggable
  */
 
-class ExamplePage implements PageIFace, Translatable, Indexable, DeepCloneableIFace
+class ContentPage implements PageIFace, Indexable, DeepCloneableIFace
 {
     /**
      * @ORM\Id
@@ -39,8 +36,6 @@ class ExamplePage implements PageIFace, Translatable, Indexable, DeepCloneableIF
     protected $id;
 
     /**
-     * @Gedmo\Versioned
-     * @Gedmo\Translatable
      * @ORM\Column(type="string")
      */
     protected $title;
@@ -118,7 +113,7 @@ class ExamplePage implements PageIFace, Translatable, Indexable, DeepCloneableIF
 
     public function getDefaultAdminType()
     {
-        return new ExamplePageAdminType();
+        return new ContentPageAdminType();
     }
 
     public function isOnline()
@@ -157,17 +152,20 @@ class ExamplePage implements PageIFace, Translatable, Indexable, DeepCloneableIF
     
     public function getPossibleChildPageTypes()
     {
-    	$array[] = array('name' => 'ExamplePage', 'class'=>"Kunstmaan\DemoBundle\Entity\ExamplePage");
-    	$array[] = array('name' => 'MyExamplePage', 'class'=>"Kunstmaan\DemoBundle\Entity\MyExamplePage");
+    	$array[] = array('name' => 'ContentPage', 'class'=>"Kunstmaan\DemoBundle\Entity\ContentPage");
     	return $array;
     }
     
     public function deepClone(EntityManager $em){
-    	$newpage = new ExamplePage();
+    	$newpage = new ContentPage();
     	$newpage->setTitle($this->getTitle());
     	$em->persist($newpage);
     	$em->flush();
     	$em->getRepository('KunstmaanPagePartBundle:PagePartRef')->copyPageParts($em, $this, $newpage, $context = "main");
     	return $newpage;
+    }
+    
+    public function getPagePartAdminConfigurations(){
+    	return array(new ContentPagePagePartAdminConfigurator(), new BannerPagePartAdminConfigurator());
     }
 }
