@@ -16,7 +16,7 @@ class MyExamplePageFixtures extends AbstractFixture implements OrderedFixtureInt
         $mypage->setCustomfield('My custom page custom title');
         $manager->persist($mypage);
         $manager->flush();
-		$manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($mypage);
+		$manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($mypage, 'en', 'admin');
 
         $this->addReference('page4', $mypage);
     }
