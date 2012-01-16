@@ -11,10 +11,10 @@ class PermissionsFixtures extends AbstractFixture implements OrderedFixtureInter
 {
     public function load($manager)
     {
-        $page1 = $this->getReference('page1');
-        $page2 = $this->getReference('page2');
-        $page3 = $this->getReference('page3');
-        $page4 = $this->getReference('page4');
+        $page1 = $this->getReference('homepage');
+        $page2 = $this->getReference('contentpage');
+        $page3 = $this->getReference('textpage');
+        $page4 = $this->getReference('headerpage');
 
         $kunstmaanGroup     = $this->getReference('kunstmaan-group');
         $adminGroup         = $this->getReference('admin-group');

@@ -6,17 +6,15 @@ namespace Kunstmaan\DemoBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
 
-class MyExamplePageAdminType extends ExamplePageAdminType
+class HomePageAdminType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {
-        parent::buildForm($builder, $options);
-        $builder->add('customfield');
+        $builder->add('title');
     }
 
     public function getName()
     {
-        return 'mypage';
+        return 'page';
     }
-
 }

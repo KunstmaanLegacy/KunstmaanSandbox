@@ -10,7 +10,6 @@ class GroupFixtures extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load($manager)
     {
-
         $group1 = new Group("Kunstmaan");
         $group1->setName("Kunstmaan");
         $group1->addRole($this->getReference('permissionmanager-role'));
