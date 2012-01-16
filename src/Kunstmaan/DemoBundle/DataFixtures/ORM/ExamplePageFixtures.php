@@ -13,36 +13,35 @@ class ExamplePageFixtures extends AbstractFixture implements OrderedFixtureInter
     {
         $page1 = new ExamplePage();
         $page1->setTitle('PageParts');
-        $page1->setTranslatableLocale('en');
         $manager->persist($page1);
         $manager->flush();
+        $node = $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($page1, 'en', 'admin');
         
-        $page1->setTranslatableLocale('nl');
-        $manager->refresh($page1);
-        $page1->setTitle("Blokken");
-        $manager->persist($page1);
+        $page1_nl = new ExamplePage();
+        $page1_nl->setTitle("Blokken");
+        $manager->persist($page1_nl);
         $manager->flush();
+        $nodeTranslation = $manager->getRepository('KunstmaanAdminNodeBundle:NodeTranslation')->createNodeTranslationFor($page1_nl, 'nl', $node, 'admin');
         
-        $page1->setTranslatableLocale('fr');
-        $manager->refresh($page1);
-        $page1->setTitle("Blocs");
-        $manager->persist($page1);
+        $page1_fr = new ExamplePage();
+        $page1_fr->setTitle("Blocs");
+        $manager->persist($page1_fr);
         $manager->flush();
-        $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($page1);
+        $nodeTranslation = $manager->getRepository('KunstmaanAdminNodeBundle:NodeTranslation')->createNodeTranslationFor($page1_fr, 'fr', $node, 'admin');
         
         $page2 = new ExamplePage();
         $page2->setParent($page1);
         $page2->setTitle('Text');
         $manager->persist($page2);
         $manager->flush();
-        $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($page2);
+        $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($page2, 'en', 'admin');
 
         $page3 = new ExamplePage();
         $page3->setParent($page1);
         $page3->setTitle('Headers');
         $manager->persist($page3);
         $manager->flush();
-        $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($page3);
+        $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($page3, 'en', 'admin');
         
         $this->addReference('page1', $page1);
         $this->addReference('page2', $page2);
