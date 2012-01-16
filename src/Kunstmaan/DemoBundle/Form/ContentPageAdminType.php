@@ -6,7 +6,7 @@ namespace Kunstmaan\DemoBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
 
-class ExamplePageAdminType extends AbstractType
+class ContentPageAdminType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {
