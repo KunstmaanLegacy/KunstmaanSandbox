@@ -130,6 +130,10 @@
 [KunstmaanViewBundle]
     git=git@github.com:Kunstmaan/KunstmaanViewBundle.git
     target=/bundles/Kunstmaan/ViewBundle
+    
+[KunstmaanSearchBundle]
+    git=git@github.com:Kunstmaan/KunstmaanSearchBundle.git
+    target=/bundles/Kunstmaan/SearchBundle    
 
 [Elastica]
     git=git://github.com/ruflin/Elastica.git
