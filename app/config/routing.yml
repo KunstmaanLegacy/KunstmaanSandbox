@@ -1,5 +1,7 @@
 
 KunstmaanDemoBundle:
     resource: "@KunstmaanDemoBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}/
+    requirements:
+        _locale: %requiredlocales%
     
