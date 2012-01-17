@@ -1,15 +1,10 @@
 imports:
     - { resource: parameters.ini }
     - { resource: security.yml }
-
-    KunstmaanMediaBundle:
-        resource: @KunstmaanMediaBundle/Resources/config/config.yml
+    KunstmaanDemoBundle:
+        resource: @KunstmaanDemoBundle/Resources/config/config.yml
     KunstmaanSearchBundle:
         resource: @KunstmaanSearchBundle/Resources/config/config.yml
-    KunstmaanAdminBundle:
-        resource: @KunstmaanAdminBundle/Resources/config/config.yml
-    KunstmaanAdminBundle:
-        resource: @KunstmaanDemoBundle/Resources/config/config.yml
 
 framework:
     #esi:             ~
@@ -30,6 +25,9 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    exception_controller:  Symfony\Bundle\TwigBundle\Controller\ExceptionController::showAction
+    globals: 
+      requiredlocales: %requiredlocales%
 
 # Assetic Configuration
 assetic:

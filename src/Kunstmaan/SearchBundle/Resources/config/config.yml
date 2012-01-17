@@ -8,7 +8,7 @@ parameters:
 
 foq_elastica:
     clients:
-        default: { host: localhost, port: 9200 }
+        default: { host: 172.18.19.203, port: 9201 }
     indexes:
         website:
             client: default
