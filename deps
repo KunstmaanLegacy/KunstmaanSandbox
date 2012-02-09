@@ -156,7 +156,6 @@
     target=/gedmo-doctrine-extensions
 
 [DoctrineExtensionsBundle]
-    git=git://github.com/stof/StofDoctrineExtensionsBundle.git
+    git=git://github.com/kertz/StofDoctrineExtensionsBundle.git
     target=/bundles/Stof/DoctrineExtensionsBundle
-    
     

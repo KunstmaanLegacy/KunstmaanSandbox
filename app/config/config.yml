@@ -28,6 +28,7 @@ twig:
     exception_controller:  Symfony\Bundle\TwigBundle\Controller\ExceptionController::showAction
     globals: 
       requiredlocales: %requiredlocales%
+      websitetitle: %websitetitle%
 
 # Assetic Configuration
 assetic:

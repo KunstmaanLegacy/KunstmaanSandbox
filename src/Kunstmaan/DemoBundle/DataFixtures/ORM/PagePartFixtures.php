@@ -6,10 +6,11 @@ namespace Kunstmaan\DemoBundle\DataFixtures\ORM;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Kunstmaan\DemoBundle\Entity\MyExamplePage;
+use Doctrine\Common\Persistence\ObjectManager;
 
 class PagePartFixtures extends AbstractFixture implements OrderedFixtureInterface
 {
-    public function load($manager)
+    public function load(ObjectManager $manager)
     {
     	{ // Text page
 	    	{
@@ -41,7 +42,7 @@ class PagePartFixtures extends AbstractFixture implements OrderedFixtureInterfac
     			$manager->getRepository('KunstmaanPagePartBundle:PagePartRef')->addPagePart($page1, $headerpagepart, $i);
     		}
     	}
-    	
+
         $manager->flush();
     }
 

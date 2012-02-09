@@ -6,10 +6,11 @@ use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Kunstmaan\AdminBundle\Entity\Permission;
 use Kunstmaan\AdminBundle\Modules\ClassLookup;
+use Doctrine\Common\Persistence\ObjectManager;
 
 class PermissionsFixtures extends AbstractFixture implements OrderedFixtureInterface
 {
-    public function load($manager)
+    public function load(ObjectManager $manager)
     {
         $page1 = $this->getReference('homepage');
         $page2 = $this->getReference('contentpage');
