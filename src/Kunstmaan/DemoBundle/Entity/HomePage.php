@@ -7,6 +7,7 @@ use Kunstmaan\DemoBundle\PagePartAdmin\HomePagePagePartAdminConfigurator;
 use Kunstmaan\AdminNodeBundle\Entity\HasNode;
 
 use Doctrine\ORM\EntityManager;
+use Symfony\Component\HttpFoundation\Request;
 
 use Kunstmaan\AdminBundle\Entity\DeepCloneableIFace;
 
@@ -37,20 +38,13 @@ class HomePage implements PageIFace, Indexable, DeepCloneableIFace
      * @ORM\Column(type="string")
      */
     protected $title;
-    
-    /**
-     * @Gedmo\Locale
-     * Used locale to override Translation listener`s locale
-     * this is not a mapped field of entity metadata, just a simple property
-     */
-    protected $locale;
-    
+
     protected $parent;
-    
+
     public function getParent(){
     	return $this->parent;
     }
-    
+
     public function setParent(HasNode $parent){
     	$this->parent = $parent;
     }
@@ -147,13 +141,13 @@ class HomePage implements PageIFace, Indexable, DeepCloneableIFace
         return $this->possiblePermissions;
     }
 
-    
+
     public function getPossibleChildPageTypes()
     {
     	$array[] = array('name' => 'ContentPage', 'class'=>"Kunstmaan\DemoBundle\Entity\ContentPage");
     	return $array;
     }
-    
+
     public function deepClone(EntityManager $em){
     	$newpage = new HomePage();
     	$newpage->setTitle($this->getTitle());
@@ -162,7 +156,16 @@ class HomePage implements PageIFace, Indexable, DeepCloneableIFace
     	$em->getRepository('KunstmaanPagePartBundle:PagePartRef')->copyPageParts($em, $this, $newpage, $context = "main");
     	return $newpage;
     }
+
     public function getPagePartAdminConfigurations(){
     	return array(new HomePagePagePartAdminConfigurator());
+    }
+
+    public function service($container, Request $request, &$result){
+
+    }
+
+    public function getDefaultView(){
+    	return "KunstmaanDemoBundle:HomePage:view.html.twig";
     }
 }
