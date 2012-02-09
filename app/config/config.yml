@@ -82,3 +82,8 @@ stof_doctrine_extensions:
         default:
            loggable: true
            translatable: true
+
+# ornicar apc cache clearing configuration
+ornicar_apc:
+    host: %apchostname%
+    web_dir: %kernel.root_dir%/../web           

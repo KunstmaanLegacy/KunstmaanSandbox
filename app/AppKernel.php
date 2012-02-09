@@ -9,8 +9,6 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         $bundles = array(
-            new FOS\UserBundle\FOSUserBundle(),
-            new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
@@ -20,19 +18,25 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
-            new Airbrake\AirbrakeBundle\AirbrakeBundle(),
-            new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
-            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-            new Kunstmaan\AdminBundle\KunstmaanAdminBundle(),
-            new Kunstmaan\AdminListBundle\KunstmaanAdminListBundle(),
-            new Kunstmaan\MediaBundle\KunstmaanMediaBundle(),
-            new Kunstmaan\DemoBundle\KunstmaanDemoBundle(),
-	        new Kunstmaan\PagePartBundle\KunstmaanPagePartBundle(),
-            new Kunstmaan\AdminNodeBundle\KunstmaanAdminNodeBundle(),
-            new Kunstmaan\ViewBundle\KunstmaanViewBundle(),
-            new Kunstmaan\SearchBundle\KunstmaanSearchBundle(),
-            new FOQ\ElasticaBundle\FOQElasticaBundle(),
-        	new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            	
+        		new Ornicar\ApcBundle\OrnicarApcBundle(),
+        		new FOQ\ElasticaBundle\FOQElasticaBundle(),
+        		new FOS\UserBundle\FOSUserBundle(),
+        		new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
+        		new Airbrake\AirbrakeBundle\AirbrakeBundle(),
+        		new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
+        		new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+        		new Kunstmaan\AdminBundle\KunstmaanAdminBundle(),
+        		new Kunstmaan\AdminListBundle\KunstmaanAdminListBundle(),
+        		new Kunstmaan\MediaBundle\KunstmaanMediaBundle(),
+        		new Kunstmaan\PagePartBundle\KunstmaanPagePartBundle(),
+        		new Kunstmaan\AdminNodeBundle\KunstmaanAdminNodeBundle(),
+        		new Kunstmaan\ViewBundle\KunstmaanViewBundle(),
+        		new Kunstmaan\SearchBundle\KunstmaanSearchBundle(),
+        		new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+        		new Kunstmaan\DemoBundle\KunstmaanDemoBundle(),
+				new Kunstmaan\FormBundle\KunstmaanFormBundle(),
+           		new Kunstmaan\MediaPagePartBundle\KunstmaanMediaPagePartBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

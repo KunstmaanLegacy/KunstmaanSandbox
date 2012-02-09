@@ -7,6 +7,7 @@ use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Kunstmaan\DemoBundle\Entity\HomePage;
 use Kunstmaan\DemoBundle\Entity\ContentPage;
+use Kunstmaan\ViewBundle\Entity\SearchPage;
 use Kunstmaan\AdminNodeBundle\Entity\Node;
 use Kunstmaan\AdminBundle\Entity\Permission;
 use Kunstmaan\AdminBundle\Modules\ClassLookup;
@@ -35,6 +36,8 @@ class DemoFixtures extends AbstractFixture implements OrderedFixtureInterface
     	$manager->flush();
     	$nodeTranslation = $manager->getRepository('KunstmaanAdminNodeBundle:NodeTranslation')->createNodeTranslationFor($homepage, 'fr', $node, 'admin');
 
+    	$search = $this->createSearchPage($manager, "search", $homepage);
+    	
         $page1 = new ContentPage();
         $page1->setParent($homepage);
         $page1->setTitle('PageParts');
@@ -111,6 +114,32 @@ class DemoFixtures extends AbstractFixture implements OrderedFixtureInterface
     	$manager->flush();
     }
 
+    private function createSearchPage($manager, $title, $parent) {
+    	$page = new SearchPage();
+    	$page->setParent($parent);
+    	$page->setTitle($title);
+    	$manager->persist($page);
+    	$manager->flush();
+    	$node = $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($page, 'en', 'admin');
+    	$this->initPermissions($manager, $node);
+    	
+    	$page = new SearchPage();
+    	$page->setParent($parent);
+    	$page->setTitle($title);
+    	$manager->persist($page);
+    	$manager->flush();
+    	$nodeTranslation = $manager->getRepository('KunstmaanAdminNodeBundle:NodeTranslation')->createNodeTranslationFor($page, 'nl', $node, 'admin');
+    	
+    	
+    	$page = new SearchPage();
+    	$page->setParent($parent);
+    	$page->setTitle($title);
+    	$manager->persist($page);
+    	$manager->flush();
+    	$nodeTranslation = $manager->getRepository('KunstmaanAdminNodeBundle:NodeTranslation')->createNodeTranslationFor($page, 'nl', $node, 'admin');
+    	return $page;
+    }
+    
     public function getOrder()
     {
         return 51;

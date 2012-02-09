@@ -133,7 +133,15 @@
     
 [KunstmaanSearchBundle]
     git=git@github.com:Kunstmaan/KunstmaanSearchBundle.git
-    target=/bundles/Kunstmaan/SearchBundle    
+    target=/bundles/Kunstmaan/SearchBundle  
+    
+[KunstmaanFormBundle]
+    git=git@github.com:Kunstmaan/KunstmaanFormBundle.git
+    target=/bundles/Kunstmaan/FormBundle    
+
+[KunstmaanMediaPagePartBundle]
+    git=git@github.com:Kunstmaan/KunstmaanMediaPagePartBundle.git
+    target=/bundles/Kunstmaan/MediaPagePartBundle  
 
 [Elastica]
     git=git://github.com/ruflin/Elastica.git
@@ -159,3 +167,6 @@
     git=git://github.com/kertz/StofDoctrineExtensionsBundle.git
     target=/bundles/Stof/DoctrineExtensionsBundle
     
+[OrnicarApcBundle]
+	git=git://github.com/ornicar/ApcBundle.git
+	target=/bundles/Ornicar/ApcBundle
