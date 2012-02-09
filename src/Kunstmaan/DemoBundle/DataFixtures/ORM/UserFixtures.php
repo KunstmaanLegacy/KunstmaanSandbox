@@ -6,10 +6,11 @@ namespace Kunstmaan\DemoBundle\DataFixtures\ORM;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Kunstmaan\AdminBundle\Entity\User;
+use Doctrine\Common\Persistence\ObjectManager;
 
 class UserFixtures extends AbstractFixture implements OrderedFixtureInterface
 {
-    public function load($manager)
+    public function load(ObjectManager $manager)
     {
         $user1 = new User();
         $user1->setUsername("admin");

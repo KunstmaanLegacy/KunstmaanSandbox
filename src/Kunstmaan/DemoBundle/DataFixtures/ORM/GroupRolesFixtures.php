@@ -5,10 +5,11 @@ namespace Kunstmaan\DemoBundle\DataFixtures\ORM;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Kunstmaan\AdminBundle\Entity\Role;
+use Doctrine\Common\Persistence\ObjectManager;
 
 class GroupRolesFixtures extends AbstractFixture implements OrderedFixtureInterface
 {
-    public function load($manager)
+    public function load(ObjectManager $manager)
     {
         $grouprole1 = new Role('ROLE_PERMISSIONMANAGER');
         $manager->persist($grouprole1);
