@@ -1,3 +1,4 @@
+ 
 KunstmaanMediaBundle:
     resource: "@KunstmaanMediaBundle/Resources/config/routing.yml"
     prefix:   /
@@ -6,10 +7,23 @@ KunstmaanAdminBundle:
     resource: "@KunstmaanAdminBundle/Resources/config/routing.yml"
     prefix:   /
     
-KunstmaanViewBundle:
-    resource: "@KunstmaanViewBundle/Resources/config/routing.yml"
-    prefix:   /    
-      
-_imagine:
-    resource: .
-    type:     imagine
+KunstmaanPagePartBundle:
+    resource: "@KunstmaanPagePartBundle/Resources/config/routing.yml"
+    prefix:   /
+    
+KunstmaanViewBundle_searchpage:
+    resource: "@KunstmaanViewBundle/Controller/SearchPageController.php"
+    type:     annotation
+    prefix:   /
+
+KunstmaanViewBundle_slug:
+    resource: "@KunstmaanViewBundle/Controller/SlugController.php"
+    type:     annotation
+    prefix:   /
+    
+KunstmaanDemoBundle_default:
+    resource: "@KunstmaanDemoBundle/Controller/DefaultController.php"
+    type:     annotation
+    prefix:   /
+    
+  
