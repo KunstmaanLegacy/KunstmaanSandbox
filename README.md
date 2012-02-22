@@ -32,11 +32,14 @@ Then continue with:
 
 ```bash
     php bin/vendors install
+    php app/console doctrine:database:create
     php app/console doctrine:schema:create
     php app/console doctrine:fixtures:load
     php app/console assets:install web
     php app/console assetic:dump
 ```
+
+Now you should be able to login with username "admin" and password "admin" on: [http://localhost/kunstmaan-sandbox/web/app_dev.php/nl/admin/pages/][SandboxLogin]
 
 [KunstmaanAdminBundle]: https://github.com/Kunstmaan/KunstmaanAdminBundle "KunstmaanAdminBundle"
 [KunstmaanMediaBundle]: https://github.com/Kunstmaan/KunstmaanMediaBundle "KunstmaanMediaBundle"
@@ -47,3 +50,4 @@ Then continue with:
 [KunstmaanSearchBundle]: https://github.com/Kunstmaan/KunstmaanSearchBundle "KunstmaanSearchBundle"
 [KunstmaanFormBundle]: https://github.com/Kunstmaan/KunstmaanFormBundle "KunstmaanFormBundle"
 [KunstmaanMediaPagePartBundle]: https://github.com/Kunstmaan/KunstmaanMediaPagePartBundle "KunstmaanMediaPagePartBundle"
+[SandboxLogin]: http://localhost/kunstmaan-sandbox/web/app_dev.php/nl/admin/pages/ "SandboxLogin"
