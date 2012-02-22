@@ -1,5 +1,5 @@
 set :env, "production"
-set :domain, "omnext.front26.kunstmaan.be"
+set :domain, "kumasandbox.front37.kunstmaan.be"
 
 set :branch, `git name-rev --name-only HEAD`.strip # get the current branch name from git
 
