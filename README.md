@@ -18,8 +18,20 @@
     git clone git@github.com:Kunstmaan/KunstmaanSandbox.git kunstmaan-sandbox
     cd kunstmaan-sandbox
     rm -rf .git
+    cp app/config/parameters.ini.dist app/config/parameters.ini
+```
+Now edit the app/config/parameters.ini file, be sure your db settings are correct. Mayby you need to do some mysql commands:
+```sql
+    create user 'kumasandboxtest'@'localhost' identified by 'kumasandboxtest';
+    grant all on kumasandboxtest.* to 'kumasandboxtest'@'localhost';
+```
+Then continue with:
+```bash
     php bin/vendors install
-    ./fullreload.sh
+    php app/console doctrine:schema:create
+    php app/console doctrine:fixtures:load
+    php app/console assets:install web
+    php app/console assetic:dump
 ```
 
 [KunstmaanAdminBundle]: https://github.com/Kunstmaan/KunstmaanAdminBundle "KunstmaanAdminBundle"
