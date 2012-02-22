@@ -22,6 +22,9 @@ class UserFixtures extends AbstractFixture implements OrderedFixtureInterface
 
         $manager->persist($user1);
         $manager->flush();
+        $manager->refresh($user1);
+
+        $this->addReference('adminuser', $user1);
 
 
         $user2 = new User();
