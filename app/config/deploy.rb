@@ -1,5 +1,5 @@
 # Main config
-set :application, "omnext"
+set :application, "kumasandbox"
 set :use_sudo, false
 set :keep_releases, 3
 
@@ -9,7 +9,7 @@ set :stages, %w{production staging}
 set :default_stage, "production"
 require 'capistrano/ext/multistage' # this should be here, can't be set on top of the config
 
-set :deploy_to, "/home/projects/omnext/data/"
+set :deploy_to, "/home/projects/kumasandbox/data/"
 set (:domain) {"#{domain}"} # domain is defined in the stage config
 
 role(:web) { domain } # Your HTTP server, Apache/etc
@@ -27,8 +27,5 @@ set :shared_files, ["app/config/parameters.ini"]
 set :shared_children, [app_path + "/logs", web_path + "/uploads", "vendor"]
 set :vendors_mode, "install"
 set :update_vendors, true
-
-# Kumastrano config
-set :campfire_room, "OpenMercury.NEXT"
 
 # Airbrake
