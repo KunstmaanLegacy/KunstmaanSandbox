@@ -15,7 +15,7 @@
 ## Installation:
 
 ```bash
-    git clone https://github.com/Kunstmaan/KunstmaanSandbox.git kunstmaan-sandbox
+    git clone git@github.com:Kunstmaan/KunstmaanSandbox.git kunstmaan-sandbox
     cd kunstmaan-sandbox
     rm -rf .git
     php bin/vendors install
