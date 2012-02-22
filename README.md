@@ -20,12 +20,16 @@
     rm -rf .git
     cp app/config/parameters.ini.dist app/config/parameters.ini
 ```
-Now edit the app/config/parameters.ini file, be sure your db settings are correct. Mayby you need to do some mysql commands:
+
+Now edit the app/config/parameters.ini file, be sure your db settings are correct. Be sure the user can create the database in mysql:
+
 ```sql
-    create user 'kumasandboxtest'@'localhost' identified by 'kumasandboxtest';
-    grant all on kumasandboxtest.* to 'kumasandboxtest'@'localhost';
+    create user 'kumasandbox'@'localhost' identified by 'kumasandbox';
+    grant all on kumasandbox.* to 'kumasandbox'@'localhost';
 ```
+
 Then continue with:
+
 ```bash
     php bin/vendors install
     php app/console doctrine:schema:create
