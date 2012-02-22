@@ -26,7 +26,7 @@
 [KunstmaanMediaBundle]: https://github.com/Kunstmaan/KunstmaanMediaBundle "KunstmaanMediaBundle"
 [KunstmaanPagePartBundle]: https://github.com/Kunstmaan/KunstmaanPagePartBundle "KunstmaanPagePartBundle"
 [KunstmaanAdminListBundle]: https://github.com/Kunstmaan/KunstmaanAdminListBundle "KunstmaanAdminListBundle"
-[KunstmaanMeKunstmaanAdminNodeBundlediaBundle]: https://github.com/Kunstmaan/KunstmaanAdminNodeBundle "KunstmaanAdminNodeBundle"
+[KunstmaanAdminNodeBundle]: https://github.com/Kunstmaan/KunstmaanAdminNodeBundle "KunstmaanAdminNodeBundle"
 [KunstmaanViewBundle]: https://github.com/Kunstmaan/KunstmaanViewBundle "KunstmaanViewBundle"
 [KunstmaanSearchBundle]: https://github.com/Kunstmaan/KunstmaanSearchBundle "KunstmaanSearchBundle"
 [KunstmaanFormBundle]: https://github.com/Kunstmaan/KunstmaanFormBundle "KunstmaanFormBundle"
