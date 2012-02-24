@@ -96,10 +96,6 @@
     git=https://github.com/Elao/WebProfilerExtraBundle.git
     target=/bundles/Elao/WebProfilerExtraBundle
 
-[AirbrakeBundle]
-    git=https://github.com/danielknell/AirbrakeBundle.git
-    target=/bundles/Airbrake/AirbrakeBundle
-
 [KnpMenu]
     git=https://github.com/KnpLabs/KnpMenu.git
 
