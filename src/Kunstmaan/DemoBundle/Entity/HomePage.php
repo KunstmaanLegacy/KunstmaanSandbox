@@ -18,6 +18,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Kunstmaan\DemoBundle\Form\HomePageAdminType;
 use Kunstmaan\AdminBundle\Entity\PageIFace;
 use Kunstmaan\SearchBundle\Entity\Indexable;
+use Kunstmaan\AdminBundle\Modules\ClassLookup;
 
 /**
  * @ORM\Entity(repositoryClass="Kunstmaan\DemoBundle\Repository\HomePageRepository")
@@ -115,20 +116,17 @@ class HomePage implements PageIFace, Indexable, DeepCloneableIFace
 
     public function getContentForIndexing($container, $entity)
     {
-        $renderer = $container->get('templating');
-        $em = $container->get('doctrine')->getEntityManager();
+    	$renderer = $container->get('templating');
+    	$em = $container->get('doctrine')->getEntityManager();
 
-        $node = $em->getRepository('KunstmaanAdminNodeBundle:Node')->getNodeForSlug($entity->getParent(), $entity->getSlug());
-        $page = $node->getRef($em);
+    	$pageparts = $em->getRepository('KunstmaanPagePartBundle:PagePartRef')->getPageParts($this);
 
-        $pageparts = $em->getRepository('KunstmaanPagePartBundle:PagePartRef')->getPageParts($em, $page);
+    	$classname = ClassLookup::getClassName($this);
 
-        $classname = explode('\\', get_class($this));
-        $classname = array_pop($classname);
+    	$view = 'KunstmaanDemoBundle:Elastica:'.$classname.'.elastica.twig';
 
-        $view = 'KunstmaanDemoBundle:Elastica:'.$classname.'.elastica.twig';
-
-        return $renderer->render($view, array('page' => $entity, 'pageparts' => $pageparts));
+    	$temp = $renderer->render($view, array('page' => $this, 'pageparts' => $pageparts));
+    	return strip_tags($temp);
     }
 
     public function setTranslatableLocale($locale)

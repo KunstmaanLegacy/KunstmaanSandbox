@@ -13,17 +13,18 @@ class BannerPagePartAdminConfigurator extends AbstractPagePartAdminConfigurator 
             array('name' => 'Header',   'class'=>'Kunstmaan\PagePartBundle\Entity\HeaderPagePart'),
             array('name' => 'Text',     'class'=>'Kunstmaan\PagePartBundle\Entity\TextPagePart'),
             array('name' => 'Line',     'class'=>'Kunstmaan\PagePartBundle\Entity\LinePagePart'),
+        	array('name' => 'Image',  	'class'=>'Kunstmaan\MediaPagePartBundle\Entity\ImagePagePart'),
         );
     }
 
     function getPossiblePagePartTypes(){
         return $this->pagePartTypes;
     }
-    
+
     function getName(){
     	return "Banners";
     }
-    
+
     function getDefaultContext(){
     	return "banners";
     }
