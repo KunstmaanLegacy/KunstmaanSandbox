@@ -8,7 +8,7 @@ env:
   - SYMFONY_VERSION=origin/2.0
   - SYMFONY_VERSION=origin/master
 
-before_script: php vendor/vendors.php
+before_script: php ./bin/vendors install
 script: phpunit -c app/
 
 notifications:
