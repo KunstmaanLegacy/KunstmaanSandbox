@@ -11,8 +11,6 @@
     mailer_password=""
     locale="en"
     secret=" XXXXXXXXX "
-    airbrake_apikey=" XXXXXXXXXX "
-    airbrake_transport="curl"
     cdnpath=""
     requiredlocales="nl|fr|de|en"
     searchport=9200
