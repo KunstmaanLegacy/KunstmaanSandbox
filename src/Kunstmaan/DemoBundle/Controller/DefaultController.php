@@ -7,9 +7,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    
+
     public function indexAction($name)
     {
-        return $this->render('KunstmaanDemoBundle:Default:index.html.twig', array('name' => $name));
+        return $this->forward("KunstmaanViewBundle:Slug:slug", array("_locale"=>"en", "slug"=>"home"));
     }
 }
