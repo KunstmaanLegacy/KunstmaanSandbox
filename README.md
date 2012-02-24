@@ -7,6 +7,9 @@ The Kunstmaan sandbox is an example project to demonstrate what the Kunstmaan bu
 
 View screenshots and more on our [github page](http://kunstmaan.github.com/KunstmaanSandbox)
 
+[![Build Status](https://secure.travis-ci.org/Kunstmaan/KunstmaanSandbox.png?branch=master)](http://travis-ci.org/Kunstmaan/KunstmaanSandbox)
+
+
 This is a sandbox for the following bundles
 -------------------------------------------
 
