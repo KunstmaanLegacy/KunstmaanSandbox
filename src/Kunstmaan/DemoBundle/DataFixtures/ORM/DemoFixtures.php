@@ -15,8 +15,11 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 class DemoFixtures extends AbstractFixture implements OrderedFixtureInterface
 {
+    private $adminuser = null;
+    
     public function load(ObjectManager $manager)
     {
+        $this->adminuser = $manager->getRepository('KunstmaanAdminBundle:User')->findOneBy(array('username' => 'Admin'));
 
     	$homepage = $this->createHomePage($manager, "Home");
 
@@ -35,8 +38,8 @@ class DemoFixtures extends AbstractFixture implements OrderedFixtureInterface
 
     private function initPermissions($manager, Node $node){
     	$kunstmaanGroup     = $this->getReference('kunstmaan-group');
-    	$adminGroup         = $this->getReference('admin-group');
-    	$guestGroup         = $this->getReference('guest-group');
+    	$adminGroup         = $manager->getRepository('KunstmaanAdminBundle:Group')->findOneBy(array('name' => 'Administrators'));
+    	$guestGroup         = $manager->getRepository('KunstmaanAdminBundle:Group')->findOneBy(array('name' => 'Guests'));
 
     	//Page 1
     	//----------------------------------
@@ -70,20 +73,20 @@ class DemoFixtures extends AbstractFixture implements OrderedFixtureInterface
     	$homepage->setTitle($title);
     	$manager->persist($homepage);
     	$manager->flush();
-    	$node = $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($homepage, 'en', $this->getReference('adminuser'));
+    	$node = $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($homepage, 'en', $this->adminuser);
     	$this->initPermissions($manager, $node);
 
     	$homepage_nl = new HomePage();
     	$homepage_nl->setTitle($title);
     	$manager->persist($homepage_nl);
     	$manager->flush();
-    	$nodeTranslation = $manager->getRepository('KunstmaanAdminNodeBundle:NodeTranslation')->createNodeTranslationFor($homepage_nl, 'nl', $node, $this->getReference('adminuser'));
+    	$nodeTranslation = $manager->getRepository('KunstmaanAdminNodeBundle:NodeTranslation')->createNodeTranslationFor($homepage_nl, 'nl', $node, $this->adminuser);
 
     	$homepage_fr = new HomePage();
     	$homepage_fr->setTitle($title);
     	$manager->persist($homepage_fr);
     	$manager->flush();
-    	$nodeTranslation = $manager->getRepository('KunstmaanAdminNodeBundle:NodeTranslation')->createNodeTranslationFor($homepage_fr, 'fr', $node, $this->getReference('adminuser'));
+    	$nodeTranslation = $manager->getRepository('KunstmaanAdminNodeBundle:NodeTranslation')->createNodeTranslationFor($homepage_fr, 'fr', $node, $this->adminuser);
 
     	return $homepage;
     }
@@ -94,7 +97,7 @@ class DemoFixtures extends AbstractFixture implements OrderedFixtureInterface
     	$page->setTitle('PageParts');
     	$manager->persist($page);
     	$manager->flush();
-    	$node = $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($page, 'en', $this->getReference('adminuser'));
+    	$node = $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($page, 'en', $this->adminuser);
     	$this->initPermissions($manager, $node);
     	return $page;
     }
@@ -105,7 +108,7 @@ class DemoFixtures extends AbstractFixture implements OrderedFixtureInterface
     	$headerpage->setTitle($title);
     	$manager->persist($headerpage);
     	$manager->flush();
-    	$node = $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($headerpage, 'en', $this->getReference('adminuser'));
+    	$node = $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($headerpage, 'en', $this->adminuser);
     	$this->initPermissions($manager, $node);
     	for ($i = 1; $i <= 6; $i++) {
     		$headerpagepart = new \Kunstmaan\PagePartBundle\Entity\HeaderPagePart();
@@ -123,7 +126,7 @@ class DemoFixtures extends AbstractFixture implements OrderedFixtureInterface
     	$textpage->setTitle($title);
     	$manager->persist($textpage);
     	$manager->flush();
-    	$node = $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($textpage, 'en', $this->getReference('adminuser'));
+    	$node = $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($textpage, 'en', $this->adminuser);
     	$this->initPermissions($manager, $node);
     	{
     		$headerpagepart = new \Kunstmaan\PagePartBundle\Entity\HeaderPagePart();
@@ -148,7 +151,7 @@ class DemoFixtures extends AbstractFixture implements OrderedFixtureInterface
     	$textpage->setTitle($title);
     	$manager->persist($textpage);
     	$manager->flush();
-    	$node = $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($textpage, 'en', $this->getReference('adminuser'));
+    	$node = $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($textpage, 'en', $this->adminuser);
     	$this->initPermissions($manager, $node);
     	{
     		$headerpagepart = new \Kunstmaan\PagePartBundle\Entity\HeaderPagePart();
@@ -204,7 +207,7 @@ class DemoFixtures extends AbstractFixture implements OrderedFixtureInterface
     	$manager->persist($page);
     	$manager->flush();
     	$manager->refresh($page);
-    	$node = $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($page, 'en', $this->getReference('adminuser'));
+    	$node = $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($page, 'en', $this->adminuser);
     	$manager->persist($node);
     	$manager->flush();
     	$manager->refresh($node);
@@ -262,7 +265,7 @@ class DemoFixtures extends AbstractFixture implements OrderedFixtureInterface
     	$page->setTitle($title);
     	$manager->persist($page);
     	$manager->flush();
-    	$node = $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($page, 'en', $this->getReference('adminuser'));
+    	$node = $manager->getRepository('KunstmaanAdminNodeBundle:Node')->createNodeFor($page, 'en', $this->adminuser);
     	$this->initPermissions($manager, $node);
 
     	$page = new SearchPage();
@@ -270,7 +273,7 @@ class DemoFixtures extends AbstractFixture implements OrderedFixtureInterface
     	$page->setTitle($title);
     	$manager->persist($page);
     	$manager->flush();
-    	$nodeTranslation = $manager->getRepository('KunstmaanAdminNodeBundle:NodeTranslation')->createNodeTranslationFor($page, 'nl', $node, $this->getReference('adminuser'));
+    	$nodeTranslation = $manager->getRepository('KunstmaanAdminNodeBundle:NodeTranslation')->createNodeTranslationFor($page, 'nl', $node, $this->adminuser);
 
 
     	$page = new SearchPage();
@@ -278,7 +281,7 @@ class DemoFixtures extends AbstractFixture implements OrderedFixtureInterface
     	$page->setTitle($title);
     	$manager->persist($page);
     	$manager->flush();
-    	$nodeTranslation = $manager->getRepository('KunstmaanAdminNodeBundle:NodeTranslation')->createNodeTranslationFor($page, 'nl', $node, $this->getReference('adminuser'));
+    	$nodeTranslation = $manager->getRepository('KunstmaanAdminNodeBundle:NodeTranslation')->createNodeTranslationFor($page, 'nl', $node, $this->adminuser);
     	return $page;
     }
 
