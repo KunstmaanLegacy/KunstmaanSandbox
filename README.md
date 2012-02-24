@@ -5,6 +5,9 @@ About
 -----
 The Kunstmaan sandbox is an example project to demonstrate what the Kunstmaan bundles are able to achieve when using a combination of the Kunstmaan bundles.
 
+View screenshots and more on our [github page](http://kunstmaan.github.com/
+KunstmaanSandbox).
+
 Installation requirements
 -------------------------
 You should be able to get Symfony 2 up and running before you can install the KunstmaanSandbox.
