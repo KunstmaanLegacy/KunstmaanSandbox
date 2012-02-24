@@ -5,31 +5,51 @@ About
 -----
 The Kunstmaan sandbox is an example project to demonstrate what the Kunstmaan bundles are able to achieve when using a combination of the Kunstmaan bundles.
 
+This is a sandbox for the following bundles
+-------------------------------------------
+
+* KunstmaanAdminBundle
+* KunstmaanMediaBundle
+* KunstmaanPagePartBundle
+* KunstmaanAdminListBundle
+* KunstmaanAdminNodeBundle
+* KunstmaanViewBundle
+* KunstmaanSearchBundle
+* KunstmaanFormBundle
+* KunstmaanMediaPagePartBundle
+
+
 Installation requirements
 -------------------------
 You should be able to get Symfony 2 up and running before you can install the KunstmaanSandbox.
 
 Installation instructions
 -------------------------
-Installation is straightforward, add the following lines to your deps file:
-
 ```
-[KunstmaanSandbox]
-    git=git@github.com:Kunstmaan/KunstmaanSandbox.git
-    target=/bundles/Kunstmaan/Sandbox
-```
-
-Register the Kunstmaan namespace in your autoload.php file:
-
-```
-'Kunstmaan'        => __DIR__.'/../vendor/bundles'
+git clone git@github.com:Kunstmaan/KunstmaanSandbox.git kunstmaan-
+cd kunstmaan-sandbox
+rm -rf .git
+cp app/config/parameters.ini.dist app/config/parameters.ini
 ```
 
-Add the KunstmaanSandbox to your AppKernel.php file:
+Now edit the app/config/parameters.ini file, be sure your db settings are correct. Be sure the user can create the database in mysql:
 
 ```
-new Kunstmaan\Sandbox\KunstmaanSandbox(),
+create user 'kumasandbox'@'localhost' identified by 'kumasandbox';
+grant all on kumasandbox.* to 'kumasandbox'@'localhost';
 ```
+
+Then continue with:
+
+```
+php bin/vendors install
+php app/console doctrine:database:create
+php app/console doctrine:schema:create
+php app/console doctrine:fixtures:load
+php app/console assets:install web
+php app/console assetic:dump
+```
+Now you should be able to login with username "admin" and password "admin" on http://localhost/kunstmaan-sandbox/web/app_dev.php/nl/admin/pages/
 
 Contact
 -------
