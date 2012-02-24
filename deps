@@ -108,39 +108,39 @@
     target=bundles/Knp/Bundle/MenuBundle
 
 [KunstmaanAdminBundle]
-    git=git@github.com:Kunstmaan/KunstmaanAdminBundle.git
+    git=https://github.com/Kunstmaan/KunstmaanAdminBundle.git
     target=/bundles/Kunstmaan/AdminBundle
 
 [KunstmaanMediaBundle]
-    git=git@github.com:Kunstmaan/KunstmaanMediaBundle.git
+    git=https://github.com/Kunstmaan/KunstmaanMediaBundle.git
     target=bundles/Kunstmaan/MediaBundle
 
 [KunstmaanPagePartBundle]
-    git=git@github.com:Kunstmaan/KunstmaanPagePartBundle.git
+    git=https://github.com/Kunstmaan/KunstmaanPagePartBundle.git
     target=/bundles/Kunstmaan/PagePartBundle
 
 [KunstmaanAdminListBundle]
-    git=git@github.com:Kunstmaan/KunstmaanAdminListBundle.git
+    git=https://github.com/Kunstmaan/KunstmaanAdminListBundle.git
     target=/bundles/Kunstmaan/AdminListBundle
     
 [KunstmaanAdminNodeBundle]
-    git=git@github.com:Kunstmaan/KunstmaanAdminNodeBundle.git
+    git=https://github.com/Kunstmaan/KunstmaanAdminNodeBundle.git
     target=/bundles/Kunstmaan/AdminNodeBundle
 
 [KunstmaanViewBundle]
-    git=git@github.com:Kunstmaan/KunstmaanViewBundle.git
+    git=https://github.com/Kunstmaan/KunstmaanViewBundle.git
     target=/bundles/Kunstmaan/ViewBundle
     
 [KunstmaanSearchBundle]
-    git=git@github.com:Kunstmaan/KunstmaanSearchBundle.git
+    git=https://github.com/Kunstmaan/KunstmaanSearchBundle.git
     target=/bundles/Kunstmaan/SearchBundle  
     
 [KunstmaanFormBundle]
-    git=git@github.com:Kunstmaan/KunstmaanFormBundle.git
+    git=https://github.com/Kunstmaan/KunstmaanFormBundle.git
     target=/bundles/Kunstmaan/FormBundle    
 
 [KunstmaanMediaPagePartBundle]
-    git=git@github.com:Kunstmaan/KunstmaanMediaPagePartBundle.git
+    git=https://github.com/Kunstmaan/KunstmaanMediaPagePartBundle.git
     target=/bundles/Kunstmaan/MediaPagePartBundle  
 
 [Elastica]
