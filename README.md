@@ -31,7 +31,7 @@ You should be able to get Symfony 2 up and running before you can install the Ku
 Installation instructions
 -------------------------
 ```
-git clone git@github.com:Kunstmaan/KunstmaanSandbox.git kunstmaan-
+git clone https://github.com/Kunstmaan/KunstmaanSandbox.git kunstmaan-
 cd kunstmaan-sandbox
 rm -rf .git
 cp app/config/parameters.ini.dist app/config/parameters.ini
