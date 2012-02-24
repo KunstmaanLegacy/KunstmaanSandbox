@@ -14,7 +14,7 @@
   {% endif %}
   {% if nodetranslation.getSEO().getMetaKeywords() %}
   	<meta name="keywords" content="{{ nodetranslation.getSEO().getMetaKeywords() }}">
-  {% endif %}	
+  {% endif %}
   {% if nodetranslation.getSEO().getMetaAuthor() %}
   	<meta name="author" content="{{ nodetranslation.getSEO().getMetaAuthor() }}">
   {% endif %}
@@ -43,20 +43,13 @@
 
   <!-- RSS -->
   <link rel="alternate" title="Nieuws" type="application/rss+xml" href="" />
-
-  <!-- use a custom Modernizr build: www.modernizr.com/download/ -->
-  {% stylesheets
-                    'bundles/kunstmaandemo/css/style.css'
-                    output='style.css'
-                    filter='cssrewrite'
-                %}
-   <link rel="stylesheet"  media="screen" type="text/css" href="{{ asset_url }}" />
-   {% endstylesheets %}
-
+  <link rel="stylesheet" href="{{ asset('bundles/kunstmaandemo/css/style.css') }}" type="text/css">
    {% javascripts
                     '@KunstmaanDemoBundle/Resources/public/js/libs/jquery-1.6.2.min.js'
                     '@KunstmaanDemoBundle/Resources/public/js/libs/*'
                     '@KunstmaanDemoBundle/Resources/public/js/*'
+                    filter="yui_js"
+                    output='frontend/js.css'
                 %}
    <script src="{{ asset_url }}"></script>
    {% endjavascripts %}
