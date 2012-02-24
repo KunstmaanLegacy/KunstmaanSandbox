@@ -1,53 +1,44 @@
-# Kunstmaan Symfony 2 Reference Project: Sandbox
+KunstmaanSandbox by Kunstmaan
+=================================
 
-## This is a sandbox for the following bundles:
+About
+-----
+The Kunstmaan sandbox is an example project to demonstrate what the Kunstmaan bundles are able to achieve when using a combination of the Kunstmaan bundles.
 
-* [KunstmaanAdminBundle][KunstmaanAdminBundle]
-* [KunstmaanMediaBundle][KunstmaanMediaBundle]
-* [KunstmaanPagePartBundle][KunstmaanPagePartBundle]
-* [KunstmaanAdminListBundle][KunstmaanAdminListBundle]
-* [KunstmaanAdminNodeBundle][KunstmaanAdminNodeBundle]
-* [KunstmaanViewBundle][KunstmaanViewBundle]
-* [KunstmaanSearchBundle][KunstmaanSearchBundle]
-* [KunstmaanFormBundle][KunstmaanFormBundle]
-* [KunstmaanMediaPagePartBundle][KunstmaanMediaPagePartBundle]
+Installation requirements
+-------------------------
+You should be able to get Symfony 2 up and running before you can install the KunstmaanSandbox.
 
-## Installation:
+Installation instructions
+-------------------------
+Installation is straightforward, add the following lines to your deps file:
 
-```bash
-    git clone git@github.com:Kunstmaan/KunstmaanSandbox.git kunstmaan-sandbox
-    cd kunstmaan-sandbox
-    rm -rf .git
-    cp app/config/parameters.ini.dist app/config/parameters.ini
+```
+[KunstmaanSandbox]
+    git=git@github.com:Kunstmaan/KunstmaanSandbox.git
+    target=/bundles/Kunstmaan/Sandbox
 ```
 
-Now edit the app/config/parameters.ini file, be sure your db settings are correct. Be sure the user can create the database in mysql:
+Register the Kunstmaan namespace in your autoload.php file:
 
-```sql
-    create user 'kumasandbox'@'localhost' identified by 'kumasandbox';
-    grant all on kumasandbox.* to 'kumasandbox'@'localhost';
+```
+'Kunstmaan'        => __DIR__.'/../vendor/bundles'
 ```
 
-Then continue with:
+Add the KunstmaanSandbox to your AppKernel.php file:
 
-```bash
-    php bin/vendors install
-    php app/console doctrine:database:create
-    php app/console doctrine:schema:create
-    php app/console doctrine:fixtures:load
-    php app/console assets:install web
-    php app/console assetic:dump
+```
+new Kunstmaan\Sandbox\KunstmaanSandbox(),
 ```
 
-Now you should be able to login with username "admin" and password "admin" on: [http://localhost/kunstmaan-sandbox/web/app_dev.php/nl/admin/pages/][SandboxLogin]
+Contact
+-------
+Kunstmaan (support@kunstmaan.be)
 
-[KunstmaanAdminBundle]: https://github.com/Kunstmaan/KunstmaanAdminBundle "KunstmaanAdminBundle"
-[KunstmaanMediaBundle]: https://github.com/Kunstmaan/KunstmaanMediaBundle "KunstmaanMediaBundle"
-[KunstmaanPagePartBundle]: https://github.com/Kunstmaan/KunstmaanPagePartBundle "KunstmaanPagePartBundle"
-[KunstmaanAdminListBundle]: https://github.com/Kunstmaan/KunstmaanAdminListBundle "KunstmaanAdminListBundle"
-[KunstmaanAdminNodeBundle]: https://github.com/Kunstmaan/KunstmaanAdminNodeBundle "KunstmaanAdminNodeBundle"
-[KunstmaanViewBundle]: https://github.com/Kunstmaan/KunstmaanViewBundle "KunstmaanViewBundle"
-[KunstmaanSearchBundle]: https://github.com/Kunstmaan/KunstmaanSearchBundle "KunstmaanSearchBundle"
-[KunstmaanFormBundle]: https://github.com/Kunstmaan/KunstmaanFormBundle "KunstmaanFormBundle"
-[KunstmaanMediaPagePartBundle]: https://github.com/Kunstmaan/KunstmaanMediaPagePartBundle "KunstmaanMediaPagePartBundle"
-[SandboxLogin]: http://localhost/kunstmaan-sandbox/web/app_dev.php/nl/admin/pages/ "SandboxLogin"
+Download
+--------
+You can also clone the project with Git by running:
+
+```
+$ git clone git://github.com/Kunstmaan/KunstmaanSandbox
+```
