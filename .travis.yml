@@ -13,4 +13,4 @@ script: phpunit -c app/
 
 notifications:
   email:
-    - support@kunstmaan.be
+    - travis@kunstmaan.be
