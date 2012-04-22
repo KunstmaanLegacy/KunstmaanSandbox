@@ -1,8 +1,2 @@
 parameters:
 #    kunstmaan_demo.example.class: Kunstmaan\DemoBundle\Example
-
-services:
-    kunstmaan_admin.menu_builder:
-        class: Kunstmaan\AdminBundle\Menu\MenuBuilder
-        arguments: ["@knp_menu.factory", "@translator", [@kunstmaan_node.pages_menu, @kunstmaan_media.media_menu, @kunstmaan_form.form_menu]]
-
