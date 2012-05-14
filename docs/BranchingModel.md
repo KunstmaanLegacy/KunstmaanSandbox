@@ -2,7 +2,7 @@
 
 Our bundles are relatively new. This means we will see a lot of refactoring and backward compatible breaks in the coming months. To handle these and maintain a high quality in our websites we created a formal way of branching and tagging in our bundles.
 
-![Branching Model](BranchingModel.png)
+![Branching Model](https://github.com/Kunstmaan/KunstmaanSandbox/raw/documentation/branchingmodel/docs/BranchingModel.png)
 
 When we look at the important events in time, we can connect them to the start of new large projects. Such an event will trigger new features, refactorings and general improvements. These changes will be developped in feature branches and after careful code review be merged into master. These branches will be squashed and the commit message will contain all information needed to upgrade.
 
