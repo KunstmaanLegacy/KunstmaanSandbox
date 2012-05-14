@@ -359,15 +359,15 @@
 				<key>ID</key>
 				<integer>66</integer>
 				<key>Position</key>
-				<real>0.82105880975723267</real>
+				<real>0.61509490013122559</real>
 			</dict>
 			<key>ID</key>
 			<integer>86</integer>
 			<key>Points</key>
 			<array>
-				<string>{66.964724692619981, 303.08167035642833}</string>
-				<string>{73, 281}</string>
-				<string>{134.97601318359375, 284.00000046864761}</string>
+				<string>{65.382364104945438, 303.07476805165584}</string>
+				<string>{73, 267}</string>
+				<string>{134.97601318359375, 253.99999879051927}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -451,8 +451,9 @@
 				<data>
 				BAtzdHJlYW10eXBlZIHoA4QBQISEhBJOU0F0dHJpYnV0
 				ZWRTdHJpbmcAhIQITlNPYmplY3QAhZKEhIQITlNTdHJp
-				bmcBlIQBKx9CQyBicmVha3Mgb3IgbGFyZ2UgbmV3IGZl
-				YXR1cmVzhoQCaUkBH5KEhIQMTlNEaWN0aW9uYXJ5AJSE
+				bmcBlIQBK0BCQyBicmVha3Mgb3IgbGFyZ2UgbmV3IGZl
+				YXR1cmVzLCBvcmlnaW5hdGluZyBpbiBmZWF0dXJlIGJy
+				YW5jaGVzhoQCaUkBQJKEhIQMTlNEaWN0aW9uYXJ5AJSE
 				AWkDkoSWlgdOU0NvbG9yhpKEhIQHTlNDb2xvcgCUhAFj
 				AoQEZmZmZoONjAw+g/r4+D6DwL8/PwGGkoSWlhBOU1Bh
 				cmFncmFwaFN0eWxlhpKEhIQQTlNQYXJhZ3JhcGhTdHls
@@ -471,12 +472,12 @@
 {\colortbl;\red255\green255\blue255;\red31\green102\blue177;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs18 \cf2 BC breaks or large new features}</string>
+\f0\fs18 \cf2 BC breaks or large new features, originating in feature branches}</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{436.01256191917963, 416.46092867574311}, {52, 22}}</string>
+			<string>{{417.01256191917963, 416.46092867574311}, {90, 22}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -543,14 +544,14 @@
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs18 \cf2 \expnd0\expndtw0\kerning0
-merge back}</string>
+merge back or manual}</string>
 			</dict>
 			<key>Wrap</key>
 			<string>NO</string>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{308.17284201287936, 397.80024584532043}, {52, 22}}</string>
+			<string>{{289.17284201287936, 397.80024584532043}, {90, 22}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -617,14 +618,14 @@ merge back}</string>
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs18 \cf2 \expnd0\expndtw0\kerning0
-merge back}</string>
+merge back or manual}</string>
 			</dict>
 			<key>Wrap</key>
 			<string>NO</string>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{356.32019116687428, 361.33625827529153}, {52, 22}}</string>
+			<string>{{356.45924217827337, 357.29072092026206}, {52, 22}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -698,7 +699,7 @@ merge back}</string>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{277.49154278457007, 252.61610735863263}, {52, 22}}</string>
+			<string>{{258.49154278457007, 252.61610735863263}, {90, 22}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -765,7 +766,7 @@ merge back}</string>
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs18 \cf2 \expnd0\expndtw0\kerning0
-merge back}</string>
+merge back or manual}</string>
 			</dict>
 			<key>Wrap</key>
 			<string>NO</string>
@@ -1092,7 +1093,7 @@ merge back}</string>
 				<key>ID</key>
 				<integer>69</integer>
 				<key>Position</key>
-				<real>0.53965079784393311</real>
+				<real>0.32399168610572815</real>
 			</dict>
 			<key>ID</key>
 			<integer>72</integer>
@@ -1100,7 +1101,7 @@ merge back}</string>
 			<array>
 				<string>{396.68054181587161, 339.06917260037648}</string>
 				<string>{425.51256191917963, 365}</string>
-				<string>{134.97601318359375, 401.00000222701289}</string>
+				<string>{134.97601318359375, 375.00000013277753}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -1675,7 +1676,7 @@ merge back}</string>
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\b\fs24 \cf0 3.0.2}</string>
+\f0\b\fs24 \cf0 2.1.2}</string>
 				<key>VerticalPad</key>
 				<integer>0</integer>
 			</dict>
@@ -1712,7 +1713,7 @@ merge back}</string>
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\b\fs24 \cf0 3.0.1}</string>
+\f0\b\fs24 \cf0 2.1.1}</string>
 				<key>VerticalPad</key>
 				<integer>0</integer>
 			</dict>
@@ -1791,7 +1792,7 @@ merge back}</string>
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\b\fs24 \cf0 3.0}</string>
+\f0\b\fs24 \cf0 2.1}</string>
 				<key>VerticalPad</key>
 				<integer>0</integer>
 			</dict>
@@ -1828,7 +1829,7 @@ merge back}</string>
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\b\fs24 \cf0 3.0-HEAD}</string>
+\f0\b\fs24 \cf0 2.1-HEAD}</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1863,7 +1864,7 @@ merge back}</string>
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\b\fs24 \cf0 3.0-dev}</string>
+\f0\b\fs24 \cf0 2.1}</string>
 			</dict>
 		</dict>
 		<dict>
@@ -2247,7 +2248,7 @@ merge back}</string>
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\b\fs24 \cf0 2.0-dev}</string>
+\f0\b\fs24 \cf0 2.0}</string>
 			</dict>
 		</dict>
 		<dict>
@@ -2467,7 +2468,7 @@ merge back}</string>
 		</dict>
 	</array>
 	<key>ModificationDate</key>
-	<string>2012-05-14 18:52:37 +0000</string>
+	<string>2012-05-14 20:00:54 +0000</string>
 	<key>Modifier</key>
 	<string>Roderik van der Veer</string>
 	<key>NotesVisible</key>
@@ -2558,7 +2559,7 @@ merge back}</string>
 			</dict>
 		</array>
 		<key>Frame</key>
-		<string>{{63, 82}, {1186, 732}}</string>
+		<string>{{-31, 111}, {1186, 732}}</string>
 		<key>ListView</key>
 		<false/>
 		<key>OutlineWidth</key>
