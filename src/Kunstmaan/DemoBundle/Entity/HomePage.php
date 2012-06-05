@@ -2,6 +2,7 @@
 
 namespace Kunstmaan\DemoBundle\Entity;
 
+use Kunstmaan\AdminNodeBundle\Entity\AbstractPage;
 use Kunstmaan\DemoBundle\PagePartAdmin\HomePagePagePartAdminConfigurator;
 
 use Kunstmaan\AdminNodeBundle\Entity\HasNode;
@@ -21,97 +22,21 @@ use Kunstmaan\SearchBundle\Entity\Indexable;
 use Kunstmaan\AdminBundle\Modules\ClassLookup;
 
 /**
- * @ORM\Entity(repositoryClass="Kunstmaan\DemoBundle\Repository\HomePageRepository")
+ * HomePage
+ *
+ * @ORM\Entity()
  * @ORM\Table(name="demohomepage")
  * @ORM\HasLifecycleCallbacks()
  */
-
-class HomePage implements PageIFace, Indexable, DeepCloneableIFace
+class HomePage extends AbstractPage
 {
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="bigint")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
 
     /**
-     * @ORM\Column(type="string")
+     * {@inheritdoc}
      */
-    protected $title;
-
-    protected $parent;
-
-    public function getParent(){
-    	return $this->parent;
-    }
-
-    public function setParent(HasNode $parent){
-    	$this->parent = $parent;
-    }
-
-
-    protected $possiblePermissions = array(
-        'read', 'write', 'delete'
-    );
-
-    public function __construct()
-    {
-    }
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set id
-     *
-     * @param string $id
-     */
-    public function setId($num)
-    {
-        $this->id = $num;
-    }
-
-    /**
-     * Set title
-     *
-     * @param string $title
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-    /**
-     * Get title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    public function __toString()
-    {
-        return $this->getTitle();
-    }
-
     public function getDefaultAdminType()
     {
         return new HomePageAdminType();
-    }
-
-    public function isOnline()
-    {
-        return true;
     }
 
     public function getContentForIndexing($container, $entity)
@@ -126,43 +51,43 @@ class HomePage implements PageIFace, Indexable, DeepCloneableIFace
     	$view = 'KunstmaanDemoBundle:Elastica:'.$classname.'.elastica.twig';
 
     	$temp = $renderer->render($view, array('page' => $this, 'pageparts' => $pageparts));
+
     	return strip_tags($temp);
     }
 
-    public function setTranslatableLocale($locale)
-    {
-    	$this->locale = $locale;
-    }
-
-    public function getPossiblePermissions()
-    {
-        return $this->possiblePermissions;
-    }
-
-
+    /**
+     * {@inheritdoc}
+     */
     public function getPossibleChildPageTypes()
     {
     	$array[] = array('name' => 'ContentPage', 'class'=>"Kunstmaan\DemoBundle\Entity\ContentPage");
+
     	return $array;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function deepClone(EntityManager $em){
     	$newpage = new HomePage();
     	$newpage->setTitle($this->getTitle());
     	$em->persist($newpage);
     	$em->flush();
     	$em->getRepository('KunstmaanPagePartBundle:PagePartRef')->copyPageParts($em, $this, $newpage, $context = "main");
+
     	return $newpage;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getPagePartAdminConfigurations(){
     	return array(new HomePagePagePartAdminConfigurator());
     }
 
-    public function service($container, Request $request, &$result){
-
-    }
-
+    /**
+     * {@inheritdoc}
+     */
     public function getDefaultView(){
     	return "KunstmaanDemoBundle:HomePage:view.html.twig";
     }

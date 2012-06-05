@@ -1,6 +1,8 @@
 <?php
 
 namespace Kunstmaan\DemoBundle\Entity;
+
+use Kunstmaan\AdminNodeBundle\Entity\AbstractPage;
 use Symfony\Component\HttpFoundation\Request;
 
 use Kunstmaan\FormBundle\Entity\FormAdaptorIFace;
@@ -28,79 +30,13 @@ use Kunstmaan\SearchBundle\Entity\Indexable;
 use Kunstmaan\AdminBundle\Modules\ClassLookup;
 
 /**
- * @ORM\Entity(repositoryClass="Kunstmaan\DemoBundle\Repository\ContentPageRepository")
+ * FormPage
+ *
+ * @ORM\Entity()
  * @ORM\Table(name="demo_formpage")
  * @ORM\HasLifecycleCallbacks()
  */
-
-class FormPage implements PageIFace, Indexable, DeepCloneableIFace {
-	/**
-	 * @ORM\Id
-	 * @ORM\Column(type="bigint")
-	 * @ORM\GeneratedValue(strategy="AUTO")
-	 */
-	protected $id;
-
-	/**
-	 * @ORM\Column(type="string")
-	 */
-	protected $title;
-
-	/**
-	 * @ORM\Column(type="text")
-	 */
-	protected $thanks;
-
-	protected $parent;
-
-	public function getParent() {
-		return $this->parent;
-	}
-
-	public function setParent(HasNode $parent) {
-		$this->parent = $parent;
-	}
-
-	protected $possiblePermissions = array('read', 'write', 'delete');
-
-	public function __construct() {
-	}
-
-	/**
-	 * Get id
-	 *
-	 * @return integer
-	 */
-	public function getId() {
-		return $this->id;
-	}
-
-	/**
-	 * Set id
-	 *
-	 * @param string $id
-	 */
-	public function setId($num) {
-		$this->id = $num;
-	}
-
-	/**
-	 * Set title
-	 *
-	 * @param string $title
-	 */
-	public function setTitle($title) {
-		$this->title = $title;
-	}
-
-	/**
-	 * Get title
-	 *
-	 * @return string
-	 */
-	public function getTitle() {
-		return $this->title;
-	}
+class FormPage extends AbstractPage {
 
 	public function setThanks($thanks) {
 		$this->thanks = $thanks;
@@ -133,6 +69,7 @@ class FormPage implements PageIFace, Indexable, DeepCloneableIFace {
 		$view = 'KunstmaanDemoBundle:Elastica:' . $classname . '.elastica.twig';
 
 		$temp = $renderer->render($view, array('page' => $this, 'pageparts' => $pageparts));
+
 		return strip_tags($temp);
 	}
 
@@ -147,6 +84,7 @@ class FormPage implements PageIFace, Indexable, DeepCloneableIFace {
 	public function getPossibleChildPageTypes() {
 		$array[] = array('name' => 'ContentPage', 'class' => "Kunstmaan\DemoBundle\Entity\ContentPage");
 		$array[] = array('name' => 'FormPage', 'class' => "Kunstmaan\DemoBundle\Entity\FormPage");
+
 		return $array;
 	}
 
@@ -157,6 +95,7 @@ class FormPage implements PageIFace, Indexable, DeepCloneableIFace {
 		$em->flush();
 		$em->getRepository('KunstmaanPagePartBundle:PagePartRef')->copyPageParts($em, $this, $newpage, "main");
 		$em->getRepository('KunstmaanPagePartBundle:PagePartRef')->copyPageParts($em, $this, $newpage, "banners");
+
 		return $newpage;
 	}
 
@@ -169,8 +108,8 @@ class FormPage implements PageIFace, Indexable, DeepCloneableIFace {
 		$em = $container->get('doctrine')->getEntityManager();
 		$pageparts = $em->getRepository('KunstmaanPagePartBundle:PagePartRef')->getPageParts($this, "main");
 		$fields = array();
-		foreach($pageparts as $pagepart){
-			if($pagepart instanceof FormAdaptorIFace){
+		foreach ($pageparts as $pagepart) {
+			if ($pagepart instanceof FormAdaptorIFace) {
 				$pagepart->adaptForm($formbuilder, $fields);
 			}
 		}
@@ -185,12 +124,13 @@ class FormPage implements PageIFace, Indexable, DeepCloneableIFace {
 				$formsubmission->setLang($locale = $request->getSession()->getLocale());
 				$em->persist($formsubmission);
 				$em->flush();
-				foreach($fields as &$field){
+				foreach ($fields as &$field) {
 					$field->setSubmission($formsubmission);
 					$em->persist($field);
 				}
 				$em->flush();
 				$result["thanks"] = true;
+
 				return;
 			}
 		}
