@@ -4,14 +4,13 @@
 	<buildpathentry kind="src" path="vendor/Imagine/lib/Imagine/Imagick"/>
 	<buildpathentry kind="src" path="vendor/Imagine/lib/Imagine/Gd"/>
 	<buildpathentry kind="src" path="vendor/doctrine-dbal/tests/Doctrine/Tests"/>
-	<buildpathentry kind="src" path="app"/>
+	<buildpathentry excluding="cache/" kind="src" path="app"/>
 	<buildpathentry kind="src" path="vendor/bundles/Kunstmaan/PagePartBundle"/>
 	<buildpathentry kind="src" path="vendor/doctrine/lib/Doctrine/ORM"/>
 	<buildpathentry kind="src" path="vendor/bundles/Ano/Bundle/SystemBundle"/>
 	<buildpathentry kind="src" path="vendor/doctrine/bin"/>
 	<buildpathentry kind="src" path="src/Kunstmaan/DemoBundle"/>
 	<buildpathentry kind="src" path="build/api"/>
-	<buildpathentry kind="src" path="vendor/bundles/Sensio/Bundle/GeneratorBundle"/>
 	<buildpathentry kind="src" path="vendor/bundles/Sensio/Bundle/FrameworkExtraBundle"/>
 	<buildpathentry kind="src" path="vendor/twig-extensions/lib/Twig/Extensions"/>
 	<buildpathentry kind="src" path="vendor/bundles/Knp/GaufretteBundle"/>
