@@ -63,18 +63,22 @@
     target=/bundles/Symfony/Bundle/AsseticBundle
     version=v1.0.1
 
-
 ; Extra bundles
 [doctrine-fixtures]
     git=http://github.com/doctrine/data-fixtures.git
 
 [DoctrineFixturesBundle]
-    git=http://github.com/symfony/DoctrineFixturesBundle.git
+    git=http://github.com/doctrine/DoctrineFixturesBundle.git
     target=/bundles/Symfony/Bundle/DoctrineFixturesBundle
 
 [Imagine]
-    git=git://github.com/avalanche123/Imagine.git
-    target=/Imagine
+    git=http://github.com/avalanche123/Imagine.git
+    target=imagine
+    version=v0.2.0
+
+[LiipImagineBundle]
+    git=http://github.com/liip/LiipImagineBundle.git
+    target=bundles/Liip/ImagineBundle
 
 [AvalancheImagineBundle]
     git=http://github.com/avalanche123/AvalancheImagineBundle.git
@@ -163,6 +167,7 @@
 [DoctrineExtensionsBundle]
     git=git://github.com/kertz/StofDoctrineExtensionsBundle.git
     target=/bundles/Stof/DoctrineExtensionsBundle
+    version = origin/patch-1
     
 [OrnicarApcBundle]
 	git=git://github.com/ornicar/ApcBundle.git
