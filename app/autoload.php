@@ -19,7 +19,7 @@ $loader->registerNamespaces(array(
     'FOS'                               => __DIR__.'/../vendor/bundles',
     'FOQ'                               => __DIR__.'/../vendor/bundles',
     'Kunstmaan'                         => __DIR__.'/../vendor/bundles',
-    'Imagine'                           => __DIR__.'/../vendor/Imagine/lib',
+    'Imagine'                           => __DIR__.'/../vendor/imagine/lib',
     'Avalanche'                         => __DIR__.'/../vendor/bundles',
     'Gaufrette'                         => __DIR__.'/../vendor/gaufrette/src',
     'Knp'                               => __DIR__.'/../vendor/bundles',
