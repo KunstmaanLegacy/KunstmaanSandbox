@@ -1,5 +1,0 @@
-imports:
-    KunstmaanMediaBundle:
-        resource: @KunstmaanMediaBundle/Resources/config/config.yml
-    KunstmaanAdminBundle:
-        resource: @KunstmaanAdminBundle/Resources/config/config.yml

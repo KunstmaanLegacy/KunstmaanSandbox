@@ -1,10 +1,14 @@
 imports:
     - { resource: parameters.ini }
     - { resource: security.yml }
-    KunstmaanDemoBundle:
-        resource: @KunstmaanDemoBundle/Resources/config/config.yml
+    KunstmaanMediaBundle:
+        resource: @KunstmaanMediaBundle/Resources/config/config.yml
+    KunstmaanAdminBundle:
+        resource: @KunstmaanAdminBundle/Resources/config/config.yml
     KunstmaanSearchBundle:
         resource: @KunstmaanSearchBundle/Resources/config/config.yml
+    KunstmaanDemoBundle:
+        resource: @KunstmaanDemoBundle/Resources/config/config.yml
 
 framework:
     #esi:             ~
