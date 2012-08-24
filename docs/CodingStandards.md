@@ -24,6 +24,7 @@ This is based on the best practices described in the [Symfony2 Cookbook](http://
 * **Resources/public/**: Should contain all the web resources like javascript, css, html
 * **Resources/translation/**: should contain all the translation files
 * **Resources/views/**: Should contain all the twig templates
+* **Resources/doc/**: Should contain all the feature documentation files
 * **Tests/**: Should contain everything test related
 * **AdminList/**: Should contain all the admin list configurations
 * **PagePartAdmin/** Should contain all the pagepart configurations
