@@ -1,7 +1,5 @@
 set :env, "staging"
-set :domain, "kumasandbox.staging1.kunstmaan.be"
+set :symfony_env_prod,  "staging"
+set :domain, "staging1.kunstmaan.be"
 
-set :branch, `git name-rev --name-only HEAD`.strip
-if branch.nil?
-  exit
-end
+set :branch, "staging"

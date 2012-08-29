@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ -f "composer.json" ]; then
+	if [ "$1" = "decode" ]; then
+		openssl aes-256-cbc -d -a -in app/config/parameters.aes -out app/config/parameters.yml -pass file:/etc/kdeploypass
+	else
+		openssl aes-256-cbc -a -salt -in app/config/parameters.yml -out app/config/parameters.aes -pass file:/etc/kdeploypass
+	fi
+else
+	if [ "$1" = "decode" ]; then
+		openssl aes-256-cbc -d -a -in app/config/parameters.aes -out app/config/parameters.ini -pass file:/etc/kdeploypass
+	else
+		openssl aes-256-cbc -a -salt -in app/config/parameters.ini -out app/config/parameters.aes -pass file:/etc/kdeploypass
+	fi
+fi

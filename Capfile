@@ -1,5 +1,5 @@
 load 'deploy' if respond_to?(:namespace) # cap2 differentiator
-Dir['vendor/bundles/*/*/recipes/*.rb'].each { |bundle| load(bundle) }
-load Gem.find_files('symfony2.rb').last.to_s
+Dir['vendor/**/Resources/recipes/*.rb'].each { |bundle| load(bundle) }
+load Gem.find_files('symfony2.rb').first.to_s
 load Gem.find_files('kstrano.rb').last.to_s
 load 'app/config/deploy'
