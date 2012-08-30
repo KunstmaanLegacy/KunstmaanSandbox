@@ -9,4 +9,5 @@ echo "extension=apc.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|
 sudo pear config-set auto_discover 1
 sudo pear install -f pear.phpqatools.org/phpqatools pear.netpirates.net/phpDox
 phpenv rehash
+cp app/config/parameters.yml.dist app/config/parameters.yml
 composer install
