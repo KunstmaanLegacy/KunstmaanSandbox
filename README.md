@@ -82,9 +82,15 @@ TODO: update the config files in kStrano to match this setup, including the .tra
 ```bash
 PROJECTNAME=`cat /tmp/kumas2install`
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/app.php)" | sed s/sf2/$PROJECTNAME/ > web/app.php
+mkdir -p app/Resources/java
+curl https://github.com/downloads/Kunstmaan/KunstmaanSandbox/yuicompressor-2.4.7.jar -o app/Resources/java/yuicompressor-2.4.7.jar
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/fullreload)" > fullreload
+chmod a+x fullreload
 gem install json
 ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/sandboxinstaller.rb').read" install-bundles composer.json app/AppKernel.php
 ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/sandboxinstaller.rb').read" configure-bundles app/config/parameters.yml $PROJECTNAME
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/config.dist.yml)" >> web/config/config.yml
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/security.dist.yml)" | sed s/sandbox/$PROJECTNAME/ > app/config/security.yml
 php composer.phar update
 ```
 
@@ -92,157 +98,12 @@ app/config/routing.yml
 
 for a single-language-website:
 ```bash
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/routing-fragment-singlelang.yml)" >> web/config/routing.yml
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/routing-singlelang.dist.yml)" > web/config/routing.yml
 ```
 
 for a multi-language-website:
 ```bash
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/routing-fragment-multilang.yml)" >> web/config/routing.yml
-```
-
-app/config/config.yml
-
-```yaml
-imports:
-    - { resource: @KunstmaanMediaBundle/Resources/config/config.yml }
-    - { resource: @KunstmaanAdminBundle/Resources/config/config.yml }
-    - { resource: @KunstmaanFormBundle/Resources/config/config.yml }
-    - { resource: @KunstmaanSearchBundle/Resources/config/config.yml }
-    - { resource: @KunstmaanAdminListBundle/Resources/config/config.yml }
-```
-
-uncomment the translator in framework
-
-```yaml
-framework:
-    translator:      { fallback: %locale% }
-```
-
-add this to the framework config for easy switch to pdo sessions
-
-```yaml
-framework:
-    session:         ~
-        #storage_id: session.storage.pdo ## disabled because you need to manually create the table after fullreload. fix could be creating an entity for this table. see symfony.com/doc/current/cookbook/configuration/pdo_session_storage.html
-# Twig Configuration
-```
-
-add this to the main config:
-```bash
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/config-fragment.yml)" >> web/config/config.yml
-```
-
-add these to twig
-
-```yaml
-    globals:
-        websitetitle: %websitetitle%
-        defaultlocale: %defaultlocale%
-        requiredlocales: %requiredlocales%
-        #titlecolor: "#000000"
-        #titlebgcolor: "#F53111"
-        #ga_code: %ga_code% ## don't forget to specify this parameter in parameters.yml
-```
-
-update the assetic bundle statement to include the admin bundle
-
-```yaml
-    bundles:        [ "KunstmaanAdminBundle" ]
-```
-
-and update the orm statement to look like
-
-```yaml
-    orm:
-        auto_generate_proxy_classes: %kernel.debug%
-        entity_managers:
-            default:
-                auto_mapping: true
-                metadata_cache_driver: apc
-                result_cache_driver: apc
-                query_cache_driver: apc
-                mappings:
-                    gedmo_translatable:
-                        type: annotation
-                        prefix: Gedmo\Translatable\Entity
-                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity"
-                        alias: GedmoTranslatable # this one is optional and will default to the name set for the mapping
-                        is_bundle: false
-                    gedmo_translator:
-                        type: annotation
-                        prefix: Gedmo\Translator\Entity
-                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translator/Entity"
-                        alias: GedmoTranslator # this one is optional and will default to the name set for the mapping
-                        is_bundle: false
-                    gedmo_loggable:
-                        type: annotation
-                        prefix: Gedmo\Loggable\Entity
-                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
-                        alias: GedmoLoggable # this one is optional and will default to the name set for the mapping
-                        is_bundle: false
-                    gedmo_tree:
-                        type: annotation
-                        prefix: Gedmo\Tree\Entity
-                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity"
-                        alias: GedmoTree # this one is optional and will default to the name set for the mapping
-                        is_bundle: false
-```
-
-app/config/security.yml (Don't forget to change the firewall.main.remember_me.domain parameter)
-
-```yaml
-jms_security_extra:
-    secure_all_services: false
-    expressions: true
-
-security:
-    encoders:
-        "FOS\UserBundle\Model\UserInterface": sha512
-
-    role_hierarchy:
-        ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
-        ROLE_NEWS:        ROLE_USER
-
-    providers:
-        fos_userbundle:
-                id: fos_user.user_manager
-
-    firewalls:
-        main:
-            pattern: .*
-            form_login:
-                login_path: fos_user_security_login
-                check_path: fos_user_security_check
-                provider: fos_userbundle
-            logout:
-              path:   fos_user_security_logout
-              target: KunstmaanAdminBundle_homepage
-            anonymous:    true
-            remember_me:
-                key:      0f9a62b0231d78a86b4e4a2f87bc032e95f44ebf
-                lifetime: 604800
-                path:     /
-                domain:   kunstmaan.be
-
-        dev:
-            pattern:  ^/(_(profiler|wdt)|css|images|js)/
-            security: false
-
-
-    access_control:
-        - { path: ^/([^/]*)/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/([^/]*)/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/([^/]*)/admin/settings/, role: ROLE_ADMIN }
-        - { path: ^/([^/]*)/admin/settings, role: ROLE_ADMIN }
-        - { path: ^/([^/]*)/admin/, role: ROLE_ADMIN }
-        - { path: ^/([^/]*)/admin, role: ROLE_ADMIN }
-```
-
-
-```bash
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/fullreload)" > fullreload
-chmod a+x fullreload
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/routing-multilang.dist.yml)" > web/config/routing.yml
 ```
 
 Run fullreload
