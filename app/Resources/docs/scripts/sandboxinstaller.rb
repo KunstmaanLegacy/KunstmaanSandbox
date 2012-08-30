@@ -34,8 +34,7 @@ if command == "install-bundles"
     # AppKernel.php
     appk = File.read(appkernel)
     if not appk.include? "Kunstmaan"
-        #buffer = open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/AppKernelFragment.php').read
-        buffer = open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/feature/update-to-2.1/app/Resources/docs/scripts/AppKernelFragment.php').read
+        buffer = open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/AppKernelFragment.php').read
         replaced = appk.gsub("return $bundles;", buffer)
         File.open(appkernel, 'w') {|f| f.write(replaced) }
     else

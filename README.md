@@ -81,7 +81,7 @@ TODO: update the config files in kStrano to match this setup, including the .tra
 
 ```bash
 PROJECTNAME=`cat /tmp/kumas2install`
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/app.php" | sed s/sf2/$PROJECTNAME/ > web/app.php
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/app.php)" | sed s/sf2/$PROJECTNAME/ > web/app.php
 gem install json
 ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/sandboxinstaller.rb').read" install-bundles composer.json app/AppKernel.php
 ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/sandboxinstaller.rb').read" configure-bundles app/config/parameters.yml $PROJECTNAME
