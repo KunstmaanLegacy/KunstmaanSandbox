@@ -4,6 +4,7 @@
         $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
         $bundles[] = new Kunstmaan\AdminBundle\KunstmaanAdminBundle();
         // KunstmaanMediaBundle
+        $bundles[] = new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle();
         $bundles[] = new Liip\ImagineBundle\LiipImagineBundle();
         $bundles[] = new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle();
         $bundles[] = new Kunstmaan\MediaBundle\KunstmaanMediaBundle();
