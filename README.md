@@ -241,7 +241,7 @@ security:
 
 
 ```bash
-echo "$(curl -fsSL https://raw.github.com/gist/3423648/fullreload)" > fullreload
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/fullreload)" > fullreload
 chmod a+x fullreload
 ```
 
