@@ -1,0 +1,77 @@
+parameters:
+    #pdo.db_options:
+    # db_table: session
+    # db_id_col: session_id
+    # db_data_col: session_value
+    # db_time_col: session_time
+
+stof_doctrine_extensions:
+    default_locale: nl
+    translation_fallback: true
+    orm:
+        default:
+           loggable: true
+           translatable: true
+           sluggable: true
+
+liip_imagine:
+    cache_prefix: uploads/cache
+    driver: imagick
+    #cache: no_cache
+    filter_sets:
+        thumb_image_block_1:
+            quality: 75
+            filters:
+                thumbnail: { size: [310, 229], mode: outbound }
+        thumb_image_block_2:
+            quality: 75
+            filters:
+                thumbnail: { size: [630, 229], mode: outbound }
+
+liip_cache_control:
+    rules:
+        - { path: /admin, controls: { private: true}, vary: [Accept-Encoding] }
+        - { path: ^/_internal, controls: {private: true, max_age: 0} }
+        - { path: ^/(.+), controls: { public: true, max_age: 120, s_maxage: 240 }, vary: [Accept-Encoding,Cookie] }
+
+services:
+    twig.extension.text:
+       class: Twig_Extensions_Extension_Text
+       tags:
+           - { name: twig.extension }
+
+    monitor.check.deps_entries:
+        class: Liip\MonitorExtraBundle\Check\DepsEntriesCheck
+        arguments:
+            - %kernel.root_dir%
+        tags:
+            - { name: monitor.check }
+
+    monitor.check.symfony_version:
+        class: Liip\MonitorExtraBundle\Check\SymfonyVersionCheck
+        tags:
+            - { name: monitor.check }
+
+    #pdo:
+    # class: PDO
+    # arguments:
+    # - "mysql:dbname=%database_name%"
+    # - %database_user%
+    # - %database_password%
+
+    #session.storage.pdo:
+    # class: Symfony\Component\HttpFoundation\SessionStorage\PdoSessionStorage
+    # arguments: [@pdo, %session.storage.options%, %pdo.db_options%]
+
+    kunstmaan_logging_introspection:
+        class: Monolog\Processor\IntrospectionProcessor
+        tags:
+            - { name: monolog.processor }
+
+    kunstmaan_logging_web:
+        class: Symfony\Bridge\Monolog\Processor\WebProcessor
+        tags:
+            - { name: monolog.processor }
+
+    kunstmaan_logging_formatter:
+        class: Monolog\Formatter\LineFormatter

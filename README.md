@@ -91,103 +91,14 @@ php composer.phar update
 app/config/routing.yml
 
 for a single-language-website:
-```yaml
-# LiipMonitorBundle
-_monitor:
-    resource: "@LiipMonitorBundle/Resources/config/routing.yml"
-    prefix: /monitor/health
-
-# KunstmaanMediaBundle
-_imagine:
-    resource: .
-    type:     imagine
-
-KunstmaanMediaBundle:
-    resource: "@KunstmaanMediaBundle/Resources/config/routing.yml"
-    prefix:   /
-
-# KunstmaanAdminBundle
-KunstmaanAdminBundle:
-    resource: "@KunstmaanAdminBundle/Resources/config/routing.yml"
-    prefix:   /
-
-# KunstmaanAdminNodeBundle
-KunstmaanAdminNodeBundle:
-    resource: "@KunstmaanAdminNodeBundle/Resources/config/routing.yml"
-    prefix:   /
-
-# KunstmaanPagePartBundle
-KunstmaanPagePartBundle:
-    resource: "@KunstmaanPagePartBundle/Resources/config/routing.yml"
-    prefix:   /
-
-# KunstmaanFormBundle
-KunstmaanFormBundle:
-    resource: "@KunstmaanFormBundle/Resources/config/routing.yml"
-    prefix:   /
-
-# KunstmaanViewBundle
-KunstmaanViewBundle_slug:
-    resource: "@KunstmaanViewBundle/Controller/SlugController.php"
-    type:     annotation
-    prefix:   /
+```bash
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/routing-fragment-singlelang.yml)" >> web/config/routing.yml
 ```
 
 for a multi-language-website:
-```yaml
-# LiipMonitorBundle
-_monitor:
-    resource: "@LiipMonitorBundle/Resources/config/routing.yml"
-    prefix: /monitor/health
-
-# KunstmaanMediaBundle
-_imagine:
-    resource: .
-    type:     imagine
-
-KunstmaanMediaBundle:
-    resource: "@KunstmaanMediaBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
-    requirements:
-        _locale: %requiredlocales%
-
-# KunstmaanAdminBundle
-KunstmaanAdminBundle:
-    resource: "@KunstmaanAdminBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
-    requirements:
-        _locale: %requiredlocales%
-
-# KunstmaanAdminNodeBundle
-KunstmaanAdminNodeBundle:
-    resource: "@KunstmaanAdminNodeBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
-    requirements:
-        _locale: %requiredlocales%
-
-# KunstmaanPagePartBundle
-KunstmaanPagePartBundle:
-    resource: "@KunstmaanPagePartBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
-    requirements:
-        _locale: %requiredlocales%
-
-# KunstmaanFormBundle
-KunstmaanFormBundle:
-    resource: "@KunstmaanFormBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
-    requirements:
-        _locale: %requiredlocales%
-
-# KunstmaanViewBundle
-KunstmaanViewBundle_slug:
-    resource: "@KunstmaanViewBundle/Controller/SlugController.php"
-    type:     annotation
-    prefix:   /{_locale}/
-    requirements:
-        _locale: %requiredlocales%
+```bash
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/routing-fragment-multilang.yml)" >> web/config/routing.yml
 ```
-
 
 app/config/config.yml
 
@@ -211,88 +122,14 @@ add this to the framework config for easy switch to pdo sessions
 
 ```yaml
 framework:
-    #storage_id: session.storage.pdo ## disabled because you need to manually create the table after fullreload. fix could be creating an entity for this table. see symfony.com/doc/current/cookbook/configuration/pdo_session_storage.html
+    session:         ~
+        #storage_id: session.storage.pdo ## disabled because you need to manually create the table after fullreload. fix could be creating an entity for this table. see symfony.com/doc/current/cookbook/configuration/pdo_session_storage.html
+# Twig Configuration
 ```
 
 add this to the main config:
-```yaml
-parameters:
-    #pdo.db_options:
-    # db_table: session
-    # db_id_col: session_id
-    # db_data_col: session_value
-    # db_time_col: session_time
-
-stof_doctrine_extensions:
-    default_locale: nl
-    translation_fallback: true
-    orm:
-        default:
-           loggable: true
-           translatable: true
-           sluggable: true
-
-liip_imagine:
-    cache_prefix: uploads/cache
-    driver: imagick
-    #cache: no_cache
-    filter_sets:
-        thumb_image_block_1:
-            quality: 75
-            filters:
-                thumbnail: { size: [310, 229], mode: outbound }
-        thumb_image_block_2:
-            quality: 75
-            filters:
-                thumbnail: { size: [630, 229], mode: outbound }
-
-liip_cache_control:
-    rules:
-        - { path: /admin, controls: { private: true}, vary: [Accept-Encoding] }
-        - { path: ^/_internal, controls: {private: true, max_age: 0} }
-        - { path: ^/(.+), controls: { public: true, max_age: 120, s_maxage: 240 }, vary: [Accept-Encoding,Cookie] }
-
-services:
-    twig.extension.text:
-       class: Twig_Extensions_Extension_Text
-       tags:
-           - { name: twig.extension }
-
-    monitor.check.deps_entries:
-        class: Liip\MonitorExtraBundle\Check\DepsEntriesCheck
-        arguments:
-            - %kernel.root_dir%
-        tags:
-            - { name: monitor.check }
-
-    monitor.check.symfony_version:
-        class: Liip\MonitorExtraBundle\Check\SymfonyVersionCheck
-        tags:
-            - { name: monitor.check }
-
-    #pdo:
-    # class: PDO
-    # arguments:
-    # - "mysql:dbname=%database_name%"
-    # - %database_user%
-    # - %database_password%
-
-    #session.storage.pdo:
-    # class: Symfony\Component\HttpFoundation\SessionStorage\PdoSessionStorage
-    # arguments: [@pdo, %session.storage.options%, %pdo.db_options%]
-
-    kunstmaan_logging_introspection:
-        class: Monolog\Processor\IntrospectionProcessor
-        tags:
-            - { name: monolog.processor }
-
-    kunstmaan_logging_web:
-        class: Symfony\Bridge\Monolog\Processor\WebProcessor
-        tags:
-            - { name: monolog.processor }
-
-    kunstmaan_logging_formatter:
-        class: Monolog\Formatter\LineFormatter
+```bash
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/config-fragment.yml)" >> web/config/config.yml
 ```
 
 add these to twig
