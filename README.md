@@ -56,7 +56,7 @@ Configure your application by surfing to http://computername/config.php and make
 
 ```bash
 echo "app/config/parameters.yml" >> .gitignore
-echo "$(curl -fsSL https://raw.github.com/gist/c1125c1f97c76dd6cf99/param)" > param
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/param)" > param
 chmod a+x param
 ./param encode
 echo ".idea" >> .gitignore
@@ -81,10 +81,10 @@ TODO: update the config files in kStrano to match this setup, including the .tra
 
 ```bash
 PROJECTNAME=`cat /tmp/kumas2install`
-echo "$(curl -fsSL https://raw.github.com/gist/3424109/gistfile1.txt)" | sed s/sf2/$PROJECTNAME/ > web/app.php
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/app.php" | sed s/sf2/$PROJECTNAME/ > web/app.php
 gem install json
-ruby -e "require 'open-uri'; eval open('https://raw.github.com/gist/3423884/sandboxinstaller.rb').read" install-bundles composer.json app/AppKernel.php
-ruby -e "require 'open-uri'; eval open('https://raw.github.com/gist/3423884/sandboxinstaller.rb').read" configure-bundles app/config/parameters.yml $PROJECTNAME
+ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/sandboxinstaller.rb').read" install-bundles composer.json app/AppKernel.php
+ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/sandboxinstaller.rb').read" configure-bundles app/config/parameters.yml $PROJECTNAME
 php composer.phar update
 ```
 
