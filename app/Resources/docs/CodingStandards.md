@@ -1,6 +1,6 @@
 # Naming conventions
 
-We made a few naming conventions when working on one of the bundles. It is possible that the conventions aren't followed right now, but we'll fix it while working a specific bundle.
+We made a few naming conventions when working on one of the bundles. It is possible that the conventions aren't followed right now, but we'll fix it when working a specific bundle.
 
 * use camelCase for variables *(ex. $numberOfColumns)*
 * use underscores in column names *(ex. @ORM\Column(name="number_of_columns"))*
