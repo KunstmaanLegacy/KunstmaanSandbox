@@ -1,6 +1,0 @@
-# Project default
-
-KunstmaanDemoBundle_default:
-    resource: "@KunstmaanDemoBundle/Controller/DefaultController.php"
-    type:     annotation
-    prefix:   /   

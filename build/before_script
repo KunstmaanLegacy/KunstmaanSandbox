@@ -1,0 +1,13 @@
+#!/bin/bash
+
+curl -o APC-3.1.10.tgz http://pecl.php.net/get/APC-3.1.10.tgz
+tar -xzf APC-3.1.10.tgz
+sh -c "cd APC-3.1.10 && phpize && ./configure && make && sudo make install && cd .."
+rm -Rf APC-3.1.10
+rm APC-3.1.10.tgz
+echo "extension=apc.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
+sudo pear config-set auto_discover 1
+sudo pear install -f pear.phpqatools.org/phpqatools pear.netpirates.net/phpDox
+phpenv rehash
+cp app/config/parameters.yml.dist app/config/parameters.yml
+composer install

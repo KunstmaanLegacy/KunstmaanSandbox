@@ -1,0 +1,14 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: null
+    database_name: sandbox
+    database_user: sandbox
+    database_password: sandbox
+    mailer_transport: smtp
+    mailer_host: localhost
+    mailer_user: null
+    mailer_password: null
+    locale: en
+    secret: e110b4d305dfa60699893623d8ef4f521c77db6b
+    database_path: null

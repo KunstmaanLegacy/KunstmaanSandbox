@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+function showTitle {
+    echo ""
+    echo ""
+    echo "***"
+    echo "*** $1"
+    echo "***"
+    echo ""
+}
+
+showTitle "Measure project size using PHPLOC"
+phploc src/
+
+showTitle "Perform project mess detection using PHPMD"
+phpmd src/ text build/phpmd.xml
+
+showTitle "Find coding standard violations using PHP_CodeSniffer"
+phpcs --standard=build/phpcs.xml --ignore=autoload.php src/
+
+showTitle "Find duplicate code using PHPCPD"
+phpcpd src/
+
+showTitle "Run unit tests with PHPUnit"
+phpunit -c build/
