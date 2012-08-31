@@ -41,7 +41,6 @@ This is based on the best practices described in the [Symfony2 Cookbook](http://
   * use "integer" instead of "int", "boolean" instead of "bool", PagePartRef[] instead of array(PagePartRef)
   * use inline typecasting: /* @var $em EntityManager */ (be sure the "use" statement is also done at the top)
   * don't use {@inheritdoc}
-  * 
 * classes in the PHPDoc blocks should not be fully namespaced, but imported (use) at the top
 * @return should be removed, if the function doesn't return anything
 
