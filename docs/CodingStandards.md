@@ -37,9 +37,18 @@ This is based on the best practices described in the [Symfony2 Cookbook](http://
 * **Helper/**: Should contain all the helper classes (everything that doesn't belong in one of the other folders)
 
 # Documentation
-* PHPDoc blocks should be added for all classes, methods and functions
-* classes in the PHPDoc blocks should be fully namespaced
+* PHPDoc blocks should be added for all classes, methods and functions (@Param, @return, @throws)
+  * use "integer" instead of "int", "boolean" instead of "bool", PagePartRef[] instead of array(PagePartRef)
+  * use inline typecasting: /* @var $em EntityManager */ (be sure the "use" statement is also done at the top)
+  * don't use {@inheritdoc}
+  * 
+* classes in the PHPDoc blocks should not be fully namespaced, but imported (use) at the top
 * @return should be removed, if the function doesn't return anything
 
 # Other
 * We'll use keys to identify translatable strings which are prefixed per section, everything will be lowercase *(ex. actions.save)*
+* use 4 spaces instead of tabs
+* the constructor is always the first method
+* use phpcs with the symfony2 coding standard: https://github.com/opensky/Symfony2-coding-standard
+* use php mess detector already configured when running phpunit
+* use php duplicate code check
