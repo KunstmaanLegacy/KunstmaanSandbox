@@ -4,10 +4,10 @@ We made a few naming conventions when working on one of the bundles. It is possi
 
 * use camelCase for variables *(ex. $numberOfColumns)*
 * use underscores in column names *(ex. @ORM\Column(name="number_of_columns"))*
-* use camelCase of geteers, setters and other functions*(ex.: getNumberOfColumns(),  setNumberOfColumns())*
+* use camelCase of getters, setters and other functions*(ex.: getNumberOfColumns(),  setNumberOfColumns())*
 * foreign keys should be suffixed with _id *(ex.: @ORM\OneToMany(targetEntity="Entity", mappedBy="entity_id"),  @ORM\JoinColumn(name="entity_id", referencedColumnName="id"))*
 * table names should use underscores and be plural *(ex.: some_entities)*
-* class names should be camelCase and singular *(ex.: SomeEntities)*
+* class names should be camelCase and singular *(ex.: SomeEntity)*
 * event listeners should be suffixed with Listener
 * controllers should be suffixed with Controller
 * service names should be prefixed with a normalised version of the bundle name *(ex. admin_menu.adaptor.pages)*
@@ -39,7 +39,7 @@ This is based on the best practices described in the [Symfony2 Cookbook](http://
 # Documentation
 * PHPDoc blocks should be added for all classes, methods and functions (@Param, @return, @throws)
   * use "integer" instead of "int", "boolean" instead of "bool", PagePartRef[] instead of array(PagePartRef)
-  * use inline typecasting: /* @var $em EntityManager */ (be sure the "use" statement is also done at the top)
+  * use inline typecasting: /* @var EntityManager */ (be sure the "use" statement is also done at the top)
   * don't use {@inheritdoc}
 * classes in the PHPDoc blocks should not be fully namespaced, but imported (use) at the top
 * @return should be removed, if the function doesn't return anything
