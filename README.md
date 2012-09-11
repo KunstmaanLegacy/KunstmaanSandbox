@@ -89,7 +89,7 @@ chmod a+x fullreload
 gem install json
 ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/sandboxinstaller.rb').read" install-bundles composer.json app/AppKernel.php
 ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/sandboxinstaller.rb').read" configure-bundles app/config/parameters.yml $PROJECTNAME
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/config.dist.yml)" >> web/config/config.yml
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/config.dist.yml)" >> app/config/config.yml
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/security.dist.yml)" | sed s/sandbox/$PROJECTNAME/ > app/config/security.yml
 curl http://www.kunstmaan.be/html/2010/favicon.ico -o web/favicon.ico
 php composer.phar update
