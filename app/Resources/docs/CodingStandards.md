@@ -10,7 +10,7 @@ We made a few naming conventions when working on one of the bundles. It is possi
 * class names should be camelCase and singular *(ex.: SomeEntity)*
 * event listeners should be suffixed with Listener
 * controllers should be suffixed with Controller
-* service names should be prefixed with a normalised version of the bundle name *(ex. admin_menu.adaptor.pages)*
+* service names should be prefixed with a normalised version of the bundle name *(ex. kunstmaan_admin.admin_menu.adaptor.pages)*
 * constants should be UPPER_CASE and should use underscores *(ex. UPPER_CASE)*
 
 # Folder structure
