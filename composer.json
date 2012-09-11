@@ -20,6 +20,7 @@
     "sensio/generator-bundle": "2.1.*",
     "jms/security-extra-bundle": "1.2.*",
     "jms/di-extra-bundle": "1.1.*",
+    "stof/doctrine-extensions-bundle": "dev-master",
     "kunstmaan/admin-bundle": "dev-master",
     "kunstmaan/media-bundle": "dev-master",
     "kunstmaan/pagepart-bundle": "dev-master",
