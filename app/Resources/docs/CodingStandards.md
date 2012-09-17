@@ -19,6 +19,7 @@ This is based on the best practices described in the [Symfony2 Cookbook](http://
 * **Command/**: Should contain all the commands
 * **Controller/**: Should contain all the controllers
 * **Dependency injection/**: Should contain all the service container extensions
+* **Event/**: Should contain all the events
 * **EventListener/**: Should contain all the listeners
 * **Resources/config/**: Should contain all the config files
 * **Resources/public/**: Should contain all the web resources like javascript, css, html
