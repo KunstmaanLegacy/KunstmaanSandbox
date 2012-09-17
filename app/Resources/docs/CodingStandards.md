@@ -5,7 +5,7 @@ We made a few naming conventions when working on one of the bundles. It is possi
 * use camelCase for variables *(ex. $numberOfColumns)*
 * use underscores in column names *(ex. @ORM\Column(name="number_of_columns"))*
 * use camelCase of getters, setters and other functions*(ex.: getNumberOfColumns(),  setNumberOfColumns())*
-* foreign keys should be suffixed with _id *(ex.: @ORM\OneToMany(targetEntity="Entity", mappedBy="entity_id"),  @ORM\JoinColumn(name="entity_id", referencedColumnName="id"))*
+* foreign keys should be suffixed with _id *(ex.: @ORM\OneToMany(targetEntity="Entity"),  @ORM\JoinColumn(name="entity_id", referencedColumnName="id"))*
 * table names should use underscores and be plural *(ex.: some_entities)*
 * class names should be camelCase and singular *(ex.: SomeEntity)*
 * event listeners should be suffixed with Listener
