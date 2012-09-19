@@ -118,7 +118,7 @@ app/console kuma:generate:bundle
 Generate default site (replace bundle namespace and name)
 
 ```bash
-app/console kuma:generate:default-site --bundle=Namespace
+app/console kuma:generate:default-site --namespace=Namespace
 ```
 
 Run fullreload
