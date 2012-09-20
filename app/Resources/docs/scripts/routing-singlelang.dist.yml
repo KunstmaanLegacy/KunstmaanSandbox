@@ -15,42 +15,30 @@ _imagine:
 
 KunstmaanMediaBundle:
     resource: "@KunstmaanMediaBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
-    requirements:
-        _locale: %requiredlocales%
+    prefix:   /
 
 # KunstmaanAdminBundle
 KunstmaanAdminBundle:
     resource: "@KunstmaanAdminBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
-    requirements:
-        _locale: %requiredlocales%
+    prefix:   /
 
 # KunstmaanAdminNodeBundle
 KunstmaanAdminNodeBundle:
     resource: "@KunstmaanAdminNodeBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
-    requirements:
-        _locale: %requiredlocales%
+    prefix:   /
 
 # KunstmaanPagePartBundle
 KunstmaanPagePartBundle:
     resource: "@KunstmaanPagePartBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
-    requirements:
-        _locale: %requiredlocales%
+    prefix:   /
 
 # KunstmaanFormBundle
 KunstmaanFormBundle:
     resource: "@KunstmaanFormBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
-    requirements:
-        _locale: %requiredlocales%
+    prefix:   /
 
 # KunstmaanViewBundle
 KunstmaanViewBundle_slug:
     resource: "@KunstmaanViewBundle/Controller/SlugController.php"
     type:     annotation
-    prefix:   /{_locale}/
-    requirements:
-        _locale: %requiredlocales%
+    prefix:   /

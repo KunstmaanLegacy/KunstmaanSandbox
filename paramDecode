@@ -1,2 +1,0 @@
-#!/bin/bash
-openssl aes-256-cbc -d -a -in app/config/parameters.aes -out app/config/parameters.ini -pass file:/etc/kdeploypass

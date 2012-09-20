@@ -3,8 +3,6 @@ jms_security_extra:
     expressions: true
 
 security:
-    acl:
-        connection: default
     encoders:
         "FOS\UserBundle\Model\UserInterface": sha512
 

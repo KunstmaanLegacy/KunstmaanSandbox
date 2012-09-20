@@ -1,16 +1,15 @@
 language: php
+
 php:
-  - 5.3
-  - 5.4
+    - 5.3
+    - 5.4
 
-env:
-  - SYMFONY_VERSION=v2.0.10
-  - SYMFONY_VERSION=origin/2.0
-  - SYMFONY_VERSION=origin/master
+before_script: build/before_script
 
-before_script: php ./bin/vendors install
-script: phpunit -c app/
+script: build/build_script
 
 notifications:
   email:
     - travis@kunstmaan.be
+  irc:
+    - "hcs01.kunstmaan.be#travis"
