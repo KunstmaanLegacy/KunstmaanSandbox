@@ -52,3 +52,4 @@ This is based on the best practices described in the [Symfony2 Cookbook](http://
 * use phpcs with the symfony2 coding standard: https://github.com/opensky/Symfony2-coding-standard
 * use php mess detector already configured when running phpunit
 * use php duplicate code check
+* Form Types will be suffixes with Type when they are used in the frontend and AdminType when they are used for the backend
