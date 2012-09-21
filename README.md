@@ -25,7 +25,7 @@ exit
 
 # Basic project structure using Composer
 
-Next up, basic project structure using Composer. While Symfony 2.1 is not final yet, we also make sure you have the latest versions
+Next up, basic project structure using Composer.
 
 ```bash
 PROJECTNAME=`cat /tmp/kumas2install`
