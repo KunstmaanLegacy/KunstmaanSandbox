@@ -16,10 +16,8 @@
         $bundles[] = new Kunstmaan\FormBundle\KunstmaanFormBundle();
         // KunstmaanAdminListBundle
         $bundles[] = new Kunstmaan\AdminListBundle\KunstmaanAdminListBundle();
-        // KunstmaanAdminNodeBundle
-        $bundles[] = new Kunstmaan\AdminNodeBundle\KunstmaanAdminNodeBundle();
-        // KunstmaanViewBundle
-        $bundles[] = new Kunstmaan\ViewBundle\KunstmaanViewBundle();
+        // KunstmaanNodeBundle
+        $bundles[] = new Kunstmaan\AdminNodeBundle\KunstmaanNodeBundle();
         // KunstmaanSearchBundle
         $bundles[] = new FOQ\ElasticaBundle\FOQElasticaBundle();
         $bundles[] = new Kunstmaan\SearchBundle\KunstmaanSearchBundle();
