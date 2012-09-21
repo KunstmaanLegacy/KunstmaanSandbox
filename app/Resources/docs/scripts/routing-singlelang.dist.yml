@@ -23,8 +23,8 @@ KunstmaanAdminBundle:
     prefix:   /
 
 # KunstmaanAdminNodeBundle
-KunstmaanAdminNodeBundle:
-    resource: "@KunstmaanAdminNodeBundle/Resources/config/routing.yml"
+KunstmaanNodeBundle:
+    resource: "@KunstmaanNodeBundle/Resources/config/routing.yml"
     prefix:   /
 
 # KunstmaanPagePartBundle
@@ -37,8 +37,3 @@ KunstmaanFormBundle:
     resource: "@KunstmaanFormBundle/Resources/config/routing.yml"
     prefix:   /
 
-# KunstmaanViewBundle
-KunstmaanViewBundle_slug:
-    resource: "@KunstmaanViewBundle/Controller/SlugController.php"
-    type:     annotation
-    prefix:   /
