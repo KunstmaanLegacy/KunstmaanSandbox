@@ -22,7 +22,7 @@ KunstmaanAdminBundle:
     resource: "@KunstmaanAdminBundle/Resources/config/routing.yml"
     prefix:   /
 
-# KunstmaanAdminNodeBundle
+# KunstmaanNodeBundle
 KunstmaanNodeBundle:
     resource: "@KunstmaanNodeBundle/Resources/config/routing.yml"
     prefix:   /
