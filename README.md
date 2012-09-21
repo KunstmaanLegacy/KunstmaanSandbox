@@ -35,8 +35,6 @@ curl -s http://getcomposer.org/installer | php
 php composer.phar create-project symfony/framework-standard-edition ./$PROJECTNAME 2.1.x-dev
 mv composer.phar ./$PROJECTNAME/
 cd $PROJECTNAME
-git checkout master
-php composer.phar update
 ```
 
 # Cleaning out the Acme bundle
