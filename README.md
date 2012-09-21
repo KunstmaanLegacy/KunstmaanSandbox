@@ -105,6 +105,12 @@ for a multi-language-website:
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/routing-multilang.dist.yml)" > app/config/routing.yml
 ```
 
+# run fullreload
+First make sure the database parameters are correct in app/config/parameters.yml
+```bash
+./fullreload
+```
+
 # Generate
 
 Generate bundle
