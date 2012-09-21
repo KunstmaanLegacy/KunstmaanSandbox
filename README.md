@@ -95,16 +95,30 @@ curl http://www.kunstmaan.be/html/2010/favicon.ico -o web/favicon.ico
 php composer.phar update
 ```
 
-app/config/routing.yml
+# app/config/routing.yml
 
 for a single-language-website:
 ```bash
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/routing-singlelang.dist.yml)" > web/config/routing.yml
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/routing-singlelang.dist.yml)" > app/config/routing.yml
 ```
 
 for a multi-language-website:
 ```bash
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/routing-multilang.dist.yml)" > web/config/routing.yml
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/routing-multilang.dist.yml)" > app/config/routing.yml
+```
+
+# Generate
+
+Generate bundle
+
+```bash
+app/console kuma:generate:bundle
+```
+
+Generate default site (replace bundle namespace and name)
+
+```bash
+app/console kuma:generate:default-site --namespace=Namespace
 ```
 
 Run fullreload
