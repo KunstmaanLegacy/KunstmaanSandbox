@@ -32,7 +32,7 @@ PROJECTNAME=`cat /tmp/kumas2install`
 cd /home/projects/$PROJECTNAME/data/
 sudo rm -Rf $PROJECTNAME/
 curl -s http://getcomposer.org/installer | php
-php composer.phar create-project symfony/framework-standard-edition ./$PROJECTNAME
+php composer.phar create-project symfony/framework-standard-edition ./$PROJECTNAME 2.1.x-dev
 mv composer.phar ./$PROJECTNAME/
 cd $PROJECTNAME
 git checkout master
