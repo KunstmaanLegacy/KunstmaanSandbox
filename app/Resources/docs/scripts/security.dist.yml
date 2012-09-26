@@ -20,6 +20,7 @@ security:
 
     firewalls:
         main:
+            guest_user : true
             pattern: .*
             form_login:
                 login_path: fos_user_security_login
