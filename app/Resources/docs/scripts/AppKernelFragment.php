@@ -23,7 +23,7 @@
         $bundles[] = new Kunstmaan\SearchBundle\KunstmaanSearchBundle();
         // KunstmaanGeneratorBundle
         $bundles[] = new Kunstmaan\GeneratorBundle\KunstmaanGeneratorBundle();
-        // LiipMonitorBundle & LiipMonitorExtraBundle
+        // LiipMonitorBundle
         $bundles[] = new Liip\MonitorBundle\LiipMonitorBundle();
         // LiipCacheControlBundle
         $bundles[] = new Liip\CacheControlBundle\LiipCacheControlBundle();
