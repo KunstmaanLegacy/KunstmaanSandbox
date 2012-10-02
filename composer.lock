@@ -158,9 +158,9 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -366,7 +366,7 @@
                 "symfony/symfony": ">=2.0",
                 "doctrine/data-fixtures": "*"
             },
-            "time": "2012-01-18 13:33:12",
+            "time": "2012-01-18 16:33:12",
             "type": "symfony-bundle",
             "installation-source": "dist",
             "autoload": {
@@ -718,7 +718,7 @@
             "require-dev": {
                 "sami/sami": "dev-master"
             },
-            "time": "2012-07-28 18:35:18",
+            "time": "2012-07-29 00:35:18",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -764,7 +764,7 @@
                 "symfony/framework-bundle": "2.*",
                 "jms/cg": "1.0.0"
             },
-            "time": "2012-01-02 17:50:26",
+            "time": "2012-01-02 20:50:26",
             "type": "symfony-bundle",
             "installation-source": "dist",
             "autoload": {
@@ -779,7 +779,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -806,7 +806,7 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-01-02 17:40:52",
+            "time": "2012-01-02 20:40:52",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -880,7 +880,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -908,7 +908,7 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-01-02 18:32:49",
+            "time": "2012-01-02 21:32:49",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1216,7 +1216,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "Knplabs",
+                    "name": "KnpLabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -1302,12 +1302,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle.git",
-                "reference": "b19c57f080d4d5d80faeacfed4301811b8b8d78f"
+                "reference": "8448106ff31e2ab20abadb7c1fdb11d9a59b9773"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/zipball/b19c57f080d4d5d80faeacfed4301811b8b8d78f",
-                "reference": "b19c57f080d4d5d80faeacfed4301811b8b8d78f",
+                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/zipball/8448106ff31e2ab20abadb7c1fdb11d9a59b9773",
+                "reference": "8448106ff31e2ab20abadb7c1fdb11d9a59b9773",
                 "shasum": ""
             },
             "require": {
@@ -1322,7 +1322,7 @@
                 "kunstmaan/node-bundle": "*",
                 "sensio/framework-extra-bundle": "*"
             },
-            "time": "1349109383",
+            "time": "1349169929",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1350,20 +1350,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanAdminListBundle",
-                "reference": "143f26bc026947abe3f2dab2740aa613022c6a44"
+                "reference": "793e2f0813f4c0df876961a2738598d8d94afa43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminListBundle/zipball/143f26bc026947abe3f2dab2740aa613022c6a44",
-                "reference": "143f26bc026947abe3f2dab2740aa613022c6a44",
+                "url": "https://github.com/Kunstmaan/KunstmaanAdminListBundle/zipball/793e2f0813f4c0df876961a2738598d8d94afa43",
+                "reference": "793e2f0813f4c0df876961a2738598d8d94afa43",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
                 "symfony/symfony": "2.1.*",
-                "kunstmaan/admin-bundle": "*"
+                "kunstmaan/admin-bundle": "*",
+                "white-october/pagerfanta-bundle": "*",
+                "sensio/framework-extra-bundle": "*"
             },
-            "time": "1348153997",
+            "time": "1349180277",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1532,26 +1534,26 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanMediaBundle",
-                "reference": "3d56ac66880ad2aac01a2146003f49d4ca6786c2"
+                "reference": "238ba757c9897dc6abf580f49b353bdead530b5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanMediaBundle/zipball/3d56ac66880ad2aac01a2146003f49d4ca6786c2",
-                "reference": "3d56ac66880ad2aac01a2146003f49d4ca6786c2",
+                "url": "https://github.com/Kunstmaan/KunstmaanMediaBundle/zipball/238ba757c9897dc6abf580f49b353bdead530b5e",
+                "reference": "238ba757c9897dc6abf580f49b353bdead530b5e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
-                "kunstmaan/adminlist-bundle": "dev-master",
                 "kunstmaan/admin-bundle": "dev-master",
                 "stof/doctrine-extensions-bundle": "dev-master",
                 "symfony/symfony": "2.1.*",
                 "doctrine/doctrine-fixtures-bundle": "2.1.*",
                 "liip/imagine-bundle": "*",
                 "knplabs/knp-gaufrette-bundle": "*",
-                "gedmo/doctrine-extensions": "*"
+                "gedmo/doctrine-extensions": "*",
+                "sensio/framework-extra-bundle": "*"
             },
-            "time": "1349102570",
+            "time": "1349184471",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1621,12 +1623,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle",
-                "reference": "bed748bc9659377f675c769ada66c05515f5e153"
+                "reference": "c0555f92173f426a892e0af057d42c82a927f6b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle/zipball/bed748bc9659377f675c769ada66c05515f5e153",
-                "reference": "bed748bc9659377f675c769ada66c05515f5e153",
+                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle/zipball/c0555f92173f426a892e0af057d42c82a927f6b9",
+                "reference": "c0555f92173f426a892e0af057d42c82a927f6b9",
                 "shasum": ""
             },
             "require": {
@@ -1637,7 +1639,7 @@
                 "gedmo/doctrine-extensions": "*",
                 "knplabs/knp-menu-bundle": "*"
             },
-            "time": "1349077429",
+            "time": "1349180448",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -2102,6 +2104,52 @@
             ]
         },
         {
+            "name": "pagerfanta/pagerfanta",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/whiteoctober/Pagerfanta.git",
+                "reference": "12f71d99457b018fb80746f84514dd5b495c5789"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/whiteoctober/Pagerfanta/zipball/12f71d99457b018fb80746f84514dd5b495c5789",
+                "reference": "12f71d99457b018fb80746f84514dd5b495c5789",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "suggest": {
+                "doctrine/orm": "2.*",
+                "doctrine/mongodb-odm": "2.*",
+                "solarium/solarium": "2.*"
+            },
+            "time": "1345672591",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Pagerfanta\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pablo Díez",
+                    "email": "pablodip@gmail.com",
+                    "homepage": "http://github.com/pablodip"
+                }
+            ],
+            "description": "Pagination for PHP 5.3",
+            "keywords": [
+                "page",
+                "paging"
+            ]
+        },
+        {
             "name": "raven/raven",
             "version": "dev-master",
             "source": {
@@ -2162,7 +2210,7 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-05-01 07:20:25",
+            "time": "2012-05-01 13:20:25",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -2617,12 +2665,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "2f5a4d7dbca5e586ddf3ae409528ae456f45b0b4"
+                "reference": "49ca64824567b8018a5bb614f35e6da8622ccd1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/zipball/2f5a4d7dbca5e586ddf3ae409528ae456f45b0b4",
-                "reference": "2f5a4d7dbca5e586ddf3ae409528ae456f45b0b4",
+                "url": "https://github.com/symfony/symfony/zipball/49ca64824567b8018a5bb614f35e6da8622ccd1f",
+                "reference": "49ca64824567b8018a5bb614f35e6da8622ccd1f",
                 "shasum": ""
             },
             "require": {
@@ -2671,7 +2719,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "dev-master"
             },
-            "time": "1349116845",
+            "time": "1349173376",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2798,6 +2846,49 @@
             "homepage": "http://twig.sensiolabs.org",
             "keywords": [
                 "templating"
+            ]
+        },
+        {
+            "name": "white-october/pagerfanta-bundle",
+            "version": "dev-master",
+            "target-dir": "WhiteOctober/PagerfantaBundle",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/whiteoctober/WhiteOctoberPagerfantaBundle.git",
+                "reference": "38e317a3ecd5a68e2322024ea8fe57632d4ddd68"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/whiteoctober/WhiteOctoberPagerfantaBundle/zipball/38e317a3ecd5a68e2322024ea8fe57632d4ddd68",
+                "reference": "38e317a3ecd5a68e2322024ea8fe57632d4ddd68",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/framework-bundle": "2.*",
+                "pagerfanta/pagerfanta": "dev-master"
+            },
+            "time": "1343134121",
+            "type": "symfony-bundle",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "WhiteOctober\\PagerfantaBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pablo Díez",
+                    "email": "pablodip@gmail.com",
+                    "homepage": "http://github.com/pablodip"
+                }
+            ],
+            "description": "Bundle to use Pagerfanta with Symfony2",
+            "keywords": [
+                "page",
+                "paging"
             ]
         }
     ],
