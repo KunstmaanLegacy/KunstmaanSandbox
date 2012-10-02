@@ -33,7 +33,6 @@
     "kunstmaan/generator-bundle": "dev-master",
     "kunstmaan/sentry-bundle": "dev-master",
     "liip/monitor-bundle": "dev-master",
-    "liip/monitor-extra-bundle": "dev-master",
     "liip/cache-control-bundle": "dev-master"
   },
   "scripts": {

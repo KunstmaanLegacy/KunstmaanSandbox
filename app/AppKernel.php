@@ -56,7 +56,6 @@ class AppKernel extends Kernel
         $bundles[] = new Kunstmaan\GeneratorBundle\KunstmaanGeneratorBundle();
         // LiipMonitorBundle & LiipMonitorExtraBundle
         $bundles[] = new Liip\MonitorBundle\LiipMonitorBundle();
-        $bundles[] = new Liip\MonitorExtraBundle\LiipMonitorExtraBundle();
         // LiipCacheControlBundle
         $bundles[] = new Liip\CacheControlBundle\LiipCacheControlBundle();
 
