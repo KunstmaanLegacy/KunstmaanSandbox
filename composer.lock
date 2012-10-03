@@ -475,12 +475,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Exercise/FOQElasticaBundle",
-                "reference": "d49c530c5515572cbbf096ade047f8bec2f83990"
+                "reference": "7bee84e2fa0fdee641765f23bdc28a509698294f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Exercise/FOQElasticaBundle/zipball/d49c530c5515572cbbf096ade047f8bec2f83990",
-                "reference": "d49c530c5515572cbbf096ade047f8bec2f83990",
+                "url": "https://github.com/Exercise/FOQElasticaBundle/zipball/7bee84e2fa0fdee641765f23bdc28a509698294f",
+                "reference": "7bee84e2fa0fdee641765f23bdc28a509698294f",
                 "shasum": ""
             },
             "require": {
@@ -500,7 +500,7 @@
                 "propel/propel1": "1.6.*",
                 "doctrine/mongodb-odm": ">=3.0.0-beta2,<3.1-dev"
             },
-            "time": "1349120762",
+            "time": "1349275745",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1302,12 +1302,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle.git",
-                "reference": "990e3d0736ef1b6d89128b3c04f1dc1fe4a88b1e"
+                "reference": "d33cc53733ba5a3c860115dd34fcc3f45a612173"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/zipball/990e3d0736ef1b6d89128b3c04f1dc1fe4a88b1e",
-                "reference": "990e3d0736ef1b6d89128b3c04f1dc1fe4a88b1e",
+                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/zipball/d33cc53733ba5a3c860115dd34fcc3f45a612173",
+                "reference": "d33cc53733ba5a3c860115dd34fcc3f45a612173",
                 "shasum": ""
             },
             "require": {
@@ -1322,7 +1322,7 @@
                 "kunstmaan/node-bundle": "*",
                 "sensio/framework-extra-bundle": "*"
             },
-            "time": "1349255968",
+            "time": "1349275653",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1350,12 +1350,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanAdminListBundle",
-                "reference": "c710c677cea779fd36c346924c3b4db738cd0fd5"
+                "reference": "1ad4f53d225b925212cc06b972115c91c03108f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminListBundle/zipball/c710c677cea779fd36c346924c3b4db738cd0fd5",
-                "reference": "c710c677cea779fd36c346924c3b4db738cd0fd5",
+                "url": "https://github.com/Kunstmaan/KunstmaanAdminListBundle/zipball/1ad4f53d225b925212cc06b972115c91c03108f1",
+                "reference": "1ad4f53d225b925212cc06b972115c91c03108f1",
                 "shasum": ""
             },
             "require": {
@@ -1365,7 +1365,7 @@
                 "white-october/pagerfanta-bundle": "*",
                 "sensio/framework-extra-bundle": "*"
             },
-            "time": "1349251148",
+            "time": "1349275718",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1624,12 +1624,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle",
-                "reference": "9f5b969b567a506012dc90f6406c614a3ffe6b55"
+                "reference": "29f2e839967f3f9703825d652730770f32b5f8c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle/zipball/9f5b969b567a506012dc90f6406c614a3ffe6b55",
-                "reference": "9f5b969b567a506012dc90f6406c614a3ffe6b55",
+                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle/zipball/29f2e839967f3f9703825d652730770f32b5f8c4",
+                "reference": "29f2e839967f3f9703825d652730770f32b5f8c4",
                 "shasum": ""
             },
             "require": {
@@ -1642,7 +1642,7 @@
                 "kunstmaan/media-bundle": "master-dev",
                 "kunstmaan/pagepart-bundle": "master-dev"
             },
-            "time": "1349252880",
+            "time": "1349275763",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
