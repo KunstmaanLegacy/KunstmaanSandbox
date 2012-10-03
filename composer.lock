@@ -1437,12 +1437,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanFormBundle",
-                "reference": "4e4526cf86e0d857ed9802b4c79648c2533de0db"
+                "reference": "7b230b958ead526aeff2e7e349ae3e1289dca649"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanFormBundle/zipball/4e4526cf86e0d857ed9802b4c79648c2533de0db",
-                "reference": "4e4526cf86e0d857ed9802b4c79648c2533de0db",
+                "url": "https://github.com/Kunstmaan/KunstmaanFormBundle/zipball/7b230b958ead526aeff2e7e349ae3e1289dca649",
+                "reference": "7b230b958ead526aeff2e7e349ae3e1289dca649",
                 "shasum": ""
             },
             "require": {
@@ -1458,7 +1458,7 @@
                 "sensio/framework-extra-bundle": "*",
                 "kunstmaan/node-bundle": "dev-master"
             },
-            "time": "1349259019",
+            "time": "1349275613",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
