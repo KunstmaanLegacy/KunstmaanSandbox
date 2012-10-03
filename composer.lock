@@ -1485,7 +1485,7 @@
             "target-dir": "Kunstmaan/GeneratorBundle",
             "source": {
                 "type": "git",
-                "url": "git@github.com:Kunstmaan/KunstmaanGeneratorBundle.git",
+                "url": "https://github.com/Kunstmaan/KunstmaanGeneratorBundle",
                 "reference": "5b50eca734c7cf357a46d8245605df2af81c10c1"
             },
             "dist": {
