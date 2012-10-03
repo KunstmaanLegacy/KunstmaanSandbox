@@ -285,12 +285,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/doctrine/DoctrineBundle.git",
-                "reference": "64deb4921926f482976414895fe549a6b4c604bb"
+                "reference": "e69a6fd75fa3979e35b7004e6da6e9aea3765997"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/DoctrineBundle/zipball/64deb4921926f482976414895fe549a6b4c604bb",
-                "reference": "64deb4921926f482976414895fe549a6b4c604bb",
+                "url": "https://github.com/doctrine/DoctrineBundle/zipball/e69a6fd75fa3979e35b7004e6da6e9aea3765997",
+                "reference": "e69a6fd75fa3979e35b7004e6da6e9aea3765997",
                 "shasum": ""
             },
             "require": {
@@ -307,7 +307,7 @@
             "suggest": {
                 "doctrine/orm": "The Doctrine ORM integration is optional in the bundle."
             },
-            "time": "1349217332",
+            "time": "1349273376",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2668,12 +2668,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "2fd699e09754f50a92abbc9dd7fcc70097073aac"
+                "reference": "b6dfa76b7dd313a6f407d0c0dd1c1942747d62d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/zipball/2fd699e09754f50a92abbc9dd7fcc70097073aac",
-                "reference": "2fd699e09754f50a92abbc9dd7fcc70097073aac",
+                "url": "https://github.com/symfony/symfony/zipball/b6dfa76b7dd313a6f407d0c0dd1c1942747d62d2",
+                "reference": "b6dfa76b7dd313a6f407d0c0dd1c1942747d62d2",
                 "shasum": ""
             },
             "require": {
@@ -2722,7 +2722,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "dev-master"
             },
-            "time": "1349258232",
+            "time": "1349274023",
             "type": "library",
             "extra": {
                 "branch-alias": {
