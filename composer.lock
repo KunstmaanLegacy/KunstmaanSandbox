@@ -613,12 +613,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/l3pp4rd/DoctrineExtensions.git",
-                "reference": "4a68552b1b013c91068ec8af1321e8272739aa57"
+                "reference": "0add69ccb0cb22e3216c30166805ae27615cb8f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/l3pp4rd/DoctrineExtensions/zipball/4a68552b1b013c91068ec8af1321e8272739aa57",
-                "reference": "4a68552b1b013c91068ec8af1321e8272739aa57",
+                "url": "https://github.com/l3pp4rd/DoctrineExtensions/zipball/0add69ccb0cb22e3216c30166805ae27615cb8f0",
+                "reference": "0add69ccb0cb22e3216c30166805ae27615cb8f0",
                 "shasum": ""
             },
             "require": {
@@ -629,7 +629,7 @@
                 "doctrine/orm": ">=2.1",
                 "doctrine/mongodb-odm": "*"
             },
-            "time": "1348958981",
+            "time": "1349375111",
             "type": "library",
             "extra": {
                 "branch-alias": {
