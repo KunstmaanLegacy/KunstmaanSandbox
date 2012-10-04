@@ -2668,12 +2668,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "bfc1dfa8e2f6a274502f4315831f18020e7493b7"
+                "reference": "d402e475f258fe0ee84f8fdb4b412e0c1bdc681c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/zipball/bfc1dfa8e2f6a274502f4315831f18020e7493b7",
-                "reference": "bfc1dfa8e2f6a274502f4315831f18020e7493b7",
+                "url": "https://github.com/symfony/symfony/zipball/d402e475f258fe0ee84f8fdb4b412e0c1bdc681c",
+                "reference": "d402e475f258fe0ee84f8fdb4b412e0c1bdc681c",
                 "shasum": ""
             },
             "require": {
@@ -2722,7 +2722,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "dev-master"
             },
-            "time": "1349364965",
+            "time": "1349372430",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2808,18 +2808,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Twig.git",
-                "reference": "120cde3fa54c31047edf1cd003752ca119dec9a8"
+                "reference": "515f34abc31ae9109d1d901a8444494672d64d73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig/zipball/120cde3fa54c31047edf1cd003752ca119dec9a8",
-                "reference": "120cde3fa54c31047edf1cd003752ca119dec9a8",
+                "url": "https://github.com/fabpot/Twig/zipball/515f34abc31ae9109d1d901a8444494672d64d73",
+                "reference": "515f34abc31ae9109d1d901a8444494672d64d73",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "1348936415",
+            "time": "1349372505",
             "type": "library",
             "extra": {
                 "branch-alias": {
