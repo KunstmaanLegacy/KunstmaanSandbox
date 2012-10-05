@@ -2158,18 +2158,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/getsentry/raven-php.git",
-                "reference": "df8ce7e4f1056fd3332e8c19a037215207eec277"
+                "reference": "f2787cb61330f51a011422b1adcc6c0cf8e7ada1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/getsentry/raven-php/zipball/df8ce7e4f1056fd3332e8c19a037215207eec277",
-                "reference": "df8ce7e4f1056fd3332e8c19a037215207eec277",
+                "url": "https://github.com/getsentry/raven-php/zipball/f2787cb61330f51a011422b1adcc6c0cf8e7ada1",
+                "reference": "f2787cb61330f51a011422b1adcc6c0cf8e7ada1",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "1347610179",
+            "time": "1349415245",
             "type": "library",
             "installation-source": "source",
             "autoload": {
