@@ -2003,12 +2003,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/liip/LiipMonitorBundle.git",
-                "reference": "cdd12d6b4e356b59d406e07125f23eb4b5a4ff80"
+                "reference": "db5d7f140597e1da2f1575625fec9a0fb987c2c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/liip/LiipMonitorBundle/zipball/cdd12d6b4e356b59d406e07125f23eb4b5a4ff80",
-                "reference": "cdd12d6b4e356b59d406e07125f23eb4b5a4ff80",
+                "url": "https://github.com/liip/LiipMonitorBundle/zipball/db5d7f140597e1da2f1575625fec9a0fb987c2c6",
+                "reference": "db5d7f140597e1da2f1575625fec9a0fb987c2c6",
                 "shasum": ""
             },
             "require": {
@@ -2016,7 +2016,7 @@
                 "symfony/framework-bundle": ">2.0,<2.2-dev",
                 "liip/monitor": "0.5.*"
             },
-            "time": "1349496698",
+            "time": "1349496720",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
