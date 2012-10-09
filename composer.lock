@@ -1302,12 +1302,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle.git",
-                "reference": "fdbdec258165864da9bcc80ce3b2ec2fa732a06c"
+                "reference": "61292ead67599c18a383d512645b983a51b66753"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/zipball/fdbdec258165864da9bcc80ce3b2ec2fa732a06c",
-                "reference": "fdbdec258165864da9bcc80ce3b2ec2fa732a06c",
+                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/zipball/61292ead67599c18a383d512645b983a51b66753",
+                "reference": "61292ead67599c18a383d512645b983a51b66753",
                 "shasum": ""
             },
             "require": {
@@ -1322,7 +1322,7 @@
                 "sensio/framework-extra-bundle": "*",
                 "kunstmaan/utilities-bundle": "*"
             },
-            "time": "1349789540",
+            "time": "1349794284",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1624,12 +1624,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle",
-                "reference": "0e5b8b701e27ca3892f95fdb8085e7cc07a83bf2"
+                "reference": "49b3d4ee646c74c121ecef421136796950e0df8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle/zipball/0e5b8b701e27ca3892f95fdb8085e7cc07a83bf2",
-                "reference": "0e5b8b701e27ca3892f95fdb8085e7cc07a83bf2",
+                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle/zipball/49b3d4ee646c74c121ecef421136796950e0df8e",
+                "reference": "49b3d4ee646c74c121ecef421136796950e0df8e",
                 "shasum": ""
             },
             "require": {
@@ -1643,7 +1643,7 @@
                 "kunstmaan/pagepart-bundle": "master-dev",
                 "kunstmaan/utilities-bundle": "dev-master"
             },
-            "time": "1349789574",
+            "time": "1349794774",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1810,12 +1810,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanUtilitiesBundle",
-                "reference": "39248c639e7b5984b1081e373b32a4cca3385d9a"
+                "reference": "427b5a4a75829a8c09beb0f9acea35cd18048af3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanUtilitiesBundle/zipball/39248c639e7b5984b1081e373b32a4cca3385d9a",
-                "reference": "39248c639e7b5984b1081e373b32a4cca3385d9a",
+                "url": "https://github.com/Kunstmaan/KunstmaanUtilitiesBundle/zipball/427b5a4a75829a8c09beb0f9acea35cd18048af3",
+                "reference": "427b5a4a75829a8c09beb0f9acea35cd18048af3",
                 "shasum": ""
             },
             "require": {
@@ -1823,7 +1823,7 @@
                 "symfony/symfony": "2.*",
                 "doctrine/orm": ">=2.2.3,<2.4-dev"
             },
-            "time": "1349786612",
+            "time": "1349794553",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
