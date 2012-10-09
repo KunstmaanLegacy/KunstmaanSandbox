@@ -1302,12 +1302,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle.git",
-                "reference": "f852f69c48ca1fb75f7a79f6b51af606eb08cb4b"
+                "reference": "de0896a156f3ac76d73861bb0617fba7df7d05e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/zipball/f852f69c48ca1fb75f7a79f6b51af606eb08cb4b",
-                "reference": "f852f69c48ca1fb75f7a79f6b51af606eb08cb4b",
+                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/zipball/de0896a156f3ac76d73861bb0617fba7df7d05e4",
+                "reference": "de0896a156f3ac76d73861bb0617fba7df7d05e4",
                 "shasum": ""
             },
             "require": {
@@ -1322,7 +1322,7 @@
                 "sensio/framework-extra-bundle": "*",
                 "kunstmaan/utilities-bundle": "*"
             },
-            "time": "1349782835",
+            "time": "1349783302",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1802,6 +1802,46 @@
                 "exceptions",
                 "sentry"
             ]
+        },
+        {
+            "name": "kunstmaan/utilities-bundle",
+            "version": "dev-master",
+            "target-dir": "Kunstmaan/UtilitiesBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Kunstmaan/KunstmaanUtilitiesBundle",
+                "reference": "a1998b47e625c287d9f5d92fce5ae7d68e7e9b77"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/Kunstmaan/KunstmaanUtilitiesBundle/zipball/a1998b47e625c287d9f5d92fce5ae7d68e7e9b77",
+                "reference": "a1998b47e625c287d9f5d92fce5ae7d68e7e9b77",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/symfony": "2.*"
+            },
+            "time": "1349783086",
+            "type": "symfony-bundle",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Kunstmaan\\UtilitiesBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kunstmaan Team",
+                    "email": "support@kunstmaan.be",
+                    "homepage": "http://www.kunstmaan.be/"
+                }
+            ],
+            "description": "Symfony2 KunstmaanUtilitiesBundle",
+            "homepage": "https://github.com/Kunstmaan/KunstmaanUtilitiesBundle"
         },
         {
             "name": "kunstmaan/view-bundle",
