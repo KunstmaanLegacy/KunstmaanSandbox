@@ -1,4 +1,4 @@
-        $bundles[] = new FOS\UtilitiesBundle\KunstmaanUtilitiesBundle();
+        $bundles[] = new Kunstmaan\UtilitiesBundle\KunstmaanUtilitiesBundle();
         // KunstmaanAdminBundle
         $bundles[] = new FOS\UserBundle\FOSUserBundle();
         $bundles[] = new Knp\Bundle\MenuBundle\KnpMenuBundle();
