@@ -1,3 +1,4 @@
+        $bundles[] = new FOS\UtilitiesBundle\KunstmaanUtilitiesBundle();
         // KunstmaanAdminBundle
         $bundles[] = new FOS\UserBundle\FOSUserBundle();
         $bundles[] = new Knp\Bundle\MenuBundle\KnpMenuBundle();
@@ -16,6 +17,7 @@
         $bundles[] = new Kunstmaan\FormBundle\KunstmaanFormBundle();
         // KunstmaanAdminListBundle
         $bundles[] = new Kunstmaan\AdminListBundle\KunstmaanAdminListBundle();
+        $bundles[] = new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle();
         // KunstmaanNodeBundle
         $bundles[] = new Kunstmaan\NodeBundle\KunstmaanNodeBundle();
         // KunstmaanSearchBundle
