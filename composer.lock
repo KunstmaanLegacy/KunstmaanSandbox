@@ -1810,19 +1810,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanUtilitiesBundle",
-                "reference": "a1998b47e625c287d9f5d92fce5ae7d68e7e9b77"
+                "reference": "ac5595398083895b5f7fd22fbf4ef1a0dc0d424c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanUtilitiesBundle/zipball/a1998b47e625c287d9f5d92fce5ae7d68e7e9b77",
-                "reference": "a1998b47e625c287d9f5d92fce5ae7d68e7e9b77",
+                "url": "https://github.com/Kunstmaan/KunstmaanUtilitiesBundle/zipball/ac5595398083895b5f7fd22fbf4ef1a0dc0d424c",
+                "reference": "ac5595398083895b5f7fd22fbf4ef1a0dc0d424c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
                 "symfony/symfony": "2.*"
             },
-            "time": "1349783086",
+            "time": "1349785269",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
