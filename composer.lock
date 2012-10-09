@@ -1535,12 +1535,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanMediaBundle",
-                "reference": "238ba757c9897dc6abf580f49b353bdead530b5e"
+                "reference": "72f793ad7c0628b2ba4d5f407be11c0d0c0b7d28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanMediaBundle/zipball/238ba757c9897dc6abf580f49b353bdead530b5e",
-                "reference": "238ba757c9897dc6abf580f49b353bdead530b5e",
+                "url": "https://github.com/Kunstmaan/KunstmaanMediaBundle/zipball/72f793ad7c0628b2ba4d5f407be11c0d0c0b7d28",
+                "reference": "72f793ad7c0628b2ba4d5f407be11c0d0c0b7d28",
                 "shasum": ""
             },
             "require": {
@@ -1552,9 +1552,10 @@
                 "liip/imagine-bundle": "*",
                 "knplabs/knp-gaufrette-bundle": "*",
                 "gedmo/doctrine-extensions": "*",
-                "sensio/framework-extra-bundle": "*"
+                "sensio/framework-extra-bundle": "*",
+                "kunstmaan/utilities-bundle": "*"
             },
-            "time": "1349184471",
+            "time": "1349795649",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
