@@ -27,7 +27,10 @@ class AppKernel extends Kernel
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
         }
 
-                // KunstmaanAdminBundle
+        // KunstmaanUtilitiesBundle
+        $bundles[] = new Kunstmaan\UtilitiesBundle\KunstmaanUtilitiesBundle();
+
+        // KunstmaanAdminBundle
         $bundles[] = new FOS\UserBundle\FOSUserBundle();
         $bundles[] = new Knp\Bundle\MenuBundle\KnpMenuBundle();
         $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
