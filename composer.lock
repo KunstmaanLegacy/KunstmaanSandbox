@@ -1302,12 +1302,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle.git",
-                "reference": "de0896a156f3ac76d73861bb0617fba7df7d05e4"
+                "reference": "27101b7452557343c56c813512f6e5c878c1f41a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/zipball/de0896a156f3ac76d73861bb0617fba7df7d05e4",
-                "reference": "de0896a156f3ac76d73861bb0617fba7df7d05e4",
+                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/zipball/27101b7452557343c56c813512f6e5c878c1f41a",
+                "reference": "27101b7452557343c56c813512f6e5c878c1f41a",
                 "shasum": ""
             },
             "require": {
@@ -1322,7 +1322,7 @@
                 "sensio/framework-extra-bundle": "*",
                 "kunstmaan/utilities-bundle": "*"
             },
-            "time": "1349783302",
+            "time": "1349786721",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1810,19 +1810,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanUtilitiesBundle",
-                "reference": "ac5595398083895b5f7fd22fbf4ef1a0dc0d424c"
+                "reference": "39248c639e7b5984b1081e373b32a4cca3385d9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanUtilitiesBundle/zipball/ac5595398083895b5f7fd22fbf4ef1a0dc0d424c",
-                "reference": "ac5595398083895b5f7fd22fbf4ef1a0dc0d424c",
+                "url": "https://github.com/Kunstmaan/KunstmaanUtilitiesBundle/zipball/39248c639e7b5984b1081e373b32a4cca3385d9a",
+                "reference": "39248c639e7b5984b1081e373b32a4cca3385d9a",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
-                "symfony/symfony": "2.*"
+                "symfony/symfony": "2.*",
+                "doctrine/orm": ">=2.2.3,<2.4-dev"
             },
-            "time": "1349785269",
+            "time": "1349786612",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
