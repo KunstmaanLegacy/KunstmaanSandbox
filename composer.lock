@@ -1624,12 +1624,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle",
-                "reference": "a354e0c7b4207d7e82fd532e6012b396ef2e3ec6"
+                "reference": "5e1afd9bf1d1aea696f65997a5a92ee820e2ea52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle/zipball/a354e0c7b4207d7e82fd532e6012b396ef2e3ec6",
-                "reference": "a354e0c7b4207d7e82fd532e6012b396ef2e3ec6",
+                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle/zipball/5e1afd9bf1d1aea696f65997a5a92ee820e2ea52",
+                "reference": "5e1afd9bf1d1aea696f65997a5a92ee820e2ea52",
                 "shasum": ""
             },
             "require": {
@@ -1642,7 +1642,7 @@
                 "kunstmaan/media-bundle": "master-dev",
                 "kunstmaan/pagepart-bundle": "master-dev"
             },
-            "time": "1349276615",
+            "time": "1349769853",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
