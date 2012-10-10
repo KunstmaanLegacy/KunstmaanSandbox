@@ -285,12 +285,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/doctrine/DoctrineBundle.git",
-                "reference": "e69a6fd75fa3979e35b7004e6da6e9aea3765997"
+                "reference": "75e0ac4a4be04bfa39b282f8ebccd3ef4c8ebe32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/DoctrineBundle/zipball/e69a6fd75fa3979e35b7004e6da6e9aea3765997",
-                "reference": "e69a6fd75fa3979e35b7004e6da6e9aea3765997",
+                "url": "https://github.com/doctrine/DoctrineBundle/zipball/75e0ac4a4be04bfa39b282f8ebccd3ef4c8ebe32",
+                "reference": "75e0ac4a4be04bfa39b282f8ebccd3ef4c8ebe32",
                 "shasum": ""
             },
             "require": {
@@ -307,7 +307,7 @@
             "suggest": {
                 "doctrine/orm": "The Doctrine ORM integration is optional in the bundle."
             },
-            "time": "1349273376",
+            "time": "1349890948",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
