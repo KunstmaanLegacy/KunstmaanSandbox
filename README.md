@@ -116,7 +116,7 @@ app/console kuma:generate:bundle
 Generate default site (replace bundle namespace and name)
 
 ```bash
-app/console kuma:generate:default-site --namespace=Namespace\NameOfBundle --prexix=tableprefix_
+app/console kuma:generate:default-site --namespace=Namespace\NameOfBundle --prefix=tableprefix_
 ```
 
 # run fullreload
