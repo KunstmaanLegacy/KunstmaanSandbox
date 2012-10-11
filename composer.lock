@@ -1672,12 +1672,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanPagePartBundle",
-                "reference": "528b36810c50ff0013372e58bda07894c50410e3"
+                "reference": "a68680b2c45b511d1f2a13758d3655a3b8927b6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanPagePartBundle/zipball/528b36810c50ff0013372e58bda07894c50410e3",
-                "reference": "528b36810c50ff0013372e58bda07894c50410e3",
+                "url": "https://github.com/Kunstmaan/KunstmaanPagePartBundle/zipball/a68680b2c45b511d1f2a13758d3655a3b8927b6b",
+                "reference": "a68680b2c45b511d1f2a13758d3655a3b8927b6b",
                 "shasum": ""
             },
             "require": {
@@ -1687,7 +1687,7 @@
                 "kunstmaan/utilities-bundle": "*",
                 "kunstmaan/node-bundle": "dev-master"
             },
-            "time": "1349855801",
+            "time": "1349962833",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -2713,12 +2713,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "89f7b5eed888404142c33c3a647c11b2cd0fdccd"
+                "reference": "854015265c24a7524d95d4ee57c59f2836d60dc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/zipball/89f7b5eed888404142c33c3a647c11b2cd0fdccd",
-                "reference": "89f7b5eed888404142c33c3a647c11b2cd0fdccd",
+                "url": "https://github.com/symfony/symfony/zipball/854015265c24a7524d95d4ee57c59f2836d60dc1",
+                "reference": "854015265c24a7524d95d4ee57c59f2836d60dc1",
                 "shasum": ""
             },
             "require": {
@@ -2767,7 +2767,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "dev-master"
             },
-            "time": "1349961575",
+            "time": "1349963062",
             "type": "library",
             "extra": {
                 "branch-alias": {
