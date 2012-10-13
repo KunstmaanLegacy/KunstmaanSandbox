@@ -1897,19 +1897,19 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/liip/LiipCacheControlBundle.git",
-                "reference": "a693615a00c81c05f25ed0ae5ddf186b93cd48f0"
+                "reference": "d58b2511140970fcdd0834b136940bb8cf6676be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/liip/LiipCacheControlBundle/zipball/a693615a00c81c05f25ed0ae5ddf186b93cd48f0",
-                "reference": "a693615a00c81c05f25ed0ae5ddf186b93cd48f0",
+                "url": "https://github.com/liip/LiipCacheControlBundle/zipball/d58b2511140970fcdd0834b136940bb8cf6676be",
+                "reference": "d58b2511140970fcdd0834b136940bb8cf6676be",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
-                "symfony/framework-bundle": ">=2.0.14,<=2.2-dev"
+                "symfony/framework-bundle": ">=2.0.14,<=2.3-dev"
             },
-            "time": "1347009991",
+            "time": "1350166077",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -2048,20 +2048,20 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/liip/LiipMonitorBundle.git",
-                "reference": "db5d7f140597e1da2f1575625fec9a0fb987c2c6"
+                "reference": "35d8f6dc2817d300168d69b5b9c9ee365d617d68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/liip/LiipMonitorBundle/zipball/db5d7f140597e1da2f1575625fec9a0fb987c2c6",
-                "reference": "db5d7f140597e1da2f1575625fec9a0fb987c2c6",
+                "url": "https://github.com/liip/LiipMonitorBundle/zipball/35d8f6dc2817d300168d69b5b9c9ee365d617d68",
+                "reference": "35d8f6dc2817d300168d69b5b9c9ee365d617d68",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
-                "symfony/framework-bundle": ">2.0,<2.2-dev",
-                "liip/monitor": "0.5.*"
+                "liip/monitor": "0.5.*",
+                "symfony/framework-bundle": ">2.0,<2.3-dev"
             },
-            "time": "1349496720",
+            "time": "1350166137",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
