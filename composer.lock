@@ -1187,20 +1187,25 @@
             "source": {
                 "type": "git",
                 "url": "http://github.com/KnpLabs/KnpMenuBundle.git",
-                "reference": "3a02006670551b40a0f22690544854246bd7fd48"
+                "reference": "6040c533f561da285e38e8bda271d7aaaf62fd10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/KnpLabs/KnpMenuBundle/zipball/3a02006670551b40a0f22690544854246bd7fd48",
-                "reference": "3a02006670551b40a0f22690544854246bd7fd48",
+                "url": "https://github.com/KnpLabs/KnpMenuBundle/zipball/6040c533f561da285e38e8bda271d7aaaf62fd10",
+                "reference": "6040c533f561da285e38e8bda271d7aaaf62fd10",
                 "shasum": ""
             },
             "require": {
-                "symfony/framework-bundle": ">=2.0,<2.2-dev",
-                "knplabs/knp-menu": "2.0.*"
+                "knplabs/knp-menu": "2.0.*",
+                "symfony/framework-bundle": ">=2.0,<2.3-dev"
             },
-            "time": "1350001670",
+            "time": "1350241999",
             "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
