@@ -2214,7 +2214,7 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/getsentry/raven-php.git",
-                "reference": "51bdeaa36967658259dd59ff831d2541dfedc302"
+                "reference": "27d5f0fd96d8a4e9db23eae24e4ed070f4a9dc41"
             },
             "dist": {
                 "type": "zip",
@@ -2225,7 +2225,10 @@
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "1349580321",
+            "time": "1350269419",
+            "bin": [
+                "bin/raven"
+            ],
             "type": "library",
             "installation-source": "source",
             "autoload": {
