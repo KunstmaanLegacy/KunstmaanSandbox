@@ -1773,12 +1773,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanSentryBundle",
-                "reference": "76a09fe48382145d58689743f8c9ddf67518b1d7"
+                "reference": "9b06c9db86da5cc2c407e4159aa8b234832848dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanSentryBundle/zipball/76a09fe48382145d58689743f8c9ddf67518b1d7",
-                "reference": "76a09fe48382145d58689743f8c9ddf67518b1d7",
+                "url": "https://github.com/Kunstmaan/KunstmaanSentryBundle/zipball/9b06c9db86da5cc2c407e4159aa8b234832848dc",
+                "reference": "9b06c9db86da5cc2c407e4159aa8b234832848dc",
                 "shasum": ""
             },
             "require": {
@@ -1786,7 +1786,7 @@
                 "symfony/framework-bundle": "2.1.*",
                 "raven/raven": "dev-master"
             },
-            "time": "1348063793",
+            "time": "1350284069",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1804,7 +1804,7 @@
                     "homepage": "http://www.kunstmaan.be/"
                 }
             ],
-            "description": "Symfony2 KunstmaanSentryBundle",
+            "description": "The SentryBundle is a Symfony2 bundle for using Raven to send exceptions to Sentry (getsentry.com)",
             "homepage": "https://github.com/Kunstmaan/KunstmaanSentryBundle",
             "keywords": [
                 "exceptions",
