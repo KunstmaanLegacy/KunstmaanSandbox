@@ -180,7 +180,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/data-fixtures.git",
-                "reference": "b29bad9738fada9486961f60542f2d2d77c7b501"
+                "reference": "v1.0.0-ALPHA3"
             },
             "dist": {
                 "type": "zip",
@@ -2214,12 +2214,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/getsentry/raven-php.git",
-                "reference": "27d5f0fd96d8a4e9db23eae24e4ed070f4a9dc41"
+                "reference": "0.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/getsentry/raven-php/zipball/51bdeaa36967658259dd59ff831d2541dfedc302",
-                "reference": "51bdeaa36967658259dd59ff831d2541dfedc302",
+                "url": "https://github.com/getsentry/raven-php/zipball/0.3.0",
+                "reference": "0.3.0",
                 "shasum": ""
             },
             "require": {
