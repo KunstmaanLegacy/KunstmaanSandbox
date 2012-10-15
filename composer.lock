@@ -1313,7 +1313,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle.git",
-                "reference": "48d09275a8a3fe35a8238697a0c5fbf57767dad5"
+                "reference": "82ce52c082213ac03aa9cc5759122a8b186b6013"
             },
             "dist": {
                 "type": "zip",
@@ -1333,7 +1333,7 @@
                 "sensio/framework-extra-bundle": "*",
                 "kunstmaan/utilities-bundle": "*"
             },
-            "time": "1349855573",
+            "time": "1350315735",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -2727,7 +2727,7 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "8731cc30fff6e34891270ad7db9d1d4fd26800a6"
+                "reference": "3ed6b7a9964fb62a66b68594fbe5e0a988ddfb5f"
             },
             "dist": {
                 "type": "zip",
@@ -2779,9 +2779,9 @@
                 "doctrine/orm": ">=2.2.3,<2.4-dev",
                 "doctrine/data-fixtures": "1.0.*",
                 "propel/propel1": "dev-master",
-                "monolog/monolog": "dev-master"
+                "monolog/monolog": "1.*"
             },
-            "time": "1350286083",
+            "time": "1350315853",
             "type": "library",
             "extra": {
                 "branch-alias": {
