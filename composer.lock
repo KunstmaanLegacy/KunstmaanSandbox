@@ -1,5 +1,5 @@
 {
-    "hash": "7ecc6b84d1737846be77edc87c11fa69",
+    "hash": "08aebb85a8356307a63ee40924a3d7e9",
     "packages": [
         {
             "name": "ddeboer/data-import",
@@ -2972,6 +2972,7 @@
         "kunstmaan/search-bundle": 20,
         "kunstmaan/generator-bundle": 20,
         "kunstmaan/sentry-bundle": 20,
+        "kunstmaan/utilities-bundle": 20,
         "liip/monitor-bundle": 20,
         "liip/cache-control-bundle": 20
     }
