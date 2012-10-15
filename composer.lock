@@ -1006,7 +1006,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/Gaufrette",
-                "reference": "76b830c119432e08eb8fb723f5d148531f2d84c9"
+                "reference": "0628ac151f6326e8a1c97f531a5bb891d9a0ab6f"
             },
             "dist": {
                 "type": "zip",
@@ -1018,22 +1018,28 @@
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "pear-aws/sdk": "*",
                 "rackspace/php-cloudfiles": "*",
                 "doctrine/dbal": ">=2.3",
-                "pear-dropbox-php/dropbox": "*"
+                "amazonwebservices/aws-sdk-for-php": "1.5.*",
+                "dropbox-php/dropbox-php": "*"
             },
             "suggest": {
                 "knplabs/knp-gaufrette-bundle": "*",
                 "ext-curl": "*",
                 "ext-mbstring": "*",
                 "ext-mongo": "*",
-                "pear-aws/sdk": ">=1.4.5",
-                "rackspace/php-cloudfiles": "*",
-                "doctrine/dbal": ">=2.3"
+                "dropbox-php/dropbox-php": "to use the Dropbox adapter",
+                "amazonwebservices/aws-sdk-for-php": "to use the Amazon S3 adapter",
+                "doctrine/dbal": "to use the Doctrine DBAL adapter",
+                "ext-zip": "to use the Zip adapter"
             },
-            "time": "1348651230",
+            "time": "1350290998",
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.2.x-dev"
+                }
+            },
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
