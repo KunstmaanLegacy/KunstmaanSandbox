@@ -2676,12 +2676,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/SwiftmailerBundle",
-                "reference": "231d05f51c3dddd0d45500ec7d22a5315a0ce84f"
+                "reference": "11b91177f5ffa77720be0b8b206b07a72a9f89ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/SwiftmailerBundle/zipball/231d05f51c3dddd0d45500ec7d22a5315a0ce84f",
-                "reference": "231d05f51c3dddd0d45500ec7d22a5315a0ce84f",
+                "url": "https://github.com/symfony/SwiftmailerBundle/zipball/11b91177f5ffa77720be0b8b206b07a72a9f89ae",
+                "reference": "11b91177f5ffa77720be0b8b206b07a72a9f89ae",
                 "shasum": ""
             },
             "require": {
@@ -2695,7 +2695,7 @@
                 "symfony/config": ">=2.1.0,<2.3-dev",
                 "symfony/yaml": ">=2.1.0,<2.3-dev"
             },
-            "time": "1350120593",
+            "time": "1350372141",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
