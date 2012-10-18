@@ -7,12 +7,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ddeboer/data-import",
-                "reference": "50495d9849dc4da6ed72650ef634e8cb6b3770ff"
+                "reference": "845941160722afdf46b1f7ca051002ae76cdc568"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/ddeboer/data-import/zipball/50495d9849dc4da6ed72650ef634e8cb6b3770ff",
-                "reference": "50495d9849dc4da6ed72650ef634e8cb6b3770ff",
+                "url": "https://github.com/ddeboer/data-import/zipball/845941160722afdf46b1f7ca051002ae76cdc568",
+                "reference": "845941160722afdf46b1f7ca051002ae76cdc568",
                 "shasum": ""
             },
             "require": {
@@ -30,9 +30,11 @@
                 "phpexcel/phpexcel": "If you want to use the ExcelReader",
                 "symfony/form": "If you want to use the ObjectConverter",
                 "doctrine/dbal": "If you want to use the DbalReader",
-                "symfony/console": "If you want to use the ConsoleProgressWriter"
+                "symfony/console": "If you want to use the ConsoleProgressWriter",
+                "ext-iconv": "For the CharsetValueConverter",
+                "ext-mbstring": "For the CharsetValueConverter"
             },
-            "time": "1350125898",
+            "time": "1350571410",
             "type": "library",
             "installation-source": "source",
             "autoload": {
