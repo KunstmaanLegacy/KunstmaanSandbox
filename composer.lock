@@ -2009,18 +2009,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/liip/LiipMonitor.git",
-                "reference": "17fb57cc314f8f128238d5652293cbe503a982c6"
+                "reference": "071792a0bb0882fc322ac60f922d600b35626c82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/liip/LiipMonitor/zipball/17fb57cc314f8f128238d5652293cbe503a982c6",
-                "reference": "17fb57cc314f8f128238d5652293cbe503a982c6",
+                "url": "https://github.com/liip/LiipMonitor/zipball/071792a0bb0882fc322ac60f922d600b35626c82",
+                "reference": "071792a0bb0882fc322ac60f922d600b35626c82",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "1348492233",
+            "time": "1350681961",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2061,12 +2061,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/liip/LiipMonitorBundle.git",
-                "reference": "5d93fe0406864dc315deac74376eeea648b11c4c"
+                "reference": "bbaef639a7030baf3e7f181dea528daa72d32ff2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/liip/LiipMonitorBundle/zipball/5d93fe0406864dc315deac74376eeea648b11c4c",
-                "reference": "5d93fe0406864dc315deac74376eeea648b11c4c",
+                "url": "https://github.com/liip/LiipMonitorBundle/zipball/bbaef639a7030baf3e7f181dea528daa72d32ff2",
+                "reference": "bbaef639a7030baf3e7f181dea528daa72d32ff2",
                 "shasum": ""
             },
             "require": {
@@ -2074,7 +2074,7 @@
                 "liip/monitor": "0.5.*",
                 "symfony/framework-bundle": ">2.0,<2.3-dev"
             },
-            "time": "1350681826",
+            "time": "1350682070",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
