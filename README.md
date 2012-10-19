@@ -54,7 +54,7 @@ Configure your application by surfing to http://computername/config.php and make
 
 ```bash
 echo "app/config/parameters.yml" >> .gitignore
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/param)" > param
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/param)" > param
 chmod a+x param
 ./param encode
 echo ".idea" >> .gitignore
@@ -79,16 +79,17 @@ TODO: update the config files in kStrano to match this setup, including the .tra
 
 ```bash
 PROJECTNAME=`cat /tmp/kumas2install`
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/app.php)" | sed s/sf2/$PROJECTNAME/ > web/app.php
-mkdir -p app/Resources/java
-curl https://github.com/downloads/Kunstmaan/KunstmaanSandbox/yuicompressor-2.4.7.jar -o app/Resources/java/yuicompressor-2.4.7.jar
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/fullreload)" > fullreload
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/app.php)" | sed s/sf2/$PROJECTNAME/ > web/app.php
+mkdir -p app/Resources/tools
+mkdir -p app/Resources/tools/java
+curl https://github.com/downloads/Kunstmaan/KunstmaanSandbox/yuicompressor-2.4.7.jar -o app/Resources/tools/java/yuicompressor-2.4.7.jar
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/fullreload)" > fullreload
 chmod a+x fullreload
 gem install json
-ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/sandboxinstaller.rb').read" install-bundles composer.json app/AppKernel.php
-ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/sandboxinstaller.rb').read" configure-bundles app/config/parameters.yml $PROJECTNAME
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/config.dist.yml)" >> app/config/config.yml
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/security.dist.yml)" | sed s/sandbox/$PROJECTNAME/ > app/config/security.yml
+ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/sandboxinstaller.rb').read" install-bundles composer.json app/AppKernel.php
+ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/sandboxinstaller.rb').read" configure-bundles app/config/parameters.yml $PROJECTNAME
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/config.dist.yml)" >> app/config/config.yml
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/security.dist.yml)" | sed s/sandbox/$PROJECTNAME/ > app/config/security.yml
 curl http://www.kunstmaan.be/html/2010/favicon.ico -o web/favicon.ico
 php composer.phar update
 ```
@@ -97,12 +98,12 @@ php composer.phar update
 
 for a single-language-website:
 ```bash
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/routing-singlelang.dist.yml)" > app/config/routing.yml
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/routing-singlelang.dist.yml)" > app/config/routing.yml
 ```
 
 for a multi-language-website:
 ```bash
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/docs/scripts/routing-multilang.dist.yml)" > app/config/routing.yml
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/routing-multilang.dist.yml)" > app/config/routing.yml
 ```
 
 # Generate
