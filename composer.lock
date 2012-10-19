@@ -2061,12 +2061,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/liip/LiipMonitorBundle.git",
-                "reference": "35d8f6dc2817d300168d69b5b9c9ee365d617d68"
+                "reference": "5d93fe0406864dc315deac74376eeea648b11c4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/liip/LiipMonitorBundle/zipball/35d8f6dc2817d300168d69b5b9c9ee365d617d68",
-                "reference": "35d8f6dc2817d300168d69b5b9c9ee365d617d68",
+                "url": "https://github.com/liip/LiipMonitorBundle/zipball/5d93fe0406864dc315deac74376eeea648b11c4c",
+                "reference": "5d93fe0406864dc315deac74376eeea648b11c4c",
                 "shasum": ""
             },
             "require": {
@@ -2074,7 +2074,7 @@
                 "liip/monitor": "0.5.*",
                 "symfony/framework-bundle": ">2.0,<2.3-dev"
             },
-            "time": "1350166137",
+            "time": "1350681826",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
