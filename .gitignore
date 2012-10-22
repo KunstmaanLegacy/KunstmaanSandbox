@@ -14,9 +14,7 @@ web/uploads
 .DS_Store
 web/frontend
 behat.yml
-
 .gitmodules
-
 .vagrant
-
 Vagrantfile
+kserver
