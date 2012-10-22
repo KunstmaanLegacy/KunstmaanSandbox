@@ -1,0 +1,21 @@
+<VirtualHost *:80>
+	ServerAdmin {{ serverAdmin }}
+
+    RewriteEngine On
+
+    Include {{ configLocation }}/shared/[^.#]*.conf
+    Include {{ configLocation }}/nossl/[^.#]*.conf
+
+</VirtualHost>
+
+<IfModule mod_ssl.c>
+    <VirtualHost *:443>
+        ServerAdmin {{ serverAdmin }}
+
+        RewriteEngine On
+
+        Include {{ configLocation }}/shared/[^.#]*.conf
+        Include {{ configLocation }}/ssl/[^.#]*.conf
+
+    </VirtualHost>
+</IfModule>
