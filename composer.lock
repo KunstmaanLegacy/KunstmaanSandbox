@@ -82,6 +82,7 @@
                 "phpexcel/phpexcel": "If you want to use the ExcelReader",
                 "symfony/form": "If you want to use the ObjectConverter"
             },
+            "time": "1343312135",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -104,8 +105,7 @@
             "keywords": [
                 "csv",
                 "import"
-            ],
-            "time": "1343312135"
+            ]
         },
         {
             "name": "doctrine/common",
@@ -124,6 +124,7 @@
             "require": {
                 "php": ">=5.3.2"
             },
+            "time": "1348120518",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -173,8 +174,7 @@
                 "eventmanager",
                 "annotations",
                 "persistence"
-            ],
-            "time": "1348120518"
+            ]
         },
         {
             "name": "doctrine/data-fixtures",
@@ -193,6 +193,7 @@
             "require": {
                 "php": ">=5.3.2"
             },
+            "time": "1348136794",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -214,8 +215,7 @@
             "homepage": "http://www.doctrine-project.org",
             "keywords": [
                 "database"
-            ],
-            "time": "1348136794"
+            ]
         },
         {
             "name": "doctrine/dbal",
@@ -309,6 +309,7 @@
             "suggest": {
                 "doctrine/orm": "The Doctrine ORM integration is optional in the bundle."
             },
+            "time": "1350120716",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -345,8 +346,7 @@
                 "orm",
                 "persistence",
                 "dbal"
-            ],
-            "time": "1350120716"
+            ]
         },
         {
             "name": "doctrine/doctrine-fixtures-bundle",
@@ -423,6 +423,7 @@
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
             },
+            "time": "1350071385",
             "bin": [
                 "bin/doctrine",
                 "bin/doctrine.php"
@@ -467,8 +468,7 @@
             "keywords": [
                 "database",
                 "orm"
-            ],
-            "time": "1350071385"
+            ]
         },
         {
             "name": "exercise/elastica-bundle",
@@ -502,6 +502,7 @@
                 "propel/propel1": "1.6.*",
                 "doctrine/mongodb-odm": ">=3.0.0-beta2,<3.1-dev"
             },
+            "time": "1349275745",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -536,8 +537,7 @@
                 "doctrine2",
                 "elastica",
                 "elasticsearch"
-            ],
-            "time": "1349275745"
+            ]
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -572,6 +572,7 @@
                 "doctrine/doctrine-bundle": "*",
                 "doctrine/mongodb-odm-bundle": "*"
             },
+            "time": "1350660447",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -606,8 +607,7 @@
             "homepage": "http://friendsofsymfony.github.com",
             "keywords": [
                 "User management"
-            ],
-            "time": "1350660447"
+            ]
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -631,6 +631,7 @@
                 "doctrine/orm": ">=2.1",
                 "doctrine/mongodb-odm": "*"
             },
+            "time": "1350832294",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -666,8 +667,7 @@
                 "nestedset",
                 "sortable",
                 "timestampable"
-            ],
-            "time": "1350832294"
+            ]
         },
         {
             "name": "gregwar/form-bundle",
@@ -867,6 +867,7 @@
                 "doctrine/doctrine-bundle": "*",
                 "doctrine/orm": "*"
             },
+            "time": "1348217792",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -890,8 +891,7 @@
             "keywords": [
                 "dependency injection",
                 "annotations"
-            ],
-            "time": "1348217792"
+            ]
         },
         {
             "name": "jms/metadata",
@@ -973,6 +973,7 @@
                 "symfony/form": "*",
                 "symfony/validator": "*"
             },
+            "time": "1346947943",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -999,8 +1000,7 @@
                 "security",
                 "secure",
                 "expression"
-            ],
-            "time": "1346947943"
+            ]
         },
         {
             "name": "knplabs/gaufrette",
@@ -1035,6 +1035,7 @@
                 "doctrine/dbal": "to use the Doctrine DBAL adapter",
                 "ext-zip": "to use the Zip adapter"
             },
+            "time": "1350290998",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1067,8 +1068,7 @@
                 "file",
                 "filesystem",
                 "abstraction"
-            ],
-            "time": "1350290998"
+            ]
         },
         {
             "name": "knplabs/knp-gaufrette-bundle",
@@ -1093,6 +1093,7 @@
                 "symfony/yaml": "2.*",
                 "symfony/console": "2.*"
             },
+            "time": "1350281570",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1121,8 +1122,7 @@
                 "file",
                 "filesystem",
                 "abstraction"
-            ],
-            "time": "1350281570"
+            ]
         },
         {
             "name": "knplabs/knp-menu",
@@ -1151,6 +1151,7 @@
                 "silex/silex": "for the integration with your silex application",
                 "twig/twig": "for the TwigRenderer and the integration with your templates"
             },
+            "time": "1350747764",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1185,8 +1186,7 @@
             "keywords": [
                 "menu",
                 "tree"
-            ],
-            "time": "1350747764"
+            ]
         },
         {
             "name": "knplabs/knp-menu-bundle",
@@ -1207,6 +1207,7 @@
                 "knplabs/knp-menu": "2.0.*",
                 "symfony/framework-bundle": ">=2.0,<2.3-dev"
             },
+            "time": "1350241999",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -1239,8 +1240,7 @@
             "description": "This bundle provides an integration of the KnpMenu library",
             "keywords": [
                 "menu"
-            ],
-            "time": "1350241999"
+            ]
         },
         {
             "name": "kriswallsmith/assetic",
@@ -1335,6 +1335,7 @@
                 "sensio/framework-extra-bundle": "*",
                 "kunstmaan/utilities-bundle": "*"
             },
+            "time": "1350315735",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1353,8 +1354,7 @@
                 }
             ],
             "description": "Symfony2 KunstmaanAdminBundle",
-            "homepage": "https://github.com/Kunstmaan/KunstmaanAdminBundle",
-            "time": "1350315735"
+            "homepage": "https://github.com/Kunstmaan/KunstmaanAdminBundle"
         },
         {
             "name": "kunstmaan/adminlist-bundle",
@@ -1378,6 +1378,7 @@
                 "white-october/pagerfanta-bundle": "*",
                 "sensio/framework-extra-bundle": "*"
             },
+            "time": "1349275718",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1396,8 +1397,7 @@
                 }
             ],
             "description": "Symfony2 KunstmaanAdminListBundle",
-            "homepage": "https://github.com/Kunstmaan/KunstmaanAdminListBundle",
-            "time": "1349275718"
+            "homepage": "https://github.com/Kunstmaan/KunstmaanAdminListBundle"
         },
         {
             "name": "kunstmaan/form-bundle",
@@ -1427,6 +1427,7 @@
                 "sensio/framework-extra-bundle": "*",
                 "kunstmaan/node-bundle": "dev-master"
             },
+            "time": "1349275613",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1445,8 +1446,7 @@
                 }
             ],
             "description": "Symfony2 KunstmaanFormBundle",
-            "homepage": "https://github.com/Kunstmaan/KunstmaanFormBundle",
-            "time": "1349275613"
+            "homepage": "https://github.com/Kunstmaan/KunstmaanFormBundle"
         },
         {
             "name": "kunstmaan/generator-bundle",
@@ -1476,6 +1476,7 @@
                 "kunstmaan/media-pagepart-bundle": "*",
                 "sensio/generator-bundle": "2.1.*"
             },
+            "time": "1349964527",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1494,8 +1495,7 @@
                 }
             ],
             "description": "Symfony2 KunstmaanGeneratorBundle",
-            "homepage": "https://github.com/Kunstmaan/KunstmaanGeneratorBundle",
-            "time": "1349964527"
+            "homepage": "https://github.com/Kunstmaan/KunstmaanGeneratorBundle"
         },
         {
             "name": "kunstmaan/media-bundle",
@@ -1524,6 +1524,7 @@
                 "sensio/framework-extra-bundle": "*",
                 "kunstmaan/utilities-bundle": "*"
             },
+            "time": "1349795649",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1542,8 +1543,7 @@
                 }
             ],
             "description": "Symfony2 KunstmaanMediaBundle",
-            "homepage": "https://github.com/Kunstmaan/KunstmaanMediaBundle",
-            "time": "1349795649"
+            "homepage": "https://github.com/Kunstmaan/KunstmaanMediaBundle"
         },
         {
             "name": "kunstmaan/media-pagepart-bundle",
@@ -1566,6 +1566,7 @@
                 "symfony/symfony": "2.1.*",
                 "kunstmaan/media-bundle": "dev-master"
             },
+            "time": "1349085214",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1584,8 +1585,7 @@
                 }
             ],
             "description": "The KunstmaanMediaPagePartBundle is a pagepart that can be used on the KunstmaanPagePartBundle. It is a separate bundle to prevent a tight coupling between the KunstmaanPagePartBundle and the KunstmaanMediaBundle.",
-            "homepage": "https://github.com/Kunstmaan/KunstmaanMediaPagePartBundle",
-            "time": "1349085214"
+            "homepage": "https://github.com/Kunstmaan/KunstmaanMediaPagePartBundle"
         },
         {
             "name": "kunstmaan/node-bundle",
@@ -1613,6 +1613,7 @@
                 "kunstmaan/media-bundle": "dev-master",
                 "kunstmaan/pagepart-bundle": "*"
             },
+            "time": "1349856240",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1631,8 +1632,7 @@
                 }
             ],
             "description": "Symfony2 KunstmaanNodeBundle",
-            "homepage": "https://github.com/Kunstmaan/KunstmaanNodeBundle",
-            "time": "1349856240"
+            "homepage": "https://github.com/Kunstmaan/KunstmaanNodeBundle"
         },
         {
             "name": "kunstmaan/pagepart-bundle",
@@ -1656,6 +1656,7 @@
                 "kunstmaan/utilities-bundle": "*",
                 "kunstmaan/node-bundle": "dev-master"
             },
+            "time": "1349962833",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1679,8 +1680,7 @@
                 "cms",
                 "kunstmaan",
                 "pageparts"
-            ],
-            "time": "1349962833"
+            ]
         },
         {
             "name": "kunstmaan/search-bundle",
@@ -1750,6 +1750,7 @@
                 "symfony/framework-bundle": "2.1.*",
                 "raven/raven": "dev-master"
             },
+            "time": "1350284069",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1772,8 +1773,7 @@
             "keywords": [
                 "exceptions",
                 "sentry"
-            ],
-            "time": "1350284069"
+            ]
         },
         {
             "name": "kunstmaan/utilities-bundle",
@@ -1795,6 +1795,7 @@
                 "symfony/symfony": "2.*",
                 "doctrine/orm": ">=2.2.3,<2.4-dev"
             },
+            "time": "1349794553",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1813,8 +1814,7 @@
                 }
             ],
             "description": "Symfony2 KunstmaanUtilitiesBundle",
-            "homepage": "https://github.com/Kunstmaan/KunstmaanUtilitiesBundle",
-            "time": "1349794553"
+            "homepage": "https://github.com/Kunstmaan/KunstmaanUtilitiesBundle"
         },
         {
             "name": "kunstmaan/view-bundle",
@@ -1838,6 +1838,7 @@
                 "gedmo/doctrine-extensions": "*",
                 "kunstmaan/node-bundle": "dev-master"
             },
+            "time": "1348224280",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1856,8 +1857,7 @@
                 }
             ],
             "description": "Symfony2 KunstmaanViewBundle",
-            "homepage": "https://github.com/Kunstmaan/KunstmaanViewBundle",
-            "time": "1348224280"
+            "homepage": "https://github.com/Kunstmaan/KunstmaanViewBundle"
         },
         {
             "name": "liip/cache-control-bundle",
@@ -1878,6 +1878,7 @@
                 "php": ">=5.3.2",
                 "symfony/framework-bundle": ">=2.0.14,<=2.3-dev"
             },
+            "time": "1350166077",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1904,8 +1905,7 @@
                 "esi",
                 "caching",
                 "varnish"
-            ],
-            "time": "1350166077"
+            ]
         },
         {
             "name": "liip/imagine-bundle",
@@ -1934,6 +1934,7 @@
             "suggest": {
                 "twig/twig": ">=1.0,<2.0-dev"
             },
+            "time": "1350167573",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1955,8 +1956,7 @@
             "keywords": [
                 "image",
                 "imagine"
-            ],
-            "time": "1350167573"
+            ]
         },
         {
             "name": "liip/monitor",
@@ -1976,6 +1976,7 @@
             "require": {
                 "php": ">=5.3.3"
             },
+            "time": "1350681961",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2007,8 +2008,7 @@
                 "check",
                 "monitor",
                 "health"
-            ],
-            "time": "1350681961"
+            ]
         },
         {
             "name": "liip/monitor-bundle",
@@ -2030,6 +2030,7 @@
                 "liip/monitor": "0.5.*",
                 "symfony/framework-bundle": ">2.0,<2.3-dev"
             },
+            "time": "1350682070",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2061,8 +2062,7 @@
                 "check",
                 "monitor",
                 "health"
-            ],
-            "time": "1350682070"
+            ]
         },
         {
             "name": "monolog/monolog",
@@ -2089,6 +2089,7 @@
                 "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
                 "ext-mongo": "Allow sending log messages to a MongoDB server"
             },
+            "time": "1350826548",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2117,8 +2118,7 @@
             "keywords": [
                 "log",
                 "logging"
-            ],
-            "time": "1350826548"
+            ]
         },
         {
             "name": "pagerfanta/pagerfanta",
@@ -2142,6 +2142,7 @@
                 "doctrine/mongodb-odm": "2.*",
                 "solarium/solarium": "2.*"
             },
+            "time": "1345672591",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -2163,8 +2164,7 @@
             "keywords": [
                 "page",
                 "paging"
-            ],
-            "time": "1345672591"
+            ]
         },
         {
             "name": "raven/raven",
@@ -2186,6 +2186,7 @@
             "require-dev": {
                 "phpunit/phpunit": "3.7.*"
             },
+            "time": "1350899831",
             "bin": [
                 "bin/raven"
             ],
@@ -2213,8 +2214,7 @@
             "keywords": [
                 "log",
                 "logging"
-            ],
-            "time": "1350899831"
+            ]
         },
         {
             "name": "ruflin/Elastica",
@@ -2275,6 +2275,7 @@
             "require": {
                 "symfony/framework-bundle": "2.1.*"
             },
+            "time": "1347340208",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2300,8 +2301,7 @@
             "keywords": [
                 "distribution",
                 "configuration"
-            ],
-            "time": "1347340208"
+            ]
         },
         {
             "name": "sensio/framework-extra-bundle",
@@ -2374,6 +2374,7 @@
                 "doctrine/orm": ">=2.1,<2.4-dev",
                 "twig/twig": ">=1.8,<2.0-dev"
             },
+            "time": "1348030981",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2395,8 +2396,7 @@
                     "email": "fabien@symfony.com"
                 }
             ],
-            "description": "This bundle generates code for you",
-            "time": "1348030981"
+            "description": "This bundle generates code for you"
         },
         {
             "name": "stof/doctrine-extensions-bundle",
@@ -2422,6 +2422,7 @@
                 "doctrine/doctrine-bundle": "*",
                 "doctrine/mongodb-odm-bundle": "2.1.*"
             },
+            "time": "1350324852",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2457,8 +2458,7 @@
                 "nestedset",
                 "sortable",
                 "timestampable"
-            ],
-            "time": "1350324852"
+            ]
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2477,6 +2477,7 @@
             "require": {
                 "php": ">=5.2.4"
             },
+            "time": "1350807573",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2506,8 +2507,7 @@
             "keywords": [
                 "mail",
                 "mailer"
-            ],
-            "time": "1350807573"
+            ]
         },
         {
             "name": "symfony/assetic-bundle",
@@ -2541,6 +2541,7 @@
             "suggest": {
                 "symfony/twig-bundle": ">=2.1.0,<2.3-dev"
             },
+            "time": "1350864366",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2569,8 +2570,7 @@
                 "assets",
                 "compression",
                 "minification"
-            ],
-            "time": "1350864366"
+            ]
         },
         {
             "name": "symfony/monolog-bundle",
@@ -2598,6 +2598,7 @@
                 "symfony/yaml": ">=2.1.0,<2.3-dev",
                 "symfony/config": ">=2.1.0,<2.3-dev"
             },
+            "time": "1348137624",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2624,8 +2625,7 @@
                 }
             ],
             "description": "Symfony MonologBundle",
-            "homepage": "http://symfony.com",
-            "time": "1348137624"
+            "homepage": "http://symfony.com"
         },
         {
             "name": "symfony/swiftmailer-bundle",
@@ -2742,6 +2742,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "1.*"
             },
+            "time": "1350717030",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2772,8 +2773,7 @@
             "homepage": "http://symfony.com",
             "keywords": [
                 "framework"
-            ],
-            "time": "1350717030"
+            ]
         },
         {
             "name": "twig/extensions",
@@ -2792,6 +2792,7 @@
             "require": {
                 "twig/twig": "1.*"
             },
+            "time": "1349889206",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2819,8 +2820,7 @@
                 "debug",
                 "i18n",
                 "text"
-            ],
-            "time": "1349889206"
+            ]
         },
         {
             "name": "twig/twig",
@@ -2839,6 +2839,7 @@
             "require": {
                 "php": ">=5.2.4"
             },
+            "time": "1350737598",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2868,8 +2869,7 @@
             "homepage": "http://twig.sensiolabs.org",
             "keywords": [
                 "templating"
-            ],
-            "time": "1350737598"
+            ]
         },
         {
             "name": "white-october/pagerfanta-bundle",
@@ -2890,6 +2890,7 @@
                 "symfony/framework-bundle": "2.*",
                 "pagerfanta/pagerfanta": "dev-master"
             },
+            "time": "1343134121",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -2911,8 +2912,7 @@
             "keywords": [
                 "page",
                 "paging"
-            ],
-            "time": "1343134121"
+            ]
         }
     ],
     "packages-dev": null,
