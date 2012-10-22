@@ -20,6 +20,7 @@
         $bundles[] = new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle();
         // KunstmaanNodeBundle
         $bundles[] = new Kunstmaan\NodeBundle\KunstmaanNodeBundle();
+        $bundles[] = new Kunstmaan\SeoBundle\KunstmaanSeoBundle();
         // KunstmaanSearchBundle
         $bundles[] = new FOQ\ElasticaBundle\FOQElasticaBundle();
         $bundles[] = new Kunstmaan\SearchBundle\KunstmaanSearchBundle();
