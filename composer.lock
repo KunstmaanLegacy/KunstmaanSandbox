@@ -1,5 +1,5 @@
 {
-    "hash": "08aebb85a8356307a63ee40924a3d7e9",
+    "hash": "6c3c965f58792470769c80417c21aba3",
     "packages": [
         {
             "name": "ddeboer/data-import",
@@ -1400,50 +1400,6 @@
             "homepage": "https://github.com/Kunstmaan/KunstmaanAdminListBundle"
         },
         {
-            "name": "kunstmaan/adminnode-bundle",
-            "version": "dev-master",
-            "target-dir": "Kunstmaan/AdminNodeBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminNodeBundle",
-                "reference": "3632f416257160bff625a2ba16f563658999a980"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminNodeBundle/zipball/3632f416257160bff625a2ba16f563658999a980",
-                "reference": "3632f416257160bff625a2ba16f563658999a980",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3",
-                "symfony/symfony": "2.1.*",
-                "gedmo/doctrine-extensions": "*",
-                "knplabs/knp-menu-bundle": "*",
-                "kunstmaan/adminlist-bundle": "*",
-                "kunstmaan/admin-bundle": "*"
-            },
-            "time": "1348224316",
-            "type": "symfony-bundle",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Kunstmaan\\AdminNodeBundle": ""
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kunstmaan Team",
-                    "email": "support@kunstmaan.be",
-                    "homepage": "http://www.kunstmaan.be/"
-                }
-            ],
-            "description": "Symfony2 KunstmaanAdminNodeBundle",
-            "homepage": "https://github.com/Kunstmaan/KunstmaanAdminNodeBundle"
-        },
-        {
             "name": "kunstmaan/form-bundle",
             "version": "dev-master",
             "target-dir": "Kunstmaan/FormBundle",
@@ -1818,6 +1774,50 @@
                 "exceptions",
                 "sentry"
             ]
+        },
+        {
+            "name": "kunstmaan/seo-bundle",
+            "version": "dev-master",
+            "target-dir": "Kunstmaan/SeoBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Kunstmaan/KunstmaanSeoBundle",
+                "reference": "1f6fe58d2b7e2e63f3304e015bf09557dceddbbc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/Kunstmaan/KunstmaanSeoBundle/zipball/1f6fe58d2b7e2e63f3304e015bf09557dceddbbc",
+                "reference": "1f6fe58d2b7e2e63f3304e015bf09557dceddbbc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/symfony": "2.1.*",
+                "gedmo/doctrine-extensions": "*",
+                "kunstmaan/admin-bundle": "*",
+                "kunstmaan/media-bundle": "dev-master",
+                "kunstmaan/utilities-bundle": "dev-master"
+            },
+            "time": "1350656481",
+            "type": "symfony-bundle",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Kunstmaan\\SeoBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kunstmaan Team",
+                    "email": "support@kunstmaan.be",
+                    "homepage": "http://www.kunstmaan.be/"
+                }
+            ],
+            "description": "Symfony2 KunstmaanSeoBundle",
+            "homepage": "https://github.com/Kunstmaan/KunstmaanSeoBundle"
         },
         {
             "name": "kunstmaan/utilities-bundle",
@@ -2972,7 +2972,8 @@
         "kunstmaan/media-pagepart-bundle": 20,
         "kunstmaan/form-bundle": 20,
         "kunstmaan/adminlist-bundle": 20,
-        "kunstmaan/adminnode-bundle": 20,
+        "kunstmaan/node-bundle": 20,
+        "kunstmaan/seo-bundle": 20,
         "kunstmaan/view-bundle": 20,
         "kunstmaan/search-bundle": 20,
         "kunstmaan/generator-bundle": 20,
