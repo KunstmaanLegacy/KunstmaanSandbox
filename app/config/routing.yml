@@ -26,9 +26,9 @@ KunstmaanAdminBundle:
     requirements:
         _locale: %requiredlocales%
 
-# KunstmaanAdminNodeBundle
-KunstmaanAdminNodeBundle:
-    resource: "@KunstmaanAdminNodeBundle/Resources/config/routing.yml"
+# KunstmaanNodeBundle
+KunstmaanNodeBundle:
+    resource: "@KunstmaanNodeBundle/Resources/config/routing.yml"
     prefix:   /{_locale}/
     requirements:
         _locale: %requiredlocales%
