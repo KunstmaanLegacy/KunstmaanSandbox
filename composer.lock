@@ -182,18 +182,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/data-fixtures.git",
-                "reference": "v1.0.0-ALPHA3"
+                "reference": "181b71e9a19bcdc93a9bf5c19dc0ef9615656173"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/data-fixtures/zipball/v1.0.0-ALPHA3",
-                "reference": "v1.0.0-ALPHA3",
+                "url": "https://github.com/doctrine/data-fixtures/zipball/181b71e9a19bcdc93a9bf5c19dc0ef9615656173",
+                "reference": "181b71e9a19bcdc93a9bf5c19dc0ef9615656173",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "1348136794",
+            "time": "1350901469",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -1315,12 +1315,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle.git",
-                "reference": "82ce52c082213ac03aa9cc5759122a8b186b6013"
+                "reference": "09c6d101cb5ac9807a24b984e3665ce2ce8cd377"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/zipball/48d09275a8a3fe35a8238697a0c5fbf57767dad5",
-                "reference": "48d09275a8a3fe35a8238697a0c5fbf57767dad5",
+                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/zipball/09c6d101cb5ac9807a24b984e3665ce2ce8cd377",
+                "reference": "09c6d101cb5ac9807a24b984e3665ce2ce8cd377",
                 "shasum": ""
             },
             "require": {
@@ -1335,7 +1335,7 @@
                 "sensio/framework-extra-bundle": "*",
                 "kunstmaan/utilities-bundle": "*"
             },
-            "time": "1350315735",
+            "time": "1350921759",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1594,12 +1594,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle",
-                "reference": "42b277079965a41891b6591950fee43f5e71541e"
+                "reference": "8d798f7a8fe1efc357c46d3157838d0a1b98ab11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle/zipball/42b277079965a41891b6591950fee43f5e71541e",
-                "reference": "42b277079965a41891b6591950fee43f5e71541e",
+                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle/zipball/8d798f7a8fe1efc357c46d3157838d0a1b98ab11",
+                "reference": "8d798f7a8fe1efc357c46d3157838d0a1b98ab11",
                 "shasum": ""
             },
             "require": {
@@ -1609,11 +1609,9 @@
                 "kunstmaan/admin-bundle": "*",
                 "gedmo/doctrine-extensions": "*",
                 "knplabs/knp-menu-bundle": "*",
-                "kunstmaan/utilities-bundle": "dev-master",
-                "kunstmaan/media-bundle": "dev-master",
-                "kunstmaan/pagepart-bundle": "*"
+                "kunstmaan/utilities-bundle": "dev-master"
             },
-            "time": "1349856240",
+            "time": "1350921969",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1641,12 +1639,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanPagePartBundle",
-                "reference": "a68680b2c45b511d1f2a13758d3655a3b8927b6b"
+                "reference": "385d8751a1987790b6dce3e025f194dab8d58c77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanPagePartBundle/zipball/a68680b2c45b511d1f2a13758d3655a3b8927b6b",
-                "reference": "a68680b2c45b511d1f2a13758d3655a3b8927b6b",
+                "url": "https://github.com/Kunstmaan/KunstmaanPagePartBundle/zipball/385d8751a1987790b6dce3e025f194dab8d58c77",
+                "reference": "385d8751a1987790b6dce3e025f194dab8d58c77",
                 "shasum": ""
             },
             "require": {
@@ -1656,7 +1654,7 @@
                 "kunstmaan/utilities-bundle": "*",
                 "kunstmaan/node-bundle": "dev-master"
             },
-            "time": "1349962833",
+            "time": "1350921942",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -2172,12 +2170,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/getsentry/raven-php.git",
-                "reference": "6265d3145f4a1c65f90b1adbde07ba8b61104d85"
+                "reference": "463be43f479e5a838bf7c2da998814dff77efdce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/getsentry/raven-php/zipball/6265d3145f4a1c65f90b1adbde07ba8b61104d85",
-                "reference": "6265d3145f4a1c65f90b1adbde07ba8b61104d85",
+                "url": "https://github.com/getsentry/raven-php/zipball/463be43f479e5a838bf7c2da998814dff77efdce",
+                "reference": "463be43f479e5a838bf7c2da998814dff77efdce",
                 "shasum": ""
             },
             "require": {
@@ -2186,7 +2184,7 @@
             "require-dev": {
                 "phpunit/phpunit": "3.7.*"
             },
-            "time": "1350899831",
+            "time": "1350900530",
             "bin": [
                 "bin/raven"
             ],
