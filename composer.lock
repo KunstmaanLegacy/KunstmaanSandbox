@@ -1780,12 +1780,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanSeoBundle",
-                "reference": "1f6fe58d2b7e2e63f3304e015bf09557dceddbbc"
+                "reference": "53f2f79a2f1973239d57cb99677136ae3597c69a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanSeoBundle/zipball/1f6fe58d2b7e2e63f3304e015bf09557dceddbbc",
-                "reference": "1f6fe58d2b7e2e63f3304e015bf09557dceddbbc",
+                "url": "https://github.com/Kunstmaan/KunstmaanSeoBundle/zipball/53f2f79a2f1973239d57cb99677136ae3597c69a",
+                "reference": "53f2f79a2f1973239d57cb99677136ae3597c69a",
                 "shasum": ""
             },
             "require": {
@@ -1796,7 +1796,7 @@
                 "kunstmaan/media-bundle": "dev-master",
                 "kunstmaan/utilities-bundle": "dev-master"
             },
-            "time": "1350656481",
+            "time": "1350996443",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
