@@ -5,16 +5,14 @@ parameters:
   database_port: 
   database_name: sandbox
   database_user: sandbox
-  database_password: mengaige
+  database_password: sandbox
   mailer_transport: smtp
   mailer_host: localhost
   mailer_user: 
   mailer_password: 
   locale: en
-  secret: e110b4d305dfa60699893623d8ef4f521c77db6b
+  secret: ThisTokenIsNotSoSecretChangeIt
   database_path: 
-  searchport: 9200
-  searchindexname: kumasandbox
   sentry.dsn: https://XXXXXXXX:XXXXXXXX@app.getsentry.com/XXXX
   cdnpath: ''
   requiredlocales: nl|fr|de|en

@@ -6,7 +6,6 @@ build/
 vendor
 bin
 composer.phar
-app/config/parameters.yml
 .idea
 web/generated-js
 web/generated-css
