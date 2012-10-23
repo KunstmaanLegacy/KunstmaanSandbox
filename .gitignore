@@ -18,3 +18,7 @@ behat.yml
 .vagrant
 Vagrantfile
 kserver
+.gitmodules
+.vagrant
+Vagrantfile
+kserver
