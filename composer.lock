@@ -2065,12 +2065,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/liip/LiipMonitorBundle.git",
-                "reference": "bbaef639a7030baf3e7f181dea528daa72d32ff2"
+                "reference": "97f896fe3ff2386aeb8550ec50d3c57251a765f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/liip/LiipMonitorBundle/zipball/bbaef639a7030baf3e7f181dea528daa72d32ff2",
-                "reference": "bbaef639a7030baf3e7f181dea528daa72d32ff2",
+                "url": "https://github.com/liip/LiipMonitorBundle/zipball/97f896fe3ff2386aeb8550ec50d3c57251a765f0",
+                "reference": "97f896fe3ff2386aeb8550ec50d3c57251a765f0",
                 "shasum": ""
             },
             "require": {
@@ -2078,7 +2078,10 @@
                 "liip/monitor": "0.5.*",
                 "symfony/framework-bundle": ">2.0,<2.3-dev"
             },
-            "time": "1350682070",
+            "suggest": {
+                "sensio/distribution-bundle": "To be able to use the composer ScriptHandler"
+            },
+            "time": "1351101229",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
