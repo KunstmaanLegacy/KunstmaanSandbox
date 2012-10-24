@@ -1594,12 +1594,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle",
-                "reference": "8a260b08170b7c46e620cd01d245ad7aa852037a"
+                "reference": "1f6017c762cfd3a2c08d974b3fe57d1f8206a372"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle/zipball/8a260b08170b7c46e620cd01d245ad7aa852037a",
-                "reference": "8a260b08170b7c46e620cd01d245ad7aa852037a",
+                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle/zipball/1f6017c762cfd3a2c08d974b3fe57d1f8206a372",
+                "reference": "1f6017c762cfd3a2c08d974b3fe57d1f8206a372",
                 "shasum": ""
             },
             "require": {
@@ -1611,7 +1611,7 @@
                 "knplabs/knp-menu-bundle": "*",
                 "kunstmaan/utilities-bundle": "dev-master"
             },
-            "time": "1350994429",
+            "time": "1351090821",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -2514,18 +2514,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/swiftmailer/swiftmailer.git",
-                "reference": "ff51aae43c62aeaa55dcda109c5baf35731c04a1"
+                "reference": "84845f0fa8e38e1c4411c5fb26ba5b80bf5666c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/swiftmailer/swiftmailer/zipball/ff51aae43c62aeaa55dcda109c5baf35731c04a1",
-                "reference": "ff51aae43c62aeaa55dcda109c5baf35731c04a1",
+                "url": "https://github.com/swiftmailer/swiftmailer/zipball/84845f0fa8e38e1c4411c5fb26ba5b80bf5666c9",
+                "reference": "84845f0fa8e38e1c4411c5fb26ba5b80bf5666c9",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "1350807573",
+            "time": "1351090951",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2736,12 +2736,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "28482f8216de3289f35519f32d829499a5ffb632"
+                "reference": "11ba41bb1769299ec521f017f3e4beb8ea576906"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/zipball/28482f8216de3289f35519f32d829499a5ffb632",
-                "reference": "28482f8216de3289f35519f32d829499a5ffb632",
+                "url": "https://github.com/symfony/symfony/zipball/11ba41bb1769299ec521f017f3e4beb8ea576906",
+                "reference": "11ba41bb1769299ec521f017f3e4beb8ea576906",
                 "shasum": ""
             },
             "require": {
@@ -2790,7 +2790,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "1.*"
             },
-            "time": "1350937201",
+            "time": "1351091437",
             "type": "library",
             "extra": {
                 "branch-alias": {
