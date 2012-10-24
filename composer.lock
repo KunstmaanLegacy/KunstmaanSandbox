@@ -1962,12 +1962,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/liip/LiipImagineBundle.git",
-                "reference": "1e41b3c614e18c7360d2759fe3675de30b8b4a4d"
+                "reference": "40f040e16ef9666704985c7b4db5ebe78ee6da31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/liip/LiipImagineBundle/zipball/1e41b3c614e18c7360d2759fe3675de30b8b4a4d",
-                "reference": "1e41b3c614e18c7360d2759fe3675de30b8b4a4d",
+                "url": "https://github.com/liip/LiipImagineBundle/zipball/40f040e16ef9666704985c7b4db5ebe78ee6da31",
+                "reference": "40f040e16ef9666704985c7b4db5ebe78ee6da31",
                 "shasum": ""
             },
             "require": {
@@ -1982,7 +1982,7 @@
             "suggest": {
                 "twig/twig": ">=1.0,<2.0-dev"
             },
-            "time": "1351071186",
+            "time": "1351100791",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
