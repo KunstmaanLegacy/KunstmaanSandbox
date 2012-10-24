@@ -2118,12 +2118,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog",
-                "reference": "023b31a31f3807fb19bda1501abb96deacea7c84"
+                "reference": "38bb472abb27db138536f845f7d259c1c47bbd3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Seldaek/monolog/zipball/023b31a31f3807fb19bda1501abb96deacea7c84",
-                "reference": "023b31a31f3807fb19bda1501abb96deacea7c84",
+                "url": "https://github.com/Seldaek/monolog/zipball/38bb472abb27db138536f845f7d259c1c47bbd3f",
+                "reference": "38bb472abb27db138536f845f7d259c1c47bbd3f",
                 "shasum": ""
             },
             "require": {
@@ -2137,7 +2137,7 @@
                 "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
                 "ext-mongo": "Allow sending log messages to a MongoDB server"
             },
-            "time": "1350826548",
+            "time": "1351084926",
             "type": "library",
             "extra": {
                 "branch-alias": {
