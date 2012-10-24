@@ -676,12 +676,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Gregwar/FormBundle",
-                "reference": "d74344be72dda31473f0c42ad3a1a1bdc9020579"
+                "reference": "c81a629b87fb237c13a24a67ba4ceb9e3a1139d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Gregwar/FormBundle/zipball/d74344be72dda31473f0c42ad3a1a1bdc9020579",
-                "reference": "d74344be72dda31473f0c42ad3a1a1bdc9020579",
+                "url": "https://github.com/Gregwar/FormBundle/zipball/c81a629b87fb237c13a24a67ba4ceb9e3a1139d6",
+                "reference": "c81a629b87fb237c13a24a67ba4ceb9e3a1139d6",
                 "shasum": ""
             },
             "require": {
@@ -690,7 +690,7 @@
                 "doctrine/doctrine-bundle": "*",
                 "doctrine/orm": "*"
             },
-            "time": "1347467378",
+            "time": "1351059205",
             "type": "library",
             "installation-source": "source",
             "autoload": {
