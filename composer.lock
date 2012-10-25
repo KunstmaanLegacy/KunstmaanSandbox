@@ -2517,22 +2517,22 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/swiftmailer/swiftmailer.git",
-                "reference": "bdd5d51f650911ff549979889eb8c8b360123eb6"
+                "reference": "1077e21ac8808522b57ad2ab44e3d122bc54f854"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/swiftmailer/swiftmailer/zipball/bdd5d51f650911ff549979889eb8c8b360123eb6",
-                "reference": "bdd5d51f650911ff549979889eb8c8b360123eb6",
+                "url": "https://github.com/swiftmailer/swiftmailer/zipball/1077e21ac8808522b57ad2ab44e3d122bc54f854",
+                "reference": "1077e21ac8808522b57ad2ab44e3d122bc54f854",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "1351154013",
+            "time": "1351157187",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.2-dev"
+                    "dev-master": "4.3-dev"
                 }
             },
             "installation-source": "source",
