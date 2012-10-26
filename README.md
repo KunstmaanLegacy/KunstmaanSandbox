@@ -78,7 +78,6 @@ TODO: update the config files in kStrano to match this setup, including the .tra
 ```bash
 PROJECTNAME=`cat /tmp/kumas2install`
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/app.php)" | sed s/sf2/$PROJECTNAME/ > web/app.php
-mkdir -p app/Resources/tools
 mkdir -p app/Resources/tools/java
 curl https://github.com/downloads/Kunstmaan/KunstmaanSandbox/yuicompressor-2.4.7.jar -o app/Resources/tools/java/yuicompressor-2.4.7.jar
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/fullreload)" > fullreload
@@ -89,6 +88,7 @@ ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/Kunstma
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/config.dist.yml)" >> app/config/config.yml
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/security.dist.yml)" | sed s/sandbox/$PROJECTNAME/ > app/config/security.yml
 curl http://www.kunstmaan.be/html/2010/favicon.ico -o web/favicon.ico
+mkdir -p web/uploads/media
 php composer.phar update
 ```
 
