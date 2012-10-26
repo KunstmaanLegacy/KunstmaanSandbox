@@ -1,0 +1,3 @@
+[submodule "kserver"]
+	path = kserver
+	url = git@github.com:Kunstmaan/kServer.git

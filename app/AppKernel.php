@@ -49,8 +49,9 @@ class AppKernel extends Kernel
         // KunstmaanAdminListBundle
         $bundles[] = new Kunstmaan\AdminListBundle\KunstmaanAdminListBundle();
         $bundles[] = new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle();
-        // KunstmaanAdminNodeBundle
-        $bundles[] = new Kunstmaan\AdminNodeBundle\KunstmaanAdminNodeBundle();
+        // KunstmaanNodeBundle
+        $bundles[] = new Kunstmaan\NodeBundle\KunstmaanNodeBundle();
+        //$bundles[] = new Kunstmaan\SeoBundle\KunstmaanSeoBundle();
         // KunstmaanViewBundle
         $bundles[] = new Kunstmaan\ViewBundle\KunstmaanViewBundle();
         // KunstmaanSearchBundle

@@ -1,5 +1,5 @@
 {
-    "hash": "08aebb85a8356307a63ee40924a3d7e9",
+    "hash": "e721dd822e2c93e3282b30482f019fd8",
     "packages": [
         {
             "name": "ddeboer/data-import",
@@ -182,18 +182,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/data-fixtures.git",
-                "reference": "v1.0.0-ALPHA3"
+                "reference": "181b71e9a19bcdc93a9bf5c19dc0ef9615656173"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/data-fixtures/zipball/v1.0.0-ALPHA3",
-                "reference": "v1.0.0-ALPHA3",
+                "url": "https://github.com/doctrine/data-fixtures/zipball/181b71e9a19bcdc93a9bf5c19dc0ef9615656173",
+                "reference": "181b71e9a19bcdc93a9bf5c19dc0ef9615656173",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "1348136794",
+            "time": "1350901469",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -546,12 +546,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle",
-                "reference": "127391cd83e86bcf97e5d861aac1e39c14d3999d"
+                "reference": "fe0f21f6abfe1303c58839c18bedc09135247909"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/FriendsOfSymfony/FOSUserBundle/zipball/127391cd83e86bcf97e5d861aac1e39c14d3999d",
-                "reference": "127391cd83e86bcf97e5d861aac1e39c14d3999d",
+                "url": "https://github.com/FriendsOfSymfony/FOSUserBundle/zipball/fe0f21f6abfe1303c58839c18bedc09135247909",
+                "reference": "fe0f21f6abfe1303c58839c18bedc09135247909",
                 "shasum": ""
             },
             "require": {
@@ -572,7 +572,7 @@
                 "doctrine/doctrine-bundle": "*",
                 "doctrine/mongodb-odm-bundle": "*"
             },
-            "time": "1350050664",
+            "time": "1350660447",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -615,12 +615,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/l3pp4rd/DoctrineExtensions.git",
-                "reference": "117f14e0f8fd069d679ca0f84fa05c781cca3119"
+                "reference": "c1b29053224b7ddf5496e434e2bd7dc258db4731"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/l3pp4rd/DoctrineExtensions/zipball/117f14e0f8fd069d679ca0f84fa05c781cca3119",
-                "reference": "117f14e0f8fd069d679ca0f84fa05c781cca3119",
+                "url": "https://github.com/l3pp4rd/DoctrineExtensions/zipball/c1b29053224b7ddf5496e434e2bd7dc258db4731",
+                "reference": "c1b29053224b7ddf5496e434e2bd7dc258db4731",
                 "shasum": ""
             },
             "require": {
@@ -631,7 +631,7 @@
                 "doctrine/orm": ">=2.1",
                 "doctrine/mongodb-odm": "*"
             },
-            "time": "1349888959",
+            "time": "1351233998",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -676,12 +676,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Gregwar/FormBundle",
-                "reference": "d74344be72dda31473f0c42ad3a1a1bdc9020579"
+                "reference": "c81a629b87fb237c13a24a67ba4ceb9e3a1139d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Gregwar/FormBundle/zipball/d74344be72dda31473f0c42ad3a1a1bdc9020579",
-                "reference": "d74344be72dda31473f0c42ad3a1a1bdc9020579",
+                "url": "https://github.com/Gregwar/FormBundle/zipball/c81a629b87fb237c13a24a67ba4ceb9e3a1139d6",
+                "reference": "c81a629b87fb237c13a24a67ba4ceb9e3a1139d6",
                 "shasum": ""
             },
             "require": {
@@ -690,7 +690,7 @@
                 "doctrine/doctrine-bundle": "*",
                 "doctrine/orm": "*"
             },
-            "time": "1347467378",
+            "time": "1351059205",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -1130,12 +1130,12 @@
             "source": {
                 "type": "git",
                 "url": "http://github.com/KnpLabs/KnpMenu.git",
-                "reference": "b750b0346cec3cb77e49ed75c6e272bc9636a47b"
+                "reference": "5c33817281456f9d5298a277890e2e025f7f50c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/KnpLabs/KnpMenu/zipball/b750b0346cec3cb77e49ed75c6e272bc9636a47b",
-                "reference": "b750b0346cec3cb77e49ed75c6e272bc9636a47b",
+                "url": "https://github.com/KnpLabs/KnpMenu/zipball/5c33817281456f9d5298a277890e2e025f7f50c7",
+                "reference": "5c33817281456f9d5298a277890e2e025f7f50c7",
                 "shasum": ""
             },
             "require": {
@@ -1151,7 +1151,7 @@
                 "silex/silex": "for the integration with your silex application",
                 "twig/twig": "for the TwigRenderer and the integration with your templates"
             },
-            "time": "1348823561",
+            "time": "1350747764",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1248,12 +1248,12 @@
             "source": {
                 "type": "git",
                 "url": "http://github.com/kriswallsmith/assetic.git",
-                "reference": "fa85fb99d63ad0a10d832bde584fc3963e0a7918"
+                "reference": "a1b6fa1f7bb27c203b6c3cf7d0dd0184f8dffcdc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/kriswallsmith/assetic/zipball/fa85fb99d63ad0a10d832bde584fc3963e0a7918",
-                "reference": "fa85fb99d63ad0a10d832bde584fc3963e0a7918",
+                "url": "https://github.com/kriswallsmith/assetic/zipball/a1b6fa1f7bb27c203b6c3cf7d0dd0184f8dffcdc",
+                "reference": "a1b6fa1f7bb27c203b6c3cf7d0dd0184f8dffcdc",
                 "shasum": ""
             },
             "require": {
@@ -1274,7 +1274,7 @@
                 "ptachoire/cssembed": "Assetic provides the integration with phpcssembed to embed data uris",
                 "leafo/scssphp-compass": "Assetic provides the integration with the SCSS compass plugin"
             },
-            "time": "1350597340",
+            "time": "1351079542",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1315,12 +1315,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle.git",
-                "reference": "82ce52c082213ac03aa9cc5759122a8b186b6013"
+                "reference": "09c6d101cb5ac9807a24b984e3665ce2ce8cd377"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/zipball/48d09275a8a3fe35a8238697a0c5fbf57767dad5",
-                "reference": "48d09275a8a3fe35a8238697a0c5fbf57767dad5",
+                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/zipball/09c6d101cb5ac9807a24b984e3665ce2ce8cd377",
+                "reference": "09c6d101cb5ac9807a24b984e3665ce2ce8cd377",
                 "shasum": ""
             },
             "require": {
@@ -1335,7 +1335,7 @@
                 "sensio/framework-extra-bundle": "*",
                 "kunstmaan/utilities-bundle": "*"
             },
-            "time": "1350315735",
+            "time": "1350921759",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1400,62 +1400,18 @@
             "homepage": "https://github.com/Kunstmaan/KunstmaanAdminListBundle"
         },
         {
-            "name": "kunstmaan/adminnode-bundle",
-            "version": "dev-master",
-            "target-dir": "Kunstmaan/AdminNodeBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminNodeBundle",
-                "reference": "3632f416257160bff625a2ba16f563658999a980"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminNodeBundle/zipball/3632f416257160bff625a2ba16f563658999a980",
-                "reference": "3632f416257160bff625a2ba16f563658999a980",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3",
-                "symfony/symfony": "2.1.*",
-                "gedmo/doctrine-extensions": "*",
-                "knplabs/knp-menu-bundle": "*",
-                "kunstmaan/adminlist-bundle": "*",
-                "kunstmaan/admin-bundle": "*"
-            },
-            "time": "1348224316",
-            "type": "symfony-bundle",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Kunstmaan\\AdminNodeBundle": ""
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kunstmaan Team",
-                    "email": "support@kunstmaan.be",
-                    "homepage": "http://www.kunstmaan.be/"
-                }
-            ],
-            "description": "Symfony2 KunstmaanAdminNodeBundle",
-            "homepage": "https://github.com/Kunstmaan/KunstmaanAdminNodeBundle"
-        },
-        {
             "name": "kunstmaan/form-bundle",
             "version": "dev-master",
             "target-dir": "Kunstmaan/FormBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanFormBundle",
-                "reference": "7b230b958ead526aeff2e7e349ae3e1289dca649"
+                "reference": "4bc4f32bf5aedf8959a6e04ce008166345bc19f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanFormBundle/zipball/7b230b958ead526aeff2e7e349ae3e1289dca649",
-                "reference": "7b230b958ead526aeff2e7e349ae3e1289dca649",
+                "url": "https://github.com/Kunstmaan/KunstmaanFormBundle/zipball/4bc4f32bf5aedf8959a6e04ce008166345bc19f3",
+                "reference": "4bc4f32bf5aedf8959a6e04ce008166345bc19f3",
                 "shasum": ""
             },
             "require": {
@@ -1467,11 +1423,11 @@
                 "ddeboer/data-import-bundle": "*",
                 "gedmo/doctrine-extensions": "*",
                 "gregwar/form-bundle": "dev-master",
-                "swiftmailer/swiftmailer": "dev-master",
                 "sensio/framework-extra-bundle": "*",
-                "kunstmaan/node-bundle": "dev-master"
+                "kunstmaan/node-bundle": "dev-master",
+                "swiftmailer/swiftmailer": ">=4.2.0"
             },
-            "time": "1349275613",
+            "time": "1351174976",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1499,12 +1455,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanGeneratorBundle",
-                "reference": "04dca0e6f8c13874664d5fbe4830dd8b7a4c4dfb"
+                "reference": "d8856d636fc6f4fb171c03d7f30df6c8e69337cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanGeneratorBundle/zipball/04dca0e6f8c13874664d5fbe4830dd8b7a4c4dfb",
-                "reference": "04dca0e6f8c13874664d5fbe4830dd8b7a4c4dfb",
+                "url": "https://github.com/Kunstmaan/KunstmaanGeneratorBundle/zipball/d8856d636fc6f4fb171c03d7f30df6c8e69337cf",
+                "reference": "d8856d636fc6f4fb171c03d7f30df6c8e69337cf",
                 "shasum": ""
             },
             "require": {
@@ -1520,7 +1476,7 @@
                 "kunstmaan/media-pagepart-bundle": "*",
                 "sensio/generator-bundle": "2.1.*"
             },
-            "time": "1349964527",
+            "time": "1350992649",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1638,12 +1594,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle",
-                "reference": "42b277079965a41891b6591950fee43f5e71541e"
+                "reference": "1f6017c762cfd3a2c08d974b3fe57d1f8206a372"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle/zipball/42b277079965a41891b6591950fee43f5e71541e",
-                "reference": "42b277079965a41891b6591950fee43f5e71541e",
+                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle/zipball/1f6017c762cfd3a2c08d974b3fe57d1f8206a372",
+                "reference": "1f6017c762cfd3a2c08d974b3fe57d1f8206a372",
                 "shasum": ""
             },
             "require": {
@@ -1653,11 +1609,9 @@
                 "kunstmaan/admin-bundle": "*",
                 "gedmo/doctrine-extensions": "*",
                 "knplabs/knp-menu-bundle": "*",
-                "kunstmaan/utilities-bundle": "dev-master",
-                "kunstmaan/media-bundle": "dev-master",
-                "kunstmaan/pagepart-bundle": "*"
+                "kunstmaan/utilities-bundle": "dev-master"
             },
-            "time": "1349856240",
+            "time": "1351090821",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1685,12 +1639,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanPagePartBundle",
-                "reference": "a68680b2c45b511d1f2a13758d3655a3b8927b6b"
+                "reference": "b922d1d6b43e1c2962d743df86fbce93fd9560a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanPagePartBundle/zipball/a68680b2c45b511d1f2a13758d3655a3b8927b6b",
-                "reference": "a68680b2c45b511d1f2a13758d3655a3b8927b6b",
+                "url": "https://github.com/Kunstmaan/KunstmaanPagePartBundle/zipball/b922d1d6b43e1c2962d743df86fbce93fd9560a2",
+                "reference": "b922d1d6b43e1c2962d743df86fbce93fd9560a2",
                 "shasum": ""
             },
             "require": {
@@ -1700,7 +1654,7 @@
                 "kunstmaan/utilities-bundle": "*",
                 "kunstmaan/node-bundle": "dev-master"
             },
-            "time": "1349962833",
+            "time": "1350980664",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1820,6 +1774,50 @@
             ]
         },
         {
+            "name": "kunstmaan/seo-bundle",
+            "version": "dev-master",
+            "target-dir": "Kunstmaan/SeoBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Kunstmaan/KunstmaanSeoBundle",
+                "reference": "53f2f79a2f1973239d57cb99677136ae3597c69a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/Kunstmaan/KunstmaanSeoBundle/zipball/53f2f79a2f1973239d57cb99677136ae3597c69a",
+                "reference": "53f2f79a2f1973239d57cb99677136ae3597c69a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/symfony": "2.1.*",
+                "gedmo/doctrine-extensions": "*",
+                "kunstmaan/admin-bundle": "*",
+                "kunstmaan/media-bundle": "dev-master",
+                "kunstmaan/utilities-bundle": "dev-master"
+            },
+            "time": "1350996443",
+            "type": "symfony-bundle",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Kunstmaan\\SeoBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kunstmaan Team",
+                    "email": "support@kunstmaan.be",
+                    "homepage": "http://www.kunstmaan.be/"
+                }
+            ],
+            "description": "Symfony2 KunstmaanSeoBundle",
+            "homepage": "https://github.com/Kunstmaan/KunstmaanSeoBundle"
+        },
+        {
             "name": "kunstmaan/utilities-bundle",
             "version": "dev-master",
             "target-dir": "Kunstmaan/UtilitiesBundle",
@@ -1910,19 +1908,25 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/liip/LiipCacheControlBundle.git",
-                "reference": "d58b2511140970fcdd0834b136940bb8cf6676be"
+                "reference": "07d85c889c7ec19f98564d5a2385e53f683c0f17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/liip/LiipCacheControlBundle/zipball/d58b2511140970fcdd0834b136940bb8cf6676be",
-                "reference": "d58b2511140970fcdd0834b136940bb8cf6676be",
+                "url": "https://github.com/liip/LiipCacheControlBundle/zipball/07d85c889c7ec19f98564d5a2385e53f683c0f17",
+                "reference": "07d85c889c7ec19f98564d5a2385e53f683c0f17",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
                 "symfony/framework-bundle": ">=2.0.14,<=2.3-dev"
             },
-            "time": "1350166077",
+            "require-dev": {
+                "ext-curl": "*"
+            },
+            "suggest": {
+                "ext-curl": "Used by Varnish Helper to construct requests."
+            },
+            "time": "1351148949",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1958,12 +1962,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/liip/LiipImagineBundle.git",
-                "reference": "922535f154c55672cf326e87500e69f933140f37"
+                "reference": "40f040e16ef9666704985c7b4db5ebe78ee6da31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/liip/LiipImagineBundle/zipball/922535f154c55672cf326e87500e69f933140f37",
-                "reference": "922535f154c55672cf326e87500e69f933140f37",
+                "url": "https://github.com/liip/LiipImagineBundle/zipball/40f040e16ef9666704985c7b4db5ebe78ee6da31",
+                "reference": "40f040e16ef9666704985c7b4db5ebe78ee6da31",
                 "shasum": ""
             },
             "require": {
@@ -1978,7 +1982,7 @@
             "suggest": {
                 "twig/twig": ">=1.0,<2.0-dev"
             },
-            "time": "1350167573",
+            "time": "1351100791",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -2009,18 +2013,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/liip/LiipMonitor.git",
-                "reference": "17fb57cc314f8f128238d5652293cbe503a982c6"
+                "reference": "071792a0bb0882fc322ac60f922d600b35626c82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/liip/LiipMonitor/zipball/17fb57cc314f8f128238d5652293cbe503a982c6",
-                "reference": "17fb57cc314f8f128238d5652293cbe503a982c6",
+                "url": "https://github.com/liip/LiipMonitor/zipball/071792a0bb0882fc322ac60f922d600b35626c82",
+                "reference": "071792a0bb0882fc322ac60f922d600b35626c82",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "1348492233",
+            "time": "1350681961",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2061,12 +2065,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/liip/LiipMonitorBundle.git",
-                "reference": "35d8f6dc2817d300168d69b5b9c9ee365d617d68"
+                "reference": "97f896fe3ff2386aeb8550ec50d3c57251a765f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/liip/LiipMonitorBundle/zipball/35d8f6dc2817d300168d69b5b9c9ee365d617d68",
-                "reference": "35d8f6dc2817d300168d69b5b9c9ee365d617d68",
+                "url": "https://github.com/liip/LiipMonitorBundle/zipball/97f896fe3ff2386aeb8550ec50d3c57251a765f0",
+                "reference": "97f896fe3ff2386aeb8550ec50d3c57251a765f0",
                 "shasum": ""
             },
             "require": {
@@ -2074,7 +2078,10 @@
                 "liip/monitor": "0.5.*",
                 "symfony/framework-bundle": ">2.0,<2.3-dev"
             },
-            "time": "1350166137",
+            "suggest": {
+                "sensio/distribution-bundle": "To be able to use the composer ScriptHandler"
+            },
+            "time": "1351101229",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2114,12 +2121,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog",
-                "reference": "fa292d1a945ac264093e7279032cf55cda9d1019"
+                "reference": "38bb472abb27db138536f845f7d259c1c47bbd3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Seldaek/monolog/zipball/fa292d1a945ac264093e7279032cf55cda9d1019",
-                "reference": "fa292d1a945ac264093e7279032cf55cda9d1019",
+                "url": "https://github.com/Seldaek/monolog/zipball/38bb472abb27db138536f845f7d259c1c47bbd3f",
+                "reference": "38bb472abb27db138536f845f7d259c1c47bbd3f",
                 "shasum": ""
             },
             "require": {
@@ -2133,7 +2140,7 @@
                 "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
                 "ext-mongo": "Allow sending log messages to a MongoDB server"
             },
-            "time": "1350545514",
+            "time": "1351084926",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2216,12 +2223,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/getsentry/raven-php.git",
-                "reference": "6cb14155f66ba12a661352522eeacc02bb0674a9"
+                "reference": "463be43f479e5a838bf7c2da998814dff77efdce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/getsentry/raven-php/zipball/6cb14155f66ba12a661352522eeacc02bb0674a9",
-                "reference": "6cb14155f66ba12a661352522eeacc02bb0674a9",
+                "url": "https://github.com/getsentry/raven-php/zipball/463be43f479e5a838bf7c2da998814dff77efdce",
+                "reference": "463be43f479e5a838bf7c2da998814dff77efdce",
                 "shasum": ""
             },
             "require": {
@@ -2230,7 +2237,7 @@
             "require-dev": {
                 "phpunit/phpunit": "3.7.*"
             },
-            "time": "1350438593",
+            "time": "1350900530",
             "bin": [
                 "bin/raven"
             ],
@@ -2506,22 +2513,22 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "dev-master",
+            "version": "v4.2.2",
             "source": {
                 "type": "git",
                 "url": "git://github.com/swiftmailer/swiftmailer.git",
-                "reference": "22731e907f5ca288c9bfde6b54f3611ace0a6c39"
+                "reference": "v4.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/swiftmailer/swiftmailer/zipball/22731e907f5ca288c9bfde6b54f3611ace0a6c39",
-                "reference": "22731e907f5ca288c9bfde6b54f3611ace0a6c39",
+                "url": "https://github.com/swiftmailer/swiftmailer/zipball/v4.2.2",
+                "reference": "v4.2.2",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "1349196829",
+            "time": "2012-10-25 01:30:40",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2560,12 +2567,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/AsseticBundle",
-                "reference": "03528c45a8128cde610a305a9a67611eae4074aa"
+                "reference": "4eea8571954132e4715a5e756fe6a90a7e2d90f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/AsseticBundle/zipball/03528c45a8128cde610a305a9a67611eae4074aa",
-                "reference": "03528c45a8128cde610a305a9a67611eae4074aa",
+                "url": "https://github.com/symfony/AsseticBundle/zipball/4eea8571954132e4715a5e756fe6a90a7e2d90f6",
+                "reference": "4eea8571954132e4715a5e756fe6a90a7e2d90f6",
                 "shasum": ""
             },
             "require": {
@@ -2585,7 +2592,7 @@
             "suggest": {
                 "symfony/twig-bundle": ">=2.1.0,<2.3-dev"
             },
-            "time": "1350597352",
+            "time": "1350864366",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2732,12 +2739,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "82a6694c85a62193e75d437c07e4071b7a51841c"
+                "reference": "1277e6746b2333338124ad0574fa7d5b8c77c47c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/zipball/82a6694c85a62193e75d437c07e4071b7a51841c",
-                "reference": "82a6694c85a62193e75d437c07e4071b7a51841c",
+                "url": "https://github.com/symfony/symfony/zipball/1277e6746b2333338124ad0574fa7d5b8c77c47c",
+                "reference": "1277e6746b2333338124ad0574fa7d5b8c77c47c",
                 "shasum": ""
             },
             "require": {
@@ -2786,7 +2793,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "1.*"
             },
-            "time": "1350594961",
+            "time": "1351170710",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2872,22 +2879,22 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Twig.git",
-                "reference": "3031fe6b95f7a1791ab89beb4fe8c8e469582b78"
+                "reference": "61393dc9fb8982110048624aa573aec4aee0b465"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig/zipball/3031fe6b95f7a1791ab89beb4fe8c8e469582b78",
-                "reference": "3031fe6b95f7a1791ab89beb4fe8c8e469582b78",
+                "url": "https://github.com/fabpot/Twig/zipball/61393dc9fb8982110048624aa573aec4aee0b465",
+                "reference": "61393dc9fb8982110048624aa573aec4aee0b465",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "1350629283",
+            "time": "1350737598",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.10-dev"
+                    "dev-master": "1.11-dev"
                 }
             },
             "installation-source": "source",
@@ -2972,8 +2979,9 @@
         "kunstmaan/media-pagepart-bundle": 20,
         "kunstmaan/form-bundle": 20,
         "kunstmaan/adminlist-bundle": 20,
-        "kunstmaan/adminnode-bundle": 20,
+        "kunstmaan/node-bundle": 20,
         "kunstmaan/view-bundle": 20,
+        "kunstmaan/seo-bundle": 20,
         "kunstmaan/search-bundle": 20,
         "kunstmaan/generator-bundle": 20,
         "kunstmaan/sentry-bundle": 20,

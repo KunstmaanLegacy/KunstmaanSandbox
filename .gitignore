@@ -6,7 +6,6 @@ build/
 vendor
 bin
 composer.phar
-app/config/parameters.yml
 .idea
 web/generated-js
 web/generated-css
@@ -14,3 +13,11 @@ web/uploads
 .DS_Store
 web/frontend
 behat.yml
+.gitmodules
+.vagrant
+Vagrantfile
+kserver
+.gitmodules
+.vagrant
+Vagrantfile
+kserver

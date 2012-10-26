@@ -1,0 +1,2 @@
+RewriteCond %{HTTPS} =on
+RewriteRule ^/?(.*) http://%{SERVER_NAME}/$1 [R,L]
