@@ -54,9 +54,7 @@ Configure your application by surfing to http://computername/config.php and make
 
 ```bash
 echo "app/config/parameters.yml" >> .gitignore
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/param)" > param
-chmod a+x param
-./param encode
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/config/parameters.yml)" | sed s/sandbox/$PROJECTNAME/ > app/config/parameters.yml
 echo ".idea" >> .gitignore
 echo "web/generated-js" >> .gitignore
 echo "web/generated-css" >> .gitignore
