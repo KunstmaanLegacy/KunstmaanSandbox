@@ -5,7 +5,6 @@ imports:
     - { resource: @KunstmaanAdminBundle/Resources/config/config.yml }
     - { resource: @KunstmaanNodeBundle/Resources/config/config.yml }
     - { resource: @KunstmaanFormBundle/Resources/config/config.yml }
-    - { resource: @KunstmaanSearchBundle/Resources/config/config.yml }
     - { resource: @KunstmaanAdminListBundle/Resources/config/config.yml }
 
 framework:

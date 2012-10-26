@@ -30,7 +30,6 @@
     "kunstmaan/node-bundle": "dev-master",
     "kunstmaan/view-bundle": "dev-master",
     "kunstmaan/seo-bundle": "dev-master",
-    "kunstmaan/search-bundle": "dev-master",
     "kunstmaan/generator-bundle": "dev-master",
     "kunstmaan/sentry-bundle": "dev-master",
     "kunstmaan/utilities-bundle": "dev-master",
