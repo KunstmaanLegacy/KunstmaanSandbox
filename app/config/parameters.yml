@@ -17,4 +17,6 @@ parameters:
   cdnpath: ''
   requiredlocales: nl|fr|de|en
   defaultlocale: nl
-  websitetitle: Kumasandbox
+  websitetitle: sandbox
+  searchport: 9200
+  searchindexname: sandbox
