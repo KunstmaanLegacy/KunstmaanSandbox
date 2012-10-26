@@ -88,6 +88,7 @@ ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/Kunstma
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/config.dist.yml)" >> app/config/config.yml
 curl http://www.kunstmaan.be/html/2010/favicon.ico -o web/favicon.ico
 mkdir -p web/uploads/media
+sudo chown -R $PROJECTNAME web/uploads
 php composer.phar update
 ```
 
