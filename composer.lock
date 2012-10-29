@@ -546,12 +546,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/l3pp4rd/DoctrineExtensions.git",
-                "reference": "b2b7ba1b812d61fcd1d23d975614ffae0d72976b"
+                "reference": "4ce347dd326b214c0bdb3fcdf59d6b5c28d857fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/l3pp4rd/DoctrineExtensions/zipball/b2b7ba1b812d61fcd1d23d975614ffae0d72976b",
-                "reference": "b2b7ba1b812d61fcd1d23d975614ffae0d72976b",
+                "url": "https://github.com/l3pp4rd/DoctrineExtensions/zipball/4ce347dd326b214c0bdb3fcdf59d6b5c28d857fb",
+                "reference": "4ce347dd326b214c0bdb3fcdf59d6b5c28d857fb",
                 "shasum": ""
             },
             "require": {
@@ -562,7 +562,7 @@
                 "doctrine/orm": ">=2.1",
                 "doctrine/mongodb-odm": "*"
             },
-            "time": "1351319772",
+            "time": "1351532375",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2298,12 +2298,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/stof/StofDoctrineExtensionsBundle",
-                "reference": "41d9399e56868f82f871723a1842b5f2053e2e24"
+                "reference": "1e392617881dcf59d9e424ecb952176ed3a414d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/stof/StofDoctrineExtensionsBundle/zipball/41d9399e56868f82f871723a1842b5f2053e2e24",
-                "reference": "41d9399e56868f82f871723a1842b5f2053e2e24",
+                "url": "https://github.com/stof/StofDoctrineExtensionsBundle/zipball/1e392617881dcf59d9e424ecb952176ed3a414d7",
+                "reference": "1e392617881dcf59d9e424ecb952176ed3a414d7",
                 "shasum": ""
             },
             "require": {
@@ -2315,7 +2315,7 @@
                 "doctrine/doctrine-bundle": "*",
                 "doctrine/mongodb-odm-bundle": "2.1.*"
             },
-            "time": "1350324852",
+            "time": "1351532393",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
