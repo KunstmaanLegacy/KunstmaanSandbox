@@ -2298,12 +2298,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/stof/StofDoctrineExtensionsBundle",
-                "reference": "1e392617881dcf59d9e424ecb952176ed3a414d7"
+                "reference": "92a087a8d1bf82c22d7528e448ddcf47c6f26c20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/stof/StofDoctrineExtensionsBundle/zipball/1e392617881dcf59d9e424ecb952176ed3a414d7",
-                "reference": "1e392617881dcf59d9e424ecb952176ed3a414d7",
+                "url": "https://github.com/stof/StofDoctrineExtensionsBundle/zipball/92a087a8d1bf82c22d7528e448ddcf47c6f26c20",
+                "reference": "92a087a8d1bf82c22d7528e448ddcf47c6f26c20",
                 "shasum": ""
             },
             "require": {
@@ -2315,7 +2315,7 @@
                 "doctrine/doctrine-bundle": "*",
                 "doctrine/mongodb-odm-bundle": "2.1.*"
             },
-            "time": "1351532393",
+            "time": "1351535256",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
