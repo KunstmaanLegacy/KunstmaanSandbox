@@ -1294,12 +1294,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanAdminListBundle",
-                "reference": "1ad4f53d225b925212cc06b972115c91c03108f1"
+                "reference": "ba7afd11f3bbfa858ca0762fe0d8f6e806dfad08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminListBundle/zipball/1ad4f53d225b925212cc06b972115c91c03108f1",
-                "reference": "1ad4f53d225b925212cc06b972115c91c03108f1",
+                "url": "https://github.com/Kunstmaan/KunstmaanAdminListBundle/zipball/ba7afd11f3bbfa858ca0762fe0d8f6e806dfad08",
+                "reference": "ba7afd11f3bbfa858ca0762fe0d8f6e806dfad08",
                 "shasum": ""
             },
             "require": {
@@ -1309,7 +1309,7 @@
                 "white-october/pagerfanta-bundle": "*",
                 "sensio/framework-extra-bundle": "*"
             },
-            "time": "1349275718",
+            "time": "1351615383",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -2721,18 +2721,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Twig.git",
-                "reference": "bf3802bc6e5199b4d065b383caf3fe81203b713d"
+                "reference": "1be2495906c63da78a9b8f8e5e789dce10e07e3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig/zipball/bf3802bc6e5199b4d065b383caf3fe81203b713d",
-                "reference": "bf3802bc6e5199b4d065b383caf3fe81203b713d",
+                "url": "https://github.com/fabpot/Twig/zipball/1be2495906c63da78a9b8f8e5e789dce10e07e3b",
+                "reference": "1be2495906c63da78a9b8f8e5e789dce10e07e3b",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "1351611779",
+            "time": "1351615609",
             "type": "library",
             "extra": {
                 "branch-alias": {
