@@ -1386,12 +1386,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanGeneratorBundle",
-                "reference": "d8856d636fc6f4fb171c03d7f30df6c8e69337cf"
+                "reference": "64dda7ca18db23881e67fdde158b9decd87f1f1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanGeneratorBundle/zipball/d8856d636fc6f4fb171c03d7f30df6c8e69337cf",
-                "reference": "d8856d636fc6f4fb171c03d7f30df6c8e69337cf",
+                "url": "https://github.com/Kunstmaan/KunstmaanGeneratorBundle/zipball/64dda7ca18db23881e67fdde158b9decd87f1f1b",
+                "reference": "64dda7ca18db23881e67fdde158b9decd87f1f1b",
                 "shasum": ""
             },
             "require": {
@@ -1407,7 +1407,7 @@
                 "kunstmaan/media-pagepart-bundle": "*",
                 "sensio/generator-bundle": "2.1.*"
             },
-            "time": "1350992649",
+            "time": "1351616234",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1791,12 +1791,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/liip/LiipCacheControlBundle.git",
-                "reference": "bb08f4c96f255a2d053b8b314981b019290bba35"
+                "reference": "bf8cf15bdcb58dd68ef00d4e45000bbef8f6d797"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/liip/LiipCacheControlBundle/zipball/bb08f4c96f255a2d053b8b314981b019290bba35",
-                "reference": "bb08f4c96f255a2d053b8b314981b019290bba35",
+                "url": "https://github.com/liip/LiipCacheControlBundle/zipball/bf8cf15bdcb58dd68ef00d4e45000bbef8f6d797",
+                "reference": "bf8cf15bdcb58dd68ef00d4e45000bbef8f6d797",
                 "shasum": ""
             },
             "require": {
@@ -1809,7 +1809,7 @@
             "suggest": {
                 "ext-curl": "Used by Varnish Helper to construct requests."
             },
-            "time": "1351609550",
+            "time": "1351615729",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
