@@ -1386,12 +1386,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanGeneratorBundle",
-                "reference": "29ea3bdf35cf2c2c6619d13a9e7765f13c223295"
+                "reference": "66a1afcf5a38b75bbc9b54e5f172e56110b5c27d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanGeneratorBundle/zipball/29ea3bdf35cf2c2c6619d13a9e7765f13c223295",
-                "reference": "29ea3bdf35cf2c2c6619d13a9e7765f13c223295",
+                "url": "https://github.com/Kunstmaan/KunstmaanGeneratorBundle/zipball/66a1afcf5a38b75bbc9b54e5f172e56110b5c27d",
+                "reference": "66a1afcf5a38b75bbc9b54e5f172e56110b5c27d",
                 "shasum": ""
             },
             "require": {
@@ -1407,7 +1407,7 @@
                 "kunstmaan/media-pagepart-bundle": "*",
                 "sensio/generator-bundle": "2.1.*"
             },
-            "time": "1351680434",
+            "time": "1351681137",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
