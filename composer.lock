@@ -2581,12 +2581,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "297e00afb4f031ff42ddec6307ecefb411b6f0cc"
+                "reference": "313e4e5fd6a0df5b8af9ce32278cdd888a457c33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/zipball/297e00afb4f031ff42ddec6307ecefb411b6f0cc",
-                "reference": "297e00afb4f031ff42ddec6307ecefb411b6f0cc",
+                "url": "https://github.com/symfony/symfony/zipball/313e4e5fd6a0df5b8af9ce32278cdd888a457c33",
+                "reference": "313e4e5fd6a0df5b8af9ce32278cdd888a457c33",
                 "shasum": ""
             },
             "require": {
@@ -2635,7 +2635,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "1.*"
             },
-            "time": "1351590273",
+            "time": "1351879255",
             "type": "library",
             "extra": {
                 "branch-alias": {
