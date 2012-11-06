@@ -89,7 +89,6 @@ echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/
 curl http://www.kunstmaan.be/html/2010/favicon.ico -o web/favicon.ico
 mkdir -p web/uploads/media
 sudo chown -R $PROJECTNAME web/uploads
-php composer.phar update
 ```
 
 # app/config/routing.yml
@@ -104,6 +103,10 @@ for a multi-language-website:
 ```bash
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/routing-multilang.dist.yml)" > app/config/routing.yml
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/security-multilang.dist.yml)" | sed s/sandbox/$PROJECTNAME/ > app/config/security.yml
+```
+
+```bash
+php composer.phar update
 ```
 
 # Generate
