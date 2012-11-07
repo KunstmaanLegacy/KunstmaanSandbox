@@ -2721,18 +2721,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Twig.git",
-                "reference": "58f2a8dfb75ce54c52ede9fe1c3c4fac8bf600e7"
+                "reference": "e6b3f497872f18c713b93fa7fbf156fc2dbdaa86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig/archive/58f2a8dfb75ce54c52ede9fe1c3c4fac8bf600e7.zip",
-                "reference": "58f2a8dfb75ce54c52ede9fe1c3c4fac8bf600e7",
+                "url": "https://github.com/fabpot/Twig/archive/e6b3f497872f18c713b93fa7fbf156fc2dbdaa86.zip",
+                "reference": "e6b3f497872f18c713b93fa7fbf156fc2dbdaa86",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "1352204459",
+            "time": "1352270076",
             "type": "library",
             "extra": {
                 "branch-alias": {
