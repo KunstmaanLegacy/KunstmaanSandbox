@@ -79,7 +79,7 @@ TODO: update the config files in kStrano to match this setup, including the .tra
 PROJECTNAME=`cat /tmp/kumas2install`
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/app.php)" | sed s/sf2/$PROJECTNAME/ > web/app.php
 mkdir -p app/Resources/tools/java
-curl http://github.com/downloads/Kunstmaan/KunstmaanSandbox/yuicompressor-2.4.7.jar -o app/Resources/tools/java/yuicompressor-2.4.7.jar
+wget http://github.com/downloads/Kunstmaan/KunstmaanSandbox/yuicompressor-2.4.7.jar -O app/Resources/tools/java/yuicompressor-2.4.7.jar
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/fullreload)" > fullreload
 chmod a+x fullreload
 gem install json
