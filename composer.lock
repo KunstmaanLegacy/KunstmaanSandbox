@@ -1435,12 +1435,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanMediaBundle",
-                "reference": "72f793ad7c0628b2ba4d5f407be11c0d0c0b7d28"
+                "reference": "90bcafcf12ef097782e2ba17370eb76f141fe524"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanMediaBundle/zipball/72f793ad7c0628b2ba4d5f407be11c0d0c0b7d28",
-                "reference": "72f793ad7c0628b2ba4d5f407be11c0d0c0b7d28",
+                "url": "https://github.com/Kunstmaan/KunstmaanMediaBundle/archive/90bcafcf12ef097782e2ba17370eb76f141fe524.zip",
+                "reference": "90bcafcf12ef097782e2ba17370eb76f141fe524",
                 "shasum": ""
             },
             "require": {
@@ -1455,7 +1455,7 @@
                 "sensio/framework-extra-bundle": "*",
                 "kunstmaan/utilities-bundle": "*"
             },
-            "time": "1349795649",
+            "time": "1352384649",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
