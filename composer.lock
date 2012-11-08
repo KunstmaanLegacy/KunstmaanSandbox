@@ -2106,12 +2106,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/getsentry/raven-php.git",
-                "reference": "f791fccaf611f692b7de6b653e2947c5f8476b58"
+                "reference": "c6d159ee59261af01ad2f34ea55d120673a93693"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/getsentry/raven-php/zipball/f791fccaf611f692b7de6b653e2947c5f8476b58",
-                "reference": "f791fccaf611f692b7de6b653e2947c5f8476b58",
+                "url": "https://github.com/getsentry/raven-php/archive/c6d159ee59261af01ad2f34ea55d120673a93693.zip",
+                "reference": "c6d159ee59261af01ad2f34ea55d120673a93693",
                 "shasum": ""
             },
             "require": {
@@ -2120,7 +2120,7 @@
             "require-dev": {
                 "phpunit/phpunit": "3.7.*"
             },
-            "time": "1351731174",
+            "time": "1352405567",
             "bin": [
                 "bin/raven"
             ],
@@ -2138,9 +2138,6 @@
                 {
                     "name": "David Cramer",
                     "email": "dcramer@gmail.com"
-                },
-                {
-                    "name": "Michael van Tellingen"
                 }
             ],
             "description": "A PHP client for Sentry (http://getsentry.com)",
