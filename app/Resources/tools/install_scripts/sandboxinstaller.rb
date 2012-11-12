@@ -23,12 +23,10 @@ if command == "install-bundles"
     requires["kunstmaan/adminlist-bundle"] = "dev-master"
     requires["kunstmaan/node-bundle"] = "dev-master"
     requires["kunstmaan/seo-bundle"] = "dev-master"
-    requires["kunstmaan/search-bundle"] =  "dev-master"
     requires["kunstmaan/generator-bundle"] = "dev-master"
     requires["kunstmaan/sentry-bundle"] = "dev-master"
     requires["kunstmaan/utilities-bundle"] = "dev-master"
     requires["kunstmaan/seo-bundle"] = "dev-master"
-    requires["liip/monitor-bundle"] = "dev-master"
     requires["liip/cache-control-bundle"] = "dev-master"
     File.open(composer, 'w') {|f| f.write(JSON.pretty_generate(result)) }
 
