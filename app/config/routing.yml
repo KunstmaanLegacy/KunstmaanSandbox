@@ -3,11 +3,6 @@ _internal:
     resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
     prefix:   /_internal
 
-# LiipMonitorBundle
-_monitor:
-    resource: "@LiipMonitorBundle/Resources/config/routing.yml"
-    prefix: /monitor/health
-
 # KunstmaanMediaBundle
 _imagine:
     resource: .
