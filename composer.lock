@@ -1,5 +1,5 @@
 {
-    "hash": "e3d48bd0ba6e6bb123c4e5a451517bb5",
+    "hash": "373fbf8f8519268285408e6c313618b9",
     "packages": [
         {
             "name": "ddeboer/data-import",
@@ -1570,6 +1570,50 @@
             "homepage": "https://github.com/Kunstmaan/KunstmaanMediaPagePartBundle"
         },
         {
+            "name": "kunstmaan/newrelicbundle",
+            "version": "dev-master",
+            "target-dir": "Kunstmaan/NewRelicBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Kunstmaan/KunstmaanNewRelicBundle.git",
+                "reference": "259a6a5aadc9de294f723f9e3c54aa22244e6b2c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/Kunstmaan/KunstmaanNewRelicBundle/archive/259a6a5aadc9de294f723f9e3c54aa22244e6b2c.zip",
+                "reference": "259a6a5aadc9de294f723f9e3c54aa22244e6b2c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/symfony": ">=2.0.0"
+            },
+            "time": "1352739425",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Kunstmaan\\NewRelicBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roderik van der Veer",
+                    "email": "roderik.van.der.veer@kunstmaan.be"
+                }
+            ],
+            "description": "Some useful code for integrating with NewRelic",
+            "homepage": "http://www.kunstmaan.be",
+            "keywords": [
+                "monitoring",
+                "deployment",
+                "saas"
+            ]
+        },
+        {
             "name": "kunstmaan/node-bundle",
             "version": "dev-master",
             "target-dir": "Kunstmaan/NodeBundle",
@@ -2766,7 +2810,7 @@
         "kunstmaan/generator-bundle": 20,
         "kunstmaan/sentry-bundle": 20,
         "kunstmaan/utilities-bundle": 20,
-        "liip/monitor-bundle": 20,
+        "kunstmaan/newrelicbundle": 20,
         "liip/cache-control-bundle": 20
     }
 }
