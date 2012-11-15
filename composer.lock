@@ -1883,12 +1883,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/liip/LiipCacheControlBundle.git",
-                "reference": "0ad7a7645afc2fbdf6a3cbc48578f177decc9c54"
+                "reference": "7d2b5f580e554bcba9c181ae08a3d439b4411e6c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/liip/LiipCacheControlBundle/zipball/0ad7a7645afc2fbdf6a3cbc48578f177decc9c54",
-                "reference": "0ad7a7645afc2fbdf6a3cbc48578f177decc9c54",
+                "url": "https://github.com/liip/LiipCacheControlBundle/archive/7d2b5f580e554bcba9c181ae08a3d439b4411e6c.zip",
+                "reference": "7d2b5f580e554bcba9c181ae08a3d439b4411e6c",
                 "shasum": ""
             },
             "require": {
@@ -1901,7 +1901,7 @@
             "suggest": {
                 "ext-curl": "Used by Varnish Helper to construct requests."
             },
-            "time": "1351625671",
+            "time": "1352985545",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -2561,12 +2561,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "2d488b79f2e46bfff057c73081a8e5c426b712a7"
+                "reference": "9a2edb9a6396dc8a549b26dce78bef655a90e176"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/archive/2d488b79f2e46bfff057c73081a8e5c426b712a7.zip",
-                "reference": "2d488b79f2e46bfff057c73081a8e5c426b712a7",
+                "url": "https://github.com/symfony/symfony/archive/9a2edb9a6396dc8a549b26dce78bef655a90e176.zip",
+                "reference": "9a2edb9a6396dc8a549b26dce78bef655a90e176",
                 "shasum": ""
             },
             "require": {
@@ -2615,7 +2615,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "1.*"
             },
-            "time": "1352824146",
+            "time": "1352985781",
             "type": "library",
             "extra": {
                 "branch-alias": {
