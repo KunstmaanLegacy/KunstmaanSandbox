@@ -1056,24 +1056,29 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpGaufretteBundle",
-                "reference": "v0.1.3"
+                "reference": "4370da0ad4afbd221bdcbbf6927770f26cb3e8e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/KnpLabs/KnpGaufretteBundle/archive/v0.1.3.zip",
-                "reference": "v0.1.3",
+                "url": "https://github.com/KnpLabs/KnpGaufretteBundle/archive/4370da0ad4afbd221bdcbbf6927770f26cb3e8e8.zip",
+                "reference": "4370da0ad4afbd221bdcbbf6927770f26cb3e8e8",
                 "shasum": ""
             },
             "require": {
                 "symfony/framework-bundle": "2.*",
-                "knplabs/gaufrette": "0.1.3"
+                "knplabs/gaufrette": "0.2.*@dev"
             },
             "require-dev": {
                 "symfony/yaml": "2.*",
                 "symfony/console": "2.*"
             },
-            "time": "1352903437",
+            "time": "1353054905",
             "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.2.x-dev"
+                }
+            },
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
