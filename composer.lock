@@ -987,12 +987,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/Gaufrette",
-                "reference": "f869bb646011a5beffd71833499b04178348e1d0"
+                "reference": "1e77014ca4ff3bd32cbb428e87245b69476b8fae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/KnpLabs/Gaufrette/archive/f869bb646011a5beffd71833499b04178348e1d0.zip",
-                "reference": "f869bb646011a5beffd71833499b04178348e1d0",
+                "url": "https://github.com/KnpLabs/Gaufrette/archive/1e77014ca4ff3bd32cbb428e87245b69476b8fae.zip",
+                "reference": "1e77014ca4ff3bd32cbb428e87245b69476b8fae",
                 "shasum": ""
             },
             "require": {
@@ -1017,7 +1017,7 @@
                 "ext-zip": "to use the Zip adapter",
                 "ext-apc": "to use the APC adapter"
             },
-            "time": "1353057863",
+            "time": "1353072838",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2709,18 +2709,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Twig.git",
-                "reference": "e1ad2bde9c2cf12e65a89ef5eadcccd048f1af0c"
+                "reference": "158ed4e88cc336724c9605f5f15a6ef859466703"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig/archive/e1ad2bde9c2cf12e65a89ef5eadcccd048f1af0c.zip",
-                "reference": "e1ad2bde9c2cf12e65a89ef5eadcccd048f1af0c",
+                "url": "https://github.com/fabpot/Twig/archive/158ed4e88cc336724c9605f5f15a6ef859466703.zip",
+                "reference": "158ed4e88cc336724c9605f5f15a6ef859466703",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "1352899988",
+            "time": "1353049473",
             "type": "library",
             "extra": {
                 "branch-alias": {
