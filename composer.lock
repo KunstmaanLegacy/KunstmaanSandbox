@@ -1539,12 +1539,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanMediaPagePartBundle",
-                "reference": "fe08ddeb95d3450ec7d34c2c8aac33f5028d8769"
+                "reference": "6d72f9addf837f0a0f461bf5c7a8f40f18e9954e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanMediaPagePartBundle/zipball/fe08ddeb95d3450ec7d34c2c8aac33f5028d8769",
-                "reference": "fe08ddeb95d3450ec7d34c2c8aac33f5028d8769",
+                "url": "https://github.com/Kunstmaan/KunstmaanMediaPagePartBundle/archive/6d72f9addf837f0a0f461bf5c7a8f40f18e9954e.zip",
+                "reference": "6d72f9addf837f0a0f461bf5c7a8f40f18e9954e",
                 "shasum": ""
             },
             "require": {
@@ -1553,7 +1553,7 @@
                 "symfony/symfony": "2.1.*",
                 "kunstmaan/media-bundle": "dev-master"
             },
-            "time": "1349085214",
+            "time": "1353425489",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
