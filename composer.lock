@@ -287,12 +287,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/doctrine/DoctrineBundle.git",
-                "reference": "47df202dfb4ad38e15d6aed8a53e722b30c9f9fd"
+                "reference": "ac854d9452272d43b80a9043e0f33c2b9dd2cdd5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/DoctrineBundle/archive/47df202dfb4ad38e15d6aed8a53e722b30c9f9fd.zip",
-                "reference": "47df202dfb4ad38e15d6aed8a53e722b30c9f9fd",
+                "url": "https://github.com/doctrine/DoctrineBundle/archive/ac854d9452272d43b80a9043e0f33c2b9dd2cdd5.zip",
+                "reference": "ac854d9452272d43b80a9043e0f33c2b9dd2cdd5",
                 "shasum": ""
             },
             "require": {
@@ -300,7 +300,7 @@
                 "doctrine/dbal": ">=2.2,<2.4-dev",
                 "symfony/framework-bundle": ">=2.1,<2.3-dev",
                 "symfony/doctrine-bridge": ">=2.1,<2.3-dev",
-                "jdorn/sql-formatter": "v1.0.1"
+                "jdorn/sql-formatter": ">=1.1,<2.0"
             },
             "require-dev": {
                 "doctrine/orm": ">=2.2,<2.4-dev",
@@ -310,7 +310,7 @@
             "suggest": {
                 "doctrine/orm": "The Doctrine ORM integration is optional in the bundle."
             },
-            "time": "1353074073",
+            "time": "1353489818",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
