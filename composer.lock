@@ -1350,12 +1350,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanAdminListBundle",
-                "reference": "ba7afd11f3bbfa858ca0762fe0d8f6e806dfad08"
+                "reference": "e8b605a964758b47fdab09a0c2038aed0d3f45c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminListBundle/zipball/ba7afd11f3bbfa858ca0762fe0d8f6e806dfad08",
-                "reference": "ba7afd11f3bbfa858ca0762fe0d8f6e806dfad08",
+                "url": "https://github.com/Kunstmaan/KunstmaanAdminListBundle/archive/e8b605a964758b47fdab09a0c2038aed0d3f45c7.zip",
+                "reference": "e8b605a964758b47fdab09a0c2038aed0d3f45c7",
                 "shasum": ""
             },
             "require": {
@@ -1365,7 +1365,7 @@
                 "white-october/pagerfanta-bundle": "*",
                 "sensio/framework-extra-bundle": "*"
             },
-            "time": "1351615383",
+            "time": "1353486811",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
