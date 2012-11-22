@@ -182,18 +182,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/data-fixtures.git",
-                "reference": "98e059213cd8bf70f1203a3c9acc3c7e8afc2c89"
+                "reference": "a28b6bde290b0a908d32938e3393244086c2d89d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/data-fixtures/archive/98e059213cd8bf70f1203a3c9acc3c7e8afc2c89.zip",
-                "reference": "98e059213cd8bf70f1203a3c9acc3c7e8afc2c89",
+                "url": "https://github.com/doctrine/data-fixtures/archive/a28b6bde290b0a908d32938e3393244086c2d89d.zip",
+                "reference": "a28b6bde290b0a908d32938e3393244086c2d89d",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "1353423624",
+            "time": "1353557065",
             "type": "library",
             "installation-source": "source",
             "autoload": {
