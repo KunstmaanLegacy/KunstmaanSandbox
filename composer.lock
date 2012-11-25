@@ -223,19 +223,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal",
-                "reference": "292d5edd17e0a9b9a7ee9eb20d6ae1033059153f"
+                "reference": "ef930a7ff1c06a1693c8783c1eb9e32d22e68dba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/dbal/archive/292d5edd17e0a9b9a7ee9eb20d6ae1033059153f.zip",
-                "reference": "292d5edd17e0a9b9a7ee9eb20d6ae1033059153f",
+                "url": "https://github.com/doctrine/dbal/archive/ef930a7ff1c06a1693c8783c1eb9e32d22e68dba.zip",
+                "reference": "ef930a7ff1c06a1693c8783c1eb9e32d22e68dba",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
                 "doctrine/common": "2.3.*"
             },
-            "time": "1352716871",
+            "time": "1353845076",
             "type": "library",
             "extra": {
                 "branch-alias": {
