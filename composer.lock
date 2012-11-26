@@ -1581,19 +1581,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanNewRelicBundle.git",
-                "reference": "259a6a5aadc9de294f723f9e3c54aa22244e6b2c"
+                "reference": "8174917a48eaf777b9a9a40218cb20dc69486831"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanNewRelicBundle/archive/259a6a5aadc9de294f723f9e3c54aa22244e6b2c.zip",
-                "reference": "259a6a5aadc9de294f723f9e3c54aa22244e6b2c",
+                "url": "https://github.com/Kunstmaan/KunstmaanNewRelicBundle/archive/8174917a48eaf777b9a9a40218cb20dc69486831.zip",
+                "reference": "8174917a48eaf777b9a9a40218cb20dc69486831",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
                 "symfony/symfony": ">=2.0.0"
             },
-            "time": "1352739425",
+            "time": "1353919413",
             "type": "library",
             "installation-source": "source",
             "autoload": {
