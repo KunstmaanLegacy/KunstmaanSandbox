@@ -1117,12 +1117,12 @@
             "source": {
                 "type": "git",
                 "url": "http://github.com/KnpLabs/KnpMenu.git",
-                "reference": "8dd8c07f20f19f50174dc487baa7b14f26e6bb8a"
+                "reference": "335bb6f12c589fbfd32a2de37d248262148c3a62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/KnpLabs/KnpMenu/archive/8dd8c07f20f19f50174dc487baa7b14f26e6bb8a.zip",
-                "reference": "8dd8c07f20f19f50174dc487baa7b14f26e6bb8a",
+                "url": "https://github.com/KnpLabs/KnpMenu/archive/335bb6f12c589fbfd32a2de37d248262148c3a62.zip",
+                "reference": "335bb6f12c589fbfd32a2de37d248262148c3a62",
                 "shasum": ""
             },
             "require": {
@@ -1138,7 +1138,7 @@
                 "silex/silex": "for the integration with your silex application",
                 "twig/twig": "for the TwigRenderer and the integration with your templates"
             },
-            "time": "1353000731",
+            "time": "1353958774",
             "type": "library",
             "extra": {
                 "branch-alias": {
