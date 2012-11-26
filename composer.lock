@@ -1235,12 +1235,12 @@
             "source": {
                 "type": "git",
                 "url": "http://github.com/kriswallsmith/assetic.git",
-                "reference": "693671eaecba5d041084ddc403580f9af2438909"
+                "reference": "2f2854c14f31ea9912a30e144aea9cb5dd8a08d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/kriswallsmith/assetic/archive/693671eaecba5d041084ddc403580f9af2438909.zip",
-                "reference": "693671eaecba5d041084ddc403580f9af2438909",
+                "url": "https://github.com/kriswallsmith/assetic/archive/2f2854c14f31ea9912a30e144aea9cb5dd8a08d7.zip",
+                "reference": "2f2854c14f31ea9912a30e144aea9cb5dd8a08d7",
                 "shasum": ""
             },
             "require": {
@@ -1261,7 +1261,7 @@
                 "ptachoire/cssembed": "Assetic provides the integration with phpcssembed to embed data uris",
                 "leafo/scssphp-compass": "Assetic provides the integration with the SCSS compass plugin"
             },
-            "time": "1353966693",
+            "time": "1353967279",
             "type": "library",
             "extra": {
                 "branch-alias": {
