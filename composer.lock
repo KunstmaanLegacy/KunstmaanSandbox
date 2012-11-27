@@ -1302,12 +1302,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle.git",
-                "reference": "6eecb408d077525db250dcbc03149fd309f3cbcb"
+                "reference": "e4bfe8c76ba90c9272002c00e400a349ddeb6367"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/archive/6eecb408d077525db250dcbc03149fd309f3cbcb.zip",
-                "reference": "6eecb408d077525db250dcbc03149fd309f3cbcb",
+                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/archive/e4bfe8c76ba90c9272002c00e400a349ddeb6367.zip",
+                "reference": "e4bfe8c76ba90c9272002c00e400a349ddeb6367",
                 "shasum": ""
             },
             "require": {
@@ -1322,7 +1322,7 @@
                 "sensio/framework-extra-bundle": "*",
                 "kunstmaan/utilities-bundle": "*"
             },
-            "time": "1354003674",
+            "time": "1354037903",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1625,12 +1625,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle",
-                "reference": "eb1083829131b490934312a84cfda4d073888aa2"
+                "reference": "4ba9c15f504ff656f65b34bc910d16aaa5ce0c14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle/archive/eb1083829131b490934312a84cfda4d073888aa2.zip",
-                "reference": "eb1083829131b490934312a84cfda4d073888aa2",
+                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle/archive/4ba9c15f504ff656f65b34bc910d16aaa5ce0c14.zip",
+                "reference": "4ba9c15f504ff656f65b34bc910d16aaa5ce0c14",
                 "shasum": ""
             },
             "require": {
@@ -1642,7 +1642,7 @@
                 "knplabs/knp-menu-bundle": "*",
                 "kunstmaan/utilities-bundle": "dev-master"
             },
-            "time": "1354012842",
+            "time": "1354037868",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
