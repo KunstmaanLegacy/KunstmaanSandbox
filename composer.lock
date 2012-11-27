@@ -407,12 +407,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/doctrine/doctrine2.git",
-                "reference": "f75c3b517db8142754bb88108e8641f42a49afd4"
+                "reference": "287b29aeaada588923a47e677d6974b023f88fd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/doctrine2/archive/f75c3b517db8142754bb88108e8641f42a49afd4.zip",
-                "reference": "f75c3b517db8142754bb88108e8641f42a49afd4",
+                "url": "https://github.com/doctrine/doctrine2/archive/287b29aeaada588923a47e677d6974b023f88fd4.zip",
+                "reference": "287b29aeaada588923a47e677d6974b023f88fd4",
                 "shasum": ""
             },
             "require": {
@@ -424,7 +424,7 @@
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
             },
-            "time": "1354049834",
+            "time": "1354051577",
             "bin": [
                 "bin/doctrine",
                 "bin/doctrine.php"
