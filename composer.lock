@@ -1182,19 +1182,19 @@
             "source": {
                 "type": "git",
                 "url": "http://github.com/KnpLabs/KnpMenuBundle.git",
-                "reference": "471ad25ea4fcc469f901a85bc5ca530b0bc68624"
+                "reference": "dd699f6cde9cba3b0c67a1b4ea66356b4d975b7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/KnpLabs/KnpMenuBundle/zipball/471ad25ea4fcc469f901a85bc5ca530b0bc68624",
-                "reference": "471ad25ea4fcc469f901a85bc5ca530b0bc68624",
+                "url": "https://github.com/KnpLabs/KnpMenuBundle/archive/dd699f6cde9cba3b0c67a1b4ea66356b4d975b7f.zip",
+                "reference": "dd699f6cde9cba3b0c67a1b4ea66356b4d975b7f",
                 "shasum": ""
             },
             "require": {
                 "knplabs/knp-menu": "2.0.*",
                 "symfony/framework-bundle": ">=2.0,<2.3-dev"
             },
-            "time": "1351767907",
+            "time": "1354133215",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
