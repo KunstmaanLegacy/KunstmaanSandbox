@@ -1302,12 +1302,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle.git",
-                "reference": "ee2e36a1d32c434b5feb6587f05ab54430301893"
+                "reference": "be57e156e3704a0e55767987ffbbe7781bc0cb32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/archive/ee2e36a1d32c434b5feb6587f05ab54430301893.zip",
-                "reference": "ee2e36a1d32c434b5feb6587f05ab54430301893",
+                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/archive/be57e156e3704a0e55767987ffbbe7781bc0cb32.zip",
+                "reference": "be57e156e3704a0e55767987ffbbe7781bc0cb32",
                 "shasum": ""
             },
             "require": {
@@ -1322,7 +1322,7 @@
                 "sensio/framework-extra-bundle": "*",
                 "kunstmaan/utilities-bundle": "*"
             },
-            "time": "1354096925",
+            "time": "1354123680",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
