@@ -2569,12 +2569,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "v2.1.4"
+                "reference": "7b234db668b9d81e9779485431a12928a3f80320"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/archive/v2.1.4.zip",
-                "reference": "v2.1.4",
+                "url": "https://github.com/symfony/symfony/archive/7b234db668b9d81e9779485431a12928a3f80320.zip",
+                "reference": "7b234db668b9d81e9779485431a12928a3f80320",
                 "shasum": ""
             },
             "require": {
@@ -2623,7 +2623,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "1.*"
             },
-            "time": "1354190179",
+            "time": "1354279994",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2709,18 +2709,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Twig.git",
-                "reference": "1894f18c68e5f26e213f3e6a8b9bc9fc39736457"
+                "reference": "6d40dbdf8b3036014e3e279f82af0c1d1a7faacb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig/archive/1894f18c68e5f26e213f3e6a8b9bc9fc39736457.zip",
-                "reference": "1894f18c68e5f26e213f3e6a8b9bc9fc39736457",
+                "url": "https://github.com/fabpot/Twig/archive/6d40dbdf8b3036014e3e279f82af0c1d1a7faacb.zip",
+                "reference": "6d40dbdf8b3036014e3e279f82af0c1d1a7faacb",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "1354303351",
+            "time": "1354345248",
             "type": "library",
             "extra": {
                 "branch-alias": {
