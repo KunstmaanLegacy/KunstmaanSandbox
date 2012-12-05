@@ -2106,12 +2106,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/getsentry/raven-php.git",
-                "reference": "c6d159ee59261af01ad2f34ea55d120673a93693"
+                "reference": "92630c870a6d483b7b69ffa620fa1f573d7d9d63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/getsentry/raven-php/archive/c6d159ee59261af01ad2f34ea55d120673a93693.zip",
-                "reference": "c6d159ee59261af01ad2f34ea55d120673a93693",
+                "url": "https://github.com/getsentry/raven-php/archive/92630c870a6d483b7b69ffa620fa1f573d7d9d63.zip",
+                "reference": "92630c870a6d483b7b69ffa620fa1f573d7d9d63",
                 "shasum": ""
             },
             "require": {
@@ -2120,7 +2120,7 @@
             "require-dev": {
                 "phpunit/phpunit": "3.7.*"
             },
-            "time": "1352405567",
+            "time": "1354673312",
             "bin": [
                 "bin/raven"
             ],
