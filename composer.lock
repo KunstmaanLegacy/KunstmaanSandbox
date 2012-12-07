@@ -996,12 +996,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/Gaufrette",
-                "reference": "6f541e5afffc4bcc562ad8f23344bd5a8bae2fa3"
+                "reference": "c19f8c0066a6e92f15a028d47c01f64f3c32372b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/KnpLabs/Gaufrette/archive/6f541e5afffc4bcc562ad8f23344bd5a8bae2fa3.zip",
-                "reference": "6f541e5afffc4bcc562ad8f23344bd5a8bae2fa3",
+                "url": "https://github.com/KnpLabs/Gaufrette/archive/c19f8c0066a6e92f15a028d47c01f64f3c32372b.zip",
+                "reference": "c19f8c0066a6e92f15a028d47c01f64f3c32372b",
                 "shasum": ""
             },
             "require": {
@@ -1026,7 +1026,7 @@
                 "ext-zip": "to use the Zip adapter",
                 "ext-apc": "to use the APC adapter"
             },
-            "time": "1354878486",
+            "time": "1354879608",
             "type": "library",
             "extra": {
                 "branch-alias": {
