@@ -7,12 +7,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ddeboer/data-import",
-                "reference": "845941160722afdf46b1f7ca051002ae76cdc568"
+                "reference": "559936e0720baa14564eaaacaaeffde3b4912f65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/ddeboer/data-import/zipball/845941160722afdf46b1f7ca051002ae76cdc568",
-                "reference": "845941160722afdf46b1f7ca051002ae76cdc568",
+                "url": "https://github.com/ddeboer/data-import/archive/559936e0720baa14564eaaacaaeffde3b4912f65.zip",
+                "reference": "559936e0720baa14564eaaacaaeffde3b4912f65",
                 "shasum": ""
             },
             "require": {
@@ -34,7 +34,7 @@
                 "ext-iconv": "For the CharsetValueConverter",
                 "ext-mbstring": "For the CharsetValueConverter"
             },
-            "time": "1350571410",
+            "time": "1354990293",
             "type": "library",
             "installation-source": "source",
             "autoload": {
