@@ -2578,12 +2578,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "74c8b0150a66ff092b294ca6d29f285ccdba72e4"
+                "reference": "d451933ca1158bb70ba7b11f0bf237de2c89d8f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/archive/74c8b0150a66ff092b294ca6d29f285ccdba72e4.zip",
-                "reference": "74c8b0150a66ff092b294ca6d29f285ccdba72e4",
+                "url": "https://github.com/symfony/symfony/archive/d451933ca1158bb70ba7b11f0bf237de2c89d8f4.zip",
+                "reference": "d451933ca1158bb70ba7b11f0bf237de2c89d8f4",
                 "shasum": ""
             },
             "require": {
@@ -2632,7 +2632,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "1.*"
             },
-            "time": "1354887294",
+            "time": "1355131004",
             "type": "library",
             "installation-source": "source",
             "autoload": {
