@@ -487,12 +487,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle",
-                "reference": "bfb9edb825628d4312dbdf4a5523409a53962fd4"
+                "reference": "6d1fe1bad7621e618a379aebc45b36e080e7eca8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/FriendsOfSymfony/FOSUserBundle/archive/bfb9edb825628d4312dbdf4a5523409a53962fd4.zip",
-                "reference": "bfb9edb825628d4312dbdf4a5523409a53962fd4",
+                "url": "https://github.com/FriendsOfSymfony/FOSUserBundle/archive/6d1fe1bad7621e618a379aebc45b36e080e7eca8.zip",
+                "reference": "6d1fe1bad7621e618a379aebc45b36e080e7eca8",
                 "shasum": ""
             },
             "require": {
@@ -513,7 +513,7 @@
                 "doctrine/doctrine-bundle": "*",
                 "doctrine/mongodb-odm-bundle": "*"
             },
-            "time": "1354714568",
+            "time": "1355221561",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2578,12 +2578,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "d6a402a28357e2018cedc1fae24f94309569edad"
+                "reference": "d2885adffe909dbb7aa95f48504650834959e748"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/archive/d6a402a28357e2018cedc1fae24f94309569edad.zip",
-                "reference": "d6a402a28357e2018cedc1fae24f94309569edad",
+                "url": "https://github.com/symfony/symfony/archive/d2885adffe909dbb7aa95f48504650834959e748.zip",
+                "reference": "d2885adffe909dbb7aa95f48504650834959e748",
                 "shasum": ""
             },
             "require": {
@@ -2632,7 +2632,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "1.*"
             },
-            "time": "1355218823",
+            "time": "1355221991",
             "type": "library",
             "installation-source": "source",
             "autoload": {
