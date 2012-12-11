@@ -1900,12 +1900,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/liip/LiipCacheControlBundle.git",
-                "reference": "7d2b5f580e554bcba9c181ae08a3d439b4411e6c"
+                "reference": "00fedac128dce758758b60ddeeb04c50ab746e4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/liip/LiipCacheControlBundle/archive/7d2b5f580e554bcba9c181ae08a3d439b4411e6c.zip",
-                "reference": "7d2b5f580e554bcba9c181ae08a3d439b4411e6c",
+                "url": "https://github.com/liip/LiipCacheControlBundle/archive/00fedac128dce758758b60ddeeb04c50ab746e4b.zip",
+                "reference": "00fedac128dce758758b60ddeeb04c50ab746e4b",
                 "shasum": ""
             },
             "require": {
@@ -1918,7 +1918,7 @@
             "suggest": {
                 "ext-curl": "Used by Varnish Helper to construct requests."
             },
-            "time": "1352985545",
+            "time": "1355234602",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
