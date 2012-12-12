@@ -1402,12 +1402,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanFormBundle",
-                "reference": "b8ace0f1a79d079299caa65c8c024bd4f5315e8e"
+                "reference": "97f658f4393e8fcf2899d6e1032eb5f5b4d297e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanFormBundle/archive/b8ace0f1a79d079299caa65c8c024bd4f5315e8e.zip",
-                "reference": "b8ace0f1a79d079299caa65c8c024bd4f5315e8e",
+                "url": "https://github.com/Kunstmaan/KunstmaanFormBundle/archive/97f658f4393e8fcf2899d6e1032eb5f5b4d297e9.zip",
+                "reference": "97f658f4393e8fcf2899d6e1032eb5f5b4d297e9",
                 "shasum": ""
             },
             "require": {
@@ -1423,7 +1423,7 @@
                 "kunstmaan/node-bundle": "dev-master",
                 "swiftmailer/swiftmailer": ">=4.2.0"
             },
-            "time": "1352994974",
+            "time": "1355327226",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
