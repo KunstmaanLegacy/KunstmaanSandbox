@@ -1244,12 +1244,12 @@
             "source": {
                 "type": "git",
                 "url": "http://github.com/kriswallsmith/assetic.git",
-                "reference": "deed96bb7ba009d8e05aaeeb1b73c1d67a8f3719"
+                "reference": "cec1723d54ea9961274cb72e8b53e9b482002c8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/kriswallsmith/assetic/archive/deed96bb7ba009d8e05aaeeb1b73c1d67a8f3719.zip",
-                "reference": "deed96bb7ba009d8e05aaeeb1b73c1d67a8f3719",
+                "url": "https://github.com/kriswallsmith/assetic/archive/cec1723d54ea9961274cb72e8b53e9b482002c8a.zip",
+                "reference": "cec1723d54ea9961274cb72e8b53e9b482002c8a",
                 "shasum": ""
             },
             "require": {
@@ -1270,7 +1270,7 @@
                 "ptachoire/cssembed": "Assetic provides the integration with phpcssembed to embed data uris",
                 "leafo/scssphp-compass": "Assetic provides the integration with the SCSS compass plugin"
             },
-            "time": "1354022858",
+            "time": "1355332714",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2578,12 +2578,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "3caa32edc84f26d265053a0b60debb275189666a"
+                "reference": "e0cefd7f7e8457a99850f3b62a612d1918be3c08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/archive/3caa32edc84f26d265053a0b60debb275189666a.zip",
-                "reference": "3caa32edc84f26d265053a0b60debb275189666a",
+                "url": "https://github.com/symfony/symfony/archive/e0cefd7f7e8457a99850f3b62a612d1918be3c08.zip",
+                "reference": "e0cefd7f7e8457a99850f3b62a612d1918be3c08",
                 "shasum": ""
             },
             "require": {
@@ -2632,7 +2632,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "1.*"
             },
-            "time": "1355319171",
+            "time": "1355332637",
             "type": "library",
             "installation-source": "source",
             "autoload": {
