@@ -2406,12 +2406,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/AsseticBundle",
-                "reference": "30d3841dc9643d352503a72f3cdf93d193c439d2"
+                "reference": "06c0f4f4d68dc26a020cb22cdba282c493d65429"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/AsseticBundle/archive/30d3841dc9643d352503a72f3cdf93d193c439d2.zip",
-                "reference": "30d3841dc9643d352503a72f3cdf93d193c439d2",
+                "url": "https://github.com/symfony/AsseticBundle/archive/06c0f4f4d68dc26a020cb22cdba282c493d65429.zip",
+                "reference": "06c0f4f4d68dc26a020cb22cdba282c493d65429",
                 "shasum": ""
             },
             "require": {
@@ -2431,7 +2431,7 @@
             "suggest": {
                 "symfony/twig-bundle": ">=2.1.0,<2.3-dev"
             },
-            "time": "1352285268",
+            "time": "1355334969",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
