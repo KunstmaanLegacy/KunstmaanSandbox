@@ -2106,12 +2106,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/getsentry/raven-php.git",
-                "reference": "2210c9976a590cee4b960ad0acaa257f44f099d0"
+                "reference": "5a718b720bdc930256e13208fe1d1beeceab30e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/getsentry/raven-php/archive/2210c9976a590cee4b960ad0acaa257f44f099d0.zip",
-                "reference": "2210c9976a590cee4b960ad0acaa257f44f099d0",
+                "url": "https://github.com/getsentry/raven-php/archive/5a718b720bdc930256e13208fe1d1beeceab30e0.zip",
+                "reference": "5a718b720bdc930256e13208fe1d1beeceab30e0",
                 "shasum": ""
             },
             "require": {
@@ -2120,7 +2120,7 @@
             "require-dev": {
                 "phpunit/phpunit": "3.7.*"
             },
-            "time": "1355270579",
+            "time": "1355431678",
             "bin": [
                 "bin/raven"
             ],
@@ -2200,12 +2200,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensio/SensioFrameworkExtraBundle",
-                "reference": "v2.1.3"
+                "reference": "v2.1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sensio/SensioFrameworkExtraBundle/archive/v2.1.3.zip",
-                "reference": "v2.1.3",
+                "url": "https://github.com/sensio/SensioFrameworkExtraBundle/archive/v2.1.4.zip",
+                "reference": "v2.1.4",
                 "shasum": ""
             },
             "require": {
