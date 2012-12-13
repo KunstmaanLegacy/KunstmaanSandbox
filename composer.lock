@@ -556,12 +556,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/l3pp4rd/DoctrineExtensions.git",
-                "reference": "8a922278feaca12e7aaa87de2e8cc9e4c8d3fe59"
+                "reference": "ecb2d47ba2657c069140afb397342f2e34f9fd98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/l3pp4rd/DoctrineExtensions/archive/8a922278feaca12e7aaa87de2e8cc9e4c8d3fe59.zip",
-                "reference": "8a922278feaca12e7aaa87de2e8cc9e4c8d3fe59",
+                "url": "https://github.com/l3pp4rd/DoctrineExtensions/archive/ecb2d47ba2657c069140afb397342f2e34f9fd98.zip",
+                "reference": "ecb2d47ba2657c069140afb397342f2e34f9fd98",
                 "shasum": ""
             },
             "require": {
@@ -572,7 +572,7 @@
                 "doctrine/orm": ">=2.1",
                 "doctrine/mongodb-odm": "*"
             },
-            "time": "1355420854",
+            "time": "1355421080",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1244,12 +1244,12 @@
             "source": {
                 "type": "git",
                 "url": "http://github.com/kriswallsmith/assetic.git",
-                "reference": "cec1723d54ea9961274cb72e8b53e9b482002c8a"
+                "reference": "e39cdce5aefd66f229b7a0974698d169c76dec64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/kriswallsmith/assetic/archive/cec1723d54ea9961274cb72e8b53e9b482002c8a.zip",
-                "reference": "cec1723d54ea9961274cb72e8b53e9b482002c8a",
+                "url": "https://github.com/kriswallsmith/assetic/archive/e39cdce5aefd66f229b7a0974698d169c76dec64.zip",
+                "reference": "e39cdce5aefd66f229b7a0974698d169c76dec64",
                 "shasum": ""
             },
             "require": {
@@ -1270,7 +1270,7 @@
                 "ptachoire/cssembed": "Assetic provides the integration with phpcssembed to embed data uris",
                 "leafo/scssphp-compass": "Assetic provides the integration with the SCSS compass plugin"
             },
-            "time": "1355332714",
+            "time": "1355421031",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2295,12 +2295,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/stof/StofDoctrineExtensionsBundle",
-                "reference": "9a1931f9c9d8a1d045008142b275239c0160b95a"
+                "reference": "4a17550d8b101c5aafc56c9950149aa189b8402d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/stof/StofDoctrineExtensionsBundle/zipball/9a1931f9c9d8a1d045008142b275239c0160b95a",
-                "reference": "9a1931f9c9d8a1d045008142b275239c0160b95a",
+                "url": "https://github.com/stof/StofDoctrineExtensionsBundle/archive/4a17550d8b101c5aafc56c9950149aa189b8402d.zip",
+                "reference": "4a17550d8b101c5aafc56c9950149aa189b8402d",
                 "shasum": ""
             },
             "require": {
@@ -2312,7 +2312,7 @@
                 "doctrine/doctrine-bundle": "*",
                 "doctrine/mongodb-odm-bundle": "2.1.*"
             },
-            "time": "1351778487",
+            "time": "1355421487",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
