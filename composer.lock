@@ -1634,12 +1634,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle",
-                "reference": "457d010cd6e87114d4f98d997855130a57637e1b"
+                "reference": "bfd95cb8bff3896713a7265828d4c5030abe536c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle/archive/457d010cd6e87114d4f98d997855130a57637e1b.zip",
-                "reference": "457d010cd6e87114d4f98d997855130a57637e1b",
+                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle/archive/bfd95cb8bff3896713a7265828d4c5030abe536c.zip",
+                "reference": "bfd95cb8bff3896713a7265828d4c5030abe536c",
                 "shasum": ""
             },
             "require": {
@@ -1651,7 +1651,7 @@
                 "knplabs/knp-menu-bundle": "*",
                 "kunstmaan/utilities-bundle": "dev-master"
             },
-            "time": "1355404606",
+            "time": "1355405339",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1679,12 +1679,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanPagePartBundle",
-                "reference": "5bb4bf65cff3d8d3372304849e06fde442e3a68d"
+                "reference": "4ed7501c8806ae654c0499e6cb04b808262c370c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanPagePartBundle/archive/5bb4bf65cff3d8d3372304849e06fde442e3a68d.zip",
-                "reference": "5bb4bf65cff3d8d3372304849e06fde442e3a68d",
+                "url": "https://github.com/Kunstmaan/KunstmaanPagePartBundle/archive/4ed7501c8806ae654c0499e6cb04b808262c370c.zip",
+                "reference": "4ed7501c8806ae654c0499e6cb04b808262c370c",
                 "shasum": ""
             },
             "require": {
@@ -1694,7 +1694,7 @@
                 "kunstmaan/utilities-bundle": "*",
                 "kunstmaan/node-bundle": "dev-master"
             },
-            "time": "1354722448",
+            "time": "1355405528",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
