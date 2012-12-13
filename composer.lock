@@ -2004,12 +2004,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog",
-                "reference": "546225bed27bea7d00b836e0f7d8954272e0cf42"
+                "reference": "b67085dc769de26348f08ad21f43220a156161dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Seldaek/monolog/archive/546225bed27bea7d00b836e0f7d8954272e0cf42.zip",
-                "reference": "546225bed27bea7d00b836e0f7d8954272e0cf42",
+                "url": "https://github.com/Seldaek/monolog/archive/b67085dc769de26348f08ad21f43220a156161dc.zip",
+                "reference": "b67085dc769de26348f08ad21f43220a156161dc",
                 "shasum": ""
             },
             "require": {
@@ -2023,7 +2023,7 @@
                 "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
                 "ext-mongo": "Allow sending log messages to a MongoDB server"
             },
-            "time": "1354622369",
+            "time": "1355433243",
             "type": "library",
             "extra": {
                 "branch-alias": {
