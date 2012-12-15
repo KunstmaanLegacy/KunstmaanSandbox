@@ -2674,18 +2674,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig-extensions",
-                "reference": "dcdff02fbac1282e6b8f4d0558cc7e9580105688"
+                "reference": "91336a6ca014a9772ae281cae5e30390a1f3fbaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig-extensions/zipball/dcdff02fbac1282e6b8f4d0558cc7e9580105688",
-                "reference": "dcdff02fbac1282e6b8f4d0558cc7e9580105688",
+                "url": "https://github.com/fabpot/Twig-extensions/archive/91336a6ca014a9772ae281cae5e30390a1f3fbaf.zip",
+                "reference": "91336a6ca014a9772ae281cae5e30390a1f3fbaf",
                 "shasum": ""
             },
             "require": {
                 "twig/twig": "1.*"
             },
-            "time": "1349889206",
+            "time": "1355563167",
             "type": "library",
             "extra": {
                 "branch-alias": {
