@@ -1642,12 +1642,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle",
-                "reference": "bfd95cb8bff3896713a7265828d4c5030abe536c"
+                "reference": "50de7eadf81823d33ba2792581816c9c6374711b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle/archive/bfd95cb8bff3896713a7265828d4c5030abe536c.zip",
-                "reference": "bfd95cb8bff3896713a7265828d4c5030abe536c",
+                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle/archive/50de7eadf81823d33ba2792581816c9c6374711b.zip",
+                "reference": "50de7eadf81823d33ba2792581816c9c6374711b",
                 "shasum": ""
             },
             "require": {
@@ -1659,7 +1659,7 @@
                 "knplabs/knp-menu-bundle": "*",
                 "kunstmaan/utilities-bundle": "dev-master"
             },
-            "time": "1355405339",
+            "time": "1355688802",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
