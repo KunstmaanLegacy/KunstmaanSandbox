@@ -556,12 +556,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/l3pp4rd/DoctrineExtensions.git",
-                "reference": "b525f3bc72d143546460348e9009e6593b0ec054"
+                "reference": "826684473ff483cf379ef8c0815a79769ec7818b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/l3pp4rd/DoctrineExtensions/archive/b525f3bc72d143546460348e9009e6593b0ec054.zip",
-                "reference": "b525f3bc72d143546460348e9009e6593b0ec054",
+                "url": "https://github.com/l3pp4rd/DoctrineExtensions/archive/826684473ff483cf379ef8c0815a79769ec7818b.zip",
+                "reference": "826684473ff483cf379ef8c0815a79769ec7818b",
                 "shasum": ""
             },
             "require": {
@@ -580,7 +580,7 @@
                 "doctrine/orm": ">=2.2",
                 "doctrine/dbal": ">=2.2"
             },
-            "time": "1355775904",
+            "time": "1355859931",
             "type": "library",
             "extra": {
                 "branch-alias": {
