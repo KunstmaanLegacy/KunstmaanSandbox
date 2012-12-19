@@ -1319,27 +1319,27 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle.git",
-                "reference": "60c809ed4e01382b5c1726f015649f50ef4212f1"
+                "reference": "4756d2357a2efad3c70ac3e6731c9a5b94ab3f33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/archive/60c809ed4e01382b5c1726f015649f50ef4212f1.zip",
-                "reference": "60c809ed4e01382b5c1726f015649f50ef4212f1",
+                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/archive/4756d2357a2efad3c70ac3e6731c9a5b94ab3f33.zip",
+                "reference": "4756d2357a2efad3c70ac3e6731c9a5b94ab3f33",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
                 "symfony/symfony": "2.1.*",
                 "doctrine/orm": ">=2.2.3,<2.4-dev",
-                "doctrine/doctrine-fixtures-bundle": "2.1.*",
                 "friendsofsymfony/user-bundle": "*",
                 "knplabs/knp-menu-bundle": "*",
-                "monolog/monolog": "dev-master",
                 "kunstmaan/adminlist-bundle": "*",
                 "sensio/framework-extra-bundle": "*",
-                "kunstmaan/utilities-bundle": "*"
+                "kunstmaan/utilities-bundle": "*",
+                "symfony/monolog-bundle": "2.1.*",
+                "doctrine/doctrine-fixtures-bundle": "dev-master"
             },
-            "time": "1355239241",
+            "time": "1355936369",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
