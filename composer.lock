@@ -1319,27 +1319,27 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle.git",
-                "reference": "4756d2357a2efad3c70ac3e6731c9a5b94ab3f33"
+                "reference": "c704fd6b67ebf6e5543b94a41d60f85f13968974"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/archive/4756d2357a2efad3c70ac3e6731c9a5b94ab3f33.zip",
-                "reference": "4756d2357a2efad3c70ac3e6731c9a5b94ab3f33",
+                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/archive/c704fd6b67ebf6e5543b94a41d60f85f13968974.zip",
+                "reference": "c704fd6b67ebf6e5543b94a41d60f85f13968974",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
                 "symfony/symfony": "2.1.*",
                 "doctrine/orm": ">=2.2.3,<2.4-dev",
-                "friendsofsymfony/user-bundle": "*",
-                "knplabs/knp-menu-bundle": "*",
-                "kunstmaan/adminlist-bundle": "*",
-                "sensio/framework-extra-bundle": "*",
-                "kunstmaan/utilities-bundle": "*",
                 "symfony/monolog-bundle": "2.1.*",
-                "doctrine/doctrine-fixtures-bundle": "dev-master"
+                "kunstmaan/utilities-bundle": "dev-master",
+                "friendsofsymfony/user-bundle": "2.0.x@dev",
+                "sensio/framework-extra-bundle": "2.1.*",
+                "knplabs/knp-menu-bundle": "2.0.x-dev",
+                "kunstmaan/adminlist-bundle": "dev-master",
+                "doctrine/doctrine-fixtures-bundle": "2.1.x@dev"
             },
-            "time": "1355936369",
+            "time": "1355940676",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
