@@ -1319,12 +1319,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle.git",
-                "reference": "c704fd6b67ebf6e5543b94a41d60f85f13968974"
+                "reference": "630f93946ef9e67745a25b8bab312475b1d21770"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/archive/c704fd6b67ebf6e5543b94a41d60f85f13968974.zip",
-                "reference": "c704fd6b67ebf6e5543b94a41d60f85f13968974",
+                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/archive/630f93946ef9e67745a25b8bab312475b1d21770.zip",
+                "reference": "630f93946ef9e67745a25b8bab312475b1d21770",
                 "shasum": ""
             },
             "require": {
@@ -1335,11 +1335,13 @@
                 "kunstmaan/utilities-bundle": "dev-master",
                 "friendsofsymfony/user-bundle": "2.0.x@dev",
                 "sensio/framework-extra-bundle": "2.1.*",
-                "knplabs/knp-menu-bundle": "2.0.x-dev",
                 "kunstmaan/adminlist-bundle": "dev-master",
-                "doctrine/doctrine-fixtures-bundle": "2.1.x@dev"
+                "doctrine/doctrine-fixtures-bundle": "dev-master",
+                "doctrine/data-fixtures": "dev-master",
+                "knplabs/knp-menu-bundle": "2.0.*@dev",
+                "knplabs/knp-menu": "2.0.*@dev"
             },
-            "time": "1355940676",
+            "time": "1355942015",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1357,8 +1359,12 @@
                     "homepage": "http://www.kunstmaan.be/"
                 }
             ],
-            "description": "Symfony2 KunstmaanAdminBundle",
-            "homepage": "https://github.com/Kunstmaan/KunstmaanAdminBundle"
+            "description": "The Kunstmaan AdminBundle can be used to create a backend structure that enables you to create any kind of application, ranging from a CMS to a tool or even een single page app. It features a rolebased security system and a custom bootstrap based backend theme",
+            "homepage": "https://github.com/Kunstmaan/KunstmaanAdminBundle",
+            "keywords": [
+                "admin",
+                "backend"
+            ]
         },
         {
             "name": "kunstmaan/adminlist-bundle",
