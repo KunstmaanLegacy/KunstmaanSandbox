@@ -1319,29 +1319,27 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle.git",
-                "reference": "630f93946ef9e67745a25b8bab312475b1d21770"
+                "reference": "ac27f6855bffc35013a6db24e3daab863e9fe6af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/archive/630f93946ef9e67745a25b8bab312475b1d21770.zip",
-                "reference": "630f93946ef9e67745a25b8bab312475b1d21770",
+                "url": "https://github.com/Kunstmaan/KunstmaanAdminBundle/archive/ac27f6855bffc35013a6db24e3daab863e9fe6af.zip",
+                "reference": "ac27f6855bffc35013a6db24e3daab863e9fe6af",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
                 "symfony/symfony": "2.1.*",
                 "doctrine/orm": ">=2.2.3,<2.4-dev",
-                "symfony/monolog-bundle": "2.1.*",
-                "kunstmaan/utilities-bundle": "dev-master",
-                "friendsofsymfony/user-bundle": "2.0.x@dev",
-                "sensio/framework-extra-bundle": "2.1.*",
-                "kunstmaan/adminlist-bundle": "dev-master",
-                "doctrine/doctrine-fixtures-bundle": "dev-master",
-                "doctrine/data-fixtures": "dev-master",
-                "knplabs/knp-menu-bundle": "2.0.*@dev",
-                "knplabs/knp-menu": "2.0.*@dev"
+                "friendsofsymfony/user-bundle": "*",
+                "doctrine/doctrine-fixtures-bundle": "2.1.*",
+                "knplabs/knp-menu-bundle": "*",
+                "monolog/monolog": "dev-master",
+                "kunstmaan/adminlist-bundle": "*",
+                "kunstmaan/utilities-bundle": "*",
+                "sensio/framework-extra-bundle": "*"
             },
-            "time": "1355942015",
+            "time": "1356009999",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1359,12 +1357,8 @@
                     "homepage": "http://www.kunstmaan.be/"
                 }
             ],
-            "description": "The Kunstmaan AdminBundle can be used to create a backend structure that enables you to create any kind of application, ranging from a CMS to a tool or even een single page app. It features a rolebased security system and a custom bootstrap based backend theme",
-            "homepage": "https://github.com/Kunstmaan/KunstmaanAdminBundle",
-            "keywords": [
-                "admin",
-                "backend"
-            ]
+            "description": "Symfony2 KunstmaanAdminBundle",
+            "homepage": "https://github.com/Kunstmaan/KunstmaanAdminBundle"
         },
         {
             "name": "kunstmaan/adminlist-bundle",
@@ -1373,22 +1367,24 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanAdminListBundle",
-                "reference": "367b2d378a4a6f8184c6cf9a4d3f84ea6089006e"
+                "reference": "f6e96a9dff7d51da2e1289f516d8a495641272a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Kunstmaan/KunstmaanAdminListBundle/archive/367b2d378a4a6f8184c6cf9a4d3f84ea6089006e.zip",
-                "reference": "367b2d378a4a6f8184c6cf9a4d3f84ea6089006e",
+                "url": "https://github.com/Kunstmaan/KunstmaanAdminListBundle/archive/f6e96a9dff7d51da2e1289f516d8a495641272a9.zip",
+                "reference": "f6e96a9dff7d51da2e1289f516d8a495641272a9",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
                 "symfony/symfony": "2.1.*",
-                "kunstmaan/admin-bundle": "*",
-                "white-october/pagerfanta-bundle": "*",
-                "sensio/framework-extra-bundle": "*"
+                "white-october/pagerfanta-bundle": "dev-master",
+                "kunstmaan/admin-bundle": "dev-master",
+                "kunstmaan/utilities-bundle": "@dev",
+                "sensio/framework-extra-bundle": "2.1.*",
+                "pagerfanta/pagerfanta": "dev-master"
             },
-            "time": "1354284163",
+            "time": "1355944682",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -2592,12 +2588,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "055daa99ac1417348e20281fd0fce62c4dd6dc6e"
+                "reference": "4bee2e9d3a043f2f720d84e8d94f70f91e364c80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/archive/055daa99ac1417348e20281fd0fce62c4dd6dc6e.zip",
-                "reference": "055daa99ac1417348e20281fd0fce62c4dd6dc6e",
+                "url": "https://github.com/symfony/symfony/archive/4bee2e9d3a043f2f720d84e8d94f70f91e364c80.zip",
+                "reference": "4bee2e9d3a043f2f720d84e8d94f70f91e364c80",
                 "shasum": ""
             },
             "require": {
@@ -2646,7 +2642,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "1.*"
             },
-            "time": "1355923639",
+            "time": "1355988089",
             "type": "library",
             "installation-source": "source",
             "autoload": {
