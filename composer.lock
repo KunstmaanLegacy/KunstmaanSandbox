@@ -2588,12 +2588,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "8013469e0bac9bef1ba16d169e78fa9104505dae"
+                "reference": "v2.1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/archive/8013469e0bac9bef1ba16d169e78fa9104505dae.zip",
-                "reference": "8013469e0bac9bef1ba16d169e78fa9104505dae",
+                "url": "https://github.com/symfony/symfony/archive/v2.1.6.zip",
+                "reference": "v2.1.6",
                 "shasum": ""
             },
             "require": {
@@ -2642,7 +2642,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "1.*"
             },
-            "time": "1356041770",
+            "time": "1356085493",
             "type": "library",
             "installation-source": "source",
             "autoload": {
