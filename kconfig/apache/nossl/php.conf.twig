@@ -1,4 +1,0 @@
-<IfModule mod_fastcgi.c>
-    FastCgiExternalServer {{ projectPath }}/{{project.name}}/php5.external -socket /tmp/.{{ project.name }}-fpm.sock -idle-timeout 7200
-    Alias /php5-fpm/ {{ projectPath }}/{{project.name}}/
-</IfModule>
