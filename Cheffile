@@ -1,0 +1,14 @@
+site "http://community.opscode.com/api/v1"
+
+cookbook "apache2"
+cookbook "php"
+cookbook "git"
+
+cookbook "symfony-hosting",
+  :git => "https://github.com/roderik/symfony-hosting-cookbook.git"
+
+cookbook "composer",
+  :git => "https://github.com/roderik/chef-composer.git"
+
+cookbook "symfony2",
+  :git => "https://github.com/geoffreytran/chef-symfony2.git"

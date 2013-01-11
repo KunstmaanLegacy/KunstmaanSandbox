@@ -13,11 +13,7 @@ web/uploads
 .DS_Store
 web/frontend
 behat.yml
-.gitmodules
 .vagrant
-Vagrantfile
-kserver
-.gitmodules
-.vagrant
-Vagrantfile
-kserver
+/cookbooks/
+/Cheffile.lock
+/composer.lock
