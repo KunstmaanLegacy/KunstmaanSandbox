@@ -1,0 +1,9 @@
+
+    {% javascripts
+        '@KunstmaanSandboxDemoBundle/Resources/public/js/libs/modernizr-2.6.2.min.js'
+        '@KunstmaanSandboxDemoBundle/Resources/public/js/libs/respond.min.js'
+        filter='yui_js'
+        output='frontend/header.js'
+    %}
+        <script src='{{ asset_url }}'></script>
+    {% endjavascripts %}

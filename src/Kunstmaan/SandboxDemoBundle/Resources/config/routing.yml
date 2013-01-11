@@ -1,0 +1,4 @@
+KunstmaanSandboxDemoBundle_default:
+    resource: "@KunstmaanSandboxDemoBundle/Controller/DefaultController.php"
+    type:     annotation
+    prefix:   /
