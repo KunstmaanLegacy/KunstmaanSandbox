@@ -2,21 +2,21 @@
 parameters:
   database_driver: pdo_mysql
   database_host: localhost
-  database_port: 
+  database_port:
   database_name: sandbox
   database_user: sandbox
   database_password: sandbox
   mailer_transport: smtp
   mailer_host: localhost
-  mailer_user: 
-  mailer_password: 
+  mailer_user:
+  mailer_password:
   locale: en
   secret: ThisTokenIsNotSoSecretChangeIt
-  database_path: 
+  database_path:
   sentry.dsn: https://XXXXXXXX:XXXXXXXX@app.getsentry.com/XXXX
   cdnpath: ''
   requiredlocales: nl|fr|de|en
-  defaultlocale: nl
-  websitetitle: sandbox
+  defaultlocale: en
+  websitetitle: Kunstmaan Bundles Sandbox
   searchport: 9200
   searchindexname: sandbox

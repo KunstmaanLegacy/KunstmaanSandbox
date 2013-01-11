@@ -39,7 +39,7 @@ twig:
 assetic:
     debug:          %kernel.debug%
     use_controller: false
-    bundles:        [ "KunstmaanAdminBundle" ]
+    bundles:        [ "KunstmaanAdminBundle", "KunstmaanAdminListBundle" ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -111,7 +111,7 @@ parameters:
     # db_time_col: session_time
 
 stof_doctrine_extensions:
-    default_locale: nl
+    default_locale: en
     translation_fallback: true
     orm:
         default:
