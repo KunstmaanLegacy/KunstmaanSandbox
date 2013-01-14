@@ -53,6 +53,13 @@ elsif command == "configure-bundles"
     params["defaultlocale"] = "nl"
     params["websitetitle"] = projectname.capitalize
     File.open(parametersymlpath, 'w') {|f| f.write(YAML.dump(parametersyml)) }
+elsif command == "configure-multilanguage"
+    parametersymlpath = ARGV[1]
+    projectname = ARGV[2]
+    parametersyml = YAML.load_file(parametersymlpath)
+    params = parametersyml["parameters"]
+    params["multilanguage"] = true
+    File.open(parametersymlpath, 'w') {|f| f.write(YAML.dump(parametersyml)) }
 else
     puts "No command by this name found."
     puts ""
