@@ -17,6 +17,7 @@ parameters:
   cdnpath: ''
   requiredlocales: nl|fr|de|en
   defaultlocale: en
+  multilanguage: true
   websitetitle: Kunstmaan Bundles Sandbox
   searchport: 9200
   searchindexname: sandbox
