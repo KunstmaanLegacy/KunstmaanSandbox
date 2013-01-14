@@ -29,7 +29,6 @@
     "kunstmaan/form-bundle": "2.2.*@dev",
     "kunstmaan/adminlist-bundle": "2.2.*@dev",
     "kunstmaan/node-bundle": "2.2.*@dev",
-    "kunstmaan/view-bundle": "2.2.*@dev",
     "kunstmaan/seo-bundle": "2.2.*@dev",
     "kunstmaan/generator-bundle": "2.2.*@dev",
     "kunstmaan/sentry-bundle": "2.2.*@dev",
