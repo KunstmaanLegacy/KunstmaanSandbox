@@ -32,7 +32,7 @@ twig:
         defaultlocale: %defaultlocale%
         requiredlocales: %requiredlocales%
         #titlecolor: "#000000"
-        #titlebgcolor: "#F53111"
+        #titlebgcolor: "#2997CE"
         #ga_code: %ga_code% ## don't forget to specify this parameter in parameters.yml
 
 # Assetic Configuration
