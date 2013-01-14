@@ -1,6 +1,6 @@
 {
-  "name": "symfony/framework-standard-edition",
-  "description": "The \"Symfony Standard Edition\" distribution",
+  "name": "kunstmaan/sandbox",
+  "description": "The sandbox project for the Kunstmaan bundles",
   "autoload": {
     "psr-0": {
       "": "src/"
