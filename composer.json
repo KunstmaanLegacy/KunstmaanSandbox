@@ -20,7 +20,7 @@
     "sensio/generator-bundle": "2.1.*",
     "jms/security-extra-bundle": "1.2.*",
     "jms/di-extra-bundle": "1.1.*",
-    "kriswallsmith/assetic": "1.1.*@dev"
+    "kriswallsmith/assetic": "1.1.*@dev",
     "stof/doctrine-extensions-bundle": "dev-master",
     "kunstmaan/admin-bundle": "dev-master",
     "kunstmaan/media-bundle": "dev-master",
