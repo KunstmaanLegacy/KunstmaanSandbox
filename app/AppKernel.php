@@ -54,8 +54,6 @@ class AppKernel extends Kernel
         $bundles[] = new Kunstmaan\NodeBundle\KunstmaanNodeBundle();
         $bundles[] = new Kunstmaan\SeoBundle\KunstmaanSeoBundle();
         $bundles[] = new Symfony\Cmf\Bundle\RoutingExtraBundle\SymfonyCmfRoutingExtraBundle();
-        // KunstmaanViewBundle
-        $bundles[] = new Kunstmaan\ViewBundle\KunstmaanViewBundle();
         // KunstmaanGeneratorBundle
         $bundles[] = new Kunstmaan\GeneratorBundle\KunstmaanGeneratorBundle();
         // KunstmaanNewRelicBundle
