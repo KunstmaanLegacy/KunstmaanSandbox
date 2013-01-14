@@ -21,6 +21,7 @@
         // KunstmaanNodeBundle
         $bundles[] = new Kunstmaan\NodeBundle\KunstmaanNodeBundle();
         $bundles[] = new Kunstmaan\SeoBundle\KunstmaanSeoBundle();
+        $bundles[] = new Symfony\Cmf\Bundle\RoutingExtraBundle\SymfonyCmfRoutingExtraBundle();
         // KunstmaanGeneratorBundle
         $bundles[] = new Kunstmaan\GeneratorBundle\KunstmaanGeneratorBundle();
         // KunstmaanNewRelicBundle
