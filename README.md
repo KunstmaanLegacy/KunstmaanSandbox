@@ -103,6 +103,7 @@ for a multi-language-website:
 ```bash
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/routing-multilang.dist.yml)" > app/config/routing.yml
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/security-multilang.dist.yml)" | sed s/sandbox/$PROJECTNAME/ > app/config/security.yml
+ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/sandboxinstaller.rb').read" configure-multilanguage app/config/parameters.yml $PROJECTNAME
 ```
 
 ```bash
