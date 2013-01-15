@@ -31,16 +31,20 @@ class AppKernel extends Kernel
         // KunstmaanUtilitiesBundle
         $bundles[] = new Kunstmaan\UtilitiesBundle\KunstmaanUtilitiesBundle();
 
-        // KunstmaanAdminBundle
-        $bundles[] = new FOS\UserBundle\FOSUserBundle();
-        $bundles[] = new Knp\Bundle\MenuBundle\KnpMenuBundle();
-        $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
-        $bundles[] = new Kunstmaan\AdminBundle\KunstmaanAdminBundle();
+        // KunstmaanNodeBundle
+        $bundles[] = new Kunstmaan\NodeBundle\KunstmaanNodeBundle();
+        $bundles[] = new Kunstmaan\SeoBundle\KunstmaanSeoBundle();
+        $bundles[] = new Symfony\Cmf\Bundle\RoutingExtraBundle\SymfonyCmfRoutingExtraBundle();
         // KunstmaanMediaBundle
         $bundles[] = new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle();
         $bundles[] = new Liip\ImagineBundle\LiipImagineBundle();
         $bundles[] = new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle();
         $bundles[] = new Kunstmaan\MediaBundle\KunstmaanMediaBundle();
+        // KunstmaanAdminBundle
+        $bundles[] = new FOS\UserBundle\FOSUserBundle();
+        $bundles[] = new Knp\Bundle\MenuBundle\KnpMenuBundle();
+        $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
+        $bundles[] = new Kunstmaan\AdminBundle\KunstmaanAdminBundle();
         // KunstmaanPagePartBundle
         $bundles[] = new Kunstmaan\PagePartBundle\KunstmaanPagePartBundle();
         // KunstmaanMediaPagePartBundle
@@ -50,10 +54,6 @@ class AppKernel extends Kernel
         // KunstmaanAdminListBundle
         $bundles[] = new Kunstmaan\AdminListBundle\KunstmaanAdminListBundle();
         $bundles[] = new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle();
-        // KunstmaanNodeBundle
-        $bundles[] = new Kunstmaan\NodeBundle\KunstmaanNodeBundle();
-        $bundles[] = new Kunstmaan\SeoBundle\KunstmaanSeoBundle();
-        $bundles[] = new Symfony\Cmf\Bundle\RoutingExtraBundle\SymfonyCmfRoutingExtraBundle();
         // KunstmaanGeneratorBundle
         $bundles[] = new Kunstmaan\GeneratorBundle\KunstmaanGeneratorBundle();
         // KunstmaanNewRelicBundle
