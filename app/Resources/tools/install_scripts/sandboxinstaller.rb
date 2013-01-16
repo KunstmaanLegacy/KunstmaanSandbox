@@ -29,7 +29,7 @@ if command == "install-bundles"
     requires["kunstmaan/seo-bundle"] = "2.2.*@dev"
     requires["kunstmaan/newrelicbundle"] = "2.2.*@dev"
     requires["liip/cache-control-bundle"] = "dev-master"
-    result["minimum-stablity"] = "dev"
+    result["minimum-stability"] = "dev"
     File.open(composer, 'w') {|f| f.write(JSON.pretty_generate(result)) }
 
     # AppKernel.php
