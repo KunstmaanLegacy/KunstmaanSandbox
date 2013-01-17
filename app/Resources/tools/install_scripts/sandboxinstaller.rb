@@ -50,8 +50,9 @@ elsif command == "configure-bundles"
     params["searchindexname"] = projectname
     params["sentry.dsn"] = "https://XXXXXXXX:XXXXXXXX@app.getsentry.com/XXXX"
     params["cdnpath"] = ""
-    params["requiredlocales"] = "nl|fr|de|en"
-    params["defaultlocale"] = "nl"
+    params["requiredlocales"] = "en"
+    params["defaultlocale"] = "en"
+    params["multilanguage"] = false
     params["websitetitle"] = projectname.capitalize
     File.open(parametersymlpath, 'w') {|f| f.write(YAML.dump(parametersyml)) }
 elsif command == "configure-multilanguage"
@@ -59,6 +60,8 @@ elsif command == "configure-multilanguage"
     projectname = ARGV[2]
     parametersyml = YAML.load_file(parametersymlpath)
     params = parametersyml["parameters"]
+    params["requiredlocales"] = "nl|fr|de|en"
+    params["defaultlocale"] = "en"
     params["multilanguage"] = true
     File.open(parametersymlpath, 'w') {|f| f.write(YAML.dump(parametersyml)) }
 else
