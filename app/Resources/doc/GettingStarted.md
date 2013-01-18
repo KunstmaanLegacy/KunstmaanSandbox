@@ -1,4 +1,4 @@
-# A little help
+# Getting Started Guide
 
 To make these scripts more easy to follow for other projects, we are going to define the project name in a tmp file.
 
@@ -6,7 +6,7 @@ To make these scripts more easy to follow for other projects, we are going to de
 echo "YOUR PROJECT NAME HERE, LOWERCASE, NO SPACES OR SPECIAL CHARACTERS" > /tmp/kumas2install
 ```
 
-# Setting up the project using kDeploy
+## Setting up the project using kDeploy
 
 First we create the new project with kDeploy. If you don't use kDeploy skip this section.
 
@@ -23,7 +23,7 @@ apachectl restart
 exit
 ```
 
-# Basic project structure using Composer
+## Basic project structure using Composer
 
 Next up, basic project structure using Composer.
 
@@ -37,7 +37,7 @@ mv composer.phar ./$PROJECTNAME/
 cd $PROJECTNAME
 ```
 
-# Cleaning out the Acme bundle
+## Cleaning out the Acme bundle
 
 ```bash
 rm -Rf src/Acme/
@@ -48,7 +48,7 @@ mv app/config/routing_dev.yml.tmp app/config/routing_dev.yml
 rm -Rf web/bundles/acmedemo
 ```
 
-# Configure your application and add the project to git
+## Configuration
 
 Configure your application by surfing to http://computername/config.php and make sure parameters.yml or .ini is not readable in git.
 
@@ -59,13 +59,18 @@ echo ".idea" >> .gitignore
 echo "web/generated-js" >> .gitignore
 echo "web/generated-css" >> .gitignore
 echo "web/uploads" >> .gitignore
+```
+
+## Add the project to git
+
+```bash
 rm -Rf .git
 git init
 git add .
 git commit -a -m "Symfony base install"
 ```
 
-# Adding kstrano config files
+## Adding kstrano config files
 
 ```bash
 kumafy . --force
@@ -73,7 +78,7 @@ kumafy . --force
 
 TODO: update the config files in kStrano to match this setup, including the .travis.yml
 
-# Custom app.php, adding bundles.
+## Custom app.php, adding bundles.
 
 ```bash
 PROJECTNAME=`cat /tmp/kumas2install`
@@ -91,7 +96,7 @@ mkdir -p web/uploads/media
 sudo chown -R $PROJECTNAME web/uploads
 ```
 
-# app/config/routing.yml
+## Routing
 
 for a single-language-website:
 ```bash
@@ -110,7 +115,7 @@ ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/Kunstma
 php composer.phar update
 ```
 
-# Generate
+## Generate
 
 Generate bundle
 
@@ -124,7 +129,7 @@ Generate default site (replace bundle namespace and name)
 app/console kuma:generate:default-site --namespace=Namespace/NameOfBundle --prefix=tableprefix_
 ```
 
-# run fullreload
+## Initialize assets and database
 First make sure the database parameters are correct in app/config/parameters.yml
 ```bash
 ./fullreload
