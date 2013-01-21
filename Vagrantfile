@@ -15,6 +15,9 @@ Vagrant::Config.run do |config|
       }
     }
   end
+  config.vm.customize ["modifyvm", :id, "--memory", 1024]
+  config.vm.network :hostonly, "33.33.33.33"
+  config.ssh.forward_agent = true
   config.vm.forward_port 80, 8484
-  config.vm.share_folder("v-root", "/vagrant", ".", :extra => 'dmode=777,fmode=777')
+  config.vm.share_folder("v-root", "/vagrant", ".", :nfs => true, :extra => 'dmode=777,fmode=777')
 end
