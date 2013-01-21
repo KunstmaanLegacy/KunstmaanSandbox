@@ -17,5 +17,5 @@ behat.yml
 /cookbooks/
 /Cheffile.lock
 /composer.lock
-
+web/css
 /tmp/
