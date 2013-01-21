@@ -14,6 +14,6 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return array();
+        return $this->forward("KunstmaanNodeBundle:Slug:slug", array("_locale" => "en", "slug" => null, "redirected" => "true"));
     }
 }
