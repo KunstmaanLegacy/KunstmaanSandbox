@@ -1,6 +1,5 @@
-
     {% block css %}
-        {% stylesheets '@KunstmaanSandboxDemoBundle/Resources/public/css/style.css' %}
+        {% stylesheets '@KunstmaanSandboxDemoBundle/Resources/public/css/*.css' %}
             <link rel='stylesheet' href='{{ asset_url }}' type='text/css' />
         {% endstylesheets %}
     {% endblock %}
