@@ -6,6 +6,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 
+use Kunstmaan\AdminBundle\Entity\DashboardConfiguration;
 use Kunstmaan\FormBundle\Entity\PageParts\ChoicePagePart;
 use Kunstmaan\NodeBundle\Entity\NodeTranslation;
 use Kunstmaan\PagePartBundle\Entity\LinePagePart;
@@ -64,6 +65,16 @@ class DefaultSiteFixtures extends AbstractFixture implements OrderedFixtureInter
         $this->createPagePartPage($manager, "Content PageParts", $homePage);
         // From PageParts
         $this->createFormPage($manager, "Form PageParts", $homePage);
+        // Dashboard
+        /** @var $dashboard DashboardConfiguration */
+        $dashboard = $manager->getRepository("KunstmaanAdminBundle:DashboardConfiguration")->findOneBy(array());
+        if (is_null($dashboard)){
+            $dashboard = new DashboardConfiguration();
+        }
+        $dashboard->setTitle("Dashboard");
+        $dashboard->setContent('<iframe src="https://rpm.newrelic.com/public/charts/2h1YQ3W7j7Z" width="100%" height="300" scrolling="no" frameborder="no"></iframe><iframe src="https://rpm.newrelic.com/public/charts/1VNlg8JA5ed" width="100%" height="300" scrolling="no" frameborder="no"></iframe><iframe src="https://rpm.newrelic.com/public/charts/36A9KcMTMli" width="100%" height="300" scrolling="no" frameborder="no"></iframe>');
+        $manager->persist($dashboard);
+        $manager->flush();
     }
 
     /**
