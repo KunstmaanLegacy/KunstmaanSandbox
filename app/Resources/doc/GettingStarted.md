@@ -137,12 +137,12 @@ First make sure the database parameters are correct in app/config/parameters.yml
 
 ## CMS Admin
 
-You can now go to the CMS login screen on path : "/admin"
+You can now go to the CMS login screen on path : "/admin" <br/>
 In case you are using a multi-language-website : "/en/admin"
 
 You can log in with the following account :
 
-Username : admin
+Username : admin <br/>
 Password : admin
 
 You can access the public part of the website on the root path or when you're using the multi-language-website, on "/en"
