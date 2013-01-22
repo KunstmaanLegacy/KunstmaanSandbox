@@ -7,12 +7,10 @@ In this getting started guide we will guide you throug setting up a project like
 First off, just to make scripting the rest a little bit more easy, we will put the new project name in an environment variable.
 
 ```bash
-
 export PROJECTNAME="YOUR PROJECT NAME HERE, NO SPACES OR SPECIAL CHARACTERS"
 export NAMESPACE="YOUR COMPANY NAME HERE, NO SPACES OR SPECIAL CHARACTERS, STARTING WITH A CAPITAL LETTER"
 export BUNDLENAME="THE NAME OF YOUR WEBSITE BUNDLE, ENDING WITH Bundle"
 export TABLEPREFIX="THE TABLE PREFIX YOU WANT FOR YOUR TABLES ENDING WITH AN UNDERSCORE"
-
 ```
 
 ## Basic project structure using Composer
@@ -20,10 +18,8 @@ export TABLEPREFIX="THE TABLE PREFIX YOU WANT FOR YOUR TABLES ENDING WITH AN UND
 Next up, basic project structure using [Composer](http://getcomposer.org/). We assume you have got [Composer installed globally like documented in the composer install guide](http://getcomposer.org/doc/00-intro.md#globally) and you know where you want the project folder so it works in your webserver.
 
 ```bash
-
 composer create-project --no-interaction symfony/framework-standard-edition ./$PROJECTNAME 2.1.7
 cd $PROJECTNAME
-
 ```
 
 ## Cleaning out the Acme bundle
@@ -31,14 +27,12 @@ cd $PROJECTNAME
 The Symfony standard distribution contains a demo bundle. We need to remove it first. After some experimenting we have concocted this little script that does just this.
 
 ```bash
-
 rm -Rf src/Acme/
 grep -v "Acme" app/AppKernel.php > app/AppKernel.php.tmp
 mv app/AppKernel.php.tmp app/AppKernel.php
 grep "wdt\|profiler\|configurator\|main\|routing" app/config/routing_dev.yml > app/config/routing_dev.yml.tmp
 mv app/config/routing_dev.yml.tmp app/config/routing_dev.yml
 rm -Rf web/bundles/acmedemo
-
 ```
 
 ## Configuration
@@ -46,9 +40,7 @@ rm -Rf web/bundles/acmedemo
 Get your database (mysql) info nearby and let's start with the configuration. First we start the built in PHP server (PHP 5.4 only!)
 
 ```
-
 app/console sever:run
-
 ```
 
 Now browse to [http://localhost:8000/config.php](http://localhost:8000/config.php) and configure your database settings.
@@ -58,21 +50,18 @@ Now browse to [http://localhost:8000/config.php](http://localhost:8000/config.ph
 Version control is vital to a developer, so we get everything setup for using GIT.
 
 ```bash
-
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/.gitignore)" > .gitignore
 rm -Rf .git
 git init
 git add .
 git commit -a -m "Symfony base install"
-
 ```
 
 ## Custom app.php, adding bundles.
 
-In this phase we will install the Kunstmaan Bundles and their dependencies, and we will con
+In this phase we will install the Kunstmaan Bundles and their dependencies, and we will configure the kernel, config, routing and security files.
 
 ```bash
-
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/app.php)" | sed s/sf2/$PROJECTNAME/ > web/app.php
 mkdir -p app/Resources/tools/java
 curl -L# http://github.com/downloads/Kunstmaan/KunstmaanSandbox/yuicompressor-2.4.7.jar -o app/Resources/tools/java/yuicompressor-2.4.7.jar
@@ -85,58 +74,42 @@ echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/
 curl http://www.kunstmaan.be/html/2010/favicon.ico -o web/favicon.ico
 mkdir -p web/uploads/media
 sudo chown -R $PROJECTNAME web/uploads
-
 ```
 
 ## Routing
 
 for a single-language-website:
-```bash
 
+```bash
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/routing-singlelang.dist.yml)" > app/config/routing.yml
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/security-singlelang.dist.yml)" | sed s/sandbox/$PROJECTNAME/ > app/config/security.yml
-
 ```
 
 for a multi-language-website:
-```bash
 
+```bash
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/routing-multilang.dist.yml)" > app/config/routing.yml
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/security-multilang.dist.yml)" | sed s/sandbox/$PROJECTNAME/ > app/config/security.yml
 ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/sandboxinstaller.rb').read" configure-multilanguage app/config/parameters.yml $PROJECTNAME
-
 ```
 
 ```bash
-
 composer update
-
 ```
 
 ## Generate
 
-Generate bundle
+Generate bundle and the default site
 
 ```bash
-
 app/console kuma:generate:bundle --namespace=$NAMESPACE/$BUNDLENAME --dir=src --no-interaction
-
-```
-
-Generate default site
-
-```bash
-
 app/console kuma:generate:default-site --namespace=$NAMESPACE/$BUNDLENAME --prefix=$TABLEPREFIX --no-interaction
-
 ```
 
 ## Initialize assets and database
 
 ```bash
-
 ./fullreload
-
 ```
 
 ## CMS Admin
