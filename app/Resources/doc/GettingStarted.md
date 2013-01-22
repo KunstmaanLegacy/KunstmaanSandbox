@@ -1,87 +1,78 @@
 # Getting Started Guide
 
-To make these scripts more easy to follow for other projects, we are going to define the project name in a tmp file.
+In this getting started guide we will guide you throug setting up a project like the [Kunstmaan Sandbox project](https://github.com/Kunstmaan/KunstmaanSandbox) but for your own website. We will use Vagrant to ensure an optimal development and test environment. This guide should be the same for OSX and Linux hosts.
+
+## Choosing a project name
+
+First off, just to make scripting the rest a little bit more easy, we will put the new project name in an environment variable.
 
 ```bash
-echo "YOUR PROJECT NAME HERE, LOWERCASE, NO SPACES OR SPECIAL CHARACTERS" > /tmp/kumas2install
-```
 
-## Setting up the project using kDeploy
+export PROJECTNAME="YOUR PROJECT NAME HERE, NO SPACES OR SPECIAL CHARACTERS"
+export NAMESPACE="YOUR COMPANY NAME HERE, NO SPACES OR SPECIAL CHARACTERS, STARTING WITH A CAPITAL LETTER"
+export BUNDLENAME="THE NAME OF YOUR WEBSITE BUNDLE, ENDING WITH Bundle"
+export TABLEPREFIX="THE TABLE PREFIX YOU WANT FOR YOUR TABLES ENDING WITH AN UNDERSCORE"
 
-First we create the new project with kDeploy. If you don't use kDeploy skip this section.
-
-```bash
-sudo -i
-cd /opt/kDeploy/tools
-PROJECTNAME=`cat /tmp/kumas2install`
-python newproject.py $PROJECTNAME
-python applyskel.py $PROJECTNAME symfony
-rm -Rf /home/projects/$PROJECTNAME/data/$PROJECTNAME/*
-python fixperms.py $PROJECTNAME
-python maintenance.py quick
-apachectl restart
-exit
 ```
 
 ## Basic project structure using Composer
 
-Next up, basic project structure using Composer.
+Next up, basic project structure using [Composer](http://getcomposer.org/). We assume you have got [Composer installed globally like documented in the composer install guide](http://getcomposer.org/doc/00-intro.md#globally) and you know where you want the project folder so it works in your webserver.
 
 ```bash
-PROJECTNAME=`cat /tmp/kumas2install`
-cd /home/projects/$PROJECTNAME/data/
-sudo rm -Rf $PROJECTNAME/
-curl -s http://getcomposer.org/installer | php
-php composer.phar create-project --no-interaction symfony/framework-standard-edition ./$PROJECTNAME 2.1.6
-mv composer.phar ./$PROJECTNAME/
+
+composer create-project --no-interaction symfony/framework-standard-edition ./$PROJECTNAME 2.1.7
 cd $PROJECTNAME
+
 ```
 
 ## Cleaning out the Acme bundle
 
+The Symfony standard distribution contains a demo bundle. We need to remove it first. After some experimenting we have concocted this little script that does just this.
+
 ```bash
+
 rm -Rf src/Acme/
 grep -v "Acme" app/AppKernel.php > app/AppKernel.php.tmp
 mv app/AppKernel.php.tmp app/AppKernel.php
 grep "wdt\|profiler\|configurator\|main\|routing" app/config/routing_dev.yml > app/config/routing_dev.yml.tmp
 mv app/config/routing_dev.yml.tmp app/config/routing_dev.yml
 rm -Rf web/bundles/acmedemo
+
 ```
 
 ## Configuration
 
-Configure your application by surfing to http://computername/config.php and make sure parameters.yml or .ini is not readable in git.
+Get your database (mysql) info nearby and let's start with the configuration. First we start the built in PHP server (PHP 5.4 only!)
 
-```bash
-echo "app/config/parameters.yml" >> .gitignore
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/config/parameters.yml)" | sed s/sandbox/$PROJECTNAME/ > app/config/parameters.yml
-echo ".idea" >> .gitignore
-echo "web/generated-js" >> .gitignore
-echo "web/generated-css" >> .gitignore
-echo "web/uploads" >> .gitignore
 ```
+
+app/console sever:run
+
+```
+
+Now browse to [http://localhost:8000/config.php](http://localhost:8000/config.php) and configure your database settings.
 
 ## Add the project to git
 
+Version control is vital to a developer, so we get everything setup for using GIT.
+
 ```bash
+
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/.gitignore)" > .gitignore
 rm -Rf .git
 git init
 git add .
 git commit -a -m "Symfony base install"
+
 ```
-
-## Adding kstrano config files
-
-```bash
-kumafy . --force
-```
-
-TODO: update the config files in kStrano to match this setup, including the .travis.yml
 
 ## Custom app.php, adding bundles.
 
+In this phase we will install the Kunstmaan Bundles and their dependencies, and we will con
+
 ```bash
-PROJECTNAME=`cat /tmp/kumas2install`
+
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/app.php)" | sed s/sf2/$PROJECTNAME/ > web/app.php
 mkdir -p app/Resources/tools/java
 curl -L# http://github.com/downloads/Kunstmaan/KunstmaanSandbox/yuicompressor-2.4.7.jar -o app/Resources/tools/java/yuicompressor-2.4.7.jar
@@ -94,25 +85,32 @@ echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/
 curl http://www.kunstmaan.be/html/2010/favicon.ico -o web/favicon.ico
 mkdir -p web/uploads/media
 sudo chown -R $PROJECTNAME web/uploads
+
 ```
 
 ## Routing
 
 for a single-language-website:
 ```bash
+
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/routing-singlelang.dist.yml)" > app/config/routing.yml
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/security-singlelang.dist.yml)" | sed s/sandbox/$PROJECTNAME/ > app/config/security.yml
+
 ```
 
 for a multi-language-website:
 ```bash
+
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/routing-multilang.dist.yml)" > app/config/routing.yml
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/security-multilang.dist.yml)" | sed s/sandbox/$PROJECTNAME/ > app/config/security.yml
 ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/sandboxinstaller.rb').read" configure-multilanguage app/config/parameters.yml $PROJECTNAME
+
 ```
 
 ```bash
-php composer.phar update
+
+composer update
+
 ```
 
 ## Generate
@@ -120,29 +118,35 @@ php composer.phar update
 Generate bundle
 
 ```bash
-app/console kuma:generate:bundle
+
+app/console kuma:generate:bundle --namespace=$NAMESPACE/$BUNDLENAME --dir=src --no-interaction
+
 ```
 
-Generate default site (replace bundle namespace and name)
+Generate default site
 
 ```bash
-app/console kuma:generate:default-site --namespace=Namespace/NameOfBundle --prefix=tableprefix_
+
+app/console kuma:generate:default-site --namespace=$NAMESPACE/$BUNDLENAME --prefix=$TABLEPREFIX --no-interaction
+
 ```
 
 ## Initialize assets and database
-First make sure the database parameters are correct in app/config/parameters.yml
+
 ```bash
+
 ./fullreload
+
 ```
 
 ## CMS Admin
 
-You can now go to the CMS login screen on path : "/admin" <br/>
-In case you are using a multi-language-website : "/en/admin"
+You can now go to the CMS login screen on path : [http://localhost:8000/admin](http://localhost:8000/admin) <br/>
+In case you are using a multi-language-website : [http://localhost:8000/en/admin](http://localhost:8000/en/admin)
 
 You can log in with the following account :
 
 Username : admin <br/>
 Password : admin
 
-You can access the public part of the website on the root path or when you're using the multi-language-website, on "/en"
+You can access the public part of the website on the [http://localhost:8000/](http://localhost:8000/) or when you're using the multi-language-website, on [http://localhost:8000/en](http://localhost:8000/en)
