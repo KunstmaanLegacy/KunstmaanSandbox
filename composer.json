@@ -23,15 +23,26 @@
     "kriswallsmith/assetic": "1.1.*@dev",
     "stof/doctrine-extensions-bundle": "1.1.*@dev",
     "kunstmaan/admin-bundle": "2.2.*@dev",
+    "doctrine/doctrine-fixtures-bundle": "2.1.*@dev",
+    "doctrine/data-fixtures": "1.0.*@dev",
     "kunstmaan/media-bundle": "2.2.*@dev",
+    "liip/imagine-bundle": "dev-master",
     "kunstmaan/pagepart-bundle": "2.2.*@dev",
     "kunstmaan/media-pagepart-bundle": "2.2.*@dev",
     "kunstmaan/form-bundle": "2.2.*@dev",
+    "ddeboer/data-import-bundle": "dev-master",
+    "ddeboer/data-import": "dev-master",
+    "gregwar/form-bundle": "dev-master",
     "kunstmaan/adminlist-bundle": "2.2.*@dev",
+    "white-october/pagerfanta-bundle": "dev-master",
+    "pagerfanta/pagerfanta": "dev-master",
     "kunstmaan/node-bundle": "2.2.*@dev",
+    "symfony-cmf/routing-extra-bundle": "1.0.*@dev",
+    "symfony-cmf/routing": "1.0.*@dev",
     "kunstmaan/seo-bundle": "2.2.*@dev",
     "kunstmaan/generator-bundle": "2.2.*@dev",
     "kunstmaan/sentry-bundle": "2.2.*@dev",
+    "raven/raven": "dev-master",
     "kunstmaan/utilities-bundle": "2.2.*@dev",
     "kunstmaan/newrelicbundle": "2.2.*@dev",
     "liip/cache-control-bundle": "dev-master"
@@ -53,7 +64,6 @@
   "config": {
     "bin-dir": "bin"
   },
-  "minimum-stability": "dev",
   "extra": {
     "symfony-app-dir": "app",
     "symfony-web-dir": "web"
