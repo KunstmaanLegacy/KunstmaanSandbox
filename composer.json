@@ -45,7 +45,9 @@
     "raven/raven": "dev-master",
     "kunstmaan/utilities-bundle": "2.2.*@dev",
     "kunstmaan/newrelicbundle": "2.2.*@dev",
-    "liip/cache-control-bundle": "dev-master"
+    "liip/cache-control-bundle": "dev-master",
+    "knplabs/knp-menu": "dev-master",
+    "knplabs/knp-menu-bundle": "dev-master"
   },
   "scripts": {
     "post-install-cmd": [
