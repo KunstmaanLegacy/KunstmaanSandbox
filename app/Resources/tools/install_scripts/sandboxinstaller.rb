@@ -40,6 +40,8 @@ if command == "install-bundles"
     requires["kunstmaan/utilities-bundle"] =  "2.2.*@dev"
     requires["kunstmaan/newrelicbundle"] =  "2.2.*@dev"
     requires["liip/cache-control-bundle"] =  "dev-master"
+    requires["knplabs/knp-menu"] = "dev-master"
+    requries["knplabs/knp-menu-bundle"] = "dev-master"
     #result["minimum-stability"] = "dev"
     File.open(composer, 'w') {|f| f.write(JSON.pretty_generate(result)) }
 
