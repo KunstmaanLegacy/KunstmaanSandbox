@@ -47,6 +47,7 @@
     "kunstmaan/newrelicbundle": "2.2.*@dev",
     "liip/cache-control-bundle": "dev-master"
   },
+  "minimum-stability": "dev",
   "scripts": {
     "post-install-cmd": [
       "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
