@@ -123,3 +123,8 @@ Username : admin <br/>
 Password : admin
 
 You can access the public part of the website on the [http://localhost:8000/](http://localhost:8000/) or when you're using the multi-language-website, on [http://localhost:8000/en](http://localhost:8000/en)
+
+
+## Aviary image editor (optional)
+
+See [aviaryImageEditor](https://github.com/Kunstmaan/KunstmaanMediaBundle/blob/master/Resources/docs/aviaryImageEditor.md)
