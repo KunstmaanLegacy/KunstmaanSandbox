@@ -127,4 +127,4 @@ You can access the public part of the website on the [http://localhost:8000/](ht
 
 ## Aviary image editor (optional)
 
-See [aviaryImageEditor](https://github.com/Kunstmaan/KunstmaanMediaBundle/blob/master/Resources/docs/aviaryImageEditor.md)
+See ["Add Aviary image editor" in the MediaBundle](http://bundles.kunstmaan.be/doc/MediaBundle.html#Add Aviary image editor)
