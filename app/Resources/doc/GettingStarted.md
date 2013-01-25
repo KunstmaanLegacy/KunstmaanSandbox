@@ -40,7 +40,7 @@ rm -Rf web/bundles/acmedemo
 Get your database (mysql) info nearby and let's start with the configuration. First we start the built in PHP server (PHP 5.4 only!)
 
 ```
-app/console sever:run
+app/console server:run
 ```
 
 Now browse to [http://localhost:8000/config.php](http://localhost:8000/config.php) and configure your database settings.
