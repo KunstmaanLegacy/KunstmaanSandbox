@@ -136,6 +136,7 @@ liip_imagine:
 liip_cache_control:
     rules:
         - { path: /admin, controls: { private: true, max_age: 0} }
+        - { path: /preview/, controls: { private: true, max_age: 0} }
         - { path: ^/_internal, controls: {private: true, max_age: 0} }
         - { path: ^/(.+), controls: { public: true, max_age: 120, s_maxage: 240 }, vary: [Cookie,Accept-Encoding] }
 
