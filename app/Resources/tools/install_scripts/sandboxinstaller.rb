@@ -1,5 +1,6 @@
 #!/usr/bin/ruby
 
+require 'rubygems'
 require 'json'
 require 'open-uri'
 require 'yaml'
