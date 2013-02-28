@@ -43,7 +43,18 @@ if command == "install-bundles"
     requires["liip/cache-control-bundle"] =  "dev-master"
     requires["knplabs/knp-menu"] = "dev-master"
     requires["knplabs/knp-menu-bundle"] = "dev-master"
+    requires["behat/behat"] = "2.4.*@stable",
+    requires["behat/mink"] = "1.4.*@stable",
+    requires["behat/symfony2-extension"] = "*",
+    requires["behat/mink-extension] = "*",
+    requires["behat/mink-browserkit-driver"] = "*",
+    requires["behat/mink-selenium2-driver"] = "*",
+    requires["behat/mink-goutte-driver"] = "*",
+    requires["behat/mink-sahi-driver"] = "*",
+    requires["phpunit/phpunit"] = "3.7.*"
     #result["minimum-stability"] = "dev"
+    config = result['config']
+    config["bin-dir"] = "bin/"
     File.open(composer, 'w') {|f| f.write(JSON.pretty_generate(result)) }
 
     # AppKernel.php

@@ -124,6 +124,24 @@ Password : admin
 
 You can access the public part of the website on the [http://localhost:8000/](http://localhost:8000/) or when you're using the multi-language-website, on [http://localhost:8000/en](http://localhost:8000/en)
 
+## Behat
+
+```bash
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/behat.yml-dist)"
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/behat.yml)"
+```
+
+In order to setup Behat testing, replace the 'hostname' in the behat.yml in your project's root folder.
+
+You will need the Google Chrome browser installed on your system.
+
+### Chrome Driver
+
+Dowload the Chrome Driver from the following link : [WebDriver for Google Chrome](http://code.google.com/p/chromedriver/downloads/list)
+
+### Selenium driver
+
+Download the [Selenium Server](http://docs.seleniumhq.org/download/) jar file.
 
 ## Aviary image editor (optional)
 
