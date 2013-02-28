@@ -53,8 +53,9 @@ if command == "install-bundles"
     requires["behat/mink-sahi-driver"] = "*"
     requires["phpunit/phpunit"] = "3.7.*"
     #result["minimum-stability"] = "dev"
-    config = result['config']
-    config["bin-dir"] = "bin/"
+    result['config'] = {
+        'bin-dir' => "bin/"
+    }
     File.open(composer, 'w') {|f| f.write(JSON.pretty_generate(result)) }
 
     # AppKernel.php
