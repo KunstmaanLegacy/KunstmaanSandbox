@@ -63,6 +63,7 @@ In this phase we will install the Kunstmaan Bundles and their dependencies, and 
 
 ```bash
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/app.php)" | sed s/sf2/$PROJECTNAME/ > web/app.php
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/app_test.php)" | sed s/sf2/$PROJECTNAME/ > web/app_test.php
 mkdir -p app/Resources/tools/java
 curl -L# http://github.com/downloads/Kunstmaan/KunstmaanSandbox/yuicompressor-2.4.7.jar -o app/Resources/tools/java/yuicompressor-2.4.7.jar
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/fullreload)" > fullreload
