@@ -19,3 +19,4 @@ behat.yml
 /composer.lock
 web/css
 /tmp/
+behat.yml

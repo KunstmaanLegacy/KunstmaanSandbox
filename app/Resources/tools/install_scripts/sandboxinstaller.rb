@@ -40,10 +40,14 @@ if command == "install-bundles"
     requires["raven/raven"] =  "dev-master"
     requires["kunstmaan/utilities-bundle"] =  "2.2.*@dev"
     requires["kunstmaan/newrelicbundle"] =  "2.2.*@dev"
+    requires["kunstmaan/behat-bundle"] =  "dev-master"
     requires["liip/cache-control-bundle"] =  "dev-master"
     requires["knplabs/knp-menu"] = "dev-master"
     requires["knplabs/knp-menu-bundle"] = "dev-master"
     #result["minimum-stability"] = "dev"
+    result['config'] = {
+        'bin-dir' => "bin/"
+    }
     File.open(composer, 'w') {|f| f.write(JSON.pretty_generate(result)) }
 
     # AppKernel.php

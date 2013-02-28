@@ -26,6 +26,8 @@
         $bundles[] = new Kunstmaan\GeneratorBundle\KunstmaanGeneratorBundle();
         // KunstmaanNewRelicBundle
         $bundles[] = new Kunstmaan\NewRelicBundle\KunstmaanNewRelicBundle();
+        // KunstmaanBehatBundle
+        $bundles[] = new Kunstmaan\BehatBundle\KunstmaanBehatBundle();
         // LiipCacheControlBundle
         $bundles[] = new Liip\CacheControlBundle\LiipCacheControlBundle();
 
