@@ -6,11 +6,11 @@
         <exec executable="${basedir}/sync" failonerror="true" />
     </target>
 
-    <target name="build" depends="prepare,decodeParam,vendors"/>
+    <target name="build" depends="prepare,vendors"/>
 
     <target name="test" depends="lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,phpunit,phpcb,behat"/>
 
-    <target name="build-parallel" depends="prepare,decodeParam,vendors,lint,tools-parallel,phpunit,phpcb"/>
+    <target name="build-parallel" depends="prepare,vendors,lint,tools-parallel,phpunit,phpcb"/>
 
     <target name="tools-parallel" description="Run tools in parallel">
         <parallel threadCount="2">
@@ -172,12 +172,6 @@
     </exec>
     <exec executable="${basedir}/app/console" failonerror="true">
         <arg value="assetic:dump"/>
-    </exec>
-    </target>
-
-    <target name="decodeParam" description="Extract the parameters.ini">
-        <exec executable="${basedir}/param" failonerror="true">
-        <arg value="decode"/>
     </exec>
     </target>
 
