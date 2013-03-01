@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="coronadirect" default="build">
+<project name="MyProject" default="build">
 
     <target name="sync" description="Sync files and database from online">
         <exec executable="${basedir}/sync" failonerror="true" />
