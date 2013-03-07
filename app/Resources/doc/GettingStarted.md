@@ -2,6 +2,33 @@
 
 In this getting started guide we will guide you throug setting up a project like the [Kunstmaan Sandbox project](https://github.com/Kunstmaan/KunstmaanSandbox) but for your own website. We will use Vagrant to ensure an optimal development and test environment. This guide should be the same for OSX and Linux hosts.
 
+# One command to generate them all
+
+We offer you the ability to do all the below steps with just one command :
+
+```bash
+wget -s http://bundles.kunstmaan.be/generate/getting-started/ProjectName/prefix | bash
+```
+
+Replace the 'ProjectName' by your preferred name. This name will also be used to generate the Bundle, there is no need to add the 'Bundle' suffix, that's all been taken off.
+Replace the 'prefix' with the prefix you want your tables to have in the database. An underscore ('_') will be added to it.
+
+By default this will create a multi language setting for you. In case you do not need such a functionality, you can use the following command :
+
+```bash
+wget -s http://bundles.kunstmaan.be/generate/getting-started/ProjectName/prefix/single | bash
+```
+
+At the end, you only need to configure your parameters.yml (either manually or using the symfony configurator) and execute the following command :
+
+```bash
+./fullreload
+```
+
+After which you can go to '/admin' (for single language) or '/en/admin' (for multi language) to login to the admin using 'admin' as both username and password.
+
+# Step By Step
+
 ## Choosing a project name
 
 First off, just to make scripting the rest a little bit more easy, we will put the new project name in an environment variable.
