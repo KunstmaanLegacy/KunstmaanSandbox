@@ -9,9 +9,9 @@ We offer you the ability to do all the below steps with just one command :
 ```bash
 curl -s http://bundles.kunstmaan.be/generate/getting-started/Namespace/ProjectName/prefix | bash
 ```
-Replace the 'Namespace' with your preferred namespace. This is not the full bundle name as in 'Demo/TestBundle', but just the 'Demo' part.
-Replace the 'ProjectName' by your preferred name. This name will also be used to generate the Bundle, there is no need to add the 'Bundle' suffix, that's all been taken off.
-Replace the 'prefix' with the prefix you want your tables to have in the database. An underscore ('_') will be added to it.
+* Replace the 'Namespace' with your preferred namespace. This is not the full bundle name as in 'Demo/TestBundle', but just the 'Demo' part.
+* Replace the 'ProjectName' by your preferred name. This name will also be used to generate the Bundle, there is no need to add the 'Bundle' suffix, that's all been taken off.
+* Replace the 'prefix' with the prefix you want your tables to have in the database. An underscore ('_') will be added to it.
 
 By default this will create a multi language setting for you. In case you do not need such a functionality, you can use the following command :
 
