@@ -7,16 +7,16 @@ In this getting started guide we will guide you throug setting up a project like
 We offer you the ability to do all the below steps with just one command :
 
 ```bash
-wget -s http://bundles.kunstmaan.be/generate/getting-started/ProjectName/prefix | bash
+curl -s http://bundles.kunstmaan.be/generate/getting-started/Namespace/ProjectName/prefix | bash
 ```
-
+Replace the 'Namespace' with your preferred namespace. This is not the full bundle name as in 'Demo/TestBundle', but just the 'Demo' part.
 Replace the 'ProjectName' by your preferred name. This name will also be used to generate the Bundle, there is no need to add the 'Bundle' suffix, that's all been taken off.
 Replace the 'prefix' with the prefix you want your tables to have in the database. An underscore ('_') will be added to it.
 
 By default this will create a multi language setting for you. In case you do not need such a functionality, you can use the following command :
 
 ```bash
-wget -s http://bundles.kunstmaan.be/generate/getting-started/ProjectName/prefix/single | bash
+curl -s http://bundles.kunstmaan.be/generate/getting-started/Namespace/ProjectName/prefix/single | bash
 ```
 
 At the end, you only need to configure your parameters.yml (either manually or using the symfony configurator) and execute the following command :
