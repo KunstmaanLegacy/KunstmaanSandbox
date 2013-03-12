@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant::Config.run do |config|
-  config.vm.box = "symfony-quantal32"
-  config.vm.box_url = "https://dl.dropbox.com/u/597777/symfony-quantal32.box"
+  config.vm.box = "kunstmaan-vagrant-quantal64"
+  config.vm.box_url = "https://s3-eu-west-1.amazonaws.com/kunstmaan-vagrant/quantal64.box"
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
     chef.add_recipe("symfony-hosting::default")
