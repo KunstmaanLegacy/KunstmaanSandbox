@@ -44,6 +44,8 @@ if command == "install-bundles"
     requires["liip/cache-control-bundle"] =  "dev-master"
     requires["knplabs/knp-menu"] = "dev-master"
     requires["knplabs/knp-menu-bundle"] = "dev-master"
+    requires["kriswallsmith/assetic"] = "1.1.*@alpha"
+    requires["friendsofsymfony/user-bundle"] = "2.0.*@dev"
     result["minimum-stability"] = "stable"
     result['config'] = {
         'bin-dir' => "bin/"
