@@ -44,7 +44,7 @@ if command == "install-bundles"
     requires["liip/cache-control-bundle"] =  "dev-master"
     requires["knplabs/knp-menu"] = "dev-master"
     requires["knplabs/knp-menu-bundle"] = "dev-master"
-    #result["minimum-stability"] = "dev"
+    result["minimum-stability"] = "dev"
     result['config'] = {
         'bin-dir' => "bin/"
     }
