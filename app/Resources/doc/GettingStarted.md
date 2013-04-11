@@ -7,16 +7,19 @@ In this getting started guide we will guide you throug setting up a project like
 We offer you the ability to do all the below steps with just one command :
 
 ```bash
-curl -s http://bundles.kunstmaan.be/generate/getting-started/Namespace/ProjectName/prefix | bash
+curl -s http://bundles.kunstmaan.be/generate/ProjectName | bash
 ```
-* Replace the 'Namespace' with your preferred namespace. This is not the full bundle name as in 'Demo/TestBundle', but just the 'Demo' part.
-* Replace the 'ProjectName' by your preferred name. This name will also be used to generate the Bundle, there is no need to add the 'Bundle' suffix, that's all been taken off.
-* Replace the 'prefix' with the prefix you want your tables to have in the database. An underscore ('_') will be added to it.
+* Replace 'ProjectName' by your preferred name. This name will also be used to generate the Bundle, there is no need to add the 'Bundle' suffix, that's all been taken off.
 
-By default this will create a multi language setting for you. In case you do not need such a functionality, you can use the following command :
+By default this will create a multi language setting for you with namespace 'ProjectName' and a prefix 'projectname_' for your tables in the database. Note that it will install the latest available stable version. You can pass following parameters to change some behaviour:
+* prefix=generator_
+* version=2.1.7
+* lang=single
+
+The following example will install a single language site with version 2.1.7 and a prefix 'generator_' for the tables in the database:
 
 ```bash
-curl -s http://bundles.kunstmaan.be/generate/getting-started/Namespace/ProjectName/prefix/single | bash
+curl -s http://bundles.kunstmaan.be/generate/ProjectName?prefix=generator_&version=2.1.7&lang=single | bash
 ```
 
 At the end, you only need to configure your parameters.yml (either manually or using the symfony configurator) and execute the following command :
