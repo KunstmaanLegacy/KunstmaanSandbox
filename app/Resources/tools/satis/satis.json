@@ -1,0 +1,63 @@
+{
+    "name": "Kunstmaan Composer Proxy",
+    "homepage": "http://satis.kunstmaan.be",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packagist.org"
+        }
+    ],
+    "require": {
+        "symfony/symfony": "*",
+        "doctrine/orm": "*",
+        "doctrine/doctrine-bundle": "*",
+        "twig/extensions": "*",
+        "symfony/assetic-bundle": "*",
+        "symfony/swiftmailer-bundle": "*",
+        "symfony/monolog-bundle": "*",
+        "sensio/distribution-bundle": "*",
+        "sensio/framework-extra-bundle": "*",
+        "sensio/generator-bundle": "*",
+        "jms/security-extra-bundle": "*",
+        "jms/di-extra-bundle": "*",
+        "kriswallsmith/assetic": "*",
+        "kunstmaan/admin-bundle": "*",
+        "doctrine/doctrine-fixtures-bundle": "*",
+        "doctrine/data-fixtures": "*",
+        "kunstmaan/media-bundle": "*",
+        "stof/doctrine-extensions-bundle": "*",
+        "kunstmaan/pagepart-bundle": "*",
+        "kunstmaan/media-pagepart-bundle": "*",
+        "kunstmaan/form-bundle": "*",
+        "ddeboer/data-import-bundle": "*",
+        "ddeboer/data-import": "*",
+        "gregwar/form-bundle": "*",
+        "kunstmaan/adminlist-bundle": "*",
+        "white-october/pagerfanta-bundle": "*",
+        "pagerfanta/pagerfanta": "*",
+        "kunstmaan/node-bundle": "*",
+        "symfony-cmf/routing-extra-bundle": "*",
+        "symfony-cmf/routing": "*",
+        "kunstmaan/seo-bundle": "*",
+        "kunstmaan/generator-bundle": "*",
+        "kunstmaan/sentry-bundle": "*",
+        "raven/raven": "*",
+        "kunstmaan/utilities-bundle": "*",
+        "kunstmaan/newrelicbundle": "*",
+        "liip/cache-control-bundle": "*",
+        "knplabs/knp-menu": "*",
+        "knplabs/knp-menu-bundle": "*",
+        "twig/twig": "*",
+        "doctrine/dbal": "*",
+        "doctrine/common": "*",
+        "phpunit/phpunit": "*",
+        "swiftmailer/swiftmailer": "*",
+        "monolog/monolog": "*"
+    },
+    "archive": {
+        "directory": "dist",
+        "format": "tar",
+        "prefix-url": "http://satis.amos.kunstmaan.be",
+        "skip-dev": false
+    }
+}
