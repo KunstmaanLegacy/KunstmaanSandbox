@@ -34,7 +34,7 @@ security:
                 key:      0f9a62b0231d78a86b4e4a2f87bc032e95f44ebf
                 lifetime: 604800
                 path:     /
-                domain:   sandbox.kunstmaan.be
+                domain:   ~
 
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
