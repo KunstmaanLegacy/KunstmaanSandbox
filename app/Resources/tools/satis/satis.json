@@ -43,7 +43,6 @@
         "kunstmaan/seo-bundle": "*",
         "kunstmaan/utilities-bundle": "*",
         "liip/cache-control-bundle": "*",
-        "liip/imagine-bundle": "*",
         "monolog/monolog": "*",
         "pagerfanta/pagerfanta": "*",
         "raven/raven": "*",
