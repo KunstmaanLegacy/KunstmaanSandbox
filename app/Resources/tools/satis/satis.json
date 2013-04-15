@@ -65,7 +65,7 @@
     },
     "archive": {
         "directory": "dist",
-        "format": "tar",
+        "format": "zip",
         "prefix-url": "http://satis.amos.kunstmaan.be",
         "skip-dev": false
     }
