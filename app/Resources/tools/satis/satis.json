@@ -67,6 +67,6 @@
         "directory": "dist",
         "format": "zip",
         "prefix-url": "http://satis.kunstmaan.be",
-        "skip-dev": false
+        "skip-dev": true
     }
 }
