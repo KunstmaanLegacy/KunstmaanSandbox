@@ -7,7 +7,7 @@ In this getting started guide we will guide you throug setting up a project like
 We offer you the ability to do all the below steps with just one command :
 
 ```bash
-curl -s http://bundles.kunstmaan.be/generate/ProjectName | bash
+bash <(curl -s http://bundles.kunstmaan.be/generate/ProjectName)
 ```
 * Replace 'ProjectName' by your preferred name. This name will also be used to generate the Bundle, there is no need to add the 'Bundle' suffix, that's all been taken off.
 
@@ -19,7 +19,7 @@ By default this will create a multi language setting for you with namespace 'Pro
 The following example will install a single language site with version 2.1.7 and a prefix 'generator_' for the tables in the database:
 
 ```bash
-curl -s http://bundles.kunstmaan.be/generate/ProjectName?prefix=generator_&version=2.1.7&lang=single | bash
+bash <(curl -s http://bundles.kunstmaan.be/generate/ProjectName?prefix=generator_&version=2.1.7&lang=single)
 ```
 
 At the end, you only need to configure your parameters.yml (either manually or using the symfony configurator) and execute the following command :
