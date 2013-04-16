@@ -19,11 +19,11 @@ By default this will create a multi language setting for you with namespace 'Pro
 
 The following example will install a single language site with a bundlename OtherBundle, a version 2.1.7 and a prefix 'generator_' for the tables in the database:
 
+Note: If you pass a bundlename ending with Bundle it will take your bundlename. If you pass a bundlename that does not end with Bundle (note the capital B), it will append Bundle to your name.
+
 ```bash
 curl -s 'http://bundles.kunstmaan.be/generate/ProjectName?version=2.1.7&bundlename=OtherBundle&prefix=generator_&lang=single' | bash
 ```
-
-Note: If you pass a bundlename ending with Bundle it will take your bundlename. If you pass a bundlename that does not end with Bundle (note the capital B), it will append Bundle to your name.
 
 At the end, you only need to configure your parameters.yml (either manually or using the symfony configurator) and execute the following command :
 
