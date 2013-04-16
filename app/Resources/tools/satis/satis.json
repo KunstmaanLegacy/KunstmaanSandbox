@@ -25,6 +25,7 @@
         "doctrine/dbal": "*",
         "doctrine/orm": "*",
         "gregwar/form-bundle": "*",
+        "jdorn/sql-formatter": "*",
         "jms/di-extra-bundle": "*",
         "jms/security-extra-bundle": "*",
         "knplabs/knp-menu": "*",
