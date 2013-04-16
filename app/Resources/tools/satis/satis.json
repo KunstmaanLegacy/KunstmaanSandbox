@@ -28,6 +28,7 @@
         "imagine/imagine": "*",
         "jdorn/sql-formatter": "*",
         "jms/di-extra-bundle": "*",
+        "jms/metadata": "*",
         "jms/security-extra-bundle": "*",
         "knplabs/knp-menu": "*",
         "knplabs/knp-menu-bundle": "*",
