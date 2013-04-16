@@ -74,6 +74,7 @@
         "stof/doctrine-extensions-bundle": "*",
         "swiftmailer/swiftmailer": "*",
         "symfony/assetic-bundle": "*",
+        "symfony/framework-standard-edition": "*",
         "symfony/monolog-bundle": "*",
         "symfony/swiftmailer-bundle": "*",
         "symfony/symfony": "*",
