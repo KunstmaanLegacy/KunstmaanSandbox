@@ -46,17 +46,11 @@
         <mkdir dir="${basedir}/app/cache"/>
     </target>
 
-    <target name="lint">
-        <apply executable="php" failonerror="true">
-            <arg value="-l"/>
-            <fileset dir="${basedir}/src">
-                <include name="**/*.php"/>
-            </fileset>
-            <fileset dir="${basedir}/app">
-                <include name="**/*.php"/>
-                <exclude name="cache/**/*.php"/>
-            </fileset>
-        </apply>
+    <target name="lint" description="Perform syntax check of sourcecode files">
+        <exec executable="bash" failonerror="true">
+            <arg value="-c" />
+            <arg value="find -L ${basedir}/src ${basedir}/app -name *.php | grep -v '^${basedir}/app/cache' | xargs -n 1 -P 4 php -l" />
+        </exec>
     </target>
 
     <target name="phploc" description="Measure project size using PHPLOC">
