@@ -48,3 +48,4 @@ security:
         - { path: ^/admin/settings, role: ROLE_ADMIN }
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/admin, role: ROLE_ADMIN }
+        - { path: ^/preview, role: ROLE_ADMIN }
