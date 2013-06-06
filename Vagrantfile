@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant::Config.run do |config|
-  config.vm.box = "kunstmaan-vagrant-quantal64"
-  config.vm.box_url = "https://s3-eu-west-1.amazonaws.com/kunstmaan-vagrant/quantal64.box"
+  config.vm.box = "kunstmaan-vagrant-raring64"
+  config.vm.box_url = "https://s3-eu-west-1.amazonaws.com/kunstmaan-vagrant/raring64.box"
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
     chef.add_recipe("symfony-hosting::default")
@@ -19,5 +19,5 @@ Vagrant::Config.run do |config|
   config.vm.network :hostonly, "33.33.33.33"
   config.ssh.forward_agent = true
   config.vm.forward_port 80, 8484
-  config.vm.share_folder("v-root", "/vagrant", ".", :nfs => true, :extra => 'dmode=777,fmode=777')
+  config.vm.share_folder("vagrant-root", "/vagrant", ".", :nfs => true, :extra => 'dmode=777,fmode=777')
 end
