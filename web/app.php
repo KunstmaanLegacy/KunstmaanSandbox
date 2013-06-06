@@ -14,7 +14,7 @@ require_once __DIR__.'/../app/AppKernel.php';
 if (stripos(gethostname(), 'productionhostnamefixme.com') !== false){
     $kernel = new AppKernel('prod', false);
 } else {
-    $kernel = new AppKernel('staging', false);
+    $kernel = new AppKernel('dev', false);
 }
 $kernel->loadClassCache();
 if (!isset($_SERVER['HTTP_SURROGATE_CAPABILITY']) || false === strpos($_SERVER['HTTP_SURROGATE_CAPABILITY'], 'ESI/1.0')) {
