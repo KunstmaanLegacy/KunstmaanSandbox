@@ -3,7 +3,7 @@
 
 Vagrant::Config.run do |config|
   config.vm.box = "kunstmaan-vagrant-raring64"
-  config.vm.box_url = "https://s3-eu-west-1.amazonaws.com/kunstmaan-vagrant/raring64.box"
+  config.vm.box_url = "http://vagrant.kunstmaan.be/raring64.box"
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
     chef.add_recipe("symfony-hosting::default")
