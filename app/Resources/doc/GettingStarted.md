@@ -14,15 +14,15 @@ curl -s http://bundles.kunstmaan.be/generate/ProjectName | bash
 By default this will create a multi language setting for you with namespace 'ProjectName', bundle name 'WebsiteBundle' and a prefix 'projectname_' for your tables in the database. Note that it will install the latest available stable version. You can pass following parameters to change some behaviour:
 * bundlename=OtherBundle
 * prefix=generator_
-* version=2.1.7
+* version=2.2.2
 * lang=single
 
-The following example will install a single language site with a bundlename OtherBundle, a version 2.1.7 and a prefix 'generator_' for the tables in the database:
+The following example will install a single language site with a bundlename OtherBundle, a version 2.2.2 and a prefix 'generator_' for the tables in the database:
 
 Note: If you pass a bundlename ending with Bundle it will take your bundlename. If you pass a bundlename that does not end with Bundle (note the capital B), it will append Bundle to your name.
 
 ```bash
-curl -s 'http://bundles.kunstmaan.be/generate/ProjectName?version=2.1.7&bundlename=OtherBundle&prefix=generator_&lang=single' | bash
+curl -s 'http://bundles.kunstmaan.be/generate/ProjectName?version=2.2.2&bundlename=OtherBundle&prefix=generator_&lang=single' | bash
 ```
 
 At the end, you only need to configure your parameters.yml (either manually or using the symfony configurator) and execute the following command :
@@ -58,7 +58,7 @@ export TABLEPREFIX="test_"
 Next up, basic project structure using [Composer](http://getcomposer.org/). We assume you have got [Composer installed globally like documented in the composer install guide](http://getcomposer.org/doc/00-intro.md#globally) and you know where you want the project folder so it works in your webserver.
 
 ```bash
-composer create-project --no-interaction symfony/framework-standard-edition ./$PROJECTNAME 2.1.7
+composer create-project --no-interaction symfony/framework-standard-edition ./$PROJECTNAME 2.2.2
 cd $PROJECTNAME
 ```
 
