@@ -37,3 +37,9 @@ KunstmaanFormBundle:
     requirements:
         _locale: %requiredlocales%
 
+# KunstmaanSitemapBundle
+KunstmaanSitemapBundle:
+    resource: "@KunstmaanSitemapBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/
+    requirements:
+        _locale: %requiredlocales%
