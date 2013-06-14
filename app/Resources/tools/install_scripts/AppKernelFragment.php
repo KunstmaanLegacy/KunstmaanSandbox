@@ -1,4 +1,3 @@
-        $bundles[] = new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle();
         $bundles[] = new Kunstmaan\UtilitiesBundle\KunstmaanUtilitiesBundle();
         // KunstmaanNodeBundle
         $bundles[] = new Kunstmaan\NodeBundle\KunstmaanNodeBundle();
@@ -13,7 +12,7 @@
         $bundles[] = new FOS\UserBundle\FOSUserBundle();
         $bundles[] = new Knp\Bundle\MenuBundle\KnpMenuBundle();
         $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
-        $bundles[] = new Kunstmaan\AdminBundle\KunstmaanAdminBundle();        
+        $bundles[] = new Kunstmaan\AdminBundle\KunstmaanAdminBundle();
         // KunstmaanPagePartBundle
         $bundles[] = new Kunstmaan\PagePartBundle\KunstmaanPagePartBundle();
         // KunstmaanMediaPagePartBundle
@@ -23,12 +22,18 @@
         // KunstmaanAdminListBundle
         $bundles[] = new Kunstmaan\AdminListBundle\KunstmaanAdminListBundle();
         $bundles[] = new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle();
+        // KunstmaanSearchBundle
+        $bundles[] = new Kunstmaan\SearchBundle\KunstmaanSearchBundle();
+        // KunstmaanNodeSearchBundle
+        $bundles[] = new Kunstmaan\NodeSearchBundle\KunstmaanNodeSearchBundle();
         // KunstmaanGeneratorBundle
         $bundles[] = new Kunstmaan\GeneratorBundle\KunstmaanGeneratorBundle();
         // KunstmaanNewRelicBundle
         $bundles[] = new Kunstmaan\NewRelicBundle\KunstmaanNewRelicBundle();
         // KunstmaanBehatBundle
         $bundles[] = new Kunstmaan\BehatBundle\KunstmaanBehatBundle();
+        // KunstmaanSitemapBundle
+        $bundles[] = new Kunstmaan\SitemapBundle\KunstmaanSitemapBundle();
         // LiipCacheControlBundle
         $bundles[] = new Liip\CacheControlBundle\LiipCacheControlBundle();
 
