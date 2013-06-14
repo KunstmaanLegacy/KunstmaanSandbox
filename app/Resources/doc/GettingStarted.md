@@ -1,6 +1,6 @@
 # Getting Started Guide
 
-In this getting started guide we will guide you throug setting up a project like the [Kunstmaan Sandbox project](https://github.com/Kunstmaan/KunstmaanSandbox) but for your own website. We will use Vagrant to ensure an optimal development and test environment. This guide should be the same for OSX and Linux hosts.
+In this getting started guide we will guide you through setting up a project like the [Kunstmaan Sandbox project](https://github.com/Kunstmaan/KunstmaanSandbox) but for your own website. We will use Vagrant to ensure an optimal development and test environment. This guide should be the same for OSX and Linux hosts.
 
 # One command to generate them all
 
