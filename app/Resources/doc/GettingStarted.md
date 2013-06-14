@@ -45,6 +45,13 @@ export NAMESPACE="YOUR COMPANY NAME HERE, NO SPACES OR SPECIAL CHARACTERS, START
 export BUNDLENAME="THE NAME OF YOUR WEBSITE BUNDLE, ENDING WITH Bundle"
 export TABLEPREFIX="THE TABLE PREFIX YOU WANT FOR YOUR TABLES ENDING WITH AN UNDERSCORE"
 ```
+Something like :
+```bash
+export PROJECTNAME="testproject"
+export NAMESPACE="Demo"
+export BUNDLENAME="WebsiteBundle"
+export TABLEPREFIX="test_"
+```
 
 ## Basic project structure using Composer
 
