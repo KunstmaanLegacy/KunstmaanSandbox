@@ -69,7 +69,7 @@ elsif command == "configure-bundles"
     projectname = ARGV[2]
     parametersyml = YAML.load_file(parametersymlpath)
     params = parametersyml["parameters"]
-    params["searchindexprefix"] = projectname_
+    params["searchindexprefix"] = projectname
     params["sentry.dsn"] = "https://XXXXXXXX:XXXXXXXX@app.getsentry.com/XXXX"
     params["cdnpath"] = ""
     params["requiredlocales"] = "en"
