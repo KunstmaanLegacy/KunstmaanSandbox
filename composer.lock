@@ -164,9 +164,9 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -847,7 +847,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1205,7 +1205,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "Knplabs",
+                    "name": "KnpLabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -1564,12 +1564,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanMediaBundle.git",
-                "reference": "e499c2bef1bf12f16563549231d429897ed98faf"
+                "reference": "755e8fe108d2d84959a4f96099d82c6400055384"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Kunstmaan/KunstmaanMediaBundle/zipball/e499c2bef1bf12f16563549231d429897ed98faf",
-                "reference": "e499c2bef1bf12f16563549231d429897ed98faf",
+                "url": "https://api.github.com/repos/Kunstmaan/KunstmaanMediaBundle/zipball/755e8fe108d2d84959a4f96099d82c6400055384",
+                "reference": "755e8fe108d2d84959a4f96099d82c6400055384",
                 "shasum": ""
             },
             "require": {
@@ -1608,7 +1608,7 @@
                 "kunstmaan",
                 "media"
             ],
-            "time": "2013-04-11 10:23:46"
+            "time": "2013-06-06 11:55:17"
         },
         {
             "name": "kunstmaan/media-pagepart-bundle",
@@ -1703,12 +1703,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle.git",
-                "reference": "a7e065b583c427b1e81f5b61cbd7197e9506713e"
+                "reference": "v2.2.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Kunstmaan/KunstmaanNodeBundle/zipball/a7e065b583c427b1e81f5b61cbd7197e9506713e",
-                "reference": "a7e065b583c427b1e81f5b61cbd7197e9506713e",
+                "url": "https://api.github.com/repos/Kunstmaan/KunstmaanNodeBundle/zipball/v2.2.5",
+                "reference": "v2.2.5",
                 "shasum": ""
             },
             "require": {
@@ -1746,7 +1746,7 @@
                 "kunstmaan",
                 "tree"
             ],
-            "time": "2013-05-31 12:19:12"
+            "time": "2013-06-11 11:20:12"
         },
         {
             "name": "kunstmaan/pagepart-bundle",
@@ -2114,12 +2114,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/whiteoctober/Pagerfanta.git",
-                "reference": "55544f3af5b409d4ee9d618934f4d92ef874672c"
+                "reference": "1a3cb8addb92df6396e59a2c44c3b7f216b4218a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/whiteoctober/Pagerfanta/zipball/55544f3af5b409d4ee9d618934f4d92ef874672c",
-                "reference": "55544f3af5b409d4ee9d618934f4d92ef874672c",
+                "url": "https://api.github.com/repos/whiteoctober/Pagerfanta/zipball/1a3cb8addb92df6396e59a2c44c3b7f216b4218a",
+                "reference": "1a3cb8addb92df6396e59a2c44c3b7f216b4218a",
                 "shasum": ""
             },
             "require": {
@@ -2168,7 +2168,7 @@
                 "paginator",
                 "paging"
             ],
-            "time": "2013-05-16 12:46:53"
+            "time": "2013-06-13 22:25:28"
         },
         {
             "name": "raven/raven",
@@ -2176,12 +2176,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/getsentry/raven-php.git",
-                "reference": "0.6.0"
+                "reference": "ed1ffe63398c3feb85bd1a43ff0eb538a3db8521"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getsentry/raven-php/zipball/0.6.0",
-                "reference": "0.6.0",
+                "url": "https://api.github.com/repos/getsentry/raven-php/zipball/ed1ffe63398c3feb85bd1a43ff0eb538a3db8521",
+                "reference": "ed1ffe63398c3feb85bd1a43ff0eb538a3db8521",
                 "shasum": ""
             },
             "require": {
@@ -2215,7 +2215,7 @@
                 "log",
                 "logging"
             ],
-            "time": "2013-06-05 21:27:00"
+            "time": "2013-06-15 19:06:46"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -2573,7 +2573,7 @@
             "authors": [
                 {
                     "name": "Symfony CMF Community",
-                    "homepage": "https://github.com/symfony-cmf/RoutingBundle/contributors"
+                    "homepage": "https://github.com/symfony-cmf/RoutingExtraBundle/contributors"
                 }
             ],
             "description": "Symfony RoutingExtraBundle",
@@ -2708,17 +2708,17 @@
         },
         {
             "name": "symfony/property-access",
-            "version": "v2.3.0",
+            "version": "v2.3.1",
             "target-dir": "Symfony/Component/PropertyAccess",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/PropertyAccess.git",
-                "reference": "v2.3.0-RC1"
+                "reference": "v2.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/PropertyAccess/zipball/v2.3.0-RC1",
-                "reference": "v2.3.0-RC1",
+                "url": "https://api.github.com/repos/symfony/PropertyAccess/zipball/v2.3.1",
+                "reference": "v2.3.1",
                 "shasum": ""
             },
             "require": {
@@ -2913,16 +2913,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig-extensions.git",
-                "reference": "v1.0.0"
+                "reference": "4239a9b107c17547da91d76005c996f08e164ae8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/v1.0.0",
-                "reference": "v1.0.0",
+                "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/4239a9b107c17547da91d76005c996f08e164ae8",
+                "reference": "4239a9b107c17547da91d76005c996f08e164ae8",
                 "shasum": ""
             },
             "require": {
-                "twig/twig": "1.*"
+                "twig/twig": ">=1.0,<2.0"
             },
             "type": "library",
             "extra": {
@@ -2952,7 +2952,7 @@
                 "i18n",
                 "text"
             ],
-            "time": "2013-02-28 14:21:30"
+            "time": "2013-06-07 09:36:35"
         },
         {
             "name": "twig/twig",
