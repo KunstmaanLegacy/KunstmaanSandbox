@@ -27,3 +27,7 @@ KunstmaanFormBundle:
     resource: "@KunstmaanFormBundle/Resources/config/routing.yml"
     prefix:   /
 
+# KunstmaanSitemapBundle
+KunstmaanSitemapBundle:
+    resource: "@KunstmaanSitemapBundle/Resources/config/routing.yml"
+    prefix: /
