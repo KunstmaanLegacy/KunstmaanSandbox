@@ -90,7 +90,7 @@ Now browse to [http://localhost:8000/config.php](http://localhost:8000/config.ph
 Version control is vital to a developer, so we get everything setup for using GIT.
 
 ```bash
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/.gitignore)" > .gitignore
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/symfony-2.3/.gitignore)" > .gitignore
 rm -Rf .git
 git init
 git add .
