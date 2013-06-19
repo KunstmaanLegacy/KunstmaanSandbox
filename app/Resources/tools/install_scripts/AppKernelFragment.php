@@ -2,7 +2,7 @@
         // KunstmaanNodeBundle
         $bundles[] = new Kunstmaan\NodeBundle\KunstmaanNodeBundle();
         $bundles[] = new Kunstmaan\SeoBundle\KunstmaanSeoBundle();
-        $bundles[] = new Symfony\Cmf\Bundle\RoutingExtraBundle\SymfonyCmfRoutingExtraBundle();
+        $bundles[] = new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle();
         // KunstmaanMediaBundle
         $bundles[] = new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle();
         $bundles[] = new Liip\ImagineBundle\LiipImagineBundle();

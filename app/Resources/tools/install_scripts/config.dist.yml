@@ -20,8 +20,9 @@ framework:
     validation:      { enable_annotations: true }
     templating:      { engines: ['twig'], assets_version: will_be_changed_by_capifony }
     default_locale:  %locale%
-    trust_proxy_headers: false # Whether or not the Request object should trust proxy headers (X_FORWARDED_FOR/HTTP_CLIENT_IP)
+    trusted_proxies: ~
     session:         ~
+    fragments:       ~
         #storage_id: session.storage.pdo ## disabled because you need to manually create the table after fullreload. fix could be creating an entity for this table. see symfony.com/doc/current/cookbook/configuration/pdo_session_storage.html
 
 # Twig Configuration
