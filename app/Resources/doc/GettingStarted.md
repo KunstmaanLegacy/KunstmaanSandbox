@@ -58,7 +58,7 @@ export TABLEPREFIX="test_"
 Next up, basic project structure using [Composer](http://getcomposer.org/). We assume you have got [Composer installed globally like documented in the composer install guide](http://getcomposer.org/doc/00-intro.md#globally) and you know where you want the project folder so it works in your webserver.
 
 ```bash
-composer create-project --no-interaction symfony/framework-standard-edition ./$PROJECTNAME 2.2.2
+composer create-project --no-interaction symfony/framework-standard-edition ./$PROJECTNAME 2.2.3
 cd $PROJECTNAME
 ```
 
