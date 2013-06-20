@@ -30,7 +30,6 @@ twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
     globals:
-        languagechooser_languages: %languagechooser%
         websitetitle: %websitetitle%
         defaultlocale: %defaultlocale%
         requiredlocales: %requiredlocales%
