@@ -1,3 +1,4 @@
+        $bundles[] = new JMS\SecurityExtraBundle\JMSSecurityExtraBundle();
         $bundles[] = new Kunstmaan\UtilitiesBundle\KunstmaanUtilitiesBundle();
         // KunstmaanNodeBundle
         $bundles[] = new Kunstmaan\NodeBundle\KunstmaanNodeBundle();
