@@ -16,6 +16,7 @@ if command == "install-bundles"
     buffer = open(composer).read
     result = JSON.parse(buffer)
     requires = result['require']
+    requires["symfony/assetic-bundle"] =  "2.3.*"
     requires["ddeboer/data-import"] =  "dev-master"
     requires["ddeboer/data-import-bundle"] =  "dev-master"
     requires["doctrine/data-fixtures"] =  "1.0.*@dev"
