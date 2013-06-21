@@ -9,7 +9,7 @@ We offer you the ability to do all the below steps with just one command :
 ```bash
 curl -s http://bundles.kunstmaan.be/generate/ProjectName | bash
 ```
-* Replace 'ProjectName' by your preferred name. This name will also be used to generate the Bundle, there is no need to add the 'Bundle' suffix, that's all been taken off.
+* Replace 'ProjectName' by your preferred name. This name will also be used to generate the Bundle, there is no need to add the 'Bundle' suffix, that's all been taken care off.
 
 By default this will create a multi language setting for you with namespace 'ProjectName', bundle name 'WebsiteBundle' and a prefix 'projectname_' for your tables in the database. Note that it will install the latest available stable version. You can pass following parameters to change some behaviour:
 * bundlename=WebsiteBundle
