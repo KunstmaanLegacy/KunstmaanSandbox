@@ -36,6 +36,8 @@
         $bundles[] = new Kunstmaan\BehatBundle\KunstmaanBehatBundle();
         // KunstmaanSitemapBundle
         $bundles[] = new Kunstmaan\SitemapBundle\KunstmaanSitemapBundle();
+        // KunstmaanArticleBundle
+        $bundles[] = new Kunstmaan\ArticleBundle\KunstmaanArticleBundle();
         // LiipCacheControlBundle
         $bundles[] = new Liip\CacheControlBundle\LiipCacheControlBundle();
 
