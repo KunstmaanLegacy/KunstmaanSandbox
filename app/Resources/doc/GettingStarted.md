@@ -15,6 +15,7 @@ By default this will create a multi language setting for you with namespace 'Pro
 * bundlename=WebsiteBundle
 * prefix=generator_
 * version=2.3
+** Version 2.2 is also supported
 * lang=single
 
 The following example will install a single language site with a bundlename WebsiteBundle, a Symfony version 2.3 and a prefix 'generator_' for the tables in the database:
