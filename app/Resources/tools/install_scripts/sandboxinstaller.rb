@@ -51,6 +51,9 @@ if command == "install-bundles"
     requires["kunstmaan/seo-bundle"] =  "dev-master"
     requires["kunstmaan/sitemap-bundle"] = "dev-master"
     requires["kunstmaan/utilities-bundle"] = "dev-master"
+    # Use dev until stable release is available
+    requires["symfony-cmf/routing-bundle"] = "1.1.0-beta1@dev",
+    requires["symfony-cmf/routing"] = "1.1.*@dev"
     result["minimum-stability"] = "stable"
     result['config'] = {
         'bin-dir' => "bin/"
