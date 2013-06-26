@@ -113,9 +113,9 @@ gem install json  #when ruby is installed as root you need to sudo here
 ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/sandboxinstaller.rb').read" install-bundles composer.json app/AppKernel.php
 ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/sandboxinstaller.rb').read" configure-bundles app/config/parameters.yml $PROJECTNAME
 cp app/config/parameters.yml app/config/parameters.yml.dist
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/config.dist.yml)" >> app/config/config.yml
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/behat.yml-dist)" >> behat.yml-dist
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/behat.yml-dist)" >> behat.yml
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/config.dist.yml)" > app/config/config.yml
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/behat.yml-dist)" > behat.yml-dist
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/behat.yml-dist)" > behat.yml
 curl http://www.kunstmaan.be/html/2010/favicon.ico -o web/favicon.ico
 mkdir -p web/uploads/media
 sudo chown -R $PROJECTNAME web/uploads
