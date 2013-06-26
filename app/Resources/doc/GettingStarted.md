@@ -9,20 +9,20 @@ We offer you the ability to do all the below steps with just one command :
 ```bash
 curl -s http://bundles.kunstmaan.be/generate/ProjectName | bash
 ```
-* Replace 'ProjectName' by your preferred name. This name will also be used to generate the Bundle, there is no need to add the 'Bundle' suffix, that's all been taken care off.
+* Replace 'ProjectName' by your preferred name. This name will also be used to generate the Bundle, there is no need to add the 'Bundle' suffix, that's all been taken off.
 
 By default this will create a multi language setting for you with namespace 'ProjectName', bundle name 'WebsiteBundle' and a prefix 'projectname_' for your tables in the database. Note that it will install the latest available stable version. You can pass following parameters to change some behaviour:
 * bundlename=WebsiteBundle
 * prefix=generator_
-* version=2.2
+* version=2.3
 * lang=single
 
-The following example will install a single language site with a bundlename WebsiteBundle, a version 2.2 Symfony and a prefix 'generator_' for the tables in the database:
+The following example will install a single language site with a bundlename WebsiteBundle, a Symfony version 2.3 and a prefix 'generator_' for the tables in the database:
 
 Note: If you pass a bundlename ending with Bundle it will take your bundlename. If you pass a bundlename that does not end with Bundle (note the capital B), it will append Bundle to your name.
 
 ```bash
-curl -s 'http://bundles.kunstmaan.be/generate/ProjectName?version=2.2&bundlename=WebsiteBundle&prefix=generator_&lang=single' | bash
+curl -s 'http://bundles.kunstmaan.be/generate/ProjectName?version=2.3&bundlename=WebsiteBundle&prefix=generator_&lang=single' | bash
 ```
 
 At the end, you only need to configure your parameters.yml (either manually or using the symfony configurator) and execute the following command :
@@ -58,7 +58,7 @@ export TABLEPREFIX="test_"
 Next up, basic project structure using [Composer](http://getcomposer.org/). We assume you have got [Composer installed globally like documented in the composer install guide](http://getcomposer.org/doc/00-intro.md#globally) and you know where you want the project folder so it works in your webserver.
 
 ```bash
-composer create-project --no-interaction symfony/framework-standard-edition ./$PROJECTNAME 2.2.3
+composer create-project --no-interaction symfony/framework-standard-edition ./$PROJECTNAME 2.3.1
 cd $PROJECTNAME
 ```
 
@@ -70,7 +70,7 @@ The Symfony standard distribution contains a demo bundle. We need to remove it f
 rm -Rf src/Acme/
 grep -v "Acme" app/AppKernel.php > app/AppKernel.php.tmp
 mv app/AppKernel.php.tmp app/AppKernel.php
-grep "wdt\|profiler\|configurator\|main\|routing" app/config/routing_dev.yml > app/config/routing_dev.yml.tmp
+grep "wdt\|profiler\|configurator\|main\|routing" app/config/routing_dev.yml | grep -vi "acme" > app/config/routing_dev.yml.tmp
 mv app/config/routing_dev.yml.tmp app/config/routing_dev.yml
 rm -Rf web/bundles/acmedemo
 ```
@@ -90,7 +90,7 @@ Now browse to [http://localhost:8000/config.php](http://localhost:8000/config.ph
 Version control is vital to a developer, so we get everything setup for using GIT.
 
 ```bash
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/2.2/.gitignore)" > .gitignore
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/.gitignore)" > .gitignore
 rm -Rf .git
 git init
 git add .
@@ -102,18 +102,19 @@ git commit -a -m "Symfony base install"
 In this phase we will install the Kunstmaan Bundles and their dependencies, and we will configure the kernel, config, routing and security files.
 
 ```bash
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/2.2/app/Resources/tools/install_scripts/app.php)" | sed s/sf2/$PROJECTNAME/ > web/app.php
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/2.2/app/Resources/tools/install_scripts/app_test.php)" | sed s/sf2/$PROJECTNAME/ > web/app_test.php
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/app.php)" | sed s/sf2/$PROJECTNAME/ > web/app.php
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/app_test.php)" | sed s/sf2/$PROJECTNAME/ > web/app_test.php
 mkdir -p app/Resources/tools/java
 curl -L# http://github.com/downloads/Kunstmaan/KunstmaanSandbox/yuicompressor-2.4.7.jar -o app/Resources/tools/java/yuicompressor-2.4.7.jar
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/2.2/app/Resources/tools/install_scripts/fullreload)" > fullreload
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/fullreload)" > fullreload
 chmod a+x fullreload
 gem install json  #when ruby is installed as root you need to sudo here
-ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/2.2/app/Resources/tools/install_scripts/sandboxinstaller.rb').read" install-bundles composer.json app/AppKernel.php
-ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/2.2/app/Resources/tools/install_scripts/sandboxinstaller.rb').read" configure-bundles app/config/parameters.yml $PROJECTNAME
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/2.2/app/Resources/tools/install_scripts/config.dist.yml)" >> app/config/config.yml
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/2.2/app/Resources/tools/install_scripts/behat.yml-dist)" >> behat.yml-dist
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/2.2/app/Resources/tools/install_scripts/behat.yml-dist)" >> behat.yml
+ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/sandboxinstaller.rb').read" install-bundles composer.json app/AppKernel.php
+ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/sandboxinstaller.rb').read" configure-bundles app/config/parameters.yml $PROJECTNAME
+cp app/config/parameters.yml app/config/parameters.yml.dist
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/config.dist.yml)" >> app/config/config.yml
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/behat.yml-dist)" >> behat.yml-dist
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/behat.yml-dist)" >> behat.yml
 curl http://www.kunstmaan.be/html/2010/favicon.ico -o web/favicon.ico
 mkdir -p web/uploads/media
 sudo chown -R $PROJECTNAME web/uploads
@@ -124,16 +125,16 @@ sudo chown -R $PROJECTNAME web/uploads
 for a single-language-website:
 
 ```bash
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/2.2/app/Resources/tools/install_scripts/routing-singlelang.dist.yml)" > app/config/routing.yml
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/2.2/app/Resources/tools/install_scripts/security-singlelang.dist.yml)" | sed s/sandbox/$PROJECTNAME/ > app/config/security.yml
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/routing-singlelang.dist.yml)" > app/config/routing.yml
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/security-singlelang.dist.yml)" | sed s/sandbox/$PROJECTNAME/ > app/config/security.yml
 ```
 
 for a multi-language-website:
 
 ```bash
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/2.2/app/Resources/tools/install_scripts/routing-multilang.dist.yml)" > app/config/routing.yml
-echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/2.2/app/Resources/tools/install_scripts/security-multilang.dist.yml)" | sed s/sandbox/$PROJECTNAME/ > app/config/security.yml
-ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/2.2/app/Resources/tools/install_scripts/sandboxinstaller.rb').read" configure-multilanguage app/config/parameters.yml $PROJECTNAME
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/routing-multilang.dist.yml)" > app/config/routing.yml
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/security-multilang.dist.yml)" | sed s/sandbox/$PROJECTNAME/ > app/config/security.yml
+ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/sandboxinstaller.rb').read" configure-multilanguage app/config/parameters.yml $PROJECTNAME
 ```
 
 ```bash

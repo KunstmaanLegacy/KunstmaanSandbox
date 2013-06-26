@@ -1,8 +1,10 @@
+        $bundles[] = new JMS\SecurityExtraBundle\JMSSecurityExtraBundle();
+        $bundles[] = new JMS\AopBundle\JMSAopBundle();
         $bundles[] = new Kunstmaan\UtilitiesBundle\KunstmaanUtilitiesBundle();
         // KunstmaanNodeBundle
         $bundles[] = new Kunstmaan\NodeBundle\KunstmaanNodeBundle();
         $bundles[] = new Kunstmaan\SeoBundle\KunstmaanSeoBundle();
-        $bundles[] = new Symfony\Cmf\Bundle\RoutingExtraBundle\SymfonyCmfRoutingExtraBundle();
+        $bundles[] = new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle();
         // KunstmaanMediaBundle
         $bundles[] = new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle();
         $bundles[] = new Liip\ImagineBundle\LiipImagineBundle();
@@ -34,6 +36,8 @@
         $bundles[] = new Kunstmaan\BehatBundle\KunstmaanBehatBundle();
         // KunstmaanSitemapBundle
         $bundles[] = new Kunstmaan\SitemapBundle\KunstmaanSitemapBundle();
+        // KunstmaanArticleBundle
+        $bundles[] = new Kunstmaan\ArticleBundle\KunstmaanArticleBundle();
         // LiipCacheControlBundle
         $bundles[] = new Liip\CacheControlBundle\LiipCacheControlBundle();
 
