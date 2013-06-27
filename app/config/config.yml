@@ -1,11 +1,6 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
-    - { resource: @KunstmaanMediaBundle/Resources/config/config.yml }
-    - { resource: @KunstmaanAdminBundle/Resources/config/config.yml }
-    - { resource: @KunstmaanNodeBundle/Resources/config/config.yml }
-    - { resource: @KunstmaanFormBundle/Resources/config/config.yml }
-    - { resource: @KunstmaanAdminListBundle/Resources/config/config.yml }
 
 framework:
     esi:             true
@@ -19,7 +14,7 @@ framework:
     validation:      { enable_annotations: true }
     templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
     default_locale:  %locale%
-    trust_proxy_headers: false # Whether or not the Request object should trust proxy headers (X_FORWARDED_FOR/HTTP_CLIENT_IP)
+    trusted_proxies: ~
     session:         ~
         #storage_id: session.storage.pdo ## disabled because you need to manually create the table after fullreload. fix could be creating an entity for this table. see symfony.com/doc/current/cookbook/configuration/pdo_session_storage.html
 
