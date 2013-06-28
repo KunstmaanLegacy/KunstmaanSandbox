@@ -60,7 +60,7 @@ if command == "install-bundles"
     # AppKernel.php
     appk = File.read(appkernel)
     if not appk.include? "Kunstmaan"
-        buffer = open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/master/app/Resources/tools/install_scripts/AppKernelFragment.php').read
+        buffer = open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/2.2/app/Resources/tools/install_scripts/AppKernelFragment.php').read
         replaced = appk.gsub("return $bundles;", buffer)
         File.open(appkernel, 'w') {|f| f.write(replaced) }
     else
