@@ -2,6 +2,15 @@
 
 In this getting started guide we will guide you through setting up a project like the [Kunstmaan Sandbox project](https://github.com/Kunstmaan/KunstmaanSandbox) but for your own website. We will use Vagrant to ensure an optimal development and test environment. This guide should be the same for OSX and Linux hosts.
 
+Dependencies :
+
+* bower
+* grunt
+* grunt-cli
+* java
+* node.js
+* ruby
+
 # One command to generate them all
 
 We offer you the ability to do all the below steps with just one command :
@@ -45,7 +54,7 @@ export PROJECTNAME="YOUR PROJECT NAME HERE, NO SPACES OR SPECIAL CHARACTERS"
 export NAMESPACE="YOUR COMPANY NAME HERE, NO SPACES OR SPECIAL CHARACTERS, STARTING WITH A CAPITAL LETTER"
 export BUNDLENAME="THE NAME OF YOUR WEBSITE BUNDLE, ENDING WITH Bundle"
 export TABLEPREFIX="THE TABLE PREFIX YOU WANT FOR YOUR TABLES ENDING WITH AN UNDERSCORE"
-export VERSION="SYMFONY VERSION, CORRESPONDS WITH THE SANDBOX BRANCH [2.2, 2.3]"
+export VERSION="THE SANDBOX BRANCH/VERSION [master, 2.2, 2.3]"
 ```
 Something like :
 ```bash
@@ -118,6 +127,9 @@ cp app/config/parameters.yml app/config/parameters.yml.dist
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/$VERSION/app/Resources/tools/install_scripts/config.dist.yml)" > app/config/config.yml
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/$VERSION/app/Resources/tools/install_scripts/behat.yml-dist)" > behat.yml-dist
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/$VERSION/app/Resources/tools/install_scripts/behat.yml-dist)" > behat.yml
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/$VERSION/app/Resources/tools/install_scripts/bower/.bowerrc)" > .bowerrc
+echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/$VERSION/app/Resources/tools/install_scripts/bower/bower.json)" > bower.json
+ruby -e "require 'open-uri'; eval open('https://raw.github.com/Kunstmaan/KunstmaanSandbox/$VERSION/app/Resources/tools/install_scripts/sandboxinstaller.rb').read" configure-bower bower.json $PROJECTNAME
 curl http://www.kunstmaan.be/html/2010/favicon.ico -o web/favicon.ico
 mkdir -p web/uploads/media
 sudo chown -R $PROJECTNAME web/uploads
@@ -152,6 +164,23 @@ Generate bundle and the default site
 app/console kuma:generate:bundle --namespace=$NAMESPACE/$BUNDLENAME --dir=src --no-interaction
 app/console kuma:generate:default-site --namespace=$NAMESPACE/$BUNDLENAME --prefix=$TABLEPREFIX --no-interaction
 ```
+
+## Assets
+
+Run the bower install command
+
+```bash
+bower install
+```
+
+Run the grunt command
+
+```bash
+cd src/$NAMESPACE/$BUNDLENAME/Resources/
+npm install
+grunt modernizr
+```
+
 
 ## Initialize assets and database
 

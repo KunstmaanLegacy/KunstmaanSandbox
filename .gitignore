@@ -26,3 +26,4 @@ web/app_dev.php
 .settings/
 *.sublime-project
 *.sublime-workspace
+node_modules/
