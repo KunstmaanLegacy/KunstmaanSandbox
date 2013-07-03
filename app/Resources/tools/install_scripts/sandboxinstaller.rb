@@ -52,7 +52,7 @@ if command == "install-bundles"
     requires["kunstmaan/sitemap-bundle"] = "dev-master"
     requires["kunstmaan/utilities-bundle"] = "dev-master"
     # Use dev until stable release is available
-    requires["symfony-cmf/routing-bundle"] = "1.1.0-beta1@dev",
+    requires["symfony-cmf/routing-bundle"] = "1.1.0-beta1@dev"
     requires["symfony-cmf/routing"] = "1.1.*@dev"
     result["minimum-stability"] = "stable"
     result['config'] = {
@@ -82,6 +82,15 @@ elsif command == "configure-bundles"
     params["multilanguage"] = false
     params["websitetitle"] = projectname.capitalize
     File.open(parametersymlpath, 'w') {|f| f.write(YAML.dump(parametersyml)) }
+elsif command == "configure-bower"
+    bower = ARGV[1]
+    projectname = ARGV[2]
+
+    # bower.json
+    buffer = open(bower).read
+    result = JSON.parse(buffer)
+    result['name'] = projectname
+    File.open(bower, 'w') {|f| f.write(JSON.pretty_generate(result)) }
 elsif command == "configure-multilanguage"
     parametersymlpath = ARGV[1]
     projectname = ARGV[2]
