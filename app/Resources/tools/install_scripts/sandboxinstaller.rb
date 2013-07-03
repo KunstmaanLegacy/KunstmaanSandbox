@@ -89,7 +89,7 @@ elsif command == "configure-bower"
     # bower.json
     buffer = open(bower).read
     result = JSON.parse(buffer)
-    result['name'] = "projectname"
+    result['name'] = projectname
     File.open(bower, 'w') {|f| f.write(JSON.pretty_generate(result)) }
 elsif command == "configure-multilanguage"
     parametersymlpath = ARGV[1]
