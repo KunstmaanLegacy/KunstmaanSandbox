@@ -27,3 +27,4 @@ web/app_dev.php
 *.sublime-project
 *.sublime-workspace
 node_modules/
+web/vendor/
