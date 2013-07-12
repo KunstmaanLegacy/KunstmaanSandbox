@@ -167,18 +167,12 @@ app/console kuma:generate:default-site --namespace=$NAMESPACE/$BUNDLENAME --pref
 
 ## Assets
 
-Run the bower install command
+Run bower and grunt
 
 ```bash
 bower install
-```
-
-Run the grunt command
-
-```bash
-cd src/$NAMESPACE/$BUNDLENAME/Resources/
 npm install
-grunt modernizr
+grunt build
 ```
 
 
