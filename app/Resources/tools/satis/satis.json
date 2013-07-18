@@ -61,6 +61,7 @@
           "kunstmaan/form-bundle": "*",
           "kunstmaan/generator-bundle": "*",
           "kunstmaan/languagechooser-bundle": "*",
+          "kunstmaan/live-reload-bundle": "*",
           "kunstmaan/media-bundle": "*",
           "kunstmaan/media-pagepart-bundle": "*",
           "kunstmaan/newrelicbundle": "*",
