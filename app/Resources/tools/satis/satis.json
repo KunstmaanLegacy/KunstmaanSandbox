@@ -40,7 +40,7 @@
           "gregwar/form-bundle": "*",
           "guzzle/guzzle": "*",
           "imagine/imagine": "*",
-          "incenteev/composer-parameter-handler": "**,
+          "incenteev/composer-parameter-handler": "*",
           "instaclick/php-webdriver": "*",
           "jdorn/sql-formatter": "*",
           "jms/aop-bundle": "*",
