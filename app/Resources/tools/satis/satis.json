@@ -98,6 +98,7 @@
           "stof/doctrine-extensions-bundle": "*",
           "swiftmailer/swiftmailer": "*",
           "symfony-cmf/routing": "*",
+          "symfony-cmf/routing-bundle": "*",
           "symfony-cmf/routing-extra-bundle": "*",
           "symfony/assetic-bundle": "*",
           "symfony/framework-standard-edition": "*",
