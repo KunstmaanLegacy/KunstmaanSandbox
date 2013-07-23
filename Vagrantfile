@@ -32,7 +32,10 @@ Vagrant.configure("2") do |config|
 	        :server_root_password => "et6Eey6u",
 		:server_repl_password => "et6Eey6u",
 		:server_debian_password => "et6Eey6u"
-	}
+	},
+  :composer => {
+    :prefer_source => true
     }
+  }
   end
 end
