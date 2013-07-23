@@ -19,7 +19,6 @@ class AppKernel extends Kernel
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
-            new Kunstmaan\SandboxDemoBundle\KunstmaanSandboxDemoBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
@@ -28,43 +27,34 @@ class AppKernel extends Kernel
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
         }
 
-        // KunstmaanUtilitiesBundle
+        // Kunstmaan Bundles
+        $bundles[] = new Kunstmaan\SandboxDemoBundle\KunstmaanSandboxDemoBundle();
         $bundles[] = new Kunstmaan\UtilitiesBundle\KunstmaanUtilitiesBundle();
-
-        // KunstmaanNodeBundle
         $bundles[] = new Kunstmaan\NodeBundle\KunstmaanNodeBundle();
         $bundles[] = new Kunstmaan\SeoBundle\KunstmaanSeoBundle();
-        $bundles[] = new Symfony\Cmf\Bundle\RoutingExtraBundle\SymfonyCmfRoutingExtraBundle();
-        // KunstmaanMediaBundle
+        $bundles[] = new Kunstmaan\MediaBundle\KunstmaanMediaBundle();
+        $bundles[] = new Kunstmaan\AdminBundle\KunstmaanAdminBundle();
+        $bundles[] = new Kunstmaan\PagePartBundle\KunstmaanPagePartBundle();
+        $bundles[] = new Kunstmaan\MediaPagePartBundle\KunstmaanMediaPagePartBundle();
+        $bundles[] = new Kunstmaan\FormBundle\KunstmaanFormBundle();
+        $bundles[] = new Kunstmaan\AdminListBundle\KunstmaanAdminListBundle();
+        $bundles[] = new Kunstmaan\GeneratorBundle\KunstmaanGeneratorBundle();
+        $bundles[] = new Kunstmaan\NewRelicBundle\KunstmaanNewRelicBundle();
+
+        // KunstmaanSentryBundle
+        if (in_array($this->getEnvironment(), array('prod'))){
+            $bundles[] = new Kunstmaan\SentryBundle\KunstmaanSentryBundle();
+        }
+
+        $bundles[] = new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle();
         $bundles[] = new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle();
         $bundles[] = new Liip\ImagineBundle\LiipImagineBundle();
         $bundles[] = new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle();
-        $bundles[] = new Kunstmaan\MediaBundle\KunstmaanMediaBundle();
-        // KunstmaanAdminBundle
         $bundles[] = new FOS\UserBundle\FOSUserBundle();
         $bundles[] = new Knp\Bundle\MenuBundle\KnpMenuBundle();
         $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
-        $bundles[] = new Kunstmaan\AdminBundle\KunstmaanAdminBundle();
-        // KunstmaanPagePartBundle
-        $bundles[] = new Kunstmaan\PagePartBundle\KunstmaanPagePartBundle();
-        // KunstmaanMediaPagePartBundle
-        $bundles[] = new Kunstmaan\MediaPagePartBundle\KunstmaanMediaPagePartBundle();
-        // KunstmaanFormBundle
-        $bundles[] = new Kunstmaan\FormBundle\KunstmaanFormBundle();
-        // KunstmaanAdminListBundle
-        $bundles[] = new Kunstmaan\AdminListBundle\KunstmaanAdminListBundle();
         $bundles[] = new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle();
-        // KunstmaanGeneratorBundle
-        $bundles[] = new Kunstmaan\GeneratorBundle\KunstmaanGeneratorBundle();
-        // KunstmaanNewRelicBundle
-        $bundles[] = new Kunstmaan\NewRelicBundle\KunstmaanNewRelicBundle();
-        // LiipCacheControlBundle
         $bundles[] = new Liip\CacheControlBundle\LiipCacheControlBundle();
-
-        if (in_array($this->getEnvironment(), array('prod'))){
-            // KunstmaanSentryBundle
-            $bundles[] = new Kunstmaan\SentryBundle\KunstmaanSentryBundle();
-        }
 
         return $bundles;
 
