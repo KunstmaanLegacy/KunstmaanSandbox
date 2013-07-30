@@ -4,10 +4,11 @@
   "dependencies": {
     "sass-bootstrap": "~2.3.2",
     "bourbon": "latest",
+    "jquery": "<2.0.0",
     "cupcake": "git://github.com/Kunstmaan/cupcake.git",
     "socialite": "git://github.com/dbushell/Socialite.git",
-    "jquery": "<2.0.0",
     "flexslider": "latest",
+    "fitvids": "latest",
     "svgeezy": "latest",
     "jquery-placeholder": "latest",
     "flat-ui": "latest"
