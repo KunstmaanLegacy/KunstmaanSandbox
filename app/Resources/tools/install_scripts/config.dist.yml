@@ -122,7 +122,7 @@ parameters:
     # db_time_col: session_time
 
 stof_doctrine_extensions:
-    default_locale: nl
+    default_locale: %defaultlocale%
     translation_fallback: true
     orm:
         default:
