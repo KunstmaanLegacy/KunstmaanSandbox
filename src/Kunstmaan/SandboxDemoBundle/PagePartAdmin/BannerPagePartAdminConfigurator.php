@@ -58,7 +58,7 @@ class BannerPagePartAdminConfigurator extends AbstractPagePartAdminConfigurator
     /**
      * @return string
      */
-    function getDefaultContext()
+    function getContext()
     {
         return "banners";
     }
