@@ -36,6 +36,7 @@
           "doctrine/orm": "*",
           "fabpot/goutte": "*",
           "friendsofsymfony/user-bundle": "*",
+          "fzaninotto/faker": "*",
           "gedmo/doctrine-extensions": "*",
           "gregwar/form-bundle": "*",
           "guzzle/guzzle": "*",
