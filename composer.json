@@ -28,7 +28,7 @@
     "kunstmaan/adminlist-bundle": "2.3.*@dev",
     "kunstmaan/node-bundle": "2.3.*@dev",
     "kunstmaan/seo-bundle": "2.3.*@dev",
-    "kunstmaan/generator-bundle": "dev-symfony-2.3_merge",
+    "kunstmaan/generator-bundle": "2.3.*@dev",
     "kunstmaan/sentry-bundle": "2.2.*@dev",
     "kunstmaan/newrelicbundle": "2.2.*@dev",
     "kunstmaan/utilities-bundle": "2.3.*@dev",
