@@ -20,9 +20,10 @@ behat.yml
 web/css
 /tmp/
 behat.yml
-web/app_dev.php
 .buildpath
 .project
 .settings/
 *.sublime-project
 *.sublime-workspace
+node_modules/
+web/vendor/
