@@ -166,7 +166,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -690,9 +690,9 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://satis.kunstmaan.be/dist/imagine-imagine-v0.4.1-v0.4.1-4a52c3.zip",
+                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/v0.4.1",
                 "reference": "v0.4.1",
-                "shasum": "dc315d07e12f93bacbcd9dd024f4927f43f02191"
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
@@ -860,7 +860,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1395,9 +1395,9 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://satis.kunstmaan.be/dist/kriswallsmith-assetic-v1.1.1-v1.1.1-795803.zip",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/v1.1.1",
                 "reference": "v1.1.1",
-                "shasum": "7a3de36f26e2fe5f98775940d8a65241b1953167"
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.1",
@@ -2322,7 +2322,7 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -2438,9 +2438,9 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://satis.kunstmaan.be/dist/sensio-distribution-bundle-v2.3.2-v2.3.2-f93456.zip",
+                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/v2.3.2",
                 "reference": "v2.3.2",
-                "shasum": "1c32234700d405256f3bfa105780351649936c61"
+                "shasum": ""
             },
             "require": {
                 "symfony/framework-bundle": "~2.2"
@@ -2484,9 +2484,9 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://satis.kunstmaan.be/dist/sensio-framework-extra-bundle-v2.3.2-v2.3.2-f93456.zip",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/v2.3.2",
                 "reference": "v2.3.2",
-                "shasum": "78b7e7c9302a3580f55082b961409b184b8ed4f4"
+                "shasum": ""
             },
             "require": {
                 "doctrine/common": "~2.2",
@@ -2531,9 +2531,9 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://satis.kunstmaan.be/dist/sensio-generator-bundle-v2.3.2-v2.3.2-f93456.zip",
+                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/v2.3.2",
                 "reference": "v2.3.2",
-                "shasum": "237c00e8fa25d0e1ed6384450a0295d6bf936dc1"
+                "shasum": ""
             },
             "require": {
                 "symfony/console": "~2.0",
@@ -2696,9 +2696,9 @@
             },
             "require": {
                 "php": ">=5.3.3",
-                "psr/log": ">=1.0,<2.0",
-                "symfony/http-kernel": ">=2.2,<3.0",
-                "symfony/routing": ">=2.2,<3.0"
+                "psr/log": "~1.0",
+                "symfony/http-kernel": "~2.2",
+                "symfony/routing": "~2.2"
             },
             "suggest": {
                 "symfony/http-foundation": "ChainRouter/DynamicRouter have optional support for Request instances, several enhancers require a Request instances, ~2.2"
@@ -2749,8 +2749,8 @@
             },
             "require": {
                 "php": ">=5.3.3",
-                "symfony-cmf/routing": ">=1.1-dev,<1.2",
-                "symfony/framework-bundle": ">=2.2,<3.0"
+                "symfony-cmf/routing": "~1.1.0-dev",
+                "symfony/framework-bundle": "~2.2"
             },
             "require-dev": {
                 "doctrine/doctrine-bundle": "1.*",
@@ -2758,12 +2758,12 @@
                 "doctrine/phpcr-odm": "1.0.*",
                 "jackalope/jackalope-doctrine-dbal": "1.0.*",
                 "sonata-project/doctrine-phpcr-admin-bundle": "1.0.*",
-                "symfony/class-loader": ">=2.2,<3.0",
-                "symfony/finder": ">=2.1,<3.0",
-                "symfony/form": ">=2.1,<3.0",
-                "symfony/monolog-bundle": ">=2.1,<3.0",
-                "symfony/twig-bundle": ">=2.2,<3.0",
-                "symfony/yaml": ">=2.1,<3.0"
+                "symfony/class-loader": "~2.2",
+                "symfony/finder": "~2.1",
+                "symfony/form": "~2.1",
+                "symfony/monolog-bundle": "~2.1",
+                "symfony/twig-bundle": "~2.2",
+                "symfony/yaml": "~2.1"
             },
             "suggest": {
                 "doctrine/phpcr-bundle": "To enable support for the PHPCR ODM documents",
@@ -2811,9 +2811,9 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://satis.kunstmaan.be/dist/symfony-assetic-bundle-v2.3.0-v2.3.0-3e6665.zip",
+                "url": "https://api.github.com/repos/symfony/AsseticBundle/zipball/v2.3.0",
                 "reference": "v2.3.0",
-                "shasum": "a4e9c3b1c6792dccf746993291528fe42f7c1a31"
+                "shasum": ""
             },
             "require": {
                 "kriswallsmith/assetic": ">=1.1,<2.0",
@@ -2922,9 +2922,9 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://satis.kunstmaan.be/dist/symfony-monolog-bundle-v2.3.0-v2.3.0-3e6665.zip",
+                "url": "https://api.github.com/repos/symfony/MonologBundle/zipball/v2.3.0",
                 "reference": "v2.3.0",
-                "shasum": "f16608742e56097541030fb7b0a4ce2d8f8dbdf6"
+                "shasum": ""
             },
             "require": {
                 "monolog/monolog": ">=1.3,<2.0",
@@ -2980,9 +2980,9 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://satis.kunstmaan.be/dist/symfony-swiftmailer-bundle-v2.3.2-v2.3.2-f93456.zip",
+                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/v2.3.2",
                 "reference": "v2.3.2",
-                "shasum": "7a1ad560acbb7973cdb5a966e904b681b292497a"
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
@@ -3142,9 +3142,9 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://satis.kunstmaan.be/dist/twig-extensions-v1.0.0-v1.0.0-7ac19e.zip",
+                "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/v1.0.0",
                 "reference": "v1.0.0",
-                "shasum": "d9192fd77a34814f3fdae051e1274e8e1015bc67"
+                "shasum": ""
             },
             "require": {
                 "twig/twig": "1.*"
