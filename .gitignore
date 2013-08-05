@@ -27,3 +27,4 @@ behat.yml
 *.sublime-workspace
 node_modules/
 web/vendor/
+web/app_dev.php
