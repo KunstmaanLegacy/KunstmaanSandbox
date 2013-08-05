@@ -16,7 +16,6 @@ behat.yml
 .vagrant
 /cookbooks/
 /Cheffile.lock
-/composer.lock
 web/css
 /tmp/
 behat.yml
@@ -27,3 +26,4 @@ behat.yml
 *.sublime-workspace
 node_modules/
 web/vendor/
+web/app_dev.php
