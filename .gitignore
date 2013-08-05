@@ -16,7 +16,6 @@ behat.yml
 .vagrant
 /cookbooks/
 /Cheffile.lock
-/composer.lock
 web/css
 /tmp/
 behat.yml
