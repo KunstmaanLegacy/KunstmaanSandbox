@@ -106,7 +106,7 @@
           "symfony/icu": "*",
           "symfony/monolog-bundle": "*",
           "symfony/swiftmailer-bundle": "*",
-          "symfony/symfony": "*",
+          "symfony/symfony": "2.*",
           "twig/extensions": "*",
           "twig/twig": "*",
           "white-october/pagerfanta-bundle": "*"
