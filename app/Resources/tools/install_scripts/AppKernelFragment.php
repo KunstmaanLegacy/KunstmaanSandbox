@@ -46,4 +46,9 @@
             $bundles[] = new Kunstmaan\SentryBundle\KunstmaanSentryBundle();
         }
 
+        if (in_array($this->getEnvironment(), array('dev'))){
+            // KunstmaanLiveReloadBundle
+            $bundles[] = new Kunstmaan\LiveReloadBundle\KunstmaanLiveReloadBundle();
+        }
+
         return $bundles;
