@@ -19,5 +19,4 @@ default:
 
     context:
         parameters:
-            multilanguage: %multilanguage%
-            language: '%language%'
+            language: '%multilanguage%'
