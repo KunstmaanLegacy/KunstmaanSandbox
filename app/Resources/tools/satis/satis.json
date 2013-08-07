@@ -55,7 +55,7 @@
           "knplabs/knp-gaufrette-bundle": "*",
           "knplabs/knp-menu": "*",
           "knplabs/knp-menu-bundle": "*",
-          "knplabs/packagist-api": "*",
+          "knplabs/packagist-api": "master",
           "kriswallsmith/assetic": "*",
           "kriswallsmith/buzz": "*",
           "kunstmaan/admin-bundle": "*",
