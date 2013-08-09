@@ -1,0 +1,5 @@
+name: "Content page single column"
+rows:
+    - regions: 
+        - { name: "main", span: 12 }
+template: "KunstmaanSandboxDemoBundle::Pages\\ContentPage\\pagetemplate-singlecolumn.html.twig"

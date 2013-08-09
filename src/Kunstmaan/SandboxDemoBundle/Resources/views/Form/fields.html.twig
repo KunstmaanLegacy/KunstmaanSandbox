@@ -1,57 +1,51 @@
-{% block field_row %}
-    {% spaceless %}
-    <div class='group {% if errors|length > 0 %}error{% endif %}'>
-        {{ form_label(form) }}
-        <div class='input'>
-            {{ form_widget(form) }}
-            {{ form_errors(form) }}
-        </div>
-    </div>
-    {% endspaceless %}
-{% endblock field_row %}
+{% block form_label %}
+{% spaceless %}
+    {% if label is not sameas(false) %}
+        {% if not compound %}
+            {% set label_attr = label_attr|merge({'for': id}) %}
+        {% endif %}
+        {% if required %}
+            {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' control-label required')|trim}) %}
+        {% endif %}
+        {% if label is empty %}
+            {% set label = name|humanize %}
+        {% endif %}
+        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>
+            {{ label|trans({}, translation_domain) }}{% if required %} *{% endif %}
+        </label>
+    {% endif %}
+{% endspaceless %}
+{% endblock form_label %}
 
-{% block field_errors %}
+{% block form_row %}
+{% spaceless %}
+    <div class="controls controls-row control-group {% if errors|length > 0 %}error{% endif %}">
+        {{ form_label(form) }}
+        {{ form_widget(form) }}
+        {{ form_errors(form) }}
+    </div>
+{% endspaceless %}
+{% endblock form_row %}
+
+{% block button_row %}
+{% spaceless %}
+    {{ form_widget(form) }}
+{% endspaceless %}
+{% endblock button_row %}
+
+{% block form_errors %}
 {% spaceless %}
     {% if errors|length > 0 %}
-    <span class='help-inline'>
         {% for error in errors %}
-            {{ error.messageTemplate|trans(error.messageParameters, 'validators') }}<br />
+            <span class="help-block">{{ error.message }}</span>
         {% endfor %}
-    </span>
     {% endif %}
 {% endspaceless %}
-{% endblock field_errors %}
+{% endblock form_errors %}
 
-{% block choice_widget %}
+{% block widget_container_attributes %}
 {% spaceless %}
-    {% if expanded %}
-        <div {{ block('widget_container_attributes') }}>
-        <ul class='inputs-list'>
-        {% for child in form %}
-            <li>
-                <label>
-                    {{ form_widget(child) }}
-                    <span>{{ label }}</span>
-                </label>
-            </li>
-        {% endfor %}
-        </ul>
-        </div>
-    {% else %}
-    <select {{ block('widget_attributes') }}{% if multiple %} multiple='multiple'{% endif %}>
-        {% if empty_value is not none %}
-            <option value=''>{{ empty_value|trans({}, translation_domain) }}</option>
-        {% endif %}
-        {% if preferred_choices|length > 0 %}
-            {% set options = preferred_choices %}
-            {{ block('widget_choice_options') }}
-            {% if choices|length > 0 and separator is not none %}
-                <option disabled='disabled'>{{ separator }}</option>
-            {% endif %}
-        {% endif %}
-        {% set options = choices %}
-        {{ block('widget_choice_options') }}
-    </select>
-    {% endif %}
+    {% if id is not empty %}id="{{ id }}" {% endif %}
+    {% for attrname, attrvalue in attr %}{{ attrname }}="{{ attrvalue }}" {% endfor %}
 {% endspaceless %}
-{% endblock choice_widget %}
+{% endblock widget_container_attributes %}

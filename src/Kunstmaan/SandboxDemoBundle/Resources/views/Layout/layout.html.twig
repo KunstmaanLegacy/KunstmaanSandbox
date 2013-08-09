@@ -1,87 +1,189 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if lt IE 7]>       <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="nl"> <![endif]-->
+<!--[if IE 7]>          <html class="no-js lt-ie9 lt-ie8" lang="nl">        <![endif]-->
+<!--[if IE 8]>          <html class="no-js lt-ie9" lang="nl">               <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="nl">                  <!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>{{ websitetitle | trans }}{% block title %} - {{ page.title }}{% endblock %}</title>
-  {% if page is defined %}
-    {{ render_seo_metadata_for(page) }}
-  {% endif %}
-  <link rel="shortcut icon" href="{{ asset('/bundles/kunstmaansandboxdemo/img/favicon.ico') }}" type="image/x-icon">
-  {% include 'KunstmaanSandboxDemoBundle:Layout:_css.html.twig' %}
-  {% include 'KunstmaanSandboxDemoBundle:Layout:_js_header.html.twig' %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ websitetitle | trans }}{% block title %} - {{ get_title_for(page) }}{% endblock %}</title>
+    <meta name="description" content="">
+    {% if page is defined %}
+        {{ render_seo_metadata_for(page) }}
+    {% endif %}
+
+    <!-- favicon - apple touch icons -->
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('apple-touch-icon-144x144-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ asset('apple-touch-icon-120x120-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('apple-touch-icon-114x114-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('apple-touch-icon-72x72-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('apple-touch-icon-precomposed.png') }}">
+
+    <!-- webfonts - should be included through css-method -->
+
+    <!-- css -->
+    {% include 'KunstmaanSandboxDemoBundle:Layout:_css.html.twig' %}
+
+
+    <!-- js -->
+    {% include 'KunstmaanSandboxDemoBundle:Layout:_js_header.html.twig' %}
+
 </head>
 <body>
-
-  <!-- Header and Nav -->
-
-  <div class="row">
-    <div class="twelve columns">
-        <nav class="top-bar">
-            <ul>
-                <li class="name">
-                    <h1>
-                        {% set homepagePageNode = nodemenu.getNodeByInternalName('homepage') %}
-                        <a href="{{ path('_slug', { 'url': homepagePageNode.slug }) }}">Kunstmaan Bundles Sandbox</a>
-                    </h1>
-                </li>
-                <li class="toggle-topbar"><a href="#"></a></li>
-            </ul>
-            <section>
-                {% if nodemenu is defined %}
-                    <ul class="right">
-                        <li class="divider show-for-medium-and-up"></li>
-                        {% set activeSubnode = nodemenu.getActiveForDepth(1) %}
-                        {% for node in activeSubnode.children %}
-                            <li {% if node.children|length>0 %}class="has-dropdown"{% endif %}>
-                                <a href="{{ path('_slug', { 'url': node.slug }) }}">{{ node.title }}</a>
-                                {% if node.children|length>0 %}
-                                    <ul class="dropdown">
-                                        {% for node in node.children %}
-                                            <li><a href="{{ path('_slug', { 'url': node.slug }) }}">{{ node.title }}</a></li>
-                                        {% endfor %}
-                                    </ul>
+    <div class="container">
+        <!-- Header -->
+        <header role="header">
+            <div class="row-fluid">
+                <div class="span8">
+                    {% set homepagePageNode = nodemenu.getNodeByInternalName('homepage') %}
+                    <a href="{{ path('_slug', { 'url': homepagePageNode.slug }) }}">
+                        <img src="http://placehold.it/300x100&amp;text=Logo" alt="placeholder">
+                    </a>
+                </div>
+                <div class="span2">
+                    <p class="muted">Your generated website using the Kunstmaan Bundles</p>
+                </div>
+                <div class="span2">
+                    <a href="http://twitter.com/share" class="socialite twitter-share" data-url="http://www.kunstmaan.be" rel="nofollow" target="_blank">
+                        Twitter
+                    </a>
+                    <a href="http://www.facebook.com/sharer.php?u=http://www.kunstmaan.be" class="socialite facebook-like" data-href="http://www.kunstmaan.be" data-send="false" data-layout="button_count" data-width="60" data-show-faces="false" rel="nofollow" target="_blank">
+                        Facebook
+                    </a>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12">
+                    <nav role="navigation" class="js-navigation navigation navigation--big">
+                        <!-- Mobile navigation toggle -->
+                        <div class="js-navigation__toggle navigation__toggle navigation__toggle--top">
+                            MENU
+                            <i class="icon-reorder"></i>
+                            <i class="icon-remove"></i>
+                        </div>
+                        <!-- Navigation level -->
+                        <ul class="js-main-navigation-level navigation__level">
+                        {% if nodemenu is defined %}
+                            {% set activeSubnode = nodemenu.getActiveForDepth(1) %}
+                            {% for node in activeSubnode.children %}
+                                {% if not node.node.isHiddenFromNav() %}
+                                    <li class="navigation__item {% if(node.active) %}navigation__item--active{% endif %}">
+                                        <a href="{{ path('_slug', { 'url': node.slug }) }}" class="navigation__link">{{ node.title }}</a>
+                                        {% if node.children|length>0 %}
+                                            <!-- Mobile submenu toggle -->
+                                            <div class="js-navigation__toggle navigation__toggle navigation__toggle--submenu">
+                                                <i class="icon-chevron-down"></i>
+                                                <i class="icon-chevron-up"></i>
+                                            </div>
+                                            <!-- Submenu -->
+                                            <ul class="navigation__level navigation__level--sublevel">
+                                                {% for node in node.children %}
+                                                    {% if not node.node.isHiddenFromNav() %}
+                                                        <li class="navigation__item {% if(node.active) %}navigation__item--active{% endif %}">
+                                                            <a href="{{ path('_slug', { 'url': node.slug }) }}" class="navigation__link">
+                                                                {{ node.title }}
+                                                                {% if(node.active) %}<i class="icon-chevron-right"></i>{% endif %}
+                                                            </a>
+                                                        </li>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </li>
                                 {% endif %}
-                            </li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            </section>
-        </nav>
-    </div>
-  </div>
-  <div class="row">
-        <div class="twelve columns">
+                            {% endfor %}
+                        {% endif %}
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        {% block breadcrumbs %}
+            {% if nodemenu.breadCrumb|length > 1 %}
+                <ul class="breadcrumb">
+                    <li>You are here: </li>
+                    {% for node in nodemenu.breadCrumb %}
+                        {% if not loop.first %}
+                            {% if loop.last %}
+                                <li class="active">{{ node.title }}</a></li>
+                            {% else %}
+                                <li><a href="{{ path('_slug', { 'url': node.slug }) }}">{{ node.title }}</a> <span class="divider">/</span></li>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endblock breadcrumbs %}
+
+        <!-- Main -->
+        <main role="main">
             {% block content %}{% endblock %}
-        </div>
-  </div>
+        </main>
 
-  <footer class="row">
-    <div class="twelve columns">
-      <hr />
-      <div class="row">
-        <div class="twelve columns">
-          <p>&copy; Kunstmaan 2013</p>
+        <!-- Doormat -->
+        <div class="doormat">
+            <div class="row-fluid">
+                <div class="doormat__description span12">
+                    <p>Some footer navigation:</p>
+                </div>
+                {% if nodemenu is defined %}
+                    {% set activeSubnode = nodemenu.getActiveForDepth(1) %}
+                    <div class="span3">
+                        <ul class="doormat__list">
+                            {% for node in activeSubnode.children %}
+                                {% if not node.node.isHiddenFromNav() and node.node.internalName != '4_level_navigation' %}
+                                    <li {% if(node.active) %} class="active" {% endif %}>
+                                        <a href="{{ path('_slug', { 'url': node.slug }) }}">{{ node.title }}</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+
+                {% set fourLevelNav = nodemenu.getNodeByInternalName('4_level_navigation') %}
+                {% if (fourLevelNav != null and fourLevelNav.online) %}
+                    <div class="span3">
+                        <ul class="doormat__list">
+                            <li {% if(fourLevelNav.active) %} class="active" {% endif %}>
+                                <a href="{{ path('_slug', { 'url': fourLevelNav.slug }) }}">{{ fourLevelNav.title }}</a>
+                                <ul class="doormat__list">
+                                    {% for node in fourLevelNav.children if not node.node.isHiddenFromNav() %}
+                                        <li {% if(node.active) %} class="active" {% endif %}>
+                                            <a href="{{ path('_slug', { 'url': node.slug }) }}">{{ node.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                {% endif %}
+            </div>
         </div>
-      </div>
     </div>
-  </footer>
 
-  {% include 'KunstmaanSandboxDemoBundle:Layout:_js_footer.html.twig' %}
+    <!-- Footer -->
+    <footer role="footer" class="footer">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span12">
+                    <p class="pull-left">
+                        &copy; {{ "now"|date("Y") }}
+                        {% set sitemap = nodemenu.getNodeByInternalName('sitemap') %}
+                        {% if (sitemap != null and sitemap.online) %}- <a href="{{ path('_slug', { 'url': sitemap.slug }) }}">{{ sitemap.title }}</a>{% endif %}
+                    </p>
+                    <p class="pull-right created-by">
+                        Created by <a href="http://www.kunstmaan.be"><img src="{{ asset('bundles/kunstmaansandboxdemo/img/general/km-logo.svg') }}" alt="Kunstmaan"></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-        <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
-        mathiasbynens.be/notes/async-analytics-snippet -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){
-                var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-                g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-                s.parentNode.insertBefore(g,s)
-            }(document,'script'));
-        </script>
+    {% include 'KunstmaanSandboxDemoBundle:Layout:_js_footer.html.twig' %}
+
 
 </body>
 </html>

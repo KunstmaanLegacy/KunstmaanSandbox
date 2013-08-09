@@ -12,10 +12,11 @@ framework:
     form:            true
     csrf_protection: true
     validation:      { enable_annotations: true }
-    templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
+    templating:      { engines: ['twig'], assets_version: will_be_changed_by_capifony }
     default_locale:  %locale%
     trusted_proxies: ~
     session:         ~
+    fragments:       ~
         #storage_id: session.storage.pdo ## disabled because you need to manually create the table after fullreload. fix could be creating an entity for this table. see symfony.com/doc/current/cookbook/configuration/pdo_session_storage.html
 
 # Twig Configuration
@@ -26,6 +27,7 @@ twig:
         websitetitle: %websitetitle%
         defaultlocale: %defaultlocale%
         requiredlocales: %requiredlocales%
+        ga_code: %analytics.google%
         #titlecolor: "#000000"
         #titlebgcolor: "#2997CE"
         #ga_code: %ga_code% ## don't forget to specify this parameter in parameters.yml
@@ -38,12 +40,24 @@ assetic:
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
-        #closure:
-        #    jar: %kernel.root_dir%/Resources/java/compiler.jar
-        yui_css:
-            jar: %kernel.root_dir%/Resources/tools/java/yuicompressor-2.4.7.jar
+        scss: ~
         yui_js:
             jar: %kernel.root_dir%/Resources/tools/java/yuicompressor-2.4.7.jar
+        jpegoptim:
+            bin: jpegoptim
+            strip_all: true
+            max: 85
+            apply_to: "\.jpe?g$"
+        optipng:
+            bin: optipng
+            apply_to: "\.png$"
+            level:    3
+        jpegtran:
+            bin: jpegtran
+            apply_to: "\.jpe?g$"
+            optimisation:    true
+            progressive:  true
+
 
 # Doctrine Configuration
 doctrine:
@@ -99,6 +113,8 @@ swiftmailer:
     spool:     { type: memory }
 
 parameters:
+    assetic.cache.class: Assetic\Cache\ArrayCache
+    analytics.google: UA-XXXXXXX-X
     #pdo.db_options:
     # db_table: session
     # db_id_col: session_id
@@ -106,7 +122,7 @@ parameters:
     # db_time_col: session_time
 
 stof_doctrine_extensions:
-    default_locale: en
+    default_locale: %defaultlocale%
     translation_fallback: true
     orm:
         default:
@@ -118,22 +134,25 @@ liip_imagine:
     cache_prefix: uploads/cache
     driver: imagick
     #cache: no_cache
+    data_loader: filesystem
+    data_root: %kernel.root_dir%/../web
+    formats : ['jpg', 'jpeg','png', 'gif', 'bmp']
     filter_sets:
-        thumb_image_block_1:
-            quality: 75
+        optim:
+            quality: 85
+            format: jpg
             filters:
-                thumbnail: { size: [310, 229], mode: outbound }
-        thumb_image_block_2:
-            quality: 75
+                strip: ~
+        optimjpg:
+            quality: 85
+            format: jpg
             filters:
-                thumbnail: { size: [630, 229], mode: outbound }
-
-liip_cache_control:
-    rules:
-        - { path: /admin, controls: { private: true, max_age: 0} }
-        - { path: /preview/, controls: { private: true, max_age: 0} }
-        - { path: ^/_internal, controls: {private: true, max_age: 0} }
-        - { path: ^/(.+), controls: { public: true, max_age: 120, s_maxage: 240 }, vary: [Cookie,Accept-Encoding] }
+                strip: ~
+        optimpng:
+            quality: 85
+            format: png
+            filters:
+                strip: ~
 
 services:
     twig.extension.text:
@@ -164,3 +183,7 @@ services:
 
     kunstmaan_logging_formatter:
         class: Monolog\Formatter\LineFormatter
+
+
+white_october_pagerfanta:
+    default_view: twitter_bootstrap

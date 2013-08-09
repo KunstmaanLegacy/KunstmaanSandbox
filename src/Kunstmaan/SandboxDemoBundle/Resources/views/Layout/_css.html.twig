@@ -1,5 +1,37 @@
+
     {% block css %}
-        {% stylesheets '@KunstmaanSandboxDemoBundle/Resources/public/css/*.css' %}
-            <link rel='stylesheet' href='{{ asset_url }}' type='text/css' />
-        {% endstylesheets %}
+        <!--[if IE 7]>
+            {% stylesheets
+                'vendor/flexslider/flexslider.css'
+                '@KunstmaanSandboxDemoBundle/Resources/public/scss/style.scss'
+                '@KunstmaanSandboxDemoBundle/Resources/public/scss/legacy/ie/ie8.scss'
+                '@KunstmaanSandboxDemoBundle/Resources/public/scss/legacy/ie/ie7.scss'
+                filter='scss'
+                output='frontend/style_ie7.css'
+             %}
+                <link rel='stylesheet' href='{{ asset_url }}' type='text/css' />
+            {% endstylesheets %}
+        <![endif]-->
+        <!--[if IE 8]>
+            {% stylesheets
+                'vendor/flexslider/flexslider.css'
+                '@KunstmaanSandboxDemoBundle/Resources/public/scss/style.scss'
+                '@KunstmaanSandboxDemoBundle/Resources/public/scss/legacy/ie/ie8.scss'
+                filter='scss'
+                output='frontend/style_ie8.css'
+             %}
+                <link rel='stylesheet' href='{{ asset_url }}' type='text/css' />
+            {% endstylesheets %}
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            {% stylesheets
+                'vendor/flexslider/flexslider.css'
+                '@KunstmaanSandboxDemoBundle/Resources/public/scss/style.scss'
+                filter='scss'
+                output='frontend/style.css'
+            %}
+               <link rel='stylesheet' href='{{ asset_url }}' type='text/css' />
+           {% endstylesheets %}
+        <!--<![endif]-->
     {% endblock %}
+

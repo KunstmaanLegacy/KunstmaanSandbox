@@ -1,7 +1,6 @@
-parameters:
-#    kunstmaan_sandbox_demo.example.class: Kunstmaan\SandboxDemoBundle\Example
-
 services:
-#    kunstmaan_sandbox_demo.example:
-#        class: %kunstmaan_sandbox_demo.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    kunstmaansandboxdemobundle.default_locale_listener:
+        class: Kunstmaan\SandboxDemoBundle\EventListener\DefaultLocaleListener
+        tags:
+          - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }
+        arguments: [%defaultlocale%]

@@ -1,0 +1,19 @@
+/* ==========================================================================
+   Doormat
+
+   Style guide: https://github.com/necolas/idiomatic-css
+   ========================================================================== */
+
+.doormat {
+    background-color: #F5F5F5;
+}
+
+.doormat__description {
+    p {
+        margin-left: 25px;
+    }
+}
+
+.doormat__list {
+    list-style-type:none;
+}

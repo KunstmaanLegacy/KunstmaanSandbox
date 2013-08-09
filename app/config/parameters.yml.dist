@@ -1,0 +1,24 @@
+---
+parameters:
+  database_driver: pdo_mysql
+  database_host: localhost
+  database_port: 
+  database_name: Kunstmaan
+  database_user: Kunstmaan
+  database_password: Kunstmaan
+  mailer_transport: smtp
+  mailer_host: localhost
+  mailer_user: 
+  mailer_password: 
+  locale: en
+  secret: ThisTokenIsNotSoSecretChangeIt
+  database_path: 
+  sentry.dsn: https://XXXXXXXX:XXXXXXXX@app.getsentry.com/XXXX
+  cdnpath: ''
+  requiredlocales: en
+  defaultlocale: en
+  multilanguage: false
+  websitetitle: Kunstmaan
+  searchport: 9200
+  searchindexname: kunstmaan
+  searchindexprefix: kunstmaan
