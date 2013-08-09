@@ -2,6 +2,8 @@ export PROJECTNAME=Kunstmaan
 export BUNDLENAME=SandboxDemoBundle
 export TABLEPREFIX=sandbox
 
+rm -rf app/Resources/TwigBundle
+rm -rf app/Resources/KunstmaanSitemapBundle
 
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/2.3/app/config/parameters.yml)" | sed s/sandbox/$PROJECTNAME/ > app/config/parameters.yml
 echo "$(curl -fsSL https://raw.github.com/Kunstmaan/KunstmaanSandbox/2.3/.gitignore)" > .gitignore
