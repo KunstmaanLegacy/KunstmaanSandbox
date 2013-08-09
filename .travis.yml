@@ -9,7 +9,10 @@ matrix:
   allow_failures:
     - php: 5.5
 
-before_script: build/before_script
+before_script: 
+  - composer selfupdate 
+  - COMPOSER_ROOT_VERSION=dev-master composer --prefer-source --dev install
+  - build/before_script
 
 script: build/build_script
 
