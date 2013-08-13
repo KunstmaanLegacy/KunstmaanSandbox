@@ -77,6 +77,7 @@
           "kunstmaan/seo-bundle": "*",
           "kunstmaan/sitemap-bundle": "*",
           "kunstmaan/utilities-bundle": "*",
+          "kunstmaan/translator-bundle": "*",
           "liip/cache-control-bundle": "*",
           "liip/imagine-bundle": "*",
           "lunetics/locale-bundle": "*",
