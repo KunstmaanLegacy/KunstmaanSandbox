@@ -13,7 +13,7 @@ You need an environment [ready to run Symfony 2 applications (PHP >= 5.3.3, MySQ
 * node.js
 * ruby
 
-# Generating the default website
+## Generating the default website
 
 We have created a script to do the entire install and setup for you in one go. Don't forget to replace 'ProjectName' by your preferred name.
 
