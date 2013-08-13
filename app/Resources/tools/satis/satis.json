@@ -113,7 +113,7 @@
           "twig/extensions": "*",
           "twig/twig": "*",
           "white-october/pagerfanta-bundle": "*",
-          "nelmio/alice": "*",
+          "nelmio/alice": "*"
            },
     "archive": {
         "directory": "dist",
