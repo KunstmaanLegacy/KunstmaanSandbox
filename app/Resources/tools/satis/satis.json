@@ -105,7 +105,6 @@
           "symfony-cmf/routing-bundle": "*",
           "symfony-cmf/routing-extra-bundle": "*",
           "symfony/assetic-bundle": "*",
-          "symfony/framework-standard-edition": "*",
           "symfony/icu": "*",
           "symfony/monolog-bundle": "*",
           "symfony/swiftmailer-bundle": "*",
