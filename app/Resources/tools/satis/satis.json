@@ -21,6 +21,7 @@
           "behat/symfony2-extension": "*",
           "ddeboer/data-import": "*",
           "ddeboer/data-import-bundle": "*",
+          "ddeboer/guzzle-bundle": "*",
           "doctrine/annotations": "*",
           "doctrine/cache": "*",
           "doctrine/collections": "*",
