@@ -40,6 +40,10 @@
         $bundles[] = new Kunstmaan\ArticleBundle\KunstmaanArticleBundle();
         // LiipCacheControlBundle
         $bundles[] = new Liip\CacheControlBundle\LiipCacheControlBundle();
+        // KunstmaanLanguageChooserBundle
+        $bundles[] = new Kunstmaan\LanguageChooserBundle\KunstmaanLanguageChooserBundle();
+        // LuneticsLocaleBundle
+        $bundles[] = new Lunetics\LocaleBundle\LuneticsLocaleBundle();
 
         if (in_array($this->getEnvironment(), array('prod'))){
             // KunstmaanSentryBundle
