@@ -113,7 +113,8 @@
           "twig/extensions": "*",
           "twig/twig": "*",
           "white-october/pagerfanta-bundle": "*",
-          "nelmio/alice": "*"
+          "nelmio/alice": "*",
+          "mlpz/mailchimp-bundle": "*"
            },
     "archive": {
         "directory": "dist",
