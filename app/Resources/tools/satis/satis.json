@@ -111,7 +111,7 @@
           "symfony/swiftmailer-bundle": "*",
           "symfony/symfony": "2.*",
           "twig/extensions": "*",
-          "twig/twig": "*",
+          "twig/twig": ">=0.9",
           "white-october/pagerfanta-bundle": "*",
           "nelmio/alice": "*",
           "mlpz/mailchimp-bundle": "*"
