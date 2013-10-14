@@ -114,7 +114,8 @@
           "twig/twig": ">=0.9",
           "white-october/pagerfanta-bundle": "*",
           "nelmio/alice": "*",
-          "mlpz/mailchimp-bundle": "*"
+          "mlpz/mailchimp-bundle": "*",
+          "bitgandtter/google-api": "*"
            },
     "archive": {
         "directory": "dist",
