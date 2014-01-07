@@ -91,7 +91,7 @@
           "phpunit/php-text-template": "*",
           "phpunit/php-timer": "*",
           "phpunit/php-token-stream": "*",
-          "phpunit/phpunit": "*",
+          "phpunit/phpunit": ">=3.7",
           "phpunit/phpunit-mock-objects": "*",
           "psr/log": "*",
           "raven/raven": "*",
