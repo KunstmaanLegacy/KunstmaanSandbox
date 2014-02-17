@@ -53,6 +53,7 @@
           "jms/security-extra-bundle": "*",
           "jms/serializer-bundle": "*",
           "jms/serializer": "*",
+          "phpcollection/phpcollection": "*",
           "knplabs/gaufrette": "*",
           "knplabs/knp-gaufrette-bundle": "*",
           "knplabs/knp-menu": "*",
