@@ -117,7 +117,9 @@
           "white-october/pagerfanta-bundle": "*",
           "nelmio/alice": "*",
           "mlpz/mailchimp-bundle": "*",
-          "bitgandtter/google-api": "*"
+          "bitgandtter/google-api": "*",
+          "phpoffice/phpexcel": "*",
+          "ekino/newrelic-bundle": "*"
            },
     "archive": {
         "directory": "dist",
