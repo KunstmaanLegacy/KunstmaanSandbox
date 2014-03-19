@@ -122,7 +122,8 @@
         "ekino/newrelic-bundle": "*",
         "phpspec/phpspec": "*",
         "phpspec/prophecy": "*",
-        "phpspec/php-diff": "*"
+        "phpspec/php-diff": "*",
+        "hwi/oauth-bundle": "*"
     },
     "archive": {
         "directory": "dist",
