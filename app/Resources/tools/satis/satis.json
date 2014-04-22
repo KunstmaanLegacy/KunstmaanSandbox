@@ -81,6 +81,8 @@
         "kunstmaan/sitemap-bundle": "*",
         "kunstmaan/utilities-bundle": "*",
         "kunstmaan/translator-bundle": "*",
+        "kunstmaan/redirect-bundle": "*",
+        "kunstmaan/user-management-bundle": "*",
         "liip/cache-control-bundle": "*",
         "liip/imagine-bundle": "*",
         "lunetics/locale-bundle": "*",
